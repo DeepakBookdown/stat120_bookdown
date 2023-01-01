@@ -132,6 +132,2863 @@
 
 This is a \emph{sample} book written in \textbf{Markdown}.
 
+\hypertarget{class-activity-1}{%
+\chapter{Class Activity 1}\label{class-activity-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  Try to knit the file at the present stage and see if it compiles.
+\item
+  You can add \texttt{\textbackslash{}vspace*\{1in\}} in the body of this file to produce a vertical space of 1 inches.
+\end{itemize}
+
+\hypertarget{your-turn-1}{%
+\section{Your Turn 1}\label{your-turn-1}}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  Run the following chunk. Comment on the output.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{example\_data }\OtherTok{=} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{ID =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DecValTok{7}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{9}\NormalTok{, }\DecValTok{10}\NormalTok{),}
+                          \AttributeTok{Greeting =} \FunctionTok{c}\NormalTok{(}\FunctionTok{rep}\NormalTok{(}\StringTok{"Hello"}\NormalTok{, }\DecValTok{5}\NormalTok{), }\FunctionTok{rep}\NormalTok{(}\StringTok{"Goodbye"}\NormalTok{,}\DecValTok{5}\NormalTok{)),}
+                          \AttributeTok{Male =} \FunctionTok{rep}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\ConstantTok{TRUE}\NormalTok{, }\ConstantTok{FALSE}\NormalTok{), }\DecValTok{5}\NormalTok{),}
+                          \AttributeTok{age =} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n=}\DecValTok{10}\NormalTok{, }\DecValTok{20}\NormalTok{,}\DecValTok{60}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+Click for answer
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{example\_data}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+   ID Greeting  Male      age
+1   1    Hello  TRUE 34.71521
+2   2    Hello FALSE 51.73477
+3   3    Hello  TRUE 48.92542
+4   4    Hello FALSE 43.54797
+5   5    Hello  TRUE 31.35916
+6   6  Goodbye FALSE 38.84844
+7   7  Goodbye  TRUE 20.31993
+8   8  Goodbye FALSE 49.49988
+9   9  Goodbye  TRUE 48.66424
+10 10  Goodbye FALSE 52.91599
+\end{verbatim}
+
+\emph{Answer:} We see a data frame with four columns, where the first column is an \texttt{identifier} for the cases. We have information on the greeting types, gender, and age on these cases in the remaining columns.
+
+\vspace*{1in}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  What is the dimension of the dataset called `example\_data'?
+\end{enumerate}
+
+Click for answer
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dim}\NormalTok{(example\_data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 10  4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{nrow}\NormalTok{(example\_data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 10
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ncol}\NormalTok{(example\_data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 4
+\end{verbatim}
+
+\emph{Answer:} There are 10 rows and 4 columns.
+
+\vspace*{1in}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{your-turn-2}{%
+\section{Your Turn 2}\label{your-turn-2}}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  Read the dataset \texttt{EducationLiteracy} from the \href{https://www.lock5stat.com/datapage2e.html}{Lock5} second edition book.
+\end{enumerate}
+
+Click for answer
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# read in the data}
+\NormalTok{education\_lock5 }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://www.lock5stat.com/datasets2e/EducationLiteracy.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\vspace*{1in}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Print the header (i.e.~first 6 cases by default) of the dataset in part a.
+\end{enumerate}
+
+Click for answer
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(education\_lock5)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+              Country EducationExpenditure Literacy
+1         Afghanistan                  3.1     31.7
+2             Albania                  3.2     96.8
+3             Algeria                  4.3       NA
+4             Andorra                  3.2       NA
+5              Angola                  3.5     70.6
+6 Antigua and Barbuda                  2.6     99.0
+\end{verbatim}
+
+\vspace*{1in}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  What is the dimension of the dataset in a?
+\end{enumerate}
+
+Click for answer
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dim}\NormalTok{(education\_lock5)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 188   3
+\end{verbatim}
+
+\emph{Answer:} There are 188 rows and 3 columns.
+
+\vspace*{1in}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  What type of variables are \texttt{Country}, \texttt{EducationExpenditure}, and \texttt{Literacy}?
+\end{enumerate}
+
+Click for answer
+
+\emph{Answer:} \texttt{Country} is a categorical variable. \texttt{EducationExpenditure} and \texttt{Literacy} are both quantitative variables.
+
+\vspace*{1in}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  If we would like to use education expenditure to predict the literacy rate of each countries, which variable is the explanatory variable and which one is the response?
+\end{enumerate}
+
+Click for answer
+
+\emph{Answer:} The education expenditure is the explanatory variable, and the literacy rate is the response.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{class-activity-2}{%
+\chapter{Class Activity 2}\label{class-activity-2}}
+
+\hypertarget{your-turn-2-1}{%
+\section{Your Turn 2}\label{your-turn-2-1}}
+
+\hypertarget{summary-of-article-on-it-depends-on-how-you-ask}{%
+\section{\texorpdfstring{Summary of article on \href{https://jech.bmj.com/content/75/4/387.abstract}{It depends on how you ask!}}{Summary of article on It depends on how you ask!}}\label{summary-of-article-on-it-depends-on-how-you-ask}}
+
+Click for answer
+
+\emph{Answer:}
+
+This study aimed to measure the effects of psychological biases on estimates of compliance with public health guidance regarding COVID-19. Results showed that compliance estimates were reduced when questions were framed negatively and anonymity was increased. Effect sizes were large, with compliance estimates diminishing by up to 17\% points and 10\% points, respectively. These findings suggest that standard tracking surveys pose questions in ways that lead to higher compliance estimates than alternative approaches.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{your-turn-3}{%
+\section{Your Turn 3}\label{your-turn-3}}
+
+\hypertarget{gettysburg-random-sample}{%
+\section{Gettysburg random sample}\label{gettysburg-random-sample}}
+
+Let's take a simple random sample (SRS) of Gettysburg words. The ``population'' is contained in the
+spreadsheet \texttt{GettysburgPopulationCounts.csv}. Carefully load this data into R:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pop }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/deepbas/statdatasets/main/GettysbergPopulationCounts.csv"}\NormalTok{)}
+\FunctionTok{head}\NormalTok{(pop)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+  position size  word
+1        1    4  Four
+2        2    5 score
+3        3    3   and
+4        4    5 seven
+5        5    5 years
+6        6    3  ago,
+\end{verbatim}
+
+The \texttt{position} variable enumerates the list of words in the population (address).
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  Sample
+\end{enumerate}
+
+Run the following command to obtain a SRS of 10 words from the 268 that are in the population:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{samp }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{268}\NormalTok{, }\AttributeTok{size=}\DecValTok{10}\NormalTok{)}
+\NormalTok{samp}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+ [1]  38 154 229  91 129 140 185  78 105 258
+\end{verbatim}
+
+This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
+
+\vspace*{1in}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Get words and lengths
+\end{enumerate}
+
+We will \emph{subset} the data set \texttt{pop} to obtain only the sampled rows listed in \texttt{samp}. We do this using \textbf{square bracket notation} `dataset{[}row number, column number/name{]}. Run the following command to find your sampled words and sizes:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pop[samp,]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+    position size        word
+38        38    5       civil
+154      154    3         can
+229      229    7     resolve
+91        91    4       live.
+129      129   11 consecrated
+140      140    3         The
+185      185    5       nobly
+78        78    7     resting
+105      105    1           a
+258      258    3         the
+\end{verbatim}
+
+What are your sampled words?
+\vspace*{.5in}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Compute your sample mean
+\end{enumerate}
+
+The word lengths in part (b) are the data for your sample. You can compute your sample mean using a calculator, or using R. Let's try R (you will find it faster!). First save the quantitative variable \texttt{size} in a new variable called \texttt{mysize}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mysize }\OtherTok{\textless{}{-}}\NormalTok{ pop[samp, }\StringTok{"size"}\NormalTok{]}
+\NormalTok{mysize}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+ [1]  5  3  7  4 11  3  5  7  1  3
+\end{verbatim}
+
+Then find the mean of these values:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(mysize)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 4.9
+\end{verbatim}
+
+How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?
+
+Click for answer
+
+\emph{Answer:} The true mean is 4.29. Your two means will likely vary. Since the many non-random samples generally overestimated the population mean length, it is possible (but not guaranteed) that \emph{your} one non-random sample gave a mean length that is greater than the random sample's mean length.
+
+\vspace*{1in}
+
+\hypertarget{driving-with-a-pet-on-your-lap}{%
+\section{Driving with a Pet on your Lap}\label{driving-with-a-pet-on-your-lap}}
+
+Over 30,000 people participated in an online poll on \texttt{cnn.com} conducted in April 2012 asking: ``Have you ever driven with a pet on your lap''? We see that 34\% of the participants answered yes and 66\% answered no.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  Can you conclude that a random sample was used from the description given? Explain.
+\end{enumerate}
+
+Click for answer
+
+\emph{Answer:} No you can't make this conclusion from the info given. In fact, an online poll at a website like \texttt{cnn.com} is almost always reporting results from a non-random sample. The people who respond are individuals who visit \texttt{cnn.com}, then see the online poll and decide to respond.
+
+\vspace*{1.5in}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Explain why it is not appropriate to generalize these results to all drivers, or even to all drivers who visit cnn.com.
+\end{enumerate}
+
+Click for answer
+
+\emph{Answer:} This is a volunteer sample, and volunteer samples are often biased and can't be generalized to \emph{all drivers} (the population). It is likely that people who have driven with a pet on their lap are more likely to respond to the poll.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  How might we select a sample of people that would give us results that we can generalize to a broader population?
+\end{enumerate}
+
+Click for answer
+
+\emph{Answer:} A random sample of individuals from all U.S. drivers would need to be selected and given the poll question. (There are many ways to do this, the most common being a variation of random digit dialing where phone numbers are randomly selected from known area codes.)
+
+\vspace*{1in}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Is the variable measured in this study quantitative or categorical?
+\end{enumerate}
+
+Click for answer
+
+\emph{Answer:} Categorical (yes or no answer to the question).
+
+\vspace*{.5in}
+
+\hypertarget{class-activity-3}{%
+\chapter{Class Activity 3}\label{class-activity-3}}
+
+\hypertarget{your-turn-1-1}{%
+\section{Your Turn 1}\label{your-turn-1-1}}
+
+Hello!
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{your-turn-2-2}{%
+\section{Your turn 2}\label{your-turn-2-2}}
+
+\hypertarget{class-activity-4}{%
+\chapter{Class Activity 4}\label{class-activity-4}}
+
+\hypertarget{your-turn-1-2}{%
+\section{Your Turn 1}\label{your-turn-1-2}}
+
+\hypertarget{flowers-v.-mississippi}{%
+\subsection{Flowers v. Mississippi}\label{flowers-v.-mississippi}}
+
+The data set \texttt{APM\_DougEvensCases.csv} contains data from 1517 potential black and white jurors for 66 cases that he was primary prosecutor for between 1992 and 2017. These jurors were available for Doug Evans to strike using his ``peremptory strikes'' during the jury selection phase.
+
+\hypertarget{a-inspect-data}{%
+\subsection{(a) Inspect data}\label{a-inspect-data}}
+
+Read in the data
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{jurors }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/deepbas/statdatasets/main/APM\_DougEvansCases.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Anything after a \# is a comment in R}
+\CommentTok{\# dimension of dataset}
+\FunctionTok{dim}\NormalTok{(jurors)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 1517    6
+\end{verbatim}
+
+Look at the first \textbf{three rows} of the data set
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{jurors[}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{), ]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+  trial__id  race        struck_state defendant_race
+1         4 Black Not struck by State          White
+2         4 Black     Struck by State          White
+3         4 White Not struck by State          White
+       same_race                     struck_by
+1 different race Juror chosen to serve on jury
+2 different race           Struck by the state
+3      same race Juror chosen to serve on jury
+\end{verbatim}
+
+To get the data from one variable, we use the command \texttt{dataset\$variable}. For example, \texttt{jurors\$struck\_state} gives us the data values from the \texttt{struck\_state} variable, which tells us if a juror was struck by the state from the jury pool. Here we can see the first 10 entries in this variable:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{jurors}\SpecialCharTok{$}\NormalTok{struck\_state[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{10}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+ [1] "Not struck by State" "Struck by State"    
+ [3] "Not struck by State" "Not struck by State"
+ [5] "Struck by State"     "Not struck by State"
+ [7] "Struck by State"     "Not struck by State"
+ [9] "Not struck by State" "Not struck by State"
+\end{verbatim}
+
+\hypertarget{b-table-of-counts-and-proportions}{%
+\subsection{(b) Table of counts and proportions}\label{b-table-of-counts-and-proportions}}
+
+The \texttt{summary} command used with a data frame gives summaries of each variable
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(jurors)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+   trial__id         race           struck_state      
+ Min.   :  4.0   Length:1517        Length:1517       
+ 1st Qu.: 52.0   Class :character   Class :character  
+ Median : 82.0   Mode  :character   Mode  :character  
+ Mean   :112.6                                        
+ 3rd Qu.:170.0                                        
+ Max.   :301.0                                        
+ defendant_race      same_race          struck_by        
+ Length:1517        Length:1517        Length:1517       
+ Class :character   Class :character   Class :character  
+ Mode  :character   Mode  :character   Mode  :character  
+                                                         
+                                                         
+                                                         
+\end{verbatim}
+
+The \texttt{table} command gives the distribution of counts for a single categorical variable. To obtain the count table for \texttt{struck\_state} you need to
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{counts }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(jurors}\SpecialCharTok{$}\NormalTok{struck\_state)}
+\NormalTok{counts}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Not struck by State     Struck by State 
+               1084                 433 
+\end{verbatim}
+
+We can add the \texttt{prop.table} command to turn these counts into proportions:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{prop.table}\NormalTok{(counts)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Not struck by State     Struck by State 
+          0.7145682           0.2854318 
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  What proportion of eligible jurors were struck by the state from the jury pool?
+\end{itemize}
+
+\emph{answer:} about 28.5\% of eligible jurors were struck by the state.
+
+\hypertarget{c-bar-graph-for-one-variable}{%
+\subsection{(c) Bar graph for one variable}\label{c-bar-graph-for-one-variable}}
+
+You can create a simple bar graph for one categorical variable with the \texttt{barplot} command. Here we visualize the distribution of struck status for all eligible jurors:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{barplot}\NormalTok{(counts, }\AttributeTok{ylab =} \StringTok{"count"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_4_files/figure-latex/unnamed-chunk-8-1}
+
+\hypertarget{d-two-way-tables}{%
+\subsection{(d) Two-way tables}\label{d-two-way-tables}}
+
+First 10 entries of \texttt{race} and \texttt{struck\_state} variable is
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{jurors[(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{10}\NormalTok{),(}\DecValTok{2}\SpecialCharTok{:}\DecValTok{3}\NormalTok{)]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+    race        struck_state
+1  Black Not struck by State
+2  Black     Struck by State
+3  White Not struck by State
+4  White Not struck by State
+5  Black     Struck by State
+6  White Not struck by State
+7  Black     Struck by State
+8  White Not struck by State
+9  White Not struck by State
+10 White Not struck by State
+\end{verbatim}
+
+The \texttt{table} command also gives two-way tables when two variables are included. Here is the two-way table for juror race and state struck status:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mytable }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(jurors}\SpecialCharTok{$}\NormalTok{race, jurors}\SpecialCharTok{$}\NormalTok{struck\_state)}
+\NormalTok{mytable}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+       
+        Not struck by State Struck by State
+  Black                 225             310
+  White                 859             123
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  How many jurors were white and were not struck by the state?
+\end{itemize}
+
+\emph{answer:} 859
+
+\hypertarget{e-conditional-proportions-state-strike-status-by-juror-race}{%
+\subsection{(e) Conditional proportions: state strike status by juror race}\label{e-conditional-proportions-state-strike-status-by-juror-race}}
+
+The \texttt{prop.table} command gives conditional proportions for a two-way table. We plug our two-way table into \texttt{prop.table} with a \texttt{margin=1} to get proportions grouped by the \textbf{row} variable:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{prop.table}\NormalTok{(mytable, }\AttributeTok{margin =} \DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+       
+        Not struck by State Struck by State
+  Black           0.4205607       0.5794393
+  White           0.8747454       0.1252546
+\end{verbatim}
+
+Of all eligible black jurors, about 57.9\% were struck by the state.
+
+\begin{itemize}
+\tightlist
+\item
+  What proportion of eligible white jurors were struck by the state?
+\end{itemize}
+
+\emph{answer:} about 12.5\%
+
+\begin{itemize}
+\tightlist
+\item
+  Is there evidence of an association between juror race and state strikes?
+\end{itemize}
+
+\emph{answer:} Yes, there is an association because the rate of state strikes varies greatly by juror race with
+about 60\% of black jurors were struck compared to only 13\% of white jurors
+
+\hypertarget{f-stacked-bar-graph-for-two-variables}{%
+\subsection{(f) Stacked bar graph for two variables}\label{f-stacked-bar-graph-for-two-variables}}
+
+We can visualize the conditional distribution from part (e) with a stacked bar graph created using the \texttt{ggplot2} graphing package. First, load this package's functions with the \texttt{library} command:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\end{Highlighting}
+\end{Shaded}
+
+Now we can use the \texttt{geom\_bar} command in this package. Here we get the conditional distribution of \texttt{struck\_state} given \texttt{race}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(jurors, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ race, }\AttributeTok{fill =}\NormalTok{ struck\_state)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{position =} \StringTok{"fill"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"State strikes by juror race"}\NormalTok{, }\AttributeTok{y =} \StringTok{"proportion"}\NormalTok{, }
+       \AttributeTok{x =} \StringTok{"eligible juror race"}\NormalTok{, }\AttributeTok{fill =} \StringTok{"struck by state?"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_4_files/figure-latex/unnamed-chunk-13-1}
+
+The basic syntax for this function is to let \texttt{ggplot} know your data set name (\texttt{jurors}), then specify the grouping or conditional variable on the x-axis (\texttt{race}) in the \texttt{aes} (aesthetic) argument. The \texttt{fill} variable is the response variable (\texttt{struck\_state}). We add (\texttt{+}) the \texttt{geom\_bar} geometry to get a bar graph with the \texttt{fill} position specified. Adding an informative label and title complete the graph.
+
+\hypertarget{non-maize-users-installing-ggplot2}{%
+\subsection{\texorpdfstring{(Non-Maize users) installing \texttt{ggplot2}}{(Non-Maize users) installing ggplot2}}\label{non-maize-users-installing-ggplot2}}
+
+If you are using Rstudio on your \textbf{own computer}, you will first need to \textbf{install} the package but if you are using the Maize (online) Rstudio (or a lab computer) you do not. If you need to install the package:
+
+\begin{itemize}
+\tightlist
+\item
+  Click the \textbf{Packages} tab on the lower right Rstudio pane.
+\item
+  Click \textbf{Install} and type \texttt{ggplot2} into the \textbf{Packages} box.
+\item
+  Click the \textbf{Install} button. You should now see \texttt{ggplot2} in the list of packages.
+\item
+  You only need to install the package once. After than, you run the \texttt{library} command to load the package functions into your current R session.
+\end{itemize}
+
+An alternate way way to install \texttt{ggplot2} from the R console is by using the following command:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"ggplot2"}\NormalTok{, }\AttributeTok{dependencies =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{g-conditional-distribution-of-race-grouped-by-strike-status}{%
+\subsection{(g) Conditional distribution of race grouped by strike status}\label{g-conditional-distribution-of-race-grouped-by-strike-status}}
+
+We can ``flip'' our response and grouping variables easily (if we think it makes sense to do so). Here we specify the \texttt{margin=2} to get proportions grouped by the \textbf{column} variable:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{prop.table}\NormalTok{(mytable, }\AttributeTok{margin =} \DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+       
+        Not struck by State Struck by State
+  Black           0.2075646       0.7159353
+  White           0.7924354       0.2840647
+\end{verbatim}
+
+Notice that the proportions add to one \textbf{down} each column. Of all eligible jurors struck by the state, about 71.6\% were black.
+
+The stacked bar graph for this distribution is
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(jurors, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ struck\_state, }\AttributeTok{fill =}\NormalTok{ race)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{position =} \StringTok{"fill"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Juror race by state strikes"}\NormalTok{, }\AttributeTok{y =} \StringTok{"proportion"}\NormalTok{, }
+       \AttributeTok{fill =} \StringTok{"eligible juror race"}\NormalTok{, }\AttributeTok{x =} \StringTok{"struck by state?"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_4_files/figure-latex/unnamed-chunk-16-1}
+
+\begin{itemize}
+\tightlist
+\item
+  What proportion of eligible jurors who were not struck by the state were black? were white?
+\end{itemize}
+
+\emph{Answer:} Of all jurors not struck by the state, about 20.8\% were black
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{your-turn-2-3}{%
+\section{Your Turn 2}\label{your-turn-2-3}}
+
+\hypertarget{graduate-programs-acceptance-and-sex}{%
+\subsection{Graduate programs acceptance and sex}\label{graduate-programs-acceptance-and-sex}}
+
+How are grad school program acceptance rates associated with sex? We will look at a classic data set from Berkeley grad school applications from 1973 (\emph{Science}, 1975). The data cases are applicants to four graduate programs at Berkeley during 1973. The variable \texttt{result} tells us if the applicant was accepted to the graduate program, \texttt{sex} tells us the sex of the applicant (male or female), and \texttt{program} tells us program type (programs 1,2,3 or 4).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{grad }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/deepbas/statdatasets/main/BerkeleyGrad.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# dimension}
+\FunctionTok{dim}\NormalTok{(grad)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 3014    3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# header}
+\FunctionTok{head}\NormalTok{(grad)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+   program  sex result
+1 program1 male accept
+2 program1 male accept
+3 program1 male accept
+4 program1 male accept
+5 program1 male accept
+6 program1 male accept
+\end{verbatim}
+
+\hypertarget{a-table-of-counts-and-proportions}{%
+\subsection{(a) Table of counts and proportions}\label{a-table-of-counts-and-proportions}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{prop.table}\NormalTok{(}\FunctionTok{table}\NormalTok{(grad}\SpecialCharTok{$}\NormalTok{result))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+   accept    reject 
+0.4260119 0.5739881 
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  What proportion of applicants were accepted?
+\end{itemize}
+
+\emph{Answer:} About 43\% (1284/3014) of applicants were accepted.
+
+\hypertarget{b-two-way-tables}{%
+\subsection{(b) Two-way tables}\label{b-two-way-tables}}
+
+The \texttt{table} command also gives two-way tables when two variables are included. Here is the two-way table for result and sex:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{table}\NormalTok{(grad}\SpecialCharTok{$}\NormalTok{sex, grad}\SpecialCharTok{$}\NormalTok{result)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+        
+         accept reject
+  female    262    587
+  male     1022   1143
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  How many applicants involved females who were accepted?
+\end{itemize}
+
+\emph{Answer:} : 262 applicants involved females who were accepted.
+
+\hypertarget{c-conditional-proportions-acceptance-given-sex}{%
+\subsection{(c) Conditional proportions: acceptance given sex}\label{c-conditional-proportions-acceptance-given-sex}}
+
+The \texttt{prop.table} command gives conditional proportions for a two-way table. First let's save the two-way table in an object named \texttt{mytable}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mytable }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(grad}\SpecialCharTok{$}\NormalTok{sex, grad}\SpecialCharTok{$}\NormalTok{result)}
+\end{Highlighting}
+\end{Shaded}
+
+Then use \texttt{prop.table} to get the distribution of result conditioned (grouped) on applicant's sex:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{prop.table}\NormalTok{(mytable, }\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+        
+            accept    reject
+  female 0.3085984 0.6914016
+  male   0.4720554 0.5279446
+\end{verbatim}
+
+The value of \texttt{1} in this command tell's R that you want \emph{row} proportions (the denominator of the proportion is each row total).
+
+\begin{itemize}
+\tightlist
+\item
+  What proportion of female were accepted?
+\end{itemize}
+
+\emph{Answer:} about 31\% (262/(262+587))
+
+\begin{itemize}
+\tightlist
+\item
+  What proportion of males were accepted?
+\end{itemize}
+
+\emph{Answer:} about 47\% (1022/(1022+1143))
+
+\hypertarget{d-bar-graph-for-one-variable}{%
+\subsection{(d) Bar graph for one variable}\label{d-bar-graph-for-one-variable}}
+
+You can create a simple bar graph for one categorical variable with the \texttt{barplot} command. Here we visualize the distribution of result:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{barplot}\NormalTok{(}\FunctionTok{table}\NormalTok{(grad}\SpecialCharTok{$}\NormalTok{result))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_4_files/figure-latex/unnamed-chunk-24-1}
+
+We can add in a title and x and y axis labels too:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{barplot}\NormalTok{(}\FunctionTok{table}\NormalTok{(grad}\SpecialCharTok{$}\NormalTok{result), }\AttributeTok{xlab=}\StringTok{"application result"}\NormalTok{, }
+        \AttributeTok{ylab=}\StringTok{"Count"}\NormalTok{, }\AttributeTok{main =} \StringTok{"Distribution of Results"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_4_files/figure-latex/unnamed-chunk-25-1}
+
+\hypertarget{e-stacked-bar-graph-for-two-variables}{%
+\subsection{(e) Stacked bar graph for two variables}\label{e-stacked-bar-graph-for-two-variables}}
+
+Now we can use the \texttt{geom\_bar} command in this package. Here we get the conditional distribution of \texttt{result} given \texttt{sex}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2) }\CommentTok{\# don\textquotesingle{}t need if you already entered it for example 1}
+\FunctionTok{ggplot}\NormalTok{(grad, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ sex, }\AttributeTok{fill =}\NormalTok{ result)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{position =} \StringTok{"fill"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{y=}\StringTok{"Proportion"}\NormalTok{, }\AttributeTok{title =} \StringTok{"result by sex"}\NormalTok{, }\AttributeTok{fill =} \StringTok{"result?"}\NormalTok{, }\AttributeTok{x =} \StringTok{"sex"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_4_files/figure-latex/unnamed-chunk-26-1}
+
+The basic syntax for this function is to let \texttt{ggplot} know your data set name (\texttt{grad}), then specify the grouping or conditional variable on the x-axis (\texttt{sex}) in the \texttt{aes} (aesthetic) argument. The \texttt{fill} variable is the response variable (\texttt{result}). We add (\texttt{+}) the \texttt{geom\_bar} geometry to get a bar graph with the \texttt{fill} position specified. Adding an informative label and title complete the graph.
+
+\begin{itemize}
+\tightlist
+\item
+  Verify that this graph is plotting the conditional proportions from part (c)
+\end{itemize}
+
+\hypertarget{f-subsetting-by-program-type}{%
+\subsection{(f) Subsetting by program type}\label{f-subsetting-by-program-type}}
+
+Finally, we will repeat the previous analysis of result and sex, but this time we will divide (or subset) the data set by program type. To do this we need to know how the values of \texttt{program} are coded:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{table}\NormalTok{(grad}\SpecialCharTok{$}\NormalTok{program)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+program1 program2 program3 program4 
+     933      585      782      714 
+\end{verbatim}
+
+Here we use the \texttt{filter} command available from the \texttt{dplyr} package to get only the applicants to program 1:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(dplyr)}
+\NormalTok{grad.p1 }\OtherTok{\textless{}{-}} \FunctionTok{filter}\NormalTok{(grad, program }\SpecialCharTok{==} \StringTok{"program1"}\NormalTok{)  }\CommentTok{\# gets rows where program equal program1}
+\FunctionTok{head}\NormalTok{(grad.p1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+   program  sex result
+1 program1 male accept
+2 program1 male accept
+3 program1 male accept
+4 program1 male accept
+5 program1 male accept
+6 program1 male accept
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dim}\NormalTok{(grad.p1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 933   3
+\end{verbatim}
+
+Verify that the number of rows in the subsetted program 1 data set matches the number of program 1 applicants shown in the \texttt{table} of counts above.
+
+\begin{itemize}
+\tightlist
+\item
+  Repeat the \texttt{filter} command to get a data set for program 2 and call the new data set \texttt{grad.p2}. Verify that the number of rows in this dataset matches the number of program 2 applicants in the original data set.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# enter R code for (f) here}
+\NormalTok{grad.p2 }\OtherTok{\textless{}{-}} \FunctionTok{filter}\NormalTok{(grad, program }\SpecialCharTok{==} \StringTok{"program2"}\NormalTok{) }\CommentTok{\# gets rows where program equal program1}
+\FunctionTok{head}\NormalTok{(grad.p2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+   program  sex result
+1 program2 male accept
+2 program2 male accept
+3 program2 male accept
+4 program2 male accept
+5 program2 male accept
+6 program2 male accept
+\end{verbatim}
+
+\hypertarget{g-result-by-sex-for-program-1.}{%
+\subsection{(g) Result by sex for program 1.}\label{g-result-by-sex-for-program-1.}}
+
+\begin{itemize}
+\tightlist
+\item
+  Show the distribution of result conditioned on applicant's sex for the program 1 data set. Get both a table of conditional proportions (or percentages) and a stacked bar graph.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# enter R code for (g) here}
+\FunctionTok{ggplot}\NormalTok{(grad.p1, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ sex, }\AttributeTok{fill =}\NormalTok{ result)) }\SpecialCharTok{+}
+ \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{position =} \StringTok{"fill"}\NormalTok{) }\SpecialCharTok{+}
+ \FunctionTok{labs}\NormalTok{(}\AttributeTok{y=}\StringTok{"Proportion"}\NormalTok{, }\AttributeTok{title =} \StringTok{"result by sex for program 1"}\NormalTok{,}
+ \AttributeTok{fill =} \StringTok{"result?"}\NormalTok{, }\AttributeTok{x =} \StringTok{"sex"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_4_files/figure-latex/unnamed-chunk-30-1}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{prop.table}\NormalTok{(}\FunctionTok{table}\NormalTok{(grad.p1}\SpecialCharTok{$}\NormalTok{sex, grad.p1}\SpecialCharTok{$}\NormalTok{result),}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+        
+            accept    reject
+  female 0.8240741 0.1759259
+  male   0.6193939 0.3806061
+\end{verbatim}
+
+\hypertarget{h-result-by-sex-for-program-2.}{%
+\subsection{(h) Result by sex for program 2.}\label{h-result-by-sex-for-program-2.}}
+
+\begin{itemize}
+\tightlist
+\item
+  Repeat part (g) but this time use the program 2 data set. Compare the two bar graphs for (g) and (h) and explain how they show that females have a higher acceptance rate after accounting for program type (1 or 2).
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# enter R code for (h) here}
+\FunctionTok{ggplot}\NormalTok{(grad.p2, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ sex, }\AttributeTok{fill =}\NormalTok{ result)) }\SpecialCharTok{+}
+ \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{position =} \StringTok{"fill"}\NormalTok{) }\SpecialCharTok{+}
+ \FunctionTok{labs}\NormalTok{(}\AttributeTok{y=}\StringTok{"Proportion"}\NormalTok{, }\AttributeTok{title =} \StringTok{"result by sex for program 2"}\NormalTok{,}
+ \AttributeTok{fill =} \StringTok{"result?"}\NormalTok{, }\AttributeTok{x =} \StringTok{"sex"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_4_files/figure-latex/unnamed-chunk-32-1}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{prop.table}\NormalTok{(}\FunctionTok{table}\NormalTok{(grad.p2}\SpecialCharTok{$}\NormalTok{sex, grad.p2}\SpecialCharTok{$}\NormalTok{result),}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+        
+            accept    reject
+  female 0.6800000 0.3200000
+  male   0.6285714 0.3714286
+\end{verbatim}
+
+\emph{Answer:} For both programs 1 and 2, we see that female applicants have a slightly higher rate of acceptance
+than male applicants. After accounting for program type, we now see that black defendants have a higher
+rate of death penalty than white defendants. Without accounting for program type, the opposite was true
+(see parts (c) and (e)).
+
+Why? the confounding affect of program type which is associated with both result and sex:
+
+\begin{itemize}
+\tightlist
+\item
+  females prefer to apply to programs 3 and 4 while males prefer programs 1 and 2 (more than 3 and
+  4).
+
+  \begin{itemize}
+  \tightlist
+  \item
+    44\% of females applied to program 3 and 40\% to program 4
+  \item
+    38\% of males applied to program 1 and 26\% to program 2
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{prop.table}\NormalTok{(}\FunctionTok{table}\NormalTok{(grad}\SpecialCharTok{$}\NormalTok{sex, grad}\SpecialCharTok{$}\NormalTok{program), }\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+        
+           program1   program2   program3   program4
+  female 0.12720848 0.02944641 0.44169611 0.40164900
+  male   0.38106236 0.25866051 0.18799076 0.17228637
+\end{verbatim}
+
+-Programs 3 and 4 were much harder to get into than programs 1 and 2
+- 64\% of applicants to program 1 were accepted and 63\% of applicants to program 2 were accepted
+- 6\% of applicants to program 4 were accepted and 34\% of applicants to program 3 were accepted
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{prop.table}\NormalTok{(}\FunctionTok{table}\NormalTok{(grad}\SpecialCharTok{$}\NormalTok{program, grad}\SpecialCharTok{$}\NormalTok{result), }\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+          
+               accept     reject
+  program1 0.64308682 0.35691318
+  program2 0.63076923 0.36923077
+  program3 0.34398977 0.65601023
+  program4 0.06442577 0.93557423
+\end{verbatim}
+
+So since the majority of females applied to the toughest programs (as measured by acceptance rates),
+there overall rate of acceptance was lower for females compared to males. But when we break down
+these rates by program type, we see that females have higher acceptance rates than males (see the
+visual in part (i)).
+
+\hypertarget{i-a-bar-graph-with-three-variables}{%
+\subsection{(i) A bar graph with three variables}\label{i-a-bar-graph-with-three-variables}}
+
+If we simply want to graph the relationship between result and sex for each type of program, we can avoid subsetting the data by using the \texttt{facet\_wrap} command in \texttt{ggplot2}. It is one simple addition to the stacked bar graph in part (e):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(grad, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ sex, }\AttributeTok{fill =}\NormalTok{ result)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{position =} \StringTok{"fill"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{y=}\StringTok{"Proportion"}\NormalTok{, }
+       \AttributeTok{title =} \StringTok{"result by sex for each program"}\NormalTok{, }
+       \AttributeTok{fill =} \StringTok{"result?"}\NormalTok{, }
+       \AttributeTok{x =} \StringTok{"sex"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{facet\_wrap}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{program)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_4_files/figure-latex/unnamed-chunk-36-1}
+
+\begin{itemize}
+\tightlist
+\item
+  Verify that this command creates side-by-side stacked bar graphs that match your graphs in parts (g) and (h) for programs 1 and 2.
+\end{itemize}
+
+\emph{Answer:} The graphs match.
+
+\hypertarget{class-activity-5}{%
+\chapter{Class Activity 5}\label{class-activity-5}}
+
+\hypertarget{your-turn-1-3}{%
+\section{Your Turn 1}\label{your-turn-1-3}}
+
+\hypertarget{hollywood-movies-domestic-gross}{%
+\section{Hollywood Movies Domestic Gross}\label{hollywood-movies-domestic-gross}}
+
+The dataset \texttt{HollywoodMovies2011} provides information on 136 movies that came out of Hollywood in 2011. We will look at the variable \texttt{DomesticGross}, which gives US domestic gross income for a movie from all viewers (in millions of dollars).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{movies }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/deepbas/statdatasets/main/HollywoodMovies2011.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{hist}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{DomesticGross, }\AttributeTok{main=}\StringTok{"Distribution of Domestic Gross"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_5_files/figure-latex/unnamed-chunk-2-1}
+
+\hypertarget{a-describe-the-shape-of-the-distribution.}{%
+\subsection{(a) Describe the shape of the distribution.}\label{a-describe-the-shape-of-the-distribution.}}
+
+\emph{Answer:} Skewed to the right
+
+\hypertarget{b-do-there-appear-to-be-any-outliers-if-so-which-values}{%
+\subsection{(b) Do there appear to be any outliers? If so, which values?}\label{b-do-there-appear-to-be-any-outliers-if-so-which-values}}
+
+\emph{Answer:} Yes, it looks like there are a few high outliers above 300 million.
+
+\hypertarget{c-finding-outliers}{%
+\subsection{(c) Finding outliers}\label{c-finding-outliers}}
+
+We can find the row numbers of cases (movies) that have \texttt{DomesticGross} greater than 300 (300 million dollars):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{which}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{DomesticGross }\SpecialCharTok{\textgreater{}} \DecValTok{300}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1]  4 14
+\end{verbatim}
+
+Run the \texttt{which} command to verify that rows 4 and 14. Then find out which movies these are by subsetting the data frame:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{movies[}\FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{,}\DecValTok{14}\NormalTok{), ]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+                                         Movie
+4  Harry Potter and the Deathly Hallows Part 2
+14              Transformers: Dark of the Moon
+            LeadStudio RottenTomatoes AudienceScore   Story
+4          Warner Bros             96            92 Rivalry
+14 DreamWorks Pictures             35            67   Quest
+     Genre TheatersOpenWeek BOAverageOpenWeek DomesticGross
+4  Fantasy             4375             38672        381.01
+14  Action             4088             23937        352.39
+   ForeignGross WorldGross Budget Profitability
+4        947.10   1328.111    125     10.624888
+14       770.81   1123.195    195      5.759974
+   OpeningWeekend
+4          169.19
+14          97.85
+\end{verbatim}
+
+Note that the \texttt{c(4,14)} part of this command creates a \textbf{vector} of the numbers 4 and 14 (the \texttt{c} stands for combine). Which movies are the outliers?
+
+\emph{Answer:} Harry Potter and the Deathly Hallows Part 2 and Transformers: Dark of the Moon.
+
+\hypertarget{d-use-the-histogram-to-answer-is-the-median-less-than-100-million-about-100-million-above-100-million}{%
+\subsection{(d) Use the histogram to answer: Is the median less than 100 million, about 100 million, above 100 million?}\label{d-use-the-histogram-to-answer-is-the-median-less-than-100-million-about-100-million-above-100-million}}
+
+\emph{Answer:} It is the point with half the data to the left and half to the right. The median is less than 100
+since 100 roughly 110 (80 + 30) cases below it which is well over half the movies in the data set.
+
+\hypertarget{e-do-you-expect-the-mean-to-be-greater-than-or-less-than-the-median.-explain.}{%
+\subsection{(e) Do you expect the mean to be greater than or less than the median. Explain.}\label{e-do-you-expect-the-mean-to-be-greater-than-or-less-than-the-median.-explain.}}
+
+\emph{Answer:} Because the distribution is skewed to the right, we expect the mean to be larger than the median.
+The large outliers will pull the mean up and won't have much effect on the median.
+
+\hypertarget{f-computing-the-mean-and-median}{%
+\subsection{(f) Computing the mean and median}\label{f-computing-the-mean-and-median}}
+
+You can get the mean and median a number of ways. Run these three commands:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{DomesticGross)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] NA
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{median}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{DomesticGross)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] NA
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{DomesticGross)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+   0.02   19.03   37.35   63.22   80.46  381.01       2 
+\end{verbatim}
+
+What does \texttt{NA} stand for? How many movies have missing \texttt{DomesticGross}? You can subset the data to show you which cases have \texttt{NA} values for \texttt{DomesticGross}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{movies[}\FunctionTok{is.na}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{DomesticGross), ]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+                              Movie LeadStudio
+134                            Hugo  Paramount
+136 Never Back Down 2: The Beatdown       Sony
+    RottenTomatoes AudienceScore   Story     Genre
+134             93            84         Adventure
+136             NA            44 Rivalry    Action
+    TheatersOpenWeek BOAverageOpenWeek DomesticGross
+134             1277              8899            NA
+136               NA                NA            NA
+    ForeignGross WorldGross Budget Profitability
+134           NA         NA     NA            NA
+136           NA         NA      3             0
+    OpeningWeekend
+134          11.36
+136           8.60
+\end{verbatim}
+
+\emph{Answer:} The \texttt{NA} value stands for ``Not Available'' which is used to code missing values. We can inspect the data frame and see that Hugo and Never Back Down 2 are the two movies that do not have domestic
+gross values.
+
+\hypertarget{g-missing-data}{%
+\subsection{(g) Missing data}\label{g-missing-data}}
+
+There are some commands in R that ``fail'' as a default when missing data (\texttt{NA}) are present (\texttt{mean}, \texttt{median} and \texttt{sd} are examples). We can easily turn off this failure feature with the argument \texttt{na.rm=TRUE}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{DomesticGross, }\AttributeTok{na.rm=}\ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 63.22276
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{median}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{DomesticGross, }\AttributeTok{na.rm=}\ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 37.355
+\end{verbatim}
+
+\hypertarget{h-stats-without-outliers}{%
+\subsection{(h) Stats without outliers}\label{h-stats-without-outliers}}
+
+There are a number of ways to ``remove'' outliers from an analysis. Here we use the square bracket \texttt{{[}{]}} notation along with a minus \texttt{-} to remove row 4 (Harry Potter) from the variable \texttt{DomesticGross} before our summary stat calculations:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{DomesticGross[}\SpecialCharTok{{-}}\DecValTok{4}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+   0.02   18.88   37.30   60.83   80.36  352.39       2 
+\end{verbatim}
+
+Why does the mean change more than the median when this case is removed? (compare (g) and (h) mean and median values)
+
+\emph{Answer:} Both values go down after removing the highest grossing movie of the year, but the drop in the mean is more substantial. The mean drops by almost 4\% when Harry Potter is removed while the median only drops by about 0.1\%.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{100}\SpecialCharTok{*}\NormalTok{(}\FloatTok{60.83} \SpecialCharTok{{-}} \FloatTok{63.22276}\NormalTok{)}\SpecialCharTok{/}\FloatTok{63.22276} \CommentTok{\# percent change in the mean}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] -3.78465
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{100}\SpecialCharTok{*}\NormalTok{(}\FloatTok{37.30} \SpecialCharTok{{-}} \FloatTok{37.355}\NormalTok{)}\SpecialCharTok{/}\FloatTok{37.355} \CommentTok{\# percent change in the median}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] -0.147236
+\end{verbatim}
+
+\hypertarget{i-computing-standard-deviation}{%
+\subsection{(i) Computing standard deviation}\label{i-computing-standard-deviation}}
+
+The standard deviation command is \texttt{sd}. We need to add the \texttt{na.rm} argument to obtain the SD for \texttt{DomesticGross}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sd}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{DomesticGross, }\AttributeTok{na.rm=}\ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 69.41799
+\end{verbatim}
+
+Look again at the distribution of \texttt{DomesticGross} shown in the histogram. Why is SD (variation around the mean) an inadequate measure of variation for this type of distribution?
+
+\emph{Answer:} The is much more variation (spread) to the data above the mean than below it. Because the distribution is strongly skewed right, we can't use one measure of variation when describing how \texttt{DomesticGross} values vary around some central value (like a mean).
+
+\hypertarget{j-stats-by-genre}{%
+\subsection{\texorpdfstring{(j) Stats by \texttt{Genre}}{(j) Stats by Genre}}\label{j-stats-by-genre}}
+
+The \texttt{tapply(y,\ x,\ stat)} command gives the \texttt{stat} value of \texttt{y} for each level of \texttt{x}. Here we get the \texttt{summary} of \texttt{DomesticGross} for each type of \texttt{Genre}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{tapply}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{DomesticGross, movies}\SpecialCharTok{$}\NormalTok{Genre, summary)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+$Action
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+   0.54   24.96   40.26   91.02  161.53  352.39       1 
+
+$Adventure
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+     NA      NA      NA     NaN      NA      NA       1 
+
+$Animation
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  21.39   51.41  115.67  104.62  142.86  191.45 
+
+$Comedy
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   5.79   23.21   37.41   56.51   69.75  254.46 
+
+$Drama
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   0.38    4.40   13.30   32.37   51.16  169.22 
+
+$Fantasy
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   1.32   96.24  191.16  191.16  286.09  381.01 
+
+$Horror
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   0.02   17.69   24.05   34.87   38.18  127.00 
+
+$Romance
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   0.03   18.51   39.05   61.40   70.26  260.80 
+
+$Thriller
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   0.02   31.18   40.49   41.44   62.50   79.25 
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Which movies genre has the highest median domestic gross?
+\item
+  Why are there no summary stats for the adventure genre?
+\end{itemize}
+
+\emph{Answer:} To help answer these questions you really should explore the number of movies in each genrewith the table command.
+
+\begin{itemize}
+\item
+  The fantasy genre has the highest median domestic gross (\(\$381\) million). But note that only two movies have this classification in 2011. The action genre was second highest at \(\$352\) million and there were 12 movies in this category.
+\item
+  The adventure genre only has one movie (Hugo) and this movie is also missing a value for \texttt{DomesticGross}!
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{table}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{Genre)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+   Action Adventure Animation    Comedy     Drama   Fantasy 
+       32         1        12        27        21         2 
+   Horror   Romance  Thriller 
+       17        11        13 
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{which}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{Genre }\SpecialCharTok{==} \StringTok{"Adventure"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 134
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{movies[}\DecValTok{134}\NormalTok{, ]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+    Movie LeadStudio RottenTomatoes AudienceScore Story
+134  Hugo  Paramount             93            84      
+        Genre TheatersOpenWeek BOAverageOpenWeek
+134 Adventure             1277              8899
+    DomesticGross ForeignGross WorldGross Budget
+134            NA           NA         NA     NA
+    Profitability OpeningWeekend
+134            NA          11.36
+\end{verbatim}
+
+\hypertarget{k-extra-histogram-of-domesticgross-by-genre}{%
+\subsection{\texorpdfstring{(k) Extra: Histogram of \texttt{DomesticGross} by \texttt{Genre}}{(k) Extra: Histogram of DomesticGross by Genre}}\label{k-extra-histogram-of-domesticgross-by-genre}}
+
+(Not in Lab Manual) The \texttt{ggplot2} package allows you to create histograms separated by a categorical variable using the \texttt{facet\_wrap} command. Assuming that \texttt{ggplot2} is already installed, all you need to do is load it with \texttt{library} then create your graph:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\FunctionTok{ggplot}\NormalTok{(movies, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{DomesticGross)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_histogram}\NormalTok{() }\SpecialCharTok{+} 
+  \FunctionTok{facet\_wrap}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{Genre)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_5_files/figure-latex/unnamed-chunk-15-1}
+
+Which genre has the most variability in domestic gross?
+
+\emph{Answer:} The action genre has the largest range of values.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{your-turn-2-4}{%
+\section{Your turn 2}\label{your-turn-2-4}}
+
+\hypertarget{example-2-sleep}{%
+\section{Example 2: Sleep}\label{example-2-sleep}}
+
+This histogram shows the distribution of hours or sleep per night for a large sample of students.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sleep }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/deepbas/statdatasets/main/SleepStudy.csv"}\NormalTok{)}
+\FunctionTok{hist}\NormalTok{(sleep}\SpecialCharTok{$}\NormalTok{AverageSleep, }\AttributeTok{main=}\StringTok{"Distribution of Sleep Hours"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_5_files/figure-latex/unnamed-chunk-16-1}
+
+\hypertarget{a-estimate-the-average-hours-of-sleep-per-night.}{%
+\subsection{(a) Estimate the average hours of sleep per night.}\label{a-estimate-the-average-hours-of-sleep-per-night.}}
+
+\emph{Answer:} The mean is around 8 hours
+
+\hypertarget{b-use-the-95-rule-to-estimate-the-standard-deviation-for-this-data.}{%
+\subsection{(b) Use the 95\% rule to estimate the standard deviation for this data.}\label{b-use-the-95-rule-to-estimate-the-standard-deviation-for-this-data.}}
+
+\emph{Answer:} Most of the data is between about 6 and 10, with a mean around 8 (due to the roughly symmetric distribution). So two standard deviations is about 2 hours of sleep, making one standard deviation about 1 hours of sleep.
+
+Let's check the rule. Here are the actual mean and SD:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(sleep}\SpecialCharTok{$}\NormalTok{AverageSleep)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 7.965929
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sd}\NormalTok{(sleep}\SpecialCharTok{$}\NormalTok{AverageSleep)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.9648396
+\end{verbatim}
+
+\hypertarget{example-3-z-scores-for-test-scores}{%
+\section{Example 3: Z-scores for Test Scores}\label{example-3-z-scores-for-test-scores}}
+
+The ACT test has a population mean of 21 and standard deviation of 5. The SAT has a population mean of 1500 and a standard deviation of 325. You earned 28 on the ACT and 2100 on the SAT.
+
+\hypertarget{a-which-test-did-you-do-better-on}{%
+\subsection{(a) Which test did you do better on?}\label{a-which-test-did-you-do-better-on}}
+
+\emph{Answer:}
+
+\begin{itemize}
+\tightlist
+\item
+  ACT: The z-score for the score of 28 is \(z = (28 - 21)/5 = 1.4.\)
+\item
+  SAT: The z-score for the score of 2100 is \(z = (2100 - 1500)/325 = 1.85.\)
+\item
+  The SAT score is 1.85 standard deviations above average while the ACT score is only 1.4 standard deviations above. You did better on the SAT.
+\end{itemize}
+
+\hypertarget{b-for-each-test-find-the-interval-that-is-likely-to-contain-about-95-of-all-test-scores.}{%
+\subsection{(b) For each test, find the interval that is likely to contain about 95\% of all test scores.}\label{b-for-each-test-find-the-interval-that-is-likely-to-contain-about-95-of-all-test-scores.}}
+
+\emph{Answer:}
+
+\begin{itemize}
+\item
+  ACT: Two standard deviations is \(2(5) = 10.\) About 95\% of ACT scores are between \(28 - 10 = 13\) and \(28 + 10 = 38.\) This claim assumes that ACT scores follow a bell-shaped distribution.
+\item
+  SAT: Two standard deviations is \(2(325) = 650.\) About 95\% of SAT scores are between \(1500 - 650 = 850\) and \(1500 + 650 = 2150\). This claim assumes that SAT scores follow a bell-shaped distribution.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{example-4-5-number-summaries}{%
+\section{Example 4: 5 number summaries}\label{example-4-5-number-summaries}}
+
+For each five number summary below, indicate whether the data appear to be symmetric, skewed to the right, or skewed to the left.
+
+\hypertarget{a-2-10-15-20-69}{%
+\subsection{(a) (2, 10, 15, 20, 69)}\label{a-2-10-15-20-69}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{my\_vector1 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{15}\NormalTok{, }\DecValTok{20}\NormalTok{, }\DecValTok{69}\NormalTok{)}
+\FunctionTok{summary}\NormalTok{(my\_vector1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+      1      10      15      23      20      69 
+\end{verbatim}
+
+\emph{Answer:} Skewed right. It has a longer right tail than left since \(max - Q3 >> Q1 - min\)
+
+\hypertarget{b-10-57-85-88-93}{%
+\subsection{(b) (10, 57, 85, 88, 93)}\label{b-10-57-85-88-93}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{my\_vector2 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{57}\NormalTok{, }\DecValTok{85}\NormalTok{, }\DecValTok{88}\NormalTok{, }\DecValTok{93}\NormalTok{)}
+\FunctionTok{summary}\NormalTok{(my\_vector2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   10.0    57.0    85.0    66.6    88.0    93.0 
+\end{verbatim}
+
+\emph{Answer:} Skewed left since mean is less than median.
+
+\hypertarget{c-200-300-400-500-600}{%
+\subsection{(c) (200, 300, 400, 500, 600)}\label{c-200-300-400-500-600}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{my\_vector3 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{200}\NormalTok{, }\DecValTok{300}\NormalTok{, }\DecValTok{400}\NormalTok{, }\DecValTok{500}\NormalTok{, }\DecValTok{600}\NormalTok{)}
+\FunctionTok{summary}\NormalTok{(my\_vector3)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    200     300     400     400     500     600 
+\end{verbatim}
+
+\emph{Answer:} Symmetric since mean is same as median.
+
+\hypertarget{example-5-hot-dog}{%
+\section{Example 5: Hot dog}\label{example-5-hot-dog}}
+
+This boxplot shows the number of hot dogs eaten by the winners of Nathan's Famous hot dog eating contests from 2002-2011.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{hotdogs }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/deepbas/statdatasets/main/HotDogs.csv"}\NormalTok{)}
+\FunctionTok{boxplot}\NormalTok{(hotdogs}\SpecialCharTok{$}\NormalTok{HotDogs, }\AttributeTok{xlab=}\StringTok{"Number of Hot Dogs Consumed"}\NormalTok{, }\AttributeTok{horizontal=}\NormalTok{T)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_5_files/figure-latex/unnamed-chunk-22-1}
+
+\hypertarget{a-use-the-boxplot-to-estimate-the-5-number-summary-and-iqr-for-this-data.}{%
+\subsection{(a) Use the boxplot to estimate the 5 number summary and IQR for this data.}\label{a-use-the-boxplot-to-estimate-the-5-number-summary-and-iqr-for-this-data.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(hotdogs}\SpecialCharTok{$}\NormalTok{HotDogs, }\AttributeTok{xlab=}\StringTok{"Number of Hot Dogs Consumed"}\NormalTok{, }\AttributeTok{horizontal=}\NormalTok{T)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_5_files/figure-latex/unnamed-chunk-23-1}
+
+\emph{Answer:} min = 45, Q1 = 50, m = 54, Q3 = 62, max = 67. IQR is about 62-50 or 12 hotdogs
+
+\hypertarget{b-computing-5-number-summaries}{%
+\subsection{(b) Computing 5 number summaries}\label{b-computing-5-number-summaries}}
+
+R doesn't have `5 number summary' command, but \texttt{summary} gives you a ``6'' number summary by adding the mean to the 5 number summary. You can also use \texttt{IQR} to get the IQR:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(hotdogs}\SpecialCharTok{$}\NormalTok{HotDogs)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  45.00   54.00   60.00   58.64   65.00   69.00 
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{IQR}\NormalTok{(hotdogs}\SpecialCharTok{$}\NormalTok{HotDogs)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 11
+\end{verbatim}
+
+How close were your guesses from the boxplot to the values given by this command?
+
+(Answers will vary) Within one hotdog of the R values.
+
+\hypertarget{c-use-the-boxplot-outlier-rule-to-verify-that-there-are-no-outliers-in-this-data.}{%
+\subsection{(c) Use the boxplot outlier rule to verify that there are no outliers in this data.}\label{c-use-the-boxplot-outlier-rule-to-verify-that-there-are-no-outliers-in-this-data.}}
+
+\emph{Answer:}
+
+\begin{itemize}
+\tightlist
+\item
+  \(1.5IQR = 18\) hotdogs.
+\item
+  Lower fence: \(Q1 - 1.5 IQR = 50 - 18 = 32 < min\) so there are no low outliers.
+\item
+  Upper fence: \(Q3 + 1.5 IQR = 62 + 18 = 80 > max\) so there are no high outliers.
+\end{itemize}
+
+\hypertarget{examples-6-hollywood-movies-world-gross-revisited}{%
+\section{Examples 6: Hollywood Movies World Gross revisited}\label{examples-6-hollywood-movies-world-gross-revisited}}
+
+Let's revist the \texttt{WorldGross} analysis from the Hollywood movies data set:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{movies }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/deepbas/statdatasets/main/HollywoodMovies2011.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{a-draw-a-boxplot-of-worldgross.}{%
+\subsection{\texorpdfstring{(a) Draw a boxplot of \texttt{WorldGross}.}{(a) Draw a boxplot of WorldGross.}}\label{a-draw-a-boxplot-of-worldgross.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{WorldGross)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_5_files/figure-latex/unnamed-chunk-26-1}
+
+How many movies are identified as outliers for world gross?
+
+\emph{Answer:} Just using the boxplot, there looks to be about 10 movies that are high outliers
+
+\hypertarget{b-calculating-boxplot-values}{%
+\subsection{(b) Calculating boxplot values}\label{b-calculating-boxplot-values}}
+
+Use the boxplot outlier rule to find the ``fence'' (cutoff) between an outlier and non-outlier for \texttt{WorldGross}. Then determine the value (of \texttt{WorldGross}) that the upper ``whisker'' (non-outlier) extends to.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{WorldGross)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+    Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
+   0.025   30.706   76.659  150.742  173.691 1328.111 
+    NA's 
+       2 
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{IQR}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{WorldGross, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 142.985
+\end{verbatim}
+
+\begin{itemize}
+\item
+  \(1.5IQR = 1.5(142.985) = 214.48\) hundred million dollars
+\item
+  Lower fence: \(Q1 - 1.5IQR = 30.710 - 214.48 = -183.8 < min\) so there are no low outliers.
+\item
+  Upper fence: \(Q3 + 1.5IQR = 173.7 + 214.48 = 388.18 < max\) so there are high outliers.
+\item
+  The upper whisker extends to the largest movie value that is below the fence of 388.18. You could look at the data spreadsheet and find which movie comes closest to this fence, but a quicker way is to use R. First we can use which to find out the row numbers of the movies with less than 388.18 in WorldGross. Then use this set to find out the max of the WorldGross within this group of movies, which turns out to be 368.404 hundred million dollars.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FloatTok{1.5}\SpecialCharTok{*}\FunctionTok{IQR}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{WorldGross, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 214.4775
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FloatTok{30.710} \SpecialCharTok{{-}} \FloatTok{214.48}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] -183.77
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FloatTok{173.7} \SpecialCharTok{+} \FloatTok{214.48}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 388.18
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{notoutliers }\OtherTok{\textless{}{-}} \FunctionTok{which}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{WorldGross }\SpecialCharTok{\textless{}} \FloatTok{388.18}\NormalTok{)}
+\FunctionTok{max}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{WorldGross[notoutliers])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 368.404
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{which}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{WorldGross }\SpecialCharTok{==} \FloatTok{368.404}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 49
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{movies[}\DecValTok{49}\NormalTok{,]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+                                Movie LeadStudio
+49 Captain America: The First Avenger     Disney
+   RottenTomatoes AudienceScore         Story  Genre
+49             78            75 Metamorphosis Action
+   TheatersOpenWeek BOAverageOpenWeek DomesticGross
+49             3715             17512        176.65
+   ForeignGross WorldGross Budget Profitability
+49       191.75    368.404    140      2.631457
+   OpeningWeekend
+49          65.06
+\end{verbatim}
+
+\hypertarget{c-side-by-side-boxplot}{%
+\subsection{(c) Side-by-side boxplot}\label{c-side-by-side-boxplot}}
+
+We can compare boxplots of \texttt{WorldGross} across \texttt{Genre} categories:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(WorldGross }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Genre, }\AttributeTok{data=}\NormalTok{movies)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_5_files/figure-latex/unnamed-chunk-30-1}
+
+\begin{itemize}
+\tightlist
+\item
+  What does this type of graph illustrate well about the relationship between \texttt{WorldGross} and \texttt{Genre}?
+\end{itemize}
+
+\emph{Answer:} Does a good job comparing median values and extremes
+
+\begin{itemize}
+\tightlist
+\item
+  What does this type of graph not illustrate well about the relationship between \texttt{WorldGross} and \texttt{Genre}?
+\end{itemize}
+
+\emph{Answer:} It doesn't illustrate sample sizes well, e.g.~the fantacy genre only has 2 movies in it
+
+\begin{itemize}
+\tightlist
+\item
+  What is one issue with the default version of this graph?
+\end{itemize}
+
+\emph{Answer:} The genre labels are not all present.
+
+\hypertarget{d-improving-the-default-boxplot}{%
+\subsection{(d) Improving the default boxplot}\label{d-improving-the-default-boxplot}}
+
+There are many values in \texttt{Genre} for this data and their values (levels) have longer names. This can cause issues when using these names to label graphs, like the x-axis in your boxplot. The are many (many, many) ways to modify graphs in R. Here is one way to change the label orientation on your x-axis.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(WorldGross }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Genre, }\AttributeTok{data=}\NormalTok{movies, }\AttributeTok{las=}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_5_files/figure-latex/unnamed-chunk-31-1}
+
+The \texttt{las} arguments let's you change the orientation of the axis labels relative to the axis. The value of 2 makes the labels perpendicular to the axis.
+
+\hypertarget{example-8-ants-on-a-sandwich}{%
+\section{Example 8: Ants on a Sandwich}\label{example-8-ants-on-a-sandwich}}
+
+The number of ants climbing on a piece of a peanut butter sandwich left on the ground near an anthill for a few minutes was measured 7 different times and the results are:
+\(43, 59, 22, 25, 36, 47, 19\)
+
+\hypertarget{a-calculate-the-mean-number-of-ants.}{%
+\subsection{(a) Calculate the mean number of ants.}\label{a-calculate-the-mean-number-of-ants.}}
+
+\emph{Answer:} \(\bar{x} = 35.857\)
+
+\hypertarget{b-calculate-the-median-number-of-ants.}{%
+\subsection{(b) Calculate the median number of ants.}\label{b-calculate-the-median-number-of-ants.}}
+
+\emph{Answer:} Order data then find middle value: \(19, 22, 25, 36, 43, 47, 59\). Then \(m = 36\)
+
+\hypertarget{c-calculate-the-quartiles-for-the-number-of-ants.}{%
+\subsection{(c) Calculate the quartiles for the number of ants.}\label{c-calculate-the-quartiles-for-the-number-of-ants.}}
+
+\emph{Answer:} Since \(m = 36\), the first quartile will be the median of \(19, 22, 25: Q1 = 22.\) The third quartile will be the median of \(43, 47, 59: Q3 = 47.\)
+
+\hypertarget{class-activity-6}{%
+\chapter{Class Activity 6}\label{class-activity-6}}
+
+\hypertarget{your-turn-1-4}{%
+\section{Your Turn 1}\label{your-turn-1-4}}
+
+\hypertarget{beer-example}{%
+\subsection{Beer Example}\label{beer-example}}
+
+A study of 16 Ohio State University students looked at the relationship between the number of beers a student consumes and their blood alcohol content (BAC) 30 minutes after their last beer. The regression information from R to predict BAC from number of beers consumed is given below.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bac }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"http://math.carleton.edu/kstclair/data/BAC.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{a-always-start-with-a-visual}{%
+\subsection{(a) Always start with a visual!!!!}\label{a-always-start-with-a-visual}}
+
+Plot the response (BAC) on the y-axis and the explantory (``predictor'') on the x-axis.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(BAC }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Beers, }\AttributeTok{data=}\NormalTok{bac)  }
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_6_files/figure-latex/unnamed-chunk-2-1}
+
+\begin{itemize}
+\tightlist
+\item
+  Is there a relationship?
+
+  \begin{itemize}
+  \tightlist
+  \item
+    direction?
+  \item
+    strength?
+  \item
+    form?
+  \end{itemize}
+\end{itemize}
+
+You can modify this basic graph by adding a title and changing the plotting symbol. The \texttt{pch=19} argument changes the symbols to filled circles.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(BAC }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Beers, }\AttributeTok{data=}\NormalTok{bac, }\AttributeTok{pch=}\DecValTok{19}\NormalTok{, }
+     \AttributeTok{main=}\StringTok{"Beer and BAC"}\NormalTok{, }\AttributeTok{xlab=}\StringTok{"Number of beers drank"}\NormalTok{, }\AttributeTok{ylab =} \StringTok{"Blood Alcohol Content"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_6_files/figure-latex/unnamed-chunk-3-1}
+
+\hypertarget{b-computing-correlation}{%
+\subsection{(b) Computing correlation}\label{b-computing-correlation}}
+
+Since the \emph{form} of the relationship is linear, we can use \textbf{correlation} to measure its strength:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cor}\NormalTok{(bac}\SpecialCharTok{$}\NormalTok{BAC, bac}\SpecialCharTok{$}\NormalTok{Beers)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.8943381
+\end{verbatim}
+
+\hypertarget{c-fitting-a-regression-line}{%
+\subsection{(c) Fitting a regression line}\label{c-fitting-a-regression-line}}
+
+We use the \texttt{lm(y\ \textasciitilde{}\ x,\ data=mydata)} function to fit a \textbf{l}inear (regression) \textbf{m}odel for a response y given an explanatory variable x. This command creates a \textbf{linear model object} that needs to be assigned a name, here we call it \texttt{bac.lm}. You can get the slope and intercept by typing out the object name:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bac.lm }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(BAC }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Beers, }\AttributeTok{data=}\NormalTok{bac)}
+\NormalTok{bac.lm}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Call:
+lm(formula = BAC ~ Beers, data = bac)
+
+Coefficients:
+(Intercept)        Beers  
+   -0.01270      0.01796  
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  After running the \texttt{lm} command above in your R console, check the \textbf{Environment} tab to see that the object \texttt{bac.lm} is now one of the objects stored in R's memory (for this session of Rstudio).
+\item
+  Write down the fitted regression equation to predict BAC from number of beers.
+\end{itemize}
+
+\emph{Answer:} \(\hat{y} = \ldots\)
+
+\begin{itemize}
+\tightlist
+\item
+  You can add this regression line to your scatterplot from part (a) by creating the plot and using the \texttt{abline} command:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Need to call the plot function again!!}
+
+\FunctionTok{plot}\NormalTok{(BAC }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Beers, }\AttributeTok{data=}\NormalTok{bac, }\AttributeTok{pch=}\DecValTok{19}\NormalTok{, }
+     \AttributeTok{main=}\StringTok{"Beer and BAC"}\NormalTok{, }\AttributeTok{xlab=}\StringTok{"Number of beers drank"}\NormalTok{, }\AttributeTok{ylab =} \StringTok{"Blood Alcohol Content"}\NormalTok{)}
+\FunctionTok{abline}\NormalTok{(bac.lm) }\CommentTok{\# adds regression line to the plot above}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_6_files/figure-latex/unnamed-chunk-6-1}
+
+\hypertarget{d-interpret-the-slope-in-context.}{%
+\subsection{(d) Interpret the slope in context.}\label{d-interpret-the-slope-in-context.}}
+
+\emph{Answer:} Drinking one more beer is associated with a 0.0180 unit increase in predicted BAC.
+
+\hypertarget{e-interpret-the-intercept-in-context-if-it-makes-sense-to-do-so.}{%
+\subsection{(e) Interpret the intercept in context, if it makes sense to do so.}\label{e-interpret-the-intercept-in-context-if-it-makes-sense-to-do-so.}}
+
+\emph{Answer:} The intercept is -0.0127. A student who drinks 0 beers would be predicted to have a negative blood alcohol content. This is not possible so the intercept does not make sense in this context, but the intercept is included in the model to get the best fit line for the data collected.
+
+\hypertarget{f-if-your-friend-at-ohio-state-drank-2-beers-what-would-you-predict-their-bac-to-be}{%
+\subsection{(f) If your friend at Ohio State drank 2 beers, what would you predict their BAC to be?}\label{f-if-your-friend-at-ohio-state-drank-2-beers-what-would-you-predict-their-bac-to-be}}
+
+\emph{Answer:} The predicted BAC is
+\[
+\widehat{BAC} = -0.0127 + 0.0180(2) = 0.0233.
+\]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{y.hat }\OtherTok{\textless{}{-}} \SpecialCharTok{{-}}\FloatTok{0.0127} \SpecialCharTok{+} \FloatTok{0.0180}\SpecialCharTok{*}\NormalTok{(}\DecValTok{2}\NormalTok{) }
+\NormalTok{y.hat}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.0233
+\end{verbatim}
+
+\hypertarget{g-find-the-residual-for-the-student-in-the-dataset-who-drank-2-beers-and-had-a-bac-of-0.03.}{%
+\subsection{(g) Find the residual for the student in the dataset who drank 2 beers and had a BAC of 0.03.}\label{g-find-the-residual-for-the-student-in-the-dataset-who-drank-2-beers-and-had-a-bac-of-0.03.}}
+
+\emph{Answer:} The residual is
+\[
+BAC - \widehat{BAC} = .03 - .0233=0.0067
+\]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FloatTok{0.03} \SpecialCharTok{{-}}\NormalTok{ (}\SpecialCharTok{{-}}\FloatTok{0.0127} \SpecialCharTok{+} \FloatTok{0.0180}\SpecialCharTok{*}\NormalTok{(}\DecValTok{2}\NormalTok{)) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.0067
+\end{verbatim}
+
+\hypertarget{h-getting-residuals-in-r}{%
+\subsection{(h) Getting residuals in R}\label{h-getting-residuals-in-r}}
+
+We can use the \texttt{resid} command to get the residuals for each case in the data set:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# part h}
+\FunctionTok{resid}\NormalTok{(bac.lm)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+           1            2            3            4 
+ 0.022881795  0.006773080  0.041026747 -0.011009491 
+           5            6            7            8 
+-0.001190682 -0.018045729  0.028809318 -0.017118205 
+           9           10           11           12 
+-0.021190682 -0.027118205  0.010845557  0.004918033 
+          13           14           15           16 
+ 0.007881795 -0.023045729  0.004736842 -0.009154443 
+\end{verbatim}
+
+Notice that case 2 in the data drank 2 beers and had a BAC recorded as 0.03. We can see that their residual value matches our answer to (g) up to some rounding error.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# part h}
+\NormalTok{bac}\SpecialCharTok{$}\NormalTok{BAC[}\DecValTok{2}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.03
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bac}\SpecialCharTok{$}\NormalTok{Beers[}\DecValTok{2}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{resid}\NormalTok{(bac.lm)[}\DecValTok{2}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+         2 
+0.00677308 
+\end{verbatim}
+
+\hypertarget{i-getting-r2-value}{%
+\subsection{\texorpdfstring{(i) Getting \(R^2\) value}{(i) Getting R\^{}2 value}}\label{i-getting-r2-value}}
+
+You can use the \texttt{summary} command on an \texttt{lm} object to get a more detailed print out of your linear model, along with the \(R^2\) value for your model:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(bac.lm)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Call:
+lm(formula = BAC ~ Beers, data = bac)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.027118 -0.017350  0.001773  0.008623  0.041027 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -0.012701   0.012638  -1.005    0.332    
+Beers        0.017964   0.002402   7.480 2.97e-06 ***
+---
+Signif. codes:  
+0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.02044 on 14 degrees of freedom
+Multiple R-squared:  0.7998,    Adjusted R-squared:  0.7855 
+F-statistic: 55.94 on 1 and 14 DF,  p-value: 2.969e-06
+\end{verbatim}
+
+\hypertarget{j-making-a-residuals-plot}{%
+\subsection{(j) Making a residuals plot}\label{j-making-a-residuals-plot}}
+
+The regression of \texttt{BAC} on \texttt{Beers} has a residuals plot that plots the model's residuals on the y-axis and the explantory (``predictor'') on the x-axis. We add a horizontal reference line (the detrended regression line) with the \texttt{abline(h=0)} command:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# code for residual plot}
+\FunctionTok{plot}\NormalTok{(}\FunctionTok{resid}\NormalTok{(bac.lm) }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Beers, }\AttributeTok{data=}\NormalTok{bac, }\AttributeTok{pch=}\DecValTok{19}\NormalTok{, }\AttributeTok{main =} \StringTok{"residuals plot"}\NormalTok{)  }
+\FunctionTok{abline}\NormalTok{(}\AttributeTok{h=}\DecValTok{0}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_6_files/figure-latex/unnamed-chunk-12-1}
+
+\textbf{Interpret:} There is one case of 9 beers with a large residual (much higher BAC than predicted), but since there is no clear pattern (trend) in this plot it looks like our regression model adequately describes the relationship between number of beers and BAC.
+
+\begin{itemize}
+\tightlist
+\item
+  Is the magnitude of the scatter around the horizontal 0-line in the residuals plot greater than, less than, or the same as the magnitude of the scatter around the regression line in the scatterplot?
+\end{itemize}
+
+\emph{Answer:} The same! The residuals plot is only a ``detrended'' scatterplot, meaning the vertical distances between a point and the regression line on the scatterplot or a point and the 0-line on the residuals plot are exactly the same. The residual plot looks more scattered because the trend is removed and the scale of the y-axis compressed.
+
+\hypertarget{k-identifying-points}{%
+\subsection{(k) Identifying points}\label{k-identifying-points}}
+
+The \texttt{which} command can be used to identify points by their row number in a scatterplot.
+
+We can use \texttt{==} to see which case drank exactly 9 beers. Which is the row number of the case that drank 9 beers?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(BAC }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Beers, }\AttributeTok{data=}\NormalTok{bac, }\AttributeTok{pch=}\DecValTok{19}\NormalTok{)  }
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_6_files/figure-latex/unnamed-chunk-13-1}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{which}\NormalTok{(bac}\SpecialCharTok{$}\NormalTok{Beers }\SpecialCharTok{==} \DecValTok{9}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 3
+\end{verbatim}
+
+\emph{Answer:} Row 3.
+
+What is the row number of the case with the most negative residual?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(}\FunctionTok{resid}\NormalTok{(bac.lm) }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Beers, }\AttributeTok{data=}\NormalTok{bac, }\AttributeTok{pch=}\DecValTok{19}\NormalTok{)  }
+\FunctionTok{abline}\NormalTok{(}\AttributeTok{h=}\DecValTok{0}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_6_files/figure-latex/unnamed-chunk-14-1}
+
+We could eyeball the graph to see that the most negative residual is less than -0.02:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# which case has resid less than {-}0.02?}
+
+\FunctionTok{resid}\NormalTok{(bac.lm)[}\FunctionTok{which}\NormalTok{(}\FunctionTok{resid}\NormalTok{(bac.lm) }\SpecialCharTok{\textless{}} \SpecialCharTok{{-}}\FloatTok{0.02}\NormalTok{)]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+          9          10          14 
+-0.02119068 -0.02711821 -0.02304573 
+\end{verbatim}
+
+But this identifies 3 cases. We also can see that the lowest residual drank 5 beers. We can add this statement to the original one using the ``and'' sign \texttt{\&}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# which case had resid less than {-}0.02 AND drank 5 beers}
+\FunctionTok{resid}\NormalTok{(bac.lm)[}\FunctionTok{which}\NormalTok{(}\FunctionTok{resid}\NormalTok{(bac.lm) }\SpecialCharTok{\textless{}} \SpecialCharTok{{-}}\FloatTok{0.02} \SpecialCharTok{\&}\NormalTok{ bac}\SpecialCharTok{$}\NormalTok{Beers }\SpecialCharTok{==} \DecValTok{5}\NormalTok{)]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+         10 
+-0.02711821 
+\end{verbatim}
+
+\hypertarget{l-checking-outlier-influence}{%
+\subsection{(l) Checking outlier influence}\label{l-checking-outlier-influence}}
+
+Will the regression line slope increase, decrease or stay the same if we remove case 3, the 9 beer case, from our model?
+
+Check your answer by adding \texttt{subset\ =\ -3} to the \texttt{lm} command (this removes row 3):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# define a different linear model with row 3 removed }
+\NormalTok{bac.lm2 }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(BAC }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Beers, }\AttributeTok{data=}\NormalTok{bac, }\AttributeTok{subset =} \SpecialCharTok{{-}}\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Compare the two models}
+\FunctionTok{summary}\NormalTok{(bac.lm2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Call:
+lm(formula = BAC ~ Beers, data = bac, subset = -3)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.023685 -0.010068 -0.003685  0.011985  0.027208 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 2.481e-05  1.088e-02   0.002    0.998    
+Beers       1.455e-02  2.216e-03   6.568  1.8e-05 ***
+---
+Signif. codes:  
+0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.01624 on 13 degrees of freedom
+Multiple R-squared:  0.7684,    Adjusted R-squared:  0.7506 
+F-statistic: 43.14 on 1 and 13 DF,  p-value: 1.802e-05
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(bac.lm)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Call:
+lm(formula = BAC ~ Beers, data = bac)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.027118 -0.017350  0.001773  0.008623  0.041027 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -0.012701   0.012638  -1.005    0.332    
+Beers        0.017964   0.002402   7.480 2.97e-06 ***
+---
+Signif. codes:  
+0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.02044 on 14 degrees of freedom
+Multiple R-squared:  0.7998,    Adjusted R-squared:  0.7855 
+F-statistic: 55.94 on 1 and 14 DF,  p-value: 2.969e-06
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  After removing case 3, how has the slope changed? Explain the why the change occurred.
+\end{itemize}
+
+\emph{Answer:} The slope drops from 0.0180 to 0.0146. Explanation given above.
+
+\begin{itemize}
+\tightlist
+\item
+  After removing case 3, how has the \(R^2\) changed? Explain the why the change occurred.
+\end{itemize}
+
+\emph{Answer:} The \(R^2\) descreases from 79.9\% to 76.8\%. This small decrease happens because case 3 actually enhances the overall linear trend and removing it results is a slight decrease to correlation and \(R^2\).
+
+\hypertarget{m-adding-a-categorical-variable-to-your-plot}{%
+\subsection{(m) Adding a categorical variable to your plot}\label{m-adding-a-categorical-variable-to-your-plot}}
+
+We can create a scatterplot with plotting symbols color coded by a categorical grouping variable using \texttt{ggplot2} package. We use the \texttt{geom\_point()} plot geometry to get a scatterplot with the \texttt{x}, \texttt{y}, and \texttt{color} aesthetics specified. Here we look at the \texttt{BAC} vs.~\texttt{Beers} plot with \texttt{Gender} added:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\FunctionTok{ggplot}\NormalTok{(bac, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Beers, }\AttributeTok{y=}\NormalTok{BAC, }\AttributeTok{color=}\NormalTok{Gender)) }\SpecialCharTok{+} \FunctionTok{geom\_point}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_6_files/figure-latex/unnamed-chunk-19-1}
+
+\begin{itemize}
+\tightlist
+\item
+  Are the associations similiar? (form, strength, direction)
+\end{itemize}
+
+\emph{Answer:} Both females and males have similar strong, positive linear associations.
+
+\hypertarget{n-regression-lines-by-groups}{%
+\subsection{(n) Regression lines by groups}\label{n-regression-lines-by-groups}}
+
+A quick way to get the male and female regression line formulas for part (c) is to add a \texttt{subset} argument to the \texttt{lm} command:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bac.lm.female }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(BAC }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Beers, }\AttributeTok{data=}\NormalTok{bac, }\AttributeTok{subset =}\NormalTok{ Gender }\SpecialCharTok{==} \StringTok{"female"}\NormalTok{)}
+\NormalTok{bac.lm.female }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Call:
+lm(formula = BAC ~ Beers, data = bac, subset = Gender == "female")
+
+Coefficients:
+(Intercept)        Beers  
+   -0.01567      0.02067  
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# enter code for the male model}
+
+\NormalTok{bac.lm.male }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(BAC }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Beers, }\AttributeTok{data=}\NormalTok{bac, }\AttributeTok{subset =}\NormalTok{ Gender }\SpecialCharTok{==} \StringTok{"male"}\NormalTok{)}
+\NormalTok{bac.lm.male}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Call:
+lm(formula = BAC ~ Beers, data = bac, subset = Gender == "male")
+
+Coefficients:
+(Intercept)        Beers  
+  -0.009785     0.015341  
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  What is the regression line for females? for males?
+\end{itemize}
+
+\emph{Answer:} For females: \(\widehat{BAC} = -0.016 +0.021(BAC)\) and for males: \(\widehat{BAC} = -0.01 +0.015(BAC)\)
+
+\begin{itemize}
+\tightlist
+\item
+  Which gender has the largest slope? What does this suggest about the relationship between number of beers and BAC for this gender?
+\end{itemize}
+
+\emph{Answer:} The slope for females is slightly higher. This shows that the effect of one more beer on predicted BAC in females is larger than males (a 0.021 increase vs.~a 0.015 increase).
+
+Another way to obtain regression models by \texttt{Gender} is to split the data set in a female and male data set, then run your \texttt{lm} on these two data sets. The benefit of this method is you can then create a residuals plot for your model much easier than the quicker method above:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bac.female }\OtherTok{\textless{}{-}} \FunctionTok{subset}\NormalTok{(bac, }\AttributeTok{sub =}\NormalTok{ Gender }\SpecialCharTok{==} \StringTok{"female"}\NormalTok{)}
+\FunctionTok{lm}\NormalTok{(BAC }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Beers, }\AttributeTok{data=}\NormalTok{bac.female)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Call:
+lm(formula = BAC ~ Beers, data = bac.female)
+
+Coefficients:
+(Intercept)        Beers  
+   -0.01567      0.02067  
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bac.male }\OtherTok{\textless{}{-}} \FunctionTok{subset}\NormalTok{(bac, }\AttributeTok{sub =}\NormalTok{ Gender }\SpecialCharTok{==} \StringTok{"male"}\NormalTok{)}
+\FunctionTok{lm}\NormalTok{(BAC }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Beers, }\AttributeTok{data=}\NormalTok{bac.male)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Call:
+lm(formula = BAC ~ Beers, data = bac.male)
+
+Coefficients:
+(Intercept)        Beers  
+  -0.009785     0.015341  
+\end{verbatim}
+
+\hypertarget{mice-mass-example}{%
+\subsection{Mice Mass Example}\label{mice-mass-example}}
+
+The time of day in which calories are consumed can affect weight gain. At least, that appears to be true in mice. Mice normally eat all their calories at night, but when mice ate some of their calories during the day (when mice are supposed to be sleeping), they gained more weight even though all the mice ate the same total amount of calories. Here we look at the regression of body mass gain in grams, \texttt{BMGain}, against the percent of calories eaten during the day, \texttt{DayPct} for a study involving 27 mice. The R commands needed to answer the questions below are:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mice }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"http://math.carleton.edu/Stats215/Textbook/LightatNight4Weeks.csv"}\NormalTok{)}
+
+\FunctionTok{plot}\NormalTok{(BMGain }\SpecialCharTok{\textasciitilde{}}\NormalTok{ DayPct, }\AttributeTok{data=}\NormalTok{mice, }\AttributeTok{pch=}\DecValTok{19}\NormalTok{)}
+\NormalTok{mice.lm }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(BMGain }\SpecialCharTok{\textasciitilde{}}\NormalTok{ DayPct, }\AttributeTok{data=}\NormalTok{mice)}
+\NormalTok{mice.lm}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Call:
+lm(formula = BMGain ~ DayPct, data = mice)
+
+Coefficients:
+(Intercept)       DayPct  
+     1.1128       0.1273  
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cor}\NormalTok{(mice}\SpecialCharTok{$}\NormalTok{BMGain, mice}\SpecialCharTok{$}\NormalTok{DayPct)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.7398623
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{abline}\NormalTok{(mice.lm) }\CommentTok{\# adds regression line to previously created scatterplot}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_6_files/figure-latex/unnamed-chunk-22-1}
+
+\hypertarget{a-what-are-the-coordinates-roughly-of-the-case-with-the-largest-positive-residual}{%
+\subsection{(a) What are the coordinates (roughly) of the case with the largest positive residual?}\label{a-what-are-the-coordinates-roughly-of-the-case-with-the-largest-positive-residual}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mice[}\FunctionTok{which}\NormalTok{(}\FunctionTok{resid}\NormalTok{(mice.lm) }\SpecialCharTok{==} \FunctionTok{max}\NormalTok{(}\FunctionTok{resid}\NormalTok{(mice.lm))),]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+   Light BMGain Corticosterone DayPct Consumption
+25    LL   17.4         66.679 81.636       7.177
+   GlucoseInt   GTT15  GTT120 Activity
+25        Yes 435.644 405.941     6702
+\end{verbatim}
+
+\emph{Answer:} The case with the largest residual is located at about 80\% calories and 17g body mass gain. We can find which row this corresponds to using the \texttt{which} command shown below.
+
+\hypertarget{b-what-are-the-coordinates-roughly-of-the-case-with-the-most-negative-residual}{%
+\subsection{(b) What are the coordinates (roughly) of the case with the most negative residual?}\label{b-what-are-the-coordinates-roughly-of-the-case-with-the-most-negative-residual}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mice[}\FunctionTok{which}\NormalTok{(}\FunctionTok{resid}\NormalTok{(mice.lm) }\SpecialCharTok{==} \FunctionTok{min}\NormalTok{(}\FunctionTok{resid}\NormalTok{(mice.lm))),]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+   Light BMGain Corticosterone DayPct Consumption
+10    DM   3.42         208.26 55.051       3.857
+   GlucoseInt   GTT15  GTT120 Activity
+10         No 271.717 148.485     1084
+\end{verbatim}
+
+\emph{Answer:} The case with the most negative residual is located at about 55\% calories and 3g body mass gain. We can find which row this corresponds to using the \texttt{which} command shown below. The code below also highlights the cases in (a) with a circle and (b) with a square.
+
+\hypertarget{c-what-is-the-predicted-body-mass-gain-for-a-mouse-that-eats-50-of-its-calories-during-the-day}{%
+\subsection{(c) What is the predicted body mass gain for a mouse that eats 50\% of its calories during the day?}\label{c-what-is-the-predicted-body-mass-gain-for-a-mouse-that-eats-50-of-its-calories-during-the-day}}
+
+\[
+\widehat{BMGain} =1.1128+0.1273(50)=7.48
+\]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FloatTok{1.1128} \SpecialCharTok{+}\NormalTok{ .}\DecValTok{1273}\SpecialCharTok{*}\DecValTok{50}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 7.4778
+\end{verbatim}
+
+\emph{Answer:} A mouse that eats 50\% of its calories during the day is predicted to gain 7.48 grams.
+
+\hypertarget{d-find-the-residual-for-the-mouse-who-ate-48.3-of-its-calories-during-the-day-and-gained-5.82-grams.}{%
+\subsection{(d) Find the residual for the mouse who ate 48.3\% of its calories during the day and gained 5.82 grams.}\label{d-find-the-residual-for-the-mouse-who-ate-48.3-of-its-calories-during-the-day-and-gained-5.82-grams.}}
+
+\emph{Answer:} We first find the predicted body mass gain:
+\[
+\widehat{BMGain} = 1.1128+0.1273(48.3)=7.26
+\]
+
+The residual is then:\\
+\[
+Residual = BMGain  -   \widehat{BMGain} =  5.82 – 7.26 = –1.44.
+\]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FloatTok{1.1128} \SpecialCharTok{+}\NormalTok{ .}\DecValTok{1273}\SpecialCharTok{*}\FloatTok{48.3}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 7.26139
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FloatTok{5.82} \SpecialCharTok{{-}}\NormalTok{ (}\FloatTok{1.1128} \SpecialCharTok{+}\NormalTok{ .}\DecValTok{1273}\SpecialCharTok{*}\FloatTok{48.3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] -1.44139
+\end{verbatim}
+
+\hypertarget{e-interpret-the-slope-of-the-regression-line-in-context.}{%
+\subsection{(e) Interpret the slope of the regression line in context.}\label{e-interpret-the-slope-of-the-regression-line-in-context.}}
+
+\emph{Answer:} The slope is 0.1273. When a mouse eats one more percent of its calories during the day, its predicted body mass gain goes up by 0.1273 grams.
+
+\hypertarget{f-interpret-the-intercept-of-the-line-in-context-if-it-makes-sense-to-do-so.}{%
+\subsection{(f) Interpret the intercept of the line in context, if it makes sense to do so.}\label{f-interpret-the-intercept-of-the-line-in-context-if-it-makes-sense-to-do-so.}}
+
+\emph{Answer:} The intercept is 1.1128. A mouse who eats 0\% of its calories during the day (and all of them at night when a mouse normally eats all its food) is predicted to gain 1.11 grams. But this would be \textbf{extrapolation} because the range of observed percents is, roughly, 20-90. It does not make sense to interpret the intercept in this context.
+
+\hypertarget{g-use-the-correlation-value-to-compute-r2-then-interpret-in-context-the-r2-value-for-this-model.}{%
+\subsection{\texorpdfstring{(g) Use the correlation value to compute \(R^2\), then interpret (in context) the \(R^2\) value for this model.}{(g) Use the correlation value to compute R\^{}2, then interpret (in context) the R\^{}2 value for this model.}}\label{g-use-the-correlation-value-to-compute-r2-then-interpret-in-context-the-r2-value-for-this-model.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{r }\OtherTok{\textless{}{-}} \FloatTok{0.7398623}
+\NormalTok{r}\SpecialCharTok{\^{}}\DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.5473962
+\end{verbatim}
+
+\hypertarget{h-get-the-value-of-r2-from-the-regression-output-then-interpret-in-context-the-r2-value-for-this-model.}{%
+\subsection{\texorpdfstring{(h) Get the value of \(R^2\) from the regression output, then interpret (in context) the \(R^2\) value for this model.}{(h) Get the value of R\^{}2 from the regression output, then interpret (in context) the R\^{}2 value for this model.}}\label{h-get-the-value-of-r2-from-the-regression-output-then-interpret-in-context-the-r2-value-for-this-model.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(mice.lm)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Call:
+lm(formula = BMGain ~ DayPct, data = mice)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-4.6990 -1.1694  0.0728  0.9174  5.8975 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  1.11280    1.38211   0.805    0.428    
+DayPct       0.12727    0.02315   5.499 1.03e-05 ***
+---
+Signif. codes:  
+0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 2.231 on 25 degrees of freedom
+Multiple R-squared:  0.5474,    Adjusted R-squared:  0.5293 
+F-statistic: 30.24 on 1 and 25 DF,  p-value: 1.032e-05
+\end{verbatim}
+
+\emph{Answer:} From \texttt{Multiple\ R-squared}, we get \(R^2 = 0.547\). The percent of calories that a mouse eats during the day explains about 55\% of the variability in weight gain for this study.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{forbes-example}{%
+\subsection{Forbes Example}\label{forbes-example}}
+
+In the mid 1800s, James D. Forbes conducted a experiments designed to determine if the atmospheric pressure at a given location can just be determined by the boiling temp of water at that location.
+
+\hypertarget{a-fit-the-linear-regression-of-pressure-on-temp}{%
+\subsection{\texorpdfstring{(a) Fit the linear regression of \texttt{Pressure} on \texttt{Temp}:}{(a) Fit the linear regression of Pressure on Temp:}}\label{a-fit-the-linear-regression-of-pressure-on-temp}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{forbes }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"http://math.carleton.edu/kstclair/data/forbes.csv"}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(Pressure }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Temp, }\AttributeTok{data=}\NormalTok{forbes, }\AttributeTok{pch=}\DecValTok{19}\NormalTok{, }\AttributeTok{main =} \StringTok{"Pressure vs. Temp"}\NormalTok{)}
+\NormalTok{forbes.lm }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(Pressure }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Temp, }\AttributeTok{data=}\NormalTok{forbes)}
+\FunctionTok{abline}\NormalTok{(forbes.lm)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_6_files/figure-latex/unnamed-chunk-29-1}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(forbes.lm)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Call:
+lm(formula = Pressure ~ Temp, data = forbes)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.25717 -0.11246 -0.05102  0.14283  0.64994 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -81.06373    2.05182  -39.51   <2e-16 ***
+Temp          0.52289    0.01011   51.74   <2e-16 ***
+---
+Signif. codes:  
+0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.2328 on 15 degrees of freedom
+Multiple R-squared:  0.9944,    Adjusted R-squared:  0.9941 
+F-statistic:  2677 on 1 and 15 DF,  p-value: < 2.2e-16
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Describe the relationship between pressure and temp (strength, form, direction).
+\end{itemize}
+
+\emph{Answer:} This is a strong, positive relationship that looks linear.
+
+\begin{itemize}
+\tightlist
+\item
+  Interpret the value of \(R^2\)
+\end{itemize}
+
+\emph{Answer:} About 99.4\% of the variation observed in pressure can be explained by the boiling point temps.
+
+\hypertarget{b-check-the-residuals-plot}{%
+\subsection{(b) Check the residuals plot}\label{b-check-the-residuals-plot}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(}\FunctionTok{resid}\NormalTok{(forbes.lm) }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Temp, }\AttributeTok{data=}\NormalTok{forbes, }\AttributeTok{pch=}\DecValTok{19}\NormalTok{, }\AttributeTok{main =} \StringTok{"Residuals plot"}\NormalTok{)}
+\FunctionTok{abline}\NormalTok{(}\AttributeTok{h=}\DecValTok{0}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_6_files/figure-latex/unnamed-chunk-30-1}
+
+\begin{itemize}
+\tightlist
+\item
+  Is the relationship between pressure and temp linear?
+\end{itemize}
+
+\emph{Answer:} No! There is curvature, which means the linear model is systematically underestimating pressure at low and high temps and overestimating pressure at mid-range temps.
+
+\begin{itemize}
+\tightlist
+\item
+  Does the residual plot highlight an unusual case? Explain.
+\end{itemize}
+
+\emph{Answer:} Yes, there is one case that has an unusually high pressure value given its temp.
+
+\hypertarget{c-fixing-the-model}{%
+\subsection{(c) ``Fixing'' the model}\label{c-fixing-the-model}}
+
+A linear model can be used with this data if we \textbf{transform} the response variable to the logarithmic scale. Here \texttt{log(y)} gives the natural log of the variable \texttt{y}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(}\FunctionTok{log}\NormalTok{(Pressure) }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Temp, }\AttributeTok{data=}\NormalTok{forbes, }\AttributeTok{pch=}\DecValTok{19}\NormalTok{, }\AttributeTok{main =} \StringTok{"Pressure vs. Temp"}\NormalTok{)}
+\NormalTok{forbes.lm2 }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(}\FunctionTok{log}\NormalTok{(Pressure) }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Temp, }\AttributeTok{data=}\NormalTok{forbes)}
+\FunctionTok{abline}\NormalTok{(forbes.lm2)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_6_files/figure-latex/unnamed-chunk-31-1}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(}\FunctionTok{resid}\NormalTok{(forbes.lm2) }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Temp, }\AttributeTok{data=}\NormalTok{forbes, }\AttributeTok{pch=}\DecValTok{19}\NormalTok{, }\AttributeTok{main =} \StringTok{"Residuals plot"}\NormalTok{)}
+\FunctionTok{abline}\NormalTok{(}\AttributeTok{h=}\DecValTok{0}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_6_files/figure-latex/unnamed-chunk-31-2}
+
+\begin{itemize}
+\tightlist
+\item
+  Has the curvature in the scatterplot and residuals plots been reduced by logging the variables?
+\end{itemize}
+
+\emph{Answer:} Yes, there is less curvature
+
+\begin{itemize}
+\tightlist
+\item
+  Has the outlier been eliminated by logging the variables?
+\end{itemize}
+
+\emph{Answer:} No, the outlier is still present.
+
+\hypertarget{d-removing-bad-measurement}{%
+\subsection{(d) Removing bad measurement}\label{d-removing-bad-measurement}}
+
+Identify which case has the large residual value around 0.03.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{resid}\NormalTok{(forbes.lm2)[}\FunctionTok{which}\NormalTok{(}\FunctionTok{resid}\NormalTok{(forbes.lm2) }\SpecialCharTok{\textgreater{}} \FloatTok{0.02}\NormalTok{)]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+        12 
+0.03131388 
+\end{verbatim}
+
+Repeat part (c) but this time remove the case you identified. The easiest way to do this is to create a new version of the data with row 12 removed:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{forbes2 }\OtherTok{\textless{}{-}}\NormalTok{ forbes[}\SpecialCharTok{{-}}\DecValTok{12}\NormalTok{, ]}
+\FunctionTok{plot}\NormalTok{(}\FunctionTok{log}\NormalTok{(Pressure) }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Temp, }\AttributeTok{data=}\NormalTok{forbes2, }\AttributeTok{pch=}\DecValTok{19}\NormalTok{, }\AttributeTok{main =} \StringTok{"Pressure vs. Temp"}\NormalTok{)}
+\NormalTok{forbes.lm2 }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(}\FunctionTok{log}\NormalTok{(Pressure) }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Temp, }\AttributeTok{data=}\NormalTok{forbes2)}
+\FunctionTok{abline}\NormalTok{(forbes.lm2)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_6_files/figure-latex/unnamed-chunk-33-1}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(}\FunctionTok{resid}\NormalTok{(forbes.lm2) }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Temp, }\AttributeTok{data=}\NormalTok{forbes2, }\AttributeTok{pch=}\DecValTok{19}\NormalTok{, }\AttributeTok{main =} \StringTok{"Residuals plot"}\NormalTok{)}
+\FunctionTok{abline}\NormalTok{(}\AttributeTok{h=}\DecValTok{0}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_6_files/figure-latex/unnamed-chunk-33-2}
+
 \hypertarget{part-basics-r}{%
 \chapter{(PART*) Basics R}\label{part-basics-r}}
 
@@ -237,6 +3094,35 @@ If you have used a local version of R/RStudio before and it is still installed o
   To check your version of R, run the command \texttt{getRversion()} and compare your version to the newest version posted on \url{https://cran.r-project.org/}. If you need an update, then install the newer version using the installation directions above.
 \item
   In RStudio, check for updates with the menu option \texttt{Help\ \textgreater{}\ Check\ for\ updates}. Follow directions if an update is needed.
+\end{itemize}
+
+\hypertarget{instructions}{%
+\section{Instructions}\label{instructions}}
+
+If using Rstudio on your computer, using the \textbf{File\textgreater Open File} menu to find and open this .Rmd file.
+
+If using Maize Rstudio from your browser:
+
+\begin{itemize}
+\item
+  In the Files tab, select \textbf{Upload} and \textbf{Choose File} to find the .Rmd that you downloaded. Click \emph{OK} to upload to your course folder/location in the maize server account.
+\item
+  Click on the .Rmd file in the appropriate folder to open the file.
+\end{itemize}
+
+Extra notes:
+
+\begin{itemize}
+\item
+  You can run a line of code by placing your cursor in the line of code and clicking \textbf{Run Selected Line(s)}
+\item
+  You can run an entire chunk by clicking the green triangle on the right side of the code chunk.
+\item
+  After each small edit or code addition, \textbf{Knit} your Markdown. If you wait until the end to Knit, it will be harder to find errors in your work.
+\item
+  Format output type: You can use any of pdf\_document, html\_document type, or word\_document type.
+\item
+  \textbf{Maize users}: You may also need to allow for ``pop-up'' in your web browser when knitting documents.
 \end{itemize}
 
 \hypertarget{r-markdown}{%
@@ -456,458 +3342,6 @@ CT
 50
 
 4:19
-
-\hypertarget{part-class-activity}{%
-\chapter{(PART*) Class Activity}\label{part-class-activity}}
-
-\hypertarget{conclusion}{%
-\chapter{Conclusion}\label{conclusion}}
-
-Click for answer
-
-The correct answer is a. If there is a difference, we expect the between group variability to be higher than within group variability. RIGHT TAIL test!
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{Temperature  }\OtherTok{=}  \FloatTok{37.7} \SpecialCharTok{+} \FloatTok{0.231}\NormalTok{ Chirps}
-\NormalTok{Predictor       Coef    SE Coef      T    }\FunctionTok{Pr}\NormalTok{(}\SpecialCharTok{\textgreater{}}\ErrorTok{|}\NormalTok{t}\SpecialCharTok{|}\NormalTok{)    }
-\NormalTok{Constant    }\FloatTok{37.67858}    \FloatTok{1.97817}   \FloatTok{19.05}  \FloatTok{7.35e{-}06} \SpecialCharTok{**}\ErrorTok{*}
-\NormalTok{Chirps       }\FloatTok{0.23067}    \FloatTok{0.01423}   \FloatTok{16.21}  \FloatTok{1.63e{-}05} \SpecialCharTok{**}\ErrorTok{*}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{survey }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/deepbas/statdatasets/main/StudentSurvey.csv"}\NormalTok{)}
-\FunctionTok{mean}\NormalTok{(survey}\SpecialCharTok{$}\NormalTok{Pulse) }\CommentTok{\# the command \textasciigrave{}mean\textasciigrave{} computes an average}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] 69.57459
-\end{verbatim}
-
-\begin{longtable}[]{@{}llll@{}}
-\toprule()
-ROCK & PAPER & SCISSORS & TOTAL \\
-\midrule()
-\endhead
-36 & 12 & 37 & 85 \\
-\bottomrule()
-\end{longtable}
-
-First year at Carleton
-
-\begin{itemize}
-\tightlist
-\item
-  Originally from Nepal
-\item
-  PhD in Applied Statistics from
-\end{itemize}
-
-\textbf{UC-Riverside}
-
-\begin{itemize}
-\tightlist
-\item
-  Diverse education background
-\item
-  Avid learner and traveler
-\end{itemize}
-
-\hypertarget{class-activity-1}{%
-\chapter{Class Activity 1}\label{class-activity-1}}
-
-\begin{itemize}
-\tightlist
-\item
-  Try to knit the file at the present stage and see if it compiles.
-\item
-  You can add \texttt{\textbackslash{}vspace*\{1in\}} in the body of this file to produce a vertical space of 1 inches.
-\end{itemize}
-
-\hypertarget{your-turn-1}{%
-\section{Your Turn 1}\label{your-turn-1}}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
-\begin{enumerate}
-\def\labelenumi{\alph{enumi}.}
-\tightlist
-\item
-  Run the following chunk. Comment on the output.
-\end{enumerate}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{example\_data }\OtherTok{=} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{ID =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DecValTok{7}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{9}\NormalTok{, }\DecValTok{10}\NormalTok{),}
-                          \AttributeTok{Greeting =} \FunctionTok{c}\NormalTok{(}\FunctionTok{rep}\NormalTok{(}\StringTok{"Hello"}\NormalTok{, }\DecValTok{5}\NormalTok{), }\FunctionTok{rep}\NormalTok{(}\StringTok{"Goodbye"}\NormalTok{,}\DecValTok{5}\NormalTok{)),}
-                          \AttributeTok{Male =} \FunctionTok{rep}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\ConstantTok{TRUE}\NormalTok{, }\ConstantTok{FALSE}\NormalTok{), }\DecValTok{5}\NormalTok{),}
-                          \AttributeTok{age =} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n=}\DecValTok{10}\NormalTok{, }\DecValTok{20}\NormalTok{,}\DecValTok{60}\NormalTok{))}
-\end{Highlighting}
-\end{Shaded}
-
-Click for answer
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{example\_data}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-   ID Greeting  Male      age
-1   1    Hello  TRUE 40.24020
-2   2    Hello FALSE 27.66788
-3   3    Hello  TRUE 26.70954
-4   4    Hello FALSE 24.22673
-5   5    Hello  TRUE 26.88372
-6   6  Goodbye FALSE 40.21593
-7   7  Goodbye  TRUE 25.05656
-8   8  Goodbye FALSE 36.43088
-9   9  Goodbye  TRUE 44.38057
-10 10  Goodbye FALSE 59.29558
-\end{verbatim}
-
-\emph{Answer:} We see a data frame with four columns, where the first column is an \texttt{identifier} for the cases. We have information on the greeting types, gender, and age on these cases in the remaining columns.
-
-\vspace*{1in}
-
-\begin{enumerate}
-\def\labelenumi{\alph{enumi}.}
-\setcounter{enumi}{1}
-\tightlist
-\item
-  What is the dimension of the dataset called `example\_data'?
-\end{enumerate}
-
-Click for answer
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{dim}\NormalTok{(example\_data)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] 10  4
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{nrow}\NormalTok{(example\_data)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] 10
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{ncol}\NormalTok{(example\_data)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] 4
-\end{verbatim}
-
-\emph{Answer:} There are 10 rows and 4 columns.
-
-\vspace*{1in}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
-\hypertarget{your-turn-2}{%
-\section{Your Turn 2}\label{your-turn-2}}
-
-\begin{enumerate}
-\def\labelenumi{\alph{enumi}.}
-\tightlist
-\item
-  Read the dataset \texttt{EducationLiteracy} from the \href{https://www.lock5stat.com/datapage2e.html}{Lock5} second edition book.
-\end{enumerate}
-
-Click for answer
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# read in the data}
-\NormalTok{education\_lock5 }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://www.lock5stat.com/datasets2e/EducationLiteracy.csv"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\vspace*{1in}
-
-\begin{enumerate}
-\def\labelenumi{\alph{enumi}.}
-\setcounter{enumi}{1}
-\tightlist
-\item
-  Print the header (i.e.~first 6 cases by default) of the dataset in part a.
-\end{enumerate}
-
-Click for answer
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{head}\NormalTok{(education\_lock5)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-              Country EducationExpenditure Literacy
-1         Afghanistan                  3.1     31.7
-2             Albania                  3.2     96.8
-3             Algeria                  4.3       NA
-4             Andorra                  3.2       NA
-5              Angola                  3.5     70.6
-6 Antigua and Barbuda                  2.6     99.0
-\end{verbatim}
-
-\vspace*{1in}
-
-\begin{enumerate}
-\def\labelenumi{\alph{enumi}.}
-\setcounter{enumi}{2}
-\tightlist
-\item
-  What is the dimension of the dataset in a?
-\end{enumerate}
-
-Click for answer
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{dim}\NormalTok{(education\_lock5)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] 188   3
-\end{verbatim}
-
-\emph{Answer:} There are 188 rows and 3 columns.
-
-\vspace*{1in}
-
-\begin{enumerate}
-\def\labelenumi{\alph{enumi}.}
-\setcounter{enumi}{3}
-\tightlist
-\item
-  What type of variables are \texttt{Country}, \texttt{EducationExpenditure}, and \texttt{Literacy}?
-\end{enumerate}
-
-Click for answer
-
-\emph{Answer:} \texttt{Country} is a categorical variable. \texttt{EducationExpenditure} and \texttt{Literacy} are both quantitative variables.
-
-\vspace*{1in}
-
-\begin{enumerate}
-\def\labelenumi{\alph{enumi}.}
-\setcounter{enumi}{4}
-\tightlist
-\item
-  If we would like to use education expenditure to predict the literacy rate of each countries, which variable is the explanatory variable and which one is the response?
-\end{enumerate}
-
-Click for answer
-
-\emph{Answer:} The education expenditure is the explanatory variable, and the literacy rate is the response.
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
-\hypertarget{class-activity-1-1}{%
-\chapter{Class Activity 1}\label{class-activity-1-1}}
-
-\hypertarget{your-turn-2-1}{%
-\section{Your Turn 2}\label{your-turn-2-1}}
-
-\hypertarget{summary-of-article-on-it-depends-on-how-you-ask}{%
-\section{\texorpdfstring{Summary of article on \href{https://jech.bmj.com/content/75/4/387.abstract}{It depends on how you ask!}}{Summary of article on It depends on how you ask!}}\label{summary-of-article-on-it-depends-on-how-you-ask}}
-
-\emph{Answer:}
-
-This study aimed to measure the effects of psychological biases on estimates of compliance with public health guidance regarding COVID-19. Results showed that compliance estimates were reduced when questions were framed negatively and anonymity was increased. Effect sizes were large, with compliance estimates diminishing by up to 17\% points and 10\% points, respectively. These findings suggest that standard tracking surveys pose questions in ways that lead to higher compliance estimates than alternative approaches.
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
-\hypertarget{your-turn-3}{%
-\section{Your Turn 3}\label{your-turn-3}}
-
-\hypertarget{gettysburg-random-sample}{%
-\section{Gettysburg random sample}\label{gettysburg-random-sample}}
-
-Let's take a simple random sample (SRS) of Gettysburg words. The ``population'' is contained in the
-spreadsheet \texttt{GettysburgPopulationCounts.csv}. Carefully load this data into R:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{pop }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/deepbas/statdatasets/main/GettysbergPopulationCounts.csv"}\NormalTok{)}
-\FunctionTok{head}\NormalTok{(pop)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-  position size  word
-1        1    4  Four
-2        2    5 score
-3        3    3   and
-4        4    5 seven
-5        5    5 years
-6        6    3  ago,
-\end{verbatim}
-
-The \texttt{position} variable enumerates the list of words in the population (address).
-
-\begin{enumerate}
-\def\labelenumi{\alph{enumi}.}
-\tightlist
-\item
-  Sample
-\end{enumerate}
-
-Run the following command to obtain a SRS of 10 words from the 268 that are in the population:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{samp }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{268}\NormalTok{, }\AttributeTok{size=}\DecValTok{10}\NormalTok{)}
-\NormalTok{samp}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
- [1] 174 237 125 199 222 213 230  14 172 263
-\end{verbatim}
-
-This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
-
-\vspace*{1in}
-
-\begin{enumerate}
-\def\labelenumi{\alph{enumi}.}
-\setcounter{enumi}{1}
-\tightlist
-\item
-  Get words and lengths
-\end{enumerate}
-
-We will \emph{subset} the data set \texttt{pop} to obtain only the sampled rows listed in \texttt{samp}. We do this using \textbf{square bracket notation} `dataset{[}row number, column number/name{]}. Run the following command to find your sampled words and sizes:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{pop[samp,]}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-    position size       word
-174      174   10 unfinished
-237      237    2         in
-125      125    3        who
-199      199    4       task
-222      222    7    measure
-213      213    4       that
-230      230    4       that
-14        14    1          a
-172      172    2         to
-263      263    5      shall
-\end{verbatim}
-
-What are your sampled words?
-\vspace*{.5in}
-
-\begin{enumerate}
-\def\labelenumi{\alph{enumi}.}
-\setcounter{enumi}{2}
-\tightlist
-\item
-  Compute your sample mean
-\end{enumerate}
-
-The word lengths in part (b) are the data for your sample. You can compute your sample mean using a calculator, or using R. Let's try R (you will find it faster!). First save the quantitative variable \texttt{size} in a new variable called \texttt{mysize}:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{mysize }\OtherTok{\textless{}{-}}\NormalTok{ pop[samp, }\StringTok{"size"}\NormalTok{]}
-\NormalTok{mysize}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
- [1] 10  2  3  4  7  4  4  1  2  5
-\end{verbatim}
-
-Then find the mean of these values:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{mean}\NormalTok{(mysize)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] 4.2
-\end{verbatim}
-
-How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?
-
-\emph{Answer:} The true mean is 4.29. Your two means will likely vary. Since the many non-random samples generally overestimated the population mean length, it is possible (but not guaranteed) that \emph{your} one non-random sample gave a mean length that is greater than the random sample's mean length.
-\vspace*{1in}
-
-\hypertarget{driving-with-a-pet-on-your-lap}{%
-\section{Driving with a Pet on your Lap}\label{driving-with-a-pet-on-your-lap}}
-
-Over 30,000 people participated in an online poll on \texttt{cnn.com} conducted in April 2012 asking: ``Have you ever driven with a pet on your lap''? We see that 34\% of the participants answered yes and 66\% answered no.
-
-\begin{enumerate}
-\def\labelenumi{\alph{enumi}.}
-\tightlist
-\item
-  Can you conclude that a random sample was used from the description given? Explain.
-\end{enumerate}
-
-\emph{Answer:} No you can't make this conclusion from the info given. In fact, an online poll at a website like \texttt{cnn.com} is almost always reporting results from a non-random sample. The people who respond are individuals who visit \texttt{cnn.com}, then see the online poll and decide to respond.
-
-\vspace*{1.5in}
-
-\begin{enumerate}
-\def\labelenumi{\alph{enumi}.}
-\setcounter{enumi}{1}
-\tightlist
-\item
-  Explain why it is not appropriate to generalize these results to all drivers, or even to all drivers who visit cnn.com.
-\end{enumerate}
-
-\emph{Answer:} This is a volunteer sample, and volunteer samples are often biased and can't be generalized to \emph{all drivers} (the population). It is likely that people who have driven with a pet on their lap are more likely to respond to the poll.
-
-\begin{enumerate}
-\def\labelenumi{\alph{enumi}.}
-\setcounter{enumi}{2}
-\tightlist
-\item
-  How might we select a sample of people that would give us results that we can generalize to a broader population?
-\end{enumerate}
-
-\emph{Answer:} A random sample of individuals from all U.S. drivers would need to be selected and given the poll question. (There are many ways to do this, the most common being a variation of random digit dialing where phone numbers are randomly selected from known area codes.)
-
-\vspace*{1in}
-
-\begin{enumerate}
-\def\labelenumi{\alph{enumi}.}
-\setcounter{enumi}{3}
-\tightlist
-\item
-  Is the variable measured in this study quantitative or categorical?
-\end{enumerate}
-
-\emph{Answer:} Categorical (yes or no answer to the question).
-
-\vspace*{.5in}
 
   \bibliography{book.bib,packages.bib}
 

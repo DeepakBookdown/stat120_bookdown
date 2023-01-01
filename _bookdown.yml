@@ -6,7 +6,13 @@ language:
   ui:
     chapter_name: "Chapter "
 rmd_files: [
-  "index.Rmd", "RStudio.Rmd", "Rmarkdown.Rmd", "Conclusion.Rmd" , "Class_Activity_1.Rmd", 
-  "Class_Activity_2.Rmd"
+  "index.Rmd", 
+  "Class_Activity_1.Rmd", 
+  "Class_Activity_2.Rmd", 
+  "Class_Activity_3.Rmd", 
+  "Class_Activity_4.Rmd", 
+  "Class_Activity_5.Rmd", 
+  "Class_Activity_6.Rmd", 
+  "RStudio.Rmd", "Rmarkdown.Rmd"
 ]
 

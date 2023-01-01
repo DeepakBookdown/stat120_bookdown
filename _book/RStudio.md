@@ -66,3 +66,23 @@ If you have used a local version of R/RStudio before and it is still installed o
 
 
 
+## Instructions
+
+If using Rstudio on your computer, using the **File>Open File** menu to find and open this .Rmd file. 
+
+If using Maize Rstudio from your browser:
+
+- In the Files tab, select **Upload** and **Choose File** to find the .Rmd that you downloaded. Click *OK* to upload to your course folder/location in the maize server account. 
+
+- Click on the .Rmd file in the appropriate folder to open the file. 
+
+Extra notes:
+
+- You can run a line of code by placing your cursor in the line of code and clicking **Run Selected Line(s)**
+- You can run an entire chunk by clicking the green triangle on the right side of the code chunk.
+- After each small edit or code addition, **Knit** your Markdown. If you wait until the end to Knit, it will be harder to find errors in your work.
+- Format output type: You can use any of pdf_document, html_document type, or word_document type. 
+
+- **Maize users**: You may also need to allow for "pop-up" in your web browser when knitting documents. 
+
+

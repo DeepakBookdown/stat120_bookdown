@@ -1,0 +1,431 @@
+# Class Activity 6
+
+## Your Turn 1
+
+### Beer Example
+
+A study of 16 Ohio State University students looked at the relationship between the number of beers a student consumes and their blood alcohol content (BAC) 30 minutes after their last beer.  The regression information from R to predict BAC from number of beers consumed is given below. 
+
+
+```{r, fig.width=4, fig.height=4}
+bac <- read.csv("http://math.carleton.edu/kstclair/data/BAC.csv")
+```
+
+### (a) Always start with a visual!!!!
+
+Plot the response (BAC) on the y-axis and the explantory ("predictor") on the x-axis. 
+
+```{r, fig.width=4, fig.height=4}
+plot(BAC ~ Beers, data=bac)  
+```
+
+- Is there a relationship?
+    + direction?
+    + strength?
+    + form?
+
+
+You can modify this basic graph by adding a title and changing the plotting symbol. The `pch=19` argument changes the symbols to filled circles.
+
+```{r, fig.width=4, fig.height=4}
+plot(BAC ~ Beers, data=bac, pch=19, 
+     main="Beer and BAC", xlab="Number of beers drank", ylab = "Blood Alcohol Content")
+```
+
+
+### (b) Computing correlation
+Since the *form* of the relationship is linear, we can use **correlation** to measure its strength:
+
+```{r}
+cor(bac$BAC, bac$Beers)
+```
+
+
+### (c)	Fitting a regression line
+
+We use the `lm(y ~ x, data=mydata)` function to fit a **l**inear (regression) **m**odel for a response y given an explanatory variable x. This command creates a **linear model object** that needs to be assigned a name, here we call it `bac.lm`. You can get the slope and intercept by typing out the object name:
+
+```{r}
+bac.lm <- lm(BAC ~ Beers, data=bac)
+bac.lm
+```
+
+- After running the `lm` command above in your R console, check the **Environment** tab to see that the object `bac.lm` is now one of the objects stored in R's memory (for this session of Rstudio).
+- Write down the fitted regression equation to predict BAC from number of beers. 
+
+*Answer:* $\hat{y} = \ldots$
+
+- You can add this regression line to your scatterplot from part (a) by creating the plot and using the `abline` command: 
+
+
+```{r, fig.width=4, fig.height=4}
+# Need to call the plot function again!!
+
+plot(BAC ~ Beers, data=bac, pch=19, 
+     main="Beer and BAC", xlab="Number of beers drank", ylab = "Blood Alcohol Content")
+abline(bac.lm) # adds regression line to the plot above
+
+```
+
+
+### (d)	Interpret the slope in context.
+
+*Answer:* Drinking one more beer is associated with a 0.0180 unit increase in predicted BAC.
+
+
+### (e)	Interpret the intercept in context, if it makes sense to do so. 
+
+*Answer:* The intercept is -0.0127.  A student who drinks 0 beers would be predicted to have a negative blood alcohol content. This is not possible so the intercept does not make sense in this context, but the intercept is included in the model to get the best fit line for the data collected.
+
+
+
+### (f)	If your friend at Ohio State drank 2 beers, what would you predict their BAC to be?
+
+*Answer:* The predicted BAC is 
+$$
+\widehat{BAC} = -0.0127 + 0.0180(2) = 0.0233.
+$$
+```{r}
+y.hat <- -0.0127 + 0.0180*(2) 
+y.hat
+```
+
+
+### (g)	Find the residual for the student in the dataset who drank 2 beers and had a BAC of 0.03.
+
+*Answer:* The residual is 
+$$
+BAC - \widehat{BAC} = .03 - .0233=0.0067
+$$
+```{r}
+0.03 - (-0.0127 + 0.0180*(2)) 
+```
+
+### (h) Getting residuals in R
+
+We can use the `resid` command to get the residuals for each case in the data set:
+```{r}
+# part h
+resid(bac.lm)
+```
+
+Notice that case 2 in the data drank 2 beers and had a BAC recorded as 0.03. We can see that their residual value matches our answer to (g) up to some rounding error. 
+
+```{r}
+# part h
+bac$BAC[2]
+bac$Beers[2]
+resid(bac.lm)[2]
+```
+
+
+### (i) Getting $R^2$ value
+You can use the `summary` command on an `lm` object to get a more detailed print out of your linear model, along with the $R^2$ value for your model:
+
+```{r}
+summary(bac.lm)
+
+```
+
+
+### (j) Making a residuals plot
+The regression of `BAC` on `Beers` has a residuals plot that plots the model's residuals on the y-axis and the explantory ("predictor") on the x-axis. We add a horizontal reference line (the detrended regression line) with the `abline(h=0)` command:
+
+```{r, fig.width=4, fig.height=4}
+# code for residual plot
+plot(resid(bac.lm) ~ Beers, data=bac, pch=19, main = "residuals plot")  
+abline(h=0)
+
+```
+
+**Interpret:** There is one case of 9 beers with a large residual (much higher BAC than predicted), but since there is no clear pattern (trend) in this plot it looks like our regression model adequately describes the relationship between number of beers and BAC. 
+
+- Is the magnitude of the scatter around the horizontal 0-line in the residuals plot greater than, less than, or the same as the magnitude of the scatter around the regression line in the scatterplot?
+
+*Answer:* The same! The residuals plot is only a "detrended" scatterplot, meaning the vertical distances between a point and the regression line on the scatterplot or a point and the 0-line on the residuals plot are exactly the same. The residual plot looks more scattered because the trend is removed and the scale of the y-axis compressed. 
+
+
+### (k) Identifying points
+The `which` command can be used to identify points by their row number in a scatterplot. 
+
+We can use `==` to see which case drank exactly 9 beers. Which is the row number of the case that drank 9 beers? 
+
+```{r, fig.width=4, fig.height=4}
+plot(BAC ~ Beers, data=bac, pch=19)  
+which(bac$Beers == 9)
+```
+
+*Answer:* Row 3. 
+
+What is the row number of the case with the most negative residual?
+
+```{r, fig.width=4, fig.height=4}
+plot(resid(bac.lm) ~ Beers, data=bac, pch=19)  
+abline(h=0)
+```
+
+
+We could eyeball the graph to see that the most negative residual is less than -0.02:
+
+```{r}
+# which case has resid less than -0.02?
+
+resid(bac.lm)[which(resid(bac.lm) < -0.02)]
+```
+
+But this identifies 3 cases. We also can see that the lowest residual drank 5 beers. We can add this statement to the original one using the "and" sign `&`:
+
+```{r}
+# which case had resid less than -0.02 AND drank 5 beers
+resid(bac.lm)[which(resid(bac.lm) < -0.02 & bac$Beers == 5)]
+
+```
+
+### (l) Checking outlier influence
+Will the regression line slope increase, decrease or stay the same if we remove case 3, the 9 beer case, from our model? 
+
+Check your answer by adding `subset = -3` to the `lm` command (this removes row 3):
+```{r}
+# define a different linear model with row 3 removed 
+bac.lm2 <- lm(BAC ~ Beers, data=bac, subset = -3)
+```
+
+```{r}
+# Compare the two models
+summary(bac.lm2)
+summary(bac.lm)
+```
+
+- After removing case 3, how has the slope changed? Explain the why the change occurred.
+
+*Answer:* The slope drops from 0.0180 to 0.0146. Explanation given above.
+
+
+- After removing case 3, how has the $R^2$ changed? Explain the why the change occurred.
+
+*Answer:* The $R^2$ descreases from 79.9% to 76.8%. This small decrease happens because case 3 actually enhances the overall linear trend and removing it results is a slight decrease to correlation and $R^2$. 
+
+
+### (m) Adding a categorical variable to your plot
+
+We can create a scatterplot with plotting symbols color coded by a categorical grouping variable using `ggplot2` package.  We use the `geom_point()` plot geometry to get a scatterplot with the `x`, `y`, and `color` aesthetics specified. Here we look at the `BAC` vs. `Beers` plot with `Gender` added:
+
+```{r}
+library(ggplot2)
+ggplot(bac, aes(x=Beers, y=BAC, color=Gender)) + geom_point()
+```
+
+- Are the associations similiar? (form, strength, direction)
+
+*Answer:* Both females and males have similar strong, positive linear associations.
+
+
+### (n) Regression lines by groups
+A quick way to get the male and female regression line formulas for part (c) is to add a `subset` argument to the `lm` command:
+```{r}
+bac.lm.female <- lm(BAC ~ Beers, data=bac, subset = Gender == "female")
+bac.lm.female 
+# enter code for the male model
+
+bac.lm.male <- lm(BAC ~ Beers, data=bac, subset = Gender == "male")
+bac.lm.male
+
+```
+
+- What is the regression line for females? for males?
+
+*Answer:* For females: $\widehat{BAC} = -0.016 +0.021(BAC)$ and for males:  $\widehat{BAC} = -0.01 +0.015(BAC)$
+
+
+- Which gender has the largest slope? What does this suggest about the relationship between number of beers and BAC for this gender?
+
+*Answer:* The slope for females is slightly higher. This shows that the effect of one more beer on predicted BAC in females is larger than males (a 0.021 increase vs. a 0.015 increase).
+
+
+Another way to obtain regression models by `Gender` is to split the data set in a female and male data set, then run your `lm` on these two data sets. The benefit of this method is you can then create a residuals plot for your model much easier than the quicker method above:
+
+```{r}
+bac.female <- subset(bac, sub = Gender == "female")
+lm(BAC ~ Beers, data=bac.female)
+bac.male <- subset(bac, sub = Gender == "male")
+lm(BAC ~ Beers, data=bac.male)
+```
+
+
+
+### Mice Mass Example
+
+The time of day in which calories are consumed can affect weight gain.  At least, that appears to be true in mice.   Mice normally eat all their calories at night, but when mice ate some of their calories during the day (when mice are supposed to be sleeping), they gained more weight even though all the mice ate the same total amount of calories.  Here we look at the regression of body mass gain in grams, `BMGain`, against the percent of calories eaten during the day, `DayPct` for a study involving 27 mice.  The R commands needed to answer the questions below are:
+
+```{r, fig.width=4, fig.height=4}
+mice <- read.csv("http://math.carleton.edu/Stats215/Textbook/LightatNight4Weeks.csv")
+
+plot(BMGain ~ DayPct, data=mice, pch=19)
+mice.lm <- lm(BMGain ~ DayPct, data=mice)
+mice.lm
+cor(mice$BMGain, mice$DayPct)
+abline(mice.lm) # adds regression line to previously created scatterplot
+
+```
+
+### (a)  What are the coordinates (roughly) of the case with the largest positive residual?
+
+```{r}
+mice[which(resid(mice.lm) == max(resid(mice.lm))),]
+```
+
+*Answer:* The case with the largest residual is located at about 80% calories and 17g body mass gain. We can find which row this corresponds to using the `which` command shown below. 
+
+
+### (b)  What are the coordinates (roughly) of the case with the most negative residual?
+
+```{r}
+mice[which(resid(mice.lm) == min(resid(mice.lm))),]
+```
+
+*Answer:* The case with the most negative residual is located at about 55% calories and 3g body mass gain. We can find which row this corresponds to using the `which` command shown below. The code below also highlights the cases in (a) with a circle and (b) with a square.
+
+
+### (c)  What is the predicted body mass gain for a mouse that eats 50% of its calories during the day?
+
+$$
+\widehat{BMGain} =1.1128+0.1273(50)=7.48
+$$
+```{r}
+1.1128 + .1273*50
+```
+
+*Answer:* A mouse that eats 50% of its calories during the day is predicted to gain 7.48 grams.
+
+
+### (d)  Find the residual for the mouse who ate 48.3% of its calories during the day and gained 5.82 grams.
+
+*Answer:* We first find the predicted body mass gain: 
+$$
+\widehat{BMGain} = 1.1128+0.1273(48.3)=7.26
+$$
+
+The residual is then:  
+$$
+Residual = BMGain  -   \widehat{BMGain} =  5.82 – 7.26 = –1.44.
+$$
+```{r}
+1.1128 + .1273*48.3
+5.82 - (1.1128 + .1273*48.3)
+```
+
+
+### (e)  Interpret the slope of the regression line in context.
+
+*Answer:* The slope is 0.1273.  When a mouse eats one more percent of its calories during the day, its predicted body mass gain goes up by 0.1273 grams.
+
+
+### (f)  Interpret the intercept of the line in context, if it makes sense to do so.
+
+*Answer:* The intercept is 1.1128.  A mouse who eats 0% of its calories during the day (and all of them at night when a mouse normally eats all its food) is predicted to gain 1.11 grams.  But this would be **extrapolation** because the range of observed percents is, roughly, 20-90. It does not make sense to interpret the intercept in this context.
+
+
+### (g) Use the correlation value to compute $R^2$, then interpret (in context) the $R^2$ value for this model. 
+
+```{r}
+r <- 0.7398623
+r^2
+```
+
+
+
+### (h) Get the value of $R^2$ from the regression output, then interpret (in context) the $R^2$ value for this model. 
+
+```{r}
+summary(mice.lm)
+
+```
+
+*Answer:* From `Multiple R-squared`, we get $R^2 =  0.547$. The percent of calories that a mouse eats during the day explains about 55% of the variability in weight gain for this study.
+
+
+
+
+---------------------------------
+
+### Forbes Example
+
+In the mid 1800s, James D. Forbes conducted a experiments designed to determine if the atmospheric pressure at a given location can just be determined by the boiling temp of water at that location. 
+
+
+### (a) Fit the linear regression of `Pressure` on `Temp`:
+
+
+```{r}
+forbes <- read.csv("http://math.carleton.edu/kstclair/data/forbes.csv")
+plot(Pressure ~ Temp, data=forbes, pch=19, main = "Pressure vs. Temp")
+forbes.lm <- lm(Pressure ~ Temp, data=forbes)
+abline(forbes.lm)
+summary(forbes.lm)
+```
+
+- Describe the relationship between pressure and temp (strength, form, direction).
+
+*Answer:* This is a strong, positive relationship that looks linear.
+
+
+- Interpret the value of $R^2$
+
+*Answer:* About 99.4% of the variation observed in pressure can be explained by the boiling point temps. 
+
+
+### (b) Check the residuals plot
+```{r}
+plot(resid(forbes.lm) ~ Temp, data=forbes, pch=19, main = "Residuals plot")
+abline(h=0)
+
+```
+
+- Is the relationship between pressure and temp linear?
+
+*Answer:* No! There is curvature, which means the linear model is systematically underestimating pressure at low and high temps and overestimating pressure at mid-range temps. 
+
+
+- Does the residual plot highlight an unusual case? Explain.
+
+*Answer:* Yes, there is one case that has an unusually high pressure value given its temp. 
+
+
+### (c) "Fixing" the model
+A linear model can be used with this data if we **transform**  the response  variable to the logarithmic scale. Here `log(y)` gives the natural log of the variable `y`. 
+```{r}
+plot(log(Pressure) ~ Temp, data=forbes, pch=19, main = "Pressure vs. Temp")
+forbes.lm2 <- lm(log(Pressure) ~ Temp, data=forbes)
+abline(forbes.lm2)
+plot(resid(forbes.lm2) ~ Temp, data=forbes, pch=19, main = "Residuals plot")
+abline(h=0)
+```
+
+- Has the curvature in the scatterplot and residuals plots been reduced by logging the variables? 
+
+*Answer:* Yes, there is less curvature
+
+
+- Has the outlier been eliminated by logging the variables?
+
+*Answer:* No, the outlier is still present.
+
+### (d) Removing bad measurement
+Identify which case has the large residual value around 0.03. 
+
+```{r}
+resid(forbes.lm2)[which(resid(forbes.lm2) > 0.02)]
+
+```
+
+Repeat part (c) but this time remove the case you identified. The easiest way to do this is to create a new version of the data with row 12 removed:
+```{r}
+forbes2 <- forbes[-12, ]
+plot(log(Pressure) ~ Temp, data=forbes2, pch=19, main = "Pressure vs. Temp")
+forbes.lm2 <- lm(log(Pressure) ~ Temp, data=forbes2)
+abline(forbes.lm2)
+plot(resid(forbes.lm2) ~ Temp, data=forbes2, pch=19, main = "Residuals plot")
+abline(h=0)
+```
+
+

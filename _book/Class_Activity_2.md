@@ -1,15 +1,19 @@
 
-# Class Activity 1
+# Class Activity 2
 
 
 ## Your Turn 2
 
 ## Summary of article on [It depends on how you ask!](https://jech.bmj.com/content/75/4/387.abstract)
 
+
+<details>
+<summary><red>Click for answer</red></summary>
+
 *Answer:* 
 
 This study aimed to measure the effects of psychological biases on estimates of compliance with public health guidance regarding COVID-19. Results showed that compliance estimates were reduced when questions were framed negatively and anonymity was increased. Effect sizes were large, with compliance estimates diminishing by up to 17% points and 10% points, respectively. These findings suggest that standard tracking surveys pose questions in ways that lead to higher compliance estimates than alternative approaches.
-
+</details>
 
 ------------------------------------------
 
@@ -50,7 +54,7 @@ samp
 ```
 
 ```
- [1]  82 182  97  49  79 246 247  35 243  23
+ [1]  20  61 144  67  80  28 268   7  81  85
 ```
 
 This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
@@ -68,21 +72,22 @@ pop[samp,]
 ```
 
 ```
-    position size   word
-82        82    3    who
-182      182    4   thus
-97        97    6 proper
-49        49    3    and
-79        79    5  place
-246      246    1      a
-247      247    3    new
-35        35    2     in
-243      243    3   God,
-23        23    3    the
+    position size        word
+20        20    3         and
+61        61   11 battlefield
+144      144    4       note,
+67        67    4        come
+80        80    3         for
+28        28    3         are
+268      268    5      earth.
+7          7    3         our
+81        81    5       those
+85        85    5       their
 ```
 
 What are your sampled words?
  \vspace*{.5in}
+
 
 
 c. Compute your sample mean
@@ -96,7 +101,7 @@ mysize
 ```
 
 ```
- [1] 3 4 6 3 5 1 3 2 3 3
+ [1]  3 11  4  4  3  3  5  3  5  5
 ```
 
 Then find the mean of these values:
@@ -107,12 +112,18 @@ mean(mysize)
 ```
 
 ```
-[1] 3.3
+[1] 4.6
 ```
 
 How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample? 
 
+<details>
+<summary><red>Click for answer</red></summary>
+
 *Answer:*  The true mean is  4.29. Your two means will likely vary. Since the many non-random samples generally overestimated the population mean length, it is possible (but not guaranteed) that *your* one non-random sample gave a mean length that is greater than the random sample's mean length. 
+
+</details>
+
  \vspace*{1in}
 
 
@@ -122,25 +133,40 @@ Over 30,000 people participated in an online poll on `cnn.com` conducted in Apri
 
 a. Can you conclude that a random sample was used from the description given? Explain.
 
+<details>
+<summary><red>Click for answer</red></summary>
+
 *Answer:* No you can't make this conclusion from the info given. In fact, an online poll at a website like `cnn.com` is almost always reporting results from a non-random sample. The people who respond are individuals who visit `cnn.com`, then see the online poll and decide to respond. 
+</details>
 
  \vspace*{1.5in}
 
 
 b. Explain why it is not appropriate to generalize these results to all drivers, or even to all drivers who visit cnn.com.
 
-*Answer:* This is a volunteer sample, and volunteer samples are often biased and can't be generalized to *all drivers* (the population).  It is likely that people who have driven with a pet on their lap are more likely to respond to the poll.
+<details>
+<summary><red>Click for answer</red></summary>
 
+*Answer:* This is a volunteer sample, and volunteer samples are often biased and can't be generalized to *all drivers* (the population).  It is likely that people who have driven with a pet on their lap are more likely to respond to the poll.
+</details>
 
 c. How might we select a sample of people that would give us results that we can generalize to a broader population?
 
+<details>
+<summary><red>Click for answer</red></summary>
+
 *Answer:* A random sample of individuals from all U.S. drivers would need to be selected and given the poll question. (There are many ways to do this, the most common being a variation of random digit dialing where phone numbers are randomly selected from known area codes.)
+</details>
 
  \vspace*{1in}
 
 d.  Is the variable measured in this study quantitative or categorical?
 
+<details>
+<summary><red>Click for answer</red></summary>
+
 *Answer:* Categorical (yes or no answer to the question).
+</details>
 
  \vspace*{.5in}
 
