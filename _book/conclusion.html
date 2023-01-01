@@ -62,12 +62,12 @@
 </h1>
 <details><summary><red>Click for answer</red></summary>
 The correct answer is a. If there is a difference, we expect the between group variability to be higher than within group variability. <blue>RIGHT TAIL test!</blue></details><p><br></p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="conclusion.html#cb14-1" aria-hidden="true" tabindex="-1"></a>Temperature  <span class="ot">=</span>  <span class="fl">37.7</span> <span class="sc">+</span> <span class="fl">0.231</span> Chirps</span>
-<span id="cb14-2"><a href="conclusion.html#cb14-2" aria-hidden="true" tabindex="-1"></a>Predictor       Coef    SE Coef      T    <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)    </span>
-<span id="cb14-3"><a href="conclusion.html#cb14-3" aria-hidden="true" tabindex="-1"></a>Constant    <span class="fl">37.67858</span>    <span class="fl">1.97817</span>   <span class="fl">19.05</span>  <span class="fl">7.35e-06</span> <span class="sc">**</span><span class="er">*</span></span>
-<span id="cb14-4"><a href="conclusion.html#cb14-4" aria-hidden="true" tabindex="-1"></a>Chirps       <span class="fl">0.23067</span>    <span class="fl">0.01423</span>   <span class="fl">16.21</span>  <span class="fl">1.63e-05</span> <span class="sc">**</span><span class="er">*</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="conclusion.html#cb12-1" aria-hidden="true" tabindex="-1"></a>Temperature  <span class="ot">=</span>  <span class="fl">37.7</span> <span class="sc">+</span> <span class="fl">0.231</span> Chirps</span>
+<span id="cb12-2"><a href="conclusion.html#cb12-2" aria-hidden="true" tabindex="-1"></a>Predictor       Coef    SE Coef      T    <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)    </span>
+<span id="cb12-3"><a href="conclusion.html#cb12-3" aria-hidden="true" tabindex="-1"></a>Constant    <span class="fl">37.67858</span>    <span class="fl">1.97817</span>   <span class="fl">19.05</span>  <span class="fl">7.35e-06</span> <span class="sc">**</span><span class="er">*</span></span>
+<span id="cb12-4"><a href="conclusion.html#cb12-4" aria-hidden="true" tabindex="-1"></a>Chirps       <span class="fl">0.23067</span>    <span class="fl">0.01423</span>   <span class="fl">16.21</span>  <span class="fl">1.63e-05</span> <span class="sc">**</span><span class="er">*</span></span></code></pre></div>
 <p><br></p>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">survey</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"https://raw.githubusercontent.com/deepbas/statdatasets/main/StudentSurvey.csv"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">survey</span><span class="op">$</span><span class="va">Pulse</span><span class="op">)</span> <span class="co"># the command `mean` computes an average</span></span></code></pre></div>
 <pre><code>[1] 69.57459</code></pre>

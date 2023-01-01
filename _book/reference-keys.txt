@@ -1,7 +1,4 @@
 fig:pie
-usage
-render-book
-preview-book
 part-basics-r
 what-is-r
 what-is-rstudio
