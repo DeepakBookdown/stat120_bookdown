@@ -77,7 +77,7 @@ summary(simple_data)
 
 
 ```{r pretty_table}
-knitr::kable(simple_data, format = "html")
+knitr::kable(simple_data)
 ```
 
 ## Hide the code
@@ -86,6 +86,6 @@ If we enter the `echo = FALSE` option in the R chunk (see the .Rmd file). This p
 
 
 ```{r pretty_table2, echo=FALSE}
-knitr::kable(simple_data, format = "html")
+knitr::kable(simple_data)
 ```
 
