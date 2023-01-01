@@ -1,5 +1,7 @@
 bookdown::bs4_book:
   css: style.css
+  config:
+    number_sections: no
   theme:
     primary: "#0148A4"
   repo: https://github.com/rstudio/bookdown-demo

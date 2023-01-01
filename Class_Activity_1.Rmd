@@ -1,5 +1,4 @@
 
-
 # Class Activity 1
 
 - Try to knit the file at the present stage and see if it compiles.
@@ -18,14 +17,17 @@ example_data = data.frame(ID = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10),
                           Male = rep(c(TRUE, FALSE), 5),
                           age = runif(n=10, 20,60))
 
-example_data
+
 ```
+
 
 <details>
 <summary><red>Click for answer</red></summary>
+```{r}
+example_data
+```
 
-*Answer:* 
-
+*Answer:* We see a data frame with four columns, where the first column is an `identifier` for the cases. We have information on the greeting types, gender, and age on these cases in the remaining columns.
 </details>
 
 
@@ -33,43 +35,79 @@ example_data
 
 b. What is the dimension of the dataset called 'example_data'?
 
-```{r}
+<details>
+<summary><red>Click for answer</red></summary>
 
+```{r}
+dim(example_data)
+nrow(example_data)
+ncol(example_data)
 ```
+
+*Answer:* There are 10 rows and 4 columns.
+</details>
+
 
 \vspace*{1in}
 
 
 ---------------------------------------------------
 
-# Your Turn 2
+## Your Turn 2
 
 
 a. Read the dataset `EducationLiteracy` from the [Lock5](https://www.lock5stat.com/datapage2e.html) second edition book.
 
+<details>
+<summary><red>Click for answer</red></summary>
+
 ```{r}
+# read in the data
 education_lock5 <- read.csv("https://www.lock5stat.com/datasets2e/EducationLiteracy.csv")
 ```
 
+</details>
 
-b. Print the header (i.e. first 6 elements by default) of the dataset in part a.
+\vspace*{1in}
+
+
+b. Print the header (i.e. first 6 cases by default) of the dataset in part a.
+
+<details>
+<summary><red>Click for answer</red></summary>
 
 ```{r}
 head(education_lock5)
 ```
 
+</details>
+
+\vspace*{1in}
+
+
 c. What is the dimension of the dataset in a?
+
+
+<details>
+<summary><red>Click for answer</red></summary>
 
 ```{r}
 dim(education_lock5)
 ```
-*Answer:*
+*Answer:* There are 188 rows and 3 columns.
+
+</details>
+
 
 \vspace*{1in}
 
 d. What type of variables are `Country`, `EducationExpenditure`, and `Literacy`?
 
-*Answer:*
+<details>
+<summary><red>Click for answer</red></summary>
+*Answer:* `Country` is a categorical variable. `EducationExpenditure` and `Literacy` are both quantitative variables.
+</details>
+
 
 
 \vspace*{1in}
@@ -77,13 +115,12 @@ d. What type of variables are `Country`, `EducationExpenditure`, and `Literacy`?
 
 e. If we would like to use education expenditure to predict the literacy rate of each countries, which variable is the explanatory variable and which one is the response?
 
-*Answer:*
 
+<details>
+<summary><red>Click for answer</red></summary>
+*Answer:* The education expenditure is the explanatory variable, and the literacy rate is the response.
+</details>
 
 
 ---------------------------------------------------------------------
-
-
-
-
 

@@ -1,5 +1,4 @@
 
-
 # Class Activity 1
 
 - Try to knit the file at the present stage and see if it compiles.
@@ -18,29 +17,31 @@ example_data = data.frame(ID = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10),
                           Greeting = c(rep("Hello", 5), rep("Goodbye",5)),
                           Male = rep(c(TRUE, FALSE), 5),
                           age = runif(n=10, 20,60))
+```
 
+
+<details>
+<summary><red>Click for answer</red></summary>
+
+```r
 example_data
 ```
 
 ```
    ID Greeting  Male      age
-1   1    Hello  TRUE 27.49543
-2   2    Hello FALSE 36.77713
-3   3    Hello  TRUE 59.80202
-4   4    Hello FALSE 47.15347
-5   5    Hello  TRUE 59.62777
-6   6  Goodbye FALSE 55.09983
-7   7  Goodbye  TRUE 56.07272
-8   8  Goodbye FALSE 20.76508
-9   9  Goodbye  TRUE 29.90842
-10 10  Goodbye FALSE 42.04336
+1   1    Hello  TRUE 57.95339
+2   2    Hello FALSE 34.05676
+3   3    Hello  TRUE 31.61673
+4   4    Hello FALSE 42.81572
+5   5    Hello  TRUE 24.28266
+6   6  Goodbye FALSE 47.18767
+7   7  Goodbye  TRUE 33.70813
+8   8  Goodbye FALSE 42.40389
+9   9  Goodbye  TRUE 29.42876
+10 10  Goodbye FALSE 48.38395
 ```
 
-<details>
-<summary><red>Click for answer</red></summary>
-
-*Answer:* 
-
+*Answer:* We see a data frame with four columns, where the first column is an `identifier` for the cases. We have information on the greeting types, gender, and age on these cases in the remaining columns.
 </details>
 
 
@@ -48,6 +49,36 @@ example_data
 
 b. What is the dimension of the dataset called 'example_data'?
 
+<details>
+<summary><red>Click for answer</red></summary>
+
+
+```r
+dim(example_data)
+```
+
+```
+[1] 10  4
+```
+
+```r
+nrow(example_data)
+```
+
+```
+[1] 10
+```
+
+```r
+ncol(example_data)
+```
+
+```
+[1] 4
+```
+
+*Answer:* There are 10 rows and 4 columns.
+</details>
 
 
 \vspace*{1in}
@@ -55,18 +86,29 @@ b. What is the dimension of the dataset called 'example_data'?
 
 ---------------------------------------------------
 
-# Your Turn 2
+## Your Turn 2
 
 
 a. Read the dataset `EducationLiteracy` from the [Lock5](https://www.lock5stat.com/datapage2e.html) second edition book.
 
+<details>
+<summary><red>Click for answer</red></summary>
+
 
 ```r
+# read in the data
 education_lock5 <- read.csv("https://www.lock5stat.com/datasets2e/EducationLiteracy.csv")
 ```
 
+</details>
 
-b. Print the header (i.e. first 6 elements by default) of the dataset in part a.
+\vspace*{1in}
+
+
+b. Print the header (i.e. first 6 cases by default) of the dataset in part a.
+
+<details>
+<summary><red>Click for answer</red></summary>
 
 
 ```r
@@ -83,7 +125,16 @@ head(education_lock5)
 6 Antigua and Barbuda                  2.6     99.0
 ```
 
+</details>
+
+\vspace*{1in}
+
+
 c. What is the dimension of the dataset in a?
+
+
+<details>
+<summary><red>Click for answer</red></summary>
 
 
 ```r
@@ -93,13 +144,20 @@ dim(education_lock5)
 ```
 [1] 188   3
 ```
-*Answer:*
+*Answer:* There are 188 rows and 3 columns.
+
+</details>
+
 
 \vspace*{1in}
 
 d. What type of variables are `Country`, `EducationExpenditure`, and `Literacy`?
 
-*Answer:*
+<details>
+<summary><red>Click for answer</red></summary>
+*Answer:* `Country` is a categorical variable. `EducationExpenditure` and `Literacy` are both quantitative variables.
+</details>
+
 
 
 \vspace*{1in}
@@ -107,13 +165,12 @@ d. What type of variables are `Country`, `EducationExpenditure`, and `Literacy`?
 
 e. If we would like to use education expenditure to predict the literacy rate of each countries, which variable is the explanatory variable and which one is the response?
 
-*Answer:*
 
+<details>
+<summary><red>Click for answer</red></summary>
+*Answer:* The education expenditure is the explanatory variable, and the literacy rate is the response.
+</details>
 
 
 ---------------------------------------------------------------------
-
-
-
-
 
