@@ -1,0 +1,49 @@
+# (PART\*) Class Activity
+
+# Conclusion
+
+<details>
+<summary><red>Click for answer</red></summary>
+The correct answer is a. If there is a difference, we expect the between group variability to be higher than within group variability. <blue>RIGHT TAIL test!</blue>
+</details>
+
+
+<br>
+
+```r
+Temperature  =  37.7 + 0.231 Chirps
+Predictor       Coef    SE Coef      T    Pr(>|t|)    
+Constant    37.67858    1.97817   19.05  7.35e-06 ***
+Chirps       0.23067    0.01423   16.21  1.63e-05 ***
+```
+
+<br>
+
+
+```{r}
+survey <- read.csv("https://raw.githubusercontent.com/deepbas/statdatasets/main/StudentSurvey.csv")
+mean(survey$Pulse) # the command `mean` computes an average
+```
+
+<br>
+
+
+ROCK | PAPER | SCISSORS | TOTAL
+----| ---- | ------|-------
+36 | 12 | 37 | 85 
+
+<br>
+
+<bql>
+First year at Carleton
+</bql>
+
+- Originally from Nepal
+- PhD in Applied Statistics from
+
+**UC-Riverside**
+
+- Diverse education background
+- Avid learner and traveler
+
+
