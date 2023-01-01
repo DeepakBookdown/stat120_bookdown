@@ -1,7 +1,7 @@
 --- 
 title: "Stat 120"
 author: "Deepak Bastola"
-date: "2022-12-31"
+date: "2023-01-01"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -17,6 +17,6 @@ csl: chicago-fullnote-bibliography.csl
 
 # About {-}
 
-This is a _sample_ book written in **Markdown**. Y
+This is a _sample_ book written in **Markdown**. 
 
 

@@ -17,7 +17,7 @@ csl: chicago-fullnote-bibliography.csl
 
 # About {-}
 
-This is a _sample_ book written in **Markdown**. Y
+This is a _sample_ book written in **Markdown**. 
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages
