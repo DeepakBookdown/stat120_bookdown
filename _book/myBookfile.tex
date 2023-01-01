@@ -117,7 +117,7 @@
 
 \title{Stat 120}
 \author{Deepak Bastola}
-\date{2022-12-31}
+\date{2023-01-01}
 
 \begin{document}
 \maketitle
@@ -130,7 +130,7 @@
 \chapter*{About}\label{about}}
 \addcontentsline{toc}{chapter}{About}
 
-This is a \emph{sample} book written in \textbf{Markdown}. Y
+This is a \emph{sample} book written in \textbf{Markdown}.
 
 \hypertarget{part-basics-r}{%
 \chapter{(PART*) Basics R}\label{part-basics-r}}
@@ -515,6 +515,158 @@ First year at Carleton
 \item
   Avid learner and traveler
 \end{itemize}
+
+\hypertarget{class-activity-1}{%
+\chapter{Class Activity 1}\label{class-activity-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  Try to knit the file at the present stage and see if it compiles.
+\item
+  You can add \texttt{\textbackslash{}vspace*\{1in\}} in the body of this file to produce a vertical space of 1 inches.
+\end{itemize}
+
+\hypertarget{your-turn-1}{%
+\section{Your Turn 1}\label{your-turn-1}}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  Run the following chunk. Comment on the output.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{example\_data }\OtherTok{=} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{ID =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DecValTok{7}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{9}\NormalTok{, }\DecValTok{10}\NormalTok{),}
+                          \AttributeTok{Greeting =} \FunctionTok{c}\NormalTok{(}\FunctionTok{rep}\NormalTok{(}\StringTok{"Hello"}\NormalTok{, }\DecValTok{5}\NormalTok{), }\FunctionTok{rep}\NormalTok{(}\StringTok{"Goodbye"}\NormalTok{,}\DecValTok{5}\NormalTok{)),}
+                          \AttributeTok{Male =} \FunctionTok{rep}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\ConstantTok{TRUE}\NormalTok{, }\ConstantTok{FALSE}\NormalTok{), }\DecValTok{5}\NormalTok{),}
+                          \AttributeTok{age =} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n=}\DecValTok{10}\NormalTok{, }\DecValTok{20}\NormalTok{,}\DecValTok{60}\NormalTok{))}
+
+\NormalTok{example\_data}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+   ID Greeting  Male      age
+1   1    Hello  TRUE 22.70742
+2   2    Hello FALSE 44.60029
+3   3    Hello  TRUE 52.95202
+4   4    Hello FALSE 42.45339
+5   5    Hello  TRUE 23.00739
+6   6  Goodbye FALSE 50.69120
+7   7  Goodbye  TRUE 26.87516
+8   8  Goodbye FALSE 45.08946
+9   9  Goodbye  TRUE 29.10060
+10 10  Goodbye FALSE 22.10274
+\end{verbatim}
+
+Click for answer
+
+\emph{Answer:}
+
+\vspace*{1in}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  What is the dimension of the dataset called `example\_data'?
+\end{enumerate}
+
+\vspace*{1in}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{your-turn-2}{%
+\chapter{Your Turn 2}\label{your-turn-2}}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  Read the dataset \texttt{EducationLiteracy} from the \href{https://www.lock5stat.com/datapage2e.html}{Lock5} second edition book.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{education\_lock5 }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://www.lock5stat.com/datasets2e/EducationLiteracy.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Print the header (i.e.~first 6 elements by default) of the dataset in part a.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(education\_lock5)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+              Country EducationExpenditure Literacy
+1         Afghanistan                  3.1     31.7
+2             Albania                  3.2     96.8
+3             Algeria                  4.3       NA
+4             Andorra                  3.2       NA
+5              Angola                  3.5     70.6
+6 Antigua and Barbuda                  2.6     99.0
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  What is the dimension of the dataset in a?
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dim}\NormalTok{(education\_lock5)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 188   3
+\end{verbatim}
+
+\emph{Answer:}
+
+\vspace*{1in}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  What type of variables are \texttt{Country}, \texttt{EducationExpenditure}, and \texttt{Literacy}?
+\end{enumerate}
+
+\emph{Answer:}
+
+\vspace*{1in}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  If we would like to use education expenditure to predict the literacy rate of each countries, which variable is the explanatory variable and which one is the response?
+\end{enumerate}
+
+\emph{Answer:}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
   \bibliography{book.bib,packages.bib}
 

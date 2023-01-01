@@ -12,3 +12,5 @@ knitr::opts_chunk$set(collapse = FALSE,
                       out.width = "100%"
 )
 
+# load the necessary libraries
+library(tidyverse) 

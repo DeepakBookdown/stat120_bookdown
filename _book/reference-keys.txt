@@ -14,3 +14,6 @@ read-in-data-files
 hide-the-code
 part-class-activity
 conclusion
+class-activity-1
+your-turn-1
+your-turn-2
