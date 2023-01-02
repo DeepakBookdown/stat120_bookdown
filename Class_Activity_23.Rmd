@@ -1,0 +1,126 @@
+# Class Activity 23
+
+## Example 1: The data on `CricketChirps` were collected by E.A. Bessey and C.A. Bessey who measured chirp rates for crickets and temperatures during the summer of 1898. Conduct a simple linear regression analysis to predict the temperature by cricket chirp rate.
+
+
+```{r}
+cricket <- read.csv("https://www.lock5stat.com/datasets3e/CricketChirps.csv")
+cricket
+```
+
+
+```{r}
+mod <- lm(Temperature~Chirps, data = cricket)
+summary(mod)
+```
+
+### (1a) What is the equation for the regression line? Define all the variables.
+
+*Answer:*
+
+\vspace*{1in}
+
+
+### (1b) What is the Standard Error(SE) for the slope?
+
+*Answer:*
+
+\vspace*{1in}
+
+### (1c) Find a 95% confidence interval for the slope of the cricket temperature model.
+
+*Answer:*
+
+\vspace*{1in}
+
+### (1d) Conduct a hypotheis test for the slope. Include all the steps. 
+
+*Answer:*
+
+\vspace*{3in}
+
+### (1e) Conduct a hypothesis test to see if there exists some association between temperature and chirp rate.
+
+```{r}
+anova(mod)
+```
+
+*Answer:*
+
+\vspace*{3in}
+
+### (1f) What is the coefficient of determination ($R^2$) in this example? Interpret it.
+
+
+*Answer:*
+
+\vspace*{2in}
+
+### (1g) Lastly, verify if the conditions for linear model are met.
+
+
+```{r}
+plot(cricket$Chirps, cricket$Temperature, type = "p", pch = 19)
+abline(mod)
+
+plot(cricket$Temperature, mod$residuals, type = "p", pch = 19)
+abline(h = 0, col = "red")
+
+qqnorm(mod$residuals)
+qqline(mod$residuals, col = "blue")
+```
+
+
+*Answer:*
+
+\vspace*{2in}
+
+
+### Example 2: Nutrition information for a sample of 30 breakfast cereals, derived from nutrition labels are stored under `Cereals` dataset. Calorie values are per cup of cereal and sugars are measured in grams per cup. We would like to predict the calorie count by the suger content of the cereal.
+
+```{r}
+cerealdat <- read.csv("https://www.lock5stat.com/datasets3e/Cereal.csv")
+```
+
+```{r}
+mod <- lm(Calories~Sugars, data = cerealdat)
+summary(mod)
+anova(mod)
+```
+
+### (2a) What is the equation for the regression line? Define all the variables.
+
+*Answer:*
+
+\vspace*{1in}
+
+### (2b) Check the conditions for using linear model.
+
+*Answer:*
+
+
+
+```{r}
+plot(cerealdat$Sugars, cerealdat$Calories, type = "p", pch = 19)
+abline(mod)
+
+plot(cerealdat$Sugars, mod$residuals, type = "p", pch = 19)
+abline(h = 0, col = "red")
+
+qqnorm(mod$residuals)
+qqline(mod$residuals, col = "blue")
+```
+
+
+\vspace*{1in}
+
+
+### (2c) Conduct a hypotheis test to determine if the linear model is effective. Include all the steps. Remember, we can still proceed with the hypothesis tests if some of the assumptions are slightly violated.
+
+*Answer:*
+
+\vspace*{1in}
+
+
+
+

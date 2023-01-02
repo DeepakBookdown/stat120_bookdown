@@ -188,7 +188,7 @@ ggplot(data, aes(x = sample.prop1000)) +
 ```r
 # r-code
 mean(sample.prop1000)
-[1] 0.65937
+[1] 0.65753
 ```
 
 
@@ -204,7 +204,7 @@ mean(sample.prop1000)
 ```r
 # r-code
 sd(sample.prop1000)
-[1] 0.04703313
+[1] 0.04775646
 ```
 
 
@@ -237,9 +237,9 @@ ggplot(data, aes(x = sample.prop1000)) +
 
 ```r
 mean(sample.prop1000)
-[1] 0.6564
+[1] 0.6593
 sd(sample.prop1000)
-[1] 0.1079615
+[1] 0.1052121
 ```
 
 
@@ -274,9 +274,9 @@ ggplot(data, aes(x = sample.prop1000)) +
 
 ```r
 mean(sample.prop1000)
-[1] 0.90245
+[1] 0.8991
 sd(sample.prop1000)
-[1] 0.06871113
+[1] 0.0660193
 ```
 
 
@@ -404,7 +404,7 @@ mean(movies$Budget, na.rm = TRUE)
 ```r
 # r-code
 mean(sample.mean1000)
-[1] 52.72292
+[1] 53.68764
 ```
 
 
@@ -421,7 +421,7 @@ mean(sample.mean1000)
 ```r
 # r-code
 sd(sample.mean1000)
-[1] 14.64179
+[1] 14.86305
 ```
 
 
@@ -481,11 +481,11 @@ Let's investigate the effect of sample size in the sampling distribution using t
 
 ```r
 sd(data.size.25$x)
-[1] 0.08940765
+[1] 0.09662256
 sd(data.size.100$x)
-[1] 0.04705989
+[1] 0.04526413
 sd(data.size.400$x)
-[1] 0.02384217
+[1] 0.02203988
 ```
 
 As the sample size increases, the variability as measured by the standard error of the sampling distribution does indeed decrease.
@@ -532,7 +532,7 @@ ggplot(mydata, aes(x = boot.samplemean1000)) +
 
 ```r
 mean(mydata$x)
-[1] 54.14355
+[1] 52.43843
 sd(mydata$x)
-[1] 15.33221
+[1] 15.26348
 ```

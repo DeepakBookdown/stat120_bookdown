@@ -126,73 +126,26 @@ summary(simple_data)
 
 
 ```r
-knitr::kable(simple_data, format = "html")
+knitr::kable(simple_data)
 ```
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> initials </th>
-   <th style="text-align:left;"> state </th>
-   <th style="text-align:right;"> age </th>
-   <th style="text-align:left;"> time </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> vib </td>
-   <td style="text-align:left;"> MA </td>
-   <td style="text-align:right;"> 61 </td>
-   <td style="text-align:left;"> 6:01 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> adc </td>
-   <td style="text-align:left;"> TX </td>
-   <td style="text-align:right;"> 45 </td>
-   <td style="text-align:left;"> 5:45 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> kme </td>
-   <td style="text-align:left;"> CT </td>
-   <td style="text-align:right;"> 50 </td>
-   <td style="text-align:left;"> 4:19 </td>
-  </tr>
-</tbody>
-</table>
+
+
+|initials |state | age|time |
+|:--------|:-----|---:|:----|
+|vib      |MA    |  61|6:01 |
+|adc      |TX    |  45|5:45 |
+|kme      |CT    |  50|4:19 |
 
 ## Hide the code
 
 If we enter the `echo = FALSE` option in the R chunk (see the .Rmd file). This prevents the R code from being printed to your document; you just see the results.
 
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> initials </th>
-   <th style="text-align:left;"> state </th>
-   <th style="text-align:right;"> age </th>
-   <th style="text-align:left;"> time </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> vib </td>
-   <td style="text-align:left;"> MA </td>
-   <td style="text-align:right;"> 61 </td>
-   <td style="text-align:left;"> 6:01 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> adc </td>
-   <td style="text-align:left;"> TX </td>
-   <td style="text-align:right;"> 45 </td>
-   <td style="text-align:left;"> 5:45 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> kme </td>
-   <td style="text-align:left;"> CT </td>
-   <td style="text-align:right;"> 50 </td>
-   <td style="text-align:left;"> 4:19 </td>
-  </tr>
-</tbody>
-</table>
+
+|initials |state | age|time |
+|:--------|:-----|---:|:----|
+|vib      |MA    |  61|6:01 |
+|adc      |TX    |  45|5:45 |
+|kme      |CT    |  50|4:19 |
 

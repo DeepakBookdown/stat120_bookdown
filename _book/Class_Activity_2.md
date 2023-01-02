@@ -54,7 +54,7 @@ samp
 ```
 
 ```
- [1]  19   5 240  10 111  69 132 195  70  76
+ [1] 193 249 176  54  56 195 115 140  40  55
 ```
 
 This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
@@ -73,16 +73,16 @@ pop[samp,]
 
 ```
     position size      word
-19        19    7  liberty,
-5          5    5     years
-240      240    4      this
-10        10    5     forth
-111      111    2        we
-69        69    8  dedicate
-132      132    5     above
+193      193    2        be
+249      249    2        of
+176      176    5     which
+54        54    6   endure.
+56        56    3       are
 195      195    9 dedicated
-70        70    1         a
-76        76    1         a
+115      115    6    cannot
+140      140    3       The
+40        40    7   testing
+55        55    2        We
 ```
 
 What are your sampled words?
@@ -101,7 +101,7 @@ mysize
 ```
 
 ```
- [1] 7 5 4 5 2 8 5 9 1 1
+ [1] 2 2 5 6 3 9 6 3 7 2
 ```
 
 Then find the mean of these values:
@@ -112,7 +112,7 @@ mean(mysize)
 ```
 
 ```
-[1] 4.7
+[1] 4.5
 ```
 
 How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample? 

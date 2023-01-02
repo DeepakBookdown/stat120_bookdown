@@ -51,9 +51,10 @@
 <li><a class="" href="class-activity-5.html"><span class="header-section-number">5</span> Class Activity 5</a></li>
 <li><a class="" href="class-activity-6.html"><span class="header-section-number">6</span> Class Activity 6</a></li>
 <li><a class="active" href="class-activity-7.html"><span class="header-section-number">7</span> Class Activity 7</a></li>
+<li><a class="" href="class-activity-8.html"><span class="header-section-number">8</span> Class Activity 8</a></li>
 <li class="book-part">Basics R</li>
-<li><a class="" href="what-is-r.html"><span class="header-section-number">9</span> What is R?</a></li>
-<li><a class="" href="r-markdown.html"><span class="header-section-number">10</span> R Markdown</a></li>
+<li><a class="" href="what-is-r.html"><span class="header-section-number">10</span> What is R?</a></li>
+<li><a class="" href="r-markdown.html"><span class="header-section-number">11</span> R Markdown</a></li>
 </ul>
 
         <div class="book-extra">
@@ -265,14 +266,14 @@ the default setting.</p>
 <p><em>Answer:</em></p>
 <div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="class-activity-7.html#cb238-1" aria-hidden="true" tabindex="-1"></a><span class="co"># r-code</span></span>
 <span id="cb238-2"><a href="class-activity-7.html#cb238-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(sample.prop1000)</span>
-<span id="cb238-3"><a href="class-activity-7.html#cb238-3" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.65877</span></span></code></pre></div>
+<span id="cb238-3"><a href="class-activity-7.html#cb238-3" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.65954</span></span></code></pre></div>
 <p><em>Question:</em> What is the standard deviation of this distribution? (Hint: use the 95% rule.)</p>
 <p><em>Answer:</em> About 0.03, it looks like most sample proportions are between 0.55 to 0.75 so 2 standard deviations is about 0.10. This makes the SD about 0.05.</p>
 <p><em>Question:</em> The standard deviation of sampling distribution has a separate name. It is called the <strong>Standard Error</strong>. Verify the standard deviation of this distribution using R-code.</p>
 <p><em>Answer:</em></p>
 <div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="class-activity-7.html#cb239-1" aria-hidden="true" tabindex="-1"></a><span class="co"># r-code</span></span>
 <span id="cb239-2"><a href="class-activity-7.html#cb239-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(sample.prop1000)</span>
-<span id="cb239-3"><a href="class-activity-7.html#cb239-3" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.04578519</span></span></code></pre></div>
+<span id="cb239-3"><a href="class-activity-7.html#cb239-3" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.04773958</span></span></code></pre></div>
 </div>
 <div id="d-repeat-partc-with-sample-size-20-instead-of-100.-generate-1000-samples." class="section level3" number="7.6.4">
 <h3>
@@ -296,9 +297,9 @@ the default setting.</p>
 <p><em>Question:</em> How has the sampling distribution changed? (Shape? Center? Variability?)</p>
 <p><em>Answer:</em> The shape is slightly left skewed, still centered at 0.66 but with more variability that before (SD of about 0.10). This distribution is more discrete looking because there are just a few sample proportions possible with n=20 (e.g. 20/20, 19/20, 18/20, etc).</p>
 <div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="class-activity-7.html#cb241-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(sample.prop1000)</span>
-<span id="cb241-2"><a href="class-activity-7.html#cb241-2" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.65625</span></span>
+<span id="cb241-2"><a href="class-activity-7.html#cb241-2" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.66365</span></span>
 <span id="cb241-3"><a href="class-activity-7.html#cb241-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(sample.prop1000)</span>
-<span id="cb241-4"><a href="class-activity-7.html#cb241-4" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.1112016</span></span></code></pre></div>
+<span id="cb241-4"><a href="class-activity-7.html#cb241-4" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.1083417</span></span></code></pre></div>
 </div>
 <div id="d-now-suppose-the-population-proportion-is-p0.90-instead-of-p0.66-in-part-e.-keep-n.size20." class="section level3" number="7.6.5">
 <h3>
@@ -325,9 +326,9 @@ the default setting.</p>
 <p><em>Question:</em> How has the sampling distribution changed? (Shape? Center? Variability?)</p>
 <p><em>Answer:</em> The shape is much more left skewed than when p=0.66. Center is around 0.90 and SD is around 0.07. Note that increasing the population proportion closer to 1 results in a decrease in the SD because most samples give proportion near 1.</p>
 <div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="class-activity-7.html#cb243-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(sample.prop1000)</span>
-<span id="cb243-2"><a href="class-activity-7.html#cb243-2" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.8993</span></span>
+<span id="cb243-2"><a href="class-activity-7.html#cb243-2" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.9022</span></span>
 <span id="cb243-3"><a href="class-activity-7.html#cb243-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(sample.prop1000)</span>
-<span id="cb243-4"><a href="class-activity-7.html#cb243-4" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.0660975</span></span></code></pre></div>
+<span id="cb243-4"><a href="class-activity-7.html#cb243-4" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.0667429</span></span></code></pre></div>
 </div>
 </div>
 <div id="example-4-simulation-for-a-sample-mean" class="section level2" number="7.7">
@@ -430,14 +431,14 @@ the default setting.</p>
 <p><em>Answer:</em> It is very close to the population mean.</p>
 <div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="class-activity-7.html#cb250-1" aria-hidden="true" tabindex="-1"></a><span class="co"># r-code</span></span>
 <span id="cb250-2"><a href="class-activity-7.html#cb250-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(sample.mean1000)</span>
-<span id="cb250-3"><a href="class-activity-7.html#cb250-3" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">53.34134</span></span></code></pre></div>
+<span id="cb250-3"><a href="class-activity-7.html#cb250-3" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">52.63305</span></span></code></pre></div>
 <p><em>Question:</em> What is the standard deviation of this distribution? (Hint: use the 95% rule.)</p>
 <p><em>Answer:</em> About 15 million.</p>
 <p><em>Question:</em> The standard deviation of sampling distribution has a separate name. It is called the <strong>Standard Error</strong>. Verify the standard deviation of this distribution using R-code.</p>
 <p><em>Answer:</em> It is 14.80 million quite cose to our previous informed guess.</p>
 <div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="class-activity-7.html#cb251-1" aria-hidden="true" tabindex="-1"></a><span class="co"># r-code</span></span>
 <span id="cb251-2"><a href="class-activity-7.html#cb251-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(sample.mean1000)</span>
-<span id="cb251-3"><a href="class-activity-7.html#cb251-3" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">15.4411</span></span></code></pre></div>
+<span id="cb251-3"><a href="class-activity-7.html#cb251-3" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">14.93547</span></span></code></pre></div>
 </div>
 <div id="e-repeat-partd-with-sample-size-50-instead-of-10.-generate-1000-samples." class="section level3" number="7.7.5">
 <h3>
@@ -480,11 +481,11 @@ the default setting.</p>
 <p><em>Question</em> Estimate the standard error of each and verify your answer to the previous question.</p>
 <p><em>Answer</em> The standard errors are</p>
 <div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="class-activity-7.html#cb253-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(data.size<span class="fl">.25</span><span class="sc">$</span>x)</span>
-<span id="cb253-2"><a href="class-activity-7.html#cb253-2" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.08529582</span></span>
+<span id="cb253-2"><a href="class-activity-7.html#cb253-2" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.09829992</span></span>
 <span id="cb253-3"><a href="class-activity-7.html#cb253-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(data.size<span class="fl">.100</span><span class="sc">$</span>x)</span>
-<span id="cb253-4"><a href="class-activity-7.html#cb253-4" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.04790107</span></span>
+<span id="cb253-4"><a href="class-activity-7.html#cb253-4" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.04894811</span></span>
 <span id="cb253-5"><a href="class-activity-7.html#cb253-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(data.size<span class="fl">.400</span><span class="sc">$</span>x)</span>
-<span id="cb253-6"><a href="class-activity-7.html#cb253-6" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.0231961</span></span></code></pre></div>
+<span id="cb253-6"><a href="class-activity-7.html#cb253-6" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.02124769</span></span></code></pre></div>
 <p>As the sample size increases, the variability as measured by the standard error of the sampling distribution does indeed decrease.</p>
 </div>
 <div id="example-6-bootstrap-sampling" class="section level2" number="7.9">
@@ -521,15 +522,15 @@ the default setting.</p>
 </ol>
 <p><em>Answer:</em> The shape/center and variability of this bootstrap distribution is very similar to that of Ex 4 (d)</p>
 <div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="class-activity-7.html#cb256-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(mydata<span class="sc">$</span>x)</span>
-<span id="cb256-2"><a href="class-activity-7.html#cb256-2" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">53.48973</span></span>
+<span id="cb256-2"><a href="class-activity-7.html#cb256-2" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">53.55792</span></span>
 <span id="cb256-3"><a href="class-activity-7.html#cb256-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(mydata<span class="sc">$</span>x)</span>
-<span id="cb256-4"><a href="class-activity-7.html#cb256-4" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">15.42279</span></span></code></pre></div>
+<span id="cb256-4"><a href="class-activity-7.html#cb256-4" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">15.99042</span></span></code></pre></div>
 
 </div>
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="class-activity-6.html"><span class="header-section-number">6</span> Class Activity 6</a></div>
-<div class="next"><a href="what-is-r.html"><span class="header-section-number">9</span> What is R?</a></div>
+<div class="next"><a href="class-activity-8.html"><span class="header-section-number">8</span> Class Activity 8</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">

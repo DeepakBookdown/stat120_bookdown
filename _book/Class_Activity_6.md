@@ -297,14 +297,17 @@ resid(bac.lm)[which(resid(bac.lm) < -0.02 & bac$Beers == 5)]
 ```
 
 ### (l) Checking outlier influence
+
 Will the regression line slope increase, decrease or stay the same if we remove case 3, the 9 beer case, from our model? 
 
 Check your answer by adding `subset = -3` to the `lm` command (this removes row 3):
+
 
 ```r
 # define a different linear model with row 3 removed 
 bac.lm2 <- lm(BAC ~ Beers, data=bac, subset = -3)
 ```
+
 
 
 ```r
@@ -364,11 +367,9 @@ F-statistic: 55.94 on 1 and 14 DF,  p-value: 2.969e-06
 
 *Answer:* The slope drops from 0.0180 to 0.0146. Explanation given above.
 
-
 - After removing case 3, how has the $R^2$ changed? Explain the why the change occurred.
 
-*Answer:* The $R^2$ descreases from 79.9% to 76.8%. This small decrease happens because case 3 actually enhances the overall linear trend and removing it results is a slight decrease to correlation and $R^2$. 
-
+*Answer:* The $R^2$ decreases from 79.9% to 76.8%. This small decrease happens because case 3 actually enhances the overall linear trend and removing it results is a slight decrease to correlation and $R^2$. 
 
 ### (m) Adding a categorical variable to your plot
 
@@ -382,13 +383,14 @@ ggplot(bac, aes(x=Beers, y=BAC, color=Gender)) + geom_point()
 
 <img src="Class_Activity_6_files/figure-epub3/unnamed-chunk-19-1.png" width="100%" />
 
-- Are the associations similiar? (form, strength, direction)
+- Are the associations similar? (form, strength, direction)
 
 *Answer:* Both females and males have similar strong, positive linear associations.
 
-
 ### (n) Regression lines by groups
+
 A quick way to get the male and female regression line formulas for part (c) is to add a `subset` argument to the `lm` command:
+
 
 ```r
 bac.lm.female <- lm(BAC ~ Beers, data=bac, subset = Gender == "female")
@@ -654,6 +656,9 @@ In the mid 1800s, James D. Forbes conducted a experiments designed to determine 
 
 
 ```r
+library(MASS)
+data("forbes")
+
 forbes <- read.csv("http://math.carleton.edu/kstclair/data/forbes.csv")
 plot(Pressure ~ Temp, data=forbes, pch=19, main = "Pressure vs. Temp")
 forbes.lm <- lm(Pressure ~ Temp, data=forbes)
@@ -700,6 +705,7 @@ F-statistic:  2677 on 1 and 15 DF,  p-value: < 2.2e-16
 
 ### (b) Check the residuals plot
 
+
 ```r
 plot(resid(forbes.lm) ~ Temp, data=forbes, pch=19, main = "Residuals plot")
 abline(h=0)
@@ -719,6 +725,7 @@ abline(h=0)
 
 ### (c) "Fixing" the model
 A linear model can be used with this data if we **transform**  the response  variable to the logarithmic scale. Here `log(y)` gives the natural log of the variable `y`. 
+
 
 ```r
 plot(log(Pressure) ~ Temp, data=forbes, pch=19, main = "Pressure vs. Temp")

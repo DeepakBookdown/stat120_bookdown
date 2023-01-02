@@ -1,0 +1,257 @@
+# Class Activity 20
+
+## Example 1:  A survey of university graduates was done to study how frequently they exercised. The survey was completed by 470 graduates. They were asked where they lived their senior year. Use the following data to determine whether there is an association between exercise on campus and students' living arrangements. 
+
+
+\begin{tabular}{|c|c|c|c|c|} \hline
+ & No regular exercise & Sporadic exercise & Regular exercise & Total \\  \hline
+Dormitory & 32 & 30 & 28 & 90  \\ \hline 
+On-Campus Apartment & 74 & 64 & 42 & 180  \\ \hline 
+Off-campus Apartment & 110 & 25 & 15 & 150 \\ \hline 
+At Home & 39 & 6 & 5 &  50 \\ \hline 
+Total & 255 & 125 & 90 & 470 \\ \hline 
+\end{tabular}
+
+*Answer:* 
+
+### Step 1:
+$$\\[1in]$$
+
+### Step 2:
+$$\\[1in]$$
+
+### Step 3:
+$$\\[1in]$$
+
+### Step 4:
+
+$$\\[1in]$$
+
+### Step 5:
+
+$$\\[1in]$$
+
+
+
+## Example 2: Does political comfort level depend on religion?
+
+Next consider the survey questions about political comfort level and religion. We want know if the response to the comfort level question is associated with their religious practice. To test this question about **two cateogorical** variables with one variable containing at least **3 levels**, we must conduct a chi-square test for association. 
+
+#### (a) Hypotheses
+State the hypotheses for this test.
+
+*Answer:* The null can be stated a couple of equivalent ways: There is no association between religion and comfort level;  the variables comfort level and religion are independent of one another; the distribution of comfort level is the same for all three religion types. 
+
+The alternatives are just "not the null" statements: There is an association between religion and comfort level;  the variables comfort level and religion are dependent; the distribution of comfort level is the different for at least one religion type. 
+
+#### (b) Data
+Does the data suggest that there is an association between comfort level and religion? 
+
+```{r}
+library(forcats) 
+survey <- read.csv("https://raw.githubusercontent.com/deepbas/statdatasets/main/Survey.csv")
+
+# rename then reorder comfort level
+summary(survey$Question.9)
+levels(survey$Question.9) <- c("almost always", "rarely", "sometimes")
+survey$Question.9 <- fct_relevel(survey$Question.9,
+                      "almost always", "sometimes", "rarely") 
+summary(survey$Question.9)  # always check work!
+```
+
+```{r}
+counts <- table(survey$Question.8, survey$Question.9)
+counts
+sum(counts)  # number of respondents
+prop.table(counts,1)  # dist of comfort level given religious level
+library(ggplot2)
+ggplot(survey, aes(x=Question.8, fill=Question.9)) +
+  geom_bar(position="fill") +
+  labs(fill = "Comfort level", x = "Religious level", y = "proportion", 
+       title="Comfort level by religious level") +
+    scale_x_discrete(labels = function(x) stringr::str_wrap(x, width = 16))
+
+```
+
+```{r}
+library(tidyr)
+survey_ex2 <- drop_na(survey, Question.8, Question.9) 
+ggplot(survey_ex2, aes(x=Question.8, fill=Question.9)) +
+  geom_bar(position="fill") +
+  labs(fill = "Comfort level", x = "Religious level", y = "proportion", 
+       title="Comfort level by religious level")+
+    scale_x_discrete(labels = function(x) stringr::str_wrap(x, width = 16))
+
+```
+
+*Answer:* Yes, there is a much higher rate of "almost always comfortable" for the not religious respondents (`r round(prop.table(counts,1),3)[1,1]*100`%) than those that are religious (not active: `r round(prop.table(counts,1),3)[2,1]*100`%; active: `r round(prop.table(counts,1),3)[3,1]*100`%).  
+
+#### (c) Expected counts
+Compute the expected number of "not religious" people who are "almost always comfortable".
+
+*Answer:* There are `r sum(counts[1,])` "not religious" respondents and the overall rate (ignoring religion) of "almost always comfortable" is about  `r round(prop.table(table(survey$Question.9))[1],3)*100`%. If the null is true (and religion doesn't relate to comfort level), the expected number is about
+$$
+`r sum(counts[1,])` \times \dfrac{`r sum(counts[,1])`}{`r sum(counts)`} = `r round(sum(counts[1,])*sum(counts[,1])/sum(counts),3)`
+$$
+
+```{r}
+table(survey$Question.8)
+table(survey$Question.9)
+sum(counts)
+```
+
+```{r, echo=FALSE}
+exp <- table(survey$Question.8)[1]*table(survey$Question.9)[1]/sum(counts)
+contr<- (counts[1,1] - exp)^2/exp
+```
+
+
+#### (d) Chi-square contribution
+What is the contribution to the chi-square test statistic from the "not religious"/"almost always comfortable" cell?
+
+*Answer:* The contribution to the chi-square test stat from this category is `r round(contr, 2)`.
+$$
+\dfrac{(`r counts[1,1]` - `r exp`)^2}{`r exp`} = `r round(contr,3)`
+$$
+
+
+#### (e) Chi-square test
+The `chisq.test(x,y)` can be used to give chi-square test results. For this version, `x` and `y` are categorical variables from a data set.
+```{r}
+ComfortReligion <- chisq.test(survey_ex2$Question.8, survey_ex2$Question.9)
+ComfortReligion
+```
+
+- What is the chi-square test stat value?
+
+*Answer:* The test stat value is `r round(ComfortReligion$statistic,3)`
+
+- How is the degrees of freedom of 4 calculated?
+
+*Answer:* There are 3 categories for each variable, so the degrees of freedom will be $df = (3-1)(3-1) = 4$. 
+
+- Interpret the p-value for this test.
+
+*Answer:* If there is no association between comfort level and religiousness, then we would see a chi-square test stat of `r round(ComfortReligion$statistic,3)`, or one even larger, only about `r round(ComfortReligion$p.value,4)*100`% of the time. 
+
+#### (f) Conclusion
+What is your conclusion for this test?
+
+*Answer:* We have strong evidence that there is an association between political comfort level and religiousness ($\chi^2 = `r round(ComfortReligion$statistic,3)`$, df = `r ComfortReligion$parameter`, p-value = `r round(ComfortReligion$p.value,4)`).
+
+#### (g) Expected counts
+Are the expected counts large enough to use the chi-square distribution to compute the p-value?
+```{r}
+ComfortReligion$expected
+```
+
+*Answer:* Yes, all expected counts are 5 or greater. 
+
+#### (h) Simulated p-value
+If you were concerned that the expected counts weren't large enough to trust using a chi-square distribution to compute a p-value, you can add a `simulate.p.value = TRUE` argument to use a randomization distribution to compute the p-value:
+```{r}
+chisq.test(survey_ex2$Question.8, survey_ex2$Question.9, simulate.p.value = TRUE)
+```
+The p-value is slightly different, but your conclusion should be the same.
+
+
+#### (i) Where is the difference?
+Use the grouped bar graph and conditional percents from part (b) to describe the association you (should have) found in part (f). To help quantify differences, compute a 95% confidence interval for the difference in the true proportions of "rarely comfortable" people in the not religious and actively religious groups. 
+
+*Answer:* The largest test stat contributions comes from the not religious/rarely comfortable group and the active religious/rarely comfortable group. We can see that the not religious respondents have a low "rarely" comfortable level compared to religious groups (`r round( prop.table(counts,1)[1,2],3)*100`% vs. `r round( prop.table(counts,1)[3,2],3)*100`% for active and `r round( prop.table(counts,1)[2,2],3)*100`% for not active) and they have a very high almost always comfortable level compared to religious groups (`r round( prop.table(counts,1)[1,1],3)*100`% vs. `r round( prop.table(counts,1)[3,1],3)*100`% for active and `r round( prop.table(counts,1)[2,1],3)*100`% for not active).
+
+If $p_{not.rel}$ and $p_{active}$ denote the true proportions of "rarely comfortable" for the not religious and active religious groups. We want a 95% CI for $p_{not.rel} - p_{active}$. The sample proportions are computed from the `counts` table (or the `prop.table` output). Of the `r sum(counts[1,])` "not religous" respondents, `r counts[1,3]` are rarely comfortable so 
+$$\hat{p}_{not.rel} = \frac{100}{190} = 0.53$$
+$$\hat{p}_{active} = \frac{20}{59} = 0.34$$
+
+
+So a 95% CI for the difference in the true rates of rarely comfortable is
+\begin{align*}
+CI &= (0.53 - 0.34) \pm 1.96\cdot\sqrt{\frac{0.53(1-0.53)}{190} + \frac{0.34(1-0.34)}{59}}\\
+&= (0.05, 0.33)
+\end{align*}
+
+
+- I am 95% confident that the percentage of all non-religious students who are almost always comfortable is between 5 and 33 percentage points higher than the actively religious students. 
+
+
+## Example 3: Perry Preschool Project
+In a 1962 social experiment, 123 3- and 4-year-old children from poverty-level families in Ypsilanti, Michigan, were randomly assigned either to a treatment group receiving 2 years of preschool instruction or to a control group receiving no preschool. The participants were followed into their adult years. The following table shows how many in each group were arrested for some crime by the time they were 19 years old. (*Time*, July 29, 1991).
+
+\ | Arrested | Not Arrested | Total
+- | -------- | ------------ | -----
+Preschool | 19 | 42 | 61
+Control | 32 | 30 | 62 
+Total | 51 | 72 | 123 
+
+Is a statistically significant difference between the rate of arrest (or no arrest) in the two treatment groups.
+
+#### (a) Test choice
+There are two categorical variables, each with two levels. We could either use a two sample test to compare proportions (groups: treatment, response: arrest outcome) OR we could use a chi-square test of independence. These tests will give identical results. For this example, we will use the chi-square test. State your hypotheses needed to test the question above.
+
+*Answer:* The null hypothesis is that the treatment (preschool/control) is not related to the arrest outcome. 
+
+#### (b) Chi-square test with summarized data
+This example differs from example 2 because we have data in a summarized two-way table. (Example 2 had the raw categorical variables available.) To run the chi-square test, we first must create a matrix of counts using the `cbind` command that **binds** together **c**olumns of counts:
+```{r}
+counts <- cbind(c(19,32), c(42,30))
+colnames(counts) <- c("arrested", "not arrested") # adds column names
+rownames(counts) <- c("preschool", "control")  # adds row names
+counts
+```
+We then use this in the `chisq.test` command:
+```{r}
+preschool.test <- chisq.test(counts)
+preschool.test
+```
+
+- Are the expected counts large enough to trust these results?
+
+*Answer*: Yes, they are all above 25.
+
+```{r}
+51/123  # overall arrest rate
+72/123  # overall non arrest rate
+preschool.test$expected
+```
+
+- What is your conclusion? 
+
+*Answer:* There is some evidence of an association between the treatment (preschool/control) and the arrest outcome ($\chi^2 = 4.50$, df=1, p-value=0.034).
+
+#### (c) How different?
+How do the arrest rates differ for each treatment group? Compute a 95% confidence interval for the difference in arrest rates between those who had the preschool and control treatments.
+```{r}
+prop.table(counts,1)
+```
+
+*Answer:* About 52% of the control group were arrested while only about 31% of the preschool group were arrested. 
+$$
+\hat{p}_{control} = \dfrac{32}{62} = `r 32/62`, \ \ \ \hat{p}_{preschool} = \dfrac{19}{61} = `r 19/61`
+$$
+```{r, include = FALSE}
+SE <- sqrt((32/62)*(1-32/62)/62 + (19/61)*(1-19/61)/61)
+ME <- 1.96*SE
+CI <- (32/62) - 19/61 + c(-1,1)*ME
+```
+
+
+The 95% for the difference in true arrest rates $p_{control} - p_{preschool}$is 
+\begin{align*}
+`r 32/62` - `r 19/61` \pm & 1.96 \sqrt{\dfrac{`r 32/62`(1-`r 32/62`)}{62} + \dfrac{`r 19/61`(1-`r 19/61`)}{61}} \\
+`r 32/62 -  19/61` \pm & 1.96(`r SE`) \\
+(`r CI[1]`, `r CI[2]`) \\
+\end{align*}
+We are 95% confident that the true rate of arrest for the preschool treatment is `r round(CI[1]*100,1)` to `r round(CI[2]*100,1)` percentage points lower than the arrest rate for the control group. This is evidence that the preschool treatment lowered the risk of arrest.
+
+
+#### Comment
+The `chisq.test` command uses a test stat "correction" when both of your categorical variables have only 2 levels. With this correction, your chi-square test results won't exactly match a two-sample test for the difference of two proportions. If you turn off the correct with `correct=FALSE` you will obtain identical results. 
+```{r}
+chisq.test(counts, correct=FALSE) # exact same as two-sample proportion test
+```
+
+
+
+
+

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 24 Class Activity 24 | Stat 120</title>
+<meta name="author" content="Deepak Bastola">
+<meta name="description" content="24.1 Example 1: Data from online reviews of inkjet printers is available under the dataset InkjetPrinters. The data is extracted from reviews of inkjet printers at PCMag.com in August 2011. We are...">
+<meta name="generator" content="bookdown 0.31 with bs4_book()">
+<meta property="og:title" content="Chapter 24 Class Activity 24 | Stat 120">
+<meta property="og:type" content="book">
+<meta property="og:description" content="24.1 Example 1: Data from online reviews of inkjet printers is available under the dataset InkjetPrinters. The data is extracted from reviews of inkjet printers at PCMag.com in August 2011. We are...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 24 Class Activity 24 | Stat 120">
+<meta name="twitter:description" content="24.1 Example 1: Data from online reviews of inkjet printers is available under the dataset InkjetPrinters. The data is extracted from reviews of inkjet printers at PCMag.com in August 2011. We are...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.1/transition.js"></script><script src="libs/bs3compat-0.4.1/tabs.js"></script><script src="libs/bs3compat-0.4.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Stat 120</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">About</a></li>
+<li><a class="" href="class-activity-1.html"><span class="header-section-number">1</span> Class Activity 1</a></li>
+<li><a class="" href="class-activity-2.html"><span class="header-section-number">2</span> Class Activity 2</a></li>
+<li><a class="" href="class-activity-3.html"><span class="header-section-number">3</span> Class Activity 3</a></li>
+<li><a class="" href="class-activity-4.html"><span class="header-section-number">4</span> Class Activity 4</a></li>
+<li><a class="" href="class-activity-5.html"><span class="header-section-number">5</span> Class Activity 5</a></li>
+<li><a class="" href="class-activity-6.html"><span class="header-section-number">6</span> Class Activity 6</a></li>
+<li><a class="" href="class-activity-7.html"><span class="header-section-number">7</span> Class Activity 7</a></li>
+<li><a class="" href="class-activity-8.html"><span class="header-section-number">8</span> Class Activity 8</a></li>
+<li><a class="" href="class-activity-9.html"><span class="header-section-number">9</span> Class Activity 9</a></li>
+<li><a class="" href="class-activity-10.html"><span class="header-section-number">10</span> Class Activity 10</a></li>
+<li><a class="" href="class-activity-11.html"><span class="header-section-number">11</span> Class Activity 11</a></li>
+<li><a class="" href="class-activity-12.html"><span class="header-section-number">12</span> Class Activity 12</a></li>
+<li><a class="" href="class-activity-13.html"><span class="header-section-number">13</span> Class Activity 13</a></li>
+<li><a class="" href="class-activity-14.html"><span class="header-section-number">14</span> Class Activity 14</a></li>
+<li><a class="" href="class-activity-15.html"><span class="header-section-number">15</span> Class Activity 15</a></li>
+<li><a class="" href="class-activity-16.html"><span class="header-section-number">16</span> Class Activity 16</a></li>
+<li><a class="" href="class-activity-17.html"><span class="header-section-number">17</span> Class Activity 17</a></li>
+<li><a class="" href="class-activity-18.html"><span class="header-section-number">18</span> Class Activity 18</a></li>
+<li><a class="" href="class-activity-19.html"><span class="header-section-number">19</span> Class Activity 19</a></li>
+<li><a class="" href="class-activity-20.html"><span class="header-section-number">20</span> Class Activity 20</a></li>
+<li><a class="" href="class-activity-21.html"><span class="header-section-number">21</span> Class Activity 21</a></li>
+<li><a class="" href="class-activity-22.html"><span class="header-section-number">22</span> Class Activity 22</a></li>
+<li><a class="" href="class-activity-23.html"><span class="header-section-number">23</span> Class Activity 23</a></li>
+<li><a class="active" href="class-activity-24.html"><span class="header-section-number">24</span> Class Activity 24</a></li>
+<li><a class="" href="class-activity-25.html"><span class="header-section-number">25</span> Class Activity 25</a></li>
+<li class="book-part">Basics R</li>
+<li><a class="" href="what-is-r.html"><span class="header-section-number">27</span> What is R?</a></li>
+<li><a class="" href="r-markdown.html"><span class="header-section-number">28</span> R Markdown</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="class-activity-24" class="section level1" number="24">
+<h1>
+<span class="header-section-number">24</span> Class Activity 24<a class="anchor" aria-label="anchor" href="#class-activity-24"><i class="fas fa-link"></i></a>
+</h1>
+<div id="example-1-data-from-online-reviews-of-inkjet-printers-is-available-under-the-dataset-inkjetprinters.-the-data-is-extracted-from-reviews-of-inkjet-printers-at-pcmag.com-in-august-2011.-we-are-interested-in-the-quantitative-variable-price-the-typical-retail-price-of-printers-in-dollars-and-costcolor-the-cost-per-page-in-cents-for-printing-in-color." class="section level2" number="24.1">
+<h2>
+<span class="header-section-number">24.1</span> Example 1: Data from online reviews of inkjet printers is available under the dataset <code>InkjetPrinters</code>. The data is extracted from reviews of inkjet printers at PCMag.com in August 2011. We are interested in the quantitative variable <code>Price</code>, the typical retail price of printers in dollars and <code>CostColor</code>, the cost per page in cents for printing in color.<a class="anchor" aria-label="anchor" href="#example-1-data-from-online-reviews-of-inkjet-printers-is-available-under-the-dataset-inkjetprinters.-the-data-is-extracted-from-reviews-of-inkjet-printers-at-pcmag.com-in-august-2011.-we-are-interested-in-the-quantitative-variable-price-the-typical-retail-price-of-printers-in-dollars-and-costcolor-the-cost-per-page-in-cents-for-printing-in-color."><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb582"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># load the data</span></span>
+<span><span class="va">inkjet</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"https://www.lock5stat.com/datasets2e/InkjetPrinters.csv"</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb583"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">mod1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Price</span><span class="op">~</span><span class="va">CostColor</span>, data <span class="op">=</span> <span class="va">inkjet</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">mod1</span><span class="op">)</span></span></code></pre></div>
+<pre><code>
+Call:
+lm(formula = Price ~ CostColor, data = inkjet)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-132.155  -48.965    1.213   52.629  116.429 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  378.195     61.451   6.154 8.23e-06 ***
+CostColor    -18.560      5.111  -3.631  0.00191 ** 
+---
+Signif. codes:  
+0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 66.09 on 18 degrees of freedom
+Multiple R-squared:  0.4228,    Adjusted R-squared:  0.3908 
+F-statistic: 13.19 on 1 and 18 DF,  p-value: 0.00191</code></pre>
+<div class="sourceCode" id="cb585"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/anova.html">anova</a></span><span class="op">(</span><span class="va">mod1</span><span class="op">)</span></span></code></pre></div>
+<pre><code>Analysis of Variance Table
+
+Response: Price
+          Df Sum Sq Mean Sq F value  Pr(&gt;F)   
+CostColor  1  57604   57604  13.186 0.00191 **
+Residuals 18  78633    4369                   
+---
+Signif. codes:  
+0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+<div class="sourceCode" id="cb587"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">coeff</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/coef.html">coefficients</a></span><span class="op">(</span><span class="va">mod1</span><span class="op">)</span></span>
+<span><span class="va">eq</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"y = "</span>, <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">coeff</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,<span class="fl">1</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">coeff</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span>,<span class="fl">1</span><span class="op">)</span>, <span class="st">"*x"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">inkjet</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">CostColor</span>, y<span class="op">=</span><span class="va">Price</span><span class="op">)</span><span class="op">)</span><span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_classic</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_abline</a></span><span class="op">(</span>intercept <span class="op">=</span> <span class="va">coeff</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, slope <span class="op">=</span> <span class="va">coeff</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span>, color <span class="op">=</span> <span class="st">"red"</span>,</span>
+<span>                linetype <span class="op">=</span> <span class="st">"dashed"</span>, size <span class="op">=</span> <span class="fl">1.5</span><span class="op">)</span><span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="va">eq</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Class_Activity_24_files/figure-html/unnamed-chunk-3-1.png" width="100%"></div>
+<div id="a-what-is-the-regression-line-please-do-not-forget-to-define-the-variables-in-the-regression-equation." class="section level3" number="24.1.1">
+<h3>
+<span class="header-section-number">24.1.1</span> (1a) What is the regression line? Please do not forget to define the variables in the regression equation.<a class="anchor" aria-label="anchor" href="#a-what-is-the-regression-line-please-do-not-forget-to-define-the-variables-in-the-regression-equation."><i class="fas fa-link"></i></a>
+</h3>
+<p><em>Answer:</em></p>
+<p><span class="math display">\[\widehat{Price} = 378.20 - 18.56\cdot CostColor\]</span></p>
+</div>
+<div id="b-what-price-should-we-expect-when-costcolor-is-9" class="section level3" number="24.1.2">
+<h3>
+<span class="header-section-number">24.1.2</span> (1b) What <code>Price</code> should we expect when <code>CostColor</code> is 9?<a class="anchor" aria-label="anchor" href="#b-what-price-should-we-expect-when-costcolor-is-9"><i class="fas fa-link"></i></a>
+</h3>
+<p><em>Answer:</em></p>
+<div class="sourceCode" id="cb588"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">378.20</span> <span class="op">-</span> <span class="fl">18.56</span><span class="op">*</span><span class="fl">9</span></span></code></pre></div>
+<pre><code>[1] 211.16</code></pre>
+</div>
+<div id="c-find-the-95-confidence-interval-for-the-mean-price-of-inkjet-printers-that-cost-9-cents-per-page-to-print-in-color.-you-can-use-the-predict-function-in-r-to-calculate-the-confidence-interval." class="section level3" number="24.1.3">
+<h3>
+<span class="header-section-number">24.1.3</span> (1c) Find the <span class="math inline">\(95\%\)</span> confidence interval for the mean price of inkjet printers that cost 9 cents per page to print in color. You can use the <code>predict</code> function in R to calculate the confidence interval.<a class="anchor" aria-label="anchor" href="#c-find-the-95-confidence-interval-for-the-mean-price-of-inkjet-printers-that-cost-9-cents-per-page-to-print-in-color.-you-can-use-the-predict-function-in-r-to-calculate-the-confidence-interval."><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb590"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># new data frame with the new x*</span></span>
+<span><span class="va">newx</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>CostColor<span class="op">=</span><span class="fl">9.0</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/predict.html">predict</a></span><span class="op">(</span><span class="va">mod1</span>,<span class="va">newx</span>, interval<span class="op">=</span><span class="st">"confidence"</span>,  level <span class="op">=</span> <span class="fl">0.95</span><span class="op">)</span></span></code></pre></div>
+<pre><code>       fit      lwr      upr
+1 211.1552 168.8926 253.4178</code></pre>
+<p><em>Answer:</em></p>
+<p>The following is a plot of <span class="math inline">\(95\%\)</span> confidence interval for the mean price.</p>
+<div class="sourceCode" id="cb592"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># 95% confidence interval</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">inkjet</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">CostColor</span>, y<span class="op">=</span><span class="va">Price</span><span class="op">)</span><span class="op">)</span><span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_classic</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method<span class="op">=</span><span class="va">lm</span>, se<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Class_Activity_24_files/figure-html/unnamed-chunk-6-1.png" width="100%"></div>
+</div>
+<div id="d-find-the-95-prediction-interval-for-the-price-of-a-particular-inkjet-printer-that-cost-9-cents-per-page-to-print-in-color.-again-you-can-use-the-predict-function-in-r-to-calculate-the-prediction-interval." class="section level3" number="24.1.4">
+<h3>
+<span class="header-section-number">24.1.4</span> (1d) Find the <span class="math inline">\(95\%\)</span> prediction interval for the price of a particular inkjet printer that cost 9 cents per page to print in color. Again, you can use the <code>predict</code> function in R to calculate the prediction interval.<a class="anchor" aria-label="anchor" href="#d-find-the-95-prediction-interval-for-the-price-of-a-particular-inkjet-printer-that-cost-9-cents-per-page-to-print-in-color.-again-you-can-use-the-predict-function-in-r-to-calculate-the-prediction-interval."><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb593"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">newx</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>CostColor<span class="op">=</span><span class="fl">9</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/predict.html">predict</a></span><span class="op">(</span><span class="va">mod1</span>,<span class="va">newx</span>, interval<span class="op">=</span><span class="st">"prediction"</span>, level <span class="op">=</span> <span class="fl">0.95</span><span class="op">)</span></span></code></pre></div>
+<pre><code>       fit      lwr      upr
+1 211.1552 66.00634 356.3041</code></pre>
+<p><em>Answer:</em></p>
+<p>The following is a plot of <span class="math inline">\(95\%\)</span> prediction interval for price of an individual inkjet printer.</p>
+<div class="sourceCode" id="cb595"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">pred_interval</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/predict.html">predict</a></span><span class="op">(</span><span class="va">mod1</span>, interval <span class="op">=</span> <span class="st">"prediction"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">final_df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">inkjet</span>, <span class="va">pred_interval</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">final_df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">CostColor</span>, y<span class="op">=</span><span class="va">Price</span><span class="op">)</span><span class="op">)</span><span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_classic</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y<span class="op">=</span><span class="va">lwr</span><span class="op">)</span>, color <span class="op">=</span> <span class="st">"red"</span>, linetype <span class="op">=</span> <span class="st">"dashed"</span><span class="op">)</span><span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y<span class="op">=</span><span class="va">upr</span><span class="op">)</span>, color <span class="op">=</span> <span class="st">"red"</span>, linetype <span class="op">=</span> <span class="st">"dashed"</span><span class="op">)</span><span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method<span class="op">=</span><span class="va">lm</span>, se<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Class_Activity_24_files/figure-html/unnamed-chunk-8-1.png" width="100%"></div>
+</div>
+<div id="e-verify-the-confidence-interval-in-part-1c-by-hand.-the-formula-for-calculating-the-confidence-interval-is" class="section level3" number="24.1.5">
+<h3>
+<span class="header-section-number">24.1.5</span> (1e) Verify the confidence interval in part (1c) by hand. The formula for calculating the confidence interval is<a class="anchor" aria-label="anchor" href="#e-verify-the-confidence-interval-in-part-1c-by-hand.-the-formula-for-calculating-the-confidence-interval-is"><i class="fas fa-link"></i></a>
+</h3>
+<p><span class="math display">\[\hat{y} \pm t^{*} s_{\epsilon} \sqrt{\frac{1}{n}+\frac{\left(x^{*}-\bar{x}\right)^{2}}{(n-1) s_{x}^{2}}} \]</span></p>
+<div class="sourceCode" id="cb596"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">inkjet</span><span class="op">$</span><span class="va">CostColor</span><span class="op">)</span></span></code></pre></div>
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  6.500   9.625  11.350  11.670  13.525  18.600 </code></pre>
+<div class="sourceCode" id="cb598"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">inkjet</span><span class="op">$</span><span class="va">CostColor</span><span class="op">)</span></span></code></pre></div>
+<pre><code>[1] 2.966675</code></pre>
+<p><em>Answer:</em></p>
+<div class="sourceCode" id="cb600"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="op">(</span><span class="fl">211.1552</span> <span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span><span class="op">*</span><span class="fl">2.101</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fl">4369</span><span class="op">)</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fl">1</span><span class="op">/</span><span class="fl">20</span> <span class="op">+</span> <span class="op">(</span><span class="fl">9</span><span class="op">-</span><span class="fl">11.67</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">/</span><span class="op">(</span><span class="fl">19</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">inkjet</span><span class="op">$</span><span class="va">CostColor</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<pre><code>[1] 168.8887 253.4217</code></pre>
+<p><span class="math display">\[211.1552 \pm 2.101* \sqrt{4369}*\sqrt{\frac{1}{20} + \frac{(9.0 - 11.67)^2}{(20-1)2.966^2}}\]</span></p>
+<p><span class="math display">\[(168.89, 253.42)\]</span></p>
+</div>
+<div id="f-verify-the-prediction-interval-in-part-1d-by-hand.-the-formula-for-calculating-the-prediction-interval-is" class="section level3" number="24.1.6">
+<h3>
+<span class="header-section-number">24.1.6</span> (1f) Verify the prediction interval in part (1d) by hand. The formula for calculating the prediction interval is<a class="anchor" aria-label="anchor" href="#f-verify-the-prediction-interval-in-part-1d-by-hand.-the-formula-for-calculating-the-prediction-interval-is"><i class="fas fa-link"></i></a>
+</h3>
+<p><span class="math display">\[\hat{y} \pm t^{*} s_{\epsilon} \sqrt{1+\frac{1}{n}+\frac{\left(x^{*}-\bar{x}\right)^{2}}{(n-1) s_{x}^{2}}}\]</span></p>
+<p><em>Answer:</em></p>
+<div class="sourceCode" id="cb602"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="op">(</span><span class="fl">211.1552</span> <span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span><span class="op">*</span><span class="fl">2.101</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fl">4369</span><span class="op">)</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fl">1</span><span class="op">+</span><span class="fl">1</span><span class="op">/</span><span class="fl">20</span> <span class="op">+</span> <span class="op">(</span><span class="fl">9</span><span class="op">-</span><span class="fl">11.67</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">/</span><span class="op">(</span><span class="fl">19</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">inkjet</span><span class="op">$</span><span class="va">CostColor</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<pre><code>[1]  65.99288 356.31752</code></pre>
+<p><span class="math display">\[211.1552 \pm 2.101* \sqrt{4369}*\sqrt{1+\frac{1}{20} + \frac{(9.0 - 11.67)^2}{(20-1)2.966^2}}\]</span>
+<span class="math display">\[(65.99, 356.32)\]</span></p>
+</div>
+<div id="g-conduct-a-hypothesis-test-to-see-if-we-can-predict-the-price-of-inkjet-printers-in-dollars-based-on-the-cost-per-page-in-cents-for-printing-in-color-i.e.-test-if-the-linear-model-is-effective.-you-can-check-the-conditions-for-the-test-by-looking-at-the-plots-provided." class="section level3" number="24.1.7">
+<h3>
+<span class="header-section-number">24.1.7</span> (1g) Conduct a hypothesis test to see if we can predict the price of inkjet printers (in dollars) based on the cost per page (in cents) for printing in color (i.e., test if the linear model is effective). You can check the conditions for the test by looking at the plots provided.<a class="anchor" aria-label="anchor" href="#g-conduct-a-hypothesis-test-to-see-if-we-can-predict-the-price-of-inkjet-printers-in-dollars-based-on-the-cost-per-page-in-cents-for-printing-in-color-i.e.-test-if-the-linear-model-is-effective.-you-can-check-the-conditions-for-the-test-by-looking-at-the-plots-provided."><i class="fas fa-link"></i></a>
+</h3>
+<p><em>Answer:</em></p>
+<div class="sourceCode" id="cb604"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">inkjet</span><span class="op">$</span><span class="va">Residuals</span> <span class="op">&lt;-</span> <span class="va">mod1</span><span class="op">$</span><span class="va">residuals</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">inkjet</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">CostColor</span>, y<span class="op">=</span><span class="va">Residuals</span><span class="op">)</span><span class="op">)</span><span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_classic</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_hline</a></span><span class="op">(</span>yintercept <span class="op">=</span> <span class="fl">0</span>, color <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Class_Activity_24_files/figure-html/unnamed-chunk-12-1.png" width="100%"></div>
+<div class="sourceCode" id="cb605"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">inkjet</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>sample <span class="op">=</span> <span class="va">Residuals</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_qq.html">geom_qq</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_qq.html">geom_qq_line</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_classic</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Class_Activity_24_files/figure-html/unnamed-chunk-13-1.png" width="100%"></div>
+
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="class-activity-23.html"><span class="header-section-number">23</span> Class Activity 23</a></div>
+<div class="next"><a href="class-activity-25.html"><span class="header-section-number">25</span> Class Activity 25</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#class-activity-24"><span class="header-section-number">24</span> Class Activity 24</a></li>
+<li>
+<a class="nav-link" href="#example-1-data-from-online-reviews-of-inkjet-printers-is-available-under-the-dataset-inkjetprinters.-the-data-is-extracted-from-reviews-of-inkjet-printers-at-pcmag.com-in-august-2011.-we-are-interested-in-the-quantitative-variable-price-the-typical-retail-price-of-printers-in-dollars-and-costcolor-the-cost-per-page-in-cents-for-printing-in-color."><span class="header-section-number">24.1</span> Example 1: Data from online reviews of inkjet printers is available under the dataset InkjetPrinters. The data is extracted from reviews of inkjet printers at PCMag.com in August 2011. We are interested in the quantitative variable Price, the typical retail price of printers in dollars and CostColor, the cost per page in cents for printing in color.</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#a-what-is-the-regression-line-please-do-not-forget-to-define-the-variables-in-the-regression-equation."><span class="header-section-number">24.1.1</span> (1a) What is the regression line? Please do not forget to define the variables in the regression equation.</a></li>
+<li><a class="nav-link" href="#b-what-price-should-we-expect-when-costcolor-is-9"><span class="header-section-number">24.1.2</span> (1b) What Price should we expect when CostColor is 9?</a></li>
+<li><a class="nav-link" href="#c-find-the-95-confidence-interval-for-the-mean-price-of-inkjet-printers-that-cost-9-cents-per-page-to-print-in-color.-you-can-use-the-predict-function-in-r-to-calculate-the-confidence-interval."><span class="header-section-number">24.1.3</span> (1c) Find the \(95\%\) confidence interval for the mean price of inkjet printers that cost 9 cents per page to print in color. You can use the predict function in R to calculate the confidence interval.</a></li>
+<li><a class="nav-link" href="#d-find-the-95-prediction-interval-for-the-price-of-a-particular-inkjet-printer-that-cost-9-cents-per-page-to-print-in-color.-again-you-can-use-the-predict-function-in-r-to-calculate-the-prediction-interval."><span class="header-section-number">24.1.4</span> (1d) Find the \(95\%\) prediction interval for the price of a particular inkjet printer that cost 9 cents per page to print in color. Again, you can use the predict function in R to calculate the prediction interval.</a></li>
+<li><a class="nav-link" href="#e-verify-the-confidence-interval-in-part-1c-by-hand.-the-formula-for-calculating-the-confidence-interval-is"><span class="header-section-number">24.1.5</span> (1e) Verify the confidence interval in part (1c) by hand. The formula for calculating the confidence interval is</a></li>
+<li><a class="nav-link" href="#f-verify-the-prediction-interval-in-part-1d-by-hand.-the-formula-for-calculating-the-prediction-interval-is"><span class="header-section-number">24.1.6</span> (1f) Verify the prediction interval in part (1d) by hand. The formula for calculating the prediction interval is</a></li>
+<li><a class="nav-link" href="#g-conduct-a-hypothesis-test-to-see-if-we-can-predict-the-price-of-inkjet-printers-in-dollars-based-on-the-cost-per-page-in-cents-for-printing-in-color-i.e.-test-if-the-linear-model-is-effective.-you-can-check-the-conditions-for-the-test-by-looking-at-the-plots-provided."><span class="header-section-number">24.1.7</span> (1g) Conduct a hypothesis test to see if we can predict the price of inkjet printers (in dollars) based on the cost per page (in cents) for printing in color (i.e., test if the linear model is effective). You can check the conditions for the test by looking at the plots provided.</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/Class_Activity_24.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/Class_Activity_24.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-01-01.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

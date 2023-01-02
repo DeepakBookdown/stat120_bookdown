@@ -14,7 +14,24 @@ rmd_files: [
   "Class_Activity_5.Rmd", 
   "Class_Activity_6.Rmd", 
   "Class_Activity_7.Rmd", 
-
+  "Class_Activity_8.Rmd", 
+  # "Class_Activity_9.Rmd", 
+  # "Class_Activity_10.Rmd", 
+  # "Class_Activity_11.Rmd", 
+  # "Class_Activity_12.Rmd", 
+  # "Class_Activity_13.Rmd", 
+  # "Class_Activity_14.Rmd", 
+  # "Class_Activity_15.Rmd", 
+  # "Class_Activity_16.Rmd", 
+  # "Class_Activity_17.Rmd",
+  # "Class_Activity_18.Rmd", 
+  # "Class_Activity_19.Rmd", 
+  # "Class_Activity_20.Rmd", 
+  # "Class_Activity_21.Rmd", 
+  # "Class_Activity_22.Rmd", 
+  # "Class_Activity_23.Rmd", 
+  # "Class_Activity_24.Rmd",
+  # "Class_Activity_25.Rmd",
   "RStudio.Rmd", "Rmarkdown.Rmd"
 ]
 
