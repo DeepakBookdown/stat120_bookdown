@@ -25,7 +25,8 @@ example_data
 </details>
 
 
-\vspace*{1in}
+<br>
+
 
 b. What is the dimension of the dataset called 'example_data'?
 
@@ -42,7 +43,8 @@ ncol(example_data)
 </details>
 
 
-\vspace*{1in}
+<br>
+
 
 
 ---------------------------------------------------
@@ -62,7 +64,8 @@ education_lock5 <- read.csv("https://www.lock5stat.com/datasets2e/EducationLiter
 
 </details>
 
-\vspace*{1in}
+<br>
+
 
 
 b. Print the header (i.e. first 6 cases by default) of the dataset in part a.
@@ -76,7 +79,8 @@ head(education_lock5)
 
 </details>
 
-\vspace*{1in}
+<br>
+
 
 
 c. What is the dimension of the dataset in a?
@@ -93,7 +97,8 @@ dim(education_lock5)
 </details>
 
 
-\vspace*{1in}
+<br>
+
 
 d. What type of variables are `Country`, `EducationExpenditure`, and `Literacy`?
 
@@ -104,7 +109,8 @@ d. What type of variables are `Country`, `EducationExpenditure`, and `Literacy`?
 
 
 
-\vspace*{1in}
+<br>
+
 
 
 e. If we would like to use education expenditure to predict the literacy rate of each countries, which variable is the explanatory variable and which one is the response?

@@ -24,33 +24,38 @@ For each of the following, state whether the quantity described is a parameter o
 <details>
 <summary><red>Click for answer</red></summary>
 *Answer:* This is a parameter since the mean is for all houses in the US, and the notation is $\mu$.
-</details>
+</details><br>
+<br>
 
  (b). The proportion of all residents in a county who voted in the last presidential election.
 <details>
 <summary><red>Click for answer</red></summary>
 *Answer:* This is a parameter since we have information on all the residents, and the notation is p.
-</details>
+</details><br>
+<br>
 
  (c). The difference in proportion who have ever smoked cigarettes, between a sample of 500 people who are 60 years old and a sample of 200 people who are 25 years old.    
 
 <details>
 <summary><red>Click for answer</red></summary>
 *Answer:* We use statistics since the proportions are from samples.  The notation for the difference in sample proportions is $\hat{p}_1 - \hat{p}_2$
-</details>
+</details><br>
+<br>
 
  (d). The correlation between weight and height for 5-year old kids. 
  
 <details>
 <summary><red>Click for answer</red></summary>
 *Answer:* If we are looking at all 5-year old kids it is a parameter, and the notation for correlation is $\rho$.
-</details>
+</details><br>
+<br>
 
  (e). The mean number of extracurricular activities from a random sample of 50 students at your school.
 <details>
 <summary><red>Click for answer</red></summary>
 *Answer:* This is a statistic since the mean is from a sample, and the notation is $\mu$.
-</details>
+</details><br>
+<br>
 
 ------------------------------------------------------------------------------------
 
@@ -68,21 +73,23 @@ A 2012 survey of a random sample of 2253 US adults found that 1,329 of them repo
 p.hat <- 1329/2253
 p.hat
 ```
-</details>
+</details><br>
+<br>
 
  b).  Is your answer to part (a) a parameter or a statistic?  
 
 <details>
 <summary><red>Click for answer</red></summary>
 *Answer:* Statistic
-</details>
+</details><br>
 
  c).  Give notation for and define the population parameter that we estimate using the result of part (a).
 
 <details>
 <summary><red>Click for answer</red></summary>
 *Answer:* p = the proportion of all US adults that would report that they use an Internet search engine every day
-</details>
+</details><br>
+<br>
 
 
 ---------------------------------------------------------------------------------------------

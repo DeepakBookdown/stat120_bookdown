@@ -6,6 +6,7 @@
 This exercise is about finding the average word length in Lincoln's Gettysburg's address.
 
 ------------------------------------------
+<br>
 
 ## Your Turn 2
 
@@ -18,6 +19,7 @@ This exercise is about finding the average word length in Lincoln's Gettysburg's
 
 This study aimed to measure the effects of psychological biases on estimates of compliance with public health guidance regarding COVID-19. Results showed that compliance estimates were reduced when questions were framed negatively and anonymity was increased. Effect sizes were large, with compliance estimates diminishing by up to 17% points and 10% points, respectively. These findings suggest that standard tracking surveys pose questions in ways that lead to higher compliance estimates than alternative approaches.
 </details>
+<br>
 
 ------------------------------------------
 
@@ -58,12 +60,13 @@ samp
 ```
 
 ```
- [1]  13 159  50  32 250 249  78 167  27 151
+ [1]  24 233 126 256 173  78  85 231  68 152
 ```
 
 This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
 
- \vspace*{1in}
+<br>
+
 
 
 (b). Get words and lengths
@@ -76,19 +79,20 @@ pop[samp,]
 ```
 
 ```
-    position size      word
-13        13    9 continent
-159      159    3       did
-50        50    2        so
-32        32    2        we
-250      250    7  freedom,
-249      249    2        of
-78        78    7   resting
-167      167    6   rather,
-27        27    3       men
-151      151    4     here,
+    position size        word
+24        24   11 proposition
+233      233    5       shall
+126      126    9   struggled
+256      256    6     people,
+173      173    3         the
+78        78    7     resting
+85        85    5       their
+231      231    5       these
+68        68    2          to
+152      152    3         but
 ```
 
+<br>
 
 c. Compute your sample mean
 
@@ -101,7 +105,7 @@ mysize
 ```
 
 ```
- [1] 9 3 2 2 7 2 7 6 3 4
+ [1] 11  5  9  6  3  7  5  5  2  3
 ```
 
 Then find the mean of these values:
@@ -112,7 +116,7 @@ mean(mysize)
 ```
 
 ```
-[1] 4.5
+[1] 5.6
 ```
 
 How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample? 
@@ -124,7 +128,8 @@ How does this sample mean (from a truly random sample) compare to your sample me
 
 </details>
 
-\vspace*{1in}
+<br>
+
 
 
 ### Driving with a Pet on your Lap
@@ -139,7 +144,8 @@ a. Can you conclude that a random sample was used from the description given? Ex
 *Answer:* No you can't make this conclusion from the info given. In fact, an online poll at a website like `cnn.com` is almost always reporting results from a non-random sample. The people who respond are individuals who visit `cnn.com`, then see the online poll and decide to respond. 
 </details>
 
-\vspace*{1.5in}
+<br>
+
 
 
 b. Explain why it is not appropriate to generalize these results to all drivers, or even to all drivers who visit cnn.com.
@@ -149,6 +155,7 @@ b. Explain why it is not appropriate to generalize these results to all drivers,
 
 *Answer:* This is a volunteer sample, and volunteer samples are often biased and can't be generalized to *all drivers* (the population).  It is likely that people who have driven with a pet on their lap are more likely to respond to the poll.
 </details>
+<br>
 
 c. How might we select a sample of people that would give us results that we can generalize to a broader population?
 
@@ -158,7 +165,8 @@ c. How might we select a sample of people that would give us results that we can
 *Answer:* A random sample of individuals from all U.S. drivers would need to be selected and given the poll question. (There are many ways to do this, the most common being a variation of random digit dialing where phone numbers are randomly selected from known area codes.)
 </details>
 
- \vspace*{1in}
+<br>
+
 
 d. Is the variable measured in this study quantitative or categorical?
 

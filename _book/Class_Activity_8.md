@@ -23,14 +23,14 @@ mean(prices)
 [1] 100.1
 ```
 
-</details>
+</details><br>
 
  (b).  Describe carefully how we could use cards to create one bootstrap statistic from this sample.  Be specific.
 
 <details>
 <summary><red>Click for answer</red></summary>
 *Answer:* We use 10 cards and write the 10 sample values on the cards. We then mix them up and draw one and record the value on it and put it back. Mix them up again, draw another, record the value, and put it back. Do this 10 times to get a “with replacement” sample of size 10. Then compute the sample mean of this bootstrap sample. 
-</details>
+</details><br>
 
 
  (c). We can easily instruct R to do this with a simple code as follows:
@@ -42,7 +42,7 @@ resample
 ```
 
 ```
- [1] 185  23 185  85  72  85  72  85 185  93
+ [1]  85  87 185  52  87 185 125 147  23 132
 ```
 
  (d). Where will be bootstrap distribution be centered?  What shape do we expect it to have?
@@ -62,7 +62,7 @@ Go to the website at [Lock5Statkey](http://www.lock5stat.com/StatKey/).  Under t
 <details>
 <summary><red>Click for answer</red></summary>
 *Answer:*  The sample mean is $\bar{x} = 18.16$  and the sample standard deviation is $s = 13.798$.
-</details>
+</details><br>
 
 (b). Click “Generate 1 Sample” to create one bootstrap sample from this data. Explain how this sample was generated. Use the “Bootstrap Sample” pane to find the bootstrap statistic that was computed from this sample. What value is this bootstrap statistic? Repeat this a couple times.  
 
@@ -72,7 +72,7 @@ Go to the website at [Lock5Statkey](http://www.lock5stat.com/StatKey/).  Under t
 replacement. Basically we randomly select 500 distances from the data (with replacement).
 
 The value of the bootstrap mean will vary. 
-</details>
+</details><br>
 
 (c). Now click the “Generate 1000 Samples” to get 1000 bootstrap sample means. Is the bootstrap distribution centered at the population or sample mean commute distance?
 
@@ -111,14 +111,14 @@ global warming, go to the website at [Lock5Statkey](http://www.lock5stat.com/Sta
 <details>
 <summary><red>Click for answer</red></summary>
 *Answer:* The sample proportion is $\hat{p} = 0.59$.
-</details>
+</details><br>
 
 (b). Generate 1 bootstrap sample. Explain how this sample was generated. Use the “Bootstrap Sample” pane to find the bootstrap statistic that was computed from this sample. What value is this bootstrap statistic? Repeat this a couple times.  
 
 <details>
 <summary><red>Click for answer</red></summary>
 *Answer:* The bootstrap sample was obtained by resampling the observed answers (“yes” and “no”) to the global warming question with replacement. Answers will vary for the bootstrap statistic (proportion)
-</details>
+</details><br>
 
 
 (c). Generate 1000 samples to get 1000 bootstrap sample proportions. Is the bootstrap distribution centered at the population or sample proportion? Describe the shape and center of this bootstrap distribution
@@ -128,7 +128,7 @@ global warming, go to the website at [Lock5Statkey](http://www.lock5stat.com/Sta
 *Answer:* The shape is symmetric around a center value of about 0.59, which is the sample proportion not the population proportion (which is unknown).
 
 <img src="data/globalwarming.png" width="900"/>
-</details>
+</details><br>
 
 
 (d). Compute a 95% confidence interval for the proportion of Americans who believe in global warming
@@ -136,7 +136,7 @@ global warming, go to the website at [Lock5Statkey](http://www.lock5stat.com/Sta
 <details>
 <summary><red>Click for answer</red></summary>
 *Answer:* The sample proportion is $\hat{p} = 0.59$ and the standard error from the bootstrap distribution is 0.010 so we compute the 95% confidence interval using $0.590 \pm 2(0.010),$ giving an interval of 0.57 to 0.61.
-</details>
+</details><br>
 
 (e). Interpret your interval from part (d).  
 
@@ -160,7 +160,7 @@ and Republicans who believe in global warming, go to the website  at [Lock5Statk
 <details>
 <summary><red>Click for answer</red></summary>
 *Answer:* The sample difference in proportions is $\hat{p}_{Dem} - \hat{p}_{Rep} = 0.79 - 0.38 = 0.41$
-</details>
+</details><br>
 
 (b). Generate 1 bootstrap sample. Explain how this sample was generated (give this some thought now that you have two samples of data). Use the “Bootstrap Sample” pane to find the bootstrap statistic that was computed from this sample. What value is this bootstrap statistic? Repeat this a couple times.
 
@@ -169,7 +169,7 @@ and Republicans who believe in global warming, go to the website  at [Lock5Statk
 *Answer:* One bootstrap sample was obtained from the group 1 sample (resampling the observed “believe/not believe” responses with replacement) and a separate bootstrap sample was obtained from the group 2 sample. The difference in the bootstrap proportions for each group was computed for the bootstrap difference statistic. 
 
 For individual bootstrap samples: answers will vary.
-</details>
+</details><br>
 
 (c). Generate 1000 samples to get 1000 bootstrap sample proportion differences. Describe the shape and center of this bootstrap distribution
 
@@ -178,7 +178,7 @@ For individual bootstrap samples: answers will vary.
 *Answer:* The shape is symmetric around a center value of about 0.41 (the sample difference in proportions).
 
 <img src="data/diffprop.png" width="800"/>
-</details>
+</details><br>
 
 
 (d). Compute a 95% confidence interval for the difference between the proportion of Democrats and Republicans who believe in global warming.
@@ -187,21 +187,21 @@ For individual bootstrap samples: answers will vary.
 <summary><red>Click for answer</red></summary>
 *Answer:* 
 The sample difference in proportions is $\hat{p}_{Dem} - \hat{p}_{Rep} = 0.79 - 0.38 = 0.41$, the standard error from the bootstrap distribution is 0.020 so we compute the 95% confidence interval using $0.41 \pm 2(0.020)$ giving an interval of 0.37 to 0.45.
-</details>
+</details><br>
 
 (e). Interpret your interval from part (d) in context and without using the word difference!! (i.e. give a directional claim that uses words like “more” or “less”)  
 
 <details>
 <summary><red>Click for answer</red></summary>
 *Answer:* We are 95% confident that the percent of Democrats who believe there is solid evidence of global warming is between 37 and 45 percentage points higher than the percent of Republicans who believe this.
-</details>
+</details><br>
 
 (f). To compute this interval, we assumed that 1000 people were sampled from each subpopulation (Dems and Reps). Suppose this sample size was just 500 people for each group. Would your 95% confidence interval be wider or shorter than the one computed in part (d)? Explain.
 
 <details>
 <summary><red>Click for answer</red></summary>
 *Answer:* With fewer people in each group, we will get a larger bootstrap SE and hence a larger margin of error for the CI. Remember that the SE of a sampling distribution gets smaller as the sample size increases, the same behavior is seen in a bootstrap distribution.
-</details>
+</details><br>
 
 ## Example 5: Statkey Body Temperature
 
@@ -212,7 +212,7 @@ Is normal body temperature really $98.6^{\circ}$ F?  A sample of body temperatur
 <details>
 <summary><red>Click for answer</red></summary>
 *Answer:* $\bar{x} = 98.26$ and $s = 0.765$.
-</details>
+</details><br>
 
 (b). Generate a bootstrap distribution, using at least 1000 simulated statistics.  What is the standard
 error?  
@@ -220,7 +220,7 @@ error?
 <details>
 <summary><red>Click for answer</red></summary>
 *Answer:* SE $\approx$ 0.108. Answers will vary slightly with different simulations (see output below).
-</details>
+</details><br>
 
  (c) Use the standard error to find a 95% confidence interval.  Show your work.  Is 98.6 in the interval?
 
@@ -233,7 +233,7 @@ We see that 98.6 is not on the interval.
 
 <img src="data/confidenceinterval.png" width="800"/>
 
-</details>
+</details><br>
 
 \vspace*{1.5in}
 
@@ -343,14 +343,14 @@ tapply(credit$Age.in.years, credit$Good.Loan, mean)
 <details>
 <summary><red>Click for answer</red></summary>
 *Answer:* 34.0 years for the bad loan group and 36.2 years for the good loan group.
-</details>
+</details><br>
 
 - Describe the distribution of ages in each group. Are there any outliers that could be overly influential on the value(s) of the sample mean(s)?
 
 <details>
 <summary><red>Click for answer</red></summary>
 *Answer:* Both age distributions are somewhat right skewed with a few outliers identified by the boxplot rule. But there aren't any extremely unusual cases.
-</details>
+</details><br>
 
  (b) Bootstrap CI for a difference in means
 
@@ -367,12 +367,12 @@ boot(Age.in.years ~ Good.Loan, data=credit)
 	** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -2.26095 
- Mean of bootstrap distribution: -2.27051 
- Standard error of bootstrap distribution: 0.77473 
+ Mean of bootstrap distribution: -2.26646 
+ Standard error of bootstrap distribution: 0.78339 
 
  Bootstrap percentile interval
       2.5%      97.5% 
--3.7996190 -0.7433333 
+-3.7776429 -0.6804643 
 
 		*--------------*
 ```
@@ -384,7 +384,7 @@ boot(Age.in.years ~ Good.Loan, data=credit)
 <details>
 <summary><red>Click for answer</red></summary>
 *Answer:* The average age of people with a bad loan is about 2.3 years less than the average age of people with a good loan.
-</details>
+</details><br>
 
 
 - Give the 95% confidence interval for the  difference in mean ages using the percentile method 
@@ -392,7 +392,7 @@ boot(Age.in.years ~ Good.Loan, data=credit)
 <details>
 <summary><red>Click for answer</red></summary>
 *Answer:* The percentile interval is -3.8 to -0.7 years. 
-</details>
+</details><br>
 
 
 - Compute the 95% confidence interval for the  difference in mean ages using the bootstrap SE. Is it similar to the CI from the percentile method?
@@ -421,7 +421,7 @@ $$
 ```
 [1] -0.70391
 ```
-</details>
+</details><br>
 
  (c) Interpret
 
@@ -430,7 +430,7 @@ Interpret your percentile interval in context using a directional statement. Doe
 <details>
 <summary><red>Click for answer</red></summary>
 *Answer:* We are 95% confident that the mean age of people who default on a loan for this population is about 0.7 to 3.8 years less than the mean age of people who do not default. This interval does support the notation that there is a difference in mean ages of these two groups in the population. It suggests that the average age of people who default is less than the average age of those who don't.
-</details>
+</details><br>
 
 ## Example 8 : Credit data continued 
 
@@ -513,14 +513,14 @@ ggplot(credit, aes(x=Good.Loan, fill=Telephone)) + geom_bar(position="fill")
 <details>
 <summary><red>Click for answer</red></summary>
 *Answer:* About 37.7% of bad loans have a phone number.
-</details>
+</details><br>
 
 - What proportion of good loans have a phone number on the account?
 
 <details>
 <summary><red>Click for answer</red></summary>
 *Answer:* About 41.6% of good loans have a phone number.
-</details>
+</details><br>
 
 - What is the sample difference in the proportion of good loans and bad loans that have a phone number? Use correct notation for this number. 
 
@@ -536,7 +536,7 @@ ggplot(credit, aes(x=Good.Loan, fill=Telephone)) + geom_bar(position="fill")
 ```
 [1] 0.0390476
 ```
-</details>
+</details><br>
 
  (c). Using the `boot` command with a categorical response
 
@@ -622,12 +622,12 @@ boot(Telephone_binary ~ Good.Loan, data=credit)
 	** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -0.03905 
- Mean of bootstrap distribution: -0.03912 
- Standard error of bootstrap distribution: 0.03352 
+ Mean of bootstrap distribution: -0.03868 
+ Standard error of bootstrap distribution: 0.03376 
 
  Bootstrap percentile interval
        2.5%       97.5% 
--0.10333333  0.02809524 
+-0.10428571  0.02809524 
 
 		*--------------*
 ```
@@ -641,7 +641,7 @@ boot(Telephone_binary ~ Good.Loan, data=credit)
 <details>
 <summary><red>Click for answer</red></summary>
 *Answer:* The percentile interval for Bad $-$ Good is -0.105 to 0.028. 
-</details>
+</details><br>
 
 \vspace*{.3in}
 
@@ -670,7 +670,7 @@ boot(Telephone_binary ~ Good.Loan, data=credit)
 [1] -0.03905
 ```
 
-</details>
+</details><br>
 
 \vspace*{.2in}
 
@@ -684,4 +684,4 @@ Interpret your percentile interval in context using a directional statement. Doe
 
 *Answer:* We are 95% confident that the percentage of good loan accounts with a phone number is anywhere from 10.7 percentage points higher than to 2.8 percentage points less than the percentage of bad loans with a phone number. 
 
-</details>
+</details><br>

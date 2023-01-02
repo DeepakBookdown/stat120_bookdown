@@ -168,21 +168,19 @@ Click for answer
 
 \begin{verbatim}
    ID Greeting  Male      age
-1   1    Hello  TRUE 48.75126
-2   2    Hello FALSE 39.31125
-3   3    Hello  TRUE 47.65881
-4   4    Hello FALSE 48.44245
-5   5    Hello  TRUE 54.04213
-6   6  Goodbye FALSE 57.51405
-7   7  Goodbye  TRUE 26.83855
-8   8  Goodbye FALSE 23.96819
-9   9  Goodbye  TRUE 21.85343
-10 10  Goodbye FALSE 23.86073
+1   1    Hello  TRUE 20.90308
+2   2    Hello FALSE 51.16529
+3   3    Hello  TRUE 56.46207
+4   4    Hello FALSE 56.48620
+5   5    Hello  TRUE 25.04031
+6   6  Goodbye FALSE 24.23384
+7   7  Goodbye  TRUE 53.28206
+8   8  Goodbye FALSE 57.88102
+9   9  Goodbye  TRUE 23.11028
+10 10  Goodbye FALSE 25.79988
 \end{verbatim}
 
 \emph{Answer:} We see a data frame with four columns, where the first column is an \texttt{identifier} for the cases. We have information on the greeting types, gender, and age on these cases in the remaining columns.
-
-\vspace*{1in}
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
@@ -207,8 +205,6 @@ Click for answer
 
 \emph{Answer:} There are 10 rows and 4 columns.
 
-\vspace*{1in}
-
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{your-turn-2}{%
@@ -229,8 +225,6 @@ Click for answer
 \NormalTok{education\_lock5 }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://www.lock5stat.com/datasets2e/EducationLiteracy.csv"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
-
-\vspace*{1in}
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
@@ -258,8 +252,6 @@ Click for answer
 6 Antigua and Barbuda                  2.6     99.0
 \end{verbatim}
 
-\vspace*{1in}
-
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
 \setcounter{enumi}{2}
@@ -282,8 +274,6 @@ Click for answer
 
 \emph{Answer:} There are 188 rows and 3 columns.
 
-\vspace*{1in}
-
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
 \setcounter{enumi}{3}
@@ -295,8 +285,6 @@ Click for answer
 Click for answer
 
 \emph{Answer:} \texttt{Country} is a categorical variable. \texttt{EducationExpenditure} and \texttt{Literacy} are both quantitative variables.
-
-\vspace*{1in}
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
@@ -320,21 +308,18 @@ Click for answer
 
 This exercise is about finding the average word length in Lincoln's Gettysburg's address.
 
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
-\hypertarget{your-turn-2-1}{%
-\section{Your Turn 2}\label{your-turn-2-1}}
-
-\hypertarget{summary-of-article-on-it-depends-on-how-you-ask}{%
-\subsection{\texorpdfstring{Summary of article on \href{https://jech.bmj.com/content/75/4/387.abstract}{It depends on how you ask!}}{Summary of article on It depends on how you ask!}}\label{summary-of-article-on-it-depends-on-how-you-ask}}
-
-Click for answer
-
-\emph{Answer:}
-
-This study aimed to measure the effects of psychological biases on estimates of compliance with public health guidance regarding COVID-19. Results showed that compliance estimates were reduced when questions were framed negatively and anonymity was increased. Effect sizes were large, with compliance estimates diminishing by up to 17\% points and 10\% points, respectively. These findings suggest that standard tracking surveys pose questions in ways that lead to higher compliance estimates than alternative approaches.
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{0.5972}}@{}}
+\toprule()
+\endhead
+ \\
+\#\# Your Turn 2 \\
+\#\#\# Summary of article on \href{https://jech.bmj.com/content/75/4/387.abstract}{It depends on how you ask!} \\
+ \\
+\emph{Answer:} \\
+This study aimed to measure the effects of psychological biases on estimates of compliance with public health guidance regarding COVID-19. Results showed that compliance estimates were reduced when questions were framed negatively and anonymity was increased. Effect sizes were large, with compliance estimates diminishing by up to 17\% points and 10\% points, respectively. These findings suggest that standard tracking surveys pose questions in ways that lead to higher compliance estimates than alternative approaches. \\
+\bottomrule()
+\end{longtable}
 
 \hypertarget{your-turn-3}{%
 \section{Your Turn 3}\label{your-turn-3}}
@@ -376,12 +361,10 @@ Run the following command to obtain a SRS of 10 words from the 268 that are in t
 \end{Shaded}
 
 \begin{verbatim}
- [1] 179 171  44 187 156 252 237 181  23 239
+ [1] 254  29  35 243 208 205 125  66  24 117
 \end{verbatim}
 
 This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
-
-\vspace*{1in}
 
 (b). Get words and lengths
 
@@ -394,17 +377,17 @@ We will \emph{subset} the data set \texttt{pop} to obtain only the sampled rows 
 \end{Shaded}
 
 \begin{verbatim}
-    position size   word
-179      179    6 fought
-171      171    4   here
-44        44    2     or
-187      187    2     It
-156      156    6 forget
-252      252    4   that
-237      237    2     in
-181      181    4   have
-23        23    3    the
-239      239    4   that
+    position size        word
+254      254    2          of
+29        29    7     created
+35        35    2          in
+243      243    3        God,
+208      208    2          we
+205      205    5       these
+125      125    3         who
+66        66    4        have
+24        24   11 proposition
+117      117    4        this
 \end{verbatim}
 
 \begin{enumerate}
@@ -425,7 +408,7 @@ The word lengths in part (b) are the data for your sample. You can compute your 
 \end{Shaded}
 
 \begin{verbatim}
- [1] 6 4 2 2 6 4 2 4 3 4
+ [1]  2  7  2  3  2  5  3  4 11  4
 \end{verbatim}
 
 Then find the mean of these values:
@@ -437,7 +420,7 @@ Then find the mean of these values:
 \end{Shaded}
 
 \begin{verbatim}
-[1] 3.7
+[1] 4.3
 \end{verbatim}
 
 How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?
@@ -445,8 +428,6 @@ How does this sample mean (from a truly random sample) compare to your sample me
 Click for answer
 
 \emph{Answer:} The true mean is 4.29. Your two means will likely vary. Since the many non-random samples generally overestimated the population mean length, it is possible (but not guaranteed) that \emph{your} one non-random sample gave a mean length that is greater than the random sample's mean length.
-
-\vspace*{1in}
 
 \hypertarget{driving-with-a-pet-on-your-lap}{%
 \subsection{Driving with a Pet on your Lap}\label{driving-with-a-pet-on-your-lap}}
@@ -463,8 +444,6 @@ Over 30,000 people participated in an online poll on \texttt{cnn.com} conducted 
 Click for answer
 
 \emph{Answer:} No you can't make this conclusion from the info given. In fact, an online poll at a website like \texttt{cnn.com} is almost always reporting results from a non-random sample. The people who respond are individuals who visit \texttt{cnn.com}, then see the online poll and decide to respond.
-
-\vspace*{1.5in}
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
@@ -489,8 +468,6 @@ Click for answer
 Click for answer
 
 \emph{Answer:} A random sample of individuals from all U.S. drivers would need to be selected and given the poll question. (There are many ways to do this, the most common being a variation of random digit dialing where phone numbers are randomly selected from known area codes.)
-
-\vspace*{1in}
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
@@ -568,7 +545,7 @@ Total & 13 & 17 & 30 \\
 
 Consider the following case study:
 
-``Researchers want to find out how a new diet affects weight gain among underweight subjects. This experiment only has two treatment conditions, the new diet and the standard diet, hence the matched pairs design can be used. For this study, the researchers recruited 200 subjects which will be grouped into 100 pairs based on shared characteristics such as age, gender, weight, height, lifestyle, and so on. A 20-year-old female within the weight range of 90-110 pounds and the height range of 60-63 inches will be paired with another 20-year-old female that falls into the same weight and height categories. Once all 100 pairs are made, a subject from each pair will be randomly assigned into the treatment group (will be administered the new diet for 2 months) while the other subject from the pair will be assigned to the control group (will be assigned to follow the standard diet for two months). At the end of the time time period of 2 months, researchers will measure the total weight gain for each subject.''
+``Researchers want to find out how a new diet affects weight gain among underweight subjects. This experiment only has two treatment conditions, the new diet and the standard diet. For this study, the researchers recruited 200 subjects which will be grouped into 100 pairs based on shared characteristics such as age, gender, weight, height, lifestyle, and so on. A 20-year-old female within the weight range of 90-110 pounds and the height range of 60-63 inches will be paired with another 20-year-old female that falls into the same weight and height categories. Once all 100 pairs are made, a subject from each pair will be randomly assigned into the treatment group (will be administered the new diet for 2 months) while the other subject from the pair will be assigned to the control group (will be assigned to follow the standard diet for two months). At the end of the time time period of 2 months, researchers will measure the total weight gain for each subject.''
 
 Observed data:
 
@@ -948,8 +925,8 @@ Click for answer
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{your-turn-2-2}{%
-\section{Your Turn 2}\label{your-turn-2-2}}
+\hypertarget{your-turn-2-1}{%
+\section{Your Turn 2}\label{your-turn-2-1}}
 
 \hypertarget{graduate-programs-acceptance-and-sex}{%
 \subsection{Graduate programs acceptance and sex}\label{graduate-programs-acceptance-and-sex}}
@@ -1744,8 +1721,8 @@ Click for answer
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{your-turn-2-3}{%
-\section{Your turn 2}\label{your-turn-2-3}}
+\hypertarget{your-turn-2-2}{%
+\section{Your turn 2}\label{your-turn-2-2}}
 
 \hypertarget{example-2-sleep}{%
 \subsection{Example 2: Sleep}\label{example-2-sleep}}
@@ -3762,7 +3739,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
- [1]  52  85  85  85  72  93  85 132 132 132
+ [1]  52 125 132 185 132  72 147 185  93 185
 \end{verbatim}
 
 (d). Where will be bootstrap distribution be centered? What shape do we expect it to have?
@@ -4110,12 +4087,12 @@ The \texttt{boot(y\ \textasciitilde{}\ x,\ data=)} command generates 10000 boots
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -2.26095 
- Mean of bootstrap distribution: -2.26437 
- Standard error of bootstrap distribution: 0.77194 
+ Mean of bootstrap distribution: -2.2519 
+ Standard error of bootstrap distribution: 0.77113 
 
  Bootstrap percentile interval
       2.5%      97.5% 
--3.7929048 -0.7433214 
+-3.7433690 -0.7337619 
 
         *--------------*
 \end{verbatim}
@@ -4403,12 +4380,12 @@ We can now use the 0/1 version of telephone in the \texttt{boot} command (like e
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -0.03905 
- Mean of bootstrap distribution: -0.03926 
- Standard error of bootstrap distribution: 0.03338 
+ Mean of bootstrap distribution: -0.0394 
+ Standard error of bootstrap distribution: 0.0335 
 
  Bootstrap percentile interval
        2.5%       97.5% 
--0.10380952  0.02761905 
+-0.10571429  0.02666667 
 
         *--------------*
 \end{verbatim}

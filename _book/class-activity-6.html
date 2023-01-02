@@ -96,11 +96,13 @@
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">BAC</span> <span class="op">~</span> <span class="va">Beers</span>, data<span class="op">=</span><span class="va">bac</span>, pch<span class="op">=</span><span class="fl">19</span>, </span>
 <span>     main<span class="op">=</span><span class="st">"Beer and BAC"</span>, xlab<span class="op">=</span><span class="st">"Number of beers drank"</span>, ylab <span class="op">=</span> <span class="st">"Blood Alcohol Content"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="Class_Activity_6_files/figure-html/unnamed-chunk-3-1.png" width="100%"></div>
+<p><br></p>
 <p>(b). Computing correlation</p>
 <p>Since the <em>form</em> of the relationship is linear, we can use <strong>correlation</strong> to measure its strength:</p>
 <div class="sourceCode" id="cb145"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="va">bac</span><span class="op">$</span><span class="va">BAC</span>, <span class="va">bac</span><span class="op">$</span><span class="va">Beers</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] 0.8943381</code></pre>
+<p><br></p>
 <p>(c). Fitting a regression line</p>
 <p>We use the <code>lm(y ~ x, data=mydata)</code> function to fit a <strong>l</strong>inear (regression) <strong>m</strong>odel for a response y given an explanatory variable x. This command creates a <strong>linear model object</strong> that needs to be assigned a name, here we call it <code>bac.lm</code>. You can get the slope and intercept by typing out the object name:</p>
 <div class="sourceCode" id="cb147"><pre class="downlit sourceCode r">
@@ -128,11 +130,14 @@ Coefficients:
 <span>     main<span class="op">=</span><span class="st">"Beer and BAC"</span>, xlab<span class="op">=</span><span class="st">"Number of beers drank"</span>, ylab <span class="op">=</span> <span class="st">"Blood Alcohol Content"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html">abline</a></span><span class="op">(</span><span class="va">bac.lm</span><span class="op">)</span> <span class="co"># adds regression line to the plot above</span></span></code></pre></div>
 <div class="inline-figure"><img src="Class_Activity_6_files/figure-html/unnamed-chunk-6-1.png" width="100%"></div>
-</details><p>(d). Interpret the slope in context.</p>
+</details><p><br></p>
+<p>(d). Interpret the slope in context.</p>
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> Drinking one more beer is associated with a 0.0180 unit increase in predicted BAC.
-</details><p>(e). Interpret the intercept in context, if it makes sense to do so.</p>
+</details><p><br></p>
+<p>(e). Interpret the intercept in context, if it makes sense to do so.</p>
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> The intercept is -0.0127. A student who drinks 0 beers would be predicted to have a negative blood alcohol content. This is not possible so the intercept does not make sense in this context, but the intercept is included in the model to get the best fit line for the data collected.
-</details><p>(f). If your friend at Ohio State drank 2 beers, what would you predict their BAC to be?</p>
+</details><p><br></p>
+<p>(f). If your friend at Ohio State drank 2 beers, what would you predict their BAC to be?</p>
 <details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The predicted BAC is
 <span class="math display">\[
 \widehat{BAC} = -0.0127 + 0.0180(2) = 0.0233.
@@ -141,7 +146,7 @@ Coefficients:
 <code class="sourceCode R"><span><span class="va">y.hat</span> <span class="op">&lt;-</span> <span class="op">-</span><span class="fl">0.0127</span> <span class="op">+</span> <span class="fl">0.0180</span><span class="op">*</span><span class="op">(</span><span class="fl">2</span><span class="op">)</span> </span>
 <span><span class="va">y.hat</span></span></code></pre></div>
 <pre><code>[1] 0.0233</code></pre>
-</details>
+</details><p><br></p>
 (g). Find the residual for the student in the dataset who drank 2 beers and had a BAC of 0.03.
 <details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The residual is
 <span class="math display">\[
@@ -150,7 +155,8 @@ BAC - \widehat{BAC} = .03 - .0233=0.0067
 <div class="sourceCode" id="cb152"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fl">0.03</span> <span class="op">-</span> <span class="op">(</span><span class="op">-</span><span class="fl">0.0127</span> <span class="op">+</span> <span class="fl">0.0180</span><span class="op">*</span><span class="op">(</span><span class="fl">2</span><span class="op">)</span><span class="op">)</span> </span></code></pre></div>
 <pre><code>[1] 0.0067</code></pre>
-</details><p>(h). Getting residuals in R</p>
+</details><p><br></p>
+<p>(h). Getting residuals in R</p>
 <details><summary><red>Click for answer</red></summary><p>We can use the <code>resid</code> command to get the residuals for each case in the data set:</p>
 <div class="sourceCode" id="cb154"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># part h</span></span>
@@ -175,7 +181,7 @@ BAC - \widehat{BAC} = .03 - .0233=0.0067
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/residuals.html">resid</a></span><span class="op">(</span><span class="va">bac.lm</span><span class="op">)</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span></span></code></pre></div>
 <pre><code>         2 
 0.00677308 </code></pre>
-</details>
+</details><p><br></p>
 (i). Getting <span class="math inline">\(R^2\)</span> value
 <details><summary><red>Click for answer</red></summary><p>You can use the <code>summary</code> command on an <code>lm</code> object to get a more detailed print out of your linear model, along with the <span class="math inline">\(R^2\)</span> value for your model:</p>
 <div class="sourceCode" id="cb162"><pre class="downlit sourceCode r">
@@ -199,19 +205,23 @@ Signif. codes:
 Residual standard error: 0.02044 on 14 degrees of freedom
 Multiple R-squared:  0.7998,    Adjusted R-squared:  0.7855 
 F-statistic: 55.94 on 1 and 14 DF,  p-value: 2.969e-06</code></pre>
-</details><p>(j). Making a residuals plot</p>
+</details><p><br></p>
+<p>(j). Making a residuals plot</p>
 <details><summary><red>Click for answer</red></summary><p>The regression of <code>BAC</code> on <code>Beers</code> has a residuals plot that plots the model’s residuals on the y-axis and the explantory (“predictor”) on the x-axis. We add a horizontal reference line (the detrended regression line) with the <code>abline(h=0)</code> command:</p>
 <div class="sourceCode" id="cb164"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># code for residual plot</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/residuals.html">resid</a></span><span class="op">(</span><span class="va">bac.lm</span><span class="op">)</span> <span class="op">~</span> <span class="va">Beers</span>, data<span class="op">=</span><span class="va">bac</span>, pch<span class="op">=</span><span class="fl">19</span>, main <span class="op">=</span> <span class="st">"residuals plot"</span><span class="op">)</span>  </span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html">abline</a></span><span class="op">(</span>h<span class="op">=</span><span class="fl">0</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="Class_Activity_6_files/figure-html/unnamed-chunk-12-1.png" width="100%"></div>
+<p><img src="Class_Activity_6_files/figure-html/unnamed-chunk-12-1.png" width="100%"><br></p>
 <strong>Interpret:</strong> There is one case of 9 beers with a large residual (much higher BAC than predicted), but since there is no clear pattern (trend) in this plot it looks like our regression model adequately describes the relationship between number of beers and BAC.
 </details><ul>
-<li>Is the magnitude of the scatter around the horizontal 0-line in the residuals plot greater than, less than, or the same as the magnitude of the scatter around the regression line in the scatterplot?</li>
+<li>Is the magnitude of the scatter around the horizontal 0-line in the residuals plot greater than, less than, or the same as the magnitude of the scatter around the regression line in the scatterplot?
+<br>
+</li>
 </ul>
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> The same! The residuals plot is only a “detrended” scatterplot, meaning the vertical distances between a point and the regression line on the scatterplot or a point and the 0-line on the residuals plot are exactly the same. The residual plot looks more scattered because the trend is removed and the scale of the y-axis compressed.
-</details><p>(k). Identifying points
+</details><p><br></p>
+<p>(k). Identifying points
 The <code>which</code> command can be used to identify points by their row number in a scatterplot.</p>
 <p>We can use <code>==</code> to see which case drank exactly 9 beers. Which is the row number of the case that drank 9 beers?</p>
 <div class="sourceCode" id="cb165"><pre class="downlit sourceCode r">
@@ -225,7 +235,7 @@ The <code>which</code> command can be used to identify points by their row numbe
 <details><summary><red>Click for answer</red></summary><div class="sourceCode" id="cb168"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/residuals.html">resid</a></span><span class="op">(</span><span class="va">bac.lm</span><span class="op">)</span> <span class="op">~</span> <span class="va">Beers</span>, data<span class="op">=</span><span class="va">bac</span>, pch<span class="op">=</span><span class="fl">19</span><span class="op">)</span>  </span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html">abline</a></span><span class="op">(</span>h<span class="op">=</span><span class="fl">0</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="Class_Activity_6_files/figure-html/unnamed-chunk-14-1.png" width="100%"></div>
+<p><img src="Class_Activity_6_files/figure-html/unnamed-chunk-14-1.png" width="100%"><br></p>
 <p>We could eyeball the graph to see that the most negative residual is less than -0.02:</p>
 <div class="sourceCode" id="cb169"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># which case has resid less than -0.02?</span></span>
@@ -239,7 +249,8 @@ The <code>which</code> command can be used to identify points by their row numbe
 <span><span class="fu"><a href="https://rdrr.io/r/stats/residuals.html">resid</a></span><span class="op">(</span><span class="va">bac.lm</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/which.html">which</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/residuals.html">resid</a></span><span class="op">(</span><span class="va">bac.lm</span><span class="op">)</span> <span class="op">&lt;</span> <span class="op">-</span><span class="fl">0.02</span> <span class="op">&amp;</span> <span class="va">bac</span><span class="op">$</span><span class="va">Beers</span> <span class="op">==</span> <span class="fl">5</span><span class="op">)</span><span class="op">]</span></span></code></pre></div>
 <pre><code>         10 
 -0.02711821 </code></pre>
-</details><p>(l). Checking outlier influence</p>
+</details><p><br></p>
+<p>(l). Checking outlier influence</p>
 <p>Will the regression line slope increase, decrease or stay the same if we remove case 3, the 9 beer case, from our model?</p>
 <p>Check your answer by adding <code>subset = -3</code> to the <code>lm</code> command (this removes row 3):</p>
 <details><summary><red>Click for answer</red></summary><div class="sourceCode" id="cb173"><pre class="downlit sourceCode r">
@@ -288,6 +299,7 @@ Signif. codes:
 Residual standard error: 0.02044 on 14 degrees of freedom
 Multiple R-squared:  0.7998,    Adjusted R-squared:  0.7855 
 F-statistic: 55.94 on 1 and 14 DF,  p-value: 2.969e-06</code></pre>
+<p><br></p>
 <ul>
 <li>After removing case 3, how has the slope changed? Explain the why the change occurred.</li>
 </ul>
@@ -296,7 +308,8 @@ F-statistic: 55.94 on 1 and 14 DF,  p-value: 2.969e-06</code></pre>
 <li>After removing case 3, how has the <span class="math inline">\(R^2\)</span> changed? Explain the why the change occurred.</li>
 </ul>
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> The <span class="math inline">\(R^2\)</span> decreases from 79.9% to 76.8%. This small decrease happens because case 3 actually enhances the overall linear trend and removing it results is a slight decrease to correlation and <span class="math inline">\(R^2\)</span>.
-</details><p>(m). Adding a categorical variable to your plot</p>
+</details><p><br></p>
+<p>(m). Adding a categorical variable to your plot</p>
 <p>We can create a scatterplot with plotting symbols color coded by a categorical grouping variable using <code>ggplot2</code> package. We use the <code><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point()</a></code> plot geometry to get a scatterplot with the <code>x</code>, <code>y</code>, and <code>color</code> aesthetics specified. Here we look at the <code>BAC</code> vs. <code>Beers</code> plot with <code>Gender</code> added:</p>
 <div class="sourceCode" id="cb178"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
@@ -306,7 +319,8 @@ F-statistic: 55.94 on 1 and 14 DF,  p-value: 2.969e-06</code></pre>
 <li>Are the associations similar? (form, strength, direction)</li>
 </ul>
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> Both females and males have similar strong, positive linear associations.
-</details><p>(n). Regression lines by groups</p>
+</details><p><br></p>
+<p>(n). Regression lines by groups</p>
 <p>A quick way to get the male and female regression line formulas for part (c) is to add a <code>subset</code> argument to the <code>lm</code> command:</p>
 <div class="sourceCode" id="cb179"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">bac.lm.female</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">BAC</span> <span class="op">~</span> <span class="va">Beers</span>, data<span class="op">=</span><span class="va">bac</span>, subset <span class="op">=</span> <span class="va">Gender</span> <span class="op">==</span> <span class="st">"female"</span><span class="op">)</span></span>
@@ -338,6 +352,7 @@ Coefficients:
 <li>Which gender has the largest slope? What does this suggest about the relationship between number of beers and BAC for this gender?</li>
 </ul>
 <details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The slope for females is slightly higher. This shows that the effect of one more beer on predicted BAC in females is larger than males (a 0.021 increase vs. a 0.015 increase).</p>
+<p><br></p>
 <p>Another way to obtain regression models by <code>Gender</code> is to split the data set in a female and male data set, then run your <code>lm</code> on these two data sets. The benefit of this method is you can then create a residuals plot for your model much easier than the quicker method above:</p>
 <div class="sourceCode" id="cb183"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">bac.female</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">bac</span>, sub <span class="op">=</span> <span class="va">Gender</span> <span class="op">==</span> <span class="st">"female"</span><span class="op">)</span></span>
@@ -359,7 +374,8 @@ lm(formula = BAC ~ Beers, data = bac.male)
 Coefficients:
 (Intercept)        Beers  
   -0.009785     0.015341  </code></pre>
-</details><hr>
+</details><p><br></p>
+<hr>
 </div>
 <div id="mice-mass-example" class="section level3" number="6.1.2">
 <h3>
@@ -393,7 +409,8 @@ Coefficients:
    GlucoseInt   GTT15  GTT120 Activity
 25        Yes 435.644 405.941     6702</code></pre>
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> The case with the largest residual is located at about 80% calories and 17g body mass gain. We can find which row this corresponds to using the <code>which</code> command shown below.
-</details><p>(b). What are the coordinates (roughly) of the case with the most negative residual?</p>
+</details><p><br></p>
+<p>(b). What are the coordinates (roughly) of the case with the most negative residual?</p>
 <div class="sourceCode" id="cb194"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">mice</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/which.html">which</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/residuals.html">resid</a></span><span class="op">(</span><span class="va">mice.lm</span><span class="op">)</span> <span class="op">==</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/residuals.html">resid</a></span><span class="op">(</span><span class="va">mice.lm</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>,<span class="op">]</span></span></code></pre></div>
 <pre><code>    X Light BMGain Corticosterone DayPct Consumption
@@ -401,7 +418,8 @@ Coefficients:
    GlucoseInt   GTT15  GTT120 Activity
 10         No 271.717 148.485     1084</code></pre>
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> The case with the most negative residual is located at about 55% calories and 3g body mass gain. We can find which row this corresponds to using the <code>which</code> command shown below. The code below also highlights the cases in (a) with a circle and (b) with a square.
-</details><p>(c). What is the predicted body mass gain for a mouse that eats 50% of its calories during the day?</p>
+</details><p><br></p>
+<p>(c). What is the predicted body mass gain for a mouse that eats 50% of its calories during the day?</p>
 <p><span class="math display">\[
 \widehat{BMGain} =1.1128+0.1273(50)=7.48
 \]</span></p>
@@ -409,7 +427,8 @@ Coefficients:
 <code class="sourceCode R"><span><span class="fl">1.1128</span> <span class="op">+</span> <span class="fl">.1273</span><span class="op">*</span><span class="fl">50</span></span></code></pre></div>
 <pre><code>[1] 7.4778</code></pre>
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> A mouse that eats 50% of its calories during the day is predicted to gain 7.48 grams.
-</details><p>(d). Find the residual for the mouse who ate 48.3% of its calories during the day and gained 5.82 grams.</p>
+</details><p><br></p>
+<p>(d). Find the residual for the mouse who ate 48.3% of its calories during the day and gained 5.82 grams.</p>
 <details><summary><red>Click for answer</red></summary><p><em>Answer:</em> We first find the predicted body mass gain:
 <span class="math display">\[
 \widehat{BMGain} = 1.1128+0.1273(48.3)=7.26
@@ -423,15 +442,19 @@ Residual = BMGain  -   \widehat{BMGain} =  5.82 – 7.26 = –1.44.
 <div class="sourceCode" id="cb200"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fl">5.82</span> <span class="op">-</span> <span class="op">(</span><span class="fl">1.1128</span> <span class="op">+</span> <span class="fl">.1273</span><span class="op">*</span><span class="fl">48.3</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] -1.44139</code></pre>
-</details><p>(e). Interpret the slope of the regression line in context.</p>
+</details><p><br></p>
+<p>(e). Interpret the slope of the regression line in context.</p>
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> The slope is 0.1273. When a mouse eats one more percent of its calories during the day, its predicted body mass gain goes up by 0.1273 grams.
-</details><p>(f). Interpret the intercept of the line in context, if it makes sense to do so.</p>
+</details><p><br></p>
+<p>(f). Interpret the intercept of the line in context, if it makes sense to do so.</p>
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> The intercept is 1.1128. A mouse who eats 0% of its calories during the day (and all of them at night when a mouse normally eats all its food) is predicted to gain 1.11 grams. But this would be <strong>extrapolation</strong> because the range of observed percents is, roughly, 20-90. It does not make sense to interpret the intercept in this context.
-</details><p>(g). Use the correlation value to compute <span class="math inline">\(R^2\)</span>, then interpret (in context) the <span class="math inline">\(R^2\)</span> value for this model.</p>
+</details><p><br></p>
+<p>(g). Use the correlation value to compute <span class="math inline">\(R^2\)</span>, then interpret (in context) the <span class="math inline">\(R^2\)</span> value for this model.</p>
 <div class="sourceCode" id="cb202"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">r</span> <span class="op">&lt;-</span> <span class="fl">0.7398623</span></span>
 <span><span class="va">r</span><span class="op">^</span><span class="fl">2</span></span></code></pre></div>
 <pre><code>[1] 0.5473962</code></pre>
+<p><br></p>
 <p>(h). Get the value of <span class="math inline">\(R^2\)</span> from the regression output, then interpret (in context) the <span class="math inline">\(R^2\)</span> value for this model.</p>
 <div class="sourceCode" id="cb204"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">mice.lm</span><span class="op">)</span></span></code></pre></div>
@@ -455,7 +478,8 @@ Residual standard error: 2.231 on 25 degrees of freedom
 Multiple R-squared:  0.5474,    Adjusted R-squared:  0.5293 
 F-statistic: 30.24 on 1 and 25 DF,  p-value: 1.032e-05</code></pre>
 <details><summary><red>Click for answer</red></summary><p><em>Answer:</em> From <code>Multiple R-squared</code>, we get <span class="math inline">\(R^2 = 0.547\)</span>. The percent of calories that a mouse eats during the day explains about 55% of the variability in weight gain for this study.</p>
-</details><hr>
+</details><p><br></p>
+<hr>
 </div>
 <div id="forbes-example" class="section level3" number="6.1.3">
 <h3>
@@ -490,6 +514,7 @@ Signif. codes:
 Residual standard error: 0.2328 on 15 degrees of freedom
 Multiple R-squared:  0.9944,    Adjusted R-squared:  0.9941 
 F-statistic:  2677 on 1 and 15 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p><br></p>
 <ul>
 <li>Describe the relationship between pressure and temp (strength, form, direction).</li>
 </ul>
@@ -499,7 +524,8 @@ F-statistic:  2677 on 1 and 15 DF,  p-value: &lt; 2.2e-16</code></pre>
 </li>
 </ul>
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> About 99.4% of the variation observed in pressure can be explained by the boiling point temps.
-</details><p>(b). Check the residuals plot</p>
+</details><p><br></p>
+<p>(b). Check the residuals plot</p>
 <div class="sourceCode" id="cb209"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/residuals.html">resid</a></span><span class="op">(</span><span class="va">forbes.lm</span><span class="op">)</span> <span class="op">~</span> <span class="va">Temp</span>, data<span class="op">=</span><span class="va">forbes</span>, pch<span class="op">=</span><span class="fl">19</span>, main <span class="op">=</span> <span class="st">"Residuals plot"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html">abline</a></span><span class="op">(</span>h<span class="op">=</span><span class="fl">0</span><span class="op">)</span></span></code></pre></div>
@@ -512,7 +538,8 @@ F-statistic:  2677 on 1 and 15 DF,  p-value: &lt; 2.2e-16</code></pre>
 <li>Does the residual plot highlight an unusual case? Explain.</li>
 </ul>
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> Yes, there is one case that has an unusually high pressure value given its temp.
-</details><p>(c). “Fixing” the model</p>
+</details><p><br></p>
+<p>(c). “Fixing” the model</p>
 <p>A linear model can be used with this data if we <strong>transform</strong> the response variable to the logarithmic scale. Here <code>log(y)</code> gives the natural log of the variable <code>y</code>.</p>
 <div class="sourceCode" id="cb210"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">Pressure</span><span class="op">)</span> <span class="op">~</span> <span class="va">Temp</span>, data<span class="op">=</span><span class="va">forbes</span>, pch<span class="op">=</span><span class="fl">19</span>, main <span class="op">=</span> <span class="st">"Pressure vs. Temp"</span><span class="op">)</span></span>
@@ -527,11 +554,13 @@ F-statistic:  2677 on 1 and 15 DF,  p-value: &lt; 2.2e-16</code></pre>
 <li>Has the curvature in the scatterplot and residuals plots been reduced by logging the variables?</li>
 </ul>
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> Yes, there is less curvature
-</details><ul>
+</details><p><br></p>
+<ul>
 <li>Has the outlier been eliminated by logging the variables?</li>
 </ul>
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> No, the outlier is still present.
-</details><p>(d). Removing bad measurement</p>
+</details><p><br></p>
+<p>(d). Removing bad measurement</p>
 <p>Identify which case has the large residual value around 0.03.</p>
 <div class="sourceCode" id="cb212"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/residuals.html">resid</a></span><span class="op">(</span><span class="va">forbes.lm2</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/which.html">which</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/residuals.html">resid</a></span><span class="op">(</span><span class="va">forbes.lm2</span><span class="op">)</span> <span class="op">&gt;</span> <span class="fl">0.02</span><span class="op">)</span><span class="op">]</span></span></code></pre></div>

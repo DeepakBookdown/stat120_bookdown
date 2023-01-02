@@ -102,6 +102,7 @@
  [5] "Struck by State"     "Not struck by State"
  [7] "Struck by State"     "Not struck by State"
  [9] "Not struck by State" "Not struck by State"</code></pre>
+<p><br></p>
 <p>(b). Table of counts and proportions</p>
 <p>The <code>summary</code> command used with a data frame gives summaries of each variable</p>
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
@@ -137,11 +138,12 @@ Not struck by State     Struck by State
 <li>What proportion of eligible jurors were struck by the state from the jury pool?</li>
 </ul>
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> about 28.5% of eligible jurors were struck by the state.
-</details><p>(c). Bar graph for one variable</p>
+</details><p><br></p>
+<p>(c). Bar graph for one variable</p>
 <p>You can create a simple bar graph for one categorical variable with the <code>barplot</code> command. Here we visualize the distribution of struck status for all eligible jurors:</p>
 <div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/barplot.html">barplot</a></span><span class="op">(</span><span class="va">counts</span>, ylab <span class="op">=</span> <span class="st">"count"</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="Class_Activity_4_files/figure-html/unnamed-chunk-8-1.png" width="100%"></div>
+<p><img src="Class_Activity_4_files/figure-html/unnamed-chunk-8-1.png" width="100%"><br></p>
 <p>(d). Two-way tables</p>
 <p>First 10 entries of <code>race</code> and <code>struck_state</code> variable is</p>
 <div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
@@ -169,7 +171,8 @@ Not struck by State     Struck by State
 <li>How many jurors were white and were not struck by the state?</li>
 </ul>
 <details><summary><red>Click for answer</red></summary><em>answer:</em> 859
-</details><p>(e). Conditional proportions: state strike status by juror race</p>
+</details><p><br></p>
+<p>(e). Conditional proportions: state strike status by juror race</p>
 <p>The <code>prop.table</code> command gives conditional proportions for a two-way table. We plug our two-way table into <code>prop.table</code> with a <code>margin=1</code> to get proportions grouped by the <strong>row</strong> variable:</p>
 <div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/proportions.html">prop.table</a></span><span class="op">(</span><span class="va">mytable</span>, margin <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code></pre></div>
@@ -187,7 +190,8 @@ Not struck by State     Struck by State
 </ul>
 <details><summary><red>Click for answer</red></summary><em>answer:</em> Yes, there is an association because the rate of state strikes varies greatly by juror race with
 about 60% of black jurors were struck compared to only 13% of white jurors
-</details><p>(f). Stacked bar graph for two variables</p>
+</details><p><br></p>
+<p>(f). Stacked bar graph for two variables</p>
 <p>We can visualize the conditional distribution from part (e) with a stacked bar graph created using the <code>ggplot2</code> graphing package. First, load this package’s functions with the <code>library</code> command:</p>
 <div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span></code></pre></div>
@@ -198,7 +202,8 @@ about 60% of black jurors were struck compared to only 13% of white jurors
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"State strikes by juror race"</span>, y <span class="op">=</span> <span class="st">"proportion"</span>, </span>
 <span>       x <span class="op">=</span> <span class="st">"eligible juror race"</span>, fill <span class="op">=</span> <span class="st">"struck by state?"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="Class_Activity_4_files/figure-html/unnamed-chunk-13-1.png" width="100%"></div>
-<p>The basic syntax for this function is to let <code>ggplot</code> know your data set name (<code>jurors</code>), then specify the grouping or conditional variable on the x-axis (<code>race</code>) in the <code>aes</code> (aesthetic) argument. The <code>fill</code> variable is the response variable (<code>struck_state</code>). We add (<code>+</code>) the <code>geom_bar</code> geometry to get a bar graph with the <code>fill</code> position specified. Adding an informative label and title complete the graph.</p>
+<p>The basic syntax for this function is to let <code>ggplot</code> know your data set name (<code>jurors</code>), then specify the grouping or conditional variable on the x-axis (<code>race</code>) in the <code>aes</code> (aesthetic) argument. The <code>fill</code> variable is the response variable (<code>struck_state</code>). We add (<code>+</code>) the <code>geom_bar</code> geometry to get a bar graph with the <code>fill</code> position specified. Adding an informative label and title complete the graph.
+<br></p>
 <p>(g). Conditional distribution of race grouped by strike status</p>
 <p>We can “flip” our response and grouping variables easily (if we think it makes sense to do so). Here we specify the <code>margin=2</code> to get proportions grouped by the <strong>column</strong> variable:</p>
 <div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
@@ -219,12 +224,13 @@ about 60% of black jurors were struck compared to only 13% of white jurors
 <li>What proportion of eligible jurors who were not struck by the state were black? were white?</li>
 </ul>
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> Of all jurors not struck by the state, about 20.8% were black
-</details><hr>
+</details><p><br></p>
+<hr>
 </div>
 </div>
-<div id="your-turn-2-2" class="section level2" number="4.2">
+<div id="your-turn-2-1" class="section level2" number="4.2">
 <h2>
-<span class="header-section-number">4.2</span> Your Turn 2<a class="anchor" aria-label="anchor" href="#your-turn-2-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.2</span> Your Turn 2<a class="anchor" aria-label="anchor" href="#your-turn-2-1"><i class="fas fa-link"></i></a>
 </h2>
 <div id="graduate-programs-acceptance-and-sex" class="section level3" number="4.2.1">
 <h3>
@@ -257,7 +263,8 @@ about 60% of black jurors were struck compared to only 13% of white jurors
 <li>What proportion of applicants were accepted?</li>
 </ul>
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> About 43% (1284/3014) of applicants were accepted.
-</details><p>(b). Two-way tables</p>
+</details><p><br></p>
+<p>(b). Two-way tables</p>
 <p>The <code>table</code> command also gives two-way tables when two variables are included. Here is the two-way table for result and sex:</p>
 <div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">grad</span><span class="op">$</span><span class="va">sex</span>, <span class="va">grad</span><span class="op">$</span><span class="va">result</span><span class="op">)</span></span></code></pre></div>
@@ -269,7 +276,8 @@ about 60% of black jurors were struck compared to only 13% of white jurors
 <li>How many applicants involved females who were accepted?</li>
 </ul>
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> : 262 applicants involved females who were accepted.
-</details><p>(c). Conditional proportions: acceptance given sex</p>
+</details><p><br></p>
+<p>(c). Conditional proportions: acceptance given sex</p>
 <p>The <code>prop.table</code> command gives conditional proportions for a two-way table. First let’s save the two-way table in an object named <code>mytable</code>:</p>
 <div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">mytable</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">grad</span><span class="op">$</span><span class="va">sex</span>, <span class="va">grad</span><span class="op">$</span><span class="va">result</span><span class="op">)</span></span></code></pre></div>
@@ -289,7 +297,8 @@ about 60% of black jurors were struck compared to only 13% of white jurors
 <li>What proportion of males were accepted?</li>
 </ul>
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> about 47% (1022/(1022+1143))
-</details><p>(d). Bar graph for one variable</p>
+</details><p><br></p>
+<p>(d). Bar graph for one variable</p>
 <p>You can create a simple bar graph for one categorical variable with the <code>barplot</code> command. Here we visualize the distribution of result:</p>
 <div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/barplot.html">barplot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">grad</span><span class="op">$</span><span class="va">result</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
@@ -298,7 +307,7 @@ about 60% of black jurors were struck compared to only 13% of white jurors
 <div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/barplot.html">barplot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">grad</span><span class="op">$</span><span class="va">result</span><span class="op">)</span>, xlab<span class="op">=</span><span class="st">"application result"</span>, </span>
 <span>        ylab<span class="op">=</span><span class="st">"Count"</span>, main <span class="op">=</span> <span class="st">"Distribution of Results"</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="Class_Activity_4_files/figure-html/unnamed-chunk-24-1.png" width="100%"></div>
+<p><img src="Class_Activity_4_files/figure-html/unnamed-chunk-24-1.png" width="100%"><br></p>
 <p>(e). Stacked bar graph for two variables</p>
 <p>Now we can use the <code>geom_bar</code> command in this package. Here we get the conditional distribution of <code>result</code> given <code>sex</code>:</p>
 <div class="sourceCode" id="cb60"><pre class="downlit sourceCode r">
@@ -309,7 +318,9 @@ about 60% of black jurors were struck compared to only 13% of white jurors
 <div class="inline-figure"><img src="Class_Activity_4_files/figure-html/unnamed-chunk-25-1.png" width="100%"></div>
 <p>The basic syntax for this function is to let <code>ggplot</code> know your data set name (<code>grad</code>), then specify the grouping or conditional variable on the x-axis (<code>sex</code>) in the <code>aes</code> (aesthetic) argument. The <code>fill</code> variable is the response variable (<code>result</code>). We add (<code>+</code>) the <code>geom_bar</code> geometry to get a bar graph with the <code>fill</code> position specified. Adding an informative label and title complete the graph.</p>
 <ul>
-<li>Verify that this graph is plotting the conditional proportions from part (c)</li>
+<li>Verify that this graph is plotting the conditional proportions from part (c)
+<br>
+</li>
 </ul>
 <p>(f). Subsetting by program type</p>
 <p>Finally, we will repeat the previous analysis of result and sex, but this time we will divide (or subset) the data set by program type. To do this we need to know how the values of <code>program</code> are coded:</p>
@@ -348,6 +359,7 @@ program1 program2 program3 program4
 4 program2 male accept
 5 program2 male accept
 6 program2 male accept</code></pre>
+<p><br></p>
 <p>(g). Result by sex for program 1.</p>
 <ul>
 <li>Show the distribution of result conditioned on applicant’s sex for the program 1 data set. Get both a table of conditional proportions (or percentages) and a stacked bar graph.</li>
@@ -365,7 +377,8 @@ program1 program2 program3 program4
             accept    reject
   female 0.8240741 0.1759259
   male   0.6193939 0.3806061</code></pre>
-</details><p>(h). Result by sex for program 2.</p>
+</details><p><br></p>
+<p>(h). Result by sex for program 2.</p>
 <ul>
 <li>Repeat part (g) but this time use the program 2 data set. Compare the two bar graphs for (g) and (h) and explain how they show that females have a higher acceptance rate after accounting for program type (1 or 2).</li>
 </ul>
@@ -386,7 +399,8 @@ program1 program2 program3 program4
 than male applicants. After accounting for program type, we now see that black defendants have a higher
 rate of death penalty than white defendants. Without accounting for program type, the opposite was true
 (see parts (c) and (e)).</p>
-</details><p>Why? the confounding affect of program type which is associated with both result and sex:</p>
+</details><p><br></p>
+<p>Why? the confounding affect of program type which is associated with both result and sex:</p>
 <details><summary><red>Click for answer</red></summary><ul>
 <li>females prefer to apply to programs 3 and 4 while males prefer programs 1 and 2 (more than 3 and
 4).
@@ -417,7 +431,8 @@ rate of death penalty than white defendants. Without accounting for program type
 there overall rate of acceptance was lower for females compared to males. But when we break down
 these rates by program type, we see that females have higher acceptance rates than males (see the
 visual in part (i)).</p>
-</details><p>(i). A bar graph with three variables</p>
+</details><p><br></p>
+<p>(i). A bar graph with three variables</p>
 <p>If we simply want to graph the relationship between result and sex for each type of program, we can avoid subsetting the data by using the <code>facet_wrap</code> command in <code>ggplot2</code>. It is one simple addition to the stacked bar graph in part (e):</p>
 <div class="sourceCode" id="cb79"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">grad</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">sex</span>, fill <span class="op">=</span> <span class="va">result</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
@@ -427,7 +442,7 @@ visual in part (i)).</p>
 <span>       fill <span class="op">=</span> <span class="st">"result?"</span>, </span>
 <span>       x <span class="op">=</span> <span class="st">"sex"</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">program</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="Class_Activity_4_files/figure-html/unnamed-chunk-35-1.png" width="100%"></div>
+<p><img src="Class_Activity_4_files/figure-html/unnamed-chunk-35-1.png" width="100%"><br></p>
 <ul>
 <li>Verify that this command creates side-by-side stacked bar graphs that match your graphs in parts (g) and (h) for programs 1 and 2.</li>
 </ul>
@@ -447,7 +462,7 @@ visual in part (i)).</p>
 <a class="nav-link" href="#your-turn-1-2"><span class="header-section-number">4.1</span> Your Turn 1</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#flowers-v.-mississippi"><span class="header-section-number">4.1.1</span> Flowers v. Mississippi</a></li></ul>
 </li>
 <li>
-<a class="nav-link" href="#your-turn-2-2"><span class="header-section-number">4.2</span> Your Turn 2</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#graduate-programs-acceptance-and-sex"><span class="header-section-number">4.2.1</span> Graduate programs acceptance and sex</a></li></ul>
+<a class="nav-link" href="#your-turn-2-1"><span class="header-section-number">4.2</span> Your Turn 2</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#graduate-programs-acceptance-and-sex"><span class="header-section-number">4.2.1</span> Graduate programs acceptance and sex</a></li></ul>
 </li>
 </ul>
 

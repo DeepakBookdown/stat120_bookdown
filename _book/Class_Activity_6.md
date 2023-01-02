@@ -39,6 +39,7 @@ plot(BAC ~ Beers, data=bac, pch=19,
 
 <img src="Class_Activity_6_files/figure-epub3/unnamed-chunk-3-1.png" width="100%" />
 
+<br>
 
  (b). Computing correlation
 
@@ -53,6 +54,7 @@ cor(bac$BAC, bac$Beers)
 [1] 0.8943381
 ```
 
+<br>
 
  (c).	Fitting a regression line
 
@@ -98,12 +100,15 @@ abline(bac.lm) # adds regression line to the plot above
 
 </details>
 
+<br>
+
  (d).	Interpret the slope in context.
 
 <details>
 <summary><red>Click for answer</red></summary>
 *Answer:* Drinking one more beer is associated with a 0.0180 unit increase in predicted BAC.
 </details>
+<br>
 
  (e).	Interpret the intercept in context, if it makes sense to do so. 
 
@@ -111,6 +116,7 @@ abline(bac.lm) # adds regression line to the plot above
 <summary><red>Click for answer</red></summary>
 *Answer:* The intercept is -0.0127.  A student who drinks 0 beers would be predicted to have a negative blood alcohol content. This is not possible so the intercept does not make sense in this context, but the intercept is included in the model to get the best fit line for the data collected.
 </details>
+<br>
 
  (f).	If your friend at Ohio State drank 2 beers, what would you predict their BAC to be?
 
@@ -130,6 +136,7 @@ y.hat
 [1] 0.0233
 ```
 </details>
+<br>
 
  (g).	Find the residual for the student in the dataset who drank 2 beers and had a BAC of 0.03.
 <details>
@@ -148,6 +155,7 @@ $$
 ```
 
 </details>
+<br>
 
  (h). Getting residuals in R
 
@@ -201,6 +209,7 @@ resid(bac.lm)[2]
 0.00677308 
 ```
 </details>
+<br>
 
  (i). Getting $R^2$ value
 <details>
@@ -234,6 +243,7 @@ Multiple R-squared:  0.7998,	Adjusted R-squared:  0.7855
 F-statistic: 55.94 on 1 and 14 DF,  p-value: 2.969e-06
 ```
 </details>
+<br>
 
  (j). Making a residuals plot
  
@@ -249,17 +259,20 @@ abline(h=0)
 ```
 
 <img src="Class_Activity_6_files/figure-epub3/unnamed-chunk-12-1.png" width="100%" />
+<br>
 
 
 **Interpret:** There is one case of 9 beers with a large residual (much higher BAC than predicted), but since there is no clear pattern (trend) in this plot it looks like our regression model adequately describes the relationship between number of beers and BAC. 
 </details>
 
 - Is the magnitude of the scatter around the horizontal 0-line in the residuals plot greater than, less than, or the same as the magnitude of the scatter around the regression line in the scatterplot?
+<br>
 
 <details>
 <summary><red>Click for answer</red></summary>
 *Answer:* The same! The residuals plot is only a "detrended" scatterplot, meaning the vertical distances between a point and the regression line on the scatterplot or a point and the 0-line on the residuals plot are exactly the same. The residual plot looks more scattered because the trend is removed and the scale of the y-axis compressed. 
 </details>
+<br>
 
  (k). Identifying points
 The `which` command can be used to identify points by their row number in a scatterplot. 
@@ -298,6 +311,7 @@ abline(h=0)
 ```
 
 <img src="Class_Activity_6_files/figure-epub3/unnamed-chunk-14-1.png" width="100%" />
+<br>
 
 
 We could eyeball the graph to see that the most negative residual is less than -0.02:
@@ -328,6 +342,7 @@ resid(bac.lm)[which(resid(bac.lm) < -0.02 & bac$Beers == 5)]
 ```
 
 </details>
+<br>
 
  (l). Checking outlier influence
 
@@ -397,6 +412,7 @@ Residual standard error: 0.02044 on 14 degrees of freedom
 Multiple R-squared:  0.7998,	Adjusted R-squared:  0.7855 
 F-statistic: 55.94 on 1 and 14 DF,  p-value: 2.969e-06
 ```
+<br>
 
 - After removing case 3, how has the slope changed? Explain the why the change occurred.
 
@@ -410,6 +426,7 @@ F-statistic: 55.94 on 1 and 14 DF,  p-value: 2.969e-06
 <summary><red>Click for answer</red></summary>
 *Answer:* The $R^2$ decreases from 79.9% to 76.8%. This small decrease happens because case 3 actually enhances the overall linear trend and removing it results is a slight decrease to correlation and $R^2$. 
 </details>
+<br>
 
  (m). Adding a categorical variable to your plot
 
@@ -429,6 +446,7 @@ ggplot(bac, aes(x=Beers, y=BAC, color=Gender)) + geom_point()
 <summary><red>Click for answer</red></summary>
 *Answer:* Both females and males have similar strong, positive linear associations.
 </details>
+<br>
 
  (n). Regression lines by groups
 
@@ -480,6 +498,7 @@ Coefficients:
 <summary><red>Click for answer</red></summary>
 *Answer:* The slope for females is slightly higher. This shows that the effect of one more beer on predicted BAC in females is larger than males (a 0.021 increase vs. a 0.015 increase).
 
+<br>
 
 Another way to obtain regression models by `Gender` is to split the data set in a female and male data set, then run your `lm` on these two data sets. The benefit of this method is you can then create a residuals plot for your model much easier than the quicker method above:
 
@@ -514,6 +533,7 @@ Coefficients:
   -0.009785     0.015341  
 ```
 </details>
+<br>
 
 -------------------------------------------------------------------------------
 
@@ -572,6 +592,7 @@ mice[which(resid(mice.lm) == max(resid(mice.lm))),]
 <summary><red>Click for answer</red></summary>
 *Answer:* The case with the largest residual is located at about 80% calories and 17g body mass gain. We can find which row this corresponds to using the `which` command shown below. 
 </details>
+<br>
 
  (b).  What are the coordinates (roughly) of the case with the most negative residual?
 
@@ -591,6 +612,7 @@ mice[which(resid(mice.lm) == min(resid(mice.lm))),]
 <summary><red>Click for answer</red></summary>
 *Answer:* The case with the most negative residual is located at about 55% calories and 3g body mass gain. We can find which row this corresponds to using the `which` command shown below. The code below also highlights the cases in (a) with a circle and (b) with a square.
 </details>
+<br>
 
  (c).  What is the predicted body mass gain for a mouse that eats 50% of its calories during the day?
 
@@ -610,6 +632,7 @@ $$
 <summary><red>Click for answer</red></summary>
 *Answer:* A mouse that eats 50% of its calories during the day is predicted to gain 7.48 grams.
 </details>
+<br>
 
  (d).  Find the residual for the mouse who ate 48.3% of its calories during the day and gained 5.82 grams.
 
@@ -641,6 +664,7 @@ $$
 [1] -1.44139
 ```
 </details>
+<br>
 
  (e).  Interpret the slope of the regression line in context.
 
@@ -648,6 +672,7 @@ $$
 <summary><red>Click for answer</red></summary>
 *Answer:* The slope is 0.1273.  When a mouse eats one more percent of its calories during the day, its predicted body mass gain goes up by 0.1273 grams.
 </details>
+<br>
 
  (f).  Interpret the intercept of the line in context, if it makes sense to do so.
 
@@ -655,6 +680,7 @@ $$
 <summary><red>Click for answer</red></summary>
 *Answer:* The intercept is 1.1128.  A mouse who eats 0% of its calories during the day (and all of them at night when a mouse normally eats all its food) is predicted to gain 1.11 grams.  But this would be **extrapolation** because the range of observed percents is, roughly, 20-90. It does not make sense to interpret the intercept in this context.
 </details>
+<br>
 
  (g). Use the correlation value to compute $R^2$, then interpret (in context) the $R^2$ value for this model. 
 
@@ -668,6 +694,7 @@ r^2
 [1] 0.5473962
 ```
 
+<br>
 
 
  (h). Get the value of $R^2$ from the regression output, then interpret (in context) the $R^2$ value for this model. 
@@ -705,6 +732,7 @@ F-statistic: 30.24 on 1 and 25 DF,  p-value: 1.032e-05
 
 </details>
 
+<br>
 
 ---------------------------------
 
@@ -751,6 +779,7 @@ Residual standard error: 0.2328 on 15 degrees of freedom
 Multiple R-squared:  0.9944,	Adjusted R-squared:  0.9941 
 F-statistic:  2677 on 1 and 15 DF,  p-value: < 2.2e-16
 ```
+<br>
 
 - Describe the relationship between pressure and temp (strength, form, direction).
 
@@ -765,6 +794,9 @@ F-statistic:  2677 on 1 and 15 DF,  p-value: < 2.2e-16
 <summary><red>Click for answer</red></summary>
 *Answer:* About 99.4% of the variation observed in pressure can be explained by the boiling point temps. 
 </details>
+
+<br>
+
 
  (b). Check the residuals plot
 
@@ -789,6 +821,9 @@ abline(h=0)
 <summary><red>Click for answer</red></summary>
 *Answer:* Yes, there is one case that has an unusually high pressure value given its temp. 
 </details>
+
+
+<br>
 
  (c). "Fixing" the model
 
@@ -816,6 +851,7 @@ abline(h=0)
 <summary><red>Click for answer</red></summary>
 *Answer:* Yes, there is less curvature
 </details>
+<br>
 
 - Has the outlier been eliminated by logging the variables?
 
@@ -823,6 +859,9 @@ abline(h=0)
 <summary><red>Click for answer</red></summary>
 *Answer:* No, the outlier is still present.
 </details>
+
+<br>
+
 
  (d). Removing bad measurement
 

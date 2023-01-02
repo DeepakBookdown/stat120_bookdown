@@ -25,6 +25,7 @@ hist(movies$DomesticGross, main="Distribution of Domestic Gross")
 <summary><red>Click for answer</red></summary>
 *Answer:* Skewed to the right
 </details>
+<br>
 
  (b).	Do there appear to be any outliers?  If so, which values?
 
@@ -32,6 +33,7 @@ hist(movies$DomesticGross, main="Distribution of Domestic Gross")
 <summary><red>Click for answer</red></summary>
 *Answer:* Yes, it looks like there are a few high outliers above 300 million.
 </details>
+<br>
 
  (c). Finding outliers
 
@@ -77,6 +79,7 @@ Note that the `c(4,14)` part of this command creates a **vector** of the numbers
 <summary><red>Click for answer</red></summary>
 *Answer:*  Harry Potter and the Deathly Hallows Part 2 and Transformers: Dark of the Moon.
 </details>
+<br>
 
  (d).	Use the histogram to answer: Is the median less than 100 million, about 100 million, above 100 million? 
 
@@ -85,6 +88,7 @@ Note that the `c(4,14)` part of this command creates a **vector** of the numbers
 *Answer:* It is the point with half the data to the left and half to the right. The median is less than 100
 since 100 roughly 110 (80 + 30) cases below it which is well over half the movies in the data set.
 </details>
+<br>
 
  (e).	Do you expect the mean to be greater than or less than the median.  Explain.
 
@@ -93,6 +97,7 @@ since 100 roughly 110 (80 + 30) cases below it which is well over half the movie
 *Answer:* Because the distribution is skewed to the right, we expect the mean to be larger than the median.
 The large outliers will pull the mean up and won’t have much effect on the median.
 </details>
+<br>
 
  (f). Computing the mean and median
 
@@ -154,6 +159,7 @@ movies[is.na(movies$DomesticGross), ]
 *Answer:* The `NA` value stands for “Not Available” which is used to code missing values. We can inspect the data frame and see that Hugo and Never Back Down 2 are the two movies that do not have domestic
 gross values.
 </details>
+<br>
 
  (g). Missing data
 
@@ -175,6 +181,7 @@ median(movies$DomesticGross, na.rm=TRUE)
 ```
 [1] 37.355
 ```
+<br>
 
 
  (h). Stats without outliers
@@ -214,6 +221,7 @@ Why does the mean change more than the median when this case is removed? (compar
 [1] -0.147236
 ```
 </details>
+<br>
 
  (i). Computing standard deviation
 
@@ -234,6 +242,7 @@ Look again at the distribution of `DomesticGross` shown in the histogram. Why is
 <summary><red>Click for answer</red></summary>
 *Answer:* The is much more variation (spread) to the data above the mean than below it. Because the distribution is strongly skewed right, we can't use one measure of variation when describing how `DomesticGross` values vary around some central value (like a mean).
 </details>
+<br>
 
 (j). Stats by `Genre`
 
@@ -331,6 +340,7 @@ movies[134, ]
 134            NA          11.36
 ```
 </details>
+<br>
 
 (k).	Extra: Histogram of `DomesticGross` by `Genre`
 
@@ -352,6 +362,7 @@ Which genre has the most variability in domestic gross?
 <summary><red>Click for answer</red></summary>
 *Answer:* The action genre has the largest range of values.
 </details>
+<br>
 
 ---------------------------------------------------
 
@@ -375,6 +386,7 @@ hist(sleep$AverageSleep, main="Distribution of Sleep Hours")
 <summary><red>Click for answer</red></summary>
 *Answer:* The mean is around 8 hours
 </details>
+<br>
 
  (b).	Use the 95% rule to estimate the standard deviation for this data.
 
@@ -400,6 +412,7 @@ sd(sleep$AverageSleep)
 ```
 [1] 0.9648396
 ```
+<br>
 
 
 ## Example 3: Z-scores for Test Scores
@@ -416,6 +429,7 @@ The ACT test has a population mean of 21 and standard deviation of 5.  The SAT h
 - SAT: The z-score for the score of 2100 is $z = (2100 - 1500)/325 = 1.85.$
 - The SAT score is 1.85 standard deviations above average while the ACT score is only 1.4 standard deviations above. You did better on the SAT.
 </details>
+<br>
 
  (b).	For each test, find the interval that is likely to contain about 95% of all test scores. 
 
@@ -427,6 +441,7 @@ The ACT test has a population mean of 21 and standard deviation of 5.  The SAT h
 
 - SAT: Two standard deviations is $2(325) = 650.$ About 95% of SAT scores are between $1500 - 650 = 850$ and $1500 + 650 = 2150$. This claim assumes that SAT scores follow a bell-shaped distribution.
 </details>
+<br>
 
 ------------------------------------
 
@@ -451,6 +466,7 @@ summary(my_vector1)
 <summary><red>Click for answer</red></summary>
 *Answer:* Skewed right. It has a longer right tail than left since $max - Q3 >> Q1 - min$
 </details>
+<br>
 
  (b).	(10, 57, 85, 88, 93)
 
@@ -469,6 +485,7 @@ summary(my_vector2)
 <summary><red>Click for answer</red></summary>
 *Answer:* Skewed left since mean is less than median.
 </details>
+<br>
 
  (c).	(200, 300, 400, 500, 600)
 
@@ -488,6 +505,7 @@ summary(my_vector3)
 <summary><red>Click for answer</red></summary>
 *Answer:* Symmetric since mean is same as median.
 </details>
+<br>
 
 ## Example 5:  Hot dog
 
@@ -514,6 +532,7 @@ boxplot(hotdogs$HotDogs, xlab="Number of Hot Dogs Consumed", horizontal=T)
 <summary><red>Click for answer</red></summary>
 *Answer:* min = 45, Q1 = 50, m = 54, Q3 = 62, max = 67. IQR is about 62-50 or 12 hotdogs
 </details>
+<br>
 
  (b). Computing 5 number summaries
 
@@ -543,6 +562,7 @@ How close were your guesses from the boxplot to the values given by this command
 <summary><red>Click for answer</red></summary>
 (Answers will vary) Within one hotdog of the R values.
 </details>
+<br>
 
 
  (c).	Use the boxplot outlier rule to verify that there are no outliers in this data.
@@ -555,6 +575,7 @@ How close were your guesses from the boxplot to the values given by this command
 - Lower fence: $Q1 - 1.5 IQR = 50 - 18 = 32 < min$ so there are no low outliers.
 - Upper fence: $Q3 + 1.5 IQR = 62 + 18 = 80 > max$ so there are no high outliers.
 </details>
+<br>
 
 ## Examples 6: Hollywood Movies World Gross revisited
 
@@ -580,6 +601,7 @@ How many movies are identified as outliers for world gross?
 <summary><red>Click for answer</red></summary>
 *Answer:* Just using the boxplot, there looks to be about 10 movies that are high outliers
 </details>
+<br>
 
  (b). Calculating boxplot values
 
@@ -647,6 +669,7 @@ movies[49,]
 49          65.06
 ```
 </details>
+<br>
 
  (c). Side-by-side boxplot
 
@@ -679,6 +702,7 @@ boxplot(WorldGross ~ Genre, data=movies)
 <summary><red>Click for answer</red></summary>
 *Answer:*  The genre labels are not all present.
 </details>
+<br>
 
  (d). Improving the default boxplot
 
@@ -693,6 +717,7 @@ boxplot(WorldGross ~ Genre, data=movies, las=2)
 
 The `las` arguments let's you change the orientation of the axis labels relative to the axis. The value of 2 makes the labels perpendicular to the axis.
 
+<br>
 
 
 ## Example 8:  Ants on a Sandwich
@@ -706,6 +731,7 @@ The number of ants climbing on a piece of a peanut butter sandwich left on the g
 <summary><red>Click for answer</red></summary>
 *Answer:* $\bar{x} = 35.857$
 </details>
+<br>
 
  (b).	Calculate the median number of ants.
 
@@ -713,6 +739,7 @@ The number of ants climbing on a piece of a peanut butter sandwich left on the g
 <summary><red>Click for answer</red></summary>
 *Answer:* Order data then find middle value: $19, 22, 25, 36, 43, 47, 59$. Then $m = 36$
 </details>
+<br>
 
  (c).	Calculate the quartiles for the number of ants.
 

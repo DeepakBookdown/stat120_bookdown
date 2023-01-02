@@ -25,23 +25,24 @@ example_data
 
 ```
    ID Greeting  Male      age
-1   1    Hello  TRUE 51.94279
-2   2    Hello FALSE 39.81137
-3   3    Hello  TRUE 20.10722
-4   4    Hello FALSE 28.22058
-5   5    Hello  TRUE 23.72196
-6   6  Goodbye FALSE 23.66658
-7   7  Goodbye  TRUE 40.96770
-8   8  Goodbye FALSE 20.19741
-9   9  Goodbye  TRUE 40.65927
-10 10  Goodbye FALSE 49.74204
+1   1    Hello  TRUE 52.98063
+2   2    Hello FALSE 27.31665
+3   3    Hello  TRUE 21.56816
+4   4    Hello FALSE 25.05958
+5   5    Hello  TRUE 46.38727
+6   6  Goodbye FALSE 50.86454
+7   7  Goodbye  TRUE 52.75954
+8   8  Goodbye FALSE 32.31427
+9   9  Goodbye  TRUE 22.62226
+10 10  Goodbye FALSE 57.09991
 ```
 
 *Answer:* We see a data frame with four columns, where the first column is an `identifier` for the cases. We have information on the greeting types, gender, and age on these cases in the remaining columns.
 </details>
 
 
-\vspace*{1in}
+<br>
+
 
 b. What is the dimension of the dataset called 'example_data'?
 
@@ -62,7 +63,8 @@ ncol(example_data)
 </details>
 
 
-\vspace*{1in}
+<br>
+
 
 
 ---------------------------------------------------
@@ -83,7 +85,8 @@ education_lock5 <- read.csv("https://www.lock5stat.com/datasets2e/EducationLiter
 
 </details>
 
-\vspace*{1in}
+<br>
+
 
 
 b. Print the header (i.e. first 6 cases by default) of the dataset in part a.
@@ -108,7 +111,8 @@ head(education_lock5)
 
 </details>
 
-\vspace*{1in}
+<br>
+
 
 
 c. What is the dimension of the dataset in a?
@@ -130,7 +134,8 @@ dim(education_lock5)
 </details>
 
 
-\vspace*{1in}
+<br>
+
 
 d. What type of variables are `Country`, `EducationExpenditure`, and `Literacy`?
 
@@ -141,7 +146,8 @@ d. What type of variables are `Country`, `EducationExpenditure`, and `Literacy`?
 
 
 
-\vspace*{1in}
+<br>
+
 
 
 e. If we would like to use education expenditure to predict the literacy rate of each countries, which variable is the explanatory variable and which one is the response?

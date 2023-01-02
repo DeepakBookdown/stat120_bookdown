@@ -59,6 +59,7 @@ jurors$struck_state[1:10]
  [7] "Struck by State"     "Not struck by State"
  [9] "Not struck by State" "Not struck by State"
 ```
+<br>
 
 (b). Table of counts and proportions
 
@@ -119,6 +120,7 @@ Not struck by State     Struck by State
 <summary><red>Click for answer</red></summary>
 *Answer:* about 28.5% of eligible jurors were struck by the state.
 </details>
+<br>
 
 (c). Bar graph for one variable
 
@@ -130,6 +132,7 @@ barplot(counts, ylab = "count")
 ```
 
 <img src="Class_Activity_4_files/figure-epub3/unnamed-chunk-8-1.png" width="100%" />
+<br>
 
 (d). Two-way tables
 
@@ -174,6 +177,7 @@ mytable
 <summary><red>Click for answer</red></summary>
 *answer:* 859
 </details>
+<br>
 
 (e). Conditional proportions: state strike status by juror race
 
@@ -206,6 +210,7 @@ Of all eligible black jurors, about 57.9% were struck by the state.
 *answer:* Yes, there is an association because the rate of state strikes varies greatly by juror race with
 about 60% of black jurors were struck compared to only 13% of white jurors
 </details>
+<br>
 
 (f). Stacked bar graph for two variables
 
@@ -229,6 +234,7 @@ ggplot(jurors, aes(x = race, fill = struck_state)) +
 <img src="Class_Activity_4_files/figure-epub3/unnamed-chunk-13-1.png" width="100%" />
 
 The basic syntax for this function is to let `ggplot` know your data set name (`jurors`), then specify the grouping or conditional variable on the x-axis (`race`) in the `aes` (aesthetic) argument. The `fill` variable is the response variable (`struck_state`). We add (`+`) the `geom_bar` geometry to get a bar graph with the `fill` position specified. Adding an informative label and title complete the graph.
+<br>
 
 (g). Conditional distribution of race grouped by strike status
 
@@ -266,6 +272,7 @@ ggplot(jurors, aes(x = struck_state, fill = race)) +
 <summary><red>Click for answer</red></summary>
 *Answer:* Of all jurors not struck by the state, about 20.8% were black
 </details>
+<br>
 
 ---------------------------------------------------
 
@@ -328,6 +335,7 @@ prop.table(table(grad$result))
 <summary><red>Click for answer</red></summary>
 *Answer:* About 43% (1284/3014) of applicants were accepted.
 </details>
+<br>
 
 (b). Two-way tables
 
@@ -351,6 +359,7 @@ table(grad$sex, grad$result)
 <summary><red>Click for answer</red></summary>
 *Answer:* : 262 applicants involved females who were accepted.
 </details>
+<br>
 
 (c). Conditional proportions: acceptance given sex
 
@@ -390,6 +399,7 @@ The value of `1` in this command tell's R that you want *row* proportions (the d
 <summary><red>Click for answer</red></summary>
 *Answer:* about 47% (1022/(1022+1143))
 </details>
+<br>
 
 (d). Bar graph for one variable
 
@@ -411,6 +421,7 @@ barplot(table(grad$result), xlab="application result",
 ```
 
 <img src="Class_Activity_4_files/figure-epub3/unnamed-chunk-24-1.png" width="100%" />
+<br>
 
 (e). Stacked bar graph for two variables
 
@@ -429,6 +440,7 @@ ggplot(grad, aes(x = sex, fill = result)) +
 The basic syntax for this function is to let `ggplot` know your data set name (`grad`), then specify the grouping or conditional variable on the x-axis (`sex`) in the `aes` (aesthetic) argument. The `fill` variable is the response variable (`result`). We add (`+`) the `geom_bar` geometry to get a bar graph with the `fill` position specified. Adding an informative label and title complete the graph.
 
 - Verify that this graph is plotting the conditional proportions from part (c)
+<br>
 
 
 (f). Subsetting by program type
@@ -494,6 +506,7 @@ head(grad.p2)
 5 program2 male accept
 6 program2 male accept
 ```
+<br>
 
 (g). Result by sex for program 1.
 
@@ -526,6 +539,7 @@ prop.table(table(grad.p1$sex, grad.p1$result),1)
 ```
 
 </details>
+<br>
 
 (h). Result by sex for program 2.
 
@@ -562,6 +576,7 @@ rate of death penalty than white defendants. Without accounting for program type
 (see parts (c) and (e)).
 
 </details>
+<br>
 
 Why? the confounding affect of program type which is associated with both result and sex:
 
@@ -610,6 +625,7 @@ these rates by program type, we see that females have higher acceptance rates th
 visual in part (i)).
 
 </details>
+<br>
 
 (i). A bar graph with three variables
 
@@ -627,6 +643,7 @@ ggplot(grad, aes(x = sex, fill = result)) +
 ```
 
 <img src="Class_Activity_4_files/figure-epub3/unnamed-chunk-35-1.png" width="100%" />
+<br>
 
 - Verify that this command creates side-by-side stacked bar graphs that match your graphs in parts (g) and (h) for programs 1 and 2.
 

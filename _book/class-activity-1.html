@@ -82,18 +82,19 @@
 <details><summary><red>Click for answer</red></summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">example_data</span></span></code></pre></div>
 <pre><code>   ID Greeting  Male      age
-1   1    Hello  TRUE 45.27751
-2   2    Hello FALSE 55.07627
-3   3    Hello  TRUE 22.11384
-4   4    Hello FALSE 46.46941
-5   5    Hello  TRUE 45.26406
-6   6  Goodbye FALSE 51.91627
-7   7  Goodbye  TRUE 55.91819
-8   8  Goodbye FALSE 37.52270
-9   9  Goodbye  TRUE 51.03411
-10 10  Goodbye FALSE 24.67267</code></pre>
+1   1    Hello  TRUE 56.55166
+2   2    Hello FALSE 34.43449
+3   3    Hello  TRUE 51.94906
+4   4    Hello FALSE 31.99794
+5   5    Hello  TRUE 39.38741
+6   6  Goodbye FALSE 22.85562
+7   7  Goodbye  TRUE 38.28531
+8   8  Goodbye FALSE 36.24032
+9   9  Goodbye  TRUE 21.50448
+10 10  Goodbye FALSE 59.51356</code></pre>
 <em>Answer:</em> We see a data frame with four columns, where the first column is an <code>identifier</code> for the cases. We have information on the greeting types, gender, and age on these cases in the remaining columns.
-</details><ol start="2" style="list-style-type: lower-alpha">
+</details><p><br></p>
+<ol start="2" style="list-style-type: lower-alpha">
 <li>What is the dimension of the dataset called ‘example_data’?</li>
 </ol>
 <details><summary><red>Click for answer</red></summary><div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="class-activity-1.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(example_data)</span>
@@ -103,7 +104,8 @@
 <span id="cb4-5"><a href="class-activity-1.html#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ncol</span>(example_data)</span>
 <span id="cb4-6"><a href="class-activity-1.html#cb4-6" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">4</span></span></code></pre></div>
 <em>Answer:</em> There are 10 rows and 4 columns.
-</details><hr>
+</details><p><br></p>
+<hr>
 </div>
 <div id="your-turn-2" class="section level2" number="1.2">
 <h2>
@@ -115,7 +117,8 @@
 <details><summary><red>Click for answer</red></summary><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># read in the data</span></span>
 <span><span class="va">education_lock5</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"https://www.lock5stat.com/datasets2e/EducationLiteracy.csv"</span><span class="op">)</span></span></code></pre></div>
-</details><ol start="2" style="list-style-type: lower-alpha">
+</details><p><br></p>
+<ol start="2" style="list-style-type: lower-alpha">
 <li>Print the header (i.e. first 6 cases by default) of the dataset in part a.</li>
 </ol>
 <details><summary><red>Click for answer</red></summary><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
@@ -127,18 +130,21 @@
 4             Andorra                  3.2       NA
 5              Angola                  3.5     70.6
 6 Antigua and Barbuda                  2.6     99.0</code></pre>
-</details><ol start="3" style="list-style-type: lower-alpha">
+</details><p><br></p>
+<ol start="3" style="list-style-type: lower-alpha">
 <li>What is the dimension of the dataset in a?</li>
 </ol>
 <details><summary><red>Click for answer</red></summary><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">education_lock5</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] 188   3</code></pre>
 <p><em>Answer:</em> There are 188 rows and 3 columns.</p>
-</details><ol start="4" style="list-style-type: lower-alpha">
+</details><p><br></p>
+<ol start="4" style="list-style-type: lower-alpha">
 <li>What type of variables are <code>Country</code>, <code>EducationExpenditure</code>, and <code>Literacy</code>?</li>
 </ol>
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> <code>Country</code> is a categorical variable. <code>EducationExpenditure</code> and <code>Literacy</code> are both quantitative variables.
-</details><ol start="5" style="list-style-type: lower-alpha">
+</details><p><br></p>
+<ol start="5" style="list-style-type: lower-alpha">
 <li>If we would like to use education expenditure to predict the literacy rate of each countries, which variable is the explanatory variable and which one is the response?</li>
 </ol>
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> The education expenditure is the explanatory variable, and the literacy rate is the response.
