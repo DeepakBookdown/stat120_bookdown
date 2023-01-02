@@ -117,7 +117,7 @@
 
 \title{Stat 120}
 \author{Deepak Bastola}
-\date{2023-01-01}
+\date{2023-01-02}
 
 \begin{document}
 \maketitle
@@ -168,16 +168,16 @@ Click for answer
 
 \begin{verbatim}
    ID Greeting  Male      age
-1   1    Hello  TRUE 53.54163
-2   2    Hello FALSE 46.39761
-3   3    Hello  TRUE 51.01129
-4   4    Hello FALSE 56.21607
-5   5    Hello  TRUE 57.10219
-6   6  Goodbye FALSE 34.82988
-7   7  Goodbye  TRUE 39.15996
-8   8  Goodbye FALSE 45.09101
-9   9  Goodbye  TRUE 38.00030
-10 10  Goodbye FALSE 39.53141
+1   1    Hello  TRUE 48.75126
+2   2    Hello FALSE 39.31125
+3   3    Hello  TRUE 47.65881
+4   4    Hello FALSE 48.44245
+5   5    Hello  TRUE 54.04213
+6   6  Goodbye FALSE 57.51405
+7   7  Goodbye  TRUE 26.83855
+8   8  Goodbye FALSE 23.96819
+9   9  Goodbye  TRUE 21.85343
+10 10  Goodbye FALSE 23.86073
 \end{verbatim}
 
 \emph{Answer:} We see a data frame with four columns, where the first column is an \texttt{identifier} for the cases. We have information on the greeting types, gender, and age on these cases in the remaining columns.
@@ -376,7 +376,7 @@ Run the following command to obtain a SRS of 10 words from the 268 that are in t
 \end{Shaded}
 
 \begin{verbatim}
- [1] 127  64  83 154  87 210  99 219  29 268
+ [1] 179 171  44 187 156 252 237 181  23 239
 \end{verbatim}
 
 This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
@@ -394,17 +394,17 @@ We will \emph{subset} the data set \texttt{pop} to obtain only the sampled rows 
 \end{Shaded}
 
 \begin{verbatim}
-    position size      word
-127      127    4      here
-64        64    3      war.
-83        83    4      here
-154      154    3       can
-87        87    4      that
-210      210    9 increased
-99        99    2        we
-219      219    3       the
-29        29    7   created
-268      268    5    earth.
+    position size   word
+179      179    6 fought
+171      171    4   here
+44        44    2     or
+187      187    2     It
+156      156    6 forget
+252      252    4   that
+237      237    2     in
+181      181    4   have
+23        23    3    the
+239      239    4   that
 \end{verbatim}
 
 \begin{enumerate}
@@ -425,7 +425,7 @@ The word lengths in part (b) are the data for your sample. You can compute your 
 \end{Shaded}
 
 \begin{verbatim}
- [1] 4 3 4 3 4 9 2 3 7 5
+ [1] 6 4 2 2 6 4 2 4 3 4
 \end{verbatim}
 
 Then find the mean of these values:
@@ -437,7 +437,7 @@ Then find the mean of these values:
 \end{Shaded}
 
 \begin{verbatim}
-[1] 4.4
+[1] 3.7
 \end{verbatim}
 
 How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?
@@ -520,9 +520,13 @@ The researchers found that 10 of 15 subjects in the dolphin therapy group showed
 
 (a). Identify the observational units in this study.
 
+Click for answer
+
 \emph{Answer:} The observational units in this study are the 30 subjects.
 
 (b). Classify each variable as categorical or quantitative.
+
+Click for answer
 
 \emph{Answer:} The variables in this study can be classified as follows:
 Categorical: Treatment Group (Dolphin and Control)
@@ -530,13 +534,19 @@ Quantitative: Age, Level of Depression (Beginning and End of Study)
 
 (c). Which variable would you regard as explanatory and which as response?
 
+Click for answer
+
 \emph{Answer:} The explanatory variable would be the Treatment Group and the response variable would be the Level of Depression.
 
 (d). Is this an observational study or an experiment? Justify your answer.
 
+Click for answer
+
 \emph{Answer:} This is an experiment because the researchers randomly assigned the subjects to the two treatment groups, and then observed the effect of the treatment (presence of dolphins) on the response variable (level of depression).
 
 (e). Construct a two-way table based on the results of the experiment.
+
+Click for answer
 
 Two-way table:
 
@@ -566,25 +576,37 @@ The researchers found that 60 of 100 subjects in the new diet group showed subst
 
 (a). Identify the observational units in this study.
 
+Click for answer
+
 \emph{Answer:} The observational units in this study are the 200 subjects.
 
 (b). Classify each variable as categorical or quantitative.
+
+Click for answer
 
 \emph{Answer:} The variables are: age (quantitative), gender (categorical), weight (quantitative), height (quantitative), lifestyle (categorical), and total weight gain (quantitative).
 
 (c). Which variable would you regard as explanatory and which as response?
 
+Click for answer
+
 \emph{Answer:} The explanatory variable is the type of diet (new or standard) and the response variable is the total weight gain.
 
 (d). Is this an observational study or an experiment? Justify your answer.
+
+Click for answer
 
 \emph{Answer:} This is an experiment because the researchers are manipulating the explanatory variables (type of diet) to observe the effects on the response variables (total weight gain).
 
 (e). If it is an experiment, is it randomized comparative experiment or a matched pairs experiment?
 
+Click for answer
+
 \emph{Answer:} This is a matched pairs experiment because each subject is paired with another subject who has similar characteristics and one subject from each pair is randomly assigned to the treatment group and the other to the control group.
 
 (f). Construct a two-way table based on the results of the experiment.
+
+Click for answer
 
 Two-way table:
 
@@ -3740,7 +3762,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
- [1] 125  72  93  85 185  93  23  23 125  23
+ [1]  52  85  85  85  72  93  85 132 132 132
 \end{verbatim}
 
 (d). Where will be bootstrap distribution be centered? What shape do we expect it to have?
@@ -4088,12 +4110,12 @@ The \texttt{boot(y\ \textasciitilde{}\ x,\ data=)} command generates 10000 boots
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -2.26095 
- Mean of bootstrap distribution: -2.26389 
- Standard error of bootstrap distribution: 0.77196 
+ Mean of bootstrap distribution: -2.26437 
+ Standard error of bootstrap distribution: 0.77194 
 
  Bootstrap percentile interval
       2.5%      97.5% 
--3.7533452 -0.7433095 
+-3.7929048 -0.7433214 
 
         *--------------*
 \end{verbatim}
@@ -4381,12 +4403,12 @@ We can now use the 0/1 version of telephone in the \texttt{boot} command (like e
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -0.03905 
- Mean of bootstrap distribution: -0.03963 
- Standard error of bootstrap distribution: 0.03359 
+ Mean of bootstrap distribution: -0.03926 
+ Standard error of bootstrap distribution: 0.03338 
 
  Bootstrap percentile interval
        2.5%       97.5% 
--0.10523810  0.02619048 
+-0.10380952  0.02761905 
 
         *--------------*
 \end{verbatim}

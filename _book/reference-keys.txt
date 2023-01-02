@@ -67,3 +67,4 @@ r-markdown
 including-plots
 read-in-data-files
 hide-the-code
+embed-an-r-code-chunk

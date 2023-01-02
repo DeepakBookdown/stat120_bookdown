@@ -42,20 +42,7 @@
 </form>
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
-        <ul class="book-toc list-unstyled">
-<li><a class="" href="index.html">About</a></li>
-<li><a class="" href="class-activity-1.html"><span class="header-section-number">1</span> Class Activity 1</a></li>
-<li><a class="" href="class-activity-2.html"><span class="header-section-number">2</span> Class Activity 2</a></li>
-<li><a class="active" href="class-activity-3.html"><span class="header-section-number">3</span> Class Activity 3</a></li>
-<li><a class="" href="class-activity-4.html"><span class="header-section-number">4</span> Class Activity 4</a></li>
-<li><a class="" href="class-activity-5.html"><span class="header-section-number">5</span> Class Activity 5</a></li>
-<li><a class="" href="class-activity-6.html"><span class="header-section-number">6</span> Class Activity 6</a></li>
-<li><a class="" href="class-activity-7.html"><span class="header-section-number">7</span> Class Activity 7</a></li>
-<li><a class="" href="class-activity-8.html"><span class="header-section-number">8</span> Class Activity 8</a></li>
-<li class="book-part">Basics R</li>
-<li><a class="" href="what-is-r.html"><span class="header-section-number">10</span> What is R?</a></li>
-<li><a class="" href="r-markdown.html"><span class="header-section-number">11</span> R Markdown</a></li>
-</ul>
+        <ul class="book-toc list-unstyled"><li><a class="" href="index.html"><span class="header-section-number">Chapter 3</span> Class Activity 3</a></li></ul>
 
         <div class="book-extra">
           <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
@@ -78,18 +65,22 @@
 The researchers found that 10 of 15 subjects in the dolphin therapy group showed substantial improvement, compared to 3 of 15 subjects in the control group.
 </bql></p>
 <p>(a). Identify the observational units in this study.</p>
-<p><em>Answer:</em> The observational units in this study are the 30 subjects.</p>
-<p>(b). Classify each variable as categorical or quantitative.</p>
-<p><em>Answer:</em> The variables in this study can be classified as follows:
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> The observational units in this study are the 30 subjects.
+</details><p><br>
+(b). Classify each variable as categorical or quantitative.</p>
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> The variables in this study can be classified as follows:
 Categorical: Treatment Group (Dolphin and Control)
-Quantitative: Age, Level of Depression (Beginning and End of Study)</p>
+Quantitative: Age, Level of Depression (Beginning and End of Study)
+</details><p><br></p>
 <p>(c). Which variable would you regard as explanatory and which as response?</p>
-<p><em>Answer:</em> The explanatory variable would be the Treatment Group and the response variable would be the Level of Depression.</p>
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> The explanatory variable would be the Treatment Group and the response variable would be the Level of Depression.
+</details><p><br></p>
 <p>(d). Is this an observational study or an experiment? Justify your answer.</p>
-<p><em>Answer:</em> This is an experiment because the researchers randomly assigned the subjects to the two treatment groups, and then observed the effect of the treatment (presence of dolphins) on the response variable (level of depression).</p>
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> This is an experiment because the researchers randomly assigned the subjects to the two treatment groups, and then observed the effect of the treatment (presence of dolphins) on the response variable (level of depression).
+</details><p><br></p>
 <p>(e). Construct a two-way table based on the results of the experiment.</p>
-<p>Two-way table:</p>
-<div class="inline-table"><table class="table table-sm">
+<details><summary><red>Click for answer</red></summary><p>Two-way table:</p>
+<table class="table table-sm">
 <thead><tr class="header">
 <th>Dolphin Therapy</th>
 <th>Improved</th>
@@ -116,8 +107,7 @@ Quantitative: Age, Level of Depression (Beginning and End of Study)</p>
 <td>30</td>
 </tr>
 </tbody>
-</table></div>
-<hr>
+</table></details><hr>
 </div>
 <div id="case-study-2" class="section level2" number="3.2">
 <h2>
@@ -125,24 +115,29 @@ Quantitative: Age, Level of Depression (Beginning and End of Study)</p>
 </h2>
 <p>Consider the following case study:</p>
 <p><bql>
-“Researchers want to find out how a new diet affects weight gain among underweight subjects. This experiment only has two treatment conditions, the new diet and the standard diet, hence the matched pairs design can be used. For this study, the researchers recruited 200 subjects which will be grouped into 100 pairs based on shared characteristics such as age, gender, weight, height, lifestyle, and so on. A 20-year-old female within the weight range of 90-110 pounds and the height range of 60-63 inches will be paired with another 20-year-old female that falls into the same weight and height categories. Once all 100 pairs are made, a subject from each pair will be randomly assigned into the treatment group (will be administered the new diet for 2 months) while the other subject from the pair will be assigned to the control group (will be assigned to follow the standard diet for two months). At the end of the time time period of 2 months, researchers will measure the total weight gain for each subject.”</bql></p>
+“Researchers want to find out how a new diet affects weight gain among underweight subjects. This experiment only has two treatment conditions, the new diet and the standard diet. For this study, the researchers recruited 200 subjects which will be grouped into 100 pairs based on shared characteristics such as age, gender, weight, height, lifestyle, and so on. A 20-year-old female within the weight range of 90-110 pounds and the height range of 60-63 inches will be paired with another 20-year-old female that falls into the same weight and height categories. Once all 100 pairs are made, a subject from each pair will be randomly assigned into the treatment group (will be administered the new diet for 2 months) while the other subject from the pair will be assigned to the control group (will be assigned to follow the standard diet for two months). At the end of the time time period of 2 months, researchers will measure the total weight gain for each subject.”</bql></p>
 <p>Observed data:</p>
 <p><bql>
 The researchers found that 60 of 100 subjects in the new diet group showed substantial improvement, compared to 43 of 100 subjects in the standard diet group.
 </bql></p>
-<p>(a). Identify the observational units in this study.</p>
-<p><em>Answer:</em> The observational units in this study are the 200 subjects.</p>
+(a). Identify the observational units in this study.
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> The observational units in this study are the 200 subjects.
+</details><p><br></p>
 <p>(b). Classify each variable as categorical or quantitative.</p>
-<p><em>Answer:</em> The variables are: age (quantitative), gender (categorical), weight (quantitative), height (quantitative), lifestyle (categorical), and total weight gain (quantitative).</p>
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> The variables are: age (quantitative), gender (categorical), weight (quantitative), height (quantitative), lifestyle (categorical), and total weight gain (quantitative).
+</details><p><br></p>
 <p>(c). Which variable would you regard as explanatory and which as response?</p>
-<p><em>Answer:</em> The explanatory variable is the type of diet (new or standard) and the response variable is the total weight gain.</p>
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> The explanatory variable is the type of diet (new or standard) and the response variable is the total weight gain.
+</details><p><br></p>
 <p>(d). Is this an observational study or an experiment? Justify your answer.</p>
-<p><em>Answer:</em> This is an experiment because the researchers are manipulating the explanatory variables (type of diet) to observe the effects on the response variables (total weight gain).</p>
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> This is an experiment because the researchers are manipulating the explanatory variables (type of diet) to observe the effects on the response variables (total weight gain).
+</details><p><br></p>
 <p>(e). If it is an experiment, is it randomized comparative experiment or a matched pairs experiment?</p>
-<p><em>Answer:</em> This is a matched pairs experiment because each subject is paired with another subject who has similar characteristics and one subject from each pair is randomly assigned to the treatment group and the other to the control group.</p>
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> This is a matched pairs experiment because each subject is paired with another subject who has similar characteristics and one subject from each pair is randomly assigned to the treatment group and the other to the control group.
+</details><p><br></p>
 <p>(f). Construct a two-way table based on the results of the experiment.</p>
-<p>Two-way table:</p>
-<div class="inline-table"><table class="table table-sm">
+<details><summary><red>Click for answer</red></summary><p>Two-way table:</p>
+<table class="table table-sm">
 <thead><tr class="header">
 <th>New Diet</th>
 <th>Standard Diet</th>
@@ -165,7 +160,7 @@ The researchers found that 60 of 100 subjects in the new diet group showed subst
 <td>100</td>
 </tr>
 </tbody>
-</table></div>
+</table></details><p><br></p>
 <hr>
 </div>
 <div id="non-maize-users-installing-ggplot2" class="section level2" number="3.3">
@@ -180,27 +175,21 @@ The researchers found that 60 of 100 subjects in the new diet group showed subst
 <li>You only need to install the package once. After than, you run the <code>library</code> command to load the package functions into your current R session.</li>
 </ul>
 <p>An alternate way way to install <code>ggplot2</code> from the R console is by using the following command:</p>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"ggplot2"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="class-activity-2.html"><span class="header-section-number">2</span> Class Activity 2</a></div>
-<div class="next"><a href="class-activity-4.html"><span class="header-section-number">4</span> Class Activity 4</a></div>
+<div class="empty"></div>
+<div class="empty"></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#class-activity-3"><span class="header-section-number">3</span> Class Activity 3</a></li>
-<li><a class="nav-link" href="#case-study-1"><span class="header-section-number">3.1</span> Case Study 1</a></li>
-<li><a class="nav-link" href="#case-study-2"><span class="header-section-number">3.2</span> Case Study 2</a></li>
-<li><a class="nav-link" href="#non-maize-users-installing-ggplot2"><span class="header-section-number">3.3</span> (Non-Maize users) installing ggplot2</a></li>
-</ul>
+      <div id="book-on-this-page"></div>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/Class_Activity_3.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/Class_Activity_3.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+          
         </ul>
 </div>
     </nav>
@@ -212,7 +201,7 @@ The researchers found that 60 of 100 subjects in the new diet group showed subst
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-01-01.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-01-02.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
@@ -220,34 +209,6 @@ The researchers found that 60 of 100 subjects in the new diet group showed subst
   </div>
 
 </div></div>
-</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
-for (let popover of popovers) {
-  const div = document.createElement('div');
-  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
-  div.innerHTML = popover.getAttribute('data-content');
-
-  var has_math = div.querySelector("span.math");
-  if (has_math) {
-    document.body.appendChild(div);
-    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
-    MathJax.Hub.Queue(function() {
-      popover.setAttribute('data-content', div.innerHTML);
-      document.body.removeChild(div);
-    })
-  }
-}
-</script>
+</footer>
 </body>
 </html>
