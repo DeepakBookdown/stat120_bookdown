@@ -1,10 +1,6 @@
 
 # Class Activity 1
 
-- Try to knit the file at the present stage and see if it compiles.
-- You can add `\vspace*{1in}` in the body of this file to produce a vertical space of 1 inches.
-
-
 ## Your Turn 1
 
 ---------------------------------------------------
@@ -16,8 +12,6 @@ example_data = data.frame(ID = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10),
                           Greeting = c(rep("Hello", 5), rep("Goodbye",5)),
                           Male = rep(c(TRUE, FALSE), 5),
                           age = runif(n=10, 20,60))
-
-
 ```
 
 
@@ -38,7 +32,7 @@ b. What is the dimension of the dataset called 'example_data'?
 <details>
 <summary><red>Click for answer</red></summary>
 
-```{r}
+```{r, collapse=TRUE}
 dim(example_data)
 nrow(example_data)
 ncol(example_data)

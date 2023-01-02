@@ -5,10 +5,10 @@
 
 ###  Flowers v. Mississippi
 
-The data set `APM_DougEvensCases.csv` contains data from 1517 potential black and white jurors for 66 cases that he was primary prosecutor for between 1992 and 2017. These jurors were available for Doug Evans to strike using his "peremptory strikes" during the jury selection phase. 
+The data set `APM_DougEvensCases.csv` contains data from 1517 potential black and white jurors for 66 cases that Doug Evans was primary prosecutor for between 1992 and 2017. These jurors were available for Doug Evans to strike using his "peremptory strikes" during the jury selection phase. 
 
 
-### (a) Inspect data
+(a). Inspect data
 
 Read in the data
 
@@ -17,7 +17,6 @@ jurors <- read.csv("https://raw.githubusercontent.com/deepbas/statdatasets/main/
 ```
 
 ```{r}
-# Anything after a # is a comment in R
 # dimension of dataset
 dim(jurors)
 ```
@@ -34,7 +33,7 @@ To get the data from one variable, we use the command `dataset$variable`. For ex
 jurors$struck_state[1:10]
 ```
 
-### (b) Table of counts and proportions
+(b). Table of counts and proportions
 
 The `summary` command used with a data frame gives summaries of each variable
 
@@ -57,9 +56,12 @@ prop.table(counts)
 
 - What proportion of eligible jurors were struck by the state from the jury pool?
 
-*answer:* about 28.5% of eligible jurors were struck by the state.
+<details>
+<summary><red>Click for answer</red></summary>
+*Answer:* about 28.5% of eligible jurors were struck by the state.
+</details>
 
-### (c) Bar graph for one variable
+(c). Bar graph for one variable
 
 You can create a simple bar graph for one categorical variable with the `barplot` command. Here we visualize the distribution of struck status for all eligible jurors:
 
@@ -67,7 +69,7 @@ You can create a simple bar graph for one categorical variable with the `barplot
 barplot(counts, ylab = "count")
 ```
 
-### (d) Two-way tables
+(d). Two-way tables
 
 First 10 entries of `race` and `struck_state` variable is
 
@@ -83,9 +85,12 @@ mytable
 ```
 - How many jurors were white and were not struck by the state?
 
+<details>
+<summary><red>Click for answer</red></summary>
 *answer:* 859
+</details>
 
-### (e) Conditional proportions: state strike status by juror race
+(e). Conditional proportions: state strike status by juror race
 
 The `prop.table` command gives conditional proportions for a two-way table. We plug our two-way table into `prop.table` with a `margin=1` to get proportions grouped by the **row** variable:
 
@@ -96,16 +101,20 @@ prop.table(mytable, margin = 1)
 Of all eligible black jurors, about 57.9% were struck by the state.
 
 - What proportion of eligible white jurors were struck by the state?
-
+<details>
+<summary><red>Click for answer</red></summary>
 *answer:* about 12.5%
+</details>
 
 - Is there evidence of an association between juror race and state strikes?
 
+<details>
+<summary><red>Click for answer</red></summary>
 *answer:* Yes, there is an association because the rate of state strikes varies greatly by juror race with
 about 60% of black jurors were struck compared to only 13% of white jurors
+</details>
 
-
-### (f) Stacked bar graph for two variables
+(f). Stacked bar graph for two variables
 
 We can visualize the conditional distribution from part (e) with a stacked bar graph created using the `ggplot2` graphing package. First, load this package's functions with the `library` command:
 
@@ -124,24 +133,7 @@ ggplot(jurors, aes(x = race, fill = struck_state)) +
 
 The basic syntax for this function is to let `ggplot` know your data set name (`jurors`), then specify the grouping or conditional variable on the x-axis (`race`) in the `aes` (aesthetic) argument. The `fill` variable is the response variable (`struck_state`). We add (`+`) the `geom_bar` geometry to get a bar graph with the `fill` position specified. Adding an informative label and title complete the graph.
 
-
-### (Non-Maize users) installing `ggplot2`
-
-If you are using Rstudio on your **own computer**, you will first need to **install** the package but if you are using the Maize (online) Rstudio (or a lab computer) you do not. If you need to install the package: 
-
-- Click the **Packages** tab on the lower right Rstudio pane.
-- Click **Install** and type `ggplot2` into the **Packages** box. 
-- Click the **Install** button. You should now see `ggplot2` in the list of packages. 
-- You only need to install the package once. After than, you run the `library` command to load the package functions into your current R session.
-
-An alternate way way to install `ggplot2` from the R console is by using the following command:
-
-```{r, eval=FALSE}
-install.packages("ggplot2", dependencies = TRUE)
-```
-
-
-### (g) Conditional distribution of race grouped by strike status
+(g). Conditional distribution of race grouped by strike status
 
 We can "flip" our response and grouping variables easily (if we think it makes sense to do so). Here we specify the `margin=2` to get proportions grouped by the **column** variable:
 
@@ -162,8 +154,10 @@ ggplot(jurors, aes(x = struck_state, fill = race)) +
 
 - What proportion of eligible jurors who were not struck by the state were black? were white?
 
+<details>
+<summary><red>Click for answer</red></summary>
 *Answer:* Of all jurors not struck by the state, about 20.8% were black
-
+</details>
 
 ---------------------------------------------------
 
@@ -179,18 +173,18 @@ grad <- read.csv("https://raw.githubusercontent.com/deepbas/statdatasets/main/Be
 
 
 ```{r}
-# dimension
+# dimension of the dataset
 dim(grad)
 ```
 
 
 ```{r}
-# header
+# first 6 rows
 head(grad)
 ```
 
 
-### (a) Table of counts and proportions
+(a). Table of counts and proportions
 
 ```{r}
 prop.table(table(grad$result))
@@ -198,10 +192,12 @@ prop.table(table(grad$result))
 
 - What proportion of applicants were accepted?
 
+<details>
+<summary><red>Click for answer</red></summary>
 *Answer:* About 43% (1284/3014) of applicants were accepted.
+</details>
 
-
-### (b) Two-way tables
+(b). Two-way tables
 
 The `table` command also gives two-way tables when two variables are included. Here is the two-way table for result and sex:
 
@@ -211,10 +207,12 @@ table(grad$sex, grad$result)
 
 - How many applicants involved females who were accepted?
 
+<details>
+<summary><red>Click for answer</red></summary>
 *Answer:* : 262 applicants involved females who were accepted.
+</details>
 
-
-### (c) Conditional proportions: acceptance given sex
+(c). Conditional proportions: acceptance given sex
 
 The `prop.table` command gives conditional proportions for a two-way table. First let's save the two-way table in an object named `mytable`:
 
@@ -232,13 +230,19 @@ The value of `1` in this command tell's R that you want *row* proportions (the d
 
 - What proportion of female were accepted? 
 
+<details>
+<summary><red>Click for answer</red></summary>
 *Answer:* about 31% (262/(262+587))
+</details>
 
 - What proportion of males were accepted?
 
+<details>
+<summary><red>Click for answer</red></summary>
 *Answer:* about 47% (1022/(1022+1143))
+</details>
 
-### (d) Bar graph for one variable
+(d). Bar graph for one variable
 
 You can create a simple bar graph for one categorical variable with the `barplot` command. Here we visualize the distribution of result:
 
@@ -253,7 +257,7 @@ barplot(table(grad$result), xlab="application result",
         ylab="Count", main = "Distribution of Results")
 ```
 
-### (e) Stacked bar graph for two variables
+(e). Stacked bar graph for two variables
 
 Now we can use the `geom_bar` command in this package. Here we get the conditional distribution of `result` given `sex`:
 
@@ -269,7 +273,7 @@ The basic syntax for this function is to let `ggplot` know your data set name (`
 - Verify that this graph is plotting the conditional proportions from part (c)
 
 
-### (f) Subsetting by program type
+(f). Subsetting by program type
 
 Finally, we will repeat the previous analysis of result and sex, but this time we will divide (or subset) the data set by program type. To do this we need to know how the values of `program` are coded:
 
@@ -297,9 +301,12 @@ grad.p2 <- filter(grad, program == "program2") # gets rows where program equal p
 head(grad.p2)
 ```
 
-### (g) Result by sex for program 1.
+(g). Result by sex for program 1.
 
 - Show the distribution of result conditioned on applicant's sex for the program 1 data set. Get both a table of conditional proportions (or percentages) and a stacked bar graph. 
+
+<details>
+<summary><red>Click for answer</red></summary>
 
 ```{r}
 # enter R code for (g) here
@@ -313,11 +320,14 @@ ggplot(grad.p1, aes(x = sex, fill = result)) +
 prop.table(table(grad.p1$sex, grad.p1$result),1)
 ```
 
+</details>
 
-### (h) Result by sex for program 2.
+(h). Result by sex for program 2.
 
 - Repeat part (g) but this time use the program 2 data set. Compare the two bar graphs for (g) and (h) and explain how they show that females have a higher acceptance rate after accounting for program type (1 or 2). 
 
+<details>
+<summary><red>Click for answer</red></summary>
 ```{r}
 # enter R code for (h) here
 ggplot(grad.p2, aes(x = sex, fill = result)) +
@@ -335,7 +345,12 @@ than male applicants. After accounting for program type, we now see that black d
 rate of death penalty than white defendants. Without accounting for program type, the opposite was true
 (see parts (c) and (e)).
 
+</details>
+
 Why? the confounding affect of program type which is associated with both result and sex:
+
+<details>
+<summary><red>Click for answer</red></summary>
 
 - females prefer to apply to programs 3 and 4 while males prefer programs 1 and 2 (more than 3 and
 4).
@@ -360,7 +375,9 @@ there overall rate of acceptance was lower for females compared to males. But wh
 these rates by program type, we see that females have higher acceptance rates than males (see the
 visual in part (i)).
 
-### (i) A bar graph with three variables
+</details>
+
+(i). A bar graph with three variables
 
 If we simply want to graph the relationship between result and sex for each type of program, we can avoid subsetting the data by using the `facet_wrap` command in `ggplot2`. It is one simple addition to the stacked bar graph in part (e): 
 
@@ -376,4 +393,9 @@ ggplot(grad, aes(x = sex, fill = result)) +
 
 - Verify that this command creates side-by-side stacked bar graphs that match your graphs in parts (g) and (h) for programs 1 and 2.
 
+<details>
+<summary><red>Click for answer</red></summary>
+
 *Answer:* The graphs match.
+
+</details>

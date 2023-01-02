@@ -85,4 +85,15 @@ Extra notes:
 
 - **Maize users**: You may also need to allow for "pop-up" in your web browser when knitting documents. 
 
+## Few Instructions
 
+The default setting in Rstudio when you are running chunks is that the “output” (numbers, graphs) are
+shown **inline** within the Markdown Rmd. If you prefer to have your plots appear on the right of the console and not below the chunk, then change the settings as follows:
+
+1. Select Tools > Global Options.
+2. Click the R Markdown section and uncheck (if needed) the option Show output inline for all
+R Markdown documents.
+3. Click OK.
+
+Now try running R chunks in the .Rmd file to see the difference. You can recheck this box if you prefer
+the default setting.

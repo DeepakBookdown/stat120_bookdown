@@ -1,11 +1,15 @@
 
 # Class Activity 2
 
+## Your Turn 1
+
+This exercise is about finding the average word length in Lincoln's Gettysburg's address.
+
+------------------------------------------
 
 ## Your Turn 2
 
-## Summary of article on [It depends on how you ask!](https://jech.bmj.com/content/75/4/387.abstract)
-
+### Summary of article on [It depends on how you ask!](https://jech.bmj.com/content/75/4/387.abstract)
 
 <details>
 <summary><red>Click for answer</red></summary>
@@ -19,7 +23,7 @@ This study aimed to measure the effects of psychological biases on estimates of 
 
 ## Your Turn 3
 
-## Gettysburg random sample
+### Gettysburg random sample
 
 Let’s take a simple random sample (SRS) of Gettysburg words. The “population” is contained in the
 spreadsheet `GettysburgPopulationCounts.csv`. Carefully load this data into R:
@@ -43,7 +47,7 @@ head(pop)
 
 The `position` variable enumerates the list of words in the population (address).
 
-a. Sample
+(a). Sample
 
 Run the following command to obtain a SRS of 10 words from the 268 that are in the population:
 
@@ -54,7 +58,7 @@ samp
 ```
 
 ```
- [1] 193 249 176  54  56 195 115 140  40  55
+ [1]  91  73 257  48 100 181  89 173 234 171
 ```
 
 This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
@@ -62,7 +66,7 @@ This tells you the position (row number) of your sampled words. What are your sa
  \vspace*{1in}
 
 
-b. Get words and lengths
+(b). Get words and lengths
 
 We will *subset* the data set `pop` to obtain only the sampled rows listed in `samp`. We do this using **square bracket notation** `dataset[row number, column number/name]. Run the following command to find your sampled words and sizes:
 
@@ -73,21 +77,17 @@ pop[samp,]
 
 ```
     position size      word
-193      193    2        be
-249      249    2        of
-176      176    5     which
-54        54    6   endure.
-56        56    3       are
-195      195    9 dedicated
-115      115    6    cannot
-140      140    3       The
-40        40    7   testing
-55        55    2        We
+91        91    4     live.
+73        73    4      that
+257      257    2        by
+48        48    9 conceived
+100      100    6    should
+181      181    4      have
+89        89    6    nation
+173      173    3       the
+234      234    3       not
+171      171    4      here
 ```
-
-What are your sampled words?
- \vspace*{.5in}
-
 
 
 c. Compute your sample mean
@@ -101,7 +101,7 @@ mysize
 ```
 
 ```
- [1] 2 2 5 6 3 9 6 3 7 2
+ [1] 4 4 2 9 6 4 6 3 3 4
 ```
 
 Then find the mean of these values:
@@ -124,10 +124,10 @@ How does this sample mean (from a truly random sample) compare to your sample me
 
 </details>
 
- \vspace*{1in}
+\vspace*{1in}
 
 
-## Driving with a Pet on your Lap
+### Driving with a Pet on your Lap
 
 Over 30,000 people participated in an online poll on `cnn.com` conducted in April 2012 asking: "Have you ever driven with a pet on your lap"? We see that 34% of the participants answered yes and 66% answered no.
 
@@ -139,7 +139,7 @@ a. Can you conclude that a random sample was used from the description given? Ex
 *Answer:* No you can't make this conclusion from the info given. In fact, an online poll at a website like `cnn.com` is almost always reporting results from a non-random sample. The people who respond are individuals who visit `cnn.com`, then see the online poll and decide to respond. 
 </details>
 
- \vspace*{1.5in}
+\vspace*{1.5in}
 
 
 b. Explain why it is not appropriate to generalize these results to all drivers, or even to all drivers who visit cnn.com.
@@ -160,7 +160,7 @@ c. How might we select a sample of people that would give us results that we can
 
  \vspace*{1in}
 
-d.  Is the variable measured in this study quantitative or categorical?
+d. Is the variable measured in this study quantitative or categorical?
 
 <details>
 <summary><red>Click for answer</red></summary>
@@ -168,7 +168,6 @@ d.  Is the variable measured in this study quantitative or categorical?
 *Answer:* Categorical (yes or no answer to the question).
 </details>
 
- \vspace*{.5in}
-
+ 
 
 

@@ -3,25 +3,10 @@
 
 ## Your Turn 1
 
-
-
-## Few Instructions
-
-The default setting in Rstudio when you are running chunks is that the “output” (numbers, graphs) are
-shown **inline** within the Markdown Rmd. If you prefer to have your plots appear on the right of the console and not below the chunk, then change the settings as follows:
-
-1. Select Tools > Global Options.
-2. Click the R Markdown section and uncheck (if needed) the option Show output inline for all
-R Markdown documents.
-3. Click OK.
-
-Now try running R chunks in the .Rmd file to see the difference. You can recheck this box if you prefer
-the default setting.
-
-## Parameters and Statistics 
+### Parameters and Statistics 
 Here are some notations that will be useful for you. Look for the codes to produce this in the associated Rmd file.
 
-&nbsp; | \textcolor{red}{Parameter} | \textcolor{red}{Statistic} |
+&nbsp; | Parameter | Statistic |
 ---- | ---- | ---- |
 Mean | $\mu$ | $\bar{x}$ | 
 Proportion | $p$ | $\hat{p}$ |
@@ -31,85 +16,110 @@ Slope | $\beta$ | $b$ |
 
 \vspace*{1in}
 
-## Example 1: Parameters and Statistics
+### Example 1: Parameters and Statistics
 
 For each of the following, state whether the quantity described is a parameter or a statistic, and give the correct notation.
 
-### a. Average household income for all houses in the US, using data from the US census
-
+ (a). Average household income for all houses in the US, using data from the US census
+<details>
+<summary><red>Click for answer</red></summary>
 *Answer:* This is a parameter since the mean is for all houses in the US, and the notation is $\mu$.
+</details>
 
-### b. The proportion of all residents in a county who voted in the last presidential election.
-
+ (b). The proportion of all residents in a county who voted in the last presidential election.
+<details>
+<summary><red>Click for answer</red></summary>
 *Answer:* This is a parameter since we have information on all the residents, and the notation is p.
+</details>
 
-### c. The difference in proportion who have ever smoked cigarettes, between a sample of 500 people who are 60 years old and a sample of 200 people who are 25 years old.    
+ (c). The difference in proportion who have ever smoked cigarettes, between a sample of 500 people who are 60 years old and a sample of 200 people who are 25 years old.    
 
+<details>
+<summary><red>Click for answer</red></summary>
 *Answer:* We use statistics since the proportions are from samples.  The notation for the difference in sample proportions is $\hat{p}_1 - \hat{p}_2$
+</details>
 
-### d. The correlation between weight and height for 5-year old kids. 
-
+ (d). The correlation between weight and height for 5-year old kids. 
+ 
+<details>
+<summary><red>Click for answer</red></summary>
 *Answer:* If we are looking at all 5-year old kids it is a parameter, and the notation for correlation is $\rho$.
+</details>
 
-### e. The mean number of extracurricular activities from a random sample of 50 students at your school.
-
+ (e). The mean number of extracurricular activities from a random sample of 50 students at your school.
+<details>
+<summary><red>Click for answer</red></summary>
 *Answer:* This is a statistic since the mean is from a sample, and the notation is $\mu$.
+</details>
 
-\vspace*{1in}
+------------------------------------------------------------------------------------
 
 ## Example 2: Using Search Engines on the Internet
 
 A 2012 survey of a random sample of 2253 US adults found that 1,329 of them reported using a search engine (such as Google) every day to find information on the Internet.  
 
-### a).  Find the relevant proportion and give the correct notation with it.  
-
+ (a).  Find the relevant proportion and give the correct notation with it.  
+ 
+<details>
+<summary><red>Click for answer</red></summary>
 *Answer:* $\hat{p} = 1329/2253$
 
 
 ```r
 p.hat <- 1329/2253
 p.hat
-[1] 0.5898802
 ```
 
+```
+[1] 0.5898802
+```
+</details>
 
-### b).  Is your answer to part (a) a parameter or a statistic?  
+ b).  Is your answer to part (a) a parameter or a statistic?  
 
+<details>
+<summary><red>Click for answer</red></summary>
 *Answer:* Statistic
+</details>
 
-### c).  Give notation for and define the population parameter that we estimate using the result of part (a).
+ c).  Give notation for and define the population parameter that we estimate using the result of part (a).
 
+<details>
+<summary><red>Click for answer</red></summary>
 *Answer:* p = the proportion of all US adults that would report that they use an Internet search engine every day
+</details>
 
-\vspace*{1in}
 
-## Example 3: Simulation of a Sample Proportion
+---------------------------------------------------------------------------------------------
+
+### Example 3: Simulation of a Sample Proportion
 
 According to a PEW survey, $66\%$ of U.S. adult citizens casted a ballot in the 2020 election. Suppose we take a random sample of $n=100$ eligible U.S. voters and computed the sample proportion who voted. 
 
 
 
 ```r
-# Call the library
-library(ggplot2)
-```
-
-
-
-```r
 # Define parameters
+set.seed(123) # set seed for reproducibility
 pop.prop <- .66 # Population proportion
 n.size <- 100  # sample size
 ```
 
 
-### (a) Generate a random sample of size $n= 100$ and plot its sample proportion.
+(a). Generate a random sample of size $n= 100$ and plot its sample proportion.
 
 
 ```r
 # Generate 1 sample
 sample1 <- rbinom(n = 1, size = n.size, p = pop.prop) # R simulates the samples
 sample.prop1 <- sample1/n.size #  Proportion = No. of Success / Sample Size
+```
+
+
+
+```r
+# Call the library
+library(ggplot2)
 ```
 
 
@@ -126,10 +136,9 @@ ggplot(mydata, aes(x = sample.prop1)) +
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
-<img src="Class_Activity_7_files/figure-epub3/unnamed-chunk-6-1.png" width="100%" />
+<img src="Class_Activity_7_files/figure-epub3/unnamed-chunk-5-1.png" width="100%" />
 
-### (b) Generate 5 random samples of size $n= 100$ and plot the sample proportions.
-
+(b). Generate 5 random samples of size $n= 100$ and plot the sample proportions.
 
 
 ```r
@@ -146,10 +155,10 @@ ggplot(data, aes(x = sample.prop5)) +
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
-<img src="Class_Activity_7_files/figure-epub3/unnamed-chunk-7-1.png" width="100%" />
+<img src="Class_Activity_7_files/figure-epub3/unnamed-chunk-6-1.png" width="100%" />
 
 
-### (c) Generate 1000 random samples of size $n= 100$ and plot the sample proportions.
+ (c). Generate 1000 random samples of size $n= 100$ and plot the sample proportions.
 
 
 ```r
@@ -166,13 +175,13 @@ ggplot(data, aes(x = sample.prop1000)) +
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
-<img src="Class_Activity_7_files/figure-epub3/unnamed-chunk-8-1.png" width="100%" />
+<img src="Class_Activity_7_files/figure-epub3/unnamed-chunk-7-1.png" width="100%" />
 
 *Question:* What does each dot represent?
 
 *Answer:* One sample proportion from a sample of n=100 eligible voters.
 
- *Question:* What is the shape of your sampling distribution?
+*Question:* What is the shape of your sampling distribution?
 
 *Answer:* Roughly symmetric.
 
@@ -188,9 +197,11 @@ ggplot(data, aes(x = sample.prop1000)) +
 ```r
 # r-code
 mean(sample.prop1000)
-[1] 0.65753
 ```
 
+```
+[1] 0.65962
+```
 
 *Question:* What is the standard deviation of this distribution? (Hint: use the 95% rule.) 
 
@@ -204,11 +215,14 @@ mean(sample.prop1000)
 ```r
 # r-code
 sd(sample.prop1000)
-[1] 0.04775646
+```
+
+```
+[1] 0.0483176
 ```
 
 
-### (d) Repeat part(c) with sample size 20 instead of 100. Generate 1000 samples.
+(d). Repeat part(c) with sample size 20 instead of 100. Generate 1000 samples.
 
 
 ```r
@@ -227,7 +241,7 @@ ggplot(data, aes(x = sample.prop1000)) +
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
-<img src="Class_Activity_7_files/figure-epub3/unnamed-chunk-11-1.png" width="100%" />
+<img src="Class_Activity_7_files/figure-epub3/unnamed-chunk-10-1.png" width="100%" />
 
 
 *Question:*  How has the sampling distribution changed? (Shape? Center? Variability?)
@@ -237,13 +251,22 @@ ggplot(data, aes(x = sample.prop1000)) +
 
 ```r
 mean(sample.prop1000)
-[1] 0.6593
+```
+
+```
+[1] 0.65885
+```
+
+```r
 sd(sample.prop1000)
-[1] 0.1052121
+```
+
+```
+[1] 0.1086093
 ```
 
 
-### (d) Now suppose the population proportion is $p=0.90$ instead of $p=0.66$ in part (e). Keep n.size=20. 
+(e). Now suppose the population proportion is $p=0.90$ instead of $p=0.66$ in part (e). Keep n.size=20. 
 
 
 ```r
@@ -265,7 +288,7 @@ ggplot(data, aes(x = sample.prop1000)) +
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
-<img src="Class_Activity_7_files/figure-epub3/unnamed-chunk-13-1.png" width="100%" />
+<img src="Class_Activity_7_files/figure-epub3/unnamed-chunk-12-1.png" width="100%" />
 
 *Question:* How has the sampling distribution changed? (Shape? Center? Variability?)
 
@@ -274,13 +297,23 @@ ggplot(data, aes(x = sample.prop1000)) +
 
 ```r
 mean(sample.prop1000)
-[1] 0.8991
-sd(sample.prop1000)
-[1] 0.0660193
 ```
 
+```
+[1] 0.9028
+```
 
-## Example 4: Simulation for a Sample Mean
+```r
+sd(sample.prop1000)
+```
+
+```
+[1] 0.06466329
+```
+
+--------------------------------------------------------------------------------
+
+### Example 4: Simulation for a Sample Mean
 
 We’ll look at sampling movies from the population of 134 Hollywood movies made in 2011 and measuring their budget (millions of dollars).
 
@@ -291,16 +324,19 @@ library(Lock5Data)
 movies <- HollywoodMovies2011
 ```
 
-### (a) What is the population mean of the `Budget`?
+(a). What is the population mean of the `Budget`?
 
 
 ```r
 # r-code
 mean(movies$Budget, na.rm = TRUE)
+```
+
+```
 [1] 53.48134
 ```
 
-### (b) Generate a random sample of size $n= 10$ and plot the sample proportion.
+(b). Generate a random sample of size $n= 10$ and plot the sample proportion.
 
 
 ```r
@@ -322,10 +358,10 @@ ggplot(mydata, aes(x = sample.mean1)) +
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
-<img src="Class_Activity_7_files/figure-epub3/unnamed-chunk-17-1.png" width="100%" />
+<img src="Class_Activity_7_files/figure-epub3/unnamed-chunk-16-1.png" width="100%" />
 
 
-### (c) Generate 5 random samples of size $n= 10$ and plot the sample means.
+(c). Generate 5 random samples of size $n= 10$ and plot the sample means.
 
 
 ```r
@@ -348,10 +384,10 @@ ggplot(mydata, aes(x = sample.mean5)) +
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
-<img src="Class_Activity_7_files/figure-epub3/unnamed-chunk-18-1.png" width="100%" />
+<img src="Class_Activity_7_files/figure-epub3/unnamed-chunk-17-1.png" width="100%" />
 
 
-### (d) Generate 1000 random samples of size $n= 10$ and plot the sample means.
+(d). Generate 1000 random samples of size $n= 10$ and plot the sample means.
 
 
 ```r
@@ -375,14 +411,14 @@ ggplot(mydata, aes(x = sample.mean1000)) +
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
-<img src="Class_Activity_7_files/figure-epub3/unnamed-chunk-19-1.png" width="100%" />
+<img src="Class_Activity_7_files/figure-epub3/unnamed-chunk-18-1.png" width="100%" />
 
 
 *Question:* What does each dot represent?
 
 *Answer:* A sample mean budget from a sample of n=10
 
- *Question:* What is the shape of your sampling distribution?
+*Question:* What is the shape of your sampling distribution?
 
 *Answer:* Slightly right skewed.
 
@@ -393,6 +429,9 @@ ggplot(mydata, aes(x = sample.mean1000)) +
 
 ```r
 mean(movies$Budget, na.rm = TRUE)
+```
+
+```
 [1] 53.48134
 ```
 
@@ -404,7 +443,10 @@ mean(movies$Budget, na.rm = TRUE)
 ```r
 # r-code
 mean(sample.mean1000)
-[1] 53.68764
+```
+
+```
+[1] 53.12677
 ```
 
 
@@ -421,16 +463,17 @@ mean(sample.mean1000)
 ```r
 # r-code
 sd(sample.mean1000)
-[1] 14.86305
+```
+
+```
+[1] 15.0577
 ```
 
 
-
-### (e) Repeat part(d) with sample size 50 instead of 10. Generate 1000 samples.
+(e). Repeat part(d) with sample size 50 instead of 10. Generate 1000 samples.
 
 
 ```r
-
 # Generate 1000 samples
 n.size <- 50
 n.rep <- 1000
@@ -452,50 +495,66 @@ ggplot(mydata, aes(x = sample.mean1000)) +
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
-<img src="Class_Activity_7_files/figure-epub3/unnamed-chunk-23-1.png" width="100%" />
+<img src="Class_Activity_7_files/figure-epub3/unnamed-chunk-22-1.png" width="100%" />
 
 
-*Question* Is this sampling distribution more or less symmetric compared to the distribution when $n=10$?
+*Question:* Is this sampling distribution more or less symmetric compared to the distribution when $n=10$?
 
-*Answer* The distribution is more symmetric with n=50 than when n=10. 
+*Answer:* The distribution is more symmetric with n=50 than when n=10. 
 
-\vspace*{1in}
+--------------------------------------------------------------------------------
 
-## Example 5: Effect of sample size
+### Example 5: Effect of sample size
 
 Let's investigate the effect of sample size in the sampling distribution using the same setting as in Exercise 1 with $p=0.66$. The following are three sampling distributions corresponding to different sample sizes. 
 
 
-<img src="Class_Activity_7_files/figure-epub3/unnamed-chunk-24-1.png" width="100%" />
+<img src="Class_Activity_7_files/figure-epub3/unnamed-chunk-23-1.png" width="100%" />
 
 
-*Question* What happens if we increase the sample size?
+*Question:* What happens if we increase the sample size?
 
-*Answer* When we increase the sample size, the variability of the sampling distribution becomes smaller.
+*Answer:* When we increase the sample size, the variability of the sampling distribution becomes smaller.
 
 
-*Question* Estimate the standard error of each and verify your answer to the previous question.
+*Question:* Estimate the standard error of each and verify your answer to the previous question.
 
-*Answer* The standard errors are
+*Answer:* The standard errors are
 
 
 ```r
 sd(data.size.25$x)
-[1] 0.09662256
+```
+
+```
+[1] 0.09011439
+```
+
+```r
 sd(data.size.100$x)
-[1] 0.04526413
+```
+
+```
+[1] 0.04093137
+```
+
+```r
 sd(data.size.400$x)
-[1] 0.02203988
+```
+
+```
+[1] 0.02311007
 ```
 
 As the sample size increases, the variability as measured by the standard error of the sampling distribution does indeed decrease.
 
-## Example 6: Bootstrap Sampling
+---------------------------------------------------------------------------------------------
+
+### Example 6: Bootstrap Sampling
 
 
 ```r
 # Movies Example Again!
-
 Budget <- movies$Budget[!is.na(movies$Budget)]
 
 # Bootstrap samples
@@ -512,7 +571,6 @@ boot.samplemean1000 <- unlist(boot.samplemean1000)
 
 ```r
 # Plot the bootstrap distribution
-
 mydata <- data.frame(x = boot.samplemean1000)
 
 # Plot a dot plot of the sample proportion
@@ -523,16 +581,25 @@ ggplot(mydata, aes(x = boot.samplemean1000)) +
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
-<img src="Class_Activity_7_files/figure-epub3/unnamed-chunk-27-1.png" width="100%" />
+<img src="Class_Activity_7_files/figure-epub3/unnamed-chunk-26-1.png" width="100%" />
 
-(a) Compare the center/spread/shape of the bootstrap distribution to the distribution computed in Ex. 4 (d). Answer all the questions in Ex. 4(d).
+(a). Compare the center/spread/shape of the bootstrap distribution to the distribution computed in Ex. 4 (d). Answer all the questions in Ex. 4(d).
 
 *Answer:* The shape/center and variability of this bootstrap distribution is very similar to that of Ex 4 (d)
 
 
 ```r
 mean(mydata$x)
-[1] 52.43843
+```
+
+```
+[1] 53.23545
+```
+
+```r
 sd(mydata$x)
-[1] 15.26348
+```
+
+```
+[1] 15.41347
 ```

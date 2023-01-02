@@ -1,10 +1,6 @@
 
 # Class Activity 1
 
-- Try to knit the file at the present stage and see if it compiles.
-- You can add `\vspace*{1in}` in the body of this file to produce a vertical space of 1 inches.
-
-
 ## Your Turn 1
 
 ---------------------------------------------------
@@ -29,16 +25,16 @@ example_data
 
 ```
    ID Greeting  Male      age
-1   1    Hello  TRUE 54.66893
-2   2    Hello FALSE 58.41033
-3   3    Hello  TRUE 31.06788
-4   4    Hello FALSE 38.21240
-5   5    Hello  TRUE 52.24467
-6   6  Goodbye FALSE 38.58542
-7   7  Goodbye  TRUE 39.39323
-8   8  Goodbye FALSE 26.77841
-9   9  Goodbye  TRUE 47.85333
-10 10  Goodbye FALSE 42.40331
+1   1    Hello  TRUE 47.12226
+2   2    Hello FALSE 50.69482
+3   3    Hello  TRUE 30.19873
+4   4    Hello FALSE 56.28254
+5   5    Hello  TRUE 29.89137
+6   6  Goodbye FALSE 47.39715
+7   7  Goodbye  TRUE 31.65952
+8   8  Goodbye FALSE 34.63558
+9   9  Goodbye  TRUE 27.94007
+10 10  Goodbye FALSE 44.68475
 ```
 
 *Answer:* We see a data frame with four columns, where the first column is an `identifier` for the cases. We have information on the greeting types, gender, and age on these cases in the remaining columns.
@@ -55,25 +51,10 @@ b. What is the dimension of the dataset called 'example_data'?
 
 ```r
 dim(example_data)
-```
-
-```
 [1] 10  4
-```
-
-```r
 nrow(example_data)
-```
-
-```
 [1] 10
-```
-
-```r
 ncol(example_data)
-```
-
-```
 [1] 4
 ```
 

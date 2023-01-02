@@ -132,16 +132,10 @@
 
 This is a \emph{sample} book written in \textbf{Markdown}.
 
+Answer
+
 \hypertarget{class-activity-1}{%
 \chapter{Class Activity 1}\label{class-activity-1}}
-
-\begin{itemize}
-\tightlist
-\item
-  Try to knit the file at the present stage and see if it compiles.
-\item
-  You can add \texttt{\textbackslash{}vspace*\{1in\}} in the body of this file to produce a vertical space of 1 inches.
-\end{itemize}
 
 \hypertarget{your-turn-1}{%
 \section{Your Turn 1}\label{your-turn-1}}
@@ -174,16 +168,16 @@ Click for answer
 
 \begin{verbatim}
    ID Greeting  Male      age
-1   1    Hello  TRUE 49.54584
-2   2    Hello FALSE 20.33909
-3   3    Hello  TRUE 53.25364
-4   4    Hello FALSE 39.15167
-5   5    Hello  TRUE 26.04279
-6   6  Goodbye FALSE 41.13899
-7   7  Goodbye  TRUE 47.57988
-8   8  Goodbye FALSE 33.84054
-9   9  Goodbye  TRUE 23.02700
-10 10  Goodbye FALSE 56.92052
+1   1    Hello  TRUE 53.54163
+2   2    Hello FALSE 46.39761
+3   3    Hello  TRUE 51.01129
+4   4    Hello FALSE 56.21607
+5   5    Hello  TRUE 57.10219
+6   6  Goodbye FALSE 34.82988
+7   7  Goodbye  TRUE 39.15996
+8   8  Goodbye FALSE 45.09101
+9   9  Goodbye  TRUE 38.00030
+10 10  Goodbye FALSE 39.53141
 \end{verbatim}
 
 \emph{Answer:} We see a data frame with four columns, where the first column is an \texttt{identifier} for the cases. We have information on the greeting types, gender, and age on these cases in the remaining columns.
@@ -203,32 +197,13 @@ Click for answer
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{dim}\NormalTok{(example\_data)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] 10  4
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
+\NormalTok{[}\DecValTok{1}\NormalTok{] }\DecValTok{10}  \DecValTok{4}
 \FunctionTok{nrow}\NormalTok{(example\_data)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] 10
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
+\NormalTok{[}\DecValTok{1}\NormalTok{] }\DecValTok{10}
 \FunctionTok{ncol}\NormalTok{(example\_data)}
+\NormalTok{[}\DecValTok{1}\NormalTok{] }\DecValTok{4}
 \end{Highlighting}
 \end{Shaded}
-
-\begin{verbatim}
-[1] 4
-\end{verbatim}
 
 \emph{Answer:} There are 10 rows and 4 columns.
 
@@ -340,11 +315,18 @@ Click for answer
 \hypertarget{class-activity-2}{%
 \chapter{Class Activity 2}\label{class-activity-2}}
 
+\hypertarget{your-turn-1-1}{%
+\section{Your Turn 1}\label{your-turn-1-1}}
+
+This exercise is about finding the average word length in Lincoln's Gettysburg's address.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
 \hypertarget{your-turn-2-1}{%
 \section{Your Turn 2}\label{your-turn-2-1}}
 
 \hypertarget{summary-of-article-on-it-depends-on-how-you-ask}{%
-\section{\texorpdfstring{Summary of article on \href{https://jech.bmj.com/content/75/4/387.abstract}{It depends on how you ask!}}{Summary of article on It depends on how you ask!}}\label{summary-of-article-on-it-depends-on-how-you-ask}}
+\subsection{\texorpdfstring{Summary of article on \href{https://jech.bmj.com/content/75/4/387.abstract}{It depends on how you ask!}}{Summary of article on It depends on how you ask!}}\label{summary-of-article-on-it-depends-on-how-you-ask}}
 
 Click for answer
 
@@ -358,7 +340,7 @@ This study aimed to measure the effects of psychological biases on estimates of 
 \section{Your Turn 3}\label{your-turn-3}}
 
 \hypertarget{gettysburg-random-sample}{%
-\section{Gettysburg random sample}\label{gettysburg-random-sample}}
+\subsection{Gettysburg random sample}\label{gettysburg-random-sample}}
 
 Let's take a simple random sample (SRS) of Gettysburg words. The ``population'' is contained in the
 spreadsheet \texttt{GettysburgPopulationCounts.csv}. Carefully load this data into R:
@@ -382,12 +364,7 @@ spreadsheet \texttt{GettysburgPopulationCounts.csv}. Carefully load this data in
 
 The \texttt{position} variable enumerates the list of words in the population (address).
 
-\begin{enumerate}
-\def\labelenumi{\alph{enumi}.}
-\tightlist
-\item
-  Sample
-\end{enumerate}
+(a). Sample
 
 Run the following command to obtain a SRS of 10 words from the 268 that are in the population:
 
@@ -399,20 +376,14 @@ Run the following command to obtain a SRS of 10 words from the 268 that are in t
 \end{Shaded}
 
 \begin{verbatim}
- [1]  78  92  97  55 156 214 105 181  49 191
+ [1] 127  64  83 154  87 210  99 219  29 268
 \end{verbatim}
 
 This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
 
 \vspace*{1in}
 
-\begin{enumerate}
-\def\labelenumi{\alph{enumi}.}
-\setcounter{enumi}{1}
-\tightlist
-\item
-  Get words and lengths
-\end{enumerate}
+(b). Get words and lengths
 
 We will \emph{subset} the data set \texttt{pop} to obtain only the sampled rows listed in \texttt{samp}. We do this using \textbf{square bracket notation} `dataset{[}row number, column number/name{]}. Run the following command to find your sampled words and sizes:
 
@@ -423,21 +394,18 @@ We will \emph{subset} the data set \texttt{pop} to obtain only the sampled rows 
 \end{Shaded}
 
 \begin{verbatim}
-    position size    word
-78        78    7 resting
-92        92    2      It
-97        97    6  proper
-55        55    2      We
-156      156    6  forget
-214      214    5   cause
-105      105    1       a
-181      181    4    have
-49        49    3     and
-191      191    2      us
+    position size      word
+127      127    4      here
+64        64    3      war.
+83        83    4      here
+154      154    3       can
+87        87    4      that
+210      210    9 increased
+99        99    2        we
+219      219    3       the
+29        29    7   created
+268      268    5    earth.
 \end{verbatim}
-
-What are your sampled words?
-\vspace*{.5in}
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
@@ -457,7 +425,7 @@ The word lengths in part (b) are the data for your sample. You can compute your 
 \end{Shaded}
 
 \begin{verbatim}
- [1] 7 2 6 2 6 5 1 4 3 2
+ [1] 4 3 4 3 4 9 2 3 7 5
 \end{verbatim}
 
 Then find the mean of these values:
@@ -469,7 +437,7 @@ Then find the mean of these values:
 \end{Shaded}
 
 \begin{verbatim}
-[1] 3.8
+[1] 4.4
 \end{verbatim}
 
 How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?
@@ -481,7 +449,7 @@ Click for answer
 \vspace*{1in}
 
 \hypertarget{driving-with-a-pet-on-your-lap}{%
-\section{Driving with a Pet on your Lap}\label{driving-with-a-pet-on-your-lap}}
+\subsection{Driving with a Pet on your Lap}\label{driving-with-a-pet-on-your-lap}}
 
 Over 30,000 people participated in an online poll on \texttt{cnn.com} conducted in April 2012 asking: ``Have you ever driven with a pet on your lap''? We see that 34\% of the participants answered yes and 66\% answered no.
 
@@ -536,20 +504,127 @@ Click for answer
 
 \emph{Answer:} Categorical (yes or no answer to the question).
 
-\vspace*{.5in}
-
 \hypertarget{class-activity-3}{%
 \chapter{Class Activity 3}\label{class-activity-3}}
 
-\hypertarget{your-turn-1-1}{%
-\section{Your Turn 1}\label{your-turn-1-1}}
+\hypertarget{case-study-1}{%
+\section{Case Study 1}\label{case-study-1}}
 
-Hello!
+Consider the following case study:
+
+``Swimming with dolphins can certainly be fun, but is it also therapeutic for patients suffering from clinical depression? To investigate this possibility, researchers recruited 30 subjects aged 18-65 with a clinical diagnosis of mild to moderate depression. Subjects were required to discontinue use of any antidepressant drugs or psychotherapy four weeks prior to the experiment, and throughout the experiment. These 30 subjects went to an island off the coast of Honduras, where they were randomly assigned to one of two treatment groups. Both groups engaged in the same amount of swimming and snorkeling each day, but one group (the animal care program) did so in the presence of bottlenose dolphins and the other group (outdoor nature program) did not. At the end of two weeks, each subjects' level of depression was evaluated, as it had been at the beginning of the study, and it was determined whether they showed substantial improvement (reducing their level of depression) by the end of the study (Antonioli and Reveley, 2005).''
+
+Observed data:
+
+The researchers found that 10 of 15 subjects in the dolphin therapy group showed substantial improvement, compared to 3 of 15 subjects in the control group.
+
+(a). Identify the observational units in this study.
+
+\emph{Answer:} The observational units in this study are the 30 subjects.
+
+(b). Classify each variable as categorical or quantitative.
+
+\emph{Answer:} The variables in this study can be classified as follows:
+Categorical: Treatment Group (Dolphin and Control)
+Quantitative: Age, Level of Depression (Beginning and End of Study)
+
+(c). Which variable would you regard as explanatory and which as response?
+
+\emph{Answer:} The explanatory variable would be the Treatment Group and the response variable would be the Level of Depression.
+
+(d). Is this an observational study or an experiment? Justify your answer.
+
+\emph{Answer:} This is an experiment because the researchers randomly assigned the subjects to the two treatment groups, and then observed the effect of the treatment (presence of dolphins) on the response variable (level of depression).
+
+(e). Construct a two-way table based on the results of the experiment.
+
+Two-way table:
+
+\begin{longtable}[]{@{}llll@{}}
+\toprule()
+Dolphin Therapy & Improved & Not Improved & Total \\
+\midrule()
+\endhead
+Group & 10 & 5 & 15 \\
+Control Group & 3 & 12 & 15 \\
+Total & 13 & 17 & 30 \\
+\bottomrule()
+\end{longtable}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{your-turn-2-2}{%
-\section{Your turn 2}\label{your-turn-2-2}}
+\hypertarget{case-study-2}{%
+\section{Case Study 2}\label{case-study-2}}
+
+Consider the following case study:
+
+``Researchers want to find out how a new diet affects weight gain among underweight subjects. This experiment only has two treatment conditions, the new diet and the standard diet, hence the matched pairs design can be used. For this study, the researchers recruited 200 subjects which will be grouped into 100 pairs based on shared characteristics such as age, gender, weight, height, lifestyle, and so on. A 20-year-old female within the weight range of 90-110 pounds and the height range of 60-63 inches will be paired with another 20-year-old female that falls into the same weight and height categories. Once all 100 pairs are made, a subject from each pair will be randomly assigned into the treatment group (will be administered the new diet for 2 months) while the other subject from the pair will be assigned to the control group (will be assigned to follow the standard diet for two months). At the end of the time time period of 2 months, researchers will measure the total weight gain for each subject.''
+
+Observed data:
+
+The researchers found that 60 of 100 subjects in the new diet group showed substantial improvement, compared to 43 of 100 subjects in the standard diet group.
+
+(a). Identify the observational units in this study.
+
+\emph{Answer:} The observational units in this study are the 200 subjects.
+
+(b). Classify each variable as categorical or quantitative.
+
+\emph{Answer:} The variables are: age (quantitative), gender (categorical), weight (quantitative), height (quantitative), lifestyle (categorical), and total weight gain (quantitative).
+
+(c). Which variable would you regard as explanatory and which as response?
+
+\emph{Answer:} The explanatory variable is the type of diet (new or standard) and the response variable is the total weight gain.
+
+(d). Is this an observational study or an experiment? Justify your answer.
+
+\emph{Answer:} This is an experiment because the researchers are manipulating the explanatory variables (type of diet) to observe the effects on the response variables (total weight gain).
+
+(e). If it is an experiment, is it randomized comparative experiment or a matched pairs experiment?
+
+\emph{Answer:} This is a matched pairs experiment because each subject is paired with another subject who has similar characteristics and one subject from each pair is randomly assigned to the treatment group and the other to the control group.
+
+(f). Construct a two-way table based on the results of the experiment.
+
+Two-way table:
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule()
+New Diet & Standard Diet & Total \\
+\midrule()
+\endhead
+Improvement & 60 & 43 \\
+No Improvement & 40 & 57 \\
+Total & 100 & 100 \\
+\bottomrule()
+\end{longtable}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{non-maize-users-installing-ggplot2}{%
+\section{\texorpdfstring{(Non-Maize users) installing \texttt{ggplot2}}{(Non-Maize users) installing ggplot2}}\label{non-maize-users-installing-ggplot2}}
+
+If you are using Rstudio on your \textbf{own computer}, you will first need to \textbf{install} the package but if you are using the Maize (online) Rstudio (or a lab computer) you do not. If you need to install the package:
+
+\begin{itemize}
+\tightlist
+\item
+  Click the \textbf{Packages} tab on the lower right Rstudio pane.
+\item
+  Click \textbf{Install} and type \texttt{ggplot2} into the \textbf{Packages} box.
+\item
+  Click the \textbf{Install} button. You should now see \texttt{ggplot2} in the list of packages.
+\item
+  You only need to install the package once. After than, you run the \texttt{library} command to load the package functions into your current R session.
+\end{itemize}
+
+An alternate way way to install \texttt{ggplot2} from the R console is by using the following command:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"ggplot2"}\NormalTok{, }\AttributeTok{dependencies =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
 \hypertarget{class-activity-4}{%
 \chapter{Class Activity 4}\label{class-activity-4}}
@@ -560,10 +635,9 @@ Hello!
 \hypertarget{flowers-v.-mississippi}{%
 \subsection{Flowers v. Mississippi}\label{flowers-v.-mississippi}}
 
-The data set \texttt{APM\_DougEvensCases.csv} contains data from 1517 potential black and white jurors for 66 cases that he was primary prosecutor for between 1992 and 2017. These jurors were available for Doug Evans to strike using his ``peremptory strikes'' during the jury selection phase.
+The data set \texttt{APM\_DougEvensCases.csv} contains data from 1517 potential black and white jurors for 66 cases that Doug Evans was primary prosecutor for between 1992 and 2017. These jurors were available for Doug Evans to strike using his ``peremptory strikes'' during the jury selection phase.
 
-\hypertarget{a-inspect-data}{%
-\subsection{(a) Inspect data}\label{a-inspect-data}}
+(a). Inspect data
 
 Read in the data
 
@@ -575,7 +649,6 @@ Read in the data
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\# Anything after a \# is a comment in R}
 \CommentTok{\# dimension of dataset}
 \FunctionTok{dim}\NormalTok{(jurors)}
 \end{Highlighting}
@@ -620,8 +693,7 @@ To get the data from one variable, we use the command \texttt{dataset\$variable}
  [9] "Not struck by State" "Not struck by State"
 \end{verbatim}
 
-\hypertarget{b-table-of-counts-and-proportions}{%
-\subsection{(b) Table of counts and proportions}\label{b-table-of-counts-and-proportions}}
+(b). Table of counts and proportions
 
 The \texttt{summary} command used with a data frame gives summaries of each variable
 
@@ -683,10 +755,11 @@ Not struck by State     Struck by State
   What proportion of eligible jurors were struck by the state from the jury pool?
 \end{itemize}
 
-\emph{answer:} about 28.5\% of eligible jurors were struck by the state.
+Click for answer
 
-\hypertarget{c-bar-graph-for-one-variable}{%
-\subsection{(c) Bar graph for one variable}\label{c-bar-graph-for-one-variable}}
+\emph{Answer:} about 28.5\% of eligible jurors were struck by the state.
+
+(c). Bar graph for one variable
 
 You can create a simple bar graph for one categorical variable with the \texttt{barplot} command. Here we visualize the distribution of struck status for all eligible jurors:
 
@@ -698,8 +771,7 @@ You can create a simple bar graph for one categorical variable with the \texttt{
 
 \includegraphics[width=1\linewidth]{Class_Activity_4_files/figure-latex/unnamed-chunk-8-1}
 
-\hypertarget{d-two-way-tables}{%
-\subsection{(d) Two-way tables}\label{d-two-way-tables}}
+(d). Two-way tables
 
 First 10 entries of \texttt{race} and \texttt{struck\_state} variable is
 
@@ -745,10 +817,11 @@ The \texttt{table} command also gives two-way tables when two variables are incl
   How many jurors were white and were not struck by the state?
 \end{itemize}
 
+Click for answer
+
 \emph{answer:} 859
 
-\hypertarget{e-conditional-proportions-state-strike-status-by-juror-race}{%
-\subsection{(e) Conditional proportions: state strike status by juror race}\label{e-conditional-proportions-state-strike-status-by-juror-race}}
+(e). Conditional proportions: state strike status by juror race
 
 The \texttt{prop.table} command gives conditional proportions for a two-way table. We plug our two-way table into \texttt{prop.table} with a \texttt{margin=1} to get proportions grouped by the \textbf{row} variable:
 
@@ -771,21 +844,20 @@ Of all eligible black jurors, about 57.9\% were struck by the state.
 \tightlist
 \item
   What proportion of eligible white jurors were struck by the state?
-\end{itemize}
 
-\emph{answer:} about 12.5\%
+  Click for answer
 
-\begin{itemize}
-\tightlist
+  \emph{answer:} about 12.5\%
 \item
   Is there evidence of an association between juror race and state strikes?
 \end{itemize}
 
+Click for answer
+
 \emph{answer:} Yes, there is an association because the rate of state strikes varies greatly by juror race with
 about 60\% of black jurors were struck compared to only 13\% of white jurors
 
-\hypertarget{f-stacked-bar-graph-for-two-variables}{%
-\subsection{(f) Stacked bar graph for two variables}\label{f-stacked-bar-graph-for-two-variables}}
+(f). Stacked bar graph for two variables
 
 We can visualize the conditional distribution from part (e) with a stacked bar graph created using the \texttt{ggplot2} graphing package. First, load this package's functions with the \texttt{library} command:
 
@@ -810,33 +882,7 @@ Now we can use the \texttt{geom\_bar} command in this package. Here we get the c
 
 The basic syntax for this function is to let \texttt{ggplot} know your data set name (\texttt{jurors}), then specify the grouping or conditional variable on the x-axis (\texttt{race}) in the \texttt{aes} (aesthetic) argument. The \texttt{fill} variable is the response variable (\texttt{struck\_state}). We add (\texttt{+}) the \texttt{geom\_bar} geometry to get a bar graph with the \texttt{fill} position specified. Adding an informative label and title complete the graph.
 
-\hypertarget{non-maize-users-installing-ggplot2}{%
-\subsection{\texorpdfstring{(Non-Maize users) installing \texttt{ggplot2}}{(Non-Maize users) installing ggplot2}}\label{non-maize-users-installing-ggplot2}}
-
-If you are using Rstudio on your \textbf{own computer}, you will first need to \textbf{install} the package but if you are using the Maize (online) Rstudio (or a lab computer) you do not. If you need to install the package:
-
-\begin{itemize}
-\tightlist
-\item
-  Click the \textbf{Packages} tab on the lower right Rstudio pane.
-\item
-  Click \textbf{Install} and type \texttt{ggplot2} into the \textbf{Packages} box.
-\item
-  Click the \textbf{Install} button. You should now see \texttt{ggplot2} in the list of packages.
-\item
-  You only need to install the package once. After than, you run the \texttt{library} command to load the package functions into your current R session.
-\end{itemize}
-
-An alternate way way to install \texttt{ggplot2} from the R console is by using the following command:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{install.packages}\NormalTok{(}\StringTok{"ggplot2"}\NormalTok{, }\AttributeTok{dependencies =} \ConstantTok{TRUE}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\hypertarget{g-conditional-distribution-of-race-grouped-by-strike-status}{%
-\subsection{(g) Conditional distribution of race grouped by strike status}\label{g-conditional-distribution-of-race-grouped-by-strike-status}}
+(g). Conditional distribution of race grouped by strike status
 
 We can ``flip'' our response and grouping variables easily (if we think it makes sense to do so). Here we specify the \texttt{margin=2} to get proportions grouped by the \textbf{column} variable:
 
@@ -866,7 +912,7 @@ The stacked bar graph for this distribution is
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics[width=1\linewidth]{Class_Activity_4_files/figure-latex/unnamed-chunk-16-1}
+\includegraphics[width=1\linewidth]{Class_Activity_4_files/figure-latex/unnamed-chunk-15-1}
 
 \begin{itemize}
 \tightlist
@@ -874,12 +920,14 @@ The stacked bar graph for this distribution is
   What proportion of eligible jurors who were not struck by the state were black? were white?
 \end{itemize}
 
+Click for answer
+
 \emph{Answer:} Of all jurors not struck by the state, about 20.8\% were black
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{your-turn-2-3}{%
-\section{Your Turn 2}\label{your-turn-2-3}}
+\hypertarget{your-turn-2-2}{%
+\section{Your Turn 2}\label{your-turn-2-2}}
 
 \hypertarget{graduate-programs-acceptance-and-sex}{%
 \subsection{Graduate programs acceptance and sex}\label{graduate-programs-acceptance-and-sex}}
@@ -894,7 +942,7 @@ How are grad school program acceptance rates associated with sex? We will look a
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\# dimension}
+\CommentTok{\# dimension of the dataset}
 \FunctionTok{dim}\NormalTok{(grad)}
 \end{Highlighting}
 \end{Shaded}
@@ -905,7 +953,7 @@ How are grad school program acceptance rates associated with sex? We will look a
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\# header}
+\CommentTok{\# first 6 rows}
 \FunctionTok{head}\NormalTok{(grad)}
 \end{Highlighting}
 \end{Shaded}
@@ -920,8 +968,7 @@ How are grad school program acceptance rates associated with sex? We will look a
 6 program1 male accept
 \end{verbatim}
 
-\hypertarget{a-table-of-counts-and-proportions}{%
-\subsection{(a) Table of counts and proportions}\label{a-table-of-counts-and-proportions}}
+(a). Table of counts and proportions
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -941,10 +988,11 @@ How are grad school program acceptance rates associated with sex? We will look a
   What proportion of applicants were accepted?
 \end{itemize}
 
+Click for answer
+
 \emph{Answer:} About 43\% (1284/3014) of applicants were accepted.
 
-\hypertarget{b-two-way-tables}{%
-\subsection{(b) Two-way tables}\label{b-two-way-tables}}
+(b). Two-way tables
 
 The \texttt{table} command also gives two-way tables when two variables are included. Here is the two-way table for result and sex:
 
@@ -967,10 +1015,11 @@ The \texttt{table} command also gives two-way tables when two variables are incl
   How many applicants involved females who were accepted?
 \end{itemize}
 
+Click for answer
+
 \emph{Answer:} : 262 applicants involved females who were accepted.
 
-\hypertarget{c-conditional-proportions-acceptance-given-sex}{%
-\subsection{(c) Conditional proportions: acceptance given sex}\label{c-conditional-proportions-acceptance-given-sex}}
+(c). Conditional proportions: acceptance given sex
 
 The \texttt{prop.table} command gives conditional proportions for a two-way table. First let's save the two-way table in an object named \texttt{mytable}:
 
@@ -1003,6 +1052,8 @@ The value of \texttt{1} in this command tell's R that you want \emph{row} propor
   What proportion of female were accepted?
 \end{itemize}
 
+Click for answer
+
 \emph{Answer:} about 31\% (262/(262+587))
 
 \begin{itemize}
@@ -1011,10 +1062,11 @@ The value of \texttt{1} in this command tell's R that you want \emph{row} propor
   What proportion of males were accepted?
 \end{itemize}
 
+Click for answer
+
 \emph{Answer:} about 47\% (1022/(1022+1143))
 
-\hypertarget{d-bar-graph-for-one-variable}{%
-\subsection{(d) Bar graph for one variable}\label{d-bar-graph-for-one-variable}}
+(d). Bar graph for one variable
 
 You can create a simple bar graph for one categorical variable with the \texttt{barplot} command. Here we visualize the distribution of result:
 
@@ -1024,7 +1076,7 @@ You can create a simple bar graph for one categorical variable with the \texttt{
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics[width=1\linewidth]{Class_Activity_4_files/figure-latex/unnamed-chunk-24-1}
+\includegraphics[width=1\linewidth]{Class_Activity_4_files/figure-latex/unnamed-chunk-23-1}
 
 We can add in a title and x and y axis labels too:
 
@@ -1035,10 +1087,9 @@ We can add in a title and x and y axis labels too:
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics[width=1\linewidth]{Class_Activity_4_files/figure-latex/unnamed-chunk-25-1}
+\includegraphics[width=1\linewidth]{Class_Activity_4_files/figure-latex/unnamed-chunk-24-1}
 
-\hypertarget{e-stacked-bar-graph-for-two-variables}{%
-\subsection{(e) Stacked bar graph for two variables}\label{e-stacked-bar-graph-for-two-variables}}
+(e). Stacked bar graph for two variables
 
 Now we can use the \texttt{geom\_bar} command in this package. Here we get the conditional distribution of \texttt{result} given \texttt{sex}:
 
@@ -1051,7 +1102,7 @@ Now we can use the \texttt{geom\_bar} command in this package. Here we get the c
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics[width=1\linewidth]{Class_Activity_4_files/figure-latex/unnamed-chunk-26-1}
+\includegraphics[width=1\linewidth]{Class_Activity_4_files/figure-latex/unnamed-chunk-25-1}
 
 The basic syntax for this function is to let \texttt{ggplot} know your data set name (\texttt{grad}), then specify the grouping or conditional variable on the x-axis (\texttt{sex}) in the \texttt{aes} (aesthetic) argument. The \texttt{fill} variable is the response variable (\texttt{result}). We add (\texttt{+}) the \texttt{geom\_bar} geometry to get a bar graph with the \texttt{fill} position specified. Adding an informative label and title complete the graph.
 
@@ -1061,8 +1112,7 @@ The basic syntax for this function is to let \texttt{ggplot} know your data set 
   Verify that this graph is plotting the conditional proportions from part (c)
 \end{itemize}
 
-\hypertarget{f-subsetting-by-program-type}{%
-\subsection{(f) Subsetting by program type}\label{f-subsetting-by-program-type}}
+(f). Subsetting by program type
 
 Finally, we will repeat the previous analysis of result and sex, but this time we will divide (or subset) the data set by program type. To do this we need to know how the values of \texttt{program} are coded:
 
@@ -1134,14 +1184,15 @@ Verify that the number of rows in the subsetted program 1 data set matches the n
 6 program2 male accept
 \end{verbatim}
 
-\hypertarget{g-result-by-sex-for-program-1.}{%
-\subsection{(g) Result by sex for program 1.}\label{g-result-by-sex-for-program-1.}}
+(g). Result by sex for program 1.
 
 \begin{itemize}
 \tightlist
 \item
   Show the distribution of result conditioned on applicant's sex for the program 1 data set. Get both a table of conditional proportions (or percentages) and a stacked bar graph.
 \end{itemize}
+
+Click for answer
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1153,7 +1204,7 @@ Verify that the number of rows in the subsetted program 1 data set matches the n
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics[width=1\linewidth]{Class_Activity_4_files/figure-latex/unnamed-chunk-30-1}
+\includegraphics[width=1\linewidth]{Class_Activity_4_files/figure-latex/unnamed-chunk-29-1}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1168,14 +1219,15 @@ Verify that the number of rows in the subsetted program 1 data set matches the n
   male   0.6193939 0.3806061
 \end{verbatim}
 
-\hypertarget{h-result-by-sex-for-program-2.}{%
-\subsection{(h) Result by sex for program 2.}\label{h-result-by-sex-for-program-2.}}
+(h). Result by sex for program 2.
 
 \begin{itemize}
 \tightlist
 \item
   Repeat part (g) but this time use the program 2 data set. Compare the two bar graphs for (g) and (h) and explain how they show that females have a higher acceptance rate after accounting for program type (1 or 2).
 \end{itemize}
+
+Click for answer
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1187,7 +1239,7 @@ Verify that the number of rows in the subsetted program 1 data set matches the n
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics[width=1\linewidth]{Class_Activity_4_files/figure-latex/unnamed-chunk-32-1}
+\includegraphics[width=1\linewidth]{Class_Activity_4_files/figure-latex/unnamed-chunk-31-1}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1208,6 +1260,8 @@ rate of death penalty than white defendants. Without accounting for program type
 (see parts (c) and (e)).
 
 Why? the confounding affect of program type which is associated with both result and sex:
+
+Click for answer
 
 \begin{itemize}
 \tightlist
@@ -1261,8 +1315,7 @@ there overall rate of acceptance was lower for females compared to males. But wh
 these rates by program type, we see that females have higher acceptance rates than males (see the
 visual in part (i)).
 
-\hypertarget{i-a-bar-graph-with-three-variables}{%
-\subsection{(i) A bar graph with three variables}\label{i-a-bar-graph-with-three-variables}}
+(i). A bar graph with three variables
 
 If we simply want to graph the relationship between result and sex for each type of program, we can avoid subsetting the data by using the \texttt{facet\_wrap} command in \texttt{ggplot2}. It is one simple addition to the stacked bar graph in part (e):
 
@@ -1278,13 +1331,15 @@ If we simply want to graph the relationship between result and sex for each type
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics[width=1\linewidth]{Class_Activity_4_files/figure-latex/unnamed-chunk-36-1}
+\includegraphics[width=1\linewidth]{Class_Activity_4_files/figure-latex/unnamed-chunk-35-1}
 
 \begin{itemize}
 \tightlist
 \item
   Verify that this command creates side-by-side stacked bar graphs that match your graphs in parts (g) and (h) for programs 1 and 2.
 \end{itemize}
+
+Click for answer
 
 \emph{Answer:} The graphs match.
 
@@ -1313,18 +1368,19 @@ The dataset \texttt{HollywoodMovies2011} provides information on 136 movies that
 
 \includegraphics[width=1\linewidth]{Class_Activity_5_files/figure-latex/unnamed-chunk-2-1}
 
-\hypertarget{a-describe-the-shape-of-the-distribution.}{%
-\subsection{(a) Describe the shape of the distribution.}\label{a-describe-the-shape-of-the-distribution.}}
+(a). Describe the shape of the distribution.
+
+Click for answer
 
 \emph{Answer:} Skewed to the right
 
-\hypertarget{b-do-there-appear-to-be-any-outliers-if-so-which-values}{%
-\subsection{(b) Do there appear to be any outliers? If so, which values?}\label{b-do-there-appear-to-be-any-outliers-if-so-which-values}}
+(b). Do there appear to be any outliers? If so, which values?
+
+Click for answer
 
 \emph{Answer:} Yes, it looks like there are a few high outliers above 300 million.
 
-\hypertarget{c-finding-outliers}{%
-\subsection{(c) Finding outliers}\label{c-finding-outliers}}
+(c). Finding outliers
 
 We can find the row numbers of cases (movies) that have \texttt{DomesticGross} greater than 300 (300 million dollars):
 
@@ -1366,22 +1422,25 @@ Run the \texttt{which} command to verify that rows 4 and 14. Then find out which
 
 Note that the \texttt{c(4,14)} part of this command creates a \textbf{vector} of the numbers 4 and 14 (the \texttt{c} stands for combine). Which movies are the outliers?
 
+Click for answer
+
 \emph{Answer:} Harry Potter and the Deathly Hallows Part 2 and Transformers: Dark of the Moon.
 
-\hypertarget{d-use-the-histogram-to-answer-is-the-median-less-than-100-million-about-100-million-above-100-million}{%
-\subsection{(d) Use the histogram to answer: Is the median less than 100 million, about 100 million, above 100 million?}\label{d-use-the-histogram-to-answer-is-the-median-less-than-100-million-about-100-million-above-100-million}}
+(d). Use the histogram to answer: Is the median less than 100 million, about 100 million, above 100 million?
+
+Click for answer
 
 \emph{Answer:} It is the point with half the data to the left and half to the right. The median is less than 100
 since 100 roughly 110 (80 + 30) cases below it which is well over half the movies in the data set.
 
-\hypertarget{e-do-you-expect-the-mean-to-be-greater-than-or-less-than-the-median.-explain.}{%
-\subsection{(e) Do you expect the mean to be greater than or less than the median. Explain.}\label{e-do-you-expect-the-mean-to-be-greater-than-or-less-than-the-median.-explain.}}
+(e). Do you expect the mean to be greater than or less than the median. Explain.
+
+Click for answer
 
 \emph{Answer:} Because the distribution is skewed to the right, we expect the mean to be larger than the median.
 The large outliers will pull the mean up and won't have much effect on the median.
 
-\hypertarget{f-computing-the-mean-and-median}{%
-\subsection{(f) Computing the mean and median}\label{f-computing-the-mean-and-median}}
+(f). Computing the mean and median
 
 You can get the mean and median a number of ways. Run these three commands:
 
@@ -1442,11 +1501,12 @@ What does \texttt{NA} stand for? How many movies have missing \texttt{DomesticGr
 136           8.60
 \end{verbatim}
 
+Click for answer
+
 \emph{Answer:} The \texttt{NA} value stands for ``Not Available'' which is used to code missing values. We can inspect the data frame and see that Hugo and Never Back Down 2 are the two movies that do not have domestic
 gross values.
 
-\hypertarget{g-missing-data}{%
-\subsection{(g) Missing data}\label{g-missing-data}}
+(g). Missing data
 
 There are some commands in R that ``fail'' as a default when missing data (\texttt{NA}) are present (\texttt{mean}, \texttt{median} and \texttt{sd} are examples). We can easily turn off this failure feature with the argument \texttt{na.rm=TRUE}
 
@@ -1470,8 +1530,7 @@ There are some commands in R that ``fail'' as a default when missing data (\text
 [1] 37.355
 \end{verbatim}
 
-\hypertarget{h-stats-without-outliers}{%
-\subsection{(h) Stats without outliers}\label{h-stats-without-outliers}}
+(h). Stats without outliers
 
 There are a number of ways to ``remove'' outliers from an analysis. Here we use the square bracket \texttt{{[}{]}} notation along with a minus \texttt{-} to remove row 4 (Harry Potter) from the variable \texttt{DomesticGross} before our summary stat calculations:
 
@@ -1487,6 +1546,8 @@ There are a number of ways to ``remove'' outliers from an analysis. Here we use 
 \end{verbatim}
 
 Why does the mean change more than the median when this case is removed? (compare (g) and (h) mean and median values)
+
+Click for answer
 
 \emph{Answer:} Both values go down after removing the highest grossing movie of the year, but the drop in the mean is more substantial. The mean drops by almost 4\% when Harry Potter is removed while the median only drops by about 0.1\%.
 
@@ -1510,8 +1571,7 @@ Why does the mean change more than the median when this case is removed? (compar
 [1] -0.147236
 \end{verbatim}
 
-\hypertarget{i-computing-standard-deviation}{%
-\subsection{(i) Computing standard deviation}\label{i-computing-standard-deviation}}
+(i). Computing standard deviation
 
 The standard deviation command is \texttt{sd}. We need to add the \texttt{na.rm} argument to obtain the SD for \texttt{DomesticGross}:
 
@@ -1527,10 +1587,11 @@ The standard deviation command is \texttt{sd}. We need to add the \texttt{na.rm}
 
 Look again at the distribution of \texttt{DomesticGross} shown in the histogram. Why is SD (variation around the mean) an inadequate measure of variation for this type of distribution?
 
+Click for answer
+
 \emph{Answer:} The is much more variation (spread) to the data above the mean than below it. Because the distribution is strongly skewed right, we can't use one measure of variation when describing how \texttt{DomesticGross} values vary around some central value (like a mean).
 
-\hypertarget{j-stats-by-genre}{%
-\subsection{\texorpdfstring{(j) Stats by \texttt{Genre}}{(j) Stats by Genre}}\label{j-stats-by-genre}}
+(j). Stats by \texttt{Genre}
 
 The \texttt{tapply(y,\ x,\ stat)} command gives the \texttt{stat} value of \texttt{y} for each level of \texttt{x}. Here we get the \texttt{summary} of \texttt{DomesticGross} for each type of \texttt{Genre}:
 
@@ -1586,6 +1647,8 @@ $Thriller
   Why are there no summary stats for the adventure genre?
 \end{itemize}
 
+Click for answer
+
 \emph{Answer:} To help answer these questions you really should explore the number of movies in each genrewith the table command.
 
 \begin{itemize}
@@ -1636,8 +1699,7 @@ $Thriller
 134            NA          11.36
 \end{verbatim}
 
-\hypertarget{k-extra-histogram-of-domesticgross-by-genre}{%
-\subsection{\texorpdfstring{(k) Extra: Histogram of \texttt{DomesticGross} by \texttt{Genre}}{(k) Extra: Histogram of DomesticGross by Genre}}\label{k-extra-histogram-of-domesticgross-by-genre}}
+(k). Extra: Histogram of \texttt{DomesticGross} by \texttt{Genre}
 
 (Not in Lab Manual) The \texttt{ggplot2} package allows you to create histograms separated by a categorical variable using the \texttt{facet\_wrap} command. Assuming that \texttt{ggplot2} is already installed, all you need to do is load it with \texttt{library} then create your graph:
 
@@ -1654,15 +1716,17 @@ $Thriller
 
 Which genre has the most variability in domestic gross?
 
+Click for answer
+
 \emph{Answer:} The action genre has the largest range of values.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{your-turn-2-4}{%
-\section{Your turn 2}\label{your-turn-2-4}}
+\hypertarget{your-turn-2-3}{%
+\section{Your turn 2}\label{your-turn-2-3}}
 
 \hypertarget{example-2-sleep}{%
-\section{Example 2: Sleep}\label{example-2-sleep}}
+\subsection{Example 2: Sleep}\label{example-2-sleep}}
 
 This histogram shows the distribution of hours or sleep per night for a large sample of students.
 
@@ -1675,13 +1739,13 @@ This histogram shows the distribution of hours or sleep per night for a large sa
 
 \includegraphics[width=1\linewidth]{Class_Activity_5_files/figure-latex/unnamed-chunk-16-1}
 
-\hypertarget{a-estimate-the-average-hours-of-sleep-per-night.}{%
-\subsection{(a) Estimate the average hours of sleep per night.}\label{a-estimate-the-average-hours-of-sleep-per-night.}}
+(a). Estimate the average hours of sleep per night.
+
+Click for answer
 
 \emph{Answer:} The mean is around 8 hours
 
-\hypertarget{b-use-the-95-rule-to-estimate-the-standard-deviation-for-this-data.}{%
-\subsection{(b) Use the 95\% rule to estimate the standard deviation for this data.}\label{b-use-the-95-rule-to-estimate-the-standard-deviation-for-this-data.}}
+(b). Use the 95\% rule to estimate the standard deviation for this data.
 
 \emph{Answer:} Most of the data is between about 6 and 10, with a mean around 8 (due to the roughly symmetric distribution). So two standard deviations is about 2 hours of sleep, making one standard deviation about 1 hours of sleep.
 
@@ -1712,8 +1776,9 @@ Let's check the rule. Here are the actual mean and SD:
 
 The ACT test has a population mean of 21 and standard deviation of 5. The SAT has a population mean of 1500 and a standard deviation of 325. You earned 28 on the ACT and 2100 on the SAT.
 
-\hypertarget{a-which-test-did-you-do-better-on}{%
-\subsection{(a) Which test did you do better on?}\label{a-which-test-did-you-do-better-on}}
+(a). Which test did you do better on?
+
+Click for answer
 
 \emph{Answer:}
 
@@ -1727,8 +1792,9 @@ The ACT test has a population mean of 21 and standard deviation of 5. The SAT ha
   The SAT score is 1.85 standard deviations above average while the ACT score is only 1.4 standard deviations above. You did better on the SAT.
 \end{itemize}
 
-\hypertarget{b-for-each-test-find-the-interval-that-is-likely-to-contain-about-95-of-all-test-scores.}{%
-\subsection{(b) For each test, find the interval that is likely to contain about 95\% of all test scores.}\label{b-for-each-test-find-the-interval-that-is-likely-to-contain-about-95-of-all-test-scores.}}
+(b). For each test, find the interval that is likely to contain about 95\% of all test scores.
+
+Click for answer
 
 \emph{Answer:}
 
@@ -1746,8 +1812,7 @@ The ACT test has a population mean of 21 and standard deviation of 5. The SAT ha
 
 For each five number summary below, indicate whether the data appear to be symmetric, skewed to the right, or skewed to the left.
 
-\hypertarget{a-2-10-15-20-69}{%
-\subsection{(a) (2, 10, 15, 20, 69)}\label{a-2-10-15-20-69}}
+(a). (2, 10, 15, 20, 69)
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1761,10 +1826,11 @@ For each five number summary below, indicate whether the data appear to be symme
       1      10      15      23      20      69 
 \end{verbatim}
 
+Click for answer
+
 \emph{Answer:} Skewed right. It has a longer right tail than left since \(max - Q3 >> Q1 - min\)
 
-\hypertarget{b-10-57-85-88-93}{%
-\subsection{(b) (10, 57, 85, 88, 93)}\label{b-10-57-85-88-93}}
+(b). (10, 57, 85, 88, 93)
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1778,10 +1844,11 @@ For each five number summary below, indicate whether the data appear to be symme
    10.0    57.0    85.0    66.6    88.0    93.0 
 \end{verbatim}
 
+Click for answer
+
 \emph{Answer:} Skewed left since mean is less than median.
 
-\hypertarget{c-200-300-400-500-600}{%
-\subsection{(c) (200, 300, 400, 500, 600)}\label{c-200-300-400-500-600}}
+(c). (200, 300, 400, 500, 600)
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1794,6 +1861,8 @@ For each five number summary below, indicate whether the data appear to be symme
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
     200     300     400     400     500     600 
 \end{verbatim}
+
+Click for answer
 
 \emph{Answer:} Symmetric since mean is same as median.
 
@@ -1811,8 +1880,7 @@ This boxplot shows the number of hot dogs eaten by the winners of Nathan's Famou
 
 \includegraphics[width=1\linewidth]{Class_Activity_5_files/figure-latex/unnamed-chunk-22-1}
 
-\hypertarget{a-use-the-boxplot-to-estimate-the-5-number-summary-and-iqr-for-this-data.}{%
-\subsection{(a) Use the boxplot to estimate the 5 number summary and IQR for this data.}\label{a-use-the-boxplot-to-estimate-the-5-number-summary-and-iqr-for-this-data.}}
+(a). Use the boxplot to estimate the 5 number summary and IQR for this data.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1822,10 +1890,11 @@ This boxplot shows the number of hot dogs eaten by the winners of Nathan's Famou
 
 \includegraphics[width=1\linewidth]{Class_Activity_5_files/figure-latex/unnamed-chunk-23-1}
 
+Click for answer
+
 \emph{Answer:} min = 45, Q1 = 50, m = 54, Q3 = 62, max = 67. IQR is about 62-50 or 12 hotdogs
 
-\hypertarget{b-computing-5-number-summaries}{%
-\subsection{(b) Computing 5 number summaries}\label{b-computing-5-number-summaries}}
+(b). Computing 5 number summaries
 
 R doesn't have `5 number summary' command, but \texttt{summary} gives you a ``6'' number summary by adding the mean to the 5 number summary. You can also use \texttt{IQR} to get the IQR:
 
@@ -1852,10 +1921,13 @@ R doesn't have `5 number summary' command, but \texttt{summary} gives you a ``6'
 
 How close were your guesses from the boxplot to the values given by this command?
 
+Click for answer
+
 (Answers will vary) Within one hotdog of the R values.
 
-\hypertarget{c-use-the-boxplot-outlier-rule-to-verify-that-there-are-no-outliers-in-this-data.}{%
-\subsection{(c) Use the boxplot outlier rule to verify that there are no outliers in this data.}\label{c-use-the-boxplot-outlier-rule-to-verify-that-there-are-no-outliers-in-this-data.}}
+(c). Use the boxplot outlier rule to verify that there are no outliers in this data.
+
+Click for answer
 
 \emph{Answer:}
 
@@ -1880,8 +1952,7 @@ Let's revist the \texttt{WorldGross} analysis from the Hollywood movies data set
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{a-draw-a-boxplot-of-worldgross.}{%
-\subsection{\texorpdfstring{(a) Draw a boxplot of \texttt{WorldGross}.}{(a) Draw a boxplot of WorldGross.}}\label{a-draw-a-boxplot-of-worldgross.}}
+(a). Draw a boxplot of \texttt{WorldGross}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1893,10 +1964,11 @@ Let's revist the \texttt{WorldGross} analysis from the Hollywood movies data set
 
 How many movies are identified as outliers for world gross?
 
+Click for answer
+
 \emph{Answer:} Just using the boxplot, there looks to be about 10 movies that are high outliers
 
-\hypertarget{b-calculating-boxplot-values}{%
-\subsection{(b) Calculating boxplot values}\label{b-calculating-boxplot-values}}
+(b). Calculating boxplot values
 
 Use the boxplot outlier rule to find the ``fence'' (cutoff) between an outlier and non-outlier for \texttt{WorldGross}. Then determine the value (of \texttt{WorldGross}) that the upper ``whisker'' (non-outlier) extends to.
 
@@ -1923,6 +1995,8 @@ Use the boxplot outlier rule to find the ``fence'' (cutoff) between an outlier a
 [1] 142.985
 \end{verbatim}
 
+Click for answer
+
 \begin{itemize}
 \item
   \(1.5IQR = 1.5(142.985) = 214.48\) hundred million dollars
@@ -1937,75 +2011,36 @@ Use the boxplot outlier rule to find the ``fence'' (cutoff) between an outlier a
 \begin{Shaded}
 \begin{Highlighting}[]
 \FloatTok{1.5}\SpecialCharTok{*}\FunctionTok{IQR}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{WorldGross, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] 214.4775
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
+\NormalTok{[}\DecValTok{1}\NormalTok{] }\FloatTok{214.4775}
 \FloatTok{30.710} \SpecialCharTok{{-}} \FloatTok{214.48}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] -183.77
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
+\NormalTok{[}\DecValTok{1}\NormalTok{] }\SpecialCharTok{{-}}\FloatTok{183.77}
 \FloatTok{173.7} \SpecialCharTok{+} \FloatTok{214.48}
+\NormalTok{[}\DecValTok{1}\NormalTok{] }\FloatTok{388.18}
 \end{Highlighting}
 \end{Shaded}
-
-\begin{verbatim}
-[1] 388.18
-\end{verbatim}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{notoutliers }\OtherTok{\textless{}{-}} \FunctionTok{which}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{WorldGross }\SpecialCharTok{\textless{}} \FloatTok{388.18}\NormalTok{)}
 \FunctionTok{max}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{WorldGross[notoutliers])}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] 368.404
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
+\NormalTok{[}\DecValTok{1}\NormalTok{] }\FloatTok{368.404}
 \FunctionTok{which}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{WorldGross }\SpecialCharTok{==} \FloatTok{368.404}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] 49
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
+\NormalTok{[}\DecValTok{1}\NormalTok{] }\DecValTok{49}
 \NormalTok{movies[}\DecValTok{49}\NormalTok{,]}
+\NormalTok{                                Movie LeadStudio}
+\DecValTok{49}\NormalTok{ Captain America}\SpecialCharTok{:}\NormalTok{ The First Avenger     Disney}
+\NormalTok{   RottenTomatoes AudienceScore         Story  Genre}
+\DecValTok{49}             \DecValTok{78}            \DecValTok{75}\NormalTok{ Metamorphosis Action}
+\NormalTok{   TheatersOpenWeek BOAverageOpenWeek DomesticGross}
+\DecValTok{49}             \DecValTok{3715}             \DecValTok{17512}        \FloatTok{176.65}
+\NormalTok{   ForeignGross WorldGross Budget Profitability}
+\DecValTok{49}       \FloatTok{191.75}    \FloatTok{368.404}    \DecValTok{140}      \FloatTok{2.631457}
+\NormalTok{   OpeningWeekend}
+\DecValTok{49}          \FloatTok{65.06}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{verbatim}
-                                Movie LeadStudio
-49 Captain America: The First Avenger     Disney
-   RottenTomatoes AudienceScore         Story  Genre
-49             78            75 Metamorphosis Action
-   TheatersOpenWeek BOAverageOpenWeek DomesticGross
-49             3715             17512        176.65
-   ForeignGross WorldGross Budget Profitability
-49       191.75    368.404    140      2.631457
-   OpeningWeekend
-49          65.06
-\end{verbatim}
-
-\hypertarget{c-side-by-side-boxplot}{%
-\subsection{(c) Side-by-side boxplot}\label{c-side-by-side-boxplot}}
+(c). Side-by-side boxplot
 
 We can compare boxplots of \texttt{WorldGross} across \texttt{Genre} categories:
 
@@ -2023,6 +2058,8 @@ We can compare boxplots of \texttt{WorldGross} across \texttt{Genre} categories:
   What does this type of graph illustrate well about the relationship between \texttt{WorldGross} and \texttt{Genre}?
 \end{itemize}
 
+Click for answer
+
 \emph{Answer:} Does a good job comparing median values and extremes
 
 \begin{itemize}
@@ -2030,6 +2067,8 @@ We can compare boxplots of \texttt{WorldGross} across \texttt{Genre} categories:
 \item
   What does this type of graph not illustrate well about the relationship between \texttt{WorldGross} and \texttt{Genre}?
 \end{itemize}
+
+Click for answer
 
 \emph{Answer:} It doesn't illustrate sample sizes well, e.g.~the fantacy genre only has 2 movies in it
 
@@ -2039,10 +2078,11 @@ We can compare boxplots of \texttt{WorldGross} across \texttt{Genre} categories:
   What is one issue with the default version of this graph?
 \end{itemize}
 
+Click for answer
+
 \emph{Answer:} The genre labels are not all present.
 
-\hypertarget{d-improving-the-default-boxplot}{%
-\subsection{(d) Improving the default boxplot}\label{d-improving-the-default-boxplot}}
+(d). Improving the default boxplot
 
 There are many values in \texttt{Genre} for this data and their values (levels) have longer names. This can cause issues when using these names to label graphs, like the x-axis in your boxplot. The are many (many, many) ways to modify graphs in R. Here is one way to change the label orientation on your x-axis.
 
@@ -2062,18 +2102,21 @@ The \texttt{las} arguments let's you change the orientation of the axis labels r
 The number of ants climbing on a piece of a peanut butter sandwich left on the ground near an anthill for a few minutes was measured 7 different times and the results are:
 \(43, 59, 22, 25, 36, 47, 19\)
 
-\hypertarget{a-calculate-the-mean-number-of-ants.}{%
-\subsection{(a) Calculate the mean number of ants.}\label{a-calculate-the-mean-number-of-ants.}}
+(a). Calculate the mean number of ants.
+
+Click for answer
 
 \emph{Answer:} \(\bar{x} = 35.857\)
 
-\hypertarget{b-calculate-the-median-number-of-ants.}{%
-\subsection{(b) Calculate the median number of ants.}\label{b-calculate-the-median-number-of-ants.}}
+(b). Calculate the median number of ants.
+
+Click for answer
 
 \emph{Answer:} Order data then find middle value: \(19, 22, 25, 36, 43, 47, 59\). Then \(m = 36\)
 
-\hypertarget{c-calculate-the-quartiles-for-the-number-of-ants.}{%
-\subsection{(c) Calculate the quartiles for the number of ants.}\label{c-calculate-the-quartiles-for-the-number-of-ants.}}
+(c). Calculate the quartiles for the number of ants.
+
+Click for answer
 
 \emph{Answer:} Since \(m = 36\), the first quartile will be the median of \(19, 22, 25: Q1 = 22.\) The third quartile will be the median of \(43, 47, 59: Q3 = 47.\)
 
@@ -2090,12 +2133,11 @@ A study of 16 Ohio State University students looked at the relationship between 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{bac }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"http://math.carleton.edu/kstclair/data/BAC.csv"}\NormalTok{)}
+\NormalTok{bac }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/deepbas/statdatasets/main/BAC.csv"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{a-always-start-with-a-visual}{%
-\subsection{(a) Always start with a visual!!!!}\label{a-always-start-with-a-visual}}
+(a). Always start with a visual!!!!
 
 Plot the response (BAC) on the y-axis and the explantory (``predictor'') on the x-axis.
 
@@ -2134,8 +2176,7 @@ You can modify this basic graph by adding a title and changing the plotting symb
 
 \includegraphics[width=1\linewidth]{Class_Activity_6_files/figure-latex/unnamed-chunk-3-1}
 
-\hypertarget{b-computing-correlation}{%
-\subsection{(b) Computing correlation}\label{b-computing-correlation}}
+(b). Computing correlation
 
 Since the \emph{form} of the relationship is linear, we can use \textbf{correlation} to measure its strength:
 
@@ -2149,8 +2190,7 @@ Since the \emph{form} of the relationship is linear, we can use \textbf{correlat
 [1] 0.8943381
 \end{verbatim}
 
-\hypertarget{c-fitting-a-regression-line}{%
-\subsection{(c) Fitting a regression line}\label{c-fitting-a-regression-line}}
+(c). Fitting a regression line
 
 We use the \texttt{lm(y\ \textasciitilde{}\ x,\ data=mydata)} function to fit a \textbf{l}inear (regression) \textbf{m}odel for a response y given an explanatory variable x. This command creates a \textbf{linear model object} that needs to be assigned a name, here we call it \texttt{bac.lm}. You can get the slope and intercept by typing out the object name:
 
@@ -2172,12 +2212,13 @@ Coefficients:
 \end{verbatim}
 
 \begin{itemize}
-\tightlist
 \item
   After running the \texttt{lm} command above in your R console, check the \textbf{Environment} tab to see that the object \texttt{bac.lm} is now one of the objects stored in R's memory (for this session of Rstudio).
 \item
   Write down the fitted regression equation to predict BAC from number of beers.
 \end{itemize}
+
+Click for answer
 
 \emph{Answer:} \(\hat{y} = \ldots\)
 
@@ -2199,18 +2240,21 @@ Coefficients:
 
 \includegraphics[width=1\linewidth]{Class_Activity_6_files/figure-latex/unnamed-chunk-6-1}
 
-\hypertarget{d-interpret-the-slope-in-context.}{%
-\subsection{(d) Interpret the slope in context.}\label{d-interpret-the-slope-in-context.}}
+(d). Interpret the slope in context.
+
+Click for answer
 
 \emph{Answer:} Drinking one more beer is associated with a 0.0180 unit increase in predicted BAC.
 
-\hypertarget{e-interpret-the-intercept-in-context-if-it-makes-sense-to-do-so.}{%
-\subsection{(e) Interpret the intercept in context, if it makes sense to do so.}\label{e-interpret-the-intercept-in-context-if-it-makes-sense-to-do-so.}}
+(e). Interpret the intercept in context, if it makes sense to do so.
+
+Click for answer
 
 \emph{Answer:} The intercept is -0.0127. A student who drinks 0 beers would be predicted to have a negative blood alcohol content. This is not possible so the intercept does not make sense in this context, but the intercept is included in the model to get the best fit line for the data collected.
 
-\hypertarget{f-if-your-friend-at-ohio-state-drank-2-beers-what-would-you-predict-their-bac-to-be}{%
-\subsection{(f) If your friend at Ohio State drank 2 beers, what would you predict their BAC to be?}\label{f-if-your-friend-at-ohio-state-drank-2-beers-what-would-you-predict-their-bac-to-be}}
+(f). If your friend at Ohio State drank 2 beers, what would you predict their BAC to be?
+
+Click for answer
 
 \emph{Answer:} The predicted BAC is
 \[
@@ -2228,8 +2272,9 @@ Coefficients:
 [1] 0.0233
 \end{verbatim}
 
-\hypertarget{g-find-the-residual-for-the-student-in-the-dataset-who-drank-2-beers-and-had-a-bac-of-0.03.}{%
-\subsection{(g) Find the residual for the student in the dataset who drank 2 beers and had a BAC of 0.03.}\label{g-find-the-residual-for-the-student-in-the-dataset-who-drank-2-beers-and-had-a-bac-of-0.03.}}
+(g). Find the residual for the student in the dataset who drank 2 beers and had a BAC of 0.03.
+
+Click for answer
 
 \emph{Answer:} The residual is
 \[
@@ -2246,8 +2291,9 @@ BAC - \widehat{BAC} = .03 - .0233=0.0067
 [1] 0.0067
 \end{verbatim}
 
-\hypertarget{h-getting-residuals-in-r}{%
-\subsection{(h) Getting residuals in R}\label{h-getting-residuals-in-r}}
+(h). Getting residuals in R
+
+Click for answer
 
 We can use the \texttt{resid} command to get the residuals for each case in the data set:
 
@@ -2303,8 +2349,9 @@ Notice that case 2 in the data drank 2 beers and had a BAC recorded as 0.03. We 
 0.00677308 
 \end{verbatim}
 
-\hypertarget{i-getting-r2-value}{%
-\subsection{\texorpdfstring{(i) Getting \(R^2\) value}{(i) Getting R\^{}2 value}}\label{i-getting-r2-value}}
+(i). Getting \(R^2\) value
+
+Click for answer
 
 You can use the \texttt{summary} command on an \texttt{lm} object to get a more detailed print out of your linear model, along with the \(R^2\) value for your model:
 
@@ -2336,8 +2383,9 @@ Multiple R-squared:  0.7998,    Adjusted R-squared:  0.7855
 F-statistic: 55.94 on 1 and 14 DF,  p-value: 2.969e-06
 \end{verbatim}
 
-\hypertarget{j-making-a-residuals-plot}{%
-\subsection{(j) Making a residuals plot}\label{j-making-a-residuals-plot}}
+(j). Making a residuals plot
+
+Click for answer
 
 The regression of \texttt{BAC} on \texttt{Beers} has a residuals plot that plots the model's residuals on the y-axis and the explantory (``predictor'') on the x-axis. We add a horizontal reference line (the detrended regression line) with the \texttt{abline(h=0)} command:
 
@@ -2359,11 +2407,11 @@ The regression of \texttt{BAC} on \texttt{Beers} has a residuals plot that plots
   Is the magnitude of the scatter around the horizontal 0-line in the residuals plot greater than, less than, or the same as the magnitude of the scatter around the regression line in the scatterplot?
 \end{itemize}
 
+Click for answer
+
 \emph{Answer:} The same! The residuals plot is only a ``detrended'' scatterplot, meaning the vertical distances between a point and the regression line on the scatterplot or a point and the 0-line on the residuals plot are exactly the same. The residual plot looks more scattered because the trend is removed and the scale of the y-axis compressed.
 
-\hypertarget{k-identifying-points}{%
-\subsection{(k) Identifying points}\label{k-identifying-points}}
-
+(k). Identifying points
 The \texttt{which} command can be used to identify points by their row number in a scatterplot.
 
 We can use \texttt{==} to see which case drank exactly 9 beers. Which is the row number of the case that drank 9 beers?
@@ -2386,9 +2434,13 @@ We can use \texttt{==} to see which case drank exactly 9 beers. Which is the row
 [1] 3
 \end{verbatim}
 
+Click for answer
+
 \emph{Answer:} Row 3.
 
 What is the row number of the case with the most negative residual?
+
+Click for answer
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2428,12 +2480,13 @@ But this identifies 3 cases. We also can see that the lowest residual drank 5 be
 -0.02711821 
 \end{verbatim}
 
-\hypertarget{l-checking-outlier-influence}{%
-\subsection{(l) Checking outlier influence}\label{l-checking-outlier-influence}}
+(l). Checking outlier influence
 
 Will the regression line slope increase, decrease or stay the same if we remove case 3, the 9 beer case, from our model?
 
 Check your answer by adding \texttt{subset\ =\ -3} to the \texttt{lm} command (this removes row 3):
+
+Click for answer
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2513,10 +2566,11 @@ F-statistic: 55.94 on 1 and 14 DF,  p-value: 2.969e-06
   After removing case 3, how has the \(R^2\) changed? Explain the why the change occurred.
 \end{itemize}
 
+Click for answer
+
 \emph{Answer:} The \(R^2\) decreases from 79.9\% to 76.8\%. This small decrease happens because case 3 actually enhances the overall linear trend and removing it results is a slight decrease to correlation and \(R^2\).
 
-\hypertarget{m-adding-a-categorical-variable-to-your-plot}{%
-\subsection{(m) Adding a categorical variable to your plot}\label{m-adding-a-categorical-variable-to-your-plot}}
+(m). Adding a categorical variable to your plot
 
 We can create a scatterplot with plotting symbols color coded by a categorical grouping variable using \texttt{ggplot2} package. We use the \texttt{geom\_point()} plot geometry to get a scatterplot with the \texttt{x}, \texttt{y}, and \texttt{color} aesthetics specified. Here we look at the \texttt{BAC} vs.~\texttt{Beers} plot with \texttt{Gender} added:
 
@@ -2535,10 +2589,11 @@ We can create a scatterplot with plotting symbols color coded by a categorical g
   Are the associations similar? (form, strength, direction)
 \end{itemize}
 
+Click for answer
+
 \emph{Answer:} Both females and males have similar strong, positive linear associations.
 
-\hypertarget{n-regression-lines-by-groups}{%
-\subsection{(n) Regression lines by groups}\label{n-regression-lines-by-groups}}
+(n). Regression lines by groups
 
 A quick way to get the male and female regression line formulas for part (c) is to add a \texttt{subset} argument to the \texttt{lm} command:
 
@@ -2584,6 +2639,8 @@ Coefficients:
   What is the regression line for females? for males?
 \end{itemize}
 
+Click for answer
+
 \emph{Answer:} For females: \(\widehat{BAC} = -0.016 +0.021(BAC)\) and for males: \(\widehat{BAC} = -0.01 +0.015(BAC)\)
 
 \begin{itemize}
@@ -2591,6 +2648,8 @@ Coefficients:
 \item
   Which gender has the largest slope? What does this suggest about the relationship between number of beers and BAC for this gender?
 \end{itemize}
+
+Click for answer
 
 \emph{Answer:} The slope for females is slightly higher. This shows that the effect of one more beer on predicted BAC in females is larger than males (a 0.021 increase vs.~a 0.015 increase).
 
@@ -2630,6 +2689,8 @@ Coefficients:
   -0.009785     0.015341  
 \end{verbatim}
 
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
 \hypertarget{mice-mass-example}{%
 \subsection{Mice Mass Example}\label{mice-mass-example}}
 
@@ -2637,8 +2698,8 @@ The time of day in which calories are consumed can affect weight gain. At least,
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{mice }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"http://math.carleton.edu/Stats215/Textbook/LightatNight4Weeks.csv"}\NormalTok{)}
-
+\NormalTok{mice }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/deepbas/statdatasets/main/MICE.csv"}\NormalTok{)}
+  
 \FunctionTok{plot}\NormalTok{(BMGain }\SpecialCharTok{\textasciitilde{}}\NormalTok{ DayPct, }\AttributeTok{data=}\NormalTok{mice, }\AttributeTok{pch=}\DecValTok{19}\NormalTok{)}
 \NormalTok{mice.lm }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(BMGain }\SpecialCharTok{\textasciitilde{}}\NormalTok{ DayPct, }\AttributeTok{data=}\NormalTok{mice)}
 \NormalTok{mice.lm}
@@ -2673,8 +2734,7 @@ Coefficients:
 
 \includegraphics[width=1\linewidth]{Class_Activity_6_files/figure-latex/unnamed-chunk-22-1}
 
-\hypertarget{a-what-are-the-coordinates-roughly-of-the-case-with-the-largest-positive-residual}{%
-\subsection{(a) What are the coordinates (roughly) of the case with the largest positive residual?}\label{a-what-are-the-coordinates-roughly-of-the-case-with-the-largest-positive-residual}}
+(a). What are the coordinates (roughly) of the case with the largest positive residual?
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2683,16 +2743,17 @@ Coefficients:
 \end{Shaded}
 
 \begin{verbatim}
-   Light BMGain Corticosterone DayPct Consumption
-25    LL   17.4         66.679 81.636       7.177
+    X Light BMGain Corticosterone DayPct Consumption
+25 25    LL   17.4         66.679 81.636       7.177
    GlucoseInt   GTT15  GTT120 Activity
 25        Yes 435.644 405.941     6702
 \end{verbatim}
 
+Click for answer
+
 \emph{Answer:} The case with the largest residual is located at about 80\% calories and 17g body mass gain. We can find which row this corresponds to using the \texttt{which} command shown below.
 
-\hypertarget{b-what-are-the-coordinates-roughly-of-the-case-with-the-most-negative-residual}{%
-\subsection{(b) What are the coordinates (roughly) of the case with the most negative residual?}\label{b-what-are-the-coordinates-roughly-of-the-case-with-the-most-negative-residual}}
+(b). What are the coordinates (roughly) of the case with the most negative residual?
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2701,16 +2762,17 @@ Coefficients:
 \end{Shaded}
 
 \begin{verbatim}
-   Light BMGain Corticosterone DayPct Consumption
-10    DM   3.42         208.26 55.051       3.857
+    X Light BMGain Corticosterone DayPct Consumption
+10 10    DM   3.42         208.26 55.051       3.857
    GlucoseInt   GTT15  GTT120 Activity
 10         No 271.717 148.485     1084
 \end{verbatim}
 
+Click for answer
+
 \emph{Answer:} The case with the most negative residual is located at about 55\% calories and 3g body mass gain. We can find which row this corresponds to using the \texttt{which} command shown below. The code below also highlights the cases in (a) with a circle and (b) with a square.
 
-\hypertarget{c-what-is-the-predicted-body-mass-gain-for-a-mouse-that-eats-50-of-its-calories-during-the-day}{%
-\subsection{(c) What is the predicted body mass gain for a mouse that eats 50\% of its calories during the day?}\label{c-what-is-the-predicted-body-mass-gain-for-a-mouse-that-eats-50-of-its-calories-during-the-day}}
+(c). What is the predicted body mass gain for a mouse that eats 50\% of its calories during the day?
 
 \[
 \widehat{BMGain} =1.1128+0.1273(50)=7.48
@@ -2726,10 +2788,13 @@ Coefficients:
 [1] 7.4778
 \end{verbatim}
 
+Click for answer
+
 \emph{Answer:} A mouse that eats 50\% of its calories during the day is predicted to gain 7.48 grams.
 
-\hypertarget{d-find-the-residual-for-the-mouse-who-ate-48.3-of-its-calories-during-the-day-and-gained-5.82-grams.}{%
-\subsection{(d) Find the residual for the mouse who ate 48.3\% of its calories during the day and gained 5.82 grams.}\label{d-find-the-residual-for-the-mouse-who-ate-48.3-of-its-calories-during-the-day-and-gained-5.82-grams.}}
+(d). Find the residual for the mouse who ate 48.3\% of its calories during the day and gained 5.82 grams.
+
+Click for answer
 
 \emph{Answer:} We first find the predicted body mass gain:
 \[
@@ -2761,18 +2826,19 @@ Residual = BMGain  -   \widehat{BMGain} =  5.82 – 7.26 = –1.44.
 [1] -1.44139
 \end{verbatim}
 
-\hypertarget{e-interpret-the-slope-of-the-regression-line-in-context.}{%
-\subsection{(e) Interpret the slope of the regression line in context.}\label{e-interpret-the-slope-of-the-regression-line-in-context.}}
+(e). Interpret the slope of the regression line in context.
+
+Click for answer
 
 \emph{Answer:} The slope is 0.1273. When a mouse eats one more percent of its calories during the day, its predicted body mass gain goes up by 0.1273 grams.
 
-\hypertarget{f-interpret-the-intercept-of-the-line-in-context-if-it-makes-sense-to-do-so.}{%
-\subsection{(f) Interpret the intercept of the line in context, if it makes sense to do so.}\label{f-interpret-the-intercept-of-the-line-in-context-if-it-makes-sense-to-do-so.}}
+(f). Interpret the intercept of the line in context, if it makes sense to do so.
+
+Click for answer
 
 \emph{Answer:} The intercept is 1.1128. A mouse who eats 0\% of its calories during the day (and all of them at night when a mouse normally eats all its food) is predicted to gain 1.11 grams. But this would be \textbf{extrapolation} because the range of observed percents is, roughly, 20-90. It does not make sense to interpret the intercept in this context.
 
-\hypertarget{g-use-the-correlation-value-to-compute-r2-then-interpret-in-context-the-r2-value-for-this-model.}{%
-\subsection{\texorpdfstring{(g) Use the correlation value to compute \(R^2\), then interpret (in context) the \(R^2\) value for this model.}{(g) Use the correlation value to compute R\^{}2, then interpret (in context) the R\^{}2 value for this model.}}\label{g-use-the-correlation-value-to-compute-r2-then-interpret-in-context-the-r2-value-for-this-model.}}
+(g). Use the correlation value to compute \(R^2\), then interpret (in context) the \(R^2\) value for this model.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2785,8 +2851,7 @@ Residual = BMGain  -   \widehat{BMGain} =  5.82 – 7.26 = –1.44.
 [1] 0.5473962
 \end{verbatim}
 
-\hypertarget{h-get-the-value-of-r2-from-the-regression-output-then-interpret-in-context-the-r2-value-for-this-model.}{%
-\subsection{\texorpdfstring{(h) Get the value of \(R^2\) from the regression output, then interpret (in context) the \(R^2\) value for this model.}{(h) Get the value of R\^{}2 from the regression output, then interpret (in context) the R\^{}2 value for this model.}}\label{h-get-the-value-of-r2-from-the-regression-output-then-interpret-in-context-the-r2-value-for-this-model.}}
+(h). Get the value of \(R^2\) from the regression output, then interpret (in context) the \(R^2\) value for this model.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2816,6 +2881,8 @@ Multiple R-squared:  0.5474,    Adjusted R-squared:  0.5293
 F-statistic: 30.24 on 1 and 25 DF,  p-value: 1.032e-05
 \end{verbatim}
 
+Click for answer
+
 \emph{Answer:} From \texttt{Multiple\ R-squared}, we get \(R^2 = 0.547\). The percent of calories that a mouse eats during the day explains about 55\% of the variability in weight gain for this study.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -2825,15 +2892,11 @@ F-statistic: 30.24 on 1 and 25 DF,  p-value: 1.032e-05
 
 In the mid 1800s, James D. Forbes conducted a experiments designed to determine if the atmospheric pressure at a given location can just be determined by the boiling temp of water at that location.
 
-\hypertarget{a-fit-the-linear-regression-of-pressure-on-temp}{%
-\subsection{\texorpdfstring{(a) Fit the linear regression of \texttt{Pressure} on \texttt{Temp}:}{(a) Fit the linear regression of Pressure on Temp:}}\label{a-fit-the-linear-regression-of-pressure-on-temp}}
+(a). Fit the linear regression of \texttt{Pressure} on \texttt{Temp}:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(MASS)}
-\FunctionTok{data}\NormalTok{(}\StringTok{"forbes"}\NormalTok{)}
-
-\NormalTok{forbes }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"http://math.carleton.edu/kstclair/data/forbes.csv"}\NormalTok{)}
+\NormalTok{forbes }\OtherTok{\textless{}{-}}  \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/deepbas/statdatasets/main/forbes.csv"}\NormalTok{)}
 \FunctionTok{plot}\NormalTok{(Pressure }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Temp, }\AttributeTok{data=}\NormalTok{forbes, }\AttributeTok{pch=}\DecValTok{19}\NormalTok{, }\AttributeTok{main =} \StringTok{"Pressure vs. Temp"}\NormalTok{)}
 \NormalTok{forbes.lm }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(Pressure }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Temp, }\AttributeTok{data=}\NormalTok{forbes)}
 \FunctionTok{abline}\NormalTok{(forbes.lm)}
@@ -2876,6 +2939,8 @@ F-statistic:  2677 on 1 and 15 DF,  p-value: < 2.2e-16
   Describe the relationship between pressure and temp (strength, form, direction).
 \end{itemize}
 
+Click for answer
+
 \emph{Answer:} This is a strong, positive relationship that looks linear.
 
 \begin{itemize}
@@ -2884,10 +2949,11 @@ F-statistic:  2677 on 1 and 15 DF,  p-value: < 2.2e-16
   Interpret the value of \(R^2\)
 \end{itemize}
 
+Click for answer
+
 \emph{Answer:} About 99.4\% of the variation observed in pressure can be explained by the boiling point temps.
 
-\hypertarget{b-check-the-residuals-plot}{%
-\subsection{(b) Check the residuals plot}\label{b-check-the-residuals-plot}}
+(b). Check the residuals plot
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2904,6 +2970,8 @@ F-statistic:  2677 on 1 and 15 DF,  p-value: < 2.2e-16
   Is the relationship between pressure and temp linear?
 \end{itemize}
 
+Click for answer
+
 \emph{Answer:} No! There is curvature, which means the linear model is systematically underestimating pressure at low and high temps and overestimating pressure at mid-range temps.
 
 \begin{itemize}
@@ -2912,10 +2980,11 @@ F-statistic:  2677 on 1 and 15 DF,  p-value: < 2.2e-16
   Does the residual plot highlight an unusual case? Explain.
 \end{itemize}
 
+Click for answer
+
 \emph{Answer:} Yes, there is one case that has an unusually high pressure value given its temp.
 
-\hypertarget{c-fixing-the-model}{%
-\subsection{(c) ``Fixing'' the model}\label{c-fixing-the-model}}
+(c). ``Fixing'' the model
 
 A linear model can be used with this data if we \textbf{transform} the response variable to the logarithmic scale. Here \texttt{log(y)} gives the natural log of the variable \texttt{y}.
 
@@ -2944,6 +3013,8 @@ A linear model can be used with this data if we \textbf{transform} the response 
   Has the curvature in the scatterplot and residuals plots been reduced by logging the variables?
 \end{itemize}
 
+Click for answer
+
 \emph{Answer:} Yes, there is less curvature
 
 \begin{itemize}
@@ -2952,10 +3023,11 @@ A linear model can be used with this data if we \textbf{transform} the response 
   Has the outlier been eliminated by logging the variables?
 \end{itemize}
 
+Click for answer
+
 \emph{Answer:} No, the outlier is still present.
 
-\hypertarget{d-removing-bad-measurement}{%
-\subsection{(d) Removing bad measurement}\label{d-removing-bad-measurement}}
+(d). Removing bad measurement
 
 Identify which case has the large residual value around 0.03.
 
@@ -2971,6 +3043,8 @@ Identify which case has the large residual value around 0.03.
 \end{verbatim}
 
 Repeat part (c) but this time remove the case you identified. The easiest way to do this is to create a new version of the data with row 12 removed:
+
+Click for answer
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2998,35 +3072,14 @@ Repeat part (c) but this time remove the case you identified. The easiest way to
 \hypertarget{your-turn-1-5}{%
 \section{Your Turn 1}\label{your-turn-1-5}}
 
-\hypertarget{few-instructions}{%
-\section{Few Instructions}\label{few-instructions}}
-
-The default setting in Rstudio when you are running chunks is that the ``output'' (numbers, graphs) are
-shown \textbf{inline} within the Markdown Rmd. If you prefer to have your plots appear on the right of the console and not below the chunk, then change the settings as follows:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Select Tools \textgreater{} Global Options.
-\item
-  Click the R Markdown section and uncheck (if needed) the option Show output inline for all
-  R Markdown documents.
-\item
-  Click OK.
-\end{enumerate}
-
-Now try running R chunks in the .Rmd file to see the difference. You can recheck this box if you prefer
-the default setting.
-
 \hypertarget{parameters-and-statistics}{%
-\section{Parameters and Statistics}\label{parameters-and-statistics}}
+\subsection{Parameters and Statistics}\label{parameters-and-statistics}}
 
 Here are some notations that will be useful for you. Look for the codes to produce this in the associated Rmd file.
 
 \begin{longtable}[]{@{}lll@{}}
 \toprule()
-~ & \textcolor{red}{Parameter} & \textcolor{red}{Statistic} \\
+~ & Parameter & Statistic \\
 \midrule()
 \endhead
 Mean & \(\mu\) & \(\bar{x}\) \\
@@ -3040,44 +3093,50 @@ Slope & \(\beta\) & \(b\) \\
 \vspace*{1in}
 
 \hypertarget{example-1-parameters-and-statistics}{%
-\section{Example 1: Parameters and Statistics}\label{example-1-parameters-and-statistics}}
+\subsection{Example 1: Parameters and Statistics}\label{example-1-parameters-and-statistics}}
 
 For each of the following, state whether the quantity described is a parameter or a statistic, and give the correct notation.
 
-\hypertarget{a.-average-household-income-for-all-houses-in-the-us-using-data-from-the-us-census}{%
-\subsection{a. Average household income for all houses in the US, using data from the US census}\label{a.-average-household-income-for-all-houses-in-the-us-using-data-from-the-us-census}}
+(a). Average household income for all houses in the US, using data from the US census
+
+Click for answer
 
 \emph{Answer:} This is a parameter since the mean is for all houses in the US, and the notation is \(\mu\).
 
-\hypertarget{b.-the-proportion-of-all-residents-in-a-county-who-voted-in-the-last-presidential-election.}{%
-\subsection{b. The proportion of all residents in a county who voted in the last presidential election.}\label{b.-the-proportion-of-all-residents-in-a-county-who-voted-in-the-last-presidential-election.}}
+(b). The proportion of all residents in a county who voted in the last presidential election.
+
+Click for answer
 
 \emph{Answer:} This is a parameter since we have information on all the residents, and the notation is p.
 
-\hypertarget{c.-the-difference-in-proportion-who-have-ever-smoked-cigarettes-between-a-sample-of-500-people-who-are-60-years-old-and-a-sample-of-200-people-who-are-25-years-old.}{%
-\subsection{c.~The difference in proportion who have ever smoked cigarettes, between a sample of 500 people who are 60 years old and a sample of 200 people who are 25 years old.}\label{c.-the-difference-in-proportion-who-have-ever-smoked-cigarettes-between-a-sample-of-500-people-who-are-60-years-old-and-a-sample-of-200-people-who-are-25-years-old.}}
+(c). The difference in proportion who have ever smoked cigarettes, between a sample of 500 people who are 60 years old and a sample of 200 people who are 25 years old.
+
+Click for answer
 
 \emph{Answer:} We use statistics since the proportions are from samples. The notation for the difference in sample proportions is \(\hat{p}_1 - \hat{p}_2\)
 
-\hypertarget{d.-the-correlation-between-weight-and-height-for-5-year-old-kids.}{%
-\subsection{d.~The correlation between weight and height for 5-year old kids.}\label{d.-the-correlation-between-weight-and-height-for-5-year-old-kids.}}
+(d). The correlation between weight and height for 5-year old kids.
+
+Click for answer
 
 \emph{Answer:} If we are looking at all 5-year old kids it is a parameter, and the notation for correlation is \(\rho\).
 
-\hypertarget{e.-the-mean-number-of-extracurricular-activities-from-a-random-sample-of-50-students-at-your-school.}{%
-\subsection{e. The mean number of extracurricular activities from a random sample of 50 students at your school.}\label{e.-the-mean-number-of-extracurricular-activities-from-a-random-sample-of-50-students-at-your-school.}}
+(e). The mean number of extracurricular activities from a random sample of 50 students at your school.
+
+Click for answer
 
 \emph{Answer:} This is a statistic since the mean is from a sample, and the notation is \(\mu\).
 
-\vspace*{1in}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{example-2-using-search-engines-on-the-internet}{%
 \section{Example 2: Using Search Engines on the Internet}\label{example-2-using-search-engines-on-the-internet}}
 
 A 2012 survey of a random sample of 2253 US adults found that 1,329 of them reported using a search engine (such as Google) every day to find information on the Internet.
 
-\hypertarget{a.-find-the-relevant-proportion-and-give-the-correct-notation-with-it.}{%
-\subsection{a). Find the relevant proportion and give the correct notation with it.}\label{a.-find-the-relevant-proportion-and-give-the-correct-notation-with-it.}}
+(a). Find the relevant proportion and give the correct notation with it.
+
+Click for answer
 
 \emph{Answer:} \(\hat{p} = 1329/2253\)
 
@@ -3085,50 +3144,55 @@ A 2012 survey of a random sample of 2253 US adults found that 1,329 of them repo
 \begin{Highlighting}[]
 \NormalTok{p.hat }\OtherTok{\textless{}{-}} \DecValTok{1329}\SpecialCharTok{/}\DecValTok{2253}
 \NormalTok{p.hat}
-\NormalTok{[}\DecValTok{1}\NormalTok{] }\FloatTok{0.5898802}
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{b.-is-your-answer-to-part-a-a-parameter-or-a-statistic}{%
-\subsection{b). Is your answer to part (a) a parameter or a statistic?}\label{b.-is-your-answer-to-part-a-a-parameter-or-a-statistic}}
+\begin{verbatim}
+[1] 0.5898802
+\end{verbatim}
+
+b). Is your answer to part (a) a parameter or a statistic?
+
+Click for answer
 
 \emph{Answer:} Statistic
 
-\hypertarget{c.-give-notation-for-and-define-the-population-parameter-that-we-estimate-using-the-result-of-part-a.}{%
-\subsection{c). Give notation for and define the population parameter that we estimate using the result of part (a).}\label{c.-give-notation-for-and-define-the-population-parameter-that-we-estimate-using-the-result-of-part-a.}}
+c). Give notation for and define the population parameter that we estimate using the result of part (a).
+
+Click for answer
 
 \emph{Answer:} p = the proportion of all US adults that would report that they use an Internet search engine every day
 
-\vspace*{1in}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{example-3-simulation-of-a-sample-proportion}{%
-\section{Example 3: Simulation of a Sample Proportion}\label{example-3-simulation-of-a-sample-proportion}}
+\subsection{Example 3: Simulation of a Sample Proportion}\label{example-3-simulation-of-a-sample-proportion}}
 
 According to a PEW survey, \(66\%\) of U.S. adult citizens casted a ballot in the 2020 election. Suppose we take a random sample of \(n=100\) eligible U.S. voters and computed the sample proportion who voted.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\# Call the library}
-\FunctionTok{library}\NormalTok{(ggplot2)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{Shaded}
-\begin{Highlighting}[]
 \CommentTok{\# Define parameters}
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{123}\NormalTok{) }\CommentTok{\# set seed for reproducibility}
 \NormalTok{pop.prop }\OtherTok{\textless{}{-}}\NormalTok{ .}\DecValTok{66} \CommentTok{\# Population proportion}
 \NormalTok{n.size }\OtherTok{\textless{}{-}} \DecValTok{100}  \CommentTok{\# sample size}
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{a-generate-a-random-sample-of-size-n-100-and-plot-its-sample-proportion.}{%
-\subsection{\texorpdfstring{(a) Generate a random sample of size \(n= 100\) and plot its sample proportion.}{(a) Generate a random sample of size n= 100 and plot its sample proportion.}}\label{a-generate-a-random-sample-of-size-n-100-and-plot-its-sample-proportion.}}
+(a). Generate a random sample of size \(n= 100\) and plot its sample proportion.
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# Generate 1 sample}
 \NormalTok{sample1 }\OtherTok{\textless{}{-}} \FunctionTok{rbinom}\NormalTok{(}\AttributeTok{n =} \DecValTok{1}\NormalTok{, }\AttributeTok{size =}\NormalTok{ n.size, }\AttributeTok{p =}\NormalTok{ pop.prop) }\CommentTok{\# R simulates the samples}
 \NormalTok{sample.prop1 }\OtherTok{\textless{}{-}}\NormalTok{ sample1}\SpecialCharTok{/}\NormalTok{n.size }\CommentTok{\#  Proportion = No. of Success / Sample Size}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Call the library}
+\FunctionTok{library}\NormalTok{(ggplot2)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -3146,10 +3210,9 @@ According to a PEW survey, \(66\%\) of U.S. adult citizens casted a ballot in th
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics[width=1\linewidth]{Class_Activity_7_files/figure-latex/unnamed-chunk-6-1}
+\includegraphics[width=1\linewidth]{Class_Activity_7_files/figure-latex/unnamed-chunk-5-1}
 
-\hypertarget{b-generate-5-random-samples-of-size-n-100-and-plot-the-sample-proportions.}{%
-\subsection{\texorpdfstring{(b) Generate 5 random samples of size \(n= 100\) and plot the sample proportions.}{(b) Generate 5 random samples of size n= 100 and plot the sample proportions.}}\label{b-generate-5-random-samples-of-size-n-100-and-plot-the-sample-proportions.}}
+(b). Generate 5 random samples of size \(n= 100\) and plot the sample proportions.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3167,10 +3230,9 @@ According to a PEW survey, \(66\%\) of U.S. adult citizens casted a ballot in th
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics[width=1\linewidth]{Class_Activity_7_files/figure-latex/unnamed-chunk-7-1}
+\includegraphics[width=1\linewidth]{Class_Activity_7_files/figure-latex/unnamed-chunk-6-1}
 
-\hypertarget{c-generate-1000-random-samples-of-size-n-100-and-plot-the-sample-proportions.}{%
-\subsection{\texorpdfstring{(c) Generate 1000 random samples of size \(n= 100\) and plot the sample proportions.}{(c) Generate 1000 random samples of size n= 100 and plot the sample proportions.}}\label{c-generate-1000-random-samples-of-size-n-100-and-plot-the-sample-proportions.}}
+(c). Generate 1000 random samples of size \(n= 100\) and plot the sample proportions.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3188,7 +3250,7 @@ According to a PEW survey, \(66\%\) of U.S. adult citizens casted a ballot in th
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics[width=1\linewidth]{Class_Activity_7_files/figure-latex/unnamed-chunk-8-1}
+\includegraphics[width=1\linewidth]{Class_Activity_7_files/figure-latex/unnamed-chunk-7-1}
 
 \emph{Question:} What does each dot represent?
 
@@ -3210,9 +3272,12 @@ According to a PEW survey, \(66\%\) of U.S. adult citizens casted a ballot in th
 \begin{Highlighting}[]
 \CommentTok{\# r{-}code}
 \FunctionTok{mean}\NormalTok{(sample.prop1000)}
-\NormalTok{[}\DecValTok{1}\NormalTok{] }\FloatTok{0.65938}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+[1] 0.65962
+\end{verbatim}
 
 \emph{Question:} What is the standard deviation of this distribution? (Hint: use the 95\% rule.)
 
@@ -3226,12 +3291,14 @@ According to a PEW survey, \(66\%\) of U.S. adult citizens casted a ballot in th
 \begin{Highlighting}[]
 \CommentTok{\# r{-}code}
 \FunctionTok{sd}\NormalTok{(sample.prop1000)}
-\NormalTok{[}\DecValTok{1}\NormalTok{] }\FloatTok{0.04767482}
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{d-repeat-partc-with-sample-size-20-instead-of-100.-generate-1000-samples.}{%
-\subsection{(d) Repeat part(c) with sample size 20 instead of 100. Generate 1000 samples.}\label{d-repeat-partc-with-sample-size-20-instead-of-100.-generate-1000-samples.}}
+\begin{verbatim}
+[1] 0.0483176
+\end{verbatim}
+
+(d). Repeat part(c) with sample size 20 instead of 100. Generate 1000 samples.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3251,7 +3318,7 @@ According to a PEW survey, \(66\%\) of U.S. adult citizens casted a ballot in th
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics[width=1\linewidth]{Class_Activity_7_files/figure-latex/unnamed-chunk-11-1}
+\includegraphics[width=1\linewidth]{Class_Activity_7_files/figure-latex/unnamed-chunk-10-1}
 
 \emph{Question:} How has the sampling distribution changed? (Shape? Center? Variability?)
 
@@ -3260,14 +3327,24 @@ According to a PEW survey, \(66\%\) of U.S. adult citizens casted a ballot in th
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{mean}\NormalTok{(sample.prop1000)}
-\NormalTok{[}\DecValTok{1}\NormalTok{] }\FloatTok{0.6606}
-\FunctionTok{sd}\NormalTok{(sample.prop1000)}
-\NormalTok{[}\DecValTok{1}\NormalTok{] }\FloatTok{0.1042041}
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{d-now-suppose-the-population-proportion-is-p0.90-instead-of-p0.66-in-part-e.-keep-n.size20.}{%
-\subsection{\texorpdfstring{(d) Now suppose the population proportion is \(p=0.90\) instead of \(p=0.66\) in part (e). Keep n.size=20.}{(d) Now suppose the population proportion is p=0.90 instead of p=0.66 in part (e). Keep n.size=20.}}\label{d-now-suppose-the-population-proportion-is-p0.90-instead-of-p0.66-in-part-e.-keep-n.size20.}}
+\begin{verbatim}
+[1] 0.65885
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sd}\NormalTok{(sample.prop1000)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.1086093
+\end{verbatim}
+
+(e). Now suppose the population proportion is \(p=0.90\) instead of \(p=0.66\) in part (e). Keep n.size=20.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3290,7 +3367,7 @@ According to a PEW survey, \(66\%\) of U.S. adult citizens casted a ballot in th
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics[width=1\linewidth]{Class_Activity_7_files/figure-latex/unnamed-chunk-13-1}
+\includegraphics[width=1\linewidth]{Class_Activity_7_files/figure-latex/unnamed-chunk-12-1}
 
 \emph{Question:} How has the sampling distribution changed? (Shape? Center? Variability?)
 
@@ -3299,14 +3376,27 @@ According to a PEW survey, \(66\%\) of U.S. adult citizens casted a ballot in th
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{mean}\NormalTok{(sample.prop1000)}
-\NormalTok{[}\DecValTok{1}\NormalTok{] }\FloatTok{0.9014}
-\FunctionTok{sd}\NormalTok{(sample.prop1000)}
-\NormalTok{[}\DecValTok{1}\NormalTok{] }\FloatTok{0.06509437}
 \end{Highlighting}
 \end{Shaded}
 
+\begin{verbatim}
+[1] 0.9028
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sd}\NormalTok{(sample.prop1000)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.06466329
+\end{verbatim}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
 \hypertarget{example-4-simulation-for-a-sample-mean}{%
-\section{Example 4: Simulation for a Sample Mean}\label{example-4-simulation-for-a-sample-mean}}
+\subsection{Example 4: Simulation for a Sample Mean}\label{example-4-simulation-for-a-sample-mean}}
 
 We'll look at sampling movies from the population of 134 Hollywood movies made in 2011 and measuring their budget (millions of dollars).
 
@@ -3318,19 +3408,20 @@ We'll look at sampling movies from the population of 134 Hollywood movies made i
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{a-what-is-the-population-mean-of-the-budget}{%
-\subsection{\texorpdfstring{(a) What is the population mean of the \texttt{Budget}?}{(a) What is the population mean of the Budget?}}\label{a-what-is-the-population-mean-of-the-budget}}
+(a). What is the population mean of the \texttt{Budget}?
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# r{-}code}
 \FunctionTok{mean}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{Budget, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)}
-\NormalTok{[}\DecValTok{1}\NormalTok{] }\FloatTok{53.48134}
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{b-generate-a-random-sample-of-size-n-10-and-plot-the-sample-proportion.}{%
-\subsection{\texorpdfstring{(b) Generate a random sample of size \(n= 10\) and plot the sample proportion.}{(b) Generate a random sample of size n= 10 and plot the sample proportion.}}\label{b-generate-a-random-sample-of-size-n-10-and-plot-the-sample-proportion.}}
+\begin{verbatim}
+[1] 53.48134
+\end{verbatim}
+
+(b). Generate a random sample of size \(n= 10\) and plot the sample proportion.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3353,10 +3444,9 @@ We'll look at sampling movies from the population of 134 Hollywood movies made i
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics[width=1\linewidth]{Class_Activity_7_files/figure-latex/unnamed-chunk-17-1}
+\includegraphics[width=1\linewidth]{Class_Activity_7_files/figure-latex/unnamed-chunk-16-1}
 
-\hypertarget{c-generate-5-random-samples-of-size-n-10-and-plot-the-sample-means.}{%
-\subsection{\texorpdfstring{(c) Generate 5 random samples of size \(n= 10\) and plot the sample means.}{(c) Generate 5 random samples of size n= 10 and plot the sample means.}}\label{c-generate-5-random-samples-of-size-n-10-and-plot-the-sample-means.}}
+(c). Generate 5 random samples of size \(n= 10\) and plot the sample means.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3380,10 +3470,9 @@ We'll look at sampling movies from the population of 134 Hollywood movies made i
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics[width=1\linewidth]{Class_Activity_7_files/figure-latex/unnamed-chunk-18-1}
+\includegraphics[width=1\linewidth]{Class_Activity_7_files/figure-latex/unnamed-chunk-17-1}
 
-\hypertarget{d-generate-1000-random-samples-of-size-n-10-and-plot-the-sample-means.}{%
-\subsection{\texorpdfstring{(d) Generate 1000 random samples of size \(n= 10\) and plot the sample means.}{(d) Generate 1000 random samples of size n= 10 and plot the sample means.}}\label{d-generate-1000-random-samples-of-size-n-10-and-plot-the-sample-means.}}
+(d). Generate 1000 random samples of size \(n= 10\) and plot the sample means.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3408,7 +3497,7 @@ We'll look at sampling movies from the population of 134 Hollywood movies made i
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics[width=1\linewidth]{Class_Activity_7_files/figure-latex/unnamed-chunk-19-1}
+\includegraphics[width=1\linewidth]{Class_Activity_7_files/figure-latex/unnamed-chunk-18-1}
 
 \emph{Question:} What does each dot represent?
 
@@ -3425,9 +3514,12 @@ We'll look at sampling movies from the population of 134 Hollywood movies made i
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{mean}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{Budget, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)}
-\NormalTok{[}\DecValTok{1}\NormalTok{] }\FloatTok{53.48134}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+[1] 53.48134
+\end{verbatim}
 
 \emph{Question:} The distribution should be centered at the population mean. Verify that the distribution is centered around the population mean, \(\mu = 53.48\).
 
@@ -3437,9 +3529,12 @@ We'll look at sampling movies from the population of 134 Hollywood movies made i
 \begin{Highlighting}[]
 \CommentTok{\# r{-}code}
 \FunctionTok{mean}\NormalTok{(sample.mean1000)}
-\NormalTok{[}\DecValTok{1}\NormalTok{] }\FloatTok{53.10596}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+[1] 53.12677
+\end{verbatim}
 
 \emph{Question:} What is the standard deviation of this distribution? (Hint: use the 95\% rule.)
 
@@ -3453,16 +3548,17 @@ We'll look at sampling movies from the population of 134 Hollywood movies made i
 \begin{Highlighting}[]
 \CommentTok{\# r{-}code}
 \FunctionTok{sd}\NormalTok{(sample.mean1000)}
-\NormalTok{[}\DecValTok{1}\NormalTok{] }\FloatTok{15.04274}
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{e-repeat-partd-with-sample-size-50-instead-of-10.-generate-1000-samples.}{%
-\subsection{(e) Repeat part(d) with sample size 50 instead of 10. Generate 1000 samples.}\label{e-repeat-partd-with-sample-size-50-instead-of-10.-generate-1000-samples.}}
+\begin{verbatim}
+[1] 15.0577
+\end{verbatim}
+
+(e). Repeat part(d) with sample size 50 instead of 10. Generate 1000 samples.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-
 \CommentTok{\# Generate 1000 samples}
 \NormalTok{n.size }\OtherTok{\textless{}{-}} \DecValTok{50}
 \NormalTok{n.rep }\OtherTok{\textless{}{-}} \DecValTok{1000}
@@ -3485,49 +3581,69 @@ We'll look at sampling movies from the population of 134 Hollywood movies made i
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics[width=1\linewidth]{Class_Activity_7_files/figure-latex/unnamed-chunk-23-1}
+\includegraphics[width=1\linewidth]{Class_Activity_7_files/figure-latex/unnamed-chunk-22-1}
 
-\emph{Question} Is this sampling distribution more or less symmetric compared to the distribution when \(n=10\)?
+\emph{Question:} Is this sampling distribution more or less symmetric compared to the distribution when \(n=10\)?
 
-\emph{Answer} The distribution is more symmetric with n=50 than when n=10.
+\emph{Answer:} The distribution is more symmetric with n=50 than when n=10.
 
-\vspace*{1in}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{example-5-effect-of-sample-size}{%
-\section{Example 5: Effect of sample size}\label{example-5-effect-of-sample-size}}
+\subsection{Example 5: Effect of sample size}\label{example-5-effect-of-sample-size}}
 
 Let's investigate the effect of sample size in the sampling distribution using the same setting as in Exercise 1 with \(p=0.66\). The following are three sampling distributions corresponding to different sample sizes.
 
-\includegraphics[width=1\linewidth]{Class_Activity_7_files/figure-latex/unnamed-chunk-24-1}
+\includegraphics[width=1\linewidth]{Class_Activity_7_files/figure-latex/unnamed-chunk-23-1}
 
-\emph{Question} What happens if we increase the sample size?
+\emph{Question:} What happens if we increase the sample size?
 
-\emph{Answer} When we increase the sample size, the variability of the sampling distribution becomes smaller.
+\emph{Answer:} When we increase the sample size, the variability of the sampling distribution becomes smaller.
 
-\emph{Question} Estimate the standard error of each and verify your answer to the previous question.
+\emph{Question:} Estimate the standard error of each and verify your answer to the previous question.
 
-\emph{Answer} The standard errors are
+\emph{Answer:} The standard errors are
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{sd}\NormalTok{(data.size}\FloatTok{.25}\SpecialCharTok{$}\NormalTok{x)}
-\NormalTok{[}\DecValTok{1}\NormalTok{] }\FloatTok{0.09222019}
-\FunctionTok{sd}\NormalTok{(data.size}\FloatTok{.100}\SpecialCharTok{$}\NormalTok{x)}
-\NormalTok{[}\DecValTok{1}\NormalTok{] }\FloatTok{0.04383053}
-\FunctionTok{sd}\NormalTok{(data.size}\FloatTok{.400}\SpecialCharTok{$}\NormalTok{x)}
-\NormalTok{[}\DecValTok{1}\NormalTok{] }\FloatTok{0.02246123}
 \end{Highlighting}
 \end{Shaded}
 
+\begin{verbatim}
+[1] 0.09011439
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sd}\NormalTok{(data.size}\FloatTok{.100}\SpecialCharTok{$}\NormalTok{x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.04093137
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sd}\NormalTok{(data.size}\FloatTok{.400}\SpecialCharTok{$}\NormalTok{x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.02311007
+\end{verbatim}
+
 As the sample size increases, the variability as measured by the standard error of the sampling distribution does indeed decrease.
 
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
 \hypertarget{example-6-bootstrap-sampling}{%
-\section{Example 6: Bootstrap Sampling}\label{example-6-bootstrap-sampling}}
+\subsection{Example 6: Bootstrap Sampling}\label{example-6-bootstrap-sampling}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# Movies Example Again!}
-
 \NormalTok{Budget }\OtherTok{\textless{}{-}}\NormalTok{ movies}\SpecialCharTok{$}\NormalTok{Budget[}\SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{Budget)]}
 
 \CommentTok{\# Bootstrap samples}
@@ -3544,7 +3660,6 @@ As the sample size increases, the variability as measured by the standard error 
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# Plot the bootstrap distribution}
-
 \NormalTok{mydata }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{x =}\NormalTok{ boot.samplemean1000)}
 
 \CommentTok{\# Plot a dot plot of the sample proportion}
@@ -3556,25 +3671,31 @@ As the sample size increases, the variability as measured by the standard error 
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics[width=1\linewidth]{Class_Activity_7_files/figure-latex/unnamed-chunk-27-1}
+\includegraphics[width=1\linewidth]{Class_Activity_7_files/figure-latex/unnamed-chunk-26-1}
 
-\begin{enumerate}
-\def\labelenumi{(\alph{enumi})}
-\tightlist
-\item
-  Compare the center/spread/shape of the bootstrap distribution to the distribution computed in Ex. 4 (d). Answer all the questions in Ex. 4(d).
-\end{enumerate}
+(a). Compare the center/spread/shape of the bootstrap distribution to the distribution computed in Ex. 4 (d). Answer all the questions in Ex. 4(d).
 
 \emph{Answer:} The shape/center and variability of this bootstrap distribution is very similar to that of Ex 4 (d)
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{mean}\NormalTok{(mydata}\SpecialCharTok{$}\NormalTok{x)}
-\NormalTok{[}\DecValTok{1}\NormalTok{] }\FloatTok{53.89263}
-\FunctionTok{sd}\NormalTok{(mydata}\SpecialCharTok{$}\NormalTok{x)}
-\NormalTok{[}\DecValTok{1}\NormalTok{] }\FloatTok{15.88612}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+[1] 53.23545
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sd}\NormalTok{(mydata}\SpecialCharTok{$}\NormalTok{x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 15.41347
+\end{verbatim}
 
 \hypertarget{class-activity-8}{%
 \chapter{Class Activity 8}\label{class-activity-8}}
@@ -3586,8 +3707,9 @@ Prices of a random sample of 10 textbooks (rounded to the nearest dollar) are sh
 
 \[ \$132 \quad \$87 \quad \$185 \quad \$52 \quad \$23 \quad \$147 \quad \$125 \quad \$93 \quad \$85 \quad \$72 \]
 
-\hypertarget{a-what-is-the-sample-mean-verify-using-r-code.}{%
-\subsection{(a) What is the sample mean? Verify using r-code.}\label{a-what-is-the-sample-mean-verify-using-r-code.}}
+(a). What is the sample mean? Verify using r-code.
+
+Click for answer
 
 \emph{Answer:} The sample mean is \(\bar{x} = 100.1\)
 
@@ -3602,13 +3724,13 @@ Prices of a random sample of 10 textbooks (rounded to the nearest dollar) are sh
 [1] 100.1
 \end{verbatim}
 
-\hypertarget{b-describe-carefully-how-we-could-use-cards-to-create-one-bootstrap-statistic-from-this-sample.-be-specific.}{%
-\subsection{(b) Describe carefully how we could use cards to create one bootstrap statistic from this sample. Be specific.}\label{b-describe-carefully-how-we-could-use-cards-to-create-one-bootstrap-statistic-from-this-sample.-be-specific.}}
+(b). Describe carefully how we could use cards to create one bootstrap statistic from this sample. Be specific.
+
+Click for answer
 
 \emph{Answer:} We use 10 cards and write the 10 sample values on the cards. We then mix them up and draw one and record the value on it and put it back. Mix them up again, draw another, record the value, and put it back. Do this 10 times to get a ``with replacement'' sample of size 10. Then compute the sample mean of this bootstrap sample.
 
-\hypertarget{c-we-can-easily-instruct-r-to-do-this-with-a-simple-code-as-follows}{%
-\subsection{(c) We can easily instruct R to do this with a simple code as follows:}\label{c-we-can-easily-instruct-r-to-do-this-with-a-simple-code-as-follows}}
+(c). We can easily instruct R to do this with a simple code as follows:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3618,56 +3740,57 @@ Prices of a random sample of 10 textbooks (rounded to the nearest dollar) are sh
 \end{Shaded}
 
 \begin{verbatim}
- [1]  52 132 185 132 132  85  87  52 185  72
+ [1] 125  72  93  85 185  93  23  23 125  23
 \end{verbatim}
 
-\hypertarget{c-where-will-be-bootstrap-distribution-be-centered-what-shape-do-we-expect-it-to-have}{%
-\subsection{(c) Where will be bootstrap distribution be centered? What shape do we expect it to have?}\label{c-where-will-be-bootstrap-distribution-be-centered-what-shape-do-we-expect-it-to-have}}
+(d). Where will be bootstrap distribution be centered? What shape do we expect it to have?
 
 \emph{Answer:} It will be centered approximately at the sample mean of 100.1 and we expect it to be roughly bellshaped (it may be a bit skewed since the sample size of 10 is smallish).
 
 \vspace*{1.5in}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{example-2-statkey-atlanta-commute-distance}{%
 \section{Example 2: Statkey Atlanta Commute Distance}\label{example-2-statkey-atlanta-commute-distance}}
 
 Go to the website at \href{http://www.lock5stat.com/StatKey/}{Lock5Statkey}. Under the ``Bootstrap Confidence Intervals'' column, select the ``CI for Single Mean, Median, St.Dev''. Change the data set to Atlanta Commute (Distance). This data set gives a random sample of 500 worker commute distances (miles) for metropolitan Atlanta
 
-\hypertarget{a-use-the-original-sample-pane-to-determine-the-shape-of-these-500-commuter-distances-along-with-their-mean-and-standard-deviation.-write-down-these-stats-using-correct-notation.}{%
-\subsection{(a) Use the ``Original Sample'' pane to determine the shape of these 500 commuter distances, along with their mean and standard deviation. Write down these stats using correct notation.}\label{a-use-the-original-sample-pane-to-determine-the-shape-of-these-500-commuter-distances-along-with-their-mean-and-standard-deviation.-write-down-these-stats-using-correct-notation.}}
+(a). Use the ``Original Sample'' pane to determine the shape of these 500 commuter distances, along with their mean and standard deviation. Write down these stats using correct notation.
+
+Click for answer
 
 \emph{Answer:} The sample mean is \(\bar{x} = 18.16\) and the sample standard deviation is \(s = 13.798\).
 
-\hypertarget{b-click-generate-1-sample-to-create-one-bootstrap-sample-from-this-data.-explain-how-this-sample-was-generated.-use-the-bootstrap-sample-pane-to-find-the-bootstrap-statistic-that-was-computed-from-this-sample.-what-value-is-this-bootstrap-statistic-repeat-this-a-couple-times.}{%
-\subsection{(b) Click ``Generate 1 Sample'' to create one bootstrap sample from this data. Explain how this sample was generated. Use the ``Bootstrap Sample'' pane to find the bootstrap statistic that was computed from this sample. What value is this bootstrap statistic? Repeat this a couple times.}\label{b-click-generate-1-sample-to-create-one-bootstrap-sample-from-this-data.-explain-how-this-sample-was-generated.-use-the-bootstrap-sample-pane-to-find-the-bootstrap-statistic-that-was-computed-from-this-sample.-what-value-is-this-bootstrap-statistic-repeat-this-a-couple-times.}}
+(b). Click ``Generate 1 Sample'' to create one bootstrap sample from this data. Explain how this sample was generated. Use the ``Bootstrap Sample'' pane to find the bootstrap statistic that was computed from this sample. What value is this bootstrap statistic? Repeat this a couple times.
+
+Click for answer
 
 \emph{Answer:} The bootstrap sample was obtained by resampling from the 500 observed commute distances with
 replacement. Basically we randomly select 500 distances from the data (with replacement).
 
 The value of the bootstrap mean will vary.
 
-\hypertarget{c-now-click-the-generate-1000-samples-to-get-1000-bootstrap-sample-means.-is-the-bootstrap-distribution-centered-at-the-population-or-sample-mean-commute-distance}{%
-\subsection{(c) Now click the ``Generate 1000 Samples'' to get 1000 bootstrap sample means. Is the bootstrap distribution centered at the population or sample mean commute distance?}\label{c-now-click-the-generate-1000-samples-to-get-1000-bootstrap-sample-means.-is-the-bootstrap-distribution-centered-at-the-population-or-sample-mean-commute-distance}}
+(c). Now click the ``Generate 1000 Samples'' to get 1000 bootstrap sample means. Is the bootstrap distribution centered at the population or sample mean commute distance?
 
 \emph{Answer:} The bootstrap distribution is always centered around the statistic that is being bootstrapped. Here it will be centered around the sample mean commute distance of about 18.16 miles. The population mean
 commute distance is unknown!
 
-\hypertarget{d-what-is-the-bootstrap-se-for-the-sample-mean}{%
-\subsection{(d) What is the bootstrap SE for the sample mean?}\label{d-what-is-the-bootstrap-se-for-the-sample-mean}}
+(d). What is the bootstrap SE for the sample mean?
 
 \emph{Answer:} The standard error from the bootstrap distribution is about 0.628.
 
-\hypertarget{e-compute-a-95-confidence-interval-for-the-average-commute-distance-in-metropolitan-atlanta.}{%
-\subsection{(e) Compute a 95\% confidence interval for the average commute distance in metropolitan Atlanta.}\label{e-compute-a-95-confidence-interval-for-the-average-commute-distance-in-metropolitan-atlanta.}}
+(e). Compute a 95\% confidence interval for the average commute distance in metropolitan Atlanta.
 
 \emph{Answer:} The sample mean is \(\bar{x} = 18.16\) and the standard error from the bootstrap distribution is about 0.618 so we compute the \(95\%\) confidence interval using \(18.16 \pm 2(0.628)\), giving an interval of 16.90 to 19.42 miles.
 
-\hypertarget{f-interpret-your-answer-to-e-in-context.}{%
-\subsection{(f) Interpret your answer to (e) in context.}\label{f-interpret-your-answer-to-e-in-context.}}
+(f). Interpret your answer to (e) in context.
 
 \emph{Answer:} We are 95\% confident that the average commuting distance in metropolitan Atlanta is between 16.90 and 19.42 miles.
 
 \vspace*{1.5in}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{example-3-statkey-global-warming}{%
 \section{Example 3: Statkey Global Warming}\label{example-3-statkey-global-warming}}
@@ -3677,37 +3800,40 @@ conducted in October 2010 found that 1,328 answered Yes to the question ``Is the
 warming?'' To compute a bootstrap confidence interval for the proportion of all Americans who believe in
 global warming, go to the website at \href{http://www.lock5stat.com/StatKey/}{Lock5Statkey}. Under the ``Bootstrap Confidence Intervals'' column, select the ``CI for Single Proportion''.
 
-\hypertarget{a-enter-the-data-for-this-survey-by-clicking-the-edit-data-button.-enter-2251-as-the-sample-size-and-1328-as-the-count.-what-is-the-sample-proportion-of-people-who-believe-in-global-warming-use-correct-notation}{%
-\subsection{(a) Enter the data for this survey by clicking the ``Edit Data'' button. Enter 2251 as the sample size and 1328 as the count. What is the sample proportion of people who believe in global warming? Use correct notation!}\label{a-enter-the-data-for-this-survey-by-clicking-the-edit-data-button.-enter-2251-as-the-sample-size-and-1328-as-the-count.-what-is-the-sample-proportion-of-people-who-believe-in-global-warming-use-correct-notation}}
+(a). Enter the data for this survey by clicking the ``Edit Data'' button. Enter 2251 as the sample size and 1328 as the count. What is the sample proportion of people who believe in global warming? Use correct notation!
+
+Click for answer
 
 \emph{Answer:} The sample proportion is \(\hat{p} = 0.59\).
 
-\hypertarget{b-generate-1-bootstrap-sample.-explain-how-this-sample-was-generated.-use-the-bootstrap-sample-pane-to-find-the-bootstrap-statistic-that-was-computed-from-this-sample.-what-value-is-this-bootstrap-statistic-repeat-this-a-couple-times.}{%
-\subsection{(b) Generate 1 bootstrap sample. Explain how this sample was generated. Use the ``Bootstrap Sample'' pane to find the bootstrap statistic that was computed from this sample. What value is this bootstrap statistic? Repeat this a couple times.}\label{b-generate-1-bootstrap-sample.-explain-how-this-sample-was-generated.-use-the-bootstrap-sample-pane-to-find-the-bootstrap-statistic-that-was-computed-from-this-sample.-what-value-is-this-bootstrap-statistic-repeat-this-a-couple-times.}}
+(b). Generate 1 bootstrap sample. Explain how this sample was generated. Use the ``Bootstrap Sample'' pane to find the bootstrap statistic that was computed from this sample. What value is this bootstrap statistic? Repeat this a couple times.
+
+Click for answer
 
 \emph{Answer:} The bootstrap sample was obtained by resampling the observed answers (``yes'' and ``no'') to the global warming question with replacement. Answers will vary for the bootstrap statistic (proportion)
 
-\hypertarget{c-generate-1000-samples-to-get-1000-bootstrap-sample-proportions.-is-the-bootstrap-distribution-centered-at-the-population-or-sample-proportion-describe-the-shape-and-center-of-this-bootstrap-distribution}{%
-\subsection{(c) Generate 1000 samples to get 1000 bootstrap sample proportions. Is the bootstrap distribution centered at the population or sample proportion? Describe the shape and center of this bootstrap distribution}\label{c-generate-1000-samples-to-get-1000-bootstrap-sample-proportions.-is-the-bootstrap-distribution-centered-at-the-population-or-sample-proportion-describe-the-shape-and-center-of-this-bootstrap-distribution}}
+(c). Generate 1000 samples to get 1000 bootstrap sample proportions. Is the bootstrap distribution centered at the population or sample proportion? Describe the shape and center of this bootstrap distribution
+
+Click for answer
 
 \emph{Answer:} The shape is symmetric around a center value of about 0.59, which is the sample proportion not the population proportion (which is unknown).
 
-\hypertarget{d-compute-a-95-confidence-interval-for-the-proportion-of-americans-who-believe-in-global-warming}{%
-\subsection{(d) Compute a 95\% confidence interval for the proportion of Americans who believe in global warming}\label{d-compute-a-95-confidence-interval-for-the-proportion-of-americans-who-believe-in-global-warming}}
+(d). Compute a 95\% confidence interval for the proportion of Americans who believe in global warming
+
+Click for answer
 
 \emph{Answer:} The sample proportion is \(\hat{p} = 0.59\) and the standard error from the bootstrap distribution is 0.010 so we compute the 95\% confidence interval using \(0.590 \pm 2(0.010),\) giving an interval of 0.57 to 0.61.
 
-\hypertarget{e-interpret-your-interval-from-part-d.}{%
-\subsection{(e) Interpret your interval from part (d).}\label{e-interpret-your-interval-from-part-d.}}
+(e). Interpret your interval from part (d).
 
 \emph{Answer:} We are 95\% confident that the proportion of Americans who believe there is solid evidence of global warming is between 0.57 and 0.61.
 
-\hypertarget{f-does-this-data-support-a-claim-that-a-majority-of-americans-believe-there-is-solid-evidence-of-global-warming-explain.}{%
-\subsection{(f) Does this data support a claim that a majority of Americans believe there is solid evidence of global warming? Explain.}\label{f-does-this-data-support-a-claim-that-a-majority-of-americans-believe-there-is-solid-evidence-of-global-warming-explain.}}
+(f). Does this data support a claim that a majority of Americans believe there is solid evidence of global warming? Explain.
 
 \emph{Answer:} Yes, the data does support this claim since we are confident that at least 50\% of Americans believe in global warming since the lower bound on the CI is 57\%.
 
-\vspace*{1.5in}
+\hypertarget{section}{%
+\section{\texorpdfstring{\vspace*{1.5in}}{}}\label{section}}
 
 \hypertarget{example-4.-statkey-global-warming-by-political-party}{%
 \section{Example 4. Statkey Global Warming by Political Party}\label{example-4.-statkey-global-warming-by-political-party}}
@@ -3716,37 +3842,42 @@ Does belief in global warming differ by political party? When the question ``Is 
 Republicans. To compute a bootstrap confidence interval for the difference in the proportion of Democrats
 and Republicans who believe in global warming, go to the website at \href{http://www.lock5stat.com/StatKey/}{Lock5Statkey}. Under the ``Bootstrap Confidence Intervals'' column, select the ``CI for Difference in Proportions''.
 
-\hypertarget{a-enter-the-data-for-this-survey-by-clicking-the-edit-data-button.-one-big-assumption-we-will-make-is-that-the-sample-sizes-for-both-groups-dems-and-reps-were-each-1000.-enter-the-democrat-data-into-the-group-1-boxes-count-of-790-and-size-of-1000-and-the-republican-data-into-the-group-2-boxes-count-of-380-and-size-of-1000.-verify-that-the-sample-proportions-for-the-two-groups-are-79-and-38.-what-is-the-difference-in-the-two-sample-proportions-use-correct-notation.}{%
-\subsection{(a) Enter the data for this survey by clicking the ``Edit Data'' button. One big assumption we will make is that the sample sizes for both groups (Dems and Reps) were each 1000. Enter the Democrat data into the ``Group 1'' boxes (count of 790 and size of 1000) and the Republican data into the ``Group 2'' boxes (count of 380 and size of 1000). Verify that the sample proportions for the two groups are 79\% and 38\%. What is the difference in the two sample proportions? Use correct notation.}\label{a-enter-the-data-for-this-survey-by-clicking-the-edit-data-button.-one-big-assumption-we-will-make-is-that-the-sample-sizes-for-both-groups-dems-and-reps-were-each-1000.-enter-the-democrat-data-into-the-group-1-boxes-count-of-790-and-size-of-1000-and-the-republican-data-into-the-group-2-boxes-count-of-380-and-size-of-1000.-verify-that-the-sample-proportions-for-the-two-groups-are-79-and-38.-what-is-the-difference-in-the-two-sample-proportions-use-correct-notation.}}
+(a). Enter the data for this survey by clicking the ``Edit Data'' button. One big assumption we will make is that the sample sizes for both groups (Dems and Reps) were each 1000. Enter the Democrat data into the ``Group 1'' boxes (count of 790 and size of 1000) and the Republican data into the ``Group 2'' boxes (count of 380 and size of 1000). Verify that the sample proportions for the two groups are 79\% and 38\%. What is the difference in the two sample proportions? Use correct notation.
+
+Click for answer
 
 \emph{Answer:} The sample difference in proportions is \(\hat{p}_{Dem} - \hat{p}_{Rep} = 0.79 - 0.38 = 0.41\)
 
-\hypertarget{b-generate-1-bootstrap-sample.-explain-how-this-sample-was-generated-give-this-some-thought-now-that-you-have-two-samples-of-data.-use-the-bootstrap-sample-pane-to-find-the-bootstrap-statistic-that-was-computed-from-this-sample.-what-value-is-this-bootstrap-statistic-repeat-this-a-couple-times.}{%
-\subsection{(b) Generate 1 bootstrap sample. Explain how this sample was generated (give this some thought now that you have two samples of data). Use the ``Bootstrap Sample'' pane to find the bootstrap statistic that was computed from this sample. What value is this bootstrap statistic? Repeat this a couple times.}\label{b-generate-1-bootstrap-sample.-explain-how-this-sample-was-generated-give-this-some-thought-now-that-you-have-two-samples-of-data.-use-the-bootstrap-sample-pane-to-find-the-bootstrap-statistic-that-was-computed-from-this-sample.-what-value-is-this-bootstrap-statistic-repeat-this-a-couple-times.}}
+(b). Generate 1 bootstrap sample. Explain how this sample was generated (give this some thought now that you have two samples of data). Use the ``Bootstrap Sample'' pane to find the bootstrap statistic that was computed from this sample. What value is this bootstrap statistic? Repeat this a couple times.
+
+Click for answer
 
 \emph{Answer:} One bootstrap sample was obtained from the group 1 sample (resampling the observed ``believe/not believe'' responses with replacement) and a separate bootstrap sample was obtained from the group 2 sample. The difference in the bootstrap proportions for each group was computed for the bootstrap difference statistic.
 
 For individual bootstrap samples: answers will vary.
 
-\hypertarget{c-generate-1000-samples-to-get-1000-bootstrap-sample-proportion-differences.-describe-the-shape-and-center-of-this-bootstrap-distribution}{%
-\subsection{(c) Generate 1000 samples to get 1000 bootstrap sample proportion differences. Describe the shape and center of this bootstrap distribution}\label{c-generate-1000-samples-to-get-1000-bootstrap-sample-proportion-differences.-describe-the-shape-and-center-of-this-bootstrap-distribution}}
+(c). Generate 1000 samples to get 1000 bootstrap sample proportion differences. Describe the shape and center of this bootstrap distribution
+
+Click for answer
 
 \emph{Answer:} The shape is symmetric around a center value of about 0.41 (the sample difference in proportions).
 
-\hypertarget{d-compute-a-95-confidence-interval-for-the-difference-between-the-proportion-of-democrats-and-republicans-who-believe-in-global-warming.}{%
-\subsection{(d) Compute a 95\% confidence interval for the difference between the proportion of Democrats and Republicans who believe in global warming.}\label{d-compute-a-95-confidence-interval-for-the-difference-between-the-proportion-of-democrats-and-republicans-who-believe-in-global-warming.}}
+(d). Compute a 95\% confidence interval for the difference between the proportion of Democrats and Republicans who believe in global warming.
+
+Click for answer
 
 \emph{Answer:}
-
 The sample difference in proportions is \(\hat{p}_{Dem} - \hat{p}_{Rep} = 0.79 - 0.38 = 0.41\), the standard error from the bootstrap distribution is 0.020 so we compute the 95\% confidence interval using \(0.41 \pm 2(0.020)\) giving an interval of 0.37 to 0.45.
 
-\hypertarget{e-interpret-your-interval-from-part-d-in-context-and-without-using-the-word-difference-i.e.-give-a-directional-claim-that-uses-words-like-more-or-less}{%
-\subsection{(e) Interpret your interval from part (d) in context and without using the word difference!! (i.e.~give a directional claim that uses words like ``more'' or ``less'')}\label{e-interpret-your-interval-from-part-d-in-context-and-without-using-the-word-difference-i.e.-give-a-directional-claim-that-uses-words-like-more-or-less}}
+(e). Interpret your interval from part (d) in context and without using the word difference!! (i.e.~give a directional claim that uses words like ``more'' or ``less'')
+
+Click for answer
 
 \emph{Answer:} We are 95\% confident that the percent of Democrats who believe there is solid evidence of global warming is between 37 and 45 percentage points higher than the percent of Republicans who believe this.
 
-\hypertarget{f-to-compute-this-interval-we-assumed-that-1000-people-were-sampled-from-each-subpopulation-dems-and-reps.-suppose-this-sample-size-was-just-500-people-for-each-group.-would-your-95-confidence-interval-be-wider-or-shorter-than-the-one-computed-in-part-d-explain.}{%
-\subsection{(f) To compute this interval, we assumed that 1000 people were sampled from each subpopulation (Dems and Reps). Suppose this sample size was just 500 people for each group. Would your 95\% confidence interval be wider or shorter than the one computed in part (d)? Explain.}\label{f-to-compute-this-interval-we-assumed-that-1000-people-were-sampled-from-each-subpopulation-dems-and-reps.-suppose-this-sample-size-was-just-500-people-for-each-group.-would-your-95-confidence-interval-be-wider-or-shorter-than-the-one-computed-in-part-d-explain.}}
+(f). To compute this interval, we assumed that 1000 people were sampled from each subpopulation (Dems and Reps). Suppose this sample size was just 500 people for each group. Would your 95\% confidence interval be wider or shorter than the one computed in part (d)? Explain.
+
+Click for answer
 
 \emph{Answer:} With fewer people in each group, we will get a larger bootstrap SE and hence a larger margin of error for the CI. Remember that the SE of a sampling distribution gets smaller as the sample size increases, the same behavior is seen in a bootstrap distribution.
 
@@ -3755,20 +3886,28 @@ The sample difference in proportions is \(\hat{p}_{Dem} - \hat{p}_{Rep} = 0.79 -
 
 Is normal body temperature really \(98.6^{\circ}\) F? A sample of body temperature for 50 healthy individuals was taken. Find this dataset in StatKey under ``Confidence Interval for a Mean.''
 
-\hypertarget{a-what-is-the-sample-mean-what-is-the-sample-standard-deviation-use-correct-notation-for-each}{%
-\subsection{(a) What is the sample mean? What is the sample standard deviation? Use correct notation for each}\label{a-what-is-the-sample-mean-what-is-the-sample-standard-deviation-use-correct-notation-for-each}}
+(a). What is the sample mean? What is the sample standard deviation? Use correct notation for each
+
+Click for answer
 
 \emph{Answer:} \(\bar{x} = 98.26\) and \(s = 0.765\).
 
-\hypertarget{b-generate-a-bootstrap-distribution-using-at-least-1000-simulated-statistics.-what-is-the-standard}{%
-\subsection{(b) Generate a bootstrap distribution, using at least 1000 simulated statistics. What is the standard}\label{b-generate-a-bootstrap-distribution-using-at-least-1000-simulated-statistics.-what-is-the-standard}}
-
+(b). Generate a bootstrap distribution, using at least 1000 simulated statistics. What is the standard
 error?
+
+Click for answer
 
 \emph{Answer:} SE \(\approx\) 0.108. Answers will vary slightly with different simulations (see output below).
 
-\hypertarget{c-use-the-standard-error-to-find-a-95-confidence-interval.-show-your-work.-is-98.6-in-the-interval}{%
-\subsection{(c) Use the standard error to find a 95\% confidence interval. Show your work. Is 98.6 in the interval?}\label{c-use-the-standard-error-to-find-a-95-confidence-interval.-show-your-work.-is-98.6-in-the-interval}}
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Use the standard error to find a 95\% confidence interval. Show your work. Is 98.6 in the interval?
+\end{enumerate}
+
+Click for answer
 
 \emph{Answer:} \[ \bar{x} \pm 2*SE\]
 \[98.26 \pm 2(0.108) \]
@@ -3776,6 +3915,8 @@ error?
 We see that 98.6 is not on the interval.
 
 \vspace*{1.5in}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{example-6.-bootstrap-in-r-using-hollywood-2011-dataset}{%
 \section{Example 6. Bootstrap in R using Hollywood 2011 dataset!}\label{example-6.-bootstrap-in-r-using-hollywood-2011-dataset}}
@@ -3789,8 +3930,12 @@ We'll look at sampling movies from the population of 134 Hollywood movies made i
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{a-generate-1-sample-of-size-50-with-replacement-from-the-budget-variable.-if-there-are-any-na-values-they-should-be-removed-first.}{%
-\subsection{\texorpdfstring{(a) Generate 1 sample of size 50 with replacement from the \texttt{Budget} variable. If there are any \texttt{NA} values, they should be removed first.}{(a) Generate 1 sample of size 50 with replacement from the Budget variable. If there are any NA values, they should be removed first.}}\label{a-generate-1-sample-of-size-50-with-replacement-from-the-budget-variable.-if-there-are-any-na-values-they-should-be-removed-first.}}
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item
+  Generate 1 sample of size 50 with replacement from the \texttt{Budget} variable. If there are any \texttt{NA} values, they should be removed first.
+\end{enumerate}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3807,8 +3952,13 @@ We'll look at sampling movies from the population of 134 Hollywood movies made i
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{c-generate-1000-samples-of-size-50-with-replacement-from-the-redefined-budget-variable-in-part-a.-there-are-many-methods-to-do-this.-we-will-use-lapply-function-to-do-this-simulation-faster.-using-lapply-we-can-apply-functions-to-a-list-or-vector.}{%
-\subsection{\texorpdfstring{(c) Generate 1000 samples of size 50 with replacement from the redefined \texttt{Budget} variable in part (a). There are many methods to do this. We will use \texttt{lapply} function to do this simulation faster. Using \texttt{lapply} we can apply functions to a list or vector.}{(c) Generate 1000 samples of size 50 with replacement from the redefined Budget variable in part (a). There are many methods to do this. We will use lapply function to do this simulation faster. Using lapply we can apply functions to a list or vector.}}\label{c-generate-1000-samples-of-size-50-with-replacement-from-the-redefined-budget-variable-in-part-a.-there-are-many-methods-to-do-this.-we-will-use-lapply-function-to-do-this-simulation-faster.-using-lapply-we-can-apply-functions-to-a-list-or-vector.}}
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Generate 1000 samples of size 50 with replacement from the redefined \texttt{Budget} variable in part (a). There are many methods to do this. We will use \texttt{lapply} function to do this simulation faster. Using \texttt{lapply} we can apply functions to a list or vector.
+\end{enumerate}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3824,8 +3974,13 @@ We'll look at sampling movies from the population of 134 Hollywood movies made i
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{d-make-a-dotplot-of-the-1000-sample-means-calculated-in-part-c.-the-function-to-do-this-in-ggplot2-is-geom_dotplot.-there-are-two-methods-for-binning-the-data-values.-dotdensity-is-the-default-option-for-dot-density-binning-and-histodot-is-for-fixed-bin-width-like-a-histogram.}{%
-\subsection{\texorpdfstring{(d) Make a dotplot of the 1000 sample means calculated in part (c). The function to do this in \texttt{ggplot2} is \texttt{geom\_dotplot}. There are two methods for binning the data values. \texttt{dotdensity} is the default option for dot-density binning and \texttt{histodot} is for fixed bin width like a histogram.}{(d) Make a dotplot of the 1000 sample means calculated in part (c). The function to do this in ggplot2 is geom\_dotplot. There are two methods for binning the data values. dotdensity is the default option for dot-density binning and histodot is for fixed bin width like a histogram.}}\label{d-make-a-dotplot-of-the-1000-sample-means-calculated-in-part-c.-the-function-to-do-this-in-ggplot2-is-geom_dotplot.-there-are-two-methods-for-binning-the-data-values.-dotdensity-is-the-default-option-for-dot-density-binning-and-histodot-is-for-fixed-bin-width-like-a-histogram.}}
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Make a dotplot of the 1000 sample means calculated in part (c). The function to do this in \texttt{ggplot2} is \texttt{geom\_dotplot}. There are two methods for binning the data values. \texttt{dotdensity} is the default option for dot-density binning and \texttt{histodot} is for fixed bin width like a histogram.
+\end{enumerate}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3845,6 +4000,8 @@ We'll look at sampling movies from the population of 134 Hollywood movies made i
 
 \includegraphics[width=1\linewidth]{Class_Activity_8_files/figure-latex/unnamed-chunk-7-1}
 
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
 \hypertarget{example-7-the-data-set-creditdata.csv-contains-records-for-1000-loans-that-either-defaulted-badloan-or-did-not-default-goodloan.-there-are-300-loans-that-defaulted-and-700-that-did-not.-lets-consider-that-the-300-loans-that-defaulted-are-random-sample-of-loans-that-default-and-the-700-non-defaulting-loans-are-a-random-sample-of-loans-that-dont-default.}{%
 \section{Example 7: The data set CreditData.csv contains records for 1000 loans that either defaulted (BadLoan) or did not default (GoodLoan). There are 300 loans that defaulted and 700 that did not. Let's consider that the 300 loans that defaulted are random sample of loans that default and the 700 non-defaulting loans are a random sample of loans that don't default.}\label{example-7-the-data-set-creditdata.csv-contains-records-for-1000-loans-that-either-defaulted-badloan-or-did-not-default-goodloan.-there-are-300-loans-that-defaulted-and-700-that-did-not.-lets-consider-that-the-300-loans-that-defaulted-are-random-sample-of-loans-that-default-and-the-700-non-defaulting-loans-are-a-random-sample-of-loans-that-dont-default.}}
 
@@ -3861,8 +4018,12 @@ We'll look at sampling movies from the population of 134 Hollywood movies made i
      300      700 
 \end{verbatim}
 
-\hypertarget{a-visualize-age-vs.-default}{%
-\subsection{(a) Visualize age vs.~default}\label{a-visualize-age-vs.-default}}
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item
+  Visualize age vs.~default
+\end{enumerate}
 
 The variable \texttt{Age.in.years} gives the age of the person who received the loan. Construct a side-by-side boxplot of age by \texttt{Good.Loan} and compute the sample means for each group.
 
@@ -3891,6 +4052,8 @@ The variable \texttt{Age.in.years} gives the age of the person who received the 
   What are the mean ages in each group?
 \end{itemize}
 
+Click for answer
+
 \emph{Answer:} 34.0 years for the bad loan group and 36.2 years for the good loan group.
 
 \begin{itemize}
@@ -3899,10 +4062,17 @@ The variable \texttt{Age.in.years} gives the age of the person who received the 
   Describe the distribution of ages in each group. Are there any outliers that could be overly influential on the value(s) of the sample mean(s)?
 \end{itemize}
 
+Click for answer
+
 \emph{Answer:} Both age distributions are somewhat right skewed with a few outliers identified by the boxplot rule. But there aren't any extremely unusual cases.
 
-\hypertarget{b-bootstrap-ci-for-a-difference-in-means}{%
-\subsubsection{(b) Bootstrap CI for a difference in means}\label{b-bootstrap-ci-for-a-difference-in-means}}
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Bootstrap CI for a difference in means
+\end{enumerate}
 
 The \texttt{boot(y\ \textasciitilde{}\ x,\ data=)} command generates 10000 bootstrap samples for the true difference in means of \texttt{y} for each of the two groups in \texttt{x}. The command is contained in the \texttt{CarletonStats} package. Here we use it to compute the bootstrap distribution for the difference in mean ages of the two default groups:
 
@@ -3918,12 +4088,12 @@ The \texttt{boot(y\ \textasciitilde{}\ x,\ data=)} command generates 10000 boots
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -2.26095 
- Mean of bootstrap distribution: -2.25594 
- Standard error of bootstrap distribution: 0.77532 
+ Mean of bootstrap distribution: -2.26389 
+ Standard error of bootstrap distribution: 0.77196 
 
  Bootstrap percentile interval
       2.5%      97.5% 
--3.7410000 -0.7266667 
+-3.7533452 -0.7433095 
 
         *--------------*
 \end{verbatim}
@@ -3936,6 +4106,8 @@ The \texttt{boot(y\ \textasciitilde{}\ x,\ data=)} command generates 10000 boots
   Give the difference in sample mean ages reported by the output. Use correct notation.
 \end{itemize}
 
+Click for answer
+
 \emph{Answer:} The average age of people with a bad loan is about 2.3 years less than the average age of people with a good loan.
 
 \begin{itemize}
@@ -3944,6 +4116,8 @@ The \texttt{boot(y\ \textasciitilde{}\ x,\ data=)} command generates 10000 boots
   Give the 95\% confidence interval for the difference in mean ages using the percentile method
 \end{itemize}
 
+Click for answer
+
 \emph{Answer:} The percentile interval is -3.8 to -0.7 years.
 
 \begin{itemize}
@@ -3951,6 +4125,8 @@ The \texttt{boot(y\ \textasciitilde{}\ x,\ data=)} command generates 10000 boots
 \item
   Compute the 95\% confidence interval for the difference in mean ages using the bootstrap SE. Is it similar to the CI from the percentile method?
 \end{itemize}
+
+Click for answer
 
 \emph{Answer:} The CI using the SE is -3.8 to -0.7. The intervals are very similar.
 
@@ -3978,10 +4154,17 @@ The \texttt{boot(y\ \textasciitilde{}\ x,\ data=)} command generates 10000 boots
 [1] -0.70391
 \end{verbatim}
 
-\hypertarget{c-interpret}{%
-\subsubsection{(c) Interpret}\label{c-interpret}}
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Interpret
+\end{enumerate}
 
 Interpret your percentile interval in context using a directional statement. Does this interval suggest that the mean ages differ in the population of all good and bad loan holders?
+
+Click for answer
 
 \emph{Answer:} We are 95\% confident that the mean age of people who default on a loan for this population is about 0.7 to 3.8 years less than the mean age of people who do not default. This interval does support the notation that there is a difference in mean ages of these two groups in the population. It suggests that the average age of people who default is less than the average age of those who don't.
 
@@ -3990,9 +4173,7 @@ Interpret your percentile interval in context using a directional statement. Doe
 
 The variable \texttt{Telephone} tells us if the individual has a phone number on their loan file. Let's look at the proportion of individuals who have a phone number for each type of loan (default or not).
 
-\hypertarget{a-data-clean-up}{%
-\subsubsection{(a) Data clean up}\label{a-data-clean-up}}
-
+(a). Data clean up
 The entries in the \texttt{Telephone} column are either \texttt{none} or \texttt{yes,\ registered\ under\ the\ customers\ name}.
 
 \begin{Shaded}
@@ -4040,8 +4221,7 @@ yes, registered under the customers name
 
 Now we have the same data, just coded with different names.
 
-\hypertarget{b-phone-rate-by-default-type}{%
-\subsubsection{(b) Phone rate by default type}\label{b-phone-rate-by-default-type}}
+(b). Phone rate by default type
 
 Here we get the distribution of phone numbers (yes or no) by default type (good vs bad loan):
 
@@ -4077,6 +4257,8 @@ Here we get the distribution of phone numbers (yes or no) by default type (good 
   What proportion of bad loans have a phone number on the account?
 \end{itemize}
 
+Click for answer
+
 \emph{Answer:} About 37.7\% of bad loans have a phone number.
 
 \begin{itemize}
@@ -4085,6 +4267,8 @@ Here we get the distribution of phone numbers (yes or no) by default type (good 
   What proportion of good loans have a phone number on the account?
 \end{itemize}
 
+Click for answer
+
 \emph{Answer:} About 41.6\% of good loans have a phone number.
 
 \begin{itemize}
@@ -4092,6 +4276,8 @@ Here we get the distribution of phone numbers (yes or no) by default type (good 
 \item
   What is the sample difference in the proportion of good loans and bad loans that have a phone number? Use correct notation for this number.
 \end{itemize}
+
+Click for answer
 
 \emph{Answer:} Here we get \(\hat{p}_{good} - \hat{p}_{bad} =0.4157143 - 0.3766667 = 0.0390476\).
 
@@ -4105,8 +4291,7 @@ Here we get the distribution of phone numbers (yes or no) by default type (good 
 [1] 0.0390476
 \end{verbatim}
 
-\hypertarget{c-using-the-boot-command-with-a-categorical-response}{%
-\subsubsection{\texorpdfstring{(c) Using the \texttt{boot} command with a categorical response}{(c) Using the boot command with a categorical response}}\label{c-using-the-boot-command-with-a-categorical-response}}
+(c). Using the \texttt{boot} command with a categorical response
 
 In order to get the bootstrap distribution for the sample difference in proportions, we need to recode the ``response'' variable \texttt{Telephone} to have a 1 indicating a ``yes'' response and 0 indicating a ``no'' response. This is done with an \texttt{ifelse} command:
 
@@ -4181,8 +4366,7 @@ The mean of the 0/1 coded variable computes the proportion of ``yes'' responses:
 
 Note: All examples in your \textbf{Lab Manual} already have this 0/1 recoding done in the lab manual data sets. But I thought you might want to learn how to do this recoding in case you plan to use this command with other, non-lab manual data sets!
 
-\hypertarget{d-95-confidence-interval-for-the-difference-in-phone}{%
-\subsubsection{(d) 95\% confidence interval for the difference in phone}\label{d-95-confidence-interval-for-the-difference-in-phone}}
+(d). 95\% confidence interval for the difference in phone
 
 We can now use the 0/1 version of telephone in the \texttt{boot} command (like example 1) to compute a 95\% bootstrap confidence interval for the difference in the population proportion of good loans and bad loans that have a phone number.
 
@@ -4197,12 +4381,12 @@ We can now use the 0/1 version of telephone in the \texttt{boot} command (like e
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -0.03905 
- Mean of bootstrap distribution: -0.03901 
- Standard error of bootstrap distribution: 0.03395 
+ Mean of bootstrap distribution: -0.03963 
+ Standard error of bootstrap distribution: 0.03359 
 
  Bootstrap percentile interval
        2.5%       97.5% 
--0.10476190  0.02809524 
+-0.10523810  0.02619048 
 
         *--------------*
 \end{verbatim}
@@ -4217,6 +4401,8 @@ We can now use the 0/1 version of telephone in the \texttt{boot} command (like e
   Give the 95\% confidence interval for the difference in the population proportion of bad loans and good loans that have a phone number using the percentile method
 \end{itemize}
 
+Click for answer
+
 \emph{Answer:} The percentile interval for Bad \(-\) Good is -0.105 to 0.028.
 
 \vspace*{.3in}
@@ -4226,6 +4412,8 @@ We can now use the 0/1 version of telephone in the \texttt{boot} command (like e
 \item
   Give the 95\% confidence interval for the difference in the population proportion of bad loans and good loans that have a phone number using the bootstrap SE. Is it similar to the CI from the percentile method?
 \end{itemize}
+
+Click for answer
 
 \emph{Answer:} The SE method gives an interval for Bad \(-\) Good of -0.107 to 0.028 which is very similar to the percentile interval.
 
@@ -4251,10 +4439,11 @@ We can now use the 0/1 version of telephone in the \texttt{boot} command (like e
 
 \vspace*{.2in}
 
-\hypertarget{e-interpret}{%
-\subsubsection{(e) Interpret}\label{e-interpret}}
+(e). Interpret
 
 Interpret your percentile interval in context using a directional statement. Does this interval suggest that there is a difference in the percentage of bad loan holders who provided a phone number comapared to the percetage of good loan holders who gave a number? Explain.
+
+Click for answer
 
 \emph{Answer:} We are 95\% confident that the percentage of good loan accounts with a phone number is anywhere from 10.7 percentage points higher than to 2.8 percentage points less than the percentage of bad loans with a phone number.
 
@@ -4393,6 +4582,27 @@ Extra notes:
 \item
   \textbf{Maize users}: You may also need to allow for ``pop-up'' in your web browser when knitting documents.
 \end{itemize}
+
+\hypertarget{few-instructions}{%
+\section{Few Instructions}\label{few-instructions}}
+
+The default setting in Rstudio when you are running chunks is that the ``output'' (numbers, graphs) are
+shown \textbf{inline} within the Markdown Rmd. If you prefer to have your plots appear on the right of the console and not below the chunk, then change the settings as follows:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Select Tools \textgreater{} Global Options.
+\item
+  Click the R Markdown section and uncheck (if needed) the option Show output inline for all
+  R Markdown documents.
+\item
+  Click OK.
+\end{enumerate}
+
+Now try running R chunks in the .Rmd file to see the difference. You can recheck this box if you prefer
+the default setting.
 
 \hypertarget{r-markdown}{%
 \chapter{R Markdown}\label{r-markdown}}

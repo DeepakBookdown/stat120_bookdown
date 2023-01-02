@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 1 Class Activity 1 | Stat 120</title>
 <meta name="author" content="Deepak Bastola">
-<meta name="description" content="Try to knit the file at the present stage and see if it compiles. You can add \vspace*{1in} in the body of this file to produce a vertical space of 1 inches.  1.1 Your Turn 1 Run the following...">
+<meta name="description" content='1.1 Your Turn 1 Run the following chunk. Comment on the output. example_data = data.frame(ID = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10),              Greeting = c(rep("Hello", 5), rep("Goodbye",5)),      ...'>
 <meta name="generator" content="bookdown 0.31 with bs4_book()">
 <meta property="og:title" content="Chapter 1 Class Activity 1 | Stat 120">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Try to knit the file at the present stage and see if it compiles. You can add \vspace*{1in} in the body of this file to produce a vertical space of 1 inches.  1.1 Your Turn 1 Run the following...">
+<meta property="og:description" content='1.1 Your Turn 1 Run the following chunk. Comment on the output. example_data = data.frame(ID = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10),              Greeting = c(rep("Hello", 5), rep("Goodbye",5)),      ...'>
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 1 Class Activity 1 | Stat 120">
-<meta name="twitter:description" content="Try to knit the file at the present stage and see if it compiles. You can add \vspace*{1in} in the body of this file to produce a vertical space of 1 inches.  1.1 Your Turn 1 Run the following...">
+<meta name="twitter:description" content='1.1 Your Turn 1 Run the following chunk. Comment on the output. example_data = data.frame(ID = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10),              Greeting = c(rep("Hello", 5), rep("Goodbye",5)),      ...'>
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.1/transition.js"></script><script src="libs/bs3compat-0.4.1/tabs.js"></script><script src="libs/bs3compat-0.4.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -66,10 +66,6 @@
 <h1>
 <span class="header-section-number">1</span> Class Activity 1<a class="anchor" aria-label="anchor" href="#class-activity-1"><i class="fas fa-link"></i></a>
 </h1>
-<ul>
-<li>Try to knit the file at the present stage and see if it compiles.</li>
-<li>You can add <code>\vspace*{1in}</code> in the body of this file to produce a vertical space of 1 inches.</li>
-</ul>
 <div id="your-turn-1" class="section level2" number="1.1">
 <h2>
 <span class="header-section-number">1.1</span> Your Turn 1<a class="anchor" aria-label="anchor" href="#your-turn-1"><i class="fas fa-link"></i></a>
@@ -86,29 +82,26 @@
 <details><summary><red>Click for answer</red></summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">example_data</span></span></code></pre></div>
 <pre><code>   ID Greeting  Male      age
-1   1    Hello  TRUE 33.99337
-2   2    Hello FALSE 32.61346
-3   3    Hello  TRUE 49.54900
-4   4    Hello FALSE 43.71993
-5   5    Hello  TRUE 23.75765
-6   6  Goodbye FALSE 40.28837
-7   7  Goodbye  TRUE 45.27394
-8   8  Goodbye FALSE 25.13187
-9   9  Goodbye  TRUE 42.09875
-10 10  Goodbye FALSE 58.63512</code></pre>
+1   1    Hello  TRUE 33.84370
+2   2    Hello FALSE 26.46147
+3   3    Hello  TRUE 32.80934
+4   4    Hello FALSE 26.86671
+5   5    Hello  TRUE 37.15610
+6   6  Goodbye FALSE 55.67961
+7   7  Goodbye  TRUE 22.26074
+8   8  Goodbye FALSE 52.40481
+9   9  Goodbye  TRUE 32.10605
+10 10  Goodbye FALSE 58.83865</code></pre>
 <em>Answer:</em> We see a data frame with four columns, where the first column is an <code>identifier</code> for the cases. We have information on the greeting types, gender, and age on these cases in the remaining columns.
 </details><ol start="2" style="list-style-type: lower-alpha">
 <li>What is the dimension of the dataset called ‘example_data’?</li>
 </ol>
-<details><summary><red>Click for answer</red></summary><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">example_data</span><span class="op">)</span></span></code></pre></div>
-<pre><code>[1] 10  4</code></pre>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">example_data</span><span class="op">)</span></span></code></pre></div>
-<pre><code>[1] 10</code></pre>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">ncol</a></span><span class="op">(</span><span class="va">example_data</span><span class="op">)</span></span></code></pre></div>
-<pre><code>[1] 4</code></pre>
+<details><summary><red>Click for answer</red></summary><div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="class-activity-1.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(example_data)</span>
+<span id="cb4-2"><a href="class-activity-1.html#cb4-2" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">10</span>  <span class="dv">4</span></span>
+<span id="cb4-3"><a href="class-activity-1.html#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(example_data)</span>
+<span id="cb4-4"><a href="class-activity-1.html#cb4-4" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">10</span></span>
+<span id="cb4-5"><a href="class-activity-1.html#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ncol</span>(example_data)</span>
+<span id="cb4-6"><a href="class-activity-1.html#cb4-6" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">4</span></span></code></pre></div>
 <em>Answer:</em> There are 10 rows and 4 columns.
 </details><hr>
 </div>
@@ -119,13 +112,13 @@
 <ol style="list-style-type: lower-alpha">
 <li>Read the dataset <code>EducationLiteracy</code> from the <a href="https://www.lock5stat.com/datapage2e.html">Lock5</a> second edition book.</li>
 </ol>
-<details><summary><red>Click for answer</red></summary><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<details><summary><red>Click for answer</red></summary><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># read in the data</span></span>
 <span><span class="va">education_lock5</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"https://www.lock5stat.com/datasets2e/EducationLiteracy.csv"</span><span class="op">)</span></span></code></pre></div>
 </details><ol start="2" style="list-style-type: lower-alpha">
 <li>Print the header (i.e. first 6 cases by default) of the dataset in part a.</li>
 </ol>
-<details><summary><red>Click for answer</red></summary><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<details><summary><red>Click for answer</red></summary><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">education_lock5</span><span class="op">)</span></span></code></pre></div>
 <pre><code>              Country EducationExpenditure Literacy
 1         Afghanistan                  3.1     31.7
@@ -137,7 +130,7 @@
 </details><ol start="3" style="list-style-type: lower-alpha">
 <li>What is the dimension of the dataset in a?</li>
 </ol>
-<details><summary><red>Click for answer</red></summary><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<details><summary><red>Click for answer</red></summary><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">education_lock5</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] 188   3</code></pre>
 <p><em>Answer:</em> There are 188 rows and 3 columns.</p>

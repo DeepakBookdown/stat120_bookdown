@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 10 (c) Interpret | Stat 120</title>
+<meta name="author" content="Deepak Bastola">
+<meta name="description" content="Interpret your percentile interval in context using a directional statement. Does this interval suggest that the mean ages differ in the population of all good and bad loan holders? Click for...">
+<meta name="generator" content="bookdown 0.31 with bs4_book()">
+<meta property="og:title" content="Chapter 10 (c) Interpret | Stat 120">
+<meta property="og:type" content="book">
+<meta property="og:description" content="Interpret your percentile interval in context using a directional statement. Does this interval suggest that the mean ages differ in the population of all good and bad loan holders? Click for...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 10 (c) Interpret | Stat 120">
+<meta name="twitter:description" content="Interpret your percentile interval in context using a directional statement. Does this interval suggest that the mean ages differ in the population of all good and bad loan holders? Click for...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.1/transition.js"></script><script src="libs/bs3compat-0.4.1/tabs.js"></script><script src="libs/bs3compat-0.4.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Stat 120</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">About</a></li>
+<li><a class="" href="class-activity-1.html"><span class="header-section-number">1</span> Class Activity 1</a></li>
+<li><a class="" href="class-activity-2.html"><span class="header-section-number">2</span> Class Activity 2</a></li>
+<li><a class="" href="class-activity-3.html"><span class="header-section-number">3</span> Class Activity 3</a></li>
+<li><a class="" href="class-activity-4.html"><span class="header-section-number">4</span> Class Activity 4</a></li>
+<li><a class="" href="class-activity-5.html"><span class="header-section-number">5</span> Class Activity 5</a></li>
+<li><a class="" href="class-activity-6.html"><span class="header-section-number">6</span> Class Activity 6</a></li>
+<li><a class="" href="class-activity-7.html"><span class="header-section-number">7</span> Class Activity 7</a></li>
+<li><a class="" href="class-activity-8.html"><span class="header-section-number">8</span> Class Activity 8</a></li>
+<li><a class="" href="b-bootstrap-ci-for-a-difference-in-means.html"><span class="header-section-number">9</span> (b) Bootstrap CI for a difference in means</a></li>
+<li><a class="active" href="c-interpret.html"><span class="header-section-number">10</span> (c) Interpret</a></li>
+<li class="book-part">Basics R</li>
+<li><a class="" href="what-is-r.html"><span class="header-section-number">12</span> What is R?</a></li>
+<li><a class="" href="r-markdown.html"><span class="header-section-number">13</span> R Markdown</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="c-interpret" class="section level1" number="10">
+<h1>
+<span class="header-section-number">10</span> (c) Interpret<a class="anchor" aria-label="anchor" href="#c-interpret"><i class="fas fa-link"></i></a>
+</h1>
+<p>Interpret your percentile interval in context using a directional statement. Does this interval suggest that the mean ages differ in the population of all good and bad loan holders?</p>
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> We are 95% confident that the mean age of people who default on a loan for this population is about 0.7 to 3.8 years less than the mean age of people who do not default. This interval does support the notation that there is a difference in mean ages of these two groups in the population. It suggests that the average age of people who default is less than the average age of those who don’t.
+</details><div id="example-8-credit-data-continued" class="section level2" number="10.1">
+<h2>
+<span class="header-section-number">10.1</span> Example 8 : Credit data continued<a class="anchor" aria-label="anchor" href="#example-8-credit-data-continued"><i class="fas fa-link"></i></a>
+</h2>
+<p>The variable <code>Telephone</code> tells us if the individual has a phone number on their loan file. Let’s look at the proportion of individuals who have a phone number for each type of loan (default or not).</p>
+<p>(a). Data clean up
+The entries in the <code>Telephone</code> column are either <code>none</code> or <code>yes, registered under the customers name</code>.</p>
+<div class="sourceCode" id="cb283"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">credit</span><span class="op">$</span><span class="va">Telephone</span><span class="op">)</span></span></code></pre></div>
+<pre><code>
+                                    none 
+                                     596 
+yes, registered under the customers name 
+                                     404 </code></pre>
+<p>To make shorter names describing these two outcomes, we can use the <code>levels</code> command on the factor variable <code>Telephone</code>. Here we see what the original levels are for this variable:</p>
+<div class="sourceCode" id="cb285"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/levels.html">levels</a></span><span class="op">(</span><span class="va">credit</span><span class="op">$</span><span class="va">Telephone</span><span class="op">)</span></span></code></pre></div>
+<pre><code>NULL</code></pre>
+<p>This shows us the (vector) of two names. We can assign new, shorter names to this variable:</p>
+<div class="sourceCode" id="cb287"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/levels.html">levels</a></span><span class="op">(</span><span class="va">credit</span><span class="op">$</span><span class="va">Telephone</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"no"</span>, <span class="st">"yes"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">credit</span><span class="op">$</span><span class="va">Telephone</span><span class="op">)</span></span></code></pre></div>
+<pre><code>
+                                    none 
+                                     596 
+yes, registered under the customers name 
+                                     404 </code></pre>
+<p>Now we have the same data, just coded with different names.</p>
+<p>(b). Phone rate by default type</p>
+<p>Here we get the distribution of phone numbers (yes or no) by default type (good vs bad loan):</p>
+<div class="sourceCode" id="cb289"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/proportions.html">prop.table</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">credit</span><span class="op">$</span><span class="va">Good.Loan</span>, <span class="va">credit</span><span class="op">$</span><span class="va">Telephone</span><span class="op">)</span>,<span class="fl">1</span><span class="op">)</span></span></code></pre></div>
+<pre><code>          
+                none
+  BadLoan  0.6233333
+  GoodLoan 0.5842857
+          
+           yes, registered under the customers name
+  BadLoan                                 0.3766667
+  GoodLoan                                0.4157143</code></pre>
+<div class="sourceCode" id="cb291"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">credit</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Good.Loan</span>, fill<span class="op">=</span><span class="va">Telephone</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>position<span class="op">=</span><span class="st">"fill"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Class_Activity_8_files/figure-html/unnamed-chunk-15-1.png" width="100%"></div>
+<ul>
+<li>What proportion of bad loans have a phone number on the account?</li>
+</ul>
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> About 37.7% of bad loans have a phone number.
+</details><ul>
+<li>What proportion of good loans have a phone number on the account?</li>
+</ul>
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> About 41.6% of good loans have a phone number.
+</details><ul>
+<li>What is the sample difference in the proportion of good loans and bad loans that have a phone number? Use correct notation for this number.</li>
+</ul>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> Here we get <span class="math inline">\(\hat{p}_{good} - \hat{p}_{bad} =0.4157143 - 0.3766667 = 0.0390476\)</span>.</p>
+<div class="sourceCode" id="cb292"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">0.4157143</span> <span class="op">-</span> <span class="fl">0.3766667</span></span></code></pre></div>
+<pre><code>[1] 0.0390476</code></pre>
+</details><p>(c). Using the <code>boot</code> command with a categorical response</p>
+<p>In order to get the bootstrap distribution for the sample difference in proportions, we need to recode the “response” variable <code>Telephone</code> to have a 1 indicating a “yes” response and 0 indicating a “no” response. This is done with an <code>ifelse</code> command:</p>
+<div class="sourceCode" id="cb294"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">credit</span><span class="op">$</span><span class="va">Telephone_binary</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">credit</span><span class="op">$</span><span class="va">Telephone</span> <span class="op">==</span> <span class="st">"yes, registered under the customers name"</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">credit</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Telephone"</span>, <span class="st">"Telephone_binary"</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
+<pre><code>                                 Telephone Telephone_binary
+1 yes, registered under the customers name                1
+2                                     none                0
+3                                     none                0
+4                                     none                0
+5                                     none                0
+6 yes, registered under the customers name                1</code></pre>
+<p>which reads “if <code>Telephone</code> equals <code>yes</code> than assign a <code>1</code>, else assign a 0”. These 0’s and 1’s are assigned to a variable called <code>Telephone_binary</code> that is now in your data frame (checked this with the <code>View(credit)</code> command).</p>
+<p>Check your work to make sure <code>Telephone_binary</code> records what you want it to record</p>
+<div class="sourceCode" id="cb296"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">credit</span><span class="op">$</span><span class="va">Telephone</span><span class="op">)</span></span></code></pre></div>
+<pre><code>
+                                    none 
+                                     596 
+yes, registered under the customers name 
+                                     404 </code></pre>
+<div class="sourceCode" id="cb298"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">credit</span><span class="op">$</span><span class="va">Telephone_binary</span><span class="op">)</span></span></code></pre></div>
+<pre><code>
+  0   1 
+596 404 </code></pre>
+<p>The mean of the 0/1 coded variable computes the proportion of “yes” responses:</p>
+<div class="sourceCode" id="cb300"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">credit</span><span class="op">$</span><span class="va">Telephone_binary</span><span class="op">)</span></span></code></pre></div>
+<pre><code>[1] 0.404</code></pre>
+<div class="sourceCode" id="cb302"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">404</span><span class="op">/</span><span class="fl">1000</span>  <span class="co"># proportion of yes</span></span></code></pre></div>
+<pre><code>[1] 0.404</code></pre>
+<p>Note: All examples in your <strong>Lab Manual</strong> already have this 0/1 recoding done in the lab manual data sets. But I thought you might want to learn how to do this recoding in case you plan to use this command with other, non-lab manual data sets!</p>
+<p>(d). 95% confidence interval for the difference in phone</p>
+<p>We can now use the 0/1 version of telephone in the <code>boot</code> command (like example 1) to compute a 95% bootstrap confidence interval for the difference in the population proportion of good loans and bad loans that have a phone number.</p>
+<div class="sourceCode" id="cb304"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/CarletonStats/man/boot.html">boot</a></span><span class="op">(</span><span class="va">Telephone_binary</span> <span class="op">~</span> <span class="va">Good.Loan</span>, data<span class="op">=</span><span class="va">credit</span><span class="op">)</span></span></code></pre></div>
+<pre><code>
+    ** Bootstrap interval for difference of statistic
+
+ Observed difference of statistic:  BadLoan - GoodLoan =  -0.03905 
+ Mean of bootstrap distribution: -0.03898 
+ Standard error of bootstrap distribution: 0.03367 
+
+ Bootstrap percentile interval
+       2.5%       97.5% 
+-0.10476190  0.02761905 
+
+        *--------------*</code></pre>
+<div class="inline-figure"><img src="Class_Activity_8_files/figure-html/unnamed-chunk-20-1.png" width="100%"></div>
+<p><strong>Even though the language used in the output says “statistic” we are computing a difference in “proportions”!!</strong></p>
+<ul>
+<li>Give the 95% confidence interval for the difference in the population proportion of bad loans and good loans that have a phone number using the percentile method</li>
+</ul>
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> The percentile interval for Bad <span class="math inline">\(-\)</span> Good is -0.105 to 0.028.
+</details><ul>
+<li>Give the 95% confidence interval for the difference in the population proportion of bad loans and good loans that have a phone number using the bootstrap SE. Is it similar to the CI from the percentile method?</li>
+</ul>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The SE method gives an interval for Bad <span class="math inline">\(-\)</span> Good of -0.107 to 0.028 which is very similar to the percentile interval.</p>
+<div class="sourceCode" id="cb306"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="op">-</span><span class="fl">0.03905</span> <span class="op">-</span> <span class="fl">2</span><span class="op">*</span> <span class="fl">0.03373</span> </span></code></pre></div>
+<pre><code>[1] -0.10651</code></pre>
+<div class="sourceCode" id="cb308"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="op">-</span><span class="fl">0.03905</span> <span class="op">+</span> <span class="fl">2</span><span class="op">*</span> <span class="fl">0.</span></span></code></pre></div>
+<pre><code>[1] -0.03905</code></pre>
+</details><p>(e). Interpret</p>
+<p>Interpret your percentile interval in context using a directional statement. Does this interval suggest that there is a difference in the percentage of bad loan holders who provided a phone number comapared to the percetage of good loan holders who gave a number? Explain.</p>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> We are 95% confident that the percentage of good loan accounts with a phone number is anywhere from 10.7 percentage points higher than to 2.8 percentage points less than the percentage of bad loans with a phone number.</p>
+</details>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="b-bootstrap-ci-for-a-difference-in-means.html"><span class="header-section-number">9</span> (b) Bootstrap CI for a difference in means</a></div>
+<div class="next"><a href="what-is-r.html"><span class="header-section-number">12</span> What is R?</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#c-interpret"><span class="header-section-number">10</span> (c) Interpret</a></li>
+<li><a class="nav-link" href="#example-8-credit-data-continued"><span class="header-section-number">10.1</span> Example 8 : Credit data continued</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/Class_Activity_8.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/Class_Activity_8.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-01-01.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>
