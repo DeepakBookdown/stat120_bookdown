@@ -12,7 +12,7 @@ a. Run the following chunk. Comment on the output.
 example_data = data.frame(ID = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10),
                           Greeting = c(rep("Hello", 5), rep("Goodbye",5)),
                           Male = rep(c(TRUE, FALSE), 5),
-                          age = runif(n=10, 20,60))
+                          Age = runif(n=10, 20, 60))
 ```
 
 
@@ -24,17 +24,17 @@ example_data
 ```
 
 ```
-   ID Greeting  Male      age
-1   1    Hello  TRUE 52.98063
-2   2    Hello FALSE 27.31665
-3   3    Hello  TRUE 21.56816
-4   4    Hello FALSE 25.05958
-5   5    Hello  TRUE 46.38727
-6   6  Goodbye FALSE 50.86454
-7   7  Goodbye  TRUE 52.75954
-8   8  Goodbye FALSE 32.31427
-9   9  Goodbye  TRUE 22.62226
-10 10  Goodbye FALSE 57.09991
+   ID Greeting  Male      Age
+1   1    Hello  TRUE 38.42494
+2   2    Hello FALSE 20.50073
+3   3    Hello  TRUE 59.98065
+4   4    Hello FALSE 59.81283
+5   5    Hello  TRUE 31.34406
+6   6  Goodbye FALSE 26.71798
+7   7  Goodbye  TRUE 56.40279
+8   8  Goodbye FALSE 32.44080
+9   9  Goodbye  TRUE 53.58755
+10 10  Goodbye FALSE 39.53342
 ```
 
 *Answer:* We see a data frame with four columns, where the first column is an `identifier` for the cases. We have information on the greeting types, gender, and age on these cases in the remaining columns.
@@ -62,10 +62,7 @@ ncol(example_data)
 *Answer:* There are 10 rows and 4 columns.
 </details>
 
-
 <br>
-
-
 
 ---------------------------------------------------
 

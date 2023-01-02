@@ -1,7 +1,7 @@
 # Class Activity 8
 
 
-## Example 1: Textbook Prices
+### Example 1: Textbook Prices
 
 Prices of a random sample of 10 textbooks (rounded to the nearest dollar) are shown:
 
@@ -42,18 +42,21 @@ resample
 ```
 
 ```
- [1]  85  87 185  52  87 185 125 147  23 132
+ [1] 132  85 125  93 185  72 132 147 147  85
 ```
 
  (d). Where will be bootstrap distribution be centered?  What shape do we expect it to have?
 
+<details>
+<summary><red>Click for answer</red></summary>
 *Answer:* It will be centered approximately at the sample mean of 100.1 and we expect it to be roughly bellshaped (it may be a bit skewed since the sample size of 10 is smallish).
+</details><br>
 
-\vspace*{1.5in}
+
 
 ----------------------------------------------------------------
 
-## Example 2:  Statkey Atlanta Commute Distance
+### Example 2:  Statkey Atlanta Commute Distance
 
 Go to the website at [Lock5Statkey](http://www.lock5stat.com/StatKey/).  Under the “Bootstrap Confidence Intervals” column, select the “CI for Single Mean, Median, St.Dev”. Change the data set to Atlanta Commute (Distance). This data set gives a random sample of 500 worker commute distances (miles) for metropolitan Atlanta
 
@@ -75,26 +78,31 @@ The value of the bootstrap mean will vary.
 </details><br>
 
 (c). Now click the “Generate 1000 Samples” to get 1000 bootstrap sample means. Is the bootstrap distribution centered at the population or sample mean commute distance?
-
+<details>
+<summary><red>Click for answer</red></summary>
 *Answer:* The bootstrap distribution is always centered around the statistic that is being bootstrapped. Here it will be centered around the sample mean commute distance of about 18.16 miles. The population mean
 commute distance is unknown!
 
 <img src="data/atalanta.png" width="600"/>
-
+</details><br>
 
 (d). What is the bootstrap SE for the sample mean?  
-
+<details>
+<summary><red>Click for answer</red></summary>
 *Answer:* The standard error from the bootstrap distribution is about 0.628.
+</details><br>
 
 (e). Compute a 95% confidence interval for the average commute distance in metropolitan Atlanta.  
-
+<details>
+<summary><red>Click for answer</red></summary>
 *Answer:* The sample mean is $\bar{x} = 18.16$ and the standard error from the bootstrap distribution is about 0.618 so we compute the $95\%$ confidence interval using $18.16 \pm 2(0.628)$, giving an interval of 16.90 to 19.42 miles. 
+</details><br>
 
 (f). Interpret your answer to (e) in context.  
-
+<details>
+<summary><red>Click for answer</red></summary>
 *Answer:* We are 95% confident that the average commuting distance in metropolitan Atlanta is between 16.90 and 19.42 miles. 
-
-\vspace*{1.5in}
+</details><br>
 
 ------------------------------------------------------------------------------------
 
@@ -140,13 +148,17 @@ global warming, go to the website at [Lock5Statkey](http://www.lock5stat.com/Sta
 
 (e). Interpret your interval from part (d).  
 
+<details>
+<summary><red>Click for answer</red></summary>
 *Answer:* We are 95% confident that the proportion of Americans who believe there is solid evidence of global warming is between 0.57 and 0.61.
+</details><br>
 
 (f). Does this data support a claim that a majority of Americans believe there is solid evidence of global warming? Explain.
-
+<details>
+<summary><red>Click for answer</red></summary>
 *Answer:* Yes, the data does support this claim since we are confident that at least 50% of Americans believe in global warming since the lower bound on the CI is 57%. 
 
-\vspace*{1.5in}
+</details><br>
 ------------------------------------------------------------------------------------
 
 ## Example 4. Statkey Global Warming by Political Party
@@ -367,12 +379,12 @@ boot(Age.in.years ~ Good.Loan, data=credit)
 	** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -2.26095 
- Mean of bootstrap distribution: -2.26646 
- Standard error of bootstrap distribution: 0.78339 
+ Mean of bootstrap distribution: -2.27173 
+ Standard error of bootstrap distribution: 0.79139 
 
  Bootstrap percentile interval
       2.5%      97.5% 
--3.7776429 -0.6804643 
+-3.8176310 -0.7004643 
 
 		*--------------*
 ```
@@ -622,12 +634,12 @@ boot(Telephone_binary ~ Good.Loan, data=credit)
 	** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -0.03905 
- Mean of bootstrap distribution: -0.03868 
- Standard error of bootstrap distribution: 0.03376 
+ Mean of bootstrap distribution: -0.0391 
+ Standard error of bootstrap distribution: 0.0334 
 
  Bootstrap percentile interval
        2.5%       97.5% 
--0.10428571  0.02809524 
+-0.10476190  0.02666667 
 
 		*--------------*
 ```

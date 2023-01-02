@@ -11,7 +11,7 @@ a. Run the following chunk. Comment on the output.
 example_data = data.frame(ID = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10),
                           Greeting = c(rep("Hello", 5), rep("Goodbye",5)),
                           Male = rep(c(TRUE, FALSE), 5),
-                          age = runif(n=10, 20,60))
+                          Age = runif(n=10, 20, 60))
 ```
 
 
@@ -42,10 +42,7 @@ ncol(example_data)
 *Answer:* There are 10 rows and 4 columns.
 </details>
 
-
 <br>
-
-
 
 ---------------------------------------------------
 

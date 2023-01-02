@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 8 Class Activity 8 | Stat 120</title>
 <meta name="author" content="Deepak Bastola">
-<meta name="description" content="8.1 Example 1: Textbook Prices Prices of a random sample of 10 textbooks (rounded to the nearest dollar) are shown: \[ \$132 \quad \$87 \quad \$185 \quad \$52 \quad \$23 \quad \$147 \quad \$125...">
+<meta name="description" content="8.0.1 Example 1: Textbook Prices Prices of a random sample of 10 textbooks (rounded to the nearest dollar) are shown: \[ \$132 \quad \$87 \quad \$185 \quad \$52 \quad \$23 \quad \$147 \quad \$125...">
 <meta name="generator" content="bookdown 0.31 with bs4_book()">
 <meta property="og:title" content="Chapter 8 Class Activity 8 | Stat 120">
 <meta property="og:type" content="book">
-<meta property="og:description" content="8.1 Example 1: Textbook Prices Prices of a random sample of 10 textbooks (rounded to the nearest dollar) are shown: \[ \$132 \quad \$87 \quad \$185 \quad \$52 \quad \$23 \quad \$147 \quad \$125...">
+<meta property="og:description" content="8.0.1 Example 1: Textbook Prices Prices of a random sample of 10 textbooks (rounded to the nearest dollar) are shown: \[ \$132 \quad \$87 \quad \$185 \quad \$52 \quad \$23 \quad \$147 \quad \$125...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 8 Class Activity 8 | Stat 120">
-<meta name="twitter:description" content="8.1 Example 1: Textbook Prices Prices of a random sample of 10 textbooks (rounded to the nearest dollar) are shown: \[ \$132 \quad \$87 \quad \$185 \quad \$52 \quad \$23 \quad \$147 \quad \$125...">
+<meta name="twitter:description" content="8.0.1 Example 1: Textbook Prices Prices of a random sample of 10 textbooks (rounded to the nearest dollar) are shown: \[ \$132 \quad \$87 \quad \$185 \quad \$52 \quad \$23 \quad \$147 \quad \$125...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.1/transition.js"></script><script src="libs/bs3compat-0.4.1/tabs.js"></script><script src="libs/bs3compat-0.4.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -66,10 +66,10 @@
 <h1>
 <span class="header-section-number">8</span> Class Activity 8<a class="anchor" aria-label="anchor" href="#class-activity-8"><i class="fas fa-link"></i></a>
 </h1>
-<div id="example-1-textbook-prices" class="section level2" number="8.1">
-<h2>
-<span class="header-section-number">8.1</span> Example 1: Textbook Prices<a class="anchor" aria-label="anchor" href="#example-1-textbook-prices"><i class="fas fa-link"></i></a>
-</h2>
+<div id="example-1-textbook-prices" class="section level3" number="8.0.1">
+<h3>
+<span class="header-section-number">8.0.1</span> Example 1: Textbook Prices<a class="anchor" aria-label="anchor" href="#example-1-textbook-prices"><i class="fas fa-link"></i></a>
+</h3>
 <p>Prices of a random sample of 10 textbooks (rounded to the nearest dollar) are shown:</p>
 <p><span class="math display">\[ \$132 \quad \$87 \quad \$185 \quad \$52 \quad \$23 \quad \$147 \quad \$125 \quad \$93 \quad \$85 \quad \$72 \]</span></p>
 <p>(a). What is the sample mean? Verify using r-code.</p>
@@ -86,15 +86,16 @@
 <div class="sourceCode" id="cb265"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">resample</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">prices</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="va">resample</span></span></code></pre></div>
-<pre><code> [1] 147  87  52  52  93 185  23  72  85 125</code></pre>
+<pre><code> [1] 185 125  87  72 125  23  85 125  23 125</code></pre>
 <p>(d). Where will be bootstrap distribution be centered? What shape do we expect it to have?</p>
-<p><em>Answer:</em> It will be centered approximately at the sample mean of 100.1 and we expect it to be roughly bellshaped (it may be a bit skewed since the sample size of 10 is smallish).</p>
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> It will be centered approximately at the sample mean of 100.1 and we expect it to be roughly bellshaped (it may be a bit skewed since the sample size of 10 is smallish).
+</details><p><br></p>
 <hr>
 </div>
-<div id="example-2-statkey-atlanta-commute-distance" class="section level2" number="8.2">
-<h2>
-<span class="header-section-number">8.2</span> Example 2: Statkey Atlanta Commute Distance<a class="anchor" aria-label="anchor" href="#example-2-statkey-atlanta-commute-distance"><i class="fas fa-link"></i></a>
-</h2>
+<div id="example-2-statkey-atlanta-commute-distance" class="section level3" number="8.0.2">
+<h3>
+<span class="header-section-number">8.0.2</span> Example 2: Statkey Atlanta Commute Distance<a class="anchor" aria-label="anchor" href="#example-2-statkey-atlanta-commute-distance"><i class="fas fa-link"></i></a>
+</h3>
 <p>Go to the website at <a href="http://www.lock5stat.com/StatKey/">Lock5Statkey</a>. Under the “Bootstrap Confidence Intervals” column, select the “CI for Single Mean, Median, St.Dev”. Change the data set to Atlanta Commute (Distance). This data set gives a random sample of 500 worker commute distances (miles) for metropolitan Atlanta</p>
 <p>(a). Use the “Original Sample” pane to determine the shape of these 500 commuter distances, along with their mean and standard deviation. Write down these stats using correct notation.</p>
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> The sample mean is <span class="math inline">\(\bar{x} = 18.16\)</span> and the sample standard deviation is <span class="math inline">\(s = 13.798\)</span>.
@@ -104,21 +105,21 @@
 replacement. Basically we randomly select 500 distances from the data (with replacement).</p>
 The value of the bootstrap mean will vary.
 </details><p><br></p>
-<p>(c). Now click the “Generate 1000 Samples” to get 1000 bootstrap sample means. Is the bootstrap distribution centered at the population or sample mean commute distance?</p>
-<p><em>Answer:</em> The bootstrap distribution is always centered around the statistic that is being bootstrapped. Here it will be centered around the sample mean commute distance of about 18.16 miles. The population mean
+(c). Now click the “Generate 1000 Samples” to get 1000 bootstrap sample means. Is the bootstrap distribution centered at the population or sample mean commute distance?
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The bootstrap distribution is always centered around the statistic that is being bootstrapped. Here it will be centered around the sample mean commute distance of about 18.16 miles. The population mean
 commute distance is unknown!</p>
-<div class="inline-figure"><img src="data/atalanta.png" width="600"></div>
-<p>(d). What is the bootstrap SE for the sample mean?</p>
-<p><em>Answer:</em> The standard error from the bootstrap distribution is about 0.628.</p>
-<p>(e). Compute a 95% confidence interval for the average commute distance in metropolitan Atlanta.</p>
-<p><em>Answer:</em> The sample mean is <span class="math inline">\(\bar{x} = 18.16\)</span> and the standard error from the bootstrap distribution is about 0.618 so we compute the <span class="math inline">\(95\%\)</span> confidence interval using <span class="math inline">\(18.16 \pm 2(0.628)\)</span>, giving an interval of 16.90 to 19.42 miles.</p>
-<p>(f). Interpret your answer to (e) in context.</p>
-<p><em>Answer:</em> We are 95% confident that the average commuting distance in metropolitan Atlanta is between 16.90 and 19.42 miles.</p>
+<img src="data/atalanta.png" width="600"></details><p><br></p>
+(d). What is the bootstrap SE for the sample mean?<br><details><summary><red>Click for answer</red></summary><em>Answer:</em> The standard error from the bootstrap distribution is about 0.628.
+</details><p><br></p>
+(e). Compute a 95% confidence interval for the average commute distance in metropolitan Atlanta.<br><details><summary><red>Click for answer</red></summary><em>Answer:</em> The sample mean is <span class="math inline">\(\bar{x} = 18.16\)</span> and the standard error from the bootstrap distribution is about 0.618 so we compute the <span class="math inline">\(95\%\)</span> confidence interval using <span class="math inline">\(18.16 \pm 2(0.628)\)</span>, giving an interval of 16.90 to 19.42 miles.
+</details><p><br></p>
+(f). Interpret your answer to (e) in context.<br><details><summary><red>Click for answer</red></summary><em>Answer:</em> We are 95% confident that the average commuting distance in metropolitan Atlanta is between 16.90 and 19.42 miles.
+</details><p><br></p>
 <hr>
 </div>
-<div id="example-3-statkey-global-warming" class="section level2" number="8.3">
+<div id="example-3-statkey-global-warming" class="section level2" number="8.1">
 <h2>
-<span class="header-section-number">8.3</span> Example 3: Statkey Global Warming<a class="anchor" aria-label="anchor" href="#example-3-statkey-global-warming"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.1</span> Example 3: Statkey Global Warming<a class="anchor" aria-label="anchor" href="#example-3-statkey-global-warming"><i class="fas fa-link"></i></a>
 </h2>
 <p>What percentage of Americans believe in global warming? A survey on 2,251 randomly selected individuals
 conducted in October 2010 found that 1,328 answered Yes to the question “Is there solid evidence of global
@@ -137,18 +138,20 @@ global warming, go to the website at <a href="http://www.lock5stat.com/StatKey/"
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> The sample proportion is <span class="math inline">\(\hat{p} = 0.59\)</span> and the standard error from the bootstrap distribution is 0.010 so we compute the 95% confidence interval using <span class="math inline">\(0.590 \pm 2(0.010),\)</span> giving an interval of 0.57 to 0.61.
 </details><p><br></p>
 <p>(e). Interpret your interval from part (d).</p>
-<p><em>Answer:</em> We are 95% confident that the proportion of Americans who believe there is solid evidence of global warming is between 0.57 and 0.61.</p>
-<p>(f). Does this data support a claim that a majority of Americans believe there is solid evidence of global warming? Explain.</p>
-<p><em>Answer:</em> Yes, the data does support this claim since we are confident that at least 50% of Americans believe in global warming since the lower bound on the CI is 57%.</p>
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> We are 95% confident that the proportion of Americans who believe there is solid evidence of global warming is between 0.57 and 0.61.
+</details><p><br></p>
+(f). Does this data support a claim that a majority of Americans believe there is solid evidence of global warming? Explain.
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> Yes, the data does support this claim since we are confident that at least 50% of Americans believe in global warming since the lower bound on the CI is 57%.</p>
+</details>
 </div>
-<div id="section" class="section level2" number="8.4">
+<div id="section" class="section level2" number="8.2">
 <h2>
-<span class="header-section-number">8.4</span> <a class="anchor" aria-label="anchor" href="#section"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.2</span> <br><a class="anchor" aria-label="anchor" href="#section"><i class="fas fa-link"></i></a>
 </h2>
 </div>
-<div id="example-4.-statkey-global-warming-by-political-party" class="section level2" number="8.5">
+<div id="example-4.-statkey-global-warming-by-political-party" class="section level2" number="8.3">
 <h2>
-<span class="header-section-number">8.5</span> Example 4. Statkey Global Warming by Political Party<a class="anchor" aria-label="anchor" href="#example-4.-statkey-global-warming-by-political-party"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.3</span> Example 4. Statkey Global Warming by Political Party<a class="anchor" aria-label="anchor" href="#example-4.-statkey-global-warming-by-political-party"><i class="fas fa-link"></i></a>
 </h2>
 <p>Does belief in global warming differ by political party? When the question “Is there solid evidence of global warming?” was asked, the sample proportion answering “yes” was 79% among Democrats and 38% among
 Republicans. To compute a bootstrap confidence interval for the difference in the proportion of Democrats
@@ -174,9 +177,9 @@ The sample difference in proportions is <span class="math inline">\(\hat{p}_{Dem
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> With fewer people in each group, we will get a larger bootstrap SE and hence a larger margin of error for the CI. Remember that the SE of a sampling distribution gets smaller as the sample size increases, the same behavior is seen in a bootstrap distribution.
 </details><p><br></p>
 </div>
-<div id="example-5-statkey-body-temperature" class="section level2" number="8.6">
+<div id="example-5-statkey-body-temperature" class="section level2" number="8.4">
 <h2>
-<span class="header-section-number">8.6</span> Example 5: Statkey Body Temperature<a class="anchor" aria-label="anchor" href="#example-5-statkey-body-temperature"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.4</span> Example 5: Statkey Body Temperature<a class="anchor" aria-label="anchor" href="#example-5-statkey-body-temperature"><i class="fas fa-link"></i></a>
 </h2>
 <p>Is normal body temperature really <span class="math inline">\(98.6^{\circ}\)</span> F? A sample of body temperature for 50 healthy individuals was taken. Find this dataset in StatKey under “Confidence Interval for a Mean.”</p>
 <p>(a). What is the sample mean? What is the sample standard deviation? Use correct notation for each</p>
@@ -197,9 +200,9 @@ We see that 98.6 is not on the interval.</p>
 </details><p><br></p>
 <hr>
 </div>
-<div id="example-6.-bootstrap-in-r-using-hollywood-2011-dataset" class="section level2" number="8.7">
+<div id="example-6.-bootstrap-in-r-using-hollywood-2011-dataset" class="section level2" number="8.5">
 <h2>
-<span class="header-section-number">8.7</span> Example 6. Bootstrap in R using Hollywood 2011 dataset!<a class="anchor" aria-label="anchor" href="#example-6.-bootstrap-in-r-using-hollywood-2011-dataset"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.5</span> Example 6. Bootstrap in R using Hollywood 2011 dataset!<a class="anchor" aria-label="anchor" href="#example-6.-bootstrap-in-r-using-hollywood-2011-dataset"><i class="fas fa-link"></i></a>
 </h2>
 <p>We’ll look at sampling movies from the population of 134 Hollywood movies made in 2011 and measuring their budget (millions of dollars). Construct a bootstrap sampling distribution for budgets (in millions of dollars) of all movies to come out of Hollywood in 2011, using samples of size n = 50.</p>
 <div class="sourceCode" id="cb267"><pre class="downlit sourceCode r">
@@ -246,9 +249,9 @@ We see that 98.6 is not on the interval.</p>
 <div class="inline-figure"><img src="Class_Activity_8_files/figure-html/unnamed-chunk-7-1.png" width="100%"></div>
 <hr>
 </div>
-<div id="example-7-the-data-set-creditdata.csv-contains-records-for-1000-loans-that-either-defaulted-badloan-or-did-not-default-goodloan.-there-are-300-loans-that-defaulted-and-700-that-did-not.-lets-consider-that-the-300-loans-that-defaulted-are-random-sample-of-loans-that-default-and-the-700-non-defaulting-loans-are-a-random-sample-of-loans-that-dont-default." class="section level2" number="8.8">
+<div id="example-7-the-data-set-creditdata.csv-contains-records-for-1000-loans-that-either-defaulted-badloan-or-did-not-default-goodloan.-there-are-300-loans-that-defaulted-and-700-that-did-not.-lets-consider-that-the-300-loans-that-defaulted-are-random-sample-of-loans-that-default-and-the-700-non-defaulting-loans-are-a-random-sample-of-loans-that-dont-default." class="section level2" number="8.6">
 <h2>
-<span class="header-section-number">8.8</span> Example 7: The data set CreditData.csv contains records for 1000 loans that either defaulted (BadLoan) or did not default (GoodLoan). There are 300 loans that defaulted and 700 that did not. Let’s consider that the 300 loans that defaulted are random sample of loans that default and the 700 non-defaulting loans are a random sample of loans that don’t default.<a class="anchor" aria-label="anchor" href="#example-7-the-data-set-creditdata.csv-contains-records-for-1000-loans-that-either-defaulted-badloan-or-did-not-default-goodloan.-there-are-300-loans-that-defaulted-and-700-that-did-not.-lets-consider-that-the-300-loans-that-defaulted-are-random-sample-of-loans-that-default-and-the-700-non-defaulting-loans-are-a-random-sample-of-loans-that-dont-default."><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.6</span> Example 7: The data set CreditData.csv contains records for 1000 loans that either defaulted (BadLoan) or did not default (GoodLoan). There are 300 loans that defaulted and 700 that did not. Let’s consider that the 300 loans that defaulted are random sample of loans that default and the 700 non-defaulting loans are a random sample of loans that don’t default.<a class="anchor" aria-label="anchor" href="#example-7-the-data-set-creditdata.csv-contains-records-for-1000-loans-that-either-defaulted-badloan-or-did-not-default-goodloan.-there-are-300-loans-that-defaulted-and-700-that-did-not.-lets-consider-that-the-300-loans-that-defaulted-are-random-sample-of-loans-that-default-and-the-700-non-defaulting-loans-are-a-random-sample-of-loans-that-dont-default."><i class="fas fa-link"></i></a>
 </h2>
 <div class="sourceCode" id="cb272"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">credit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"https://raw.githubusercontent.com/deepbas/statdatasets/main/CreditData.csv"</span><span class="op">)</span></span>
@@ -288,12 +291,12 @@ We see that 98.6 is not on the interval.</p>
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -2.26095 
- Mean of bootstrap distribution: -2.26088 
- Standard error of bootstrap distribution: 0.78154 
+ Mean of bootstrap distribution: -2.24456 
+ Standard error of bootstrap distribution: 0.77129 
 
  Bootstrap percentile interval
-     2.5%     97.5% 
--3.770964 -0.717119 
+      2.5%      97.5% 
+-3.7566905 -0.7442619 
 
         *--------------*</code></pre>
 <div class="inline-figure"><img src="Class_Activity_8_files/figure-html/unnamed-chunk-10-1.png" width="100%"></div>
@@ -328,9 +331,9 @@ We see that 98.6 is not on the interval.</p>
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> We are 95% confident that the mean age of people who default on a loan for this population is about 0.7 to 3.8 years less than the mean age of people who do not default. This interval does support the notation that there is a difference in mean ages of these two groups in the population. It suggests that the average age of people who default is less than the average age of those who don’t.
 </details><p><br></p>
 </div>
-<div id="example-8-credit-data-continued" class="section level2" number="8.9">
+<div id="example-8-credit-data-continued" class="section level2" number="8.7">
 <h2>
-<span class="header-section-number">8.9</span> Example 8 : Credit data continued<a class="anchor" aria-label="anchor" href="#example-8-credit-data-continued"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.7</span> Example 8 : Credit data continued<a class="anchor" aria-label="anchor" href="#example-8-credit-data-continued"><i class="fas fa-link"></i></a>
 </h2>
 <p>The variable <code>Telephone</code> tells us if the individual has a phone number on their loan file. Let’s look at the proportion of individuals who have a phone number for each type of loan (default or not).</p>
 <p>(a). Data clean up
@@ -432,12 +435,12 @@ yes, registered under the customers name
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -0.03905 
- Mean of bootstrap distribution: -0.03935 
- Standard error of bootstrap distribution: 0.034 
+ Mean of bootstrap distribution: -0.03919 
+ Standard error of bootstrap distribution: 0.03361 
 
  Bootstrap percentile interval
        2.5%       97.5% 
--0.10571429  0.02761905 
+-0.10666667  0.02714286 
 
         *--------------*</code></pre>
 <div class="inline-figure"><img src="Class_Activity_8_files/figure-html/unnamed-chunk-20-1.png" width="100%"></div>
@@ -471,16 +474,19 @@ yes, registered under the customers name
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#class-activity-8"><span class="header-section-number">8</span> Class Activity 8</a></li>
-<li><a class="nav-link" href="#example-1-textbook-prices"><span class="header-section-number">8.1</span> Example 1: Textbook Prices</a></li>
-<li><a class="nav-link" href="#example-2-statkey-atlanta-commute-distance"><span class="header-section-number">8.2</span> Example 2: Statkey Atlanta Commute Distance</a></li>
-<li><a class="nav-link" href="#example-3-statkey-global-warming"><span class="header-section-number">8.3</span> Example 3: Statkey Global Warming</a></li>
-<li><a class="nav-link" href="#section"><span class="header-section-number">8.4</span></a></li>
-<li><a class="nav-link" href="#example-4.-statkey-global-warming-by-political-party"><span class="header-section-number">8.5</span> Example 4. Statkey Global Warming by Political Party</a></li>
-<li><a class="nav-link" href="#example-5-statkey-body-temperature"><span class="header-section-number">8.6</span> Example 5: Statkey Body Temperature</a></li>
-<li><a class="nav-link" href="#example-6.-bootstrap-in-r-using-hollywood-2011-dataset"><span class="header-section-number">8.7</span> Example 6. Bootstrap in R using Hollywood 2011 dataset!</a></li>
-<li><a class="nav-link" href="#example-7-the-data-set-creditdata.csv-contains-records-for-1000-loans-that-either-defaulted-badloan-or-did-not-default-goodloan.-there-are-300-loans-that-defaulted-and-700-that-did-not.-lets-consider-that-the-300-loans-that-defaulted-are-random-sample-of-loans-that-default-and-the-700-non-defaulting-loans-are-a-random-sample-of-loans-that-dont-default."><span class="header-section-number">8.8</span> Example 7: The data set CreditData.csv contains records for 1000 loans that either defaulted (BadLoan) or did not default (GoodLoan). There are 300 loans that defaulted and 700 that did not. Let’s consider that the 300 loans that defaulted are random sample of loans that default and the 700 non-defaulting loans are a random sample of loans that don’t default.</a></li>
-<li><a class="nav-link" href="#example-8-credit-data-continued"><span class="header-section-number">8.9</span> Example 8 : Credit data continued</a></li>
+<li>
+<a class="nav-link" href="#class-activity-8"><span class="header-section-number">8</span> Class Activity 8</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#example-1-textbook-prices"><span class="header-section-number">8.0.1</span> Example 1: Textbook Prices</a></li>
+<li><a class="nav-link" href="#example-2-statkey-atlanta-commute-distance"><span class="header-section-number">8.0.2</span> Example 2: Statkey Atlanta Commute Distance</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#example-3-statkey-global-warming"><span class="header-section-number">8.1</span> Example 3: Statkey Global Warming</a></li>
+<li><a class="nav-link" href="#section"><span class="header-section-number">8.2</span></a></li>
+<li><a class="nav-link" href="#example-4.-statkey-global-warming-by-political-party"><span class="header-section-number">8.3</span> Example 4. Statkey Global Warming by Political Party</a></li>
+<li><a class="nav-link" href="#example-5-statkey-body-temperature"><span class="header-section-number">8.4</span> Example 5: Statkey Body Temperature</a></li>
+<li><a class="nav-link" href="#example-6.-bootstrap-in-r-using-hollywood-2011-dataset"><span class="header-section-number">8.5</span> Example 6. Bootstrap in R using Hollywood 2011 dataset!</a></li>
+<li><a class="nav-link" href="#example-7-the-data-set-creditdata.csv-contains-records-for-1000-loans-that-either-defaulted-badloan-or-did-not-default-goodloan.-there-are-300-loans-that-defaulted-and-700-that-did-not.-lets-consider-that-the-300-loans-that-defaulted-are-random-sample-of-loans-that-default-and-the-700-non-defaulting-loans-are-a-random-sample-of-loans-that-dont-default."><span class="header-section-number">8.6</span> Example 7: The data set CreditData.csv contains records for 1000 loans that either defaulted (BadLoan) or did not default (GoodLoan). There are 300 loans that defaulted and 700 that did not. Let’s consider that the 300 loans that defaulted are random sample of loans that default and the 700 non-defaulting loans are a random sample of loans that don’t default.</a></li>
+<li><a class="nav-link" href="#example-8-credit-data-continued"><span class="header-section-number">8.7</span> Example 8 : Credit data continued</a></li>
 </ul>
 
       <div class="book-extra">
