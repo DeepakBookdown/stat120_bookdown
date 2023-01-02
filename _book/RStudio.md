@@ -32,14 +32,6 @@ An R Markdown file contains three essential elements:
 
 - R chunks: R chunks contain the R commands that you want evaluated. You embed these chunks within your written analysis and they are evaluated when you compile the document.
 
-### R Markdown example:
-- Simple R Markdown example
-  + compiled pdf
-  
-The following handouts, written by Prof Katie St Clair, contain useful information for making the figured and tables in your compiled documents look nice:
-
-- Graph Formatting: Markdown .Rmd file and pdf 
-- Table Formatting: Markdown .Rmd file and pdf
 
 ## Installing R/RStudio (not needed if you are using the maize server)
 
@@ -65,7 +57,6 @@ If you have used a local version of R/RStudio before and it is still installed o
 -   In RStudio, check for updates with the menu option `Help > Check for updates`. Follow directions if an update is needed.
 
 
-
 ## Instructions
 
 If using Rstudio on your computer, using the **File>Open File** menu to find and open this .Rmd file. 
@@ -85,7 +76,7 @@ Extra notes:
 
 - **Maize users**: You may also need to allow for "pop-up" in your web browser when knitting documents. 
 
-## Few Instructions
+## Few More Instructions
 
 The default setting in Rstudio when you are running chunks is that the “output” (numbers, graphs) are
 shown **inline** within the Markdown Rmd. If you prefer to have your plots appear on the right of the console and not below the chunk, then change the settings as follows:

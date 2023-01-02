@@ -7,12 +7,11 @@ what-is-r
 what-is-rstudio
 r-studio-server
 r-markdown-basics
-r-markdown-example
 installing-rrstudio-not-needed-if-you-are-using-the-maize-server
 install-latex-for-knitting-r-markdown-documents-to-pdf
 updating-rrstudio-not-needed-if-you-are-using-the-maize-server
 instructions
-few-instructions
+few-more-instructions
 r-markdown
 including-plots
 read-in-data-files
