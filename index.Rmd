@@ -17,9 +17,8 @@ csl: chicago-fullnote-bibliography.csl
 
 # About {-}
 
-This is a _sample_ book written in **Markdown**. 
+This is a _sample_ book written in **Markdown** to guide STAT 120 students interactively explore various class activities and projects in R.
 
-<p class="spoiler">Answer</p>
 
 
 ```{r include=FALSE}

@@ -19,6 +19,7 @@ Chirps       0.23067    0.01423   16.21  1.63e-05 ***
 
 <br>
 
+<p class="spoiler">Answer</p>
 
 ```{r}
 survey <- read.csv("https://raw.githubusercontent.com/deepbas/statdatasets/main/StudentSurvey.csv")
