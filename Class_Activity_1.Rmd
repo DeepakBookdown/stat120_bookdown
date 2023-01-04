@@ -121,3 +121,45 @@ e. If we would like to use education expenditure to predict the literacy rate of
 
 ---------------------------------------------------------------------
 
+## Quiz
+
+**1. Cases are a set of individual units where the measurements are taken.**
+
+&emsp;  A. TRUE
+  
+&emsp;  B. FALSE
+
+<details>
+<summary><red>Click for answer</red></summary>
+TRUE
+</details><br>
+
+**2. The characteristic that is recorded for each case is called a**
+
+&emsp;A. ledger
+
+&emsp;B. caseholder
+
+&emsp;C. placeholder
+
+&emsp;D. variable
+
+<details>
+<summary><red>Click for answer</red></summary>
+variable
+</details><br>
+
+
+**3. Variables can be either categorical or quantitative.**
+
+&emsp;A. TRUE
+
+&emsp;B. FALSE
+
+<details>
+<summary><red>Click for answer</red></summary>
+TRUE
+</details><br>
+
+
+

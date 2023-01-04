@@ -1,4 +1,8 @@
 fig:pie
+class-activity-1
+your-turn-1
+your-turn-2
+quiz
 part-basics-r
 what-is-r
 what-is-rstudio

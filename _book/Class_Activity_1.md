@@ -25,16 +25,16 @@ example_data
 
 ```
    ID Greeting  Male      Age
-1   1    Hello  TRUE 27.68160
-2   2    Hello FALSE 59.19701
-3   3    Hello  TRUE 45.62730
-4   4    Hello FALSE 38.84743
-5   5    Hello  TRUE 38.57007
-6   6  Goodbye FALSE 43.70837
-7   7  Goodbye  TRUE 33.23341
-8   8  Goodbye FALSE 37.89085
-9   9  Goodbye  TRUE 46.12860
-10 10  Goodbye FALSE 52.91859
+1   1    Hello  TRUE 44.32349
+2   2    Hello FALSE 53.44580
+3   3    Hello  TRUE 45.96503
+4   4    Hello FALSE 29.10510
+5   5    Hello  TRUE 59.35985
+6   6  Goodbye FALSE 29.72899
+7   7  Goodbye  TRUE 28.73297
+8   8  Goodbye FALSE 34.56637
+9   9  Goodbye  TRUE 22.08764
+10 10  Goodbye FALSE 23.76303
 ```
 
 *Answer:* We see a data frame with four columns, where the first column is an `identifier` for the cases. We have information on the greeting types, gender, and age on these cases in the remaining columns.
@@ -157,4 +157,46 @@ e. If we would like to use education expenditure to predict the literacy rate of
 
 
 ---------------------------------------------------------------------
+
+## Quiz
+
+**1. Cases are a set of individual units where the measurements are taken.**
+
+&emsp;  A. TRUE
+  
+&emsp;  B. FALSE
+
+<details>
+<summary><red>Click for answer</red></summary>
+TRUE
+</details><br>
+
+**2. The characteristic that is recorded for each case is called a**
+
+&emsp;A. ledger
+
+&emsp;B. caseholder
+
+&emsp;C. placeholder
+
+&emsp;D. variable
+
+<details>
+<summary><red>Click for answer</red></summary>
+variable
+</details><br>
+
+
+**3. Variables can be either categorical or quantitative.**
+
+&emsp;A. TRUE
+
+&emsp;B. FALSE
+
+<details>
+<summary><red>Click for answer</red></summary>
+TRUE
+</details><br>
+
+
 
