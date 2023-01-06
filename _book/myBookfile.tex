@@ -117,7 +117,7 @@
 
 \title{Stat 120}
 \author{Deepak Bastola}
-\date{2023-01-04}
+\date{2023-01-06}
 
 \begin{document}
 \maketitle
@@ -166,16 +166,16 @@ Click for answer
 
 \begin{verbatim}
    ID Greeting  Male      Age
-1   1    Hello  TRUE 57.73762
-2   2    Hello FALSE 48.45975
-3   3    Hello  TRUE 52.35185
-4   4    Hello FALSE 31.28985
-5   5    Hello  TRUE 24.15008
-6   6  Goodbye FALSE 57.66314
-7   7  Goodbye  TRUE 46.11206
-8   8  Goodbye FALSE 44.58185
-9   9  Goodbye  TRUE 21.66494
-10 10  Goodbye FALSE 55.75327
+1   1    Hello  TRUE 58.97747
+2   2    Hello FALSE 35.47900
+3   3    Hello  TRUE 24.35861
+4   4    Hello FALSE 38.88249
+5   5    Hello  TRUE 57.10606
+6   6  Goodbye FALSE 51.13616
+7   7  Goodbye  TRUE 39.09425
+8   8  Goodbye FALSE 33.27335
+9   9  Goodbye  TRUE 23.75193
+10 10  Goodbye FALSE 42.69289
 \end{verbatim}
 
 \emph{Answer:} We see a data frame with four columns, where the first column is an \texttt{identifier} for the cases. We have information on the greeting types, whether male or not, and age on these cases in the remaining columns.
@@ -334,6 +334,190 @@ variable
 Click for answer
 
 TRUE
+
+\hypertarget{class-activity-2}{%
+\chapter{Class Activity 2}\label{class-activity-2}}
+
+\hypertarget{your-turn-1-1}{%
+\section{Your Turn 1}\label{your-turn-1-1}}
+
+This exercise is about finding the average word length in Lincoln's Gettysburg's address.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{your-turn-2-1}{%
+\section{Your Turn 2}\label{your-turn-2-1}}
+
+\hypertarget{summary-of-article-on-it-depends-on-how-you-ask}{%
+\subsection{\texorpdfstring{Summary of article on \href{https://jech.bmj.com/content/75/4/387.abstract}{It depends on how you ask!}}{Summary of article on It depends on how you ask!}}\label{summary-of-article-on-it-depends-on-how-you-ask}}
+
+Click for answer
+
+\emph{Answer:}
+
+This study aimed to measure the effects of psychological biases on estimates of compliance with public health guidance regarding COVID-19. Results showed that compliance estimates were reduced when questions were framed negatively and anonymity was increased. Effect sizes were large, with compliance estimates diminishing by up to 17\% points and 10\% points, respectively. These findings suggest that standard tracking surveys pose questions in ways that lead to higher compliance estimates than alternative approaches.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{your-turn-3}{%
+\section{Your Turn 3}\label{your-turn-3}}
+
+\hypertarget{gettysburg-random-sample}{%
+\subsection{Gettysburg random sample}\label{gettysburg-random-sample}}
+
+Let's take a simple random sample (SRS) of Gettysburg words. The ``population'' is contained in the
+spreadsheet \texttt{GettysburgPopulationCounts.csv}. Carefully load this data into R:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pop }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/deepbas/statdatasets/main/GettysbergPopulationCounts.csv"}\NormalTok{)}
+\FunctionTok{head}\NormalTok{(pop)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+  position size  word
+1        1    4  Four
+2        2    5 score
+3        3    3   and
+4        4    5 seven
+5        5    5 years
+6        6    3  ago,
+\end{verbatim}
+
+The \texttt{position} variable enumerates the list of words in the population (address).
+
+(a). Sample
+
+Run the following command to obtain a SRS of 10 words from the 268 that are in the population:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{samp }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{268}\NormalTok{, }\AttributeTok{size=}\DecValTok{10}\NormalTok{)}
+\NormalTok{samp}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+ [1]   3 144  19 103 234 263 212 114  81   7
+\end{verbatim}
+
+This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
+
+(b). Get words and lengths
+
+We will \emph{subset} the data set \texttt{pop} to obtain only the sampled rows listed in \texttt{samp}. We do this using \textbf{square bracket notation} `dataset{[}row number, column number/name{]}. Run the following command to find your sampled words and sizes:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pop[samp,]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+    position size     word
+3          3    3      and
+144      144    4    note,
+19        19    7 liberty,
+103      103    3     But,
+234      234    3      not
+263      263    5    shall
+212      212    2       to
+114      114    2       we
+81        81    5    those
+7          7    3      our
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Compute your sample mean
+\end{enumerate}
+
+The word lengths in part (b) are the data for your sample. You can compute your sample mean using a calculator, or using R. Let's try R (you will find it faster!). First save the quantitative variable \texttt{size} in a new variable called \texttt{mysize}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mysize }\OtherTok{\textless{}{-}}\NormalTok{ pop[samp, }\StringTok{"size"}\NormalTok{]}
+\NormalTok{mysize}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+ [1] 3 4 7 3 3 5 2 2 5 3
+\end{verbatim}
+
+Then find the mean of these values:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(mysize)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 3.7
+\end{verbatim}
+
+How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?
+
+Click for answer
+
+\emph{Answer:} The true mean is 4.29. Your two means will likely vary. Since the many non-random samples generally overestimated the population mean length, it is possible (but not guaranteed) that \emph{your} one non-random sample gave a mean length that is greater than the random sample's mean length.
+
+\hypertarget{driving-with-a-pet-on-your-lap}{%
+\subsection{Driving with a Pet on your Lap}\label{driving-with-a-pet-on-your-lap}}
+
+Over 30,000 people participated in an online poll on \texttt{cnn.com} conducted in April 2012 asking: ``Have you ever driven with a pet on your lap''? We see that 34\% of the participants answered yes and 66\% answered no.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  Can you conclude that a random sample was used from the description given? Explain.
+\end{enumerate}
+
+Click for answer
+
+\emph{Answer:} No you can't make this conclusion from the info given. In fact, an online poll at a website like \texttt{cnn.com} is almost always reporting results from a non-random sample. The people who respond are individuals who visit \texttt{cnn.com}, then see the online poll and decide to respond.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Explain why it is not appropriate to generalize these results to all drivers, or even to all drivers who visit cnn.com.
+\end{enumerate}
+
+Click for answer
+
+\emph{Answer:} This is a volunteer sample, and volunteer samples are often biased and can't be generalized to \emph{all drivers} (the population). It is likely that people who have driven with a pet on their lap are more likely to respond to the poll.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  How might we select a sample of people that would give us results that we can generalize to a broader population?
+\end{enumerate}
+
+Click for answer
+
+\emph{Answer:} A random sample of individuals from all U.S. drivers would need to be selected and given the poll question. (There are many ways to do this, the most common being a variation of random digit dialing where phone numbers are randomly selected from known area codes.)
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Is the variable measured in this study quantitative or categorical?
+\end{enumerate}
+
+Click for answer
+
+\emph{Answer:} Categorical (yes or no answer to the question).
 
 \hypertarget{part-basics-r}{%
 \chapter{(PART*) Basics R}\label{part-basics-r}}

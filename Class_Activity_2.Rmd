@@ -6,6 +6,7 @@
 This exercise is about finding the average word length in Lincoln's Gettysburg's address.
 
 ------------------------------------------
+
 <br>
 
 ## Your Turn 2

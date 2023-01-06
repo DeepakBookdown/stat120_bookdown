@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 4 R Markdown | Stat 120</title>
+<title>Chapter 5 R Markdown | Stat 120</title>
 <meta name="author" content="Deepak Bastola">
 <meta name="description" content="This is a R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com. You can...">
 <meta name="generator" content="bookdown 0.31 with bs4_book()">
-<meta property="og:title" content="Chapter 4 R Markdown | Stat 120">
+<meta property="og:title" content="Chapter 5 R Markdown | Stat 120">
 <meta property="og:type" content="book">
 <meta property="og:description" content="This is a R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com. You can...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 4 R Markdown | Stat 120">
+<meta name="twitter:title" content="Chapter 5 R Markdown | Stat 120">
 <meta name="twitter:description" content="This is a R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com. You can...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -45,9 +45,10 @@
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html">About</a></li>
 <li><a class="" href="class-activity-1.html"><span class="header-section-number">1</span> Class Activity 1</a></li>
+<li><a class="" href="class-activity-2.html"><span class="header-section-number">2</span> Class Activity 2</a></li>
 <li class="book-part">Basics R</li>
-<li><a class="" href="what-is-r.html"><span class="header-section-number">3</span> What is R?</a></li>
-<li><a class="active" href="r-markdown.html"><span class="header-section-number">4</span> R Markdown</a></li>
+<li><a class="" href="what-is-r.html"><span class="header-section-number">4</span> What is R?</a></li>
+<li><a class="active" href="r-markdown.html"><span class="header-section-number">5</span> R Markdown</a></li>
 </ul>
 
         <div class="book-extra">
@@ -55,18 +56,18 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="r-markdown" class="section level1" number="4">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="r-markdown" class="section level1" number="5">
 <h1>
-<span class="header-section-number">4</span> R Markdown<a class="anchor" aria-label="anchor" href="#r-markdown"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5</span> R Markdown<a class="anchor" aria-label="anchor" href="#r-markdown"><i class="fas fa-link"></i></a>
 </h1>
 <p>This is a R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
 <p>You can use asterisk mark to provide emphasis, such as <code>*italics* or **bold**</code>.</p>
 <p>You can create lists with a dash:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="r-markdown.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> Item <span class="dv">1</span></span>
-<span id="cb10-2"><a href="r-markdown.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> Item <span class="dv">2</span></span>
-<span id="cb10-3"><a href="r-markdown.html#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> Item <span class="dv">3</span></span>
-<span id="cb10-4"><a href="r-markdown.html#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="sc">+</span> Subitem <span class="dv">1</span></span>
-<span id="cb10-5"><a href="r-markdown.html#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span> Item <span class="dv">4</span></span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="r-markdown.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> Item <span class="dv">1</span></span>
+<span id="cb20-2"><a href="r-markdown.html#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> Item <span class="dv">2</span></span>
+<span id="cb20-3"><a href="r-markdown.html#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> Item <span class="dv">3</span></span>
+<span id="cb20-4"><a href="r-markdown.html#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="sc">+</span> Subitem <span class="dv">1</span></span>
+<span id="cb20-5"><a href="r-markdown.html#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span> Item <span class="dv">4</span></span></code></pre></div>
 <ul>
 <li>Item 1</li>
 <li>Item 2</li>
@@ -89,7 +90,7 @@ create a block of code
 <pre><code>Use back ticks to 
 create a block of code</code></pre>
 <p>You can also evaluate and display the results of R code. Each tasks can be accomplished in a suitably labeled chunk like the following:</p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">cars</span><span class="op">)</span></span></code></pre></div>
 <pre><code>     speed           dist       
  Min.   : 4.0   Min.   :  2.00  
@@ -98,7 +99,7 @@ create a block of code</code></pre>
  Mean   :15.4   Mean   : 42.98  
  3rd Qu.:19.0   3rd Qu.: 56.00  
  Max.   :25.0   Max.   :120.00  </code></pre>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">fit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">dist</span> <span class="op">~</span> <span class="va">speed</span>, data <span class="op">=</span> <span class="va">cars</span><span class="op">)</span></span>
 <span><span class="va">fit</span></span></code></pre></div>
 <pre><code>
@@ -108,12 +109,12 @@ lm(formula = dist ~ speed, data = cars)
 Coefficients:
 (Intercept)        speed  
     -17.579        3.932  </code></pre>
-<div id="including-plots" class="section level2" number="4.1">
+<div id="including-plots" class="section level2" number="5.1">
 <h2>
-<span class="header-section-number">4.1</span> Including Plots<a class="anchor" aria-label="anchor" href="#including-plots"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1</span> Including Plots<a class="anchor" aria-label="anchor" href="#including-plots"><i class="fas fa-link"></i></a>
 </h2>
-<p>You can also embed plots. See Figure <a href="r-markdown.html#fig:pie">4.1</a> for example:</p>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<p>You can also embed plots. See Figure <a href="r-markdown.html#fig:pie">5.1</a> for example:</p>
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/pie.html">pie</a></span><span class="op">(</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">280</span>, <span class="fl">60</span>, <span class="fl">20</span><span class="op">)</span>,</span>
@@ -124,16 +125,16 @@ Coefficients:
 <div class="figure">
 <span style="display:block;" id="fig:pie"></span>
 <img src="Rmarkdown_files/figure-html/pie-1.png" alt="A fancy pie chart." width="100%"><p class="caption">
-Figure 4.1: A fancy pie chart.
+Figure 5.1: A fancy pie chart.
 </p>
 </div>
 <p>(Credit: Yihui Xie)</p>
 </div>
-<div id="read-in-data-files" class="section level2" number="4.2">
+<div id="read-in-data-files" class="section level2" number="5.2">
 <h2>
-<span class="header-section-number">4.2</span> Read in data files<a class="anchor" aria-label="anchor" href="#read-in-data-files"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2</span> Read in data files<a class="anchor" aria-label="anchor" href="#read-in-data-files"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">simple_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"https://deepbas.io/data/simple-1.dat"</span>, <span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">simple_data</span><span class="op">)</span> </span></code></pre></div>
 <pre><code>   initials            state                age      
@@ -150,7 +151,7 @@ Figure 4.1: A fancy pie chart.
                    
                    
                    </code></pre>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="va">simple_data</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
@@ -181,9 +182,9 @@ Figure 4.1: A fancy pie chart.
 </tbody>
 </table></div>
 </div>
-<div id="hide-the-code" class="section level2" number="4.3">
+<div id="hide-the-code" class="section level2" number="5.3">
 <h2>
-<span class="header-section-number">4.3</span> Hide the code<a class="anchor" aria-label="anchor" href="#hide-the-code"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.3</span> Hide the code<a class="anchor" aria-label="anchor" href="#hide-the-code"><i class="fas fa-link"></i></a>
 </h2>
 <p>If we enter the <code>echo = FALSE</code> option in the R chunk (see the .Rmd file). This prevents the R code from being printed to your document; you just see the results.</p>
 <div class="inline-table"><table class="table table-sm">
@@ -217,15 +218,15 @@ Figure 4.1: A fancy pie chart.
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="what-is-r.html"><span class="header-section-number">3</span> What is R?</a></div>
+<div class="prev"><a href="what-is-r.html"><span class="header-section-number">4</span> What is R?</a></div>
 <div class="empty"></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#r-markdown"><span class="header-section-number">4</span> R Markdown</a></li>
-<li><a class="nav-link" href="#including-plots"><span class="header-section-number">4.1</span> Including Plots</a></li>
-<li><a class="nav-link" href="#read-in-data-files"><span class="header-section-number">4.2</span> Read in data files</a></li>
-<li><a class="nav-link" href="#hide-the-code"><span class="header-section-number">4.3</span> Hide the code</a></li>
+<li><a class="nav-link" href="#r-markdown"><span class="header-section-number">5</span> R Markdown</a></li>
+<li><a class="nav-link" href="#including-plots"><span class="header-section-number">5.1</span> Including Plots</a></li>
+<li><a class="nav-link" href="#read-in-data-files"><span class="header-section-number">5.2</span> Read in data files</a></li>
+<li><a class="nav-link" href="#hide-the-code"><span class="header-section-number">5.3</span> Hide the code</a></li>
 </ul>
 
       <div class="book-extra">
@@ -243,7 +244,7 @@ Figure 4.1: A fancy pie chart.
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-01-04.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-01-06.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
