@@ -61,7 +61,7 @@ samp
 ```
 
 ```
- [1] 163  28 103  65 139  10 152 215  49 150
+ [1] 179 173  45 210  94 192 169  55 175 255
 ```
 
 This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
@@ -80,17 +80,17 @@ pop[samp,]
 ```
 
 ```
-    position size     word
-163      163    3      for
-28        28    3      are
-103      103    3     But,
-65        65    2       We
-139      139    7 detract.
-10        10    5    forth
-152      152    3      but
-215      215    3      for
-49        49    3      and
-150      150    3      say
+    position size       word
+179      179    6     fought
+173      173    3        the
+45        45    3        any
+210      210    9  increased
+94        94   10 altogether
+192      192    2         to
+169      169    2         be
+55        55    2         We
+175      175    4       work
+255      255    3        the
 ```
 
 <br>
@@ -106,7 +106,7 @@ mysize
 ```
 
 ```
- [1] 3 3 3 2 7 5 3 3 3 3
+ [1]  6  3  3  9 10  2  2  2  4  3
 ```
 
 Then find the mean of these values:
@@ -117,7 +117,7 @@ mean(mysize)
 ```
 
 ```
-[1] 3.5
+[1] 4.4
 ```
 
 How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample? 
@@ -177,6 +177,51 @@ d. Is the variable measured in this study quantitative or categorical?
 *Answer:* Categorical (yes or no answer to the question).
 </details>
 
- 
+ ---------------------------------------------------------------------
+
+## Quiz
+
+**1. A group of researchers investigated the effect of media usage (whether or not subjects watch television or use the Internet) in the bedroom on "Tiredness" during the day (measured on a 50 point scale). The explanatory and response variables are**
+
+&emsp;  A. Explanatory is media usage in the bedroom and response is "tiredness"
+
+&emsp;  B. Explanatory is "tiredness" and response is media usage in the bedroom
+
+<details>
+<summary><red>Click for answer</red></summary>
+The correct answer is A.
+</details><br>
+
+**2. An October 2016 Gallup poll estimates that 60% of US adults support legalizing the use of marijuana. Their results were based on a "random sample of 1,017 adults, aged 18 and older, living in all 50 U.S. states and the District of Columbia". The population for this study is**
+
+&emsp;A. all adults (18 and older) living in the U.S. (including D.C)
+
+&emsp;B. the 1,017 adults (18 and older) living in the U.S. (including D.C) who were sampled
+
+&emsp;C. the 1,017 adults (18 and older) living in the U.S. (including D.C) who were sampled and support legalizing marijuana
+
+&emsp;D. all adults (18 and older) living in the U.S. (including D.C) who support legalizing marijuana
+
+
+<details>
+<summary><red>Click for answer</red></summary>
+The correct answer is A.
+</details><br>
+
+
+**3. An October 2016 Gallup poll estimates that 60% of US adults support legalizing the use of marijuana. Their results were based on a "random sample of 1,017 adults, aged 18 and older, living in all 50 U.S. states and the District of Columbia". Which statement below regarding bias is true?**
+
+&emsp;A. The results are biased because Gallup only contacted a small fraction of people in the population.
+
+&emsp;B. The results may be biased because people may not have answered a survey question about marijuana truthfully
+
+<details>
+<summary><red>Click for answer</red></summary>
+The correct answer is B.
+</details><br>
+
+
+
+
 
 

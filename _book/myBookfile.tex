@@ -117,7 +117,7 @@
 
 \title{Stat 120}
 \author{Deepak Bastola}
-\date{2023-01-06}
+\date{2023-01-08}
 
 \begin{document}
 \maketitle
@@ -166,16 +166,16 @@ Click for answer
 
 \begin{verbatim}
    ID Greeting  Male      Age
-1   1    Hello  TRUE 58.97747
-2   2    Hello FALSE 35.47900
-3   3    Hello  TRUE 24.35861
-4   4    Hello FALSE 38.88249
-5   5    Hello  TRUE 57.10606
-6   6  Goodbye FALSE 51.13616
-7   7  Goodbye  TRUE 39.09425
-8   8  Goodbye FALSE 33.27335
-9   9  Goodbye  TRUE 23.75193
-10 10  Goodbye FALSE 42.69289
+1   1    Hello  TRUE 21.39270
+2   2    Hello FALSE 55.18330
+3   3    Hello  TRUE 54.35298
+4   4    Hello FALSE 38.84701
+5   5    Hello  TRUE 46.65463
+6   6  Goodbye FALSE 57.27510
+7   7  Goodbye  TRUE 59.32366
+8   8  Goodbye FALSE 56.82235
+9   9  Goodbye  TRUE 29.72396
+10 10  Goodbye FALSE 39.89474
 \end{verbatim}
 
 \emph{Answer:} We see a data frame with four columns, where the first column is an \texttt{identifier} for the cases. We have information on the greeting types, whether male or not, and age on these cases in the remaining columns.
@@ -399,7 +399,7 @@ Run the following command to obtain a SRS of 10 words from the 268 that are in t
 \end{Shaded}
 
 \begin{verbatim}
- [1]   3 144  19 103 234 263 212 114  81   7
+ [1]  22  73  40 245  62  21  67 107 135 121
 \end{verbatim}
 
 This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
@@ -415,17 +415,17 @@ We will \emph{subset} the data set \texttt{pop} to obtain only the sampled rows 
 \end{Shaded}
 
 \begin{verbatim}
-    position size     word
-3          3    3      and
-144      144    4    note,
-19        19    7 liberty,
-103      103    3     But,
-234      234    3      not
-263      263    5    shall
-212      212    2       to
-114      114    2       we
-81        81    5    those
-7          7    3      our
+    position size      word
+22        22    2        to
+73        73    4      that
+40        40    7   testing
+245      245    4      have
+62        62    2        of
+21        21    9 dedicated
+67        67    4      come
+107      107    5    sense,
+135      135    5     power
+121      121    3      men,
 \end{verbatim}
 
 \begin{enumerate}
@@ -446,7 +446,7 @@ The word lengths in part (b) are the data for your sample. You can compute your 
 \end{Shaded}
 
 \begin{verbatim}
- [1] 3 4 7 3 3 5 2 2 5 3
+ [1] 2 4 7 4 2 9 4 5 5 3
 \end{verbatim}
 
 Then find the mean of these values:
@@ -458,7 +458,7 @@ Then find the mean of these values:
 \end{Shaded}
 
 \begin{verbatim}
-[1] 3.7
+[1] 4.5
 \end{verbatim}
 
 How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?
@@ -518,6 +518,45 @@ Click for answer
 Click for answer
 
 \emph{Answer:} Categorical (yes or no answer to the question).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{quiz-1}{%
+\section{Quiz}\label{quiz-1}}
+
+\textbf{1. A group of researchers investigated the effect of media usage (whether or not subjects watch television or use the Internet) in the bedroom on ``Tiredness'' during the day (measured on a 50 point scale). The explanatory and response variables are}
+
+  A. Explanatory is media usage in the bedroom and response is ``tiredness''
+
+  B. Explanatory is ``tiredness'' and response is media usage in the bedroom
+
+Click for answer
+
+The correct answer is A.
+
+\textbf{2. An October 2016 Gallup poll estimates that 60\% of US adults support legalizing the use of marijuana. Their results were based on a ``random sample of 1,017 adults, aged 18 and older, living in all 50 U.S. states and the District of Columbia''. The population for this study is}
+
+ A. all adults (18 and older) living in the U.S. (including D.C)
+
+ B. the 1,017 adults (18 and older) living in the U.S. (including D.C) who were sampled
+
+ C. the 1,017 adults (18 and older) living in the U.S. (including D.C) who were sampled and support legalizing marijuana
+
+ D. all adults (18 and older) living in the U.S. (including D.C) who support legalizing marijuana
+
+Click for answer
+
+The correct answer is A.
+
+\textbf{3. An October 2016 Gallup poll estimates that 60\% of US adults support legalizing the use of marijuana. Their results were based on a ``random sample of 1,017 adults, aged 18 and older, living in all 50 U.S. states and the District of Columbia''. Which statement below regarding bias is true?}
+
+ A. The results are biased because Gallup only contacted a small fraction of people in the population.
+
+ B. The results may be biased because people may not have answered a survey question about marijuana truthfully
+
+Click for answer
+
+The correct answer is B.
 
 \hypertarget{part-basics-r}{%
 \chapter{(PART*) Basics R}\label{part-basics-r}}

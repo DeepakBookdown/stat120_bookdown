@@ -10,6 +10,7 @@ summary-of-article-on-it-depends-on-how-you-ask
 your-turn-3
 gettysburg-random-sample
 driving-with-a-pet-on-your-lap
+quiz-1
 part-basics-r
 what-is-r
 what-is-rstudio

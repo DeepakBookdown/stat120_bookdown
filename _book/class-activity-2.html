@@ -108,24 +108,24 @@ spreadsheet <code>GettysburgPopulationCounts.csv</code>. Carefully load this dat
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">samp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">268</span>, size<span class="op">=</span><span class="fl">10</span><span class="op">)</span></span>
 <span><span class="va">samp</span></span></code></pre></div>
-<pre><code> [1] 148  97 198 217 230 265 141 195 256 257</code></pre>
+<pre><code> [1] 163 258 198 201 120  51  73  85  46 173</code></pre>
 <p>This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?</p>
 <p><br></p>
 <p>(b). Get words and lengths</p>
 <p>We will <em>subset</em> the data set <code>pop</code> to obtain only the sampled rows listed in <code>samp</code>. We do this using <strong>square bracket notation</strong> `dataset[row number, column number/name]. Run the following command to find your sampled words and sizes:</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">pop</span><span class="op">[</span><span class="va">samp</span>,<span class="op">]</span></span></code></pre></div>
-<pre><code>    position size      word
-148      148    4      what
-97        97    6    proper
-198      198    5     great
-217      217    4      they
-230      230    4      that
-265      265    6    perish
-141      141    5     world
-195      195    9 dedicated
-256      256    6   people,
-257      257    2        by</code></pre>
+<pre><code>    position size       word
+163      163    3        for
+258      258    3        the
+198      198    5      great
+201      201    6     before
+120      120    5      brave
+51        51    9 dedicated,
+73        73    4       that
+85        85    5      their
+46        46    6     nation
+173      173    3        the</code></pre>
 <p><br></p>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>Compute your sample mean</li>
@@ -134,11 +134,11 @@ spreadsheet <code>GettysburgPopulationCounts.csv</code>. Carefully load this dat
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">mysize</span> <span class="op">&lt;-</span> <span class="va">pop</span><span class="op">[</span><span class="va">samp</span>, <span class="st">"size"</span><span class="op">]</span></span>
 <span><span class="va">mysize</span></span></code></pre></div>
-<pre><code> [1] 4 6 5 4 4 6 5 9 6 2</code></pre>
+<pre><code> [1] 3 3 5 6 5 9 4 5 6 3</code></pre>
 <p>Then find the mean of these values:</p>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">mysize</span><span class="op">)</span></span></code></pre></div>
-<pre><code>[1] 5.1</code></pre>
+<pre><code>[1] 4.9</code></pre>
 <p>How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?</p>
 <details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The true mean is 4.29. Your two means will likely vary. Since the many non-random samples generally overestimated the population mean length, it is possible (but not guaranteed) that <em>your</em> one non-random sample gave a mean length that is greater than the random sample’s mean length.</p>
 </details><p><br></p>
@@ -167,8 +167,34 @@ spreadsheet <code>GettysburgPopulationCounts.csv</code>. Carefully load this dat
 <li>Is the variable measured in this study quantitative or categorical?</li>
 </ol>
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> Categorical (yes or no answer to the question).
-</details>
+</details><hr>
 </div>
+</div>
+<div id="quiz-1" class="section level2" number="2.4">
+<h2>
+<span class="header-section-number">2.4</span> Quiz<a class="anchor" aria-label="anchor" href="#quiz-1"><i class="fas fa-link"></i></a>
+</h2>
+<p><strong>1. A group of researchers investigated the effect of media usage (whether or not subjects watch television or use the Internet) in the bedroom on “Tiredness” during the day (measured on a 50 point scale). The explanatory and response variables are</strong></p>
+<p>  A. Explanatory is media usage in the bedroom and response is “tiredness”</p>
+<p>  B. Explanatory is “tiredness” and response is media usage in the bedroom</p>
+<details><summary><red>Click for answer</red></summary>
+The correct answer is A.
+</details><p><br></p>
+<p><strong>2. An October 2016 Gallup poll estimates that 60% of US adults support legalizing the use of marijuana. Their results were based on a “random sample of 1,017 adults, aged 18 and older, living in all 50 U.S. states and the District of Columbia”. The population for this study is</strong></p>
+<p> A. all adults (18 and older) living in the U.S. (including D.C)</p>
+<p> B. the 1,017 adults (18 and older) living in the U.S. (including D.C) who were sampled</p>
+<p> C. the 1,017 adults (18 and older) living in the U.S. (including D.C) who were sampled and support legalizing marijuana</p>
+<p> D. all adults (18 and older) living in the U.S. (including D.C) who support legalizing marijuana</p>
+<details><summary><red>Click for answer</red></summary>
+The correct answer is A.
+</details><p><br></p>
+<p><strong>3. An October 2016 Gallup poll estimates that 60% of US adults support legalizing the use of marijuana. Their results were based on a “random sample of 1,017 adults, aged 18 and older, living in all 50 U.S. states and the District of Columbia”. Which statement below regarding bias is true?</strong></p>
+<p> A. The results are biased because Gallup only contacted a small fraction of people in the population.</p>
+<p> B. The results may be biased because people may not have answered a survey question about marijuana truthfully</p>
+<details><summary><red>Click for answer</red></summary>
+The correct answer is B.
+</details><p><br></p>
+
 </div>
 </div>
   <div class="chapter-nav">
@@ -188,6 +214,7 @@ spreadsheet <code>GettysburgPopulationCounts.csv</code>. Carefully load this dat
 <li><a class="nav-link" href="#driving-with-a-pet-on-your-lap"><span class="header-section-number">2.3.2</span> Driving with a Pet on your Lap</a></li>
 </ul>
 </li>
+<li><a class="nav-link" href="#quiz-1"><span class="header-section-number">2.4</span> Quiz</a></li>
 </ul>
 
       <div class="book-extra">
@@ -205,7 +232,7 @@ spreadsheet <code>GettysburgPopulationCounts.csv</code>. Carefully load this dat
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-01-06.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-01-08.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

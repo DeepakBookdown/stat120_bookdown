@@ -131,20 +131,3 @@ Total |	100 |	100 |	200
 </details>
 <br>
 
----------------------------------------------------
-
-## (Non-Maize users) installing `ggplot2`
-
-If you are using Rstudio on your **own computer**, you will first need to **install** the package but if you are using the Maize (online) Rstudio (or a lab computer) you do not. If you need to install the package: 
-
-- Click the **Packages** tab on the lower right Rstudio pane.
-- Click **Install** and type `ggplot2` into the **Packages** box. 
-- Click the **Install** button. You should now see `ggplot2` in the list of packages. 
-- You only need to install the package once. After than, you run the `library` command to load the package functions into your current R session.
-
-An alternate way way to install `ggplot2` from the R console is by using the following command:
-
-
-```r
-install.packages("ggplot2", dependencies = TRUE)
-```
