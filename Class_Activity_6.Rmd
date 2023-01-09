@@ -13,7 +13,7 @@ bac <- read.csv("https://raw.githubusercontent.com/deepbas/statdatasets/main/BAC
 
  (a). Always start with a visual!!!!
 
-Plot the response (BAC) on the y-axis and the explantory ("predictor") on the x-axis. 
+Plot the response (BAC) on the y-axis and the explanatory ("predictor") on the x-axis. 
 
 ```{r, fig.width=4, fig.height=4}
 plot(BAC ~ Beers, data=bac)  

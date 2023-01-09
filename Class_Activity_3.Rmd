@@ -131,3 +131,48 @@ Total |	100 |	100 |	200
 </details>
 <br>
 
+---------------------------------------------------------------------
+
+## Quiz
+
+**1. A third variable that is associated with both the explanatory variable and the response variable is called a confounding variable.**
+
+&emsp;  A. TRUE
+  
+&emsp;  B. FALSE
+
+<details>
+<summary><red>Click for answer</red></summary>
+TRUE
+</details><br>
+
+**2. The different levels of an explanatory variable are known as **
+
+&emsp;A. treatments
+
+&emsp;B. local groups
+
+&emsp;C. response
+
+&emsp;D. cases
+
+<details>
+<summary><red>Click for answer</red></summary>
+treatments
+</details><br>
+
+
+**3. Causality can always be inferred from observational studies.**
+
+&emsp;A. TRUE
+
+&emsp;B. FALSE
+
+<details>
+<summary><red>Click for answer</red></summary>
+FALSE
+</details><br>
+
+
+
+

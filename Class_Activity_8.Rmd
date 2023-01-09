@@ -1,6 +1,5 @@
 # Class Activity 8
 
-
 ### Example 1: Textbook Prices
 
 Prices of a random sample of 10 textbooks (rounded to the nearest dollar) are shown:
@@ -41,8 +40,6 @@ resample
 <summary><red>Click for answer</red></summary>
 *Answer:* It will be centered approximately at the sample mean of 100.1 and we expect it to be roughly bellshaped (it may be a bit skewed since the sample size of 10 is smallish).
 </details><br>
-
-
 
 ----------------------------------------------------------------
 

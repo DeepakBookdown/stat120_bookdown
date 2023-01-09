@@ -1,4 +1,4 @@
 # Class Activity 11
 
-hello!
+hello! We will have midterm this class!!
 
