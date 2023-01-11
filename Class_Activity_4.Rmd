@@ -456,7 +456,7 @@ Observational Study
 </details><br>
 
 
-**3. The data from question 3 can be summarized in a two way table as:**
+**3. The data from question 2 can be summarized in a two way table as:**
 
 &nbsp; | Gene Break |	No Break |	Total
 ------------------|----------|--------------|------
