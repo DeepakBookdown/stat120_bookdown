@@ -54,10 +54,10 @@ Quantitative: Age, Level of Depression (Beginning and End of Study)
 <summary><red>Click for answer</red></summary>
 Two-way table:
 
-Dolphin Therapy   | Improved | Not Improved | Total
+Treatment  | Improved | Not Improved | Total
 ------------------|----------|--------------|------
-Group             | 10       | 5  |  15
-Control Group     | 3        | 12 | 15
+Dolphin Group     | 10       | 5  |  15
+Control Group     | 3        | 12 |  15
 Total  |   13 |   17 |   30
 </details>
 
@@ -123,8 +123,8 @@ The researchers found that 60 of 100 subjects in the new diet group showed subst
 <summary><red>Click for answer</red></summary>
 Two-way table:
 
-New Diet |	Standard Diet | 	Total
-------------------|----------|--------------
+Outcome  | New Diet |	Standard Diet | 	Total
+------------------|----------|--------------|------
 Improvement |	60 | 	43 |	103
 No Improvement |	40 |	57 |	97
 Total |	100 |	100 |	200

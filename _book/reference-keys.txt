@@ -15,6 +15,12 @@ class-activity-3
 case-study-1
 case-study-2
 quiz-2
+class-activity-4
+your-turn-1-2
+flowers-v.-mississippi
+your-turn-2-2
+graduate-programs-acceptance-and-sex
+quiz-3
 part-basics-r
 what-is-r
 what-is-rstudio

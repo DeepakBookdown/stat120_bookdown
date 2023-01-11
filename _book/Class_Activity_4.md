@@ -132,7 +132,6 @@ barplot(counts, ylab = "count")
 ```
 
 <img src="Class_Activity_4_files/figure-epub3/unnamed-chunk-8-1.png" width="100%" />
-<br>
 
 (d). Two-way tables
 
@@ -204,13 +203,11 @@ Of all eligible black jurors, about 57.9% were struck by the state.
 </details>
 
 - Is there evidence of an association between juror race and state strikes?
-
 <details>
 <summary><red>Click for answer</red></summary>
 *answer:* Yes, there is an association because the rate of state strikes varies greatly by juror race with
 about 60% of black jurors were struck compared to only 13% of white jurors
-</details>
-<br>
+</details><br>
 
 (f). Stacked bar graph for two variables
 
@@ -653,3 +650,72 @@ ggplot(grad, aes(x = sex, fill = result)) +
 *Answer:* The graphs match.
 
 </details>
+
+
+---------------------------------------------------------------------
+
+## Quiz
+
+**1.  A two-way table is shown for two groups, 1 and 2, and two possible outcomes, A and B.**
+
+&nbsp;  | Outcome A |	Outcome B | 	Total
+------------------|----------|--------------|------
+Group 1 |	40 | 	10 |	50
+Group 2 |	30 |	120 |	150
+Total |	70 |	130 |	200
+
+**What proportion of all cases are in Group 1?**
+
+
+&emsp;  A. 0.33
+
+&emsp;  B. 0.20
+
+&emsp;  C. 0.25
+
+&emsp;  D. 0.75
+
+
+<details>
+<summary><red>Click for answer</red></summary>
+C. 0.25
+</details><br>
+
+**2. A disruption of a gene called DYXC1 on chromosome 15 for humans may be related to an increased risk of developing dyslexia. Researchers studied the gene in 109 people diagnosed with dyslexia and in a control group of 195 others who had no learning disorder. The DYXC1 break occurred in 10 of those with dyslexia and in 5 of those in the control group. Is this an experiment or an observational study?**
+
+&emsp;A. Experiment
+
+&emsp;B. Observational Study
+
+<details>
+<summary><red>Click for answer</red></summary>
+Observational Study
+</details><br>
+
+
+**3. The data from question 3 can be summarized in a two way table as:**
+
+&nbsp; | Gene Break |	No Break |	Total
+------------------|----------|--------------|------
+Dyslexia Group |	10 |	99 |	109
+Control Group |	5 |	190 |	195
+Total |	15	| 289 | 	304
+
+
+**What is the proportion of Dyslexia group who have the break on the DYXC1 gene? Round your answer to 3 significant digits after the decimal.**
+
+&emsp;A. 0.026
+
+&emsp;B. 0.667
+
+&emsp;C. 0.127
+
+&emsp;D. 0.092
+
+
+<details>
+<summary><red>Click for answer</red></summary>
+D. 0.092
+</details><br>
+
+
