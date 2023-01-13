@@ -117,7 +117,7 @@
 
 \title{Stat 120}
 \author{Deepak Bastola}
-\date{2023-01-12}
+\date{2023-01-13}
 
 \begin{document}
 \maketitle
@@ -166,16 +166,16 @@ Click for answer
 
 \begin{verbatim}
    ID Greeting  Male      Age
-1   1    Hello  TRUE 44.99230
-2   2    Hello FALSE 23.43309
-3   3    Hello  TRUE 54.16378
-4   4    Hello FALSE 46.39870
-5   5    Hello  TRUE 38.47104
-6   6  Goodbye FALSE 31.70953
-7   7  Goodbye  TRUE 55.46935
-8   8  Goodbye FALSE 57.86105
-9   9  Goodbye  TRUE 26.79557
-10 10  Goodbye FALSE 23.37052
+1   1    Hello  TRUE 48.06314
+2   2    Hello FALSE 33.63869
+3   3    Hello  TRUE 47.64219
+4   4    Hello FALSE 27.86439
+5   5    Hello  TRUE 41.19441
+6   6  Goodbye FALSE 40.71712
+7   7  Goodbye  TRUE 56.48527
+8   8  Goodbye FALSE 36.85101
+9   9  Goodbye  TRUE 40.62793
+10 10  Goodbye FALSE 49.46967
 \end{verbatim}
 
 \emph{Answer:} We see a data frame with four columns, where the first column is an \texttt{identifier} for the cases. We have information on the greeting types, whether male or not, and age on these cases in the remaining columns.
@@ -399,7 +399,7 @@ Run the following command to obtain a SRS of 10 words from the 268 that are in t
 \end{Shaded}
 
 \begin{verbatim}
- [1]  93  79  67 264  33  59  25  38  78 107
+ [1] 261 247  46 114 267 189 215 266 126 254
 \end{verbatim}
 
 This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
@@ -415,17 +415,17 @@ We will \emph{subset} the data set \texttt{pop} to obtain only the sampled rows 
 \end{Shaded}
 
 \begin{verbatim}
-    position size    word
-93        93    2      is
-79        79    5   place
-67        67    4    come
-264      264    3     not
-33        33    3     are
-59        59    1       a
-25        25    4    that
-38        38    5   civil
-78        78    7 resting
-107      107    5  sense,
+    position size      word
+261      261    3       the
+247      247    3       new
+46        46    6    nation
+114      114    2        we
+267      267    3       the
+189      189    6    rather
+215      215    3       for
+266      266    4      from
+126      126    9 struggled
+254      254    2        of
 \end{verbatim}
 
 \begin{enumerate}
@@ -446,7 +446,7 @@ The word lengths in part (b) are the data for your sample. You can compute your 
 \end{Shaded}
 
 \begin{verbatim}
- [1] 2 5 4 3 3 1 4 5 7 5
+ [1] 3 3 6 2 3 6 3 4 9 2
 \end{verbatim}
 
 Then find the mean of these values:
@@ -458,7 +458,7 @@ Then find the mean of these values:
 \end{Shaded}
 
 \begin{verbatim}
-[1] 3.9
+[1] 4.1
 \end{verbatim}
 
 How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?
@@ -1903,6 +1903,8 @@ Click for answer
 \emph{Answer:} The mean is around 8 hours
 
 (b). Use the 95\% rule to estimate the standard deviation for this data.
+
+Click for answer
 
 \emph{Answer:} Most of the data is between about 6 and 10, with a mean around 8 (due to the roughly symmetric distribution). So two standard deviations is about 2 hours of sleep, making one standard deviation about 1 hours of sleep.
 

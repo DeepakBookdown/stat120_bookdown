@@ -390,6 +390,8 @@ hist(sleep$AverageSleep, main="Distribution of Sleep Hours")
 
  (b).	Use the 95% rule to estimate the standard deviation for this data.
 
+<details>
+<summary><red>Click for answer</red></summary>
 *Answer:* Most of the data is between about 6 and 10, with a mean around 8 (due to the roughly symmetric distribution). So two standard deviations is about 2 hours of sleep, making one standard deviation about 1 hours of sleep.
 
 Let's check the rule. Here are the actual mean and SD:
@@ -412,8 +414,8 @@ sd(sleep$AverageSleep)
 ```
 [1] 0.9648396
 ```
+</details>
 <br>
-
 
 ## Example 3: Z-scores for Test Scores
 
