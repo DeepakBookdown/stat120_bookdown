@@ -117,7 +117,7 @@
 
 \title{Stat 120}
 \author{Deepak Bastola}
-\date{2023-01-11}
+\date{2023-01-12}
 
 \begin{document}
 \maketitle
@@ -166,16 +166,16 @@ Click for answer
 
 \begin{verbatim}
    ID Greeting  Male      Age
-1   1    Hello  TRUE 48.59147
-2   2    Hello FALSE 27.58764
-3   3    Hello  TRUE 55.16626
-4   4    Hello FALSE 28.19373
-5   5    Hello  TRUE 22.72053
-6   6  Goodbye FALSE 42.64585
-7   7  Goodbye  TRUE 43.79709
-8   8  Goodbye FALSE 52.44438
-9   9  Goodbye  TRUE 59.08229
-10 10  Goodbye FALSE 39.06261
+1   1    Hello  TRUE 44.99230
+2   2    Hello FALSE 23.43309
+3   3    Hello  TRUE 54.16378
+4   4    Hello FALSE 46.39870
+5   5    Hello  TRUE 38.47104
+6   6  Goodbye FALSE 31.70953
+7   7  Goodbye  TRUE 55.46935
+8   8  Goodbye FALSE 57.86105
+9   9  Goodbye  TRUE 26.79557
+10 10  Goodbye FALSE 23.37052
 \end{verbatim}
 
 \emph{Answer:} We see a data frame with four columns, where the first column is an \texttt{identifier} for the cases. We have information on the greeting types, whether male or not, and age on these cases in the remaining columns.
@@ -399,7 +399,7 @@ Run the following command to obtain a SRS of 10 words from the 268 that are in t
 \end{Shaded}
 
 \begin{verbatim}
- [1]  44 254  60 133  16  79 232 234 177   6
+ [1]  93  79  67 264  33  59  25  38  78 107
 \end{verbatim}
 
 This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
@@ -416,16 +416,16 @@ We will \emph{subset} the data set \texttt{pop} to obtain only the sampled rows 
 
 \begin{verbatim}
     position size    word
-44        44    2      or
-254      254    2      of
-60        60    5   great
-133      133    3     our
-16        16    6 nation:
+93        93    2      is
 79        79    5   place
-232      232    4    dead
-234      234    3     not
-177      177    4    they
-6          6    3    ago,
+67        67    4    come
+264      264    3     not
+33        33    3     are
+59        59    1       a
+25        25    4    that
+38        38    5   civil
+78        78    7 resting
+107      107    5  sense,
 \end{verbatim}
 
 \begin{enumerate}
@@ -446,7 +446,7 @@ The word lengths in part (b) are the data for your sample. You can compute your 
 \end{Shaded}
 
 \begin{verbatim}
- [1] 2 2 5 3 6 5 4 3 4 3
+ [1] 2 5 4 3 3 1 4 5 7 5
 \end{verbatim}
 
 Then find the mean of these values:
@@ -458,7 +458,7 @@ Then find the mean of these values:
 \end{Shaded}
 
 \begin{verbatim}
-[1] 3.7
+[1] 3.9
 \end{verbatim}
 
 How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?
@@ -1499,6 +1499,783 @@ Total & 15 & 289 & 304 \\
 Click for answer
 
 D. 0.092
+
+\hypertarget{class-activity-5}{%
+\chapter{Class Activity 5}\label{class-activity-5}}
+
+\hypertarget{your-turn-1-3}{%
+\section{Your Turn 1}\label{your-turn-1-3}}
+
+\hypertarget{hollywood-movies-domestic-gross}{%
+\subsection{Hollywood Movies Domestic Gross}\label{hollywood-movies-domestic-gross}}
+
+The dataset \texttt{HollywoodMovies2011} provides information on 136 movies that came out of Hollywood in 2011. We will look at the variable \texttt{DomesticGross}, which gives US domestic gross income for a movie from all viewers (in millions of dollars).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{movies }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/deepbas/statdatasets/main/HollywoodMovies2011.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{hist}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{DomesticGross, }\AttributeTok{main=}\StringTok{"Distribution of Domestic Gross"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_5_files/figure-latex/unnamed-chunk-2-1}
+
+(a). Describe the shape of the distribution.
+
+Click for answer
+
+\emph{Answer:} Skewed to the right
+
+(b). Do there appear to be any outliers? If so, which values?
+
+Click for answer
+
+\emph{Answer:} Yes, it looks like there are a few high outliers above 300 million.
+
+(c). Finding outliers
+
+We can find the row numbers of cases (movies) that have \texttt{DomesticGross} greater than 300 (300 million dollars):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{which}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{DomesticGross }\SpecialCharTok{\textgreater{}} \DecValTok{300}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1]  4 14
+\end{verbatim}
+
+Run the \texttt{which} command to verify that rows 4 and 14. Then find out which movies these are by subsetting the data frame:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{movies[}\FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{,}\DecValTok{14}\NormalTok{), ]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+                                         Movie
+4  Harry Potter and the Deathly Hallows Part 2
+14              Transformers: Dark of the Moon
+            LeadStudio RottenTomatoes AudienceScore   Story
+4          Warner Bros             96            92 Rivalry
+14 DreamWorks Pictures             35            67   Quest
+     Genre TheatersOpenWeek BOAverageOpenWeek DomesticGross
+4  Fantasy             4375             38672        381.01
+14  Action             4088             23937        352.39
+   ForeignGross WorldGross Budget Profitability
+4        947.10   1328.111    125     10.624888
+14       770.81   1123.195    195      5.759974
+   OpeningWeekend
+4          169.19
+14          97.85
+\end{verbatim}
+
+Note that the \texttt{c(4,14)} part of this command creates a \textbf{vector} of the numbers 4 and 14 (the \texttt{c} stands for combine). Which movies are the outliers?
+
+Click for answer
+
+\emph{Answer:} Harry Potter and the Deathly Hallows Part 2 and Transformers: Dark of the Moon.
+
+(d). Use the histogram to answer: Is the median less than 100 million, about 100 million, above 100 million?
+
+Click for answer
+
+\emph{Answer:} It is the point with half the data to the left and half to the right. The median is less than 100
+since 100 roughly 110 (80 + 30) cases below it which is well over half the movies in the data set.
+
+(e). Do you expect the mean to be greater than or less than the median. Explain.
+
+Click for answer
+
+\emph{Answer:} Because the distribution is skewed to the right, we expect the mean to be larger than the median.
+The large outliers will pull the mean up and won't have much effect on the median.
+
+(f). Computing the mean and median
+
+You can get the mean and median a number of ways. Run these three commands:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{DomesticGross)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] NA
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{median}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{DomesticGross)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] NA
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{DomesticGross)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+   0.02   19.03   37.35   63.22   80.46  381.01       2 
+\end{verbatim}
+
+What does \texttt{NA} stand for? How many movies have missing \texttt{DomesticGross}? You can subset the data to show you which cases have \texttt{NA} values for \texttt{DomesticGross}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{movies[}\FunctionTok{is.na}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{DomesticGross), ]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+                              Movie LeadStudio
+134                            Hugo  Paramount
+136 Never Back Down 2: The Beatdown       Sony
+    RottenTomatoes AudienceScore   Story     Genre
+134             93            84         Adventure
+136             NA            44 Rivalry    Action
+    TheatersOpenWeek BOAverageOpenWeek DomesticGross
+134             1277              8899            NA
+136               NA                NA            NA
+    ForeignGross WorldGross Budget Profitability
+134           NA         NA     NA            NA
+136           NA         NA      3             0
+    OpeningWeekend
+134          11.36
+136           8.60
+\end{verbatim}
+
+Click for answer
+
+\emph{Answer:} The \texttt{NA} value stands for ``Not Available'' which is used to code missing values. We can inspect the data frame and see that Hugo and Never Back Down 2 are the two movies that do not have domestic
+gross values.
+
+(g). Missing data
+
+There are some commands in R that ``fail'' as a default when missing data (\texttt{NA}) are present (\texttt{mean}, \texttt{median} and \texttt{sd} are examples). We can easily turn off this failure feature with the argument \texttt{na.rm=TRUE}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{DomesticGross, }\AttributeTok{na.rm=}\ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 63.22276
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{median}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{DomesticGross, }\AttributeTok{na.rm=}\ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 37.355
+\end{verbatim}
+
+(h). Stats without outliers
+
+There are a number of ways to ``remove'' outliers from an analysis. Here we use the square bracket \texttt{{[}{]}} notation along with a minus \texttt{-} to remove row 4 (Harry Potter) from the variable \texttt{DomesticGross} before our summary stat calculations:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{DomesticGross[}\SpecialCharTok{{-}}\DecValTok{4}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+   0.02   18.88   37.30   60.83   80.36  352.39       2 
+\end{verbatim}
+
+Why does the mean change more than the median when this case is removed? (compare (g) and (h) mean and median values)
+
+Click for answer
+
+\emph{Answer:} Both values go down after removing the highest grossing movie of the year, but the drop in the mean is more substantial. The mean drops by almost 4\% when Harry Potter is removed while the median only drops by about 0.1\%.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{100}\SpecialCharTok{*}\NormalTok{(}\FloatTok{60.83} \SpecialCharTok{{-}} \FloatTok{63.22276}\NormalTok{)}\SpecialCharTok{/}\FloatTok{63.22276} \CommentTok{\# percent change in the mean}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] -3.78465
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{100}\SpecialCharTok{*}\NormalTok{(}\FloatTok{37.30} \SpecialCharTok{{-}} \FloatTok{37.355}\NormalTok{)}\SpecialCharTok{/}\FloatTok{37.355} \CommentTok{\# percent change in the median}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] -0.147236
+\end{verbatim}
+
+(i). Computing standard deviation
+
+The standard deviation command is \texttt{sd}. We need to add the \texttt{na.rm} argument to obtain the SD for \texttt{DomesticGross}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sd}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{DomesticGross, }\AttributeTok{na.rm=}\ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 69.41799
+\end{verbatim}
+
+Look again at the distribution of \texttt{DomesticGross} shown in the histogram. Why is SD (variation around the mean) an inadequate measure of variation for this type of distribution?
+
+Click for answer
+
+\emph{Answer:} The is much more variation (spread) to the data above the mean than below it. Because the distribution is strongly skewed right, we can't use one measure of variation when describing how \texttt{DomesticGross} values vary around some central value (like a mean).
+
+(j). Stats by \texttt{Genre}
+
+The \texttt{tapply(y,\ x,\ stat)} command gives the \texttt{stat} value of \texttt{y} for each level of \texttt{x}. Here we get the \texttt{summary} of \texttt{DomesticGross} for each type of \texttt{Genre}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{tapply}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{DomesticGross, movies}\SpecialCharTok{$}\NormalTok{Genre, summary)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+$Action
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+   0.54   24.96   40.26   91.02  161.53  352.39       1 
+
+$Adventure
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+     NA      NA      NA     NaN      NA      NA       1 
+
+$Animation
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  21.39   51.41  115.67  104.62  142.86  191.45 
+
+$Comedy
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   5.79   23.21   37.41   56.51   69.75  254.46 
+
+$Drama
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   0.38    4.40   13.30   32.37   51.16  169.22 
+
+$Fantasy
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   1.32   96.24  191.16  191.16  286.09  381.01 
+
+$Horror
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   0.02   17.69   24.05   34.87   38.18  127.00 
+
+$Romance
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   0.03   18.51   39.05   61.40   70.26  260.80 
+
+$Thriller
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   0.02   31.18   40.49   41.44   62.50   79.25 
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Which movies genre has the highest median domestic gross?
+\item
+  Why are there no summary stats for the adventure genre?
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} To help answer these questions you really should explore the number of movies in each genrewith the table command.
+
+\begin{itemize}
+\item
+  The fantasy genre has the highest median domestic gross (\(\$381\) million). But note that only two movies have this classification in 2011. The action genre was second highest at \(\$352\) million and there were 12 movies in this category.
+\item
+  The adventure genre only has one movie (Hugo) and this movie is also missing a value for \texttt{DomesticGross}!
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{table}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{Genre)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+   Action Adventure Animation    Comedy     Drama   Fantasy 
+       32         1        12        27        21         2 
+   Horror   Romance  Thriller 
+       17        11        13 
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{which}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{Genre }\SpecialCharTok{==} \StringTok{"Adventure"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 134
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{movies[}\DecValTok{134}\NormalTok{, ]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+    Movie LeadStudio RottenTomatoes AudienceScore Story
+134  Hugo  Paramount             93            84      
+        Genre TheatersOpenWeek BOAverageOpenWeek
+134 Adventure             1277              8899
+    DomesticGross ForeignGross WorldGross Budget
+134            NA           NA         NA     NA
+    Profitability OpeningWeekend
+134            NA          11.36
+\end{verbatim}
+
+(k). Extra: Histogram of \texttt{DomesticGross} by \texttt{Genre}
+
+(Not in Lab Manual) The \texttt{ggplot2} package allows you to create histograms separated by a categorical variable using the \texttt{facet\_wrap} command. Assuming that \texttt{ggplot2} is already installed, all you need to do is load it with \texttt{library} then create your graph:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\FunctionTok{ggplot}\NormalTok{(movies, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{DomesticGross)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_histogram}\NormalTok{() }\SpecialCharTok{+} 
+  \FunctionTok{facet\_wrap}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{Genre)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_5_files/figure-latex/unnamed-chunk-15-1}
+
+Which genre has the most variability in domestic gross?
+
+Click for answer
+
+\emph{Answer:} The action genre has the largest range of values.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{your-turn-2-3}{%
+\section{Your turn 2}\label{your-turn-2-3}}
+
+\hypertarget{example-2-sleep}{%
+\subsection{Example 2: Sleep}\label{example-2-sleep}}
+
+This histogram shows the distribution of hours or sleep per night for a large sample of students.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sleep }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/deepbas/statdatasets/main/SleepStudy.csv"}\NormalTok{)}
+\FunctionTok{hist}\NormalTok{(sleep}\SpecialCharTok{$}\NormalTok{AverageSleep, }\AttributeTok{main=}\StringTok{"Distribution of Sleep Hours"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_5_files/figure-latex/unnamed-chunk-16-1}
+
+(a). Estimate the average hours of sleep per night.
+
+Click for answer
+
+\emph{Answer:} The mean is around 8 hours
+
+(b). Use the 95\% rule to estimate the standard deviation for this data.
+
+\emph{Answer:} Most of the data is between about 6 and 10, with a mean around 8 (due to the roughly symmetric distribution). So two standard deviations is about 2 hours of sleep, making one standard deviation about 1 hours of sleep.
+
+Let's check the rule. Here are the actual mean and SD:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(sleep}\SpecialCharTok{$}\NormalTok{AverageSleep)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 7.965929
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sd}\NormalTok{(sleep}\SpecialCharTok{$}\NormalTok{AverageSleep)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.9648396
+\end{verbatim}
+
+\hypertarget{example-3-z-scores-for-test-scores}{%
+\section{Example 3: Z-scores for Test Scores}\label{example-3-z-scores-for-test-scores}}
+
+The ACT test has a population mean of 21 and standard deviation of 5. The SAT has a population mean of 1500 and a standard deviation of 325. You earned 28 on the ACT and 2100 on the SAT.
+
+(a). Which test did you do better on?
+
+Click for answer
+
+\emph{Answer:}
+
+\begin{itemize}
+\tightlist
+\item
+  ACT: The z-score for the score of 28 is \(z = (28 - 21)/5 = 1.4.\)
+\item
+  SAT: The z-score for the score of 2100 is \(z = (2100 - 1500)/325 = 1.85.\)
+\item
+  The SAT score is 1.85 standard deviations above average while the ACT score is only 1.4 standard deviations above. You did better on the SAT.
+\end{itemize}
+
+(b). For each test, find the interval that is likely to contain about 95\% of all test scores.
+
+Click for answer
+
+\emph{Answer:}
+
+\begin{itemize}
+\item
+  ACT: Two standard deviations is \(2(5) = 10.\) About 95\% of ACT scores are between \(28 - 10 = 13\) and \(28 + 10 = 38.\) This claim assumes that ACT scores follow a bell-shaped distribution.
+\item
+  SAT: Two standard deviations is \(2(325) = 650.\) About 95\% of SAT scores are between \(1500 - 650 = 850\) and \(1500 + 650 = 2150\). This claim assumes that SAT scores follow a bell-shaped distribution.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{example-4-5-number-summaries}{%
+\section{Example 4: 5 number summaries}\label{example-4-5-number-summaries}}
+
+For each five number summary below, indicate whether the data appear to be symmetric, skewed to the right, or skewed to the left.
+
+(a). (2, 10, 15, 20, 69)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{my\_vector1 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{15}\NormalTok{, }\DecValTok{20}\NormalTok{, }\DecValTok{69}\NormalTok{)}
+\FunctionTok{summary}\NormalTok{(my\_vector1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+      1      10      15      23      20      69 
+\end{verbatim}
+
+Click for answer
+
+\emph{Answer:} Skewed right. It has a longer right tail than left since \(max - Q3 >> Q1 - min\)
+
+(b). (10, 57, 85, 88, 93)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{my\_vector2 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{57}\NormalTok{, }\DecValTok{85}\NormalTok{, }\DecValTok{88}\NormalTok{, }\DecValTok{93}\NormalTok{)}
+\FunctionTok{summary}\NormalTok{(my\_vector2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   10.0    57.0    85.0    66.6    88.0    93.0 
+\end{verbatim}
+
+Click for answer
+
+\emph{Answer:} Skewed left since mean is less than median.
+
+(c). (200, 300, 400, 500, 600)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{my\_vector3 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{200}\NormalTok{, }\DecValTok{300}\NormalTok{, }\DecValTok{400}\NormalTok{, }\DecValTok{500}\NormalTok{, }\DecValTok{600}\NormalTok{)}
+\FunctionTok{summary}\NormalTok{(my\_vector3)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    200     300     400     400     500     600 
+\end{verbatim}
+
+Click for answer
+
+\emph{Answer:} Symmetric since mean is same as median.
+
+\hypertarget{example-5-hot-dog}{%
+\section{Example 5: Hot dog}\label{example-5-hot-dog}}
+
+This boxplot shows the number of hot dogs eaten by the winners of Nathan's Famous hot dog eating contests from 2002-2011.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{hotdogs }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/deepbas/statdatasets/main/HotDogs.csv"}\NormalTok{)}
+\FunctionTok{boxplot}\NormalTok{(hotdogs}\SpecialCharTok{$}\NormalTok{HotDogs, }\AttributeTok{xlab=}\StringTok{"Number of Hot Dogs Consumed"}\NormalTok{, }\AttributeTok{horizontal=}\NormalTok{T)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_5_files/figure-latex/unnamed-chunk-22-1}
+
+(a). Use the boxplot to estimate the 5 number summary and IQR for this data.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(hotdogs}\SpecialCharTok{$}\NormalTok{HotDogs, }\AttributeTok{xlab=}\StringTok{"Number of Hot Dogs Consumed"}\NormalTok{, }\AttributeTok{horizontal=}\NormalTok{T)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_5_files/figure-latex/unnamed-chunk-23-1}
+
+Click for answer
+
+\emph{Answer:} min = 45, Q1 = 50, m = 54, Q3 = 62, max = 67. IQR is about 62-50 or 12 hotdogs
+
+(b). Computing 5 number summaries
+
+R doesn't have `5 number summary' command, but \texttt{summary} gives you a ``6'' number summary by adding the mean to the 5 number summary. You can also use \texttt{IQR} to get the IQR:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(hotdogs}\SpecialCharTok{$}\NormalTok{HotDogs)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  45.00   54.00   60.00   58.64   65.00   69.00 
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{IQR}\NormalTok{(hotdogs}\SpecialCharTok{$}\NormalTok{HotDogs)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 11
+\end{verbatim}
+
+How close were your guesses from the boxplot to the values given by this command?
+
+Click for answer
+
+(Answers will vary) Within one hotdog of the R values.
+
+(c). Use the boxplot outlier rule to verify that there are no outliers in this data.
+
+Click for answer
+
+\emph{Answer:}
+
+\begin{itemize}
+\tightlist
+\item
+  \(1.5IQR = 18\) hotdogs.
+\item
+  Lower fence: \(Q1 - 1.5 IQR = 50 - 18 = 32 < min\) so there are no low outliers.
+\item
+  Upper fence: \(Q3 + 1.5 IQR = 62 + 18 = 80 > max\) so there are no high outliers.
+\end{itemize}
+
+\hypertarget{examples-6-hollywood-movies-world-gross-revisited}{%
+\section{Examples 6: Hollywood Movies World Gross revisited}\label{examples-6-hollywood-movies-world-gross-revisited}}
+
+Let's revist the \texttt{WorldGross} analysis from the Hollywood movies data set:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{movies }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/deepbas/statdatasets/main/HollywoodMovies2011.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+(a). Draw a boxplot of \texttt{WorldGross}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{WorldGross)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_5_files/figure-latex/unnamed-chunk-26-1}
+
+How many movies are identified as outliers for world gross?
+
+Click for answer
+
+\emph{Answer:} Just using the boxplot, there looks to be about 10 movies that are high outliers
+
+(b). Calculating boxplot values
+
+Use the boxplot outlier rule to find the ``fence'' (cutoff) between an outlier and non-outlier for \texttt{WorldGross}. Then determine the value (of \texttt{WorldGross}) that the upper ``whisker'' (non-outlier) extends to.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{WorldGross)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+    Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
+   0.025   30.706   76.659  150.742  173.691 1328.111 
+    NA's 
+       2 
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{IQR}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{WorldGross, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 142.985
+\end{verbatim}
+
+Click for answer
+
+\begin{itemize}
+\item
+  \(1.5IQR = 1.5(142.985) = 214.48\) hundred million dollars
+\item
+  Lower fence: \(Q1 - 1.5IQR = 30.710 - 214.48 = -183.8 < min\) so there are no low outliers.
+\item
+  Upper fence: \(Q3 + 1.5IQR = 173.7 + 214.48 = 388.18 < max\) so there are high outliers.
+\item
+  The upper whisker extends to the largest movie value that is below the fence of 388.18. You could look at the data spreadsheet and find which movie comes closest to this fence, but a quicker way is to use R. First we can use which to find out the row numbers of the movies with less than 388.18 in WorldGross. Then use this set to find out the max of the WorldGross within this group of movies, which turns out to be 368.404 hundred million dollars.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FloatTok{1.5}\SpecialCharTok{*}\FunctionTok{IQR}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{WorldGross, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{[}\DecValTok{1}\NormalTok{] }\FloatTok{214.4775}
+\FloatTok{30.710} \SpecialCharTok{{-}} \FloatTok{214.48}
+\NormalTok{[}\DecValTok{1}\NormalTok{] }\SpecialCharTok{{-}}\FloatTok{183.77}
+\FloatTok{173.7} \SpecialCharTok{+} \FloatTok{214.48}
+\NormalTok{[}\DecValTok{1}\NormalTok{] }\FloatTok{388.18}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{notoutliers }\OtherTok{\textless{}{-}} \FunctionTok{which}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{WorldGross }\SpecialCharTok{\textless{}} \FloatTok{388.18}\NormalTok{)}
+\FunctionTok{max}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{WorldGross[notoutliers])}
+\NormalTok{[}\DecValTok{1}\NormalTok{] }\FloatTok{368.404}
+\FunctionTok{which}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{WorldGross }\SpecialCharTok{==} \FloatTok{368.404}\NormalTok{)}
+\NormalTok{[}\DecValTok{1}\NormalTok{] }\DecValTok{49}
+\NormalTok{movies[}\DecValTok{49}\NormalTok{,]}
+\NormalTok{                                Movie LeadStudio}
+\DecValTok{49}\NormalTok{ Captain America}\SpecialCharTok{:}\NormalTok{ The First Avenger     Disney}
+\NormalTok{   RottenTomatoes AudienceScore         Story  Genre}
+\DecValTok{49}             \DecValTok{78}            \DecValTok{75}\NormalTok{ Metamorphosis Action}
+\NormalTok{   TheatersOpenWeek BOAverageOpenWeek DomesticGross}
+\DecValTok{49}             \DecValTok{3715}             \DecValTok{17512}        \FloatTok{176.65}
+\NormalTok{   ForeignGross WorldGross Budget Profitability}
+\DecValTok{49}       \FloatTok{191.75}    \FloatTok{368.404}    \DecValTok{140}      \FloatTok{2.631457}
+\NormalTok{   OpeningWeekend}
+\DecValTok{49}          \FloatTok{65.06}
+\end{Highlighting}
+\end{Shaded}
+
+(c). Side-by-side boxplot
+
+We can compare boxplots of \texttt{WorldGross} across \texttt{Genre} categories:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(WorldGross }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Genre, }\AttributeTok{data=}\NormalTok{movies)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_5_files/figure-latex/unnamed-chunk-30-1}
+
+\begin{itemize}
+\tightlist
+\item
+  What does this type of graph illustrate well about the relationship between \texttt{WorldGross} and \texttt{Genre}?
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} Does a good job comparing median values and extremes
+
+\begin{itemize}
+\tightlist
+\item
+  What does this type of graph not illustrate well about the relationship between \texttt{WorldGross} and \texttt{Genre}?
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} It doesn't illustrate sample sizes well, e.g.~the fantacy genre only has 2 movies in it
+
+\begin{itemize}
+\tightlist
+\item
+  What is one issue with the default version of this graph?
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} The genre labels are not all present.
+
+(d). Improving the default boxplot
+
+There are many values in \texttt{Genre} for this data and their values (levels) have longer names. This can cause issues when using these names to label graphs, like the x-axis in your boxplot. The are many (many, many) ways to modify graphs in R. Here is one way to change the label orientation on your x-axis.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(WorldGross }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Genre, }\AttributeTok{data=}\NormalTok{movies, }\AttributeTok{las=}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_5_files/figure-latex/unnamed-chunk-31-1}
+
+The \texttt{las} arguments let's you change the orientation of the axis labels relative to the axis. The value of 2 makes the labels perpendicular to the axis.
+
+\hypertarget{example-8-ants-on-a-sandwich}{%
+\section{Example 8: Ants on a Sandwich}\label{example-8-ants-on-a-sandwich}}
+
+The number of ants climbing on a piece of a peanut butter sandwich left on the ground near an anthill for a few minutes was measured 7 different times and the results are:
+\(43, 59, 22, 25, 36, 47, 19\)
+
+(a). Calculate the mean number of ants.
+
+Click for answer
+
+\emph{Answer:} \(\bar{x} = 35.857\)
+
+(b). Calculate the median number of ants.
+
+Click for answer
+
+\emph{Answer:} Order data then find middle value: \(19, 22, 25, 36, 43, 47, 59\). Then \(m = 36\)
+
+(c). Calculate the quartiles for the number of ants.
+
+Click for answer
+
+\emph{Answer:} Since \(m = 36\), the first quartile will be the median of \(19, 22, 25: Q1 = 22.\) The third quartile will be the median of \(43, 47, 59: Q3 = 47.\)
 
 \hypertarget{part-basics-r}{%
 \chapter{(PART*) Basics R}\label{part-basics-r}}

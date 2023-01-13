@@ -21,6 +21,16 @@ flowers-v.-mississippi
 your-turn-2-2
 graduate-programs-acceptance-and-sex
 quiz-3
+class-activity-5
+your-turn-1-3
+hollywood-movies-domestic-gross
+your-turn-2-3
+example-2-sleep
+example-3-z-scores-for-test-scores
+example-4-5-number-summaries
+example-5-hot-dog
+examples-6-hollywood-movies-world-gross-revisited
+example-8-ants-on-a-sandwich
 part-basics-r
 what-is-r
 what-is-rstudio

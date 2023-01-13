@@ -2,7 +2,7 @@
 
 ## Your Turn 1
 
-## Hollywood Movies Domestic Gross 
+### Hollywood Movies Domestic Gross 
 
 The  dataset `HollywoodMovies2011` provides information on 136 movies that came out of Hollywood in 2011. We will look at the variable `DomesticGross`, which gives US domestic gross income for a movie from all viewers (in millions of dollars). 
 

@@ -48,9 +48,10 @@
 <li><a class="active" href="class-activity-2.html"><span class="header-section-number">2</span> Class Activity 2</a></li>
 <li><a class="" href="class-activity-3.html"><span class="header-section-number">3</span> Class Activity 3</a></li>
 <li><a class="" href="class-activity-4.html"><span class="header-section-number">4</span> Class Activity 4</a></li>
+<li><a class="" href="class-activity-5.html"><span class="header-section-number">5</span> Class Activity 5</a></li>
 <li class="book-part">Basics R</li>
-<li><a class="" href="what-is-r.html"><span class="header-section-number">6</span> What is R?</a></li>
-<li><a class="" href="r-markdown.html"><span class="header-section-number">7</span> R Markdown</a></li>
+<li><a class="" href="what-is-r.html"><span class="header-section-number">7</span> What is R?</a></li>
+<li><a class="" href="r-markdown.html"><span class="header-section-number">8</span> R Markdown</a></li>
 </ul>
 
         <div class="book-extra">
@@ -110,24 +111,24 @@ spreadsheet <code>GettysburgPopulationCounts.csv</code>. Carefully load this dat
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">samp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">268</span>, size<span class="op">=</span><span class="fl">10</span><span class="op">)</span></span>
 <span><span class="va">samp</span></span></code></pre></div>
-<pre><code> [1] 216 237 256  35 223 218 167 118 227 228</code></pre>
+<pre><code> [1] 191  39 160 187 138 236 257  28  62  30</code></pre>
 <p>This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?</p>
 <p><br></p>
 <p>(b). Get words and lengths</p>
 <p>We will <em>subset</em> the data set <code>pop</code> to obtain only the sampled rows listed in <code>samp</code>. We do this using <strong>square bracket notation</strong> `dataset[row number, column number/name]. Run the following command to find your sampled words and sizes:</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">pop</span><span class="op">[</span><span class="va">samp</span>,<span class="op">]</span></span></code></pre></div>
-<pre><code>    position size    word
-216      216    5   which
-237      237    2      in
-256      256    6 people,
-35        35    2      in
-223      223    2      of
-218      218    4    gave
-167      167    6 rather,
-118      118    6 ground.
-227      227    4    here
-228      228    6  highly</code></pre>
+<pre><code>    position size   word
+191      191    2     us
+39        39    3   war,
+160      160    4  here.
+187      187    2     It
+138      138    2     or
+236      236    4   died
+257      257    2     by
+28        28    3    are
+62        62    2     of
+30        30    5 equal.</code></pre>
 <p><br></p>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>Compute your sample mean</li>
@@ -136,11 +137,11 @@ spreadsheet <code>GettysburgPopulationCounts.csv</code>. Carefully load this dat
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">mysize</span> <span class="op">&lt;-</span> <span class="va">pop</span><span class="op">[</span><span class="va">samp</span>, <span class="st">"size"</span><span class="op">]</span></span>
 <span><span class="va">mysize</span></span></code></pre></div>
-<pre><code> [1] 5 2 6 2 2 4 6 6 4 6</code></pre>
+<pre><code> [1] 2 3 4 2 2 4 2 3 2 5</code></pre>
 <p>Then find the mean of these values:</p>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">mysize</span><span class="op">)</span></span></code></pre></div>
-<pre><code>[1] 4.3</code></pre>
+<pre><code>[1] 2.9</code></pre>
 <p>How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?</p>
 <details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The true mean is 4.29. Your two means will likely vary. Since the many non-random samples generally overestimated the population mean length, it is possible (but not guaranteed) that <em>your</em> one non-random sample gave a mean length that is greater than the random sample’s mean length.</p>
 </details><p><br></p>
@@ -234,7 +235,7 @@ The correct answer is B.
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-01-11.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-01-12.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
