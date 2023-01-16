@@ -49,9 +49,10 @@
 <li><a class="" href="class-activity-3.html"><span class="header-section-number">3</span> Class Activity 3</a></li>
 <li><a class="" href="class-activity-4.html"><span class="header-section-number">4</span> Class Activity 4</a></li>
 <li><a class="active" href="class-activity-5.html"><span class="header-section-number">5</span> Class Activity 5</a></li>
+<li><a class="" href="class-activity-6.html"><span class="header-section-number">6</span> Class Activity 6</a></li>
 <li class="book-part">Basics R</li>
-<li><a class="" href="what-is-r.html"><span class="header-section-number">7</span> What is R?</a></li>
-<li><a class="" href="r-markdown.html"><span class="header-section-number">8</span> R Markdown</a></li>
+<li><a class="" href="what-is-r.html"><span class="header-section-number">8</span> What is R?</a></li>
+<li><a class="" href="r-markdown.html"><span class="header-section-number">9</span> R Markdown</a></li>
 </ul>
 
         <div class="book-extra">
@@ -292,11 +293,10 @@ $Thriller
 <pre><code>[1] 0.9648396</code></pre>
 </details><p><br></p>
 </div>
-</div>
-<div id="example-3-z-scores-for-test-scores" class="section level2" number="5.3">
-<h2>
-<span class="header-section-number">5.3</span> Example 3: Z-scores for Test Scores<a class="anchor" aria-label="anchor" href="#example-3-z-scores-for-test-scores"><i class="fas fa-link"></i></a>
-</h2>
+<div id="example-3-z-scores-for-test-scores" class="section level3" number="5.2.2">
+<h3>
+<span class="header-section-number">5.2.2</span> Example 3: Z-scores for Test Scores<a class="anchor" aria-label="anchor" href="#example-3-z-scores-for-test-scores"><i class="fas fa-link"></i></a>
+</h3>
 <p>The ACT test has a population mean of 21 and standard deviation of 5. The SAT has a population mean of 1500 and a standard deviation of 325. You earned 28 on the ACT and 2100 on the SAT.</p>
 <p>(a). Which test did you do better on?</p>
 <details><summary><red>Click for answer</red></summary><p><em>Answer:</em></p>
@@ -310,14 +310,15 @@ $Thriller
 <p>(b). For each test, find the interval that is likely to contain about 95% of all test scores.</p>
 <details><summary><red>Click for answer</red></summary><p><em>Answer:</em></p>
 <ul>
-<li><p>ACT: Two standard deviations is <span class="math inline">\(2(5) = 10.\)</span> About 95% of ACT scores are between <span class="math inline">\(28 - 10 = 13\)</span> and <span class="math inline">\(28 + 10 = 38.\)</span> This claim assumes that ACT scores follow a bell-shaped distribution.</p></li>
+<li><p>ACT: Two standard deviations is <span class="math inline">\(2(5) = 10.\)</span> About 95% of ACT scores are between <span class="math inline">\(21 - 10 = 11\)</span> and <span class="math inline">\(21 + 10 = 31.\)</span> This claim assumes that ACT scores follow a bell-shaped distribution.</p></li>
 <li><p>SAT: Two standard deviations is <span class="math inline">\(2(325) = 650.\)</span> About 95% of SAT scores are between <span class="math inline">\(1500 - 650 = 850\)</span> and <span class="math inline">\(1500 + 650 = 2150\)</span>. This claim assumes that SAT scores follow a bell-shaped distribution.</p></li>
 </ul></details><p><br></p>
 <hr>
 </div>
-<div id="example-4-5-number-summaries" class="section level2" number="5.4">
+</div>
+<div id="example-4-5-number-summaries" class="section level2" number="5.3">
 <h2>
-<span class="header-section-number">5.4</span> Example 4: 5 number summaries<a class="anchor" aria-label="anchor" href="#example-4-5-number-summaries"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.3</span> Example 4: 5 number summaries<a class="anchor" aria-label="anchor" href="#example-4-5-number-summaries"><i class="fas fa-link"></i></a>
 </h2>
 <p>For each five number summary below, indicate whether the data appear to be symmetric, skewed to the right, or skewed to the left.</p>
 <p>(a). (2, 10, 15, 20, 69)</p>
@@ -345,9 +346,9 @@ $Thriller
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> Symmetric since mean is same as median.
 </details><p><br></p>
 </div>
-<div id="example-5-hot-dog" class="section level2" number="5.5">
+<div id="example-5-hot-dog" class="section level2" number="5.4">
 <h2>
-<span class="header-section-number">5.5</span> Example 5: Hot dog<a class="anchor" aria-label="anchor" href="#example-5-hot-dog"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4</span> Example 5: Hot dog<a class="anchor" aria-label="anchor" href="#example-5-hot-dog"><i class="fas fa-link"></i></a>
 </h2>
 <p>This boxplot shows the number of hot dogs eaten by the winners of Nathan’s Famous hot dog eating contests from 2002-2011.</p>
 <div class="sourceCode" id="cb125"><pre class="downlit sourceCode r">
@@ -355,18 +356,15 @@ $Thriller
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/boxplot.html">boxplot</a></span><span class="op">(</span><span class="va">hotdogs</span><span class="op">$</span><span class="va">HotDogs</span>, xlab<span class="op">=</span><span class="st">"Number of Hot Dogs Consumed"</span>, horizontal<span class="op">=</span><span class="cn">T</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="Class_Activity_5_files/figure-html/unnamed-chunk-22-1.png" width="100%"></div>
 <p>(a). Use the boxplot to estimate the 5 number summary and IQR for this data.</p>
-<div class="sourceCode" id="cb126"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/boxplot.html">boxplot</a></span><span class="op">(</span><span class="va">hotdogs</span><span class="op">$</span><span class="va">HotDogs</span>, xlab<span class="op">=</span><span class="st">"Number of Hot Dogs Consumed"</span>, horizontal<span class="op">=</span><span class="cn">T</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="Class_Activity_5_files/figure-html/unnamed-chunk-23-1.png" width="100%"></div>
-<details><summary><red>Click for answer</red></summary><em>Answer:</em> min = 45, Q1 = 50, m = 54, Q3 = 62, max = 67. IQR is about 62-50 or 12 hotdogs
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> min = 45, Q1 = 54, m = 60, Q3 = 66, max = 69. IQR is about 66-54 or 12 hotdogs
 </details><p><br></p>
 <p>(b). Computing 5 number summaries</p>
 <p>R doesn’t have ‘5 number summary’ command, but <code>summary</code> gives you a “6” number summary by adding the mean to the 5 number summary. You can also use <code>IQR</code> to get the IQR:</p>
-<div class="sourceCode" id="cb127"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb126"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">hotdogs</span><span class="op">$</span><span class="va">HotDogs</span><span class="op">)</span></span></code></pre></div>
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
   45.00   54.00   60.00   58.64   65.00   69.00 </code></pre>
-<div class="sourceCode" id="cb129"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb128"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/IQR.html">IQR</a></span><span class="op">(</span><span class="va">hotdogs</span><span class="op">$</span><span class="va">HotDogs</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] 11</code></pre>
 <p>How close were your guesses from the boxplot to the values given by this command?</p>
@@ -378,33 +376,33 @@ $Thriller
 <ul>
 <li>
 <span class="math inline">\(1.5IQR = 18\)</span> hotdogs.</li>
-<li>Lower fence: <span class="math inline">\(Q1 - 1.5 IQR = 50 - 18 = 32 &lt; min\)</span> so there are no low outliers.</li>
-<li>Upper fence: <span class="math inline">\(Q3 + 1.5 IQR = 62 + 18 = 80 &gt; max\)</span> so there are no high outliers.</li>
+<li>Lower fence: <span class="math inline">\(Q1 - 1.5 IQR = 54 - 18 = 32 &lt; min\)</span> so there are no low outliers.</li>
+<li>Upper fence: <span class="math inline">\(Q3 + 1.5 IQR = 65 + 18 = 83 &gt; max\)</span> so there are no high outliers.</li>
 </ul></details><p><br></p>
 </div>
-<div id="examples-6-hollywood-movies-world-gross-revisited" class="section level2" number="5.6">
+<div id="examples-6-hollywood-movies-world-gross-revisited" class="section level2" number="5.5">
 <h2>
-<span class="header-section-number">5.6</span> Examples 6: Hollywood Movies World Gross revisited<a class="anchor" aria-label="anchor" href="#examples-6-hollywood-movies-world-gross-revisited"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.5</span> Examples 6: Hollywood Movies World Gross revisited<a class="anchor" aria-label="anchor" href="#examples-6-hollywood-movies-world-gross-revisited"><i class="fas fa-link"></i></a>
 </h2>
 <p>Let’s revist the <code>WorldGross</code> analysis from the Hollywood movies data set:</p>
-<div class="sourceCode" id="cb131"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb130"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">movies</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"https://raw.githubusercontent.com/deepbas/statdatasets/main/HollywoodMovies2011.csv"</span><span class="op">)</span></span></code></pre></div>
 <p>(a). Draw a boxplot of <code>WorldGross</code>.</p>
-<div class="sourceCode" id="cb132"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb131"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/boxplot.html">boxplot</a></span><span class="op">(</span><span class="va">movies</span><span class="op">$</span><span class="va">WorldGross</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="Class_Activity_5_files/figure-html/unnamed-chunk-26-1.png" width="100%"></div>
+<div class="inline-figure"><img src="Class_Activity_5_files/figure-html/unnamed-chunk-25-1.png" width="100%"></div>
 <p>How many movies are identified as outliers for world gross?</p>
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> Just using the boxplot, there looks to be about 10 movies that are high outliers
 </details><p><br></p>
 <p>(b). Calculating boxplot values</p>
 <p>Use the boxplot outlier rule to find the “fence” (cutoff) between an outlier and non-outlier for <code>WorldGross</code>. Then determine the value (of <code>WorldGross</code>) that the upper “whisker” (non-outlier) extends to.</p>
-<div class="sourceCode" id="cb133"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb132"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">movies</span><span class="op">$</span><span class="va">WorldGross</span><span class="op">)</span></span></code></pre></div>
 <pre><code>    Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
    0.025   30.706   76.659  150.742  173.691 1328.111 
     NA's 
        2 </code></pre>
-<div class="sourceCode" id="cb135"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb134"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/IQR.html">IQR</a></span><span class="op">(</span><span class="va">movies</span><span class="op">$</span><span class="va">WorldGross</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] 142.985</code></pre>
 <details><summary><red>Click for answer</red></summary><ul>
@@ -413,34 +411,34 @@ $Thriller
 <li><p>Upper fence: <span class="math inline">\(Q3 + 1.5IQR = 173.7 + 214.48 = 388.18 &lt; max\)</span> so there are high outliers.</p></li>
 <li><p>The upper whisker extends to the largest movie value that is below the fence of 388.18. You could look at the data spreadsheet and find which movie comes closest to this fence, but a quicker way is to use R. First we can use which to find out the row numbers of the movies with less than 388.18 in WorldGross. Then use this set to find out the max of the WorldGross within this group of movies, which turns out to be 368.404 hundred million dollars.</p></li>
 </ul>
-<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="class-activity-5.html#cb137-1" aria-hidden="true" tabindex="-1"></a><span class="fl">1.5</span><span class="sc">*</span><span class="fu">IQR</span>(movies<span class="sc">$</span>WorldGross, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb137-2"><a href="class-activity-5.html#cb137-2" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">214.4775</span></span>
-<span id="cb137-3"><a href="class-activity-5.html#cb137-3" aria-hidden="true" tabindex="-1"></a><span class="fl">30.710</span> <span class="sc">-</span> <span class="fl">214.48</span></span>
-<span id="cb137-4"><a href="class-activity-5.html#cb137-4" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="sc">-</span><span class="fl">183.77</span></span>
-<span id="cb137-5"><a href="class-activity-5.html#cb137-5" aria-hidden="true" tabindex="-1"></a><span class="fl">173.7</span> <span class="sc">+</span> <span class="fl">214.48</span></span>
-<span id="cb137-6"><a href="class-activity-5.html#cb137-6" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">388.18</span></span></code></pre></div>
-<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="class-activity-5.html#cb138-1" aria-hidden="true" tabindex="-1"></a>notoutliers <span class="ot">&lt;-</span> <span class="fu">which</span>(movies<span class="sc">$</span>WorldGross <span class="sc">&lt;</span> <span class="fl">388.18</span>)</span>
-<span id="cb138-2"><a href="class-activity-5.html#cb138-2" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(movies<span class="sc">$</span>WorldGross[notoutliers])</span>
-<span id="cb138-3"><a href="class-activity-5.html#cb138-3" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">368.404</span></span>
-<span id="cb138-4"><a href="class-activity-5.html#cb138-4" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span>(movies<span class="sc">$</span>WorldGross <span class="sc">==</span> <span class="fl">368.404</span>)</span>
-<span id="cb138-5"><a href="class-activity-5.html#cb138-5" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">49</span></span>
-<span id="cb138-6"><a href="class-activity-5.html#cb138-6" aria-hidden="true" tabindex="-1"></a>movies[<span class="dv">49</span>,]</span>
-<span id="cb138-7"><a href="class-activity-5.html#cb138-7" aria-hidden="true" tabindex="-1"></a>                                Movie LeadStudio</span>
-<span id="cb138-8"><a href="class-activity-5.html#cb138-8" aria-hidden="true" tabindex="-1"></a><span class="dv">49</span> Captain America<span class="sc">:</span> The First Avenger     Disney</span>
-<span id="cb138-9"><a href="class-activity-5.html#cb138-9" aria-hidden="true" tabindex="-1"></a>   RottenTomatoes AudienceScore         Story  Genre</span>
-<span id="cb138-10"><a href="class-activity-5.html#cb138-10" aria-hidden="true" tabindex="-1"></a><span class="dv">49</span>             <span class="dv">78</span>            <span class="dv">75</span> Metamorphosis Action</span>
-<span id="cb138-11"><a href="class-activity-5.html#cb138-11" aria-hidden="true" tabindex="-1"></a>   TheatersOpenWeek BOAverageOpenWeek DomesticGross</span>
-<span id="cb138-12"><a href="class-activity-5.html#cb138-12" aria-hidden="true" tabindex="-1"></a><span class="dv">49</span>             <span class="dv">3715</span>             <span class="dv">17512</span>        <span class="fl">176.65</span></span>
-<span id="cb138-13"><a href="class-activity-5.html#cb138-13" aria-hidden="true" tabindex="-1"></a>   ForeignGross WorldGross Budget Profitability</span>
-<span id="cb138-14"><a href="class-activity-5.html#cb138-14" aria-hidden="true" tabindex="-1"></a><span class="dv">49</span>       <span class="fl">191.75</span>    <span class="fl">368.404</span>    <span class="dv">140</span>      <span class="fl">2.631457</span></span>
-<span id="cb138-15"><a href="class-activity-5.html#cb138-15" aria-hidden="true" tabindex="-1"></a>   OpeningWeekend</span>
-<span id="cb138-16"><a href="class-activity-5.html#cb138-16" aria-hidden="true" tabindex="-1"></a><span class="dv">49</span>          <span class="fl">65.06</span></span></code></pre></div>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="class-activity-5.html#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="fl">1.5</span><span class="sc">*</span><span class="fu">IQR</span>(movies<span class="sc">$</span>WorldGross, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb136-2"><a href="class-activity-5.html#cb136-2" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">214.4775</span></span>
+<span id="cb136-3"><a href="class-activity-5.html#cb136-3" aria-hidden="true" tabindex="-1"></a><span class="fl">30.710</span> <span class="sc">-</span> <span class="fl">214.48</span></span>
+<span id="cb136-4"><a href="class-activity-5.html#cb136-4" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="sc">-</span><span class="fl">183.77</span></span>
+<span id="cb136-5"><a href="class-activity-5.html#cb136-5" aria-hidden="true" tabindex="-1"></a><span class="fl">173.7</span> <span class="sc">+</span> <span class="fl">214.48</span></span>
+<span id="cb136-6"><a href="class-activity-5.html#cb136-6" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">388.18</span></span></code></pre></div>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="class-activity-5.html#cb137-1" aria-hidden="true" tabindex="-1"></a>notoutliers <span class="ot">&lt;-</span> <span class="fu">which</span>(movies<span class="sc">$</span>WorldGross <span class="sc">&lt;</span> <span class="fl">388.18</span>)</span>
+<span id="cb137-2"><a href="class-activity-5.html#cb137-2" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(movies<span class="sc">$</span>WorldGross[notoutliers])</span>
+<span id="cb137-3"><a href="class-activity-5.html#cb137-3" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">368.404</span></span>
+<span id="cb137-4"><a href="class-activity-5.html#cb137-4" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span>(movies<span class="sc">$</span>WorldGross <span class="sc">==</span> <span class="fl">368.404</span>)</span>
+<span id="cb137-5"><a href="class-activity-5.html#cb137-5" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">49</span></span>
+<span id="cb137-6"><a href="class-activity-5.html#cb137-6" aria-hidden="true" tabindex="-1"></a>movies[<span class="dv">49</span>,]</span>
+<span id="cb137-7"><a href="class-activity-5.html#cb137-7" aria-hidden="true" tabindex="-1"></a>                                Movie LeadStudio</span>
+<span id="cb137-8"><a href="class-activity-5.html#cb137-8" aria-hidden="true" tabindex="-1"></a><span class="dv">49</span> Captain America<span class="sc">:</span> The First Avenger     Disney</span>
+<span id="cb137-9"><a href="class-activity-5.html#cb137-9" aria-hidden="true" tabindex="-1"></a>   RottenTomatoes AudienceScore         Story  Genre</span>
+<span id="cb137-10"><a href="class-activity-5.html#cb137-10" aria-hidden="true" tabindex="-1"></a><span class="dv">49</span>             <span class="dv">78</span>            <span class="dv">75</span> Metamorphosis Action</span>
+<span id="cb137-11"><a href="class-activity-5.html#cb137-11" aria-hidden="true" tabindex="-1"></a>   TheatersOpenWeek BOAverageOpenWeek DomesticGross</span>
+<span id="cb137-12"><a href="class-activity-5.html#cb137-12" aria-hidden="true" tabindex="-1"></a><span class="dv">49</span>             <span class="dv">3715</span>             <span class="dv">17512</span>        <span class="fl">176.65</span></span>
+<span id="cb137-13"><a href="class-activity-5.html#cb137-13" aria-hidden="true" tabindex="-1"></a>   ForeignGross WorldGross Budget Profitability</span>
+<span id="cb137-14"><a href="class-activity-5.html#cb137-14" aria-hidden="true" tabindex="-1"></a><span class="dv">49</span>       <span class="fl">191.75</span>    <span class="fl">368.404</span>    <span class="dv">140</span>      <span class="fl">2.631457</span></span>
+<span id="cb137-15"><a href="class-activity-5.html#cb137-15" aria-hidden="true" tabindex="-1"></a>   OpeningWeekend</span>
+<span id="cb137-16"><a href="class-activity-5.html#cb137-16" aria-hidden="true" tabindex="-1"></a><span class="dv">49</span>          <span class="fl">65.06</span></span></code></pre></div>
 </details><p><br></p>
 <p>(c). Side-by-side boxplot</p>
 <p>We can compare boxplots of <code>WorldGross</code> across <code>Genre</code> categories:</p>
-<div class="sourceCode" id="cb139"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb138"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/boxplot.html">boxplot</a></span><span class="op">(</span><span class="va">WorldGross</span> <span class="op">~</span> <span class="va">Genre</span>, data<span class="op">=</span><span class="va">movies</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="Class_Activity_5_files/figure-html/unnamed-chunk-30-1.png" width="100%"></div>
+<div class="inline-figure"><img src="Class_Activity_5_files/figure-html/unnamed-chunk-29-1.png" width="100%"></div>
 <ul>
 <li>What does this type of graph illustrate well about the relationship between <code>WorldGross</code> and <code>Genre</code>?</li>
 </ul>
@@ -456,15 +454,15 @@ $Thriller
 </details><p><br></p>
 <p>(d). Improving the default boxplot</p>
 <p>There are many values in <code>Genre</code> for this data and their values (levels) have longer names. This can cause issues when using these names to label graphs, like the x-axis in your boxplot. The are many (many, many) ways to modify graphs in R. Here is one way to change the label orientation on your x-axis.</p>
-<div class="sourceCode" id="cb140"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb139"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/boxplot.html">boxplot</a></span><span class="op">(</span><span class="va">WorldGross</span> <span class="op">~</span> <span class="va">Genre</span>, data<span class="op">=</span><span class="va">movies</span>, las<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="Class_Activity_5_files/figure-html/unnamed-chunk-31-1.png" width="100%"></div>
+<div class="inline-figure"><img src="Class_Activity_5_files/figure-html/unnamed-chunk-30-1.png" width="100%"></div>
 <p>The <code>las</code> arguments let’s you change the orientation of the axis labels relative to the axis. The value of 2 makes the labels perpendicular to the axis.</p>
 <p><br></p>
 </div>
-<div id="example-8-ants-on-a-sandwich" class="section level2" number="5.7">
+<div id="example-8-ants-on-a-sandwich" class="section level2" number="5.6">
 <h2>
-<span class="header-section-number">5.7</span> Example 8: Ants on a Sandwich<a class="anchor" aria-label="anchor" href="#example-8-ants-on-a-sandwich"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.6</span> Example 8: Ants on a Sandwich<a class="anchor" aria-label="anchor" href="#example-8-ants-on-a-sandwich"><i class="fas fa-link"></i></a>
 </h2>
 <p>The number of ants climbing on a piece of a peanut butter sandwich left on the ground near an anthill for a few minutes was measured 7 different times and the results are:
 <span class="math inline">\(43, 59, 22, 25, 36, 47, 19\)</span></p>
@@ -481,7 +479,7 @@ $Thriller
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="class-activity-4.html"><span class="header-section-number">4</span> Class Activity 4</a></div>
-<div class="next"><a href="what-is-r.html"><span class="header-section-number">7</span> What is R?</a></div>
+<div class="next"><a href="class-activity-6.html"><span class="header-section-number">6</span> Class Activity 6</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
@@ -490,13 +488,15 @@ $Thriller
 <a class="nav-link" href="#your-turn-1-3"><span class="header-section-number">5.1</span> Your Turn 1</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#hollywood-movies-domestic-gross"><span class="header-section-number">5.1.1</span> Hollywood Movies Domestic Gross</a></li></ul>
 </li>
 <li>
-<a class="nav-link" href="#your-turn-2-3"><span class="header-section-number">5.2</span> Your turn 2</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#example-2-sleep"><span class="header-section-number">5.2.1</span> Example 2: Sleep</a></li></ul>
+<a class="nav-link" href="#your-turn-2-3"><span class="header-section-number">5.2</span> Your turn 2</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#example-2-sleep"><span class="header-section-number">5.2.1</span> Example 2: Sleep</a></li>
+<li><a class="nav-link" href="#example-3-z-scores-for-test-scores"><span class="header-section-number">5.2.2</span> Example 3: Z-scores for Test Scores</a></li>
+</ul>
 </li>
-<li><a class="nav-link" href="#example-3-z-scores-for-test-scores"><span class="header-section-number">5.3</span> Example 3: Z-scores for Test Scores</a></li>
-<li><a class="nav-link" href="#example-4-5-number-summaries"><span class="header-section-number">5.4</span> Example 4: 5 number summaries</a></li>
-<li><a class="nav-link" href="#example-5-hot-dog"><span class="header-section-number">5.5</span> Example 5: Hot dog</a></li>
-<li><a class="nav-link" href="#examples-6-hollywood-movies-world-gross-revisited"><span class="header-section-number">5.6</span> Examples 6: Hollywood Movies World Gross revisited</a></li>
-<li><a class="nav-link" href="#example-8-ants-on-a-sandwich"><span class="header-section-number">5.7</span> Example 8: Ants on a Sandwich</a></li>
+<li><a class="nav-link" href="#example-4-5-number-summaries"><span class="header-section-number">5.3</span> Example 4: 5 number summaries</a></li>
+<li><a class="nav-link" href="#example-5-hot-dog"><span class="header-section-number">5.4</span> Example 5: Hot dog</a></li>
+<li><a class="nav-link" href="#examples-6-hollywood-movies-world-gross-revisited"><span class="header-section-number">5.5</span> Examples 6: Hollywood Movies World Gross revisited</a></li>
+<li><a class="nav-link" href="#example-8-ants-on-a-sandwich"><span class="header-section-number">5.6</span> Example 8: Ants on a Sandwich</a></li>
 </ul>
 
       <div class="book-extra">
@@ -514,7 +514,7 @@ $Thriller
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-01-13.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-01-15.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -14,7 +14,7 @@ bac <- read.csv("https://raw.githubusercontent.com/deepbas/statdatasets/main/BAC
 
  (a). Always start with a visual!!!!
 
-Plot the response (BAC) on the y-axis and the explantory ("predictor") on the x-axis. 
+Plot the response (BAC) on the y-axis and the explanatory ("predictor") on the x-axis. 
 
 
 ```r
@@ -353,6 +353,7 @@ Check your answer by adding `subset = -3` to the `lm` command (this removes row 
 <details>
 <summary><red>Click for answer</red></summary>
 
+
 ```r
 # define a different linear model with row 3 removed 
 bac.lm2 <- lm(BAC ~ Beers, data=bac, subset = -3)
@@ -536,6 +537,8 @@ Coefficients:
 <br>
 
 -------------------------------------------------------------------------------
+
+## Your Turn 2
 
 ### Mice Mass Example
 

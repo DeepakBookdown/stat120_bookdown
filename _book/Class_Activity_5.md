@@ -417,7 +417,7 @@ sd(sleep$AverageSleep)
 </details>
 <br>
 
-## Example 3: Z-scores for Test Scores
+### Example 3: Z-scores for Test Scores
 
 The ACT test has a population mean of 21 and standard deviation of 5.  The SAT has a population mean of 1500 and a standard deviation of 325.  You earned 28 on the ACT and 2100 on the SAT. 
 
@@ -439,7 +439,7 @@ The ACT test has a population mean of 21 and standard deviation of 5.  The SAT h
 <summary><red>Click for answer</red></summary>
 *Answer:*
 
-- ACT: Two standard deviations is $2(5) = 10.$ About 95% of ACT scores are between $28 - 10 = 13$ and $28 + 10 = 38.$ This claim assumes that ACT scores follow a bell-shaped distribution.
+- ACT: Two standard deviations is $2(5) = 10.$ About 95% of ACT scores are between $21 - 10 = 11$ and $21 + 10 = 31.$ This claim assumes that ACT scores follow a bell-shaped distribution.
 
 - SAT: Two standard deviations is $2(325) = 650.$ About 95% of SAT scores are between $1500 - 650 = 850$ and $1500 + 650 = 2150$. This claim assumes that SAT scores follow a bell-shaped distribution.
 </details>
@@ -523,16 +523,9 @@ boxplot(hotdogs$HotDogs, xlab="Number of Hot Dogs Consumed", horizontal=T)
 
  (a).  Use the boxplot to estimate the 5 number summary and IQR for this data. 
 
-
-```r
-boxplot(hotdogs$HotDogs, xlab="Number of Hot Dogs Consumed", horizontal=T)
-```
-
-<img src="Class_Activity_5_files/figure-epub3/unnamed-chunk-23-1.png" width="100%" />
-
 <details>
 <summary><red>Click for answer</red></summary>
-*Answer:* min = 45, Q1 = 50, m = 54, Q3 = 62, max = 67. IQR is about 62-50 or 12 hotdogs
+*Answer:* min = 45, Q1 = 54, m = 60, Q3 = 66, max = 69. IQR is about 66-54 or 12 hotdogs
 </details>
 <br>
 
@@ -574,8 +567,8 @@ How close were your guesses from the boxplot to the values given by this command
 *Answer:* 
 
 - $1.5IQR = 18$ hotdogs.
-- Lower fence: $Q1 - 1.5 IQR = 50 - 18 = 32 < min$ so there are no low outliers.
-- Upper fence: $Q3 + 1.5 IQR = 62 + 18 = 80 > max$ so there are no high outliers.
+- Lower fence: $Q1 - 1.5 IQR = 54 - 18 = 32 < min$ so there are no low outliers.
+- Upper fence: $Q3 + 1.5 IQR = 65 + 18 = 83 > max$ so there are no high outliers.
 </details>
 <br>
 
@@ -595,7 +588,7 @@ movies <- read.csv("https://raw.githubusercontent.com/deepbas/statdatasets/main/
 boxplot(movies$WorldGross)
 ```
 
-<img src="Class_Activity_5_files/figure-epub3/unnamed-chunk-26-1.png" width="100%" />
+<img src="Class_Activity_5_files/figure-epub3/unnamed-chunk-25-1.png" width="100%" />
 
 How many movies are identified as outliers for world gross? 
 
@@ -682,7 +675,7 @@ We can compare boxplots of `WorldGross` across `Genre` categories:
 boxplot(WorldGross ~ Genre, data=movies)
 ```
 
-<img src="Class_Activity_5_files/figure-epub3/unnamed-chunk-30-1.png" width="100%" />
+<img src="Class_Activity_5_files/figure-epub3/unnamed-chunk-29-1.png" width="100%" />
 
 - What does this type of graph illustrate well about the relationship between `WorldGross` and `Genre`?
 
@@ -715,7 +708,7 @@ There are many values in `Genre` for this data and their values (levels) have lo
 boxplot(WorldGross ~ Genre, data=movies, las=2)
 ```
 
-<img src="Class_Activity_5_files/figure-epub3/unnamed-chunk-31-1.png" width="100%" />
+<img src="Class_Activity_5_files/figure-epub3/unnamed-chunk-30-1.png" width="100%" />
 
 The `las` arguments let's you change the orientation of the axis labels relative to the axis. The value of 2 makes the labels perpendicular to the axis.
 

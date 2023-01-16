@@ -31,6 +31,12 @@ example-4-5-number-summaries
 example-5-hot-dog
 examples-6-hollywood-movies-world-gross-revisited
 example-8-ants-on-a-sandwich
+class-activity-6
+your-turn-1-4
+beer-example
+your-turn-2-4
+mice-mass-example
+forbes-example
 part-basics-r
 what-is-r
 what-is-rstudio

@@ -235,6 +235,7 @@ Check your answer by adding `subset = -3` to the `lm` command (this removes row 
 
 <details>
 <summary><red>Click for answer</red></summary>
+
 ```{r}
 # define a different linear model with row 3 removed 
 bac.lm2 <- lm(BAC ~ Beers, data=bac, subset = -3)
@@ -319,6 +320,8 @@ lm(BAC ~ Beers, data=bac.male)
 <br>
 
 -------------------------------------------------------------------------------
+
+## Your Turn 2
 
 ### Mice Mass Example
 
