@@ -37,6 +37,16 @@ beer-example
 your-turn-2-4
 mice-mass-example
 forbes-example
+class-activity-7
+your-turn-1-5
+parameters-and-statistics
+example-1-parameters-and-statistics
+example-2-using-search-engines-on-the-internet
+your-turn-2-5
+example-3-simulation-of-a-sample-proportion
+example-4-simulation-for-a-sample-mean
+example-5-effect-of-sample-size
+example-6-bootstrap-sampling
 part-basics-r
 what-is-r
 what-is-rstudio
@@ -51,3 +61,6 @@ r-markdown
 including-plots
 read-in-data-files
 hide-the-code
+helpful-r-codes
+residual-plots-in-ggplot2
+plotly-codes

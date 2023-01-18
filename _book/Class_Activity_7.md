@@ -59,7 +59,7 @@ For each of the following, state whether the quantity described is a parameter o
 
 ------------------------------------------------------------------------------------
 
-## Example 2: Using Search Engines on the Internet
+### Example 2: Using Search Engines on the Internet
 
 A 2012 survey of a random sample of 2253 US adults found that 1,329 of them reported using a search engine (such as Google) every day to find information on the Internet.  
 
@@ -98,6 +98,9 @@ p.hat
 
 
 ---------------------------------------------------------------------------------------------
+
+
+## Your Turn 2
 
 ### Example 3: Simulation of a Sample Proportion
 
@@ -184,20 +187,30 @@ ggplot(data, aes(x = sample.prop1000)) +
 
 <img src="Class_Activity_7_files/figure-epub3/unnamed-chunk-7-1.png" width="100%" />
 
+
+
 *Question:* What does each dot represent?
 
+<details>
+<summary><red>Click for answer</red></summary>
 *Answer:* One sample proportion from a sample of n=100 eligible voters.
+</details><br>
 
 *Question:* What is the shape of your sampling distribution?
-
+<details>
+<summary><red>Click for answer</red></summary>
 *Answer:* Roughly symmetric.
+</details><br>
 
 *Question:* Where is your distribution centered?
-
+<details>
+<summary><red>Click for answer</red></summary>
 *Answer:* About 0.66, which is the population proportion. 
+</details><br>
 
 *Question:* The distribution should be centered at the population proportion. Verify that the distribution is centered around the population proportion, $p = 0.66$. 
-
+<details>
+<summary><red>Click for answer</red></summary>
 *Answer:* 
 
 
@@ -209,13 +222,18 @@ mean(sample.prop1000)
 ```
 [1] 0.65962
 ```
+</details><br>
+
 
 *Question:* What is the standard deviation of this distribution? (Hint: use the 95% rule.) 
-
+<details>
+<summary><red>Click for answer</red></summary>
 *Answer:* About 0.03, it looks like most sample proportions are between 0.55 to 0.75 so 2 standard deviations is about 0.10. This makes the SD about 0.05. 
+</details><br>
 
 *Question:* The standard deviation of sampling distribution has a separate name. It is called the **Standard Error**. Verify the standard deviation of this distribution using R-code.
-
+<details>
+<summary><red>Click for answer</red></summary>
 *Answer:*
 
 
@@ -227,7 +245,7 @@ sd(sample.prop1000)
 ```
 [1] 0.0483176
 ```
-
+</details><br>
 
 (d). Repeat part(c) with sample size 20 instead of 100. Generate 1000 samples.
 
@@ -253,6 +271,8 @@ ggplot(data, aes(x = sample.prop1000)) +
 
 *Question:*  How has the sampling distribution changed? (Shape? Center? Variability?)
 
+<details>
+<summary><red>Click for answer</red></summary>
 *Answer:* The shape is slightly left skewed, still centered at 0.66 but with more variability that before (SD of about 0.10). This distribution is more discrete looking because there are just a few sample proportions possible with n=20 (e.g. 20/20, 19/20, 18/20, etc). 
 
 
@@ -271,7 +291,7 @@ sd(sample.prop1000)
 ```
 [1] 0.1086093
 ```
-
+</details><br>
 
 (e). Now suppose the population proportion is $p=0.90$ instead of $p=0.66$ in part (e). Keep n.size=20. 
 
@@ -299,6 +319,8 @@ ggplot(data, aes(x = sample.prop1000)) +
 
 *Question:* How has the sampling distribution changed? (Shape? Center? Variability?)
 
+<details>
+<summary><red>Click for answer</red></summary>
 *Answer:*  The shape is much more left skewed than when p=0.66. Center is around 0.90 and SD is around 0.07. Note that increasing the population proportion closer to 1 results in a decrease in the SD because most samples give proportion near 1.  
 
 
@@ -317,6 +339,7 @@ sd(sample.prop1000)
 ```
 [1] 0.06466329
 ```
+</details><br>
 
 --------------------------------------------------------------------------------
 
@@ -422,15 +445,20 @@ ggplot(mydata, aes(x = sample.mean1000)) +
 
 
 *Question:* What does each dot represent?
-
+<details>
+<summary><red>Click for answer</red></summary>
 *Answer:* A sample mean budget from a sample of n=10
+</details><br>
 
 *Question:* What is the shape of your sampling distribution?
-
+<details>
+<summary><red>Click for answer</red></summary>
 *Answer:* Slightly right skewed.
+</details><br>
 
 *Question:* Where is your distribution centered?
-
+<details>
+<summary><red>Click for answer</red></summary>
 *Answer:* About $53 million, which is the population mean budget. 
 
 
@@ -441,9 +469,12 @@ mean(movies$Budget, na.rm = TRUE)
 ```
 [1] 53.48134
 ```
+</details><br>
+
 
 *Question:* The distribution should be centered at the population mean. Verify that the distribution is centered around the population mean, $\mu = 53.48$. 
-
+<details>
+<summary><red>Click for answer</red></summary>
 *Answer:* It is very close to the population mean.
 
 
@@ -455,15 +486,17 @@ mean(sample.mean1000)
 ```
 [1] 53.12677
 ```
-
+</details><br>
 
 *Question:* What is the standard deviation of this distribution? (Hint: use the 95% rule.) 
-
+<details>
+<summary><red>Click for answer</red></summary>
 *Answer:* About 15 million. 
-
+</details><br>
 
 *Question:* The standard deviation of sampling distribution has a separate name. It is called the **Standard Error**. Verify the standard deviation of this distribution using R-code.
-
+<details>
+<summary><red>Click for answer</red></summary>
 *Answer:* It is 14.80 million quite cose to our previous informed guess.
 
 
@@ -475,7 +508,7 @@ sd(sample.mean1000)
 ```
 [1] 15.0577
 ```
-
+</details><br>
 
 (e). Repeat part(d) with sample size 50 instead of 10. Generate 1000 samples.
 
@@ -507,7 +540,10 @@ ggplot(mydata, aes(x = sample.mean1000)) +
 
 *Question:* Is this sampling distribution more or less symmetric compared to the distribution when $n=10$?
 
+<details>
+<summary><red>Click for answer</red></summary>
 *Answer:* The distribution is more symmetric with n=50 than when n=10. 
+</details><br>
 
 --------------------------------------------------------------------------------
 
@@ -521,11 +557,15 @@ Let's investigate the effect of sample size in the sampling distribution using t
 
 *Question:* What happens if we increase the sample size?
 
+<details>
+<summary><red>Click for answer</red></summary>
 *Answer:* When we increase the sample size, the variability of the sampling distribution becomes smaller.
-
+</details><br>
 
 *Question:* Estimate the standard error of each and verify your answer to the previous question.
 
+<details>
+<summary><red>Click for answer</red></summary>
 *Answer:* The standard errors are
 
 
@@ -553,7 +593,9 @@ sd(data.size.400$x)
 [1] 0.02311007
 ```
 
+
 As the sample size increases, the variability as measured by the standard error of the sampling distribution does indeed decrease.
+</details><br>
 
 ---------------------------------------------------------------------------------------------
 
@@ -592,6 +634,8 @@ ggplot(mydata, aes(x = boot.samplemean1000)) +
 
 (a). Compare the center/spread/shape of the bootstrap distribution to the distribution computed in Ex. 4 (d). Answer all the questions in Ex. 4(d).
 
+<details>
+<summary><red>Click for answer</red></summary>
 *Answer:* The shape/center and variability of this bootstrap distribution is very similar to that of Ex 4 (d)
 
 
@@ -610,3 +654,4 @@ sd(mydata$x)
 ```
 [1] 15.41347
 ```
+</details><br>
