@@ -117,7 +117,7 @@
 
 \title{Stat 120}
 \author{Deepak Bastola}
-\date{2023-01-18}
+\date{2023-01-20}
 
 \begin{document}
 \maketitle
@@ -166,16 +166,16 @@ Click for answer
 
 \begin{verbatim}
    ID Greeting  Male      Age
-1   1    Hello  TRUE 44.84429
-2   2    Hello FALSE 59.90167
-3   3    Hello  TRUE 32.55025
-4   4    Hello FALSE 24.73303
-5   5    Hello  TRUE 28.21052
-6   6  Goodbye FALSE 33.37504
-7   7  Goodbye  TRUE 27.05539
-8   8  Goodbye FALSE 43.24382
-9   9  Goodbye  TRUE 57.94919
-10 10  Goodbye FALSE 38.50226
+1   1    Hello  TRUE 40.58374
+2   2    Hello FALSE 33.20577
+3   3    Hello  TRUE 34.26162
+4   4    Hello FALSE 41.26786
+5   5    Hello  TRUE 55.44002
+6   6  Goodbye FALSE 42.77845
+7   7  Goodbye  TRUE 30.58763
+8   8  Goodbye FALSE 30.31780
+9   9  Goodbye  TRUE 31.88889
+10 10  Goodbye FALSE 55.44326
 \end{verbatim}
 
 \emph{Answer:} We see a data frame with four columns, where the first column is an \texttt{identifier} for the cases. We have information on the greeting types, whether male or not, and age on these cases in the remaining columns.
@@ -399,7 +399,7 @@ Run the following command to obtain a SRS of 10 words from the 268 that are in t
 \end{Shaded}
 
 \begin{verbatim}
- [1]  44  24  46 165 103 261 114 193  86  19
+ [1] 186 140 239  32  80 216  65 150 264 197
 \end{verbatim}
 
 This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
@@ -415,17 +415,17 @@ We will \emph{subset} the data set \texttt{pop} to obtain only the sampled rows 
 \end{Shaded}
 
 \begin{verbatim}
-    position size        word
-44        44    2          or
-24        24   11 proposition
-46        46    6      nation
-165      165    3         the
-103      103    3        But,
-261      261    3         the
-114      114    2          we
-193      193    2          be
-86        86    5       lives
-19        19    7    liberty,
+    position size      word
+186      186    8 advanced.
+140      140    3       The
+239      239    4      that
+32        32    2        we
+80        80    3       for
+216      216    5     which
+65        65    2        We
+150      150    3       say
+264      264    3       not
+197      197    3       the
 \end{verbatim}
 
 \begin{enumerate}
@@ -446,7 +446,7 @@ The word lengths in part (b) are the data for your sample. You can compute your 
 \end{Shaded}
 
 \begin{verbatim}
- [1]  2 11  6  3  3  3  2  2  5  7
+ [1] 8 3 4 2 3 5 2 3 3 3
 \end{verbatim}
 
 Then find the mean of these values:
@@ -458,7 +458,7 @@ Then find the mean of these values:
 \end{Shaded}
 
 \begin{verbatim}
-[1] 4.4
+[1] 3.6
 \end{verbatim}
 
 How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?
@@ -3889,6 +3889,768 @@ Click for answer
 \begin{verbatim}
 [1] 15.41347
 \end{verbatim}
+
+\hypertarget{class-activity-8}{%
+\chapter{Class Activity 8}\label{class-activity-8}}
+
+\hypertarget{your-turn-1-6}{%
+\section{Your Turn 1}\label{your-turn-1-6}}
+
+\hypertarget{example-1-textbook-prices}{%
+\subsection{Example 1: Textbook Prices}\label{example-1-textbook-prices}}
+
+Prices of a random sample of 10 textbooks (rounded to the nearest dollar) are shown:
+
+\[ \$132 \quad \$87 \quad \$185 \quad \$52 \quad \$23 \quad \$147 \quad \$125 \quad \$93 \quad \$85 \quad \$72 \]
+
+(a). What is the sample mean? Verify using r-code.
+
+Click for answer
+
+\emph{Answer:} The sample mean is \(\bar{x} = 100.1\)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{prices }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{132}\NormalTok{,}\DecValTok{87}\NormalTok{, }\DecValTok{185}\NormalTok{, }\DecValTok{52}\NormalTok{, }\DecValTok{23}\NormalTok{, }\DecValTok{147}\NormalTok{, }\DecValTok{125}\NormalTok{, }\DecValTok{93}\NormalTok{, }\DecValTok{85}\NormalTok{, }\DecValTok{72}\NormalTok{)}
+\FunctionTok{mean}\NormalTok{(prices)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 100.1
+\end{verbatim}
+
+(b). Describe carefully how we could use cards to create one bootstrap statistic from this sample. Be specific.
+
+Click for answer
+
+\emph{Answer:} We use 10 cards and write the 10 sample values on the cards. We then mix them up and draw one and record the value on it and put it back. Mix them up again, draw another, record the value, and put it back. Do this 10 times to get a ``with replacement'' sample of size 10. Then compute the sample mean of this bootstrap sample.
+
+(c). We can easily instruct R to do this with a simple code as follows:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{resample }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(prices, }\AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{resample}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+ [1] 185 125 125  87  52 185  23  85  87 125
+\end{verbatim}
+
+(d). Where will be bootstrap distribution be centered? What shape do we expect it to have?
+
+Click for answer
+
+\emph{Answer:} It will be centered approximately at the sample mean of 100.1 and we expect it to be roughly bellshaped (it may be a bit skewed since the sample size of 10 is smallish).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{example-2-statkey-atlanta-commute-distance}{%
+\subsection{Example 2: Statkey Atlanta Commute Distance}\label{example-2-statkey-atlanta-commute-distance}}
+
+Go to the website at \href{http://www.lock5stat.com/StatKey/}{Lock5Statkey}. Under the ``Bootstrap Confidence Intervals'' column, select the ``CI for Single Mean, Median, St.Dev''. Change the data set to Atlanta Commute (Distance). This data set gives a random sample of 500 worker commute distances (miles) for metropolitan Atlanta
+
+(a). Use the ``Original Sample'' pane to determine the shape of these 500 commuter distances, along with their mean and standard deviation. Write down these stats using correct notation.
+
+Click for answer
+
+\emph{Answer:} The sample mean is \(\bar{x} = 18.16\) and the sample standard deviation is \(s = 13.798\).
+
+(b). Click ``Generate 1 Sample'' to create one bootstrap sample from this data. Explain how this sample was generated. Use the ``Bootstrap Sample'' pane to find the bootstrap statistic that was computed from this sample. What value is this bootstrap statistic? Repeat this a couple times.
+
+Click for answer
+
+\emph{Answer:} The bootstrap sample was obtained by resampling from the 500 observed commute distances with
+replacement. Basically we randomly select 500 distances from the data (with replacement).
+
+The value of the bootstrap mean will vary.
+
+(c). Now click the ``Generate 1000 Samples'' to get 1000 bootstrap sample means. Is the bootstrap distribution centered at the population or sample mean commute distance?
+
+Click for answer
+
+\emph{Answer:} The bootstrap distribution is always centered around the statistic that is being bootstrapped. Here it will be centered around the sample mean commute distance of about 18.16 miles. The population mean
+commute distance is unknown!
+
+(d). What is the bootstrap SE for the sample mean?\\
+
+Click for answer
+
+\emph{Answer:} The standard error from the bootstrap distribution is about 0.628.
+
+(e). Compute a 95\% confidence interval for the average commute distance in metropolitan Atlanta.\\
+
+Click for answer
+
+\emph{Answer:} The sample mean is \(\bar{x} = 18.16\) and the standard error from the bootstrap distribution is about 0.618 so we compute the \(95\%\) confidence interval using \(18.16 \pm 2(0.628)\), giving an interval of 16.90 to 19.42 miles.
+
+(f). Interpret your answer to (e) in context.\\
+
+Click for answer
+
+\emph{Answer:} We are 95\% confident that the average commuting distance in metropolitan Atlanta is between 16.90 and 19.42 miles.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{example-3-statkey-global-warming}{%
+\subsection{Example 3: Statkey Global Warming}\label{example-3-statkey-global-warming}}
+
+What percentage of Americans believe in global warming? A survey on 2,251 randomly selected individuals
+conducted in October 2010 found that 1,328 answered Yes to the question ``Is there solid evidence of global
+warming?'' To compute a bootstrap confidence interval for the proportion of all Americans who believe in
+global warming, go to the website at \href{http://www.lock5stat.com/StatKey/}{Lock5Statkey}. Under the ``Bootstrap Confidence Intervals'' column, select the ``CI for Single Proportion''.
+
+(a). Enter the data for this survey by clicking the ``Edit Data'' button. Enter 2251 as the sample size and 1328 as the count. What is the sample proportion of people who believe in global warming? Use correct notation!
+
+Click for answer
+
+\emph{Answer:} The sample proportion is \(\hat{p} = 0.59\).
+
+(b). Generate 1 bootstrap sample. Explain how this sample was generated. Use the ``Bootstrap Sample'' pane to find the bootstrap statistic that was computed from this sample. What value is this bootstrap statistic? Repeat this a couple times.
+
+Click for answer
+
+\emph{Answer:} The bootstrap sample was obtained by resampling the observed answers (``yes'' and ``no'') to the global warming question with replacement. Answers will vary for the bootstrap statistic (proportion)
+
+(c). Generate 1000 samples to get 1000 bootstrap sample proportions. Is the bootstrap distribution centered at the population or sample proportion? Describe the shape and center of this bootstrap distribution
+
+Click for answer
+
+\emph{Answer:} The shape is symmetric around a center value of about 0.59, which is the sample proportion not the population proportion (which is unknown).
+
+(d). Compute a 95\% confidence interval for the proportion of Americans who believe in global warming
+
+Click for answer
+
+\emph{Answer:} The sample proportion is \(\hat{p} = 0.59\) and the standard error from the bootstrap distribution is 0.010 so we compute the 95\% confidence interval using \(0.590 \pm 2(0.010),\) giving an interval of 0.57 to 0.61.
+
+(e). Interpret your interval from part (d).
+
+Click for answer
+
+\emph{Answer:} We are 95\% confident that the proportion of Americans who believe there is solid evidence of global warming is between 0.57 and 0.61.
+
+(f). Does this data support a claim that a majority of Americans believe there is solid evidence of global warming? Explain.
+
+Click for answer
+
+\emph{Answer:} Yes, the data does support this claim since we are confident that at least 50\% of Americans believe in global warming since the lower bound on the CI is 57\%.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{example-4.-statkey-global-warming-by-political-party}{%
+\subsection{Example 4. Statkey Global Warming by Political Party}\label{example-4.-statkey-global-warming-by-political-party}}
+
+Does belief in global warming differ by political party? When the question ``Is there solid evidence of global warming?'' was asked, the sample proportion answering ``yes'' was 79\% among Democrats and 38\% among
+Republicans. To compute a bootstrap confidence interval for the difference in the proportion of Democrats
+and Republicans who believe in global warming, go to the website at \href{http://www.lock5stat.com/StatKey/}{Lock5Statkey}. Under the ``Bootstrap Confidence Intervals'' column, select the ``CI for Difference in Proportions''.
+
+(a). Enter the data for this survey by clicking the ``Edit Data'' button. One big assumption we will make is that the sample sizes for both groups (Dems and Reps) were each 1000. Enter the Democrat data into the ``Group 1'' boxes (count of 790 and size of 1000) and the Republican data into the ``Group 2'' boxes (count of 380 and size of 1000). Verify that the sample proportions for the two groups are 79\% and 38\%. What is the difference in the two sample proportions? Use correct notation.
+
+Click for answer
+
+\emph{Answer:} The sample difference in proportions is \(\hat{p}_{Dem} - \hat{p}_{Rep} = 0.79 - 0.38 = 0.41\)
+
+(b). Generate 1 bootstrap sample. Explain how this sample was generated (give this some thought now that you have two samples of data). Use the ``Bootstrap Sample'' pane to find the bootstrap statistic that was computed from this sample. What value is this bootstrap statistic? Repeat this a couple times.
+
+Click for answer
+
+\emph{Answer:} One bootstrap sample was obtained from the group 1 sample (resampling the observed ``believe/not believe'' responses with replacement) and a separate bootstrap sample was obtained from the group 2 sample. The difference in the bootstrap proportions for each group was computed for the bootstrap difference statistic.
+
+For individual bootstrap samples: answers will vary.
+
+(c). Generate 1000 samples to get 1000 bootstrap sample proportion differences. Describe the shape and center of this bootstrap distribution
+
+Click for answer
+
+\emph{Answer:} The shape is symmetric around a center value of about 0.41 (the sample difference in proportions).
+
+(d). Compute a 95\% confidence interval for the difference between the proportion of Democrats and Republicans who believe in global warming.
+
+Click for answer
+
+\emph{Answer:}
+The sample difference in proportions is \(\hat{p}_{Dem} - \hat{p}_{Rep} = 0.79 - 0.38 = 0.41\), the standard error from the bootstrap distribution is 0.020 so we compute the 95\% confidence interval using \(0.41 \pm 2(0.020)\) giving an interval of 0.37 to 0.45.
+
+(e). Interpret your interval from part (d) in context and without using the word difference!! (i.e.~give a directional claim that uses words like ``more'' or ``less'')
+
+Click for answer
+
+\emph{Answer:} We are 95\% confident that the percent of Democrats who believe there is solid evidence of global warming is between 37 and 45 percentage points higher than the percent of Republicans who believe this.
+
+(f). To compute this interval, we assumed that 1000 people were sampled from each subpopulation (Dems and Reps). Suppose this sample size was just 500 people for each group. Would your 95\% confidence interval be wider or shorter than the one computed in part (d)? Explain.
+
+Click for answer
+
+\emph{Answer:} With fewer people in each group, we will get a larger bootstrap SE and hence a larger margin of error for the CI. Remember that the SE of a sampling distribution gets smaller as the sample size increases, the same behavior is seen in a bootstrap distribution.
+
+\hypertarget{example-5-statkey-body-temperature}{%
+\subsection{Example 5: Statkey Body Temperature}\label{example-5-statkey-body-temperature}}
+
+Is normal body temperature really \(98.6^{\circ}\) F? A sample of body temperature for 50 healthy individuals was taken. Find this dataset in StatKey under ``Confidence Interval for a Mean.''
+
+(a). What is the sample mean? What is the sample standard deviation? Use correct notation for each
+
+Click for answer
+
+\emph{Answer:} \(\bar{x} = 98.26\) and \(s = 0.765\).
+
+(b). Generate a bootstrap distribution, using at least 1000 simulated statistics. What is the standard
+error?
+
+Click for answer
+
+\emph{Answer:} SE \(\approx\) 0.108. Answers will vary slightly with different simulations (see output below).
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Use the standard error to find a 95\% confidence interval. Show your work. Is 98.6 in the interval?
+\end{enumerate}
+
+Click for answer
+
+\emph{Answer:} \[ \bar{x} \pm 2*SE\]
+\[98.26 \pm 2(0.108) \]
+\[(98.04, 98.48) \]
+We see that 98.6 is not on the interval.
+
+\vspace*{1.5in}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{example-6.-bootstrap-in-r-using-hollywood-2011-dataset}{%
+\subsection{Example 6. Bootstrap in R using Hollywood 2011 dataset!}\label{example-6.-bootstrap-in-r-using-hollywood-2011-dataset}}
+
+We'll look at sampling movies from the population of 134 Hollywood movies made in 2011 and measuring their budget (millions of dollars). Construct a bootstrap sampling distribution for budgets (in millions of dollars) of all movies to come out of Hollywood in 2011, using samples of size n = 50.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# import dataset}
+\NormalTok{movies }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/deepbas/statdatasets/main/HollywoodMovies2011.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item
+  Generate 1 sample of size 50 with replacement from the \texttt{Budget} variable. If there are any \texttt{NA} values, they should be removed first.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# remove the NA values}
+\NormalTok{Budget }\OtherTok{\textless{}{-}}\NormalTok{ movies}\SpecialCharTok{$}\NormalTok{Budget[}\SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(movies}\SpecialCharTok{$}\NormalTok{Budget)]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Bootstrap samples}
+\NormalTok{n.size }\OtherTok{\textless{}{-}} \DecValTok{50}
+\NormalTok{boot.sample1 }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(Budget, }\AttributeTok{size =}\NormalTok{ n.size, }\AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{) }\CommentTok{\# sampling with replacement}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Generate 1000 samples of size 50 with replacement from the redefined \texttt{Budget} variable in part (a). There are many methods to do this. We will use \texttt{lapply} function to do this simulation faster. Using \texttt{lapply} we can apply functions to a list or vector.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{n.rep }\OtherTok{\textless{}{-}} \DecValTok{1000}
+\CommentTok{\# replicate the sampling with replacement 1000 times}
+\NormalTok{boot.sample1000 }\OtherTok{\textless{}{-}} \FunctionTok{lapply}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\NormalTok{n.rep, }\ControlFlowTok{function}\NormalTok{(x) }\FunctionTok{sample}\NormalTok{(Budget, }\AttributeTok{size =}\NormalTok{ n.size, }\AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{))}
+
+\CommentTok{\# Calculate the mean of each resample}
+\NormalTok{boot.samplemean1000 }\OtherTok{\textless{}{-}} \FunctionTok{lapply}\NormalTok{(boot.sample1000, }\ControlFlowTok{function}\NormalTok{(x) }\FunctionTok{mean}\NormalTok{(x))}
+
+\CommentTok{\# Transform the list back to a vector for further computations}
+\NormalTok{boot.samplemean1000 }\OtherTok{\textless{}{-}} \FunctionTok{unlist}\NormalTok{(boot.samplemean1000)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Make a dotplot of the 1000 sample means calculated in part (c). The function to do this in \texttt{ggplot2} is \texttt{geom\_dotplot}. There are two methods for binning the data values. \texttt{dotdensity} is the default option for dot-density binning and \texttt{histodot} is for fixed bin width like a histogram.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Plot the bootstrap distribution}
+
+\NormalTok{boot.samples }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{samples =}\NormalTok{ boot.samplemean1000) }\CommentTok{\# define a data frame}
+
+\CommentTok{\# Plot a dot plot of the sample proportion}
+\FunctionTok{ggplot}\NormalTok{(boot.samples, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ samples)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_dotplot}\NormalTok{(}\AttributeTok{dotsize=}\FloatTok{0.9}\NormalTok{, }\AttributeTok{stackratio=}\FloatTok{0.9}\NormalTok{, }\AttributeTok{binwidth=}\DecValTok{1}\NormalTok{, }\AttributeTok{method =} \StringTok{"histodot"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{xlab}\NormalTok{(}\StringTok{"Sample mean"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{ylab}\NormalTok{(}\StringTok{"Count"}\NormalTok{)}\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{limits =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{120}\NormalTok{))}\SpecialCharTok{+} 
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Bootstrap sampling distribution for sample mean"}\NormalTok{) }\SpecialCharTok{+}  
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{plot.title =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{hjust =} \FloatTok{0.5}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_8_files/figure-latex/unnamed-chunk-7-1}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{example-7-the-data-set-creditdata.csv-contains-records-for-1000-loans-that-either-defaulted-badloan-or-did-not-default-goodloan.-there-are-300-loans-that-defaulted-and-700-that-did-not.-lets-consider-that-the-300-loans-that-defaulted-are-random-sample-of-loans-that-default-and-the-700-non-defaulting-loans-are-a-random-sample-of-loans-that-dont-default.}{%
+\subsection{Example 7: The data set CreditData.csv contains records for 1000 loans that either defaulted (BadLoan) or did not default (GoodLoan). There are 300 loans that defaulted and 700 that did not. Let's consider that the 300 loans that defaulted are random sample of loans that default and the 700 non-defaulting loans are a random sample of loans that don't default.}\label{example-7-the-data-set-creditdata.csv-contains-records-for-1000-loans-that-either-defaulted-badloan-or-did-not-default-goodloan.-there-are-300-loans-that-defaulted-and-700-that-did-not.-lets-consider-that-the-300-loans-that-defaulted-are-random-sample-of-loans-that-default-and-the-700-non-defaulting-loans-are-a-random-sample-of-loans-that-dont-default.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{credit }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/deepbas/statdatasets/main/CreditData.csv"}\NormalTok{)}
+\FunctionTok{table}\NormalTok{(credit}\SpecialCharTok{$}\NormalTok{Good.Loan)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+ BadLoan GoodLoan 
+     300      700 
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item
+  Visualize age vs.~default
+\end{enumerate}
+
+The variable \texttt{Age.in.years} gives the age of the person who received the loan. Construct a side-by-side boxplot of age by \texttt{Good.Loan} and compute the sample means for each group.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(Age.in.years }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Good.Loan, }\AttributeTok{data=}\NormalTok{credit)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_8_files/figure-latex/unnamed-chunk-9-1}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{tapply}\NormalTok{(credit}\SpecialCharTok{$}\NormalTok{Age.in.years, credit}\SpecialCharTok{$}\NormalTok{Good.Loan, mean)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+ BadLoan GoodLoan 
+33.96333 36.22429 
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  What are the mean ages in each group?
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} 34.0 years for the bad loan group and 36.2 years for the good loan group.
+
+\begin{itemize}
+\tightlist
+\item
+  Describe the distribution of ages in each group. Are there any outliers that could be overly influential on the value(s) of the sample mean(s)?
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} Both age distributions are somewhat right skewed with a few outliers identified by the boxplot rule. But there aren't any extremely unusual cases.
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Bootstrap CI for a difference in means
+\end{enumerate}
+
+The \texttt{boot(y\ \textasciitilde{}\ x,\ data=)} command generates 10000 bootstrap samples for the true difference in means of \texttt{y} for each of the two groups in \texttt{x}. The command is contained in the \texttt{CarletonStats} package. Here we use it to compute the bootstrap distribution for the difference in mean ages of the two default groups:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(CarletonStats)}
+\FunctionTok{boot}\NormalTok{(Age.in.years }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Good.Loan, }\AttributeTok{data=}\NormalTok{credit)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+    ** Bootstrap interval for difference of statistic
+
+ Observed difference of statistic:  BadLoan - GoodLoan =  -2.26095 
+ Mean of bootstrap distribution: -2.26675 
+ Standard error of bootstrap distribution: 0.78054 
+
+ Bootstrap percentile interval
+      2.5%      97.5% 
+-3.7881310 -0.7233214 
+
+        *--------------*
+\end{verbatim}
+
+\includegraphics[width=1\linewidth]{Class_Activity_8_files/figure-latex/unnamed-chunk-10-1}
+
+\begin{itemize}
+\tightlist
+\item
+  Give the difference in sample mean ages reported by the output. Use correct notation.
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} The average age of people with a bad loan is about 2.3 years less than the average age of people with a good loan.
+
+\begin{itemize}
+\tightlist
+\item
+  Give the 95\% confidence interval for the difference in mean ages using the percentile method
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} The percentile interval is -3.8 to -0.7 years.
+
+\begin{itemize}
+\tightlist
+\item
+  Compute the 95\% confidence interval for the difference in mean ages using the bootstrap SE. Is it similar to the CI from the percentile method?
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} The CI using the SE is -3.8 to -0.7. The intervals are very similar.
+
+\[
+-2.26095 \pm 2(0.77852) = (-3.81799,  -0.70391)
+\]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\SpecialCharTok{{-}}\FloatTok{2.26095} \SpecialCharTok{{-}} \DecValTok{2}\SpecialCharTok{*}\NormalTok{(}\FloatTok{0.77852}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] -3.81799
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\SpecialCharTok{{-}}\FloatTok{2.26095} \SpecialCharTok{+} \DecValTok{2}\SpecialCharTok{*}\NormalTok{(}\FloatTok{0.77852}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] -0.70391
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Interpret
+\end{enumerate}
+
+Interpret your percentile interval in context using a directional statement. Does this interval suggest that the mean ages differ in the population of all good and bad loan holders?
+
+Click for answer
+
+\emph{Answer:} We are 95\% confident that the mean age of people who default on a loan for this population is about 0.7 to 3.8 years less than the mean age of people who do not default. This interval does support the notation that there is a difference in mean ages of these two groups in the population. It suggests that the average age of people who default is less than the average age of those who don't.
+
+\hypertarget{example-8-credit-data-continued}{%
+\subsection{Example 8 : Credit data continued}\label{example-8-credit-data-continued}}
+
+The variable \texttt{Telephone} tells us if the individual has a phone number on their loan file. Let's look at the proportion of individuals who have a phone number for each type of loan (default or not).
+
+(a). Data clean up
+The entries in the \texttt{Telephone} column are either \texttt{none} or \texttt{yes,\ registered\ under\ the\ customers\ name}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{table}\NormalTok{(credit}\SpecialCharTok{$}\NormalTok{Telephone)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+                                    none 
+                                     596 
+yes, registered under the customers name 
+                                     404 
+\end{verbatim}
+
+To make shorter names describing these two outcomes, we can use the \texttt{levels} command on the factor variable \texttt{Telephone}. Here we see what the original levels are for this variable:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{levels}\NormalTok{(credit}\SpecialCharTok{$}\NormalTok{Telephone)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+NULL
+\end{verbatim}
+
+This shows us the (vector) of two names. We can assign new, shorter names to this variable:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{levels}\NormalTok{(credit}\SpecialCharTok{$}\NormalTok{Telephone) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"no"}\NormalTok{, }\StringTok{"yes"}\NormalTok{)}
+\FunctionTok{table}\NormalTok{(credit}\SpecialCharTok{$}\NormalTok{Telephone)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+                                    none 
+                                     596 
+yes, registered under the customers name 
+                                     404 
+\end{verbatim}
+
+Now we have the same data, just coded with different names.
+
+(b). Phone rate by default type
+
+Here we get the distribution of phone numbers (yes or no) by default type (good vs bad loan):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{prop.table}\NormalTok{(}\FunctionTok{table}\NormalTok{(credit}\SpecialCharTok{$}\NormalTok{Good.Loan, credit}\SpecialCharTok{$}\NormalTok{Telephone),}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+          
+                none
+  BadLoan  0.6233333
+  GoodLoan 0.5842857
+          
+           yes, registered under the customers name
+  BadLoan                                 0.3766667
+  GoodLoan                                0.4157143
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\FunctionTok{ggplot}\NormalTok{(credit, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Good.Loan, }\AttributeTok{fill=}\NormalTok{Telephone)) }\SpecialCharTok{+} \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{position=}\StringTok{"fill"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_8_files/figure-latex/unnamed-chunk-15-1}
+
+\begin{itemize}
+\tightlist
+\item
+  What proportion of bad loans have a phone number on the account?
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} About 37.7\% of bad loans have a phone number.
+
+\begin{itemize}
+\tightlist
+\item
+  What proportion of good loans have a phone number on the account?
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} About 41.6\% of good loans have a phone number.
+
+\begin{itemize}
+\tightlist
+\item
+  What is the sample difference in the proportion of good loans and bad loans that have a phone number? Use correct notation for this number.
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} Here we get \(\hat{p}_{good} - \hat{p}_{bad} =0.4157143 - 0.3766667 = 0.0390476\).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FloatTok{0.4157143} \SpecialCharTok{{-}} \FloatTok{0.3766667}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.0390476
+\end{verbatim}
+
+(c). Using the \texttt{boot} command with a categorical response
+
+In order to get the bootstrap distribution for the sample difference in proportions, we need to recode the ``response'' variable \texttt{Telephone} to have a 1 indicating a ``yes'' response and 0 indicating a ``no'' response. This is done with an \texttt{ifelse} command:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{credit}\SpecialCharTok{$}\NormalTok{Telephone\_binary }\OtherTok{\textless{}{-}} \FunctionTok{ifelse}\NormalTok{(credit}\SpecialCharTok{$}\NormalTok{Telephone }\SpecialCharTok{==} \StringTok{"yes, registered under the customers name"}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{)}
+\FunctionTok{head}\NormalTok{(credit[,}\FunctionTok{c}\NormalTok{(}\StringTok{"Telephone"}\NormalTok{, }\StringTok{"Telephone\_binary"}\NormalTok{)])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+                                 Telephone Telephone_binary
+1 yes, registered under the customers name                1
+2                                     none                0
+3                                     none                0
+4                                     none                0
+5                                     none                0
+6 yes, registered under the customers name                1
+\end{verbatim}
+
+which reads ``if \texttt{Telephone} equals \texttt{yes} than assign a \texttt{1}, else assign a 0''. These 0's and 1's are assigned to a variable called \texttt{Telephone\_binary} that is now in your data frame (checked this with the \texttt{View(credit)} command).
+
+Check your work to make sure \texttt{Telephone\_binary} records what you want it to record
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{table}\NormalTok{(credit}\SpecialCharTok{$}\NormalTok{Telephone)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+                                    none 
+                                     596 
+yes, registered under the customers name 
+                                     404 
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{table}\NormalTok{(credit}\SpecialCharTok{$}\NormalTok{Telephone\_binary)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+  0   1 
+596 404 
+\end{verbatim}
+
+The mean of the 0/1 coded variable computes the proportion of ``yes'' responses:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(credit}\SpecialCharTok{$}\NormalTok{Telephone\_binary)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.404
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{404}\SpecialCharTok{/}\DecValTok{1000}  \CommentTok{\# proportion of yes}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.404
+\end{verbatim}
+
+Note: All examples in your \textbf{Lab Manual} already have this 0/1 recoding done in the lab manual data sets. But I thought you might want to learn how to do this recoding in case you plan to use this command with other, non-lab manual data sets!
+
+(d). 95\% confidence interval for the difference in phone
+
+We can now use the 0/1 version of telephone in the \texttt{boot} command (like example 1) to compute a 95\% bootstrap confidence interval for the difference in the population proportion of good loans and bad loans that have a phone number.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boot}\NormalTok{(Telephone\_binary }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Good.Loan, }\AttributeTok{data=}\NormalTok{credit)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+    ** Bootstrap interval for difference of statistic
+
+ Observed difference of statistic:  BadLoan - GoodLoan =  -0.03905 
+ Mean of bootstrap distribution: -0.0386 
+ Standard error of bootstrap distribution: 0.03373 
+
+ Bootstrap percentile interval
+       2.5%       97.5% 
+-0.10428571  0.02714286 
+
+        *--------------*
+\end{verbatim}
+
+\includegraphics[width=1\linewidth]{Class_Activity_8_files/figure-latex/unnamed-chunk-20-1}
+
+\textbf{Even though the language used in the output says ``statistic'' we are computing a difference in ``proportions''!!}
+
+\begin{itemize}
+\tightlist
+\item
+  Give the 95\% confidence interval for the difference in the population proportion of bad loans and good loans that have a phone number using the percentile method
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} The percentile interval for Bad \(-\) Good is -0.105 to 0.028.
+
+\vspace*{.3in}
+
+\begin{itemize}
+\tightlist
+\item
+  Give the 95\% confidence interval for the difference in the population proportion of bad loans and good loans that have a phone number using the bootstrap SE. Is it similar to the CI from the percentile method?
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} The SE method gives an interval for Bad \(-\) Good of -0.107 to 0.028 which is very similar to the percentile interval.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\SpecialCharTok{{-}}\FloatTok{0.03905} \SpecialCharTok{{-}} \DecValTok{2}\SpecialCharTok{*} \FloatTok{0.03373} 
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] -0.10651
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\SpecialCharTok{{-}}\FloatTok{0.03905} \SpecialCharTok{+} \DecValTok{2}\SpecialCharTok{*} \FloatTok{0.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] -0.03905
+\end{verbatim}
+
+\vspace*{.2in}
+
+(e). Interpret
+
+Interpret your percentile interval in context using a directional statement. Does this interval suggest that there is a difference in the percentage of bad loan holders who provided a phone number compared to the percentage of good loan holders who gave a number? Explain.
+
+Click for answer
+
+\emph{Answer:} We are 95\% confident that the percentage of good loan accounts with a phone number is anywhere from 10.7 percentage points higher than to 2.8 percentage points less than the percentage of bad loans with a phone number.
 
 \hypertarget{part-basics-r}{%
 \chapter{(PART*) Basics R}\label{part-basics-r}}

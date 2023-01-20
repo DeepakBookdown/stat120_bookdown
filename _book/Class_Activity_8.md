@@ -1,5 +1,6 @@
 # Class Activity 8
 
+## Your Turn 1
 
 ### Example 1: Textbook Prices
 
@@ -42,7 +43,7 @@ resample
 ```
 
 ```
- [1]  72 125 125  85  72  52  85  93  93  23
+ [1]  87 185  85  93  23  85 147  52 132  85
 ```
 
  (d). Where will be bootstrap distribution be centered?  What shape do we expect it to have?
@@ -51,8 +52,6 @@ resample
 <summary><red>Click for answer</red></summary>
 *Answer:* It will be centered approximately at the sample mean of 100.1 and we expect it to be roughly bellshaped (it may be a bit skewed since the sample size of 10 is smallish).
 </details><br>
-
-
 
 ----------------------------------------------------------------
 
@@ -83,7 +82,7 @@ The value of the bootstrap mean will vary.
 *Answer:* The bootstrap distribution is always centered around the statistic that is being bootstrapped. Here it will be centered around the sample mean commute distance of about 18.16 miles. The population mean
 commute distance is unknown!
 
-<img src="data/atalanta.png" width="600"/>
+<img src="data/atalanta.png" width="800"/>
 </details><br>
 
 (d). What is the bootstrap SE for the sample mean?  
@@ -106,7 +105,7 @@ commute distance is unknown!
 
 ------------------------------------------------------------------------------------
 
-## Example 3: Statkey Global Warming
+### Example 3: Statkey Global Warming
 
 What percentage of Americans believe in global warming?  A survey on 2,251 randomly selected individuals
 conducted in October 2010 found that 1,328 answered Yes to the question “Is there solid evidence of global
@@ -159,9 +158,10 @@ global warming, go to the website at [Lock5Statkey](http://www.lock5stat.com/Sta
 *Answer:* Yes, the data does support this claim since we are confident that at least 50% of Americans believe in global warming since the lower bound on the CI is 57%. 
 
 </details><br>
+
 ------------------------------------------------------------------------------------
 
-## Example 4. Statkey Global Warming by Political Party
+### Example 4. Statkey Global Warming by Political Party
 
 Does belief in global warming differ by political party?  When the question “Is there solid evidence of global warming?” was asked, the sample proportion answering “yes” was 79% among Democrats and 38% among
 Republicans.  To compute a bootstrap confidence interval for the difference in the proportion of Democrats
@@ -215,7 +215,8 @@ The sample difference in proportions is $\hat{p}_{Dem} - \hat{p}_{Rep} = 0.79 - 
 *Answer:* With fewer people in each group, we will get a larger bootstrap SE and hence a larger margin of error for the CI. Remember that the SE of a sampling distribution gets smaller as the sample size increases, the same behavior is seen in a bootstrap distribution.
 </details><br>
 
-## Example 5: Statkey Body Temperature
+
+### Example 5: Statkey Body Temperature
 
 Is normal body temperature really $98.6^{\circ}$ F?  A sample of body temperature for 50 healthy individuals was taken.  Find this dataset in StatKey under “Confidence Interval for a Mean.”
 
@@ -251,7 +252,7 @@ We see that 98.6 is not on the interval.
 
 --------------------------------------------------------------------------------------
 
-## Example 6. Bootstrap in R using Hollywood 2011 dataset!
+### Example 6. Bootstrap in R using Hollywood 2011 dataset!
 
 We’ll look at sampling movies from the population of 134 Hollywood movies made in 2011 and measuring their budget (millions of dollars). Construct a bootstrap sampling distribution for budgets (in millions of dollars) of all movies to come out of Hollywood in 2011, using samples of size n = 50.
 
@@ -315,7 +316,7 @@ ggplot(boot.samples, aes(x = samples)) +
 
 ---------------------------------------------------------------------------------------
 
-## Example 7: The data set CreditData.csv contains records for 1000 loans that either defaulted (BadLoan) or did not default (GoodLoan). There are 300 loans that defaulted and 700 that did not. Let’s consider that the 300 loans that defaulted are random sample of loans that default and the 700 non-defaulting loans are a random sample of loans that don’t default.
+### Example 7: The data set CreditData.csv contains records for 1000 loans that either defaulted (BadLoan) or did not default (GoodLoan). There are 300 loans that defaulted and 700 that did not. Let’s consider that the 300 loans that defaulted are random sample of loans that default and the 700 non-defaulting loans are a random sample of loans that don’t default.
 
 
 ```r
@@ -379,12 +380,12 @@ boot(Age.in.years ~ Good.Loan, data=credit)
 	** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -2.26095 
- Mean of bootstrap distribution: -2.25869 
- Standard error of bootstrap distribution: 0.77526 
+ Mean of bootstrap distribution: -2.2515 
+ Standard error of bootstrap distribution: 0.76846 
 
  Bootstrap percentile interval
       2.5%      97.5% 
--3.7657857 -0.7233214 
+-3.7371905 -0.7261786 
 
 		*--------------*
 ```
@@ -444,7 +445,7 @@ Interpret your percentile interval in context using a directional statement. Doe
 *Answer:* We are 95% confident that the mean age of people who default on a loan for this population is about 0.7 to 3.8 years less than the mean age of people who do not default. This interval does support the notation that there is a difference in mean ages of these two groups in the population. It suggests that the average age of people who default is less than the average age of those who don't.
 </details><br>
 
-## Example 8 : Credit data continued 
+### Example 8 : Credit data continued 
 
 The variable `Telephone` tells us if the individual has a phone number on their loan file. Let's look at the proportion of individuals who have a phone number for each type of loan (default or not).
 
@@ -634,12 +635,12 @@ boot(Telephone_binary ~ Good.Loan, data=credit)
 	** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -0.03905 
- Mean of bootstrap distribution: -0.03879 
- Standard error of bootstrap distribution: 0.03396 
+ Mean of bootstrap distribution: -0.03857 
+ Standard error of bootstrap distribution: 0.03393 
 
  Bootstrap percentile interval
        2.5%       97.5% 
--0.10476190  0.02809524 
+-0.10571429  0.02714286 
 
 		*--------------*
 ```
@@ -689,7 +690,7 @@ boot(Telephone_binary ~ Good.Loan, data=credit)
 
 (e). Interpret
 
-Interpret your percentile interval in context using a directional statement. Does this interval suggest that there is a difference in the percentage of bad loan holders who provided a phone number comapared to the percetage of good loan holders who gave a number? Explain.
+Interpret your percentile interval in context using a directional statement. Does this interval suggest that there is a difference in the percentage of bad loan holders who provided a phone number compared to the percentage of good loan holders who gave a number? Explain.
 
 <details>
 <summary><red>Click for answer</red></summary>

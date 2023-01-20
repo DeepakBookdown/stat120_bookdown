@@ -47,6 +47,16 @@ example-3-simulation-of-a-sample-proportion
 example-4-simulation-for-a-sample-mean
 example-5-effect-of-sample-size
 example-6-bootstrap-sampling
+class-activity-8
+your-turn-1-6
+example-1-textbook-prices
+example-2-statkey-atlanta-commute-distance
+example-3-statkey-global-warming
+example-4.-statkey-global-warming-by-political-party
+example-5-statkey-body-temperature
+example-6.-bootstrap-in-r-using-hollywood-2011-dataset
+example-7-the-data-set-creditdata.csv-contains-records-for-1000-loans-that-either-defaulted-badloan-or-did-not-default-goodloan.-there-are-300-loans-that-defaulted-and-700-that-did-not.-lets-consider-that-the-300-loans-that-defaulted-are-random-sample-of-loans-that-default-and-the-700-non-defaulting-loans-are-a-random-sample-of-loans-that-dont-default.
+example-8-credit-data-continued
 part-basics-r
 what-is-r
 what-is-rstudio
