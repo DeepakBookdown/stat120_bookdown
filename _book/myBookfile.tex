@@ -117,7 +117,7 @@
 
 \title{Stat 120}
 \author{Deepak Bastola}
-\date{2023-01-20}
+\date{2023-01-23}
 
 \begin{document}
 \maketitle
@@ -166,16 +166,16 @@ Click for answer
 
 \begin{verbatim}
    ID Greeting  Male      Age
-1   1    Hello  TRUE 40.58374
-2   2    Hello FALSE 33.20577
-3   3    Hello  TRUE 34.26162
-4   4    Hello FALSE 41.26786
-5   5    Hello  TRUE 55.44002
-6   6  Goodbye FALSE 42.77845
-7   7  Goodbye  TRUE 30.58763
-8   8  Goodbye FALSE 30.31780
-9   9  Goodbye  TRUE 31.88889
-10 10  Goodbye FALSE 55.44326
+1   1    Hello  TRUE 47.88777
+2   2    Hello FALSE 44.30139
+3   3    Hello  TRUE 50.41107
+4   4    Hello FALSE 57.14766
+5   5    Hello  TRUE 40.72763
+6   6  Goodbye FALSE 39.54374
+7   7  Goodbye  TRUE 46.67890
+8   8  Goodbye FALSE 34.31549
+9   9  Goodbye  TRUE 41.47878
+10 10  Goodbye FALSE 22.03853
 \end{verbatim}
 
 \emph{Answer:} We see a data frame with four columns, where the first column is an \texttt{identifier} for the cases. We have information on the greeting types, whether male or not, and age on these cases in the remaining columns.
@@ -399,7 +399,7 @@ Run the following command to obtain a SRS of 10 words from the 268 that are in t
 \end{Shaded}
 
 \begin{verbatim}
- [1] 186 140 239  32  80 216  65 150 264 197
+ [1] 219 185 148 154  92 226  66 117 229  56
 \end{verbatim}
 
 This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
@@ -415,17 +415,17 @@ We will \emph{subset} the data set \texttt{pop} to obtain only the sampled rows 
 \end{Shaded}
 
 \begin{verbatim}
-    position size      word
-186      186    8 advanced.
-140      140    3       The
-239      239    4      that
-32        32    2        we
-80        80    3       for
-216      216    5     which
-65        65    2        We
-150      150    3       say
-264      264    3       not
-197      197    3       the
+    position size    word
+219      219    3     the
+185      185    5   nobly
+148      148    4    what
+154      154    3     can
+92        92    2      It
+226      226    2      we
+66        66    4    have
+117      117    4    this
+229      229    7 resolve
+56        56    3     are
 \end{verbatim}
 
 \begin{enumerate}
@@ -446,7 +446,7 @@ The word lengths in part (b) are the data for your sample. You can compute your 
 \end{Shaded}
 
 \begin{verbatim}
- [1] 8 3 4 2 3 5 2 3 3 3
+ [1] 3 5 4 3 2 2 4 4 7 3
 \end{verbatim}
 
 Then find the mean of these values:
@@ -458,7 +458,7 @@ Then find the mean of these values:
 \end{Shaded}
 
 \begin{verbatim}
-[1] 3.6
+[1] 3.7
 \end{verbatim}
 
 How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?
@@ -3936,7 +3936,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
- [1] 185 125 125  87  52 185  23  85  87 125
+ [1] 185  23 147  52  87  23  93 132  72 185
 \end{verbatim}
 
 (d). Where will be bootstrap distribution be centered? What shape do we expect it to have?
@@ -4293,12 +4293,12 @@ The \texttt{boot(y\ \textasciitilde{}\ x,\ data=)} command generates 10000 boots
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -2.26095 
- Mean of bootstrap distribution: -2.26675 
- Standard error of bootstrap distribution: 0.78054 
+ Mean of bootstrap distribution: -2.26928 
+ Standard error of bootstrap distribution: 0.77343 
 
  Bootstrap percentile interval
       2.5%      97.5% 
--3.7881310 -0.7233214 
+-3.7566786 -0.7261667 
 
         *--------------*
 \end{verbatim}
@@ -4586,12 +4586,12 @@ We can now use the 0/1 version of telephone in the \texttt{boot} command (like e
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -0.03905 
- Mean of bootstrap distribution: -0.0386 
- Standard error of bootstrap distribution: 0.03373 
+ Mean of bootstrap distribution: -0.03901 
+ Standard error of bootstrap distribution: 0.03328 
 
  Bootstrap percentile interval
        2.5%       97.5% 
--0.10428571  0.02714286 
+-0.10333333  0.02714286 
 
         *--------------*
 \end{verbatim}
@@ -4651,6 +4651,112 @@ Interpret your percentile interval in context using a directional statement. Doe
 Click for answer
 
 \emph{Answer:} We are 95\% confident that the percentage of good loan accounts with a phone number is anywhere from 10.7 percentage points higher than to 2.8 percentage points less than the percentage of bad loans with a phone number.
+
+\hypertarget{class-activity-9}{%
+\chapter{Class Activity 9}\label{class-activity-9}}
+
+\hypertarget{example-1-a-muslim-president}{%
+\subsection{Example 1: A Muslim president?}\label{example-1-a-muslim-president}}
+
+A survey of 1,527 American adults conducted in June 2015 stated that 60\% would vote for a qualified Muslim presidential candidate. The survey goes on to say that ``\ldots{} the margin of sampling error is +/- 3 percentage points at the 95\% confidence level.''
+
+(a). What is the relevant sample statistic? Give appropriate notation and the value of the statistic.
+
+Click for answer
+
+\emph{Answer:} \(\hat{p} = 0.60\)
+
+(b). What population parameter are we estimating with this sample statistic?\\
+
+Click for answer
+
+\emph{Answer:} p = the proportion of all American adults who vote for a qualified Muslim candidate
+
+(c). Use the margin of error to give a confidence interval for the population parameter and interpret this interval in context.
+
+Click for answer
+
+\emph{Answer:} \(0.60 \pm .03\) gives an interval from 0.57 to 0.63
+I am 95\% confident that the proportion of American adults who would vote for a Muslim presidential candidate is between 57\% and 63\%.
+
+(d). Is it reasonable to say that a majority of American adults would vote for a qualified presidential candidate? (Is 0.50 a plausible value?)
+
+Click for answer
+
+\emph{Answer:} The proportion of all Americans who would vote for a Muslim presidential candidate is likely between 57\% and 63\%, so we could say that majority (\textgreater50\%) would vote for a Muslim candidate.
+
+(e). Explain what ``95\% confidence'' mean for this example. (Don't just repeat your answer to 1c.)
+
+Click for answer
+
+\emph{Answer:} About 95\% of all samples of 1527 American adults will give us a sample proportion who would vote for a Muslim presidential candidate that is within 3\% of the population proportion who would vote for a Muslim presidential candidate.
+
+\hypertarget{example-2-biomass-in-tropical-forests}{%
+\subsection{Example 2: Biomass in Tropical Forests}\label{example-2-biomass-in-tropical-forests}}
+
+Using a random sample of 4079 inventory plots, scientists found a sample average of 11,600 tons of carbon per square kilometer with a standard error of 1000 tons. Give a 95\% confidence interval for the mean amount of carbon per square kilometer in tropical forests. Clearly interpret the meaning of this confidence interval.
+
+Click for answer
+
+\emph{Answer:} \(11,600 \pm 2(1000)\) gives an interval from 9,600 to 13,600. We are 95\% sure that the mean amount of carbon per square kilometer in all tropical forests is between 9,600 and 13,600 tons.
+
+\hypertarget{example-3-change-in-gun-ownership}{%
+\subsection{Example 3: Change in gun ownership?}\label{example-3-change-in-gun-ownership}}
+
+A 2016 study described in The Guardian found that a random sample of US adults in 1994 found a female rate of gun ownership of 9\%. A similar random sample in 2015 found the rate of female gun ownership rose to 12\%. Though not given in the article, let's assume that the SE for the difference in these two sample proportions is 2\%.
+
+(a). Use correct notation to describe our parameter of interest: the difference in the proportion of female gun owners in 1994 and 2015.
+
+Click for answer
+
+\emph{Answer:} \(\hat{p}_{1994} - \hat{p}_{2015}\)
+
+(b). Use the data collected to estimate your parameter in (a) and use correct notation for this statistic.
+
+Click for answer
+
+\emph{Answer:} \(\hat{p}_{1994} - \hat{p}_{2015}\) = 0.09 - 0.12 = -0.03
+
+(c). Compute a 95\% confidence interval for the parameter in a.
+
+Click for answer
+
+\emph{Answer:} \((0.09 - 0.12) \pm (.02) = -0.03 \pm 0.04 = -0.07 \text{ to } 0.01, or -7\% \text{ to } 1\%\)
+
+(d). Interpret your interval in c and explain why this support the authors claim that ``the increase {[}in female gun ownership{]} was not meaningful.''
+
+Click for answer
+
+\emph{Answer:} We are 95\% confident that the female gun owner rate in 1994 could be 7 percentage point lower to 1 percentage point higher than the rate in 2015. We can say that the observed increase from 1994 to 2015 of 3\% is not ``statistically significant'' because it is within the margin of error (4\%) for this study.
+
+\hypertarget{example-4-interpreting-a-confidence-interval}{%
+\subsection{Example 4: Interpreting a Confidence Interval}\label{example-4-interpreting-a-confidence-interval}}
+
+Using a sample of 24 deliveries described in ``Diary of a Pizza Girl'' on the Slice website, we find a 95\% confidence interval for the mean tip given for a pizza delivery to be \$2.18 to \$3.90. Which of the following is a correct interpretation of this interval? Indicate all that are correct interpretations.
+
+(a). I am 95\% sure that all pizza delivery tips will be between \$2.18 and \$3.90.
+
+Click for answer
+
+\emph{Answer:} Incorrect. The interval is about the mean, not individual tips..
+
+(b). 95\% of all pizza delivery tips will be between \$2.18 and \$3.90.
+
+Click for answer
+
+\emph{Answer:} I am 95\% sure that the mean pizza delivery tip for this sample will be between \$2.18 and \$3.90.
+
+(c). I am 95\% sure that the mean tip for all pizza deliveries in this area will be between \$2.18 and \$3.90.
+
+Click for answer
+
+\emph{Answer:} Correct!
+
+(d). I am 95\% sure that the confidence interval for the mean pizza delivery tip will be between \$2.18 and \$3.90.
+
+Click for answer
+
+\emph{Answer:} Incorrect. The confidence is in where the population mean is, not where the interval itself is.
 
 \hypertarget{part-basics-r}{%
 \chapter{(PART*) Basics R}\label{part-basics-r}}

@@ -92,7 +92,7 @@ wordData <- read.csv("http://math.carleton.edu/Stats215/Textbook/SleepCaffeine.c
 boxplot(Words ~ Group , data=wordData)
 ```
 
-<img src="Class_Activity_12_files/figure-html/unnamed-chunk-1-1.png" width="100%" />
+<img src="Class_Activity_12_files/figure-epub3/unnamed-chunk-1-1.png" width="100%" />
 
 ```r
 tapply(wordData$Words, wordData$Group, summary)
@@ -116,7 +116,7 @@ library(CarletonStats)
 permTest(Words ~ Group, data=wordData)
 ```
 
-<img src="Class_Activity_12_files/figure-html/unnamed-chunk-2-1.png" width="100%" />
+<img src="Class_Activity_12_files/figure-epub3/unnamed-chunk-2-1.png" width="100%" />
 
 ```
 
@@ -127,9 +127,9 @@ permTest(Words ~ Group, data=wordData)
   Caffeine :  12.25 	 Sleep :  15.25 
  Observed difference: -3 
 
- Mean of permutation distribution: -0.01555 
- Standard error of permutation distribution: 1.50151 
- P-value:  0.054 
+ Mean of permutation distribution: 0.00172 
+ Standard error of permutation distribution: 1.50177 
+ P-value:  0.0472 
 
 	*-------------*
 ```
@@ -190,7 +190,7 @@ summary(diff)
 hist(diff)
 ```
 
-<img src="Class_Activity_12_files/figure-html/unnamed-chunk-4-1.png" width="100%" />
+<img src="Class_Activity_12_files/figure-epub3/unnamed-chunk-4-1.png" width="100%" />
 
 - What is the average difference in tuition costs?
 <details><summary><red>Click for answer</red></summary>
@@ -203,7 +203,7 @@ hist(diff)
 permTestPaired(NonRes ~ Res,data = tuition, alt = "greater")
 ```
 
-<img src="Class_Activity_12_files/figure-html/unnamed-chunk-5-1.png" width="100%" />
+<img src="Class_Activity_12_files/figure-epub3/unnamed-chunk-5-1.png" width="100%" />
 
 ```
 
@@ -214,8 +214,8 @@ permTestPaired(NonRes ~ Res,data = tuition, alt = "greater")
   NonRes :  6405.263 	 Res :  2821.053 
  Observed difference  NonRes - Res : 3584.211 
 
- Mean of permutation distribution: 0.7006 
- Standard error of permutation distribution: 944.6721 
+ Mean of permutation distribution: 0.02684 
+ Standard error of permutation distribution: 932.6698 
  P-value:  1e-04 
 
 	*-------------*

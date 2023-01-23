@@ -57,6 +57,11 @@ example-5-statkey-body-temperature
 example-6.-bootstrap-in-r-using-hollywood-2011-dataset
 example-7-the-data-set-creditdata.csv-contains-records-for-1000-loans-that-either-defaulted-badloan-or-did-not-default-goodloan.-there-are-300-loans-that-defaulted-and-700-that-did-not.-lets-consider-that-the-300-loans-that-defaulted-are-random-sample-of-loans-that-default-and-the-700-non-defaulting-loans-are-a-random-sample-of-loans-that-dont-default.
 example-8-credit-data-continued
+class-activity-9
+example-1-a-muslim-president
+example-2-biomass-in-tropical-forests
+example-3-change-in-gun-ownership
+example-4-interpreting-a-confidence-interval
 part-basics-r
 what-is-r
 what-is-rstudio
