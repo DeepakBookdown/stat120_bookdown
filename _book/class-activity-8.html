@@ -53,10 +53,11 @@
 <li><a class="" href="class-activity-7.html"><span class="header-section-number">7</span> Class Activity 7</a></li>
 <li><a class="active" href="class-activity-8.html"><span class="header-section-number">8</span> Class Activity 8</a></li>
 <li><a class="" href="class-activity-9.html"><span class="header-section-number">9</span> Class Activity 9</a></li>
+<li><a class="" href="class-activity-10.html"><span class="header-section-number">10</span> Class Activity 10</a></li>
 <li class="book-part">Basics R</li>
-<li><a class="" href="what-is-r.html"><span class="header-section-number">11</span> What is R?</a></li>
-<li><a class="" href="r-markdown.html"><span class="header-section-number">12</span> R Markdown</a></li>
-<li><a class="" href="helpful-r-codes.html"><span class="header-section-number">13</span> Helpful R codes</a></li>
+<li><a class="" href="what-is-r.html"><span class="header-section-number">12</span> What is R?</a></li>
+<li><a class="" href="r-markdown.html"><span class="header-section-number">13</span> R Markdown</a></li>
+<li><a class="" href="helpful-r-codes.html"><span class="header-section-number">14</span> Helpful R codes</a></li>
 </ul>
 
         <div class="book-extra">
@@ -92,7 +93,7 @@
 <div class="sourceCode" id="cb263"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">resample</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">prices</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="va">resample</span></span></code></pre></div>
-<pre><code> [1]  52  93  85  52 132  23  72 125 132  72</code></pre>
+<pre><code> [1]  23 125 185 185  87  72  87  52 125  93</code></pre>
 <p>(d). Where will be bootstrap distribution be centered? What shape do we expect it to have?</p>
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> It will be centered approximately at the sample mean of 100.1 and we expect it to be roughly bellshaped (it may be a bit skewed since the sample size of 10 is smallish).
 </details><p><br></p>
@@ -293,12 +294,12 @@ We see that 98.6 is not on the interval.</p>
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -2.26095 
- Mean of bootstrap distribution: -2.25105 
- Standard error of bootstrap distribution: 0.7765 
+ Mean of bootstrap distribution: -2.26359 
+ Standard error of bootstrap distribution: 0.77358 
 
  Bootstrap percentile interval
       2.5%      97.5% 
--3.7824048 -0.7357143 
+-3.7820119 -0.7761786 
 
         *--------------*</code></pre>
 <div class="inline-figure"><img src="Class_Activity_8_files/figure-html/unnamed-chunk-10-1.png" width="100%"></div>
@@ -349,30 +350,26 @@ yes, registered under the customers name
                                      404 </code></pre>
 <p>To make shorter names describing these two outcomes, we can use the <code>levels</code> command on the factor variable <code>Telephone</code>. Here we see what the original levels are for this variable:</p>
 <div class="sourceCode" id="cb283"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/levels.html">levels</a></span><span class="op">(</span><span class="va">credit</span><span class="op">$</span><span class="va">Telephone</span><span class="op">)</span></span></code></pre></div>
-<pre><code>NULL</code></pre>
+<code class="sourceCode R"><span><span class="va">credit</span><span class="op">$</span><span class="va">Telephone</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">credit</span><span class="op">$</span><span class="va">Telephone</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/levels.html">levels</a></span><span class="op">(</span><span class="va">credit</span><span class="op">$</span><span class="va">Telephone</span><span class="op">)</span></span></code></pre></div>
+<pre><code>[1] "none"                                    
+[2] "yes, registered under the customers name"</code></pre>
 <p>This shows us the (vector) of two names. We can assign new, shorter names to this variable:</p>
 <div class="sourceCode" id="cb285"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/levels.html">levels</a></span><span class="op">(</span><span class="va">credit</span><span class="op">$</span><span class="va">Telephone</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"no"</span>, <span class="st">"yes"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">credit</span><span class="op">$</span><span class="va">Telephone</span><span class="op">)</span></span></code></pre></div>
 <pre><code>
-                                    none 
-                                     596 
-yes, registered under the customers name 
-                                     404 </code></pre>
+ no yes 
+596 404 </code></pre>
 <p>Now we have the same data, just coded with different names.</p>
 <p>(b). Phone rate by default type</p>
 <p>Here we get the distribution of phone numbers (yes or no) by default type (good vs bad loan):</p>
 <div class="sourceCode" id="cb287"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/proportions.html">prop.table</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">credit</span><span class="op">$</span><span class="va">Good.Loan</span>, <span class="va">credit</span><span class="op">$</span><span class="va">Telephone</span><span class="op">)</span>,<span class="fl">1</span><span class="op">)</span></span></code></pre></div>
 <pre><code>          
-                none
-  BadLoan  0.6233333
-  GoodLoan 0.5842857
-          
-           yes, registered under the customers name
-  BadLoan                                 0.3766667
-  GoodLoan                                0.4157143</code></pre>
+                  no       yes
+  BadLoan  0.6233333 0.3766667
+  GoodLoan 0.5842857 0.4157143</code></pre>
 <div class="sourceCode" id="cb289"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">credit</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Good.Loan</span>, fill<span class="op">=</span><span class="va">Telephone</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>position<span class="op">=</span><span class="st">"fill"</span><span class="op">)</span></span></code></pre></div>
@@ -400,31 +397,29 @@ yes, registered under the customers name
 <div class="sourceCode" id="cb292"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">credit</span><span class="op">$</span><span class="va">Telephone_binary</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">credit</span><span class="op">$</span><span class="va">Telephone</span> <span class="op">==</span> <span class="st">"yes, registered under the customers name"</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">credit</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Telephone"</span>, <span class="st">"Telephone_binary"</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
-<pre><code>                                 Telephone Telephone_binary
-1 yes, registered under the customers name                1
-2                                     none                0
-3                                     none                0
-4                                     none                0
-5                                     none                0
-6 yes, registered under the customers name                1</code></pre>
+<pre><code>  Telephone Telephone_binary
+1       yes                0
+2        no                0
+3        no                0
+4        no                0
+5        no                0
+6       yes                0</code></pre>
 <p>which reads “if <code>Telephone</code> equals <code>yes</code> than assign a <code>1</code>, else assign a 0”. These 0’s and 1’s are assigned to a variable called <code>Telephone_binary</code> that is now in your data frame (checked this with the <code>View(credit)</code> command).</p>
 <p>Check your work to make sure <code>Telephone_binary</code> records what you want it to record</p>
 <div class="sourceCode" id="cb294"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">credit</span><span class="op">$</span><span class="va">Telephone</span><span class="op">)</span></span></code></pre></div>
 <pre><code>
-                                    none 
-                                     596 
-yes, registered under the customers name 
-                                     404 </code></pre>
+ no yes 
+596 404 </code></pre>
 <div class="sourceCode" id="cb296"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">credit</span><span class="op">$</span><span class="va">Telephone_binary</span><span class="op">)</span></span></code></pre></div>
 <pre><code>
-  0   1 
-596 404 </code></pre>
+   0 
+1000 </code></pre>
 <p>The mean of the 0/1 coded variable computes the proportion of “yes” responses:</p>
 <div class="sourceCode" id="cb298"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">credit</span><span class="op">$</span><span class="va">Telephone_binary</span><span class="op">)</span></span></code></pre></div>
-<pre><code>[1] 0.404</code></pre>
+<pre><code>[1] 0</code></pre>
 <div class="sourceCode" id="cb300"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fl">404</span><span class="op">/</span><span class="fl">1000</span>  <span class="co"># proportion of yes</span></span></code></pre></div>
 <pre><code>[1] 0.404</code></pre>
@@ -436,13 +431,13 @@ yes, registered under the customers name
 <pre><code>
     ** Bootstrap interval for difference of statistic
 
- Observed difference of statistic:  BadLoan - GoodLoan =  -0.03905 
- Mean of bootstrap distribution: -0.03955 
- Standard error of bootstrap distribution: 0.03382 
+ Observed difference of statistic:  BadLoan - GoodLoan =  0 
+ Mean of bootstrap distribution: 0 
+ Standard error of bootstrap distribution: 0 
 
  Bootstrap percentile interval
-       2.5%       97.5% 
--0.10428571  0.02619048 
+ 2.5% 97.5% 
+    0     0 
 
         *--------------*</code></pre>
 <div class="inline-figure"><img src="Class_Activity_8_files/figure-html/unnamed-chunk-20-1.png" width="100%"></div>
@@ -507,7 +502,7 @@ yes, registered under the customers name
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-01-23.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-01-25.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

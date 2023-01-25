@@ -43,7 +43,7 @@ resample
 ```
 
 ```
- [1]  87  52 125 185 132  87 147 185 147 185
+ [1]  23 147  87  72  72 125  23 185  93  87
 ```
 
  (d). Where will be bootstrap distribution be centered?  What shape do we expect it to have?
@@ -380,12 +380,12 @@ boot(Age.in.years ~ Good.Loan, data=credit)
 	** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -2.26095 
- Mean of bootstrap distribution: -2.25245 
- Standard error of bootstrap distribution: 0.77632 
+ Mean of bootstrap distribution: -2.24857 
+ Standard error of bootstrap distribution: 0.78737 
 
  Bootstrap percentile interval
       2.5%      97.5% 
--3.7328690 -0.7161071 
+-3.7938452 -0.6961667 
 
 		*--------------*
 ```
@@ -469,11 +469,13 @@ To make shorter names describing these two outcomes, we can use the `levels` com
 
 
 ```r
+credit$Telephone <- factor(credit$Telephone)
 levels(credit$Telephone)
 ```
 
 ```
-NULL
+[1] "none"                                    
+[2] "yes, registered under the customers name"
 ```
 
 This shows us the (vector) of two names. We can assign new, shorter names to this variable: 
@@ -486,10 +488,8 @@ table(credit$Telephone)
 
 ```
 
-                                    none 
-                                     596 
-yes, registered under the customers name 
-                                     404 
+ no yes 
+596 404 
 ```
 
 Now we have the same data, just coded with different names. 
@@ -505,13 +505,9 @@ prop.table(table(credit$Good.Loan, credit$Telephone),1)
 
 ```
           
-                none
-  BadLoan  0.6233333
-  GoodLoan 0.5842857
-          
-           yes, registered under the customers name
-  BadLoan                                 0.3766667
-  GoodLoan                                0.4157143
+                  no       yes
+  BadLoan  0.6233333 0.3766667
+  GoodLoan 0.5842857 0.4157143
 ```
 
 ```r
@@ -562,13 +558,13 @@ head(credit[,c("Telephone", "Telephone_binary")])
 ```
 
 ```
-                                 Telephone Telephone_binary
-1 yes, registered under the customers name                1
-2                                     none                0
-3                                     none                0
-4                                     none                0
-5                                     none                0
-6 yes, registered under the customers name                1
+  Telephone Telephone_binary
+1       yes                0
+2        no                0
+3        no                0
+4        no                0
+5        no                0
+6       yes                0
 ```
 
 which reads "if `Telephone` equals `yes` than assign a `1`, else assign a 0". These 0's and 1's are assigned to a variable called `Telephone_binary` that is now in your data frame (checked this with the `View(credit)` command). 
@@ -582,10 +578,8 @@ table(credit$Telephone)
 
 ```
 
-                                    none 
-                                     596 
-yes, registered under the customers name 
-                                     404 
+ no yes 
+596 404 
 ```
 
 ```r
@@ -594,8 +588,8 @@ table(credit$Telephone_binary)
 
 ```
 
-  0   1 
-596 404 
+   0 
+1000 
 ```
 
 The mean of the 0/1  coded variable computes the proportion of "yes" responses:
@@ -606,7 +600,7 @@ mean(credit$Telephone_binary)
 ```
 
 ```
-[1] 0.404
+[1] 0
 ```
 
 ```r
@@ -634,13 +628,13 @@ boot(Telephone_binary ~ Good.Loan, data=credit)
 
 	** Bootstrap interval for difference of statistic
 
- Observed difference of statistic:  BadLoan - GoodLoan =  -0.03905 
- Mean of bootstrap distribution: -0.03955 
- Standard error of bootstrap distribution: 0.03356 
+ Observed difference of statistic:  BadLoan - GoodLoan =  0 
+ Mean of bootstrap distribution: 0 
+ Standard error of bootstrap distribution: 0 
 
  Bootstrap percentile interval
-       2.5%       97.5% 
--0.10476190  0.02666667 
+ 2.5% 97.5% 
+    0     0 
 
 		*--------------*
 ```

@@ -397,6 +397,7 @@ table(credit$Telephone)
 To make shorter names describing these two outcomes, we can use the `levels` command on the factor variable `Telephone`. Here we see what the original levels are for this variable:
 
 ```{r}
+credit$Telephone <- factor(credit$Telephone)
 levels(credit$Telephone)
 ```
 

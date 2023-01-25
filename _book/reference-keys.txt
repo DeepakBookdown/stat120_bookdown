@@ -62,6 +62,12 @@ example-1-a-muslim-president
 example-2-biomass-in-tropical-forests
 example-3-change-in-gun-ownership
 example-4-interpreting-a-confidence-interval
+class-activity-10
+example-1-extrasensory-perception-esp
+example-2
+example-3-guess-the-inference-method
+example-1-revisited
+example-2-revisited
 part-basics-r
 what-is-r
 what-is-rstudio

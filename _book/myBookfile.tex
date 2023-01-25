@@ -117,7 +117,7 @@
 
 \title{Stat 120}
 \author{Deepak Bastola}
-\date{2023-01-23}
+\date{2023-01-25}
 
 \begin{document}
 \maketitle
@@ -166,16 +166,16 @@ Click for answer
 
 \begin{verbatim}
    ID Greeting  Male      Age
-1   1    Hello  TRUE 47.88777
-2   2    Hello FALSE 44.30139
-3   3    Hello  TRUE 50.41107
-4   4    Hello FALSE 57.14766
-5   5    Hello  TRUE 40.72763
-6   6  Goodbye FALSE 39.54374
-7   7  Goodbye  TRUE 46.67890
-8   8  Goodbye FALSE 34.31549
-9   9  Goodbye  TRUE 41.47878
-10 10  Goodbye FALSE 22.03853
+1   1    Hello  TRUE 31.07524
+2   2    Hello FALSE 47.95738
+3   3    Hello  TRUE 39.40113
+4   4    Hello FALSE 31.83879
+5   5    Hello  TRUE 29.25063
+6   6  Goodbye FALSE 43.79547
+7   7  Goodbye  TRUE 20.78039
+8   8  Goodbye FALSE 22.89654
+9   9  Goodbye  TRUE 22.22396
+10 10  Goodbye FALSE 22.13149
 \end{verbatim}
 
 \emph{Answer:} We see a data frame with four columns, where the first column is an \texttt{identifier} for the cases. We have information on the greeting types, whether male or not, and age on these cases in the remaining columns.
@@ -399,7 +399,7 @@ Run the following command to obtain a SRS of 10 words from the 268 that are in t
 \end{Shaded}
 
 \begin{verbatim}
- [1] 219 185 148 154  92 226  66 117 229  56
+ [1] 262  93 186 191 260 249   3 198 263 166
 \end{verbatim}
 
 This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
@@ -415,17 +415,17 @@ We will \emph{subset} the data set \texttt{pop} to obtain only the sampled rows 
 \end{Shaded}
 
 \begin{verbatim}
-    position size    word
-219      219    3     the
-185      185    5   nobly
-148      148    4    what
-154      154    3     can
-92        92    2      It
-226      226    2      we
-66        66    4    have
-117      117    4    this
-229      229    7 resolve
-56        56    3     are
+    position size      word
+262      262    6   people,
+93        93    2        is
+186      186    8 advanced.
+191      191    2        us
+260      260    3       for
+249      249    2        of
+3          3    3       and
+198      198    5     great
+263      263    5     shall
+166      166    6   living,
 \end{verbatim}
 
 \begin{enumerate}
@@ -446,7 +446,7 @@ The word lengths in part (b) are the data for your sample. You can compute your 
 \end{Shaded}
 
 \begin{verbatim}
- [1] 3 5 4 3 2 2 4 4 7 3
+ [1] 6 2 8 2 3 2 3 5 5 6
 \end{verbatim}
 
 Then find the mean of these values:
@@ -458,7 +458,7 @@ Then find the mean of these values:
 \end{Shaded}
 
 \begin{verbatim}
-[1] 3.7
+[1] 4.2
 \end{verbatim}
 
 How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?
@@ -3936,7 +3936,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
- [1] 185  23 147  52  87  23  93 132  72 185
+ [1]  87 147 147  93  23 185 125  23  23  93
 \end{verbatim}
 
 (d). Where will be bootstrap distribution be centered? What shape do we expect it to have?
@@ -4293,12 +4293,12 @@ The \texttt{boot(y\ \textasciitilde{}\ x,\ data=)} command generates 10000 boots
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -2.26095 
- Mean of bootstrap distribution: -2.26928 
- Standard error of bootstrap distribution: 0.77343 
+ Mean of bootstrap distribution: -2.26284 
+ Standard error of bootstrap distribution: 0.7906 
 
  Bootstrap percentile interval
       2.5%      97.5% 
--3.7566786 -0.7261667 
+-3.7857381 -0.6928095 
 
         *--------------*
 \end{verbatim}
@@ -4399,12 +4399,14 @@ To make shorter names describing these two outcomes, we can use the \texttt{leve
 
 \begin{Shaded}
 \begin{Highlighting}[]
+\NormalTok{credit}\SpecialCharTok{$}\NormalTok{Telephone }\OtherTok{\textless{}{-}} \FunctionTok{factor}\NormalTok{(credit}\SpecialCharTok{$}\NormalTok{Telephone)}
 \FunctionTok{levels}\NormalTok{(credit}\SpecialCharTok{$}\NormalTok{Telephone)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-NULL
+[1] "none"                                    
+[2] "yes, registered under the customers name"
 \end{verbatim}
 
 This shows us the (vector) of two names. We can assign new, shorter names to this variable:
@@ -4418,10 +4420,8 @@ This shows us the (vector) of two names. We can assign new, shorter names to thi
 
 \begin{verbatim}
 
-                                    none 
-                                     596 
-yes, registered under the customers name 
-                                     404 
+ no yes 
+596 404 
 \end{verbatim}
 
 Now we have the same data, just coded with different names.
@@ -4438,13 +4438,9 @@ Here we get the distribution of phone numbers (yes or no) by default type (good 
 
 \begin{verbatim}
           
-                none
-  BadLoan  0.6233333
-  GoodLoan 0.5842857
-          
-           yes, registered under the customers name
-  BadLoan                                 0.3766667
-  GoodLoan                                0.4157143
+                  no       yes
+  BadLoan  0.6233333 0.3766667
+  GoodLoan 0.5842857 0.4157143
 \end{verbatim}
 
 \begin{Shaded}
@@ -4508,13 +4504,13 @@ In order to get the bootstrap distribution for the sample difference in proporti
 \end{Shaded}
 
 \begin{verbatim}
-                                 Telephone Telephone_binary
-1 yes, registered under the customers name                1
-2                                     none                0
-3                                     none                0
-4                                     none                0
-5                                     none                0
-6 yes, registered under the customers name                1
+  Telephone Telephone_binary
+1       yes                0
+2        no                0
+3        no                0
+4        no                0
+5        no                0
+6       yes                0
 \end{verbatim}
 
 which reads ``if \texttt{Telephone} equals \texttt{yes} than assign a \texttt{1}, else assign a 0''. These 0's and 1's are assigned to a variable called \texttt{Telephone\_binary} that is now in your data frame (checked this with the \texttt{View(credit)} command).
@@ -4529,10 +4525,8 @@ Check your work to make sure \texttt{Telephone\_binary} records what you want it
 
 \begin{verbatim}
 
-                                    none 
-                                     596 
-yes, registered under the customers name 
-                                     404 
+ no yes 
+596 404 
 \end{verbatim}
 
 \begin{Shaded}
@@ -4543,8 +4537,8 @@ yes, registered under the customers name
 
 \begin{verbatim}
 
-  0   1 
-596 404 
+   0 
+1000 
 \end{verbatim}
 
 The mean of the 0/1 coded variable computes the proportion of ``yes'' responses:
@@ -4556,7 +4550,7 @@ The mean of the 0/1 coded variable computes the proportion of ``yes'' responses:
 \end{Shaded}
 
 \begin{verbatim}
-[1] 0.404
+[1] 0
 \end{verbatim}
 
 \begin{Shaded}
@@ -4585,13 +4579,13 @@ We can now use the 0/1 version of telephone in the \texttt{boot} command (like e
 
     ** Bootstrap interval for difference of statistic
 
- Observed difference of statistic:  BadLoan - GoodLoan =  -0.03905 
- Mean of bootstrap distribution: -0.03901 
- Standard error of bootstrap distribution: 0.03328 
+ Observed difference of statistic:  BadLoan - GoodLoan =  0 
+ Mean of bootstrap distribution: 0 
+ Standard error of bootstrap distribution: 0 
 
  Bootstrap percentile interval
-       2.5%       97.5% 
--0.10333333  0.02714286 
+ 2.5% 97.5% 
+    0     0 
 
         *--------------*
 \end{verbatim}
@@ -4757,6 +4751,173 @@ Click for answer
 Click for answer
 
 \emph{Answer:} Incorrect. The confidence is in where the population mean is, not where the interval itself is.
+
+\hypertarget{class-activity-10}{%
+\chapter{Class Activity 10}\label{class-activity-10}}
+
+\hypertarget{example-1-extrasensory-perception-esp}{%
+\subsection{Example 1: Extrasensory Perception (ESP)}\label{example-1-extrasensory-perception-esp}}
+
+In an ESP test, one person writes down one of the letters A, B, C, D, or E and tries to telepathically communicate the choice to a partner. The partner then tries to guess what letter was selected.
+
+(a). Repeat this a couple of times, then switch roles with your partner. How often did you guess correctly?
+
+Click for answer
+
+\emph{Answer:} Answers will vary!
+
+(b). If there is no ESP and people are just randomly guessing from among the five choices, what proportion of guesses would we expect to be correct? If no ESP, we expect p = \(\ldots\)
+
+Click for answer
+
+\emph{Answer:} \(p = 0.2\) (since there are five choices and they are randomly guessing)
+
+(c). Which sample proportion correct would provide the greatest evidence that people have ESP: (If we assume the sample size is the same in every case.)
+
+Click for answer
+
+\emph{Answer:}
+\(\hat{p} = 3/4\) since this means more correct.
+
+(d). Write down the null and alternative hypotheses for testing whether people have ESP:
+
+Click for answer
+
+\emph{Answer:}
+\[H_0: p = 0.2\]
+\[H_a: p > 0.2\]
+where \(p\) is the proportion correct for all people's guesses. Since we are looking for evidence that the proportion is significantly above 0.2 (random guesses), the alternate hypothesis is larger than.
+
+\hypertarget{example-2}{%
+\subsection{Example 2}\label{example-2}}
+
+In an experiment, students were given words to memorize, then were randomly assigned to either take a 90 minute nap or take a caffeine pill. A couple hours later, they were tested on their recall ability. We wish to test to see if the sample provides evidence that there is a difference in mean number of words people can recall depending on whether they take a nap or have some caffeine.
+
+(a). What is the explanatory variable? Is it categorical or quantitative?
+
+Click for answer
+
+\emph{Answer:} Explanatory = nap or caffeine (categorical)
+
+(b). What is the response variable? Is it categorical or quantitative?
+
+Click for answer
+
+\emph{Answer:} Response = number of words recalled (quantitative)
+
+(c). What is the parameter of interest for this experiment? Use correct notation.
+
+Click for answer
+
+\emph{Answer:}
+Quantitative = mean responses, where \(\mu_1\) and \(\mu_2\) are the mean words recalled in the two different conditions
+
+(d). What are the null and alternative hypotheses for this test? Use correct notation.
+
+Click for answer
+
+\emph{Answer:}
+
+\[H_0: \mu_1 = \mu_2\]
+\[H_a: \mu_1 \neq \mu_2\]
+
+The alternate hypothesis is not equals to since we are looking for evidence that the means are different (We do not know which one is larger!)
+
+\hypertarget{example-3-guess-the-inference-method}{%
+\subsection{Example 3: Guess the inference method!}\label{example-3-guess-the-inference-method}}
+
+For each question below, indicate whether it is best assessed with a confidence interval, hypothesis test, or whether statistical inference is not needed to answer it. If inference is used, define the population parameter(s) of interest and indicate your hypotheses if a test is appropriate. Use correct notation.
+
+(a). What proportion of US adults support gun control?
+
+Click for answer
+
+\emph{Answer:} Estimating a population parameter with a confidence interval: p: proportion of US adults who support gun control
+
+(b). Does the proportion of people who support gun control differ between males and females?
+
+Click for answer
+
+\emph{Answer:} Testing the claim of a difference:
+
+\[p_f: \text{proportion of females who support gun control}\]
+\[p_m: \text{proportion of males who support gun control}\]
+
+\[H_0: p_f = p_m\]
+\[H_a: p_f \neq p_m\]
+
+(c). What proportion of this class supports gun control?
+
+Click for answer
+
+\emph{Answer:}
+
+Neither, just collect data on the entire population (class) to answer this question.
+
+(d). How much more do men earn, on average, compared to women in the US?
+
+Click for answer
+
+\emph{Answer:} How much means an estimate: confidence interval for \(\mu_m - \mu_f\)
+
+\[\mu_f: \text{mean income (yearly) of US females}\]
+\[\mu_m: \text{mean income (yearly) of US males}\]
+
+(e). What proportion of Minnesota voters in the 2012 election voted for President Obama?
+
+Click for answer
+
+\emph{Answer:} Neither, this number is computed from voting records.
+
+(f). Is a higher rate of cricket chirping associated with higher summer night temps?
+
+Click for answer
+
+\emph{Answer:}
+
+Test a claim about an association:
+
+\[H_0: \rho = 0 \text{ or } \beta_1 = 0\]
+
+\[H_a: \rho > 0 \text{ or } \beta_1 > 0\]
+
+\[\rho : \text{correlatio nbetween temp and chirp rate}\]
+
+\[\beta_1 : \text{change in temp for a unit increase in chirp rate}\]
+
+\hypertarget{example-1-revisited}{%
+\subsection{Example 1 Revisited:}\label{example-1-revisited}}
+
+(a). If the results of a test for ESP are statistically significant, what does that mean in terms of ESP?
+
+Click for answer
+
+\emph{Answer:}
+
+It means we can conclude that \(p > 0.2\) and that the sample results were so strong that we can conclude that ESP does exist and get more right than would be expected by random chance.
+
+(b). If the results are not statistically significant, what does that mean in terms of ESP?
+
+Click for answer
+
+\emph{Answer:}
+
+The sample results are inconclusive. People may or may not have ESP. Sample results could be just random chance.
+
+\hypertarget{example-2-revisited}{%
+\subsection{Example 2 Revisited:}\label{example-2-revisited}}
+
+(a). If the results of the test comparing sleep and caffeine for memory are statistically significant, what does that mean in terms of sleep, caffeine, and memory?
+
+Click for answer
+
+\emph{Answer:} We can state that there is a difference between sleep and caffeine in their effectiveness at helping word recall.
+
+(b). If the results are not statistically significant, what does that mean in terms of sleep, caffeine, and memory?
+
+Click for answer
+
+\emph{Answer:} It means the sample results are inconclusive and we can't tell if there is a difference. Results might just be random chance.
 
 \hypertarget{part-basics-r}{%
 \chapter{(PART*) Basics R}\label{part-basics-r}}
