@@ -68,6 +68,14 @@ example-2
 example-3-guess-the-inference-method
 example-1-revisited
 example-2-revisited
+class-activity-11
+class-activity-12
+class-activity-13
+example-1-esp
+example-2-which-p-value-shows-more-evidence
+example-3-sleep-or-caffeine-for-memory
+example-4-resident-vs-non-resident-tuition
+example-5-evaluating-drugs-to-fight-cocaine-addition
 part-basics-r
 what-is-r
 what-is-rstudio

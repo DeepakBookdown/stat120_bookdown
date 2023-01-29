@@ -117,7 +117,7 @@
 
 \title{Stat 120}
 \author{Deepak Bastola}
-\date{2023-01-25}
+\date{2023-01-28}
 
 \begin{document}
 \maketitle
@@ -166,16 +166,16 @@ Click for answer
 
 \begin{verbatim}
    ID Greeting  Male      Age
-1   1    Hello  TRUE 31.07524
-2   2    Hello FALSE 47.95738
-3   3    Hello  TRUE 39.40113
-4   4    Hello FALSE 31.83879
-5   5    Hello  TRUE 29.25063
-6   6  Goodbye FALSE 43.79547
-7   7  Goodbye  TRUE 20.78039
-8   8  Goodbye FALSE 22.89654
-9   9  Goodbye  TRUE 22.22396
-10 10  Goodbye FALSE 22.13149
+1   1    Hello  TRUE 40.83267
+2   2    Hello FALSE 37.32263
+3   3    Hello  TRUE 33.35179
+4   4    Hello FALSE 58.63283
+5   5    Hello  TRUE 44.36996
+6   6  Goodbye FALSE 47.67008
+7   7  Goodbye  TRUE 34.86820
+8   8  Goodbye FALSE 46.68614
+9   9  Goodbye  TRUE 44.29033
+10 10  Goodbye FALSE 53.15987
 \end{verbatim}
 
 \emph{Answer:} We see a data frame with four columns, where the first column is an \texttt{identifier} for the cases. We have information on the greeting types, whether male or not, and age on these cases in the remaining columns.
@@ -399,7 +399,7 @@ Run the following command to obtain a SRS of 10 words from the 268 that are in t
 \end{Shaded}
 
 \begin{verbatim}
- [1] 262  93 186 191 260 249   3 198 263 166
+ [1]  93 204 246 169  78 201  73 120  61 132
 \end{verbatim}
 
 This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
@@ -415,17 +415,17 @@ We will \emph{subset} the data set \texttt{pop} to obtain only the sampled rows 
 \end{Shaded}
 
 \begin{verbatim}
-    position size      word
-262      262    6   people,
-93        93    2        is
-186      186    8 advanced.
-191      191    2        us
-260      260    3       for
-249      249    2        of
-3          3    3       and
-198      198    5     great
-263      263    5     shall
-166      166    6   living,
+    position size        word
+93        93    2          is
+204      204    4        from
+246      246    1           a
+169      169    2          be
+78        78    7     resting
+201      201    6      before
+73        73    4        that
+120      120    5       brave
+61        61   11 battlefield
+132      132    5       above
 \end{verbatim}
 
 \begin{enumerate}
@@ -446,7 +446,7 @@ The word lengths in part (b) are the data for your sample. You can compute your 
 \end{Shaded}
 
 \begin{verbatim}
- [1] 6 2 8 2 3 2 3 5 5 6
+ [1]  2  4  1  2  7  6  4  5 11  5
 \end{verbatim}
 
 Then find the mean of these values:
@@ -458,7 +458,7 @@ Then find the mean of these values:
 \end{Shaded}
 
 \begin{verbatim}
-[1] 4.2
+[1] 4.7
 \end{verbatim}
 
 How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?
@@ -3936,7 +3936,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
- [1]  87 147 147  93  23 185 125  23  23  93
+ [1]  52  85  23  23 132  87 125 125 185 147
 \end{verbatim}
 
 (d). Where will be bootstrap distribution be centered? What shape do we expect it to have?
@@ -4293,12 +4293,12 @@ The \texttt{boot(y\ \textasciitilde{}\ x,\ data=)} command generates 10000 boots
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -2.26095 
- Mean of bootstrap distribution: -2.26284 
- Standard error of bootstrap distribution: 0.7906 
+ Mean of bootstrap distribution: -2.26898 
+ Standard error of bootstrap distribution: 0.77329 
 
  Bootstrap percentile interval
       2.5%      97.5% 
--3.7857381 -0.6928095 
+-3.7771429 -0.7294881 
 
         *--------------*
 \end{verbatim}
@@ -4918,6 +4918,365 @@ Click for answer
 Click for answer
 
 \emph{Answer:} It means the sample results are inconclusive and we can't tell if there is a difference. Results might just be random chance.
+
+\hypertarget{class-activity-11}{%
+\chapter{Class Activity 11}\label{class-activity-11}}
+
+Midterm Review !!
+
+\hypertarget{class-activity-12}{%
+\chapter{Class Activity 12}\label{class-activity-12}}
+
+Midterm !!
+
+\hypertarget{class-activity-13}{%
+\chapter{Class Activity 13}\label{class-activity-13}}
+
+\hypertarget{example-1-esp}{%
+\subsection{Example 1: ESP}\label{example-1-esp}}
+
+In an ESP test, one person writes down one of the letters A, B, C, D, or E and tries to telepathically communicate the choice to a partner. The partner then tries to guess what letter was selected. The null and alternative hypotheses for testing whether people have ESP are \(H_0: p=0.2\) and \(H_A: p > 0.2\) where \(p\) is the true proportion correct guesses. To test these hypotheses, we try this \(n=10\) times and get 3 correct guesses.
+
+(a). Explain how to generate a randomization distribution for \(\hat{p}\), the sample proportion of correct guesses, that is consistent with \(H_0: p=0.2\).
+
+Click for answer
+
+\emph{Answer:} To mimic one random guess, assuming no ESP, we could take 4 black cards and 1 red card and randomly select one card. The red card would be a correct guess. Repeat this a total of 10 times and compute the sample proportion of correct guesses. Plot the sample proportion on a dotplot and repeat lots more times.
+
+(b). Navigate to the Statkey website.
+Select the \textbf{Test for Single Proportion} option under \textbf{Randomization Hypothesis Tests}. Click \textbf{Edit Data} and enter a \textbf{count} of 3 and \textbf{sample size} of 10. Then select the \textbf{Null Hypothesis} proportion \textbf{p} and change its value to \textbf{0.20}.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Generate 1 Sample} from this null randomization distribution. How many correct guesses were obtained in this sample? Repeat this a couple of times.
+\item
+  \textbf{Generate 1000 Samples} a couple of times. How unusual is getting at least 3 correct guesses in 10 tries?
+\end{itemize}
+
+\vspace*{.5in}
+
+(c). Compute the randomization p-value
+Select the \textbf{Right Tail} button at the top of the plot. Change the x-axis value to \(\hat{p}\) = 0.3. What is the p-value: the proportion of resampled \(\hat{p}\) values are 0.30 or above?
+
+Click for answer
+
+\emph{Answer:} The p-value is about 31\%
+
+(d). Interpret + Conclusion
+Interpret the p-value. Does the p-value support the alternative hypothesis (do you think 3 correct out of 10 tries are statistically significant results) or is it inconclusive? Explain.
+
+Click for answer
+
+\emph{Answer:} In about 31\% of all samples with 10 attempts, we would get at least 3 correct guesses, just by chance, if ESP does not exist. It is inconclusive; the data we observed is not that unusual if ESP does not exist.
+
+\hypertarget{example-2-which-p-value-shows-more-evidence}{%
+\subsection{Example 2: Which P-value shows more evidence?}\label{example-2-which-p-value-shows-more-evidence}}
+
+Using the randomization distribution below to test \(H_0: \rho = 0\) vs.~\(H_A: \rho > 0\).
+
+(a). Match the p-value and sample statistic
+Match the sample correlation and p-values given below, shading the area on the randomization distribution that corresponds to each sample correlation/p-value combo.
+
+\begin{itemize}
+\tightlist
+\item
+  Sample correlations: \(r = 0.1, r=0.3, r = 0.5\)
+\item
+  P-values: \(0.005, 0.15, 0.35\)
+
+  Click for answer
+
+  \emph{Answer:}: \(r=0.1\) and \(p-value=0.35\); \(r=0.3\) and \(p-value=0.15\); \(r=0.5\) and \(p-value=0.005\);
+\end{itemize}
+
+(b). Which sample correlation/p-value combo shows the most evidence for the alternative hypothesis?
+
+Click for answer
+
+\emph{Answer:} The smaller the p-value and further the sample correlation is from 0, the stronger the evidence
+
+\hypertarget{example-3-sleep-or-caffeine-for-memory}{%
+\subsection{Example 3: Sleep or Caffeine for Memory}\label{example-3-sleep-or-caffeine-for-memory}}
+
+In an experiment, 24 students were given words to memorize, then were randomly assigned to take a 90 minute nap or take a caffeine pill (12 in each group). They were then tested on their recall ability. We test to see if the sample provides evidence that there is a difference in mean number of words people can recall depending on whether they take a nap or have some caffeine. The hypotheses are:
+\[
+H_0: \mu_S - \mu_C = 0 \ \ H_A: \mu_S - \mu_C \neq 0
+\]
+The sample mean difference is \(\bar{x}_S - \bar{x}_C = 3\). We want to know if this difference in sample means is statistically significant.
+
+(a). Explain how to generate a randomization distribution for \(\bar{x}_S - \bar{x}_C\) that is consistent with \(H_0: \mu_S - \mu_C = 0\).
+
+Click for answer
+
+\emph{Answer:} We could randomly reassign the treatment to the study participants since, under the null, their recall abilities would be the same under either treatment. For each reassignment, we recomputed the sample mean difference and plot it in the dotplot shown below
+
+(b). Navigate to the Statkey website.
+Select the \textbf{Test for Difference in Means} option under \textbf{Randomization Hypothesis Tests}. Change the data set from \textbf{Leniency and Smiles} to \textbf{Sleep Caffeine Words}. Note that the original sample data has a sample mean difference of 3 words.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Generate 1 Sample} from this null randomization distribution. What is the difference in the average word recall of the two groups in this sample? Repeat this a couple of times.
+\item
+  \textbf{Generate 1000 Samples} a few of times (get at least 3000 resamples). How unusual is getting a difference in means of 3 or more words?
+\end{itemize}
+
+\vspace*{.5in}
+
+(c). Compute the randomization p-value
+Select the \textbf{Two-Tail} button at the top of the plot. Change the positive x-axis value to the observed difference of 3.0. The p-value is 2 times the proportion of resamples that have a difference of 3 or above. What is the p-value?
+
+Click for answer
+
+\emph{Answer:} We see in the image that the proportion in the tail beyond the sample statistic of 3.0 is 0.022. Because this is a two-tail test, we have to account for both tails, so the p-value is 2(0.022) = 0.044.
+
+(d). Interpret + Conclusion
+Interpret the p-value. Does the p-value support the alternative hypothesis (do you think difference of means of 3 is statistically significant) or is it inconclusive? Explain.
+
+Click for answer
+
+\emph{Answer:} We would see a difference of at least 3 words recalled, on average, in about 4.4\% of all possible samples if the influence of sleep and caffeine on recall was the same The results show some evidence of statistical significance, meaning that the caffeine and sleep may have some difference effects on word recall ability.
+
+(e). Redo in Rstudio
+First get the data from the Lock website and check important summary stats:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{wordData }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"http://math.carleton.edu/Stats215/Textbook/SleepCaffeine.csv"}\NormalTok{)}
+\FunctionTok{boxplot}\NormalTok{(Words }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Group , }\AttributeTok{data=}\NormalTok{wordData)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_activity_13_files/figure-latex/unnamed-chunk-1-1}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{tapply}\NormalTok{(wordData}\SpecialCharTok{$}\NormalTok{Words, wordData}\SpecialCharTok{$}\NormalTok{Group, summary)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+$Caffeine
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   6.00   10.00   12.50   12.25   14.25   18.00 
+
+$Sleep
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   9.00   13.75   15.50   15.25   17.25   21.00 
+\end{verbatim}
+
+Then load the \texttt{CarletonStats} package and run the \texttt{permTest(y\ \textasciitilde{}\ x,\ data=)} command where \texttt{y} is your quantitative (or 0/1 coded) response and \texttt{x} defines the two groups you are comparing.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(CarletonStats)}
+\FunctionTok{permTest}\NormalTok{(Words }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Group, }\AttributeTok{data=}\NormalTok{wordData)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_activity_13_files/figure-latex/unnamed-chunk-2-1}
+
+\begin{verbatim}
+
+    ** Permutation test **
+
+ Permutation test with alternative: two.sided 
+ Observed statistic
+  Caffeine :  12.25      Sleep :  15.25 
+ Observed difference: -3 
+
+ Mean of permutation distribution: 0.0112 
+ Standard error of permutation distribution: 1.51499 
+ P-value:  0.0484 
+
+    *-------------*
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Why is the observed difference reported as -3?
+
+  Click for answer
+
+  \emph{Answer:} The difference is computed alphabetically: Caffeine minus Sleep so the difference in now -3 instead of +3.
+\end{itemize}
+
+- What is the p-value? Is it the same as the Statkey p-value? The same as your neighbors p-value? Why not?
+
+Click for answer
+
+\emph{Answer:} The p-value is around 5\%. Any difference between Statkey, neighbors or different runs of the \texttt{permTest} command stem from the fact that different resamples are obtained each time a randomization distribution is generated. There may be some small (inconsequential) difference in p-values due to this.
+
+\hypertarget{example-4-resident-vs-non-resident-tuition}{%
+\subsection{Example 4: Resident vs Non-resident Tuition}\label{example-4-resident-vs-non-resident-tuition}}
+
+The lab manual data set \texttt{Tuition2006} is a random sample of state colleges and universities in the U.S. We want to know if the average tuition charged to non-residents is higher than residents for all state colleges and universities:
+
+\[
+H_0: \mu_{Non-res} - \mu_{Res} = 0 \ \ H_A: \mu_{Non-res} - \mu_{Res} > 0
+\]
+
+(a). Paired Data
+
+Read in the data. Note that each case (school) has a response value for the resident and non-resident tuition variables. This makes this a paired data example. Contrast this with the word recall example in which each case (student) only had one response (word recall) and treatment (caffeine/sleep).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tuition }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"http://math.carleton.edu/Stats215/RLabManual/Tuition2006.csv"}\NormalTok{)}
+\FunctionTok{head}\NormalTok{(tuition)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+  X        Institution  Res NonRes  Diff
+1 1 Univ of Akron (OH) 4200   8800 -4600
+2 2  Athens State (AL) 1900   3600 -1700
+3 3    Ball State (IN) 3400   8600 -5200
+4 4  Bloomsburg U (PA) 3200   7000 -3800
+5 5     UC Irvine (CA) 3400  12700 -9300
+6 6 Central State (OH) 2600   5700 -3100
+\end{verbatim}
+
+(b). Permutation test for paired data
+Let's compute the difference of non-resident and resident tuitions (NR minus R):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{diff }\OtherTok{\textless{}{-}}\NormalTok{ tuition}\SpecialCharTok{$}\NormalTok{NonRes }\SpecialCharTok{{-}}\NormalTok{ tuition}\SpecialCharTok{$}\NormalTok{Res}
+\FunctionTok{summary}\NormalTok{(diff)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    200    2650    3100    3584    4500    9300 
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{hist}\NormalTok{(diff)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_activity_13_files/figure-latex/unnamed-chunk-4-1}
+
+\begin{itemize}
+\item
+  What is the average difference in tuition costs?
+
+  Click for answer
+
+  \emph{Answer:} The observed mean difference is \$3584
+\item
+  Is this observed mean difference statistically significant? To test use the command \texttt{permTestPaired}:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{permTestPaired}\NormalTok{(NonRes }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Res,}\AttributeTok{data =}\NormalTok{ tuition, }\AttributeTok{alt =} \StringTok{"greater"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_activity_13_files/figure-latex/unnamed-chunk-5-1}
+
+\begin{verbatim}
+
+    ** Permutation test for mean of paired difference **
+
+ Permutation test with alternative: greater 
+ Observed mean
+  NonRes :  6405.263     Res :  2821.053 
+ Observed difference  NonRes - Res : 3584.211 
+
+ Mean of permutation distribution: -4.9126 
+ Standard error of permutation distribution: 942.2822 
+ P-value:  1e-04 
+
+    *-------------*
+\end{verbatim}
+
+The \texttt{alt} of \texttt{greater} was used because the function \texttt{permTestPaired(A\ \textasciitilde{}\ B)} computes paired differences as ``A'' minus ``B''.
+
+\begin{itemize}
+\tightlist
+\item
+  What is the p-value for this test?
+
+  Click for answer
+
+  \emph{Answer:} Less than 0.0001
+\item
+  Is this observed mean difference statistically significant?
+
+  Click for answer
+
+  \emph{Answer:} Yes, an observed mean difference of at least \$3584 would rarely occur just by chance which provides us strong evidence that the mean tuition amount of non-residents is higher than residents in the population of state colleges and universities (in 2006).
+
+  \textless br
+\end{itemize}
+
+\hypertarget{example-5-evaluating-drugs-to-fight-cocaine-addition}{%
+\subsection{Example 5: Evaluating Drugs to Fight Cocaine Addition}\label{example-5-evaluating-drugs-to-fight-cocaine-addition}}
+
+In a randomized experiment on treating cocaine addiction, 48 cocaine addicts who were trying to quit were randomly assigned to take either desipramine (a new drug), or Lithium (an existing drug). The response variable is whether or not the person relapsed (which means the person was unable to break out of the cycle of addiction and returned to using cocaine.) \textbf{We are testing to see if desipramine is better than lithium at treating cocaine addiction.} The results are shown in the two-way table.
+
+\begin{longtable}[]{@{}llll@{}}
+\toprule()
+\textbackslash{} & Relapse & No Relapse & total \\
+\midrule()
+\endhead
+Desipramine & 10 & 14 & 24 \\
+Lithium & 18 & 6 & 24 \\
+\bottomrule()
+\end{longtable}
+
+(a). Using \(p_D\) for the true proportion of desipramine users who relapse and \(p_L\) for the true proportion of lithium users who relapse, write the null and alternative hypotheses.
+
+Click for answer
+
+\emph{Answer:} \(H_0: p_D - p_L =0\) vs.~\(H_A: p_D - p_L < 0\)
+
+(b). Compute the appropriate sample statistic needed to assess the hypotheses above.
+
+Click for answer
+
+\emph{Answer:} We see that \(\hat{p}_D = \dfrac{10}{24} = 0.417\) and \(\hat{p}_L = \dfrac{18}{24} = 0.75\) so we have \(\hat{p}_D -\hat{p}_L = 0.417 - 0.75 = -0.333\). Be sure to compute the \textbf{difference} since we need one number (observed difference) to test the hypotheses, not two separate numbers. You could also compute the difference as \(L-D\) and get +0.333.
+
+(c). How might we compute a randomization sample for this data?
+
+Click for answer
+
+\emph{Answer:} Since drug doesn't matter, we combine all 48 patients together and see that 28 relapsed and 20 didn't. To see what happens by random chance, we randomly divide them into two groups and compute the difference in proportions of relapses between the two groups. The difference in proportions is the statistic.
+
+(d). Navigate to the Statkey website.
+Select the \textbf{Test for Difference in Proportions} option under \textbf{Randomization Hypothesis Tests}. Click \textbf{Edit Data} and let Group 1 be ``Desipramine'' and 2 be ``Lithium'', enter relapse \textbf{counts} of 10 and 18 and \textbf{sample sizes} of 24. Check that the null hypothesis matches yours in (a). Generate a couple thousand samples. Describe the resulting distribution. Where is it centered?
+
+Click for answer
+
+\emph{Answer:} The resulting distribution, shown in Figure 1, will be bell-shaped and centered at the value from the null hypothesis, which is zero.
+
+(e). Compute and interpret the p-value for this test.
+
+Click for answer
+
+\emph{Answer:} This is a left-tail test when computing the difference as D - L, and we see on StatKey that the p-value (proportion of randomization samples with a difference -.333 or smaller) is about 2 (Figure 1). About 2\% of the time we would see at least 33\% fewer relapse cases using despramine than lithium just due to chance if there was no difference in the relapse rates of the two treatments.
+
+Note the two key features of this ``in context'' interpretation of 2\%: it assumes that the null is true (no treatment difference) and it uses the observed statistic (data) used to compute the p-value (rate of despramine relapse is .33 below the rate of lithium).
+
+(f). Make a formal decision (reject or not) using a 5\% significance level, then restate your conclusion in context for the problem (do not use words like ``reject'' or ``hypothesis'').
+
+Click for answer
+
+\emph{Answer:} We reject the null hypothesis since the p-value of 2\% is less than 5\%. We can conclude that despramine is better at helping people kick the cocaine habit.
+Note the ``in context'' conclusion: Just state your conclusion in english, no need to talk about the value of the p-value or ``just by chance.''
+
+(g). Use Statkey to compute and interpret a 95\% bootstrap confidence interval for the difference in the relapse proportion for the two treatments. Explain how this CI agrees with your test conclusion in (f).
+
+Click for answer
+
+\emph{Answer:} I am 95\% confident that the relapse rate for despramine will be between 8.3 to 58.3 percent less than the relapse rate for lithium. This completely agrees with the test conclusion that despramine is a better treatment for cocaine addiction. (Figure 2 shows the bootstrap distribution that is centered at the sample difference of -0.333.)
 
 \hypertarget{part-basics-r}{%
 \chapter{(PART*) Basics R}\label{part-basics-r}}
