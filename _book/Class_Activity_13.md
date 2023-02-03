@@ -1,4 +1,4 @@
-# Class Activity 13
+# Class Activity 14
 
 
 ## Example 1:  Gender stereotypes in children - study 4
@@ -42,14 +42,14 @@ study4age5 <- filter(study4, age2 == "age 5")
 boxplot(interest ~ gender, data=study4age5)
 ```
 
-<img src="Class_Activity_13_files/figure-html/unnamed-chunk-2-1.png" width="100%" />
+<img src="Class_Activity_13_files/figure-epub3/unnamed-chunk-2-1.png" width="100%" />
 
 ```r
 library(CarletonStats)
 permTest(interest ~ gender, data = study4age5)
 ```
 
-<img src="Class_Activity_13_files/figure-html/unnamed-chunk-2-2.png" width="100%" />
+<img src="Class_Activity_13_files/figure-epub3/unnamed-chunk-2-2.png" width="100%" />
 
 ```
 
@@ -60,9 +60,9 @@ permTest(interest ~ gender, data = study4age5)
   boy :  -0.10435 	 girl :  0.02906 
  Observed difference: -0.13341 
 
- Mean of permutation distribution: -0.0011 
- Standard error of permutation distribution: 0.26333 
- P-value:  0.6156 
+ Mean of permutation distribution: -0.00133 
+ Standard error of permutation distribution: 0.26015 
+ P-value:  0.622 
 
 	*-------------*
 ```
@@ -92,6 +92,7 @@ This means the observed difference of -0.133 is about 0.51 SEs below the hypothe
 - How large or small would the observed difference in sample means need to be to reject the null hypothesis using a 5% significance level. <details><summary><red>Click for answer</red></summary>
 *Answer:* Since the distribution is bell-shaped, we can use the fact that about 5% of sample differences are further than 2 SE's above/below the center difference of 0. Any sample difference this extreme will lead to a two-sided p-value that is less than the significance level of 5%. For this data, 2 SE's is a sample difference of 0.521 so any observed difference that is more extreme than 0.521 would lead to rejecting the null hypothesis of no difference. 
 
+
 ```r
 2*0.26051 
 ```
@@ -99,6 +100,7 @@ This means the observed difference of -0.133 is about 0.51 SEs below the hypothe
 ```
 [1] 0.52102
 ```
+
 </details><br>
 
 
@@ -134,7 +136,7 @@ boot(interest ~ gender, data = study4age5)
 		*--------------*
 ```
 
-<img src="Class_Activity_13_files/figure-html/unnamed-chunk-5-1.png" width="100%" />
+<img src="Class_Activity_13_files/figure-epub3/unnamed-chunk-5-1.png" width="100%" />
 
 <details><summary><red>Click for answer</red></summary>
 *Answer:* Yes, the CI captures the difference of 0. 
@@ -159,7 +161,7 @@ abline(v=-0.133, col="red", lty=3)
 legend("topleft", col=c("black","red"), legend=c("Randomization","Bootstrap"), lty=1)
 ```
 
-<img src="Class_Activity_13_files/figure-html/unnamed-chunk-6-1.png" width="100%" />
+<img src="Class_Activity_13_files/figure-epub3/unnamed-chunk-6-1.png" width="100%" />
 
 \vspace*{1in}
 
@@ -172,13 +174,13 @@ study4age67 <- filter(study4, age2 == "age 6 and 7")
 boxplot(interest ~ gender, data=study4age67)
 ```
 
-<img src="Class_Activity_13_files/figure-html/unnamed-chunk-7-1.png" width="100%" />
+<img src="Class_Activity_13_files/figure-epub3/unnamed-chunk-7-1.png" width="100%" />
 
 ```r
 permTest(interest ~ gender, data = study4age67)
 ```
 
-<img src="Class_Activity_13_files/figure-html/unnamed-chunk-7-2.png" width="100%" />
+<img src="Class_Activity_13_files/figure-epub3/unnamed-chunk-7-2.png" width="100%" />
 
 ```
 
@@ -276,7 +278,7 @@ boot(interest ~ gender, data = study4age67)
 		*--------------*
 ```
 
-<img src="Class_Activity_13_files/figure-html/unnamed-chunk-10-1.png" width="100%" />
+<img src="Class_Activity_13_files/figure-epub3/unnamed-chunk-10-1.png" width="100%" />
 
 <details><summary><red>Click for answer</red></summary>
 *Answer:* No, the CI does not capture the difference of 0. 
@@ -305,7 +307,7 @@ abline(v=0.535, col="red", lty=3)
 legend("topleft", col=c("black","red"), legend=c("Randomization","Bootstrap"), lty=1)
 ```
 
-<img src="Class_Activity_13_files/figure-html/unnamed-chunk-11-1.png" width="100%" />
+<img src="Class_Activity_13_files/figure-epub3/unnamed-chunk-11-1.png" width="100%" />
 
 \vspace*{1in}
 
@@ -317,7 +319,7 @@ Redo the randomization test and bootstrap CI for 5 year olds, but this time omit
 boxplot(interest ~ gender, data=study4age5)
 ```
 
-<img src="Class_Activity_13_files/figure-html/unnamed-chunk-12-1.png" width="100%" />
+<img src="Class_Activity_13_files/figure-epub3/unnamed-chunk-12-1.png" width="100%" />
 
 ```r
 which(study4age5$interest < -2)
@@ -336,7 +338,7 @@ set.seed(7)
 permTest(interest ~ gender, data = study4age5, subset = -39)
 ```
 
-<img src="Class_Activity_13_files/figure-html/unnamed-chunk-13-1.png" width="100%" />
+<img src="Class_Activity_13_files/figure-epub3/unnamed-chunk-13-1.png" width="100%" />
 
 ```
 
@@ -373,7 +375,7 @@ boot(interest ~ gender, data = study4age5, subset = -39)
 		*--------------*
 ```
 
-<img src="Class_Activity_13_files/figure-html/unnamed-chunk-13-2.png" width="100%" />
+<img src="Class_Activity_13_files/figure-epub3/unnamed-chunk-13-2.png" width="100%" />
 
 - Does the observed difference get closer or further from 0 with the case omitted? Explain why it changes.
 

@@ -76,6 +76,8 @@ example-2-which-p-value-shows-more-evidence
 example-3-sleep-or-caffeine-for-memory
 example-4-resident-vs-non-resident-tuition
 example-5-evaluating-drugs-to-fight-cocaine-addition
+class-activity-14
+example-1-gender-stereotypes-in-children---study-4
 part-basics-r
 what-is-r
 what-is-rstudio
