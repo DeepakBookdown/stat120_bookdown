@@ -56,12 +56,13 @@
 <li><a class="" href="class-activity-10.html"><span class="header-section-number">10</span> Class Activity 10</a></li>
 <li><a class="" href="class-activity-11.html"><span class="header-section-number">11</span> Class Activity 11</a></li>
 <li><a class="" href="class-activity-12.html"><span class="header-section-number">12</span> Class Activity 12</a></li>
-<li><a class="" href="class-activity-13.html"><span class="header-section-number">13</span> Class Activity 13</a></li>
-<li><a class="" href="class-activity-14.html"><span class="header-section-number">14</span> Class Activity 14</a></li>
+<li><a class="" href="class-activity-14.html"><span class="header-section-number">13</span> Class Activity 14</a></li>
+<li><a class="" href="class-activity-14-1.html"><span class="header-section-number">14</span> Class Activity 14</a></li>
+<li><a class="" href="class-activity-15.html"><span class="header-section-number">15</span> Class Activity 15</a></li>
 <li class="book-part">Basics R</li>
-<li><a class="" href="what-is-r.html"><span class="header-section-number">16</span> What is R?</a></li>
-<li><a class="" href="r-markdown.html"><span class="header-section-number">17</span> R Markdown</a></li>
-<li><a class="" href="helpful-r-codes.html"><span class="header-section-number">18</span> Helpful R codes</a></li>
+<li><a class="" href="what-is-r.html"><span class="header-section-number">17</span> What is R?</a></li>
+<li><a class="" href="r-markdown.html"><span class="header-section-number">18</span> R Markdown</a></li>
+<li><a class="" href="helpful-r-codes.html"><span class="header-section-number">19</span> Helpful R codes</a></li>
 </ul>
 
         <div class="book-extra">
@@ -97,7 +98,7 @@
 <div class="sourceCode" id="cb263"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">resample</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">prices</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="va">resample</span></span></code></pre></div>
-<pre><code> [1]  52  87 147  85  23 147  93 185 185  72</code></pre>
+<pre><code> [1] 147  72  87  52  87  87  87  72  93 147</code></pre>
 <p>(d). Where will be bootstrap distribution be centered? What shape do we expect it to have?</p>
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> It will be centered approximately at the sample mean of 100.1 and we expect it to be roughly bellshaped (it may be a bit skewed since the sample size of 10 is smallish).
 </details><p><br></p>
@@ -298,12 +299,12 @@ We see that 98.6 is not on the interval.</p>
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -2.26095 
- Mean of bootstrap distribution: -2.26561 
- Standard error of bootstrap distribution: 0.77168 
+ Mean of bootstrap distribution: -2.25637 
+ Standard error of bootstrap distribution: 0.77621 
 
  Bootstrap percentile interval
       2.5%      97.5% 
--3.7595238 -0.7309524 
+-3.7957619 -0.7519048 
 
         *--------------*</code></pre>
 <div class="inline-figure"><img src="Class_Activity_8_files/figure-html/unnamed-chunk-10-1.png" width="100%"></div>
@@ -506,7 +507,7 @@ yes, registered under the customers name
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-02-03.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-02-08.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
