@@ -56,8 +56,8 @@
 <li><a class="" href="class-activity-10.html"><span class="header-section-number">10</span> Class Activity 10</a></li>
 <li><a class="" href="class-activity-11.html"><span class="header-section-number">11</span> Class Activity 11</a></li>
 <li><a class="" href="class-activity-12.html"><span class="header-section-number">12</span> Class Activity 12</a></li>
-<li><a class="" href="class-activity-14.html"><span class="header-section-number">13</span> Class Activity 14</a></li>
-<li><a class="" href="class-activity-14-1.html"><span class="header-section-number">14</span> Class Activity 14</a></li>
+<li><a class="" href="class-activity-13.html"><span class="header-section-number">13</span> Class Activity 13</a></li>
+<li><a class="" href="class-activity-14.html"><span class="header-section-number">14</span> Class Activity 14</a></li>
 <li><a class="active" href="class-activity-15.html"><span class="header-section-number">15</span> Class Activity 15</a></li>
 <li class="book-part">Basics R</li>
 <li><a class="" href="what-is-r.html"><span class="header-section-number">17</span> What is R?</a></li>
@@ -84,10 +84,10 @@
 <span class="header-section-number">15.1.0.1</span> (a) What proportion of scores are above 650?<a class="anchor" aria-label="anchor" href="#a-what-proportion-of-scores-are-above-650"><i class="fas fa-link"></i></a>
 </h4>
 <details><summary><red>Click for answer</red></summary><p><em>Answer:</em> About 15.9% of the scores are above 650.</p>
-<div class="sourceCode" id="cb366"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb349"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">pnorm</a></span><span class="op">(</span><span class="fl">650</span>,mean<span class="op">=</span><span class="fl">580</span>,sd<span class="op">=</span><span class="fl">70</span><span class="op">)</span> <span class="co"># proportion below</span></span></code></pre></div>
 <pre><code>[1] 0.8413447</code></pre>
-<div class="sourceCode" id="cb368"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb351"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fl">1</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">pnorm</a></span><span class="op">(</span><span class="fl">650</span>,mean<span class="op">=</span><span class="fl">580</span>,sd<span class="op">=</span><span class="fl">70</span><span class="op">)</span> <span class="co"># proportion above</span></span></code></pre></div>
 <pre><code>[1] 0.1586553</code></pre>
 </details><p><br></p>
@@ -97,7 +97,7 @@
 <span class="header-section-number">15.1.0.2</span> (b) What is the 25th percentile (Q1)?<a class="anchor" aria-label="anchor" href="#b-what-is-the-25th-percentile-q1"><i class="fas fa-link"></i></a>
 </h4>
 <details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The score of about 533 is the 25th percentile, meaning 25% of the scores are below this value.</p>
-<div class="sourceCode" id="cb370"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb353"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">qnorm</a></span><span class="op">(</span><span class="fl">.25</span>,mean<span class="op">=</span><span class="fl">580</span>,sd<span class="op">=</span><span class="fl">70</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] 532.7857</code></pre>
 </details><p><br></p>
@@ -107,13 +107,13 @@
 <span class="header-section-number">15.1.0.3</span> (c) What is the IQR for verbal SAT scores in this population? (Hint: find Q1 and Q3)<a class="anchor" aria-label="anchor" href="#c-what-is-the-iqr-for-verbal-sat-scores-in-this-population-hint-find-q1-and-q3"><i class="fas fa-link"></i></a>
 </h4>
 <details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The 25th percentile (Q1) is 533 and the 75th percentile (Q3) is 627. The IQR for this normally distributed variable is about 94 points.</p>
-<div class="sourceCode" id="cb372"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb355"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">q1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">qnorm</a></span><span class="op">(</span><span class="fl">.25</span>,mean<span class="op">=</span><span class="fl">580</span>,sd<span class="op">=</span><span class="fl">70</span><span class="op">)</span>;<span class="va">q1</span></span></code></pre></div>
 <pre><code>[1] 532.7857</code></pre>
-<div class="sourceCode" id="cb374"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb357"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">q3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">qnorm</a></span><span class="op">(</span><span class="fl">.75</span>,mean<span class="op">=</span><span class="fl">580</span>,sd<span class="op">=</span><span class="fl">70</span><span class="op">)</span>;<span class="va">q3</span></span></code></pre></div>
 <pre><code>[1] 627.2143</code></pre>
-<div class="sourceCode" id="cb376"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb359"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">q3</span><span class="op">-</span><span class="va">q1</span></span></code></pre></div>
 <pre><code>[1] 94.42857</code></pre>
 </details><p><br></p>
@@ -123,13 +123,13 @@
 <span class="header-section-number">15.1.0.4</span> (d) What score, high or low, will be deemed an outlier according the boxplot rules for outliers?<a class="anchor" aria-label="anchor" href="#d-what-score-high-or-low-will-be-deemed-an-outlier-according-the-boxplot-rules-for-outliers"><i class="fas fa-link"></i></a>
 </h4>
 <details><summary><red>Click for answer</red></summary><p><em>Answer:</em> Using the 1.5IQR’s boxplot rule gives a lower fence of 392 and an upper fence of 768. So any score below 392 and above 768 will be called an outlier according to this rule.</p>
-<div class="sourceCode" id="cb378"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb361"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fl">1.5</span><span class="op">*</span><span class="fl">94</span></span></code></pre></div>
 <pre><code>[1] 141</code></pre>
-<div class="sourceCode" id="cb380"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb363"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">q1</span> <span class="op">-</span> <span class="fl">1.5</span><span class="op">*</span><span class="fl">94</span></span></code></pre></div>
 <pre><code>[1] 391.7857</code></pre>
-<div class="sourceCode" id="cb382"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb365"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">q3</span> <span class="op">+</span> <span class="fl">1.5</span><span class="op">*</span><span class="fl">94</span></span></code></pre></div>
 <pre><code>[1] 768.2143</code></pre>
 </details><p><br></p>
@@ -139,10 +139,10 @@
 <span class="header-section-number">15.1.0.5</span> (e) What percent of the population will be deemed an outlier?<a class="anchor" aria-label="anchor" href="#e-what-percent-of-the-population-will-be-deemed-an-outlier"><i class="fas fa-link"></i></a>
 </h4>
 <details><summary><red>Click for answer</red></summary><p><em>Answer:</em> We need to find the proportion of scores below 392 and above 768. With this symmetric distribution, we find about 0.004 in both tails. About 0.8% of the population will be deemed outliers according to the boxplot rule.</p>
-<div class="sourceCode" id="cb384"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb367"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">pnorm</a></span><span class="op">(</span><span class="fl">392</span>,mean<span class="op">=</span><span class="fl">580</span>,sd<span class="op">=</span><span class="fl">70</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] 0.003618747</code></pre>
-<div class="sourceCode" id="cb386"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb369"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fl">1</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">pnorm</a></span><span class="op">(</span><span class="fl">768</span>,mean<span class="op">=</span><span class="fl">580</span>,sd<span class="op">=</span><span class="fl">70</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] 0.003618747</code></pre>
 </details><p><br></p>
@@ -158,10 +158,10 @@
 <span class="header-section-number">15.2.0.1</span> (a) What percent of SAT scores are at least 1 standard deviation above average?<a class="anchor" aria-label="anchor" href="#a-what-percent-of-sat-scores-are-at-least-1-standard-deviation-above-average"><i class="fas fa-link"></i></a>
 </h4>
 <p><br></p>
-<details><summary><red>Click for answer</red></summary><div class="sourceCode" id="cb388"><pre class="downlit sourceCode r">
+<details><summary><red>Click for answer</red></summary><div class="sourceCode" id="cb371"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">pnorm</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>  <span class="co"># proportion below</span></span></code></pre></div>
 <pre><code>[1] 0.8413447</code></pre>
-<div class="sourceCode" id="cb390"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb373"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fl">1</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">pnorm</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span> <span class="co"># proportion above</span></span></code></pre></div>
 <pre><code>[1] 0.1586553</code></pre>
 <em>Answer:</em> About 16% of scores will be at least 1 standard deviation above average. (Note that the score of 580+70 = 650 is 1 standard deviation above average.)
@@ -173,13 +173,13 @@
 </h4>
 <details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The 25th percentile of SAT scores (or any normally distributed values) is 0.67 standard deviations below average. We could also find this value using our answer to (1b):</p>
 <p><br></p>
-<div class="sourceCode" id="cb392"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb375"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">qnorm</a></span><span class="op">(</span><span class="fl">.25</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] -0.6744898</code></pre>
 <p><span class="math display">\[
 z = \dfrac{533 - 580}{70} = -0.67
 \]</span></p>
-<div class="sourceCode" id="cb394"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb377"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="op">(</span><span class="fl">533</span> <span class="op">-</span> <span class="fl">580</span><span class="op">)</span><span class="op">/</span><span class="fl">70</span></span></code></pre></div>
 <pre><code>[1] -0.6714286</code></pre>
 </details><p><br></p>
@@ -188,7 +188,7 @@ z = \dfrac{533 - 580}{70} = -0.67
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="class-activity-14-1.html"><span class="header-section-number">14</span> Class Activity 14</a></div>
+<div class="prev"><a href="class-activity-14.html"><span class="header-section-number">14</span> Class Activity 14</a></div>
 <div class="next"><a href="what-is-r.html"><span class="header-section-number">17</span> What is R?</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
@@ -213,7 +213,7 @@ z = \dfrac{533 - 580}{70} = -0.67
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-02-08.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-02-09.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

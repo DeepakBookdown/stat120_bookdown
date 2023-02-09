@@ -117,7 +117,7 @@
 
 \title{Stat 120}
 \author{Deepak Bastola}
-\date{2023-02-08}
+\date{2023-02-09}
 
 \begin{document}
 \maketitle
@@ -166,16 +166,16 @@ Click for answer
 
 \begin{verbatim}
    ID Greeting  Male      Age
-1   1    Hello  TRUE 53.05706
-2   2    Hello FALSE 22.61819
-3   3    Hello  TRUE 34.27704
-4   4    Hello FALSE 39.02547
-5   5    Hello  TRUE 48.25225
-6   6  Goodbye FALSE 25.78140
-7   7  Goodbye  TRUE 50.17775
-8   8  Goodbye FALSE 28.73635
-9   9  Goodbye  TRUE 41.50588
-10 10  Goodbye FALSE 28.18764
+1   1    Hello  TRUE 52.66905
+2   2    Hello FALSE 43.27973
+3   3    Hello  TRUE 59.79710
+4   4    Hello FALSE 42.41947
+5   5    Hello  TRUE 22.89435
+6   6  Goodbye FALSE 43.97699
+7   7  Goodbye  TRUE 49.56618
+8   8  Goodbye FALSE 22.69398
+9   9  Goodbye  TRUE 51.47850
+10 10  Goodbye FALSE 49.51790
 \end{verbatim}
 
 \emph{Answer:} We see a data frame with four columns, where the first column is an \texttt{identifier} for the cases. We have information on the greeting types, whether male or not, and age on these cases in the remaining columns.
@@ -399,7 +399,7 @@ Run the following command to obtain a SRS of 10 words from the 268 that are in t
 \end{Shaded}
 
 \begin{verbatim}
- [1] 219 193 164 121 110 243  85  10 106   2
+ [1]  32 200  92 107 122 160 129 248  45 234
 \end{verbatim}
 
 This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
@@ -415,17 +415,17 @@ We will \emph{subset} the data set \texttt{pop} to obtain only the sampled rows 
 \end{Shaded}
 
 \begin{verbatim}
-    position size      word
-219      219    3       the
-193      193    2        be
-164      164    2        us
-121      121    3      men,
-110      110    8 dedicate,
-243      243    3      God,
-85        85    5     their
-10        10    5     forth
-106      106    6    larger
-2          2    5     score
+    position size        word
+32        32    2          we
+200      200    9   remaining
+92        92    2          It
+107      107    5      sense,
+122      122    6      living
+160      160    4       here.
+129      129   11 consecrated
+248      248    5       birth
+45        45    3         any
+234      234    3         not
 \end{verbatim}
 
 \begin{enumerate}
@@ -446,7 +446,7 @@ The word lengths in part (b) are the data for your sample. You can compute your 
 \end{Shaded}
 
 \begin{verbatim}
- [1] 3 2 2 3 8 3 5 5 6 5
+ [1]  2  9  2  5  6  4 11  5  3  3
 \end{verbatim}
 
 Then find the mean of these values:
@@ -458,7 +458,7 @@ Then find the mean of these values:
 \end{Shaded}
 
 \begin{verbatim}
-[1] 4.2
+[1] 5
 \end{verbatim}
 
 How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?
@@ -3936,7 +3936,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
- [1] 185 132 147 147 125  72 132  87 132  93
+ [1]  85  85 132 125 125  72  87 147  93  52
 \end{verbatim}
 
 (d). Where will be bootstrap distribution be centered? What shape do we expect it to have?
@@ -4293,12 +4293,12 @@ The \texttt{boot(y\ \textasciitilde{}\ x,\ data=)} command generates 10000 boots
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -2.26095 
- Mean of bootstrap distribution: -2.26436 
- Standard error of bootstrap distribution: 0.77271 
+ Mean of bootstrap distribution: -2.25478 
+ Standard error of bootstrap distribution: 0.77458 
 
  Bootstrap percentile interval
       2.5%      97.5% 
--3.7738452 -0.7442381 
+-3.7738929 -0.7347024 
 
         *--------------*
 \end{verbatim}
@@ -4929,75 +4929,199 @@ Midterm Review !!
 
 Midterm !!
 
-\hypertarget{class-activity-14}{%
-\chapter{Class Activity 14}\label{class-activity-14}}
+\hypertarget{class-activity-13}{%
+\chapter{Class Activity 13}\label{class-activity-13}}
 
-\hypertarget{example-1-gender-stereotypes-in-children---study-4}{%
-\section{Example 1: Gender stereotypes in children - study 4}\label{example-1-gender-stereotypes-in-children---study-4}}
+\hypertarget{example-1-esp}{%
+\section{Example 1: ESP}\label{example-1-esp}}
 
-The data for this example comes from study 4 described in this \emph{Science} article: \url{http://science.sciencemag.org/content/355/6323/389}. This study involved asking children their interest level in a game that researcher described as for ``children who are really, really smart.'' The higher the value of the variable \texttt{interest}, the more interested a child was in playing that game.
+In an ESP test, one person writes down one of the letters A, B, C, D, or E and tries to telepathically communicate the choice to a partner. The partner then tries to guess what letter was selected. The null and alternative hypotheses for testing whether people have ESP are \(H_0: p=0.2\) and \(H_A: p > 0.2\) where \(p\) is the true proportion correct guesses. To test these hypotheses, we try this \(n=10\) times and get 3 correct guesses.
+
+\hypertarget{a-explain-how-to-generate-a-randomization-distribution-for-hatp-the-sample-proportion-of-correct-guesses-that-is-consistent-with-h_0-p0.2.}{%
+\subsubsection{\texorpdfstring{(a) Explain how to generate a randomization distribution for \(\hat{p}\), the sample proportion of correct guesses, that is consistent with \(H_0: p=0.2\).}{(a) Explain how to generate a randomization distribution for \textbackslash hat\{p\}, the sample proportion of correct guesses, that is consistent with H\_0: p=0.2.}}\label{a-explain-how-to-generate-a-randomization-distribution-for-hatp-the-sample-proportion-of-correct-guesses-that-is-consistent-with-h_0-p0.2.}}
+
+Click for answer
+
+\emph{Answer:} To mimic one random guess, assuming no ESP, we could take 4 black cards and 1 red card and randomly select one card. The red card would be a correct guess. Repeat this a total of 10 times and compute the sample proportion of correct guesses. Plot the sample proportion on a dotplot and repeat lots more times.
+
+\hypertarget{b-navigate-to-the-statkey-website.}{%
+\subsubsection{(b) Navigate to the Statkey website.}\label{b-navigate-to-the-statkey-website.}}
+
+Select the \textbf{Test for Single Proportion} option under \textbf{Randomization Hypothesis Tests}. Click \textbf{Edit Data} and enter a \textbf{count} of 3 and \textbf{sample size} of 10. Then select the \textbf{Null Hypothesis} proportion \textbf{p} and change its value to \textbf{0.20}.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Generate 1 Sample} from this null randomization distribution. How many correct guesses were obtained in this sample? Repeat this a couple of times.
+\item
+  \textbf{Generate 1000 Samples} a couple of times. How unusual is getting at least 3 correct guesses in 10 tries?
+\end{itemize}
+
+\vspace*{.5in}
+
+\hypertarget{c-compute-the-randomization-p-value}{%
+\subsubsection{(c) Compute the randomization p-value}\label{c-compute-the-randomization-p-value}}
+
+Select the \textbf{Right Tail} button at the top of the plot. Change the x-axis value to \(\hat{p}\) = 0.3. What is the p-value: the proportion of resampled \(\hat{p}\) values are 0.30 or above?
+
+Click for answer
+
+\emph{Answer:} The p-value is about 31\%
+
+\hypertarget{d-interpret-conclusion}{%
+\subsubsection{(d) Interpret + Conclusion}\label{d-interpret-conclusion}}
+
+Interpret the p-value. Does the p-value support the alternative hypothesis (do you think 3 correct out of 10 tries are statistically significant results) or is it inconclusive? Explain.
+
+Click for answer
+
+\emph{Answer:} In about 31\% of all samples with 10 attempts, we would get at least 3 correct guesses, just by chance, if ESP does not exist. It is inconclusive; the data we observed is not that unusual if ESP does not exist.
+
+\hypertarget{example-2-which-p-value-shows-more-evidence}{%
+\section{Example 2: Which P-value shows more evidence?}\label{example-2-which-p-value-shows-more-evidence}}
+
+Using the randomization distribution below to test \(H_0: \rho = 0\) vs.~\(H_A: \rho > 0\).
+
+\begin{figure}
+\centering
+\includegraphics[width=0.75\textwidth,height=\textheight]{data/corRand.png}
+\caption{Example 2}
+\end{figure}
+
+\hypertarget{a-match-the-p-value-and-sample-statistic}{%
+\subsubsection{(a) Match the p-value and sample statistic}\label{a-match-the-p-value-and-sample-statistic}}
+
+Match the sample correlation and p-values given below, shading the area on the randomization distribution that corresponds to each sample correlation/p-value combo.
+
+\begin{itemize}
+\tightlist
+\item
+  Sample correlations: \(r = 0.1, r=0.3, r = 0.5\)
+\item
+  P-values: \(0.005, 0.15, 0.35\)
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:}: \(r=0.1\) and \(p-value=0.35\); \(r=0.3\) and \(p-value=0.15\); \(r=0.5\) and \(p-value=0.005\);
+
+\hypertarget{b-which-sample-correlationp-value-combo-shows-the-most-evidence-for-the-alternative-hypothesis}{%
+\subsubsection{(b) Which sample correlation/p-value combo shows the most evidence for the alternative hypothesis?}\label{b-which-sample-correlationp-value-combo-shows-the-most-evidence-for-the-alternative-hypothesis}}
+
+Click for answer
+
+\emph{Answer:} The smaller the p-value and further the sample correlation is from 0, the stronger the evidence
+
+\hypertarget{example-3-sleep-or-caffeine-for-memory}{%
+\section{Example 3: Sleep or Caffeine for Memory}\label{example-3-sleep-or-caffeine-for-memory}}
+
+In an experiment, 24 students were given words to memorize, then were randomly assigned to take a 90 minute nap or take a caffeine pill (12 in each group). They were then tested on their recall ability. We test to see if the sample provides evidence that there is a difference in mean number of words people can recall depending on whether they take a nap or have some caffeine. The hypotheses are:
+
+\[
+H_0: \mu_S - \mu_C = 0 \ \ H_A: \mu_S - \mu_C \neq 0
+\]
+
+The sample mean difference is \(\bar{x}_S - \bar{x}_C = 3\). We want to know if this difference in sample means is statistically significant.
+
+\hypertarget{a-explain-how-to-generate-a-randomization-distribution-for-barx_s---barx_c-that-is-consistent-with-h_0-mu_s---mu_c-0.}{%
+\subsubsection{\texorpdfstring{(a) Explain how to generate a randomization distribution for \(\bar{x}_S - \bar{x}_C\) that is consistent with \(H_0: \mu_S - \mu_C = 0\).}{(a) Explain how to generate a randomization distribution for \textbackslash bar\{x\}\_S - \textbackslash bar\{x\}\_C that is consistent with H\_0: \textbackslash mu\_S - \textbackslash mu\_C = 0.}}\label{a-explain-how-to-generate-a-randomization-distribution-for-barx_s---barx_c-that-is-consistent-with-h_0-mu_s---mu_c-0.}}
+
+Click for answer
+
+\emph{Answer:} We could randomly reassign the treatment to the study participants since, under the null, their recall abilities would be the same under either treatment. For each reassignment, we recomputed the sample mean difference and plot it in the dotplot shown below
+
+\hypertarget{b-navigate-to-the-statkey-website.-1}{%
+\subsubsection{(b) Navigate to the Statkey website.}\label{b-navigate-to-the-statkey-website.-1}}
+
+Select the \textbf{Test for Difference in Means} option under \textbf{Randomization Hypothesis Tests}. Change the data set from \textbf{Leniency and Smiles} to \textbf{Sleep Caffeine Words}. Note that the original sample data has a sample mean difference of 3 words.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Generate 1 Sample} from this null randomization distribution. What is the difference in the average word recall of the two groups in this sample? Repeat this a couple of times.
+\item
+  \textbf{Generate 1000 Samples} a few of times (get at least 3000 resamples). How unusual is getting a difference in means of 3 or more words?
+\end{itemize}
+
+\vspace*{.5in}
+
+\hypertarget{c-compute-the-randomization-p-value-1}{%
+\subsubsection{(c) Compute the randomization p-value}\label{c-compute-the-randomization-p-value-1}}
+
+Select the \textbf{Two-Tail} button at the top of the plot. Change the positive x-axis value to the observed difference of 3.0. The p-value is 2 times the proportion of resamples that have a difference of 3 or above. What is the p-value?
+
+\begin{figure}
+\centering
+\includegraphics{data/wordRand.png}
+\caption{Example 3}
+\end{figure}
+
+Click for answer
+
+\emph{Answer:} We see in the image that the proportion in the tail beyond the sample statistic of 3.0 is 0.022. Because this is a two-tail test, we have to account for both tails, so the p-value is 2(0.022) = 0.044.
+
+\hypertarget{d-interpret-conclusion-1}{%
+\subsubsection{(d) Interpret + Conclusion}\label{d-interpret-conclusion-1}}
+
+Interpret the p-value. Does the p-value support the alternative hypothesis (do you think difference of means of 3 is statistically significant) or is it inconclusive? Explain.
+
+Click for answer
+
+\emph{Answer:} We would see a difference of at least 3 words recalled, on average, in about 4.4\% of all possible samples if the influence of sleep and caffeine on recall was the same The results show some evidence of statistical significance, meaning that the caffeine and sleep may have some difference effects on word recall ability.
+
+\hypertarget{e-redo-in-rstudio}{%
+\subsubsection{(e) Redo in Rstudio}\label{e-redo-in-rstudio}}
+
+First get the data from the Lock website and check important summary stats:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{study4 }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"http://math.carleton.edu/kstclair/data/Stereo4.csv"}\NormalTok{)}
-\FunctionTok{head}\NormalTok{(study4)}
+\NormalTok{wordData }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"http://math.carleton.edu/Stats215/Textbook/SleepCaffeine.csv"}\NormalTok{)}
+\FunctionTok{boxplot}\NormalTok{(Words }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Group , }\AttributeTok{data=}\NormalTok{wordData)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_13_files/figure-latex/unnamed-chunk-1-1}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{tapply}\NormalTok{(wordData}\SpecialCharTok{$}\NormalTok{Words, wordData}\SpecialCharTok{$}\NormalTok{Group, summary)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-    study subj gender   age    interest race     race2
-1 Study 4   65   girl age 6  0.37953534    5     white
-2 Study 4   66   girl age 6 -0.78071539    5     white
-3 Study 4   67   girl age 6 -0.47631654    5     white
-4 Study 4   68   girl age 6 -0.07234632    5     white
-5 Study 4   69    boy age 6 -0.70319450    6 non-white
-6 Study 4   70   girl age 6  0.52467564    5     white
-  eduave income        ses        age2
-1     16  90000 -0.1543908 age 6 and 7
-2     16 125000  0.2298424 age 6 and 7
-3     18  25000 -0.3446883 age 6 and 7
-4     17 125000  0.4914816 age 6 and 7
-5     19 125000  1.0147600 age 6 and 7
-6     12  65000 -1.4753998 age 6 and 7
+$Caffeine
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   6.00   10.00   12.50   12.25   14.25   18.00 
+
+$Sleep
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   9.00   13.75   15.50   15.25   17.25   21.00 
 \end{verbatim}
 
-(a). Interest in 5 year olds - test
-Let's compare the mean interest level in 5 year old boys and girls. Generate the randomization distribution for this test:
-\[
-H_0: \mu_{B5} - \mu_{G5} = 0 \ \ H_0: \mu_{B5} - \mu_{G5} \neq 0
-\]
+Then load the \texttt{CarletonStats} package and run the \texttt{permTest(y\ \textasciitilde{}\ x,\ data=)} command where \texttt{y} is your quantitative (or 0/1 coded) response and \texttt{x} defines the two groups you are comparing.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(dplyr)}
-\NormalTok{study4age5 }\OtherTok{\textless{}{-}} \FunctionTok{filter}\NormalTok{(study4, age2 }\SpecialCharTok{==} \StringTok{"age 5"}\NormalTok{)}
-\FunctionTok{boxplot}\NormalTok{(interest }\SpecialCharTok{\textasciitilde{}}\NormalTok{ gender, }\AttributeTok{data=}\NormalTok{study4age5)}
+\FunctionTok{library}\NormalTok{(CarletonStats)}
+\FunctionTok{permTest}\NormalTok{(Words }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Group, }\AttributeTok{data=}\NormalTok{wordData)}
 \end{Highlighting}
 \end{Shaded}
 
 \includegraphics[width=1\linewidth]{Class_Activity_13_files/figure-latex/unnamed-chunk-2-1}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(CarletonStats)}
-\FunctionTok{permTest}\NormalTok{(interest }\SpecialCharTok{\textasciitilde{}}\NormalTok{ gender, }\AttributeTok{data =}\NormalTok{ study4age5)}
-\end{Highlighting}
-\end{Shaded}
-
-\includegraphics[width=1\linewidth]{Class_Activity_13_files/figure-latex/unnamed-chunk-2-2}
-
 \begin{verbatim}
 
     ** Permutation test **
 
  Permutation test with alternative: two.sided 
  Observed statistic
-  boy :  -0.10435    girl :  0.02906 
- Observed difference: -0.13341 
+  Caffeine :  12.25      Sleep :  15.25 
+ Observed difference: -3 
 
- Mean of permutation distribution: -8e-05 
- Standard error of permutation distribution: 0.26098 
- P-value:  0.6164 
+ Mean of permutation distribution: -0.01977 
+ Standard error of permutation distribution: 1.50172 
+ P-value:  0.051 
 
     *-------------*
 \end{verbatim}
@@ -5005,438 +5129,227 @@ H_0: \mu_{B5} - \mu_{G5} = 0 \ \ H_0: \mu_{B5} - \mu_{G5} \neq 0
 \begin{itemize}
 \tightlist
 \item
-  What is the SE of this randomization distribution?
+  Why is the observed difference reported as -3?
 \end{itemize}
 
 Click for answer
 
-\emph{Answer:} SE is about 0.26.
+\emph{Answer:} The difference is computed alphabetically: Caffeine minus Sleep so the difference in now -3 instead of +3.
 
 \begin{itemize}
 \tightlist
 \item
-  What is the z-score for the observed difference in means using this distribution? Interpret the value.
+  What is the p-value? Is it the same as the Statkey p-value? The same as your neighbors p-value? Why not?
 \end{itemize}
 
 Click for answer
 
-\emph{Answer:} The distribution has a center of 0 and SE of 0.26. The z-score is
-\[z = \dfrac{-0.13341 - 0}{0.26051} = -0.51\]
-This means the observed difference of -0.133 is about 0.51 SEs below the hypothesized difference of 0.
+\emph{Answer:} The p-value is around 5\%. Any difference between Statkey, neighbors or different runs of the \texttt{permTest} command stem from the fact that different resamples are obtained each time a randomization distribution is generated. There may be some small (inconsequential) difference in p-values due to this.
+
+\hypertarget{example-4-resident-vs-non-resident-tuition}{%
+\section{Example 4: Resident vs Non-resident Tuition}\label{example-4-resident-vs-non-resident-tuition}}
+
+The lab manual data set \texttt{Tuition2006} is a random sample of state colleges and universities in the U.S. We want to know if the average tuition charged to non-residents is higher than residents for all state colleges and universities:
+
+\[
+H_0: \mu_{Non-res} - \mu_{Res} = 0 \ \ H_A: \mu_{Non-res} - \mu_{Res} > 0
+\]
+
+\hypertarget{a-paired-data}{%
+\subsubsection{(a) Paired Data}\label{a-paired-data}}
+
+Read in the data. Note that each case (school) has a response value for the resident and non-resident tuition variables. This makes this a paired data example. Contrast this with the word recall example in which each case (student) only had one response (word recall) and treatment (caffeine/sleep).
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\SpecialCharTok{{-}}\FloatTok{0.13341}\SpecialCharTok{/}\FloatTok{0.26051} 
+\NormalTok{tuition }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"http://math.carleton.edu/Stats215/RLabManual/Tuition2006.csv"}\NormalTok{)}
+\FunctionTok{head}\NormalTok{(tuition)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-[1] -0.5121109
+  X        Institution  Res NonRes  Diff
+1 1 Univ of Akron (OH) 4200   8800 -4600
+2 2  Athens State (AL) 1900   3600 -1700
+3 3    Ball State (IN) 3400   8600 -5200
+4 4  Bloomsburg U (PA) 3200   7000 -3800
+5 5     UC Irvine (CA) 3400  12700 -9300
+6 6 Central State (OH) 2600   5700 -3100
 \end{verbatim}
+
+\hypertarget{b-permutation-test-for-paired-data}{%
+\subsubsection{(b) Permutation test for paired data}\label{b-permutation-test-for-paired-data}}
+
+Let's compute the difference of non-resident and resident tuitions (NR minus R):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{diff }\OtherTok{\textless{}{-}}\NormalTok{ tuition}\SpecialCharTok{$}\NormalTok{NonRes }\SpecialCharTok{{-}}\NormalTok{ tuition}\SpecialCharTok{$}\NormalTok{Res}
+\FunctionTok{summary}\NormalTok{(diff)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    200    2650    3100    3584    4500    9300 
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{hist}\NormalTok{(diff)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_13_files/figure-latex/unnamed-chunk-4-1}
 
 \begin{itemize}
 \tightlist
 \item
-  How large or small would the observed difference in sample means need to be to reject the null hypothesis using a 5\% significance level.
-
-  Click for answer
-
-  \emph{Answer:} Since the distribution is bell-shaped, we can use the fact that about 5\% of sample differences are further than 2 SE's above/below the center difference of 0. Any sample difference this extreme will lead to a two-sided p-value that is less than the significance level of 5\%. For this data, 2 SE's is a sample difference of 0.521 so any observed difference that is more extreme than 0.521 would lead to rejecting the null hypothesis of no difference.
+  What is the average difference in tuition costs?
 \end{itemize}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\DecValTok{2}\SpecialCharTok{*}\FloatTok{0.26051} 
-\end{Highlighting}
-\end{Shaded}
+Click for answer
 
-\begin{verbatim}
-[1] 0.52102
-\end{verbatim}
-
-(b). Interest in 5 year olds - CI
-Consider the 95\% (bootstrap) CI for the true difference in mean interest \(\mu_{B5} - \mu_{G5}\).
+\emph{Answer:} The observed mean difference is \$3584
 
 \begin{itemize}
+\tightlist
 \item
-  Will this interval contain the difference of 0?
-
-  Click for answer
-
-  \emph{Answer:} Yes, since we didn't reject the null difference of 0 using a 5\% significance level (p-value = 0.617).
-\item
-  Compute the bootstrap distribution. Does the CI capture 0?
+  Is this observed mean difference statistically significant? To test use the command \texttt{permTestPaired}:
 \end{itemize}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{7}\NormalTok{)}
-\FunctionTok{boot}\NormalTok{(interest }\SpecialCharTok{\textasciitilde{}}\NormalTok{ gender, }\AttributeTok{data =}\NormalTok{ study4age5)}
+\FunctionTok{permTestPaired}\NormalTok{(NonRes }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Res,}\AttributeTok{data =}\NormalTok{ tuition, }\AttributeTok{alt =} \StringTok{"greater"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
-
-\begin{verbatim}
-
-    ** Bootstrap interval for difference of statistic
-
- Observed difference of statistic:  boy - girl =  -0.13341 
- Mean of bootstrap distribution: -0.13776 
- Standard error of bootstrap distribution: 0.25939 
-
- Bootstrap percentile interval
-      2.5%      97.5% 
--0.6459180  0.3652884 
-
-        *--------------*
-\end{verbatim}
 
 \includegraphics[width=1\linewidth]{Class_Activity_13_files/figure-latex/unnamed-chunk-5-1}
 
-Click for answer
-
-\emph{Answer:} Yes, the CI captures the difference of 0.
-
-\begin{itemize}
-\tightlist
-\item
-  What is the bootstrap SE? Is it similar to the randomization distribution SE?
-  \vspace*{.5in}
-\end{itemize}
-
-Click for answer
-
-\emph{Answer:} SE is about 0.26, which is very similar to the randomization distribution SE.
-
-\begin{itemize}
-\tightlist
-\item
-  Sketch out both the bootstrap and randomization distributions. Make sure to accurately represent the center and variation of these distributions.
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{curve}\NormalTok{(}\FunctionTok{dnorm}\NormalTok{(x,}\DecValTok{0}\NormalTok{,.}\DecValTok{26}\NormalTok{),}\AttributeTok{from=}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{,}\AttributeTok{to=}\DecValTok{1}\NormalTok{, }\AttributeTok{ylab=}\StringTok{""}\NormalTok{,}\AttributeTok{xlab=}\StringTok{"sample mean differences"}\NormalTok{)}
-\FunctionTok{abline}\NormalTok{(}\AttributeTok{v=}\DecValTok{0}\NormalTok{, }\AttributeTok{lty=}\DecValTok{3}\NormalTok{)}
-\FunctionTok{curve}\NormalTok{(}\FunctionTok{dnorm}\NormalTok{(x,}\SpecialCharTok{{-}}\FloatTok{0.133}\NormalTok{,.}\DecValTok{26}\NormalTok{),}\AttributeTok{from=}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{,}\AttributeTok{to=}\DecValTok{1}\NormalTok{, }\AttributeTok{add=}\NormalTok{T, }\AttributeTok{col=}\StringTok{"red"}\NormalTok{)}
-\FunctionTok{abline}\NormalTok{(}\AttributeTok{v=}\SpecialCharTok{{-}}\FloatTok{0.133}\NormalTok{, }\AttributeTok{col=}\StringTok{"red"}\NormalTok{, }\AttributeTok{lty=}\DecValTok{3}\NormalTok{)}
-\FunctionTok{legend}\NormalTok{(}\StringTok{"topleft"}\NormalTok{, }\AttributeTok{col=}\FunctionTok{c}\NormalTok{(}\StringTok{"black"}\NormalTok{,}\StringTok{"red"}\NormalTok{), }\AttributeTok{legend=}\FunctionTok{c}\NormalTok{(}\StringTok{"Randomization"}\NormalTok{,}\StringTok{"Bootstrap"}\NormalTok{), }\AttributeTok{lty=}\DecValTok{1}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\includegraphics[width=1\linewidth]{Class_Activity_13_files/figure-latex/unnamed-chunk-6-1}
-
-\vspace*{1in}
-
-(c). Interest in 6 and 7 year olds - test
-Redo part (a) for the age group \texttt{age\ 6\ and\ 7}.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{study4age67 }\OtherTok{\textless{}{-}} \FunctionTok{filter}\NormalTok{(study4, age2 }\SpecialCharTok{==} \StringTok{"age 6 and 7"}\NormalTok{)}
-\FunctionTok{boxplot}\NormalTok{(interest }\SpecialCharTok{\textasciitilde{}}\NormalTok{ gender, }\AttributeTok{data=}\NormalTok{study4age67)}
-\end{Highlighting}
-\end{Shaded}
-
-\includegraphics[width=1\linewidth]{Class_Activity_13_files/figure-latex/unnamed-chunk-7-1}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{permTest}\NormalTok{(interest }\SpecialCharTok{\textasciitilde{}}\NormalTok{ gender, }\AttributeTok{data =}\NormalTok{ study4age67)}
-\end{Highlighting}
-\end{Shaded}
-
-\includegraphics[width=1\linewidth]{Class_Activity_13_files/figure-latex/unnamed-chunk-7-2}
-
 \begin{verbatim}
 
-    ** Permutation test **
+    ** Permutation test for mean of paired difference **
 
- Permutation test with alternative: two.sided 
- Observed statistic
-  boy :  0.21635     girl :  -0.31869 
- Observed difference: 0.53505 
+ Permutation test with alternative: greater 
+ Observed mean
+  NonRes :  6405.263     Res :  2821.053 
+ Observed difference  NonRes - Res : 3584.211 
 
- Mean of permutation distribution: -0.00312 
- Standard error of permutation distribution: 0.22035 
- P-value:  0.0114 
+ Mean of permutation distribution: 21.11737 
+ Standard error of permutation distribution: 953.244 
+ P-value:  1e-04 
 
     *-------------*
 \end{verbatim}
 
+The \texttt{alt} of \texttt{greater} was used because the function \texttt{permTestPaired(A\ \textasciitilde{}\ B)} computes paired differences as ``A'' minus ``B''.
+
 \begin{itemize}
 \tightlist
 \item
-  What is the SE of this randomization distribution?
+  What is the p-value for this test?
 \end{itemize}
 
 Click for answer
 
-\emph{Answer:} SE is about 0.225.
-
-\vspace*{.5in}
+\emph{Answer:} Less than 0.0001
 
 \begin{itemize}
 \tightlist
 \item
-  What is the z-score for the observed difference in means using this distribution? Interpret the value.
-  \vspace*{.5in}
+  Is this observed mean difference statistically significant?
 \end{itemize}
 
 Click for answer
 
-\emph{Answer:} The distribution has a center of 0 and SE of 0.225. The z-score is
+\emph{Answer:} Yes, an observed mean difference of at least \$3584 would rarely occur just by chance which provides us strong evidence that the mean tuition amount of non-residents is higher than residents in the population of state colleges and universities (in 2006).
 
-\[
-z = \dfrac{0.53505 - 0}{0.22539 } = 2.37
-\]
-This means the observed difference of 0.535 is about 2.37 SEs above the hypothesized difference of 0.
+\hypertarget{example-5-evaluating-drugs-to-fight-cocaine-addition}{%
+\section{Example 5: Evaluating Drugs to Fight Cocaine Addition}\label{example-5-evaluating-drugs-to-fight-cocaine-addition}}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FloatTok{0.53505}\SpecialCharTok{/}\FloatTok{0.22539} 
-\end{Highlighting}
-\end{Shaded}
+In a randomized experiment on treating cocaine addiction, 48 cocaine addicts who were trying to quit were randomly assigned to take either desipramine (a new drug), or Lithium (an existing drug). The response variable is whether or not the person relapsed (which means the person was unable to break out of the cycle of addiction and returned to using cocaine.) \textbf{We are testing to see if desipramine is better than lithium at treating cocaine addiction.} The results are shown in the two-way table.
 
-\begin{verbatim}
-[1] 2.373885
-\end{verbatim}
+\begin{longtable}[]{@{}llll@{}}
+\toprule()
+\textbackslash{} & Relapse & No Relapse & total \\
+\midrule()
+\endhead
+Desipramine & 10 & 14 & 24 \\
+Lithium & 18 & 6 & 24 \\
+\bottomrule()
+\end{longtable}
 
-\begin{itemize}
-\tightlist
-\item
-  How large or small would the observed difference in sample means need to be to reject the null hypothesis using a 5\% significance level.
-
-  Click for answer
-
-  \emph{Answer:} Since the distribution is bell-shaped, we can use the fact that about 5\% of sample differences are further than 2 SE's above/below the center difference of 0. Any sample difference this extreme will lead to a two-sided p-value that is less than the significance level of 5\%. For this data, 2 SE's is a sample difference of 0.451 so any observed difference that is more extreme than 0.451 would lead to rejecting the null hypothesis of no difference.
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\DecValTok{2}\SpecialCharTok{*}\FloatTok{0.22539} 
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] 0.45078
-\end{verbatim}
-
-\vspace*{.5in}
-
-(d). Interest in 6 and 7 year olds - CI
-Redo part (b) for 6 and 7 year olds.
-
-\begin{itemize}
-\tightlist
-\item
-  Will this interval contain the difference of 0?
-\end{itemize}
+\hypertarget{a-using-p_d-for-the-true-proportion-of-desipramine-users-who-relapse-and-p_l-for-the-true-proportion-of-lithium-users-who-relapse-write-the-null-and-alternative-hypotheses.}{%
+\subsubsection{\texorpdfstring{(a) Using \(p_D\) for the true proportion of desipramine users who relapse and \(p_L\) for the true proportion of lithium users who relapse, write the null and alternative hypotheses.}{(a) Using p\_D for the true proportion of desipramine users who relapse and p\_L for the true proportion of lithium users who relapse, write the null and alternative hypotheses.}}\label{a-using-p_d-for-the-true-proportion-of-desipramine-users-who-relapse-and-p_l-for-the-true-proportion-of-lithium-users-who-relapse-write-the-null-and-alternative-hypotheses.}}
 
 Click for answer
 
-\emph{Answer:} No, since we rejected the null difference of 0 using a 5\% significance level (p-value = 0.015).
+\emph{Answer:} \(H_0: p_D - p_L =0\) vs.~\(H_A: p_D - p_L < 0\)
 
-\vspace*{.5in}
-
-\begin{itemize}
-\tightlist
-\item
-  Compute the bootstrap distribution. Does the CI capture 0?
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{boot}\NormalTok{(interest }\SpecialCharTok{\textasciitilde{}}\NormalTok{ gender, }\AttributeTok{data =}\NormalTok{ study4age67)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-
-    ** Bootstrap interval for difference of statistic
-
- Observed difference of statistic:  boy - girl =  0.53505 
- Mean of bootstrap distribution: 0.53468 
- Standard error of bootstrap distribution: 0.20659 
-
- Bootstrap percentile interval
-     2.5%     97.5% 
-0.1259895 0.9348764 
-
-        *--------------*
-\end{verbatim}
-
-\includegraphics[width=1\linewidth]{Class_Activity_13_files/figure-latex/unnamed-chunk-10-1}
+\hypertarget{b-compute-the-appropriate-sample-statistic-needed-to-assess-the-hypotheses-above.}{%
+\subsubsection{(b) Compute the appropriate sample statistic needed to assess the hypotheses above.}\label{b-compute-the-appropriate-sample-statistic-needed-to-assess-the-hypotheses-above.}}
 
 Click for answer
 
-\emph{Answer:} No, the CI does not capture the difference of 0.
+\emph{Answer:} We see that \(\hat{p}_D = \dfrac{10}{24} = 0.417\) and \(\hat{p}_L = \dfrac{18}{24} = 0.75\) so we have \(\hat{p}_D -\hat{p}_L = 0.417 - 0.75 = -0.333\). Be sure to compute the \textbf{difference} since we need one number (observed difference) to test the hypotheses, not two separate numbers. You could also compute the difference as \(L-D\) and get +0.333.
 
-\vspace*{.5in}
-
-\begin{itemize}
-\tightlist
-\item
-  What is the bootstrap SE? Is it similar to the randomization distribution SE?
-\end{itemize}
+\hypertarget{c-how-might-we-compute-a-randomization-sample-for-this-data}{%
+\subsubsection{(c) How might we compute a randomization sample for this data?}\label{c-how-might-we-compute-a-randomization-sample-for-this-data}}
 
 Click for answer
 
-\emph{Answer:} SE is about 0.21, which is very similar to the randomization distribution SE.
+\emph{Answer:} Since drug doesn't matter, we combine all 48 patients together and see that 28 relapsed and 20 didn't. To see what happens by random chance, we randomly divide them into two groups and compute the difference in proportions of relapses between the two groups. The difference in proportions is the statistic.
 
-\vspace*{.5in}
+\hypertarget{d-navigate-to-the-statkey-website.}{%
+\subsubsection{(d) Navigate to the Statkey website.}\label{d-navigate-to-the-statkey-website.}}
 
-\begin{itemize}
-\tightlist
-\item
-  Sketch out both the bootstrap and randomization distributions. Make sure to accurately represent the center and variation of these distributions.
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{curve}\NormalTok{(}\FunctionTok{dnorm}\NormalTok{(x,}\DecValTok{0}\NormalTok{,.}\DecValTok{22}\NormalTok{),}\AttributeTok{from=}\SpecialCharTok{{-}}\NormalTok{.}\DecValTok{7}\NormalTok{,}\AttributeTok{to=}\FloatTok{1.4}\NormalTok{, }\AttributeTok{ylab=}\StringTok{""}\NormalTok{,}\AttributeTok{xlab=}\StringTok{"sample mean differences"}\NormalTok{)}
-\FunctionTok{abline}\NormalTok{(}\AttributeTok{v=}\DecValTok{0}\NormalTok{, }\AttributeTok{lty=}\DecValTok{3}\NormalTok{)}
-\FunctionTok{curve}\NormalTok{(}\FunctionTok{dnorm}\NormalTok{(x,}\FloatTok{0.535}\NormalTok{,.}\DecValTok{21}\NormalTok{),}\AttributeTok{from=}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{,}\AttributeTok{to=}\FloatTok{1.4}\NormalTok{, }\AttributeTok{add=}\NormalTok{T, }\AttributeTok{col=}\StringTok{"red"}\NormalTok{)}
-\FunctionTok{abline}\NormalTok{(}\AttributeTok{v=}\FloatTok{0.535}\NormalTok{, }\AttributeTok{col=}\StringTok{"red"}\NormalTok{, }\AttributeTok{lty=}\DecValTok{3}\NormalTok{)}
-\FunctionTok{legend}\NormalTok{(}\StringTok{"topleft"}\NormalTok{, }\AttributeTok{col=}\FunctionTok{c}\NormalTok{(}\StringTok{"black"}\NormalTok{,}\StringTok{"red"}\NormalTok{), }\AttributeTok{legend=}\FunctionTok{c}\NormalTok{(}\StringTok{"Randomization"}\NormalTok{,}\StringTok{"Bootstrap"}\NormalTok{), }\AttributeTok{lty=}\DecValTok{1}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\includegraphics[width=1\linewidth]{Class_Activity_13_files/figure-latex/unnamed-chunk-11-1}
-
-\vspace*{1in}
-
-\begin{enumerate}
-\def\labelenumi{(\alph{enumi})}
-\setcounter{enumi}{4}
-\tightlist
-\item
-  Interest in 5 year olds
-  Redo the randomization test and bootstrap CI for 5 year olds, but this time omit the outlier boy case that has a very low interest level. Recall how to use the \texttt{which} command:
-\end{enumerate}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{boxplot}\NormalTok{(interest }\SpecialCharTok{\textasciitilde{}}\NormalTok{ gender, }\AttributeTok{data=}\NormalTok{study4age5)}
-\end{Highlighting}
-\end{Shaded}
-
-\includegraphics[width=1\linewidth]{Class_Activity_13_files/figure-latex/unnamed-chunk-12-1}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{which}\NormalTok{(study4age5}\SpecialCharTok{$}\NormalTok{interest }\SpecialCharTok{\textless{}} \SpecialCharTok{{-}}\DecValTok{2}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] 39
-\end{verbatim}
-
-Then to omit this case, add the argument \texttt{subset\ =\ -39} to the \texttt{permTest} and \texttt{boot} commands used in (a) and (b).
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{7}\NormalTok{)}
-\FunctionTok{permTest}\NormalTok{(interest }\SpecialCharTok{\textasciitilde{}}\NormalTok{ gender, }\AttributeTok{data =}\NormalTok{ study4age5, }\AttributeTok{subset =} \SpecialCharTok{{-}}\DecValTok{39}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\includegraphics[width=1\linewidth]{Class_Activity_13_files/figure-latex/unnamed-chunk-13-1}
-
-\begin{verbatim}
-
-    ** Permutation test **
-
- Permutation test with alternative: two.sided 
- Observed statistic
-  boy :  0.01417     girl :  0.02906 
- Observed difference: -0.01488 
-
- Mean of permutation distribution: -0.00265 
- Standard error of permutation distribution: 0.2469 
- P-value:  0.957 
-
-    *-------------*
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{boot}\NormalTok{(interest }\SpecialCharTok{\textasciitilde{}}\NormalTok{ gender, }\AttributeTok{data =}\NormalTok{ study4age5, }\AttributeTok{subset =} \SpecialCharTok{{-}}\DecValTok{39}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-
-    ** Bootstrap interval for difference of statistic
-
- Observed difference of statistic:  boy - girl =  -0.01488 
- Mean of bootstrap distribution: -0.01565 
- Standard error of bootstrap distribution: 0.23826 
-
- Bootstrap percentile interval
-      2.5%      97.5% 
--0.4751690  0.4520149 
-
-        *--------------*
-\end{verbatim}
-
-\includegraphics[width=1\linewidth]{Class_Activity_13_files/figure-latex/unnamed-chunk-13-2}
-
-\begin{itemize}
-\tightlist
-\item
-  Does the observed difference get closer or further from 0 with the case omitted? Explain why it changes.
-\end{itemize}
+Select the \textbf{Test for Difference in Proportions} option under \textbf{Randomization Hypothesis Tests}. Click \textbf{Edit Data} and let Group 1 be ``Desipramine'' and 2 be ``Lithium'', enter relapse \textbf{counts} of 10 and 18 and \textbf{sample sizes} of 24. Check that the null hypothesis matches yours in (a). Generate a couple thousand samples. Describe the resulting distribution. Where is it centered?
 
 Click for answer
 
-\emph{Answer:} The very low case pulls down the mean response for boys (with: \(\bar{x}_{B5} = -0.10435\), without: \(\bar{x}_{B5} = 0.01417\)). Since the girl mean response doesn't change (\(\bar{x}_{G5} = 0.02906\)), omitting this case will make the \emph{two means closer together} which makes their difference closer to 0 (with: \(\bar{x}_{B5} - \bar{x}_{G5} = -0.13341\), without: \(\bar{x}_{B5} - \bar{x}_{G5} = -0.01488\)).
+\emph{Answer:} The resulting distribution, shown in Figure 1, will be bell-shaped and centered at the value from the null hypothesis, which is zero.
 
-\vspace*{.5in}
+\begin{figure}
+\centering
+\includegraphics{data/DLrand.png}
+\caption{Example 1d}
+\end{figure}
 
-\begin{itemize}
-\tightlist
-\item
-  Do the SEs of the distributions (bootstrap and randomization) get smaller or larger with the case omitted? Explain why these change.
-\end{itemize}
-
-Click for answer
-
-\emph{Answer:} The very low case creates larger variability in the sample mean for boys, which in turn makes the SE for the sample mean difference more variable (with: SE about 0.26, without: SE about 0.24).
-
-\vspace*{.5in}
-
-\begin{itemize}
-\tightlist
-\item
-  Compute the z-score for the observed difference in means using randomization distribution. Is this value futher or closer to a z-score of 0 with the case omitted? Explain why it changes.
-\end{itemize}
+\hypertarget{e-compute-and-interpret-the-p-value-for-this-test.}{%
+\subsubsection{(e) Compute and interpret the p-value for this test.}\label{e-compute-and-interpret-the-p-value-for-this-test.}}
 
 Click for answer
 
-\emph{Answer:} The z-score is closer to 0 with the case removed (with: \(z = -0.51\), without: \(z = -0.061\))
-\[
-z = \dfrac{-0.01488  - 0}{0.24569} = -0.061
-\]
-The z-score is closer to 0 because the sample mean difference is closer to 0 with the case removed, and this change is greater than the relatively small decrease in SE that we noted with the case removed.
+\emph{Answer:} This is a left-tail test when computing the difference as D - L, and we see on StatKey that the p-value (proportion of randomization samples with a difference -.333 or smaller) is about 2 (Figure 1). About 2\% of the time we would see at least 33\% fewer relapse cases using despramine than lithium just due to chance if there was no difference in the relapse rates of the two treatments.
 
-\vspace*{.5in}
+Note the two key features of this ``in context'' interpretation of 2\%: it assumes that the null is true (no treatment difference) and it uses the observed statistic (data) used to compute the p-value (rate of despramine relapse is .33 below the rate of lithium).
 
-\begin{itemize}
-\tightlist
-\item
-  Does the p-value get smaller or larger (or doesn't change) with the case omitted? Explain why it changes.
-\end{itemize}
+\hypertarget{f-make-a-formal-decision-reject-or-not-using-a-5-significance-level-then-restate-your-conclusion-in-context-for-the-problem-do-not-use-words-like-reject-or-hypothesis.}{%
+\subsubsection{(f) Make a formal decision (reject or not) using a 5\% significance level, then restate your conclusion in context for the problem (do not use words like ``reject'' or ``hypothesis'').}\label{f-make-a-formal-decision-reject-or-not-using-a-5-significance-level-then-restate-your-conclusion-in-context-for-the-problem-do-not-use-words-like-reject-or-hypothesis.}}
 
 Click for answer
 
-\emph{Answer:} The p-value is larger with the case removed (with: p-value = 0.617, without: p-value = 0.944). This is because the observed difference is closer to 0 (fewer SE away) with the case omitted.
+\emph{Answer:} We reject the null hypothesis since the p-value of 2\% is less than 5\%. We can conclude that despramine is better at helping people kick the cocaine habit.
+Note the ``in context'' conclusion: Just state your conclusion in english, no need to talk about the value of the p-value or ``just by chance.''
 
-\hypertarget{class-activity-14-1}{%
-\chapter{Class Activity 14}\label{class-activity-14-1}}
+\hypertarget{h-use-statkey-to-compute-and-interpret-a-95-bootstrap-confidence-interval-for-the-difference-in-the-relapse-proportion-for-the-two-treatments.-explain-how-this-ci-agrees-with-your-test-conclusion-in-f.}{%
+\subsubsection{(h) Use Statkey to compute and interpret a 95\% bootstrap confidence interval for the difference in the relapse proportion for the two treatments. Explain how this CI agrees with your test conclusion in (f).}\label{h-use-statkey-to-compute-and-interpret-a-95-bootstrap-confidence-interval-for-the-difference-in-the-relapse-proportion-for-the-two-treatments.-explain-how-this-ci-agrees-with-your-test-conclusion-in-f.}}
 
-\hypertarget{example-1-gender-stereotypes-in-children---study-4-1}{%
-\section{Example 1: Gender stereotypes in children - study 4}\label{example-1-gender-stereotypes-in-children---study-4-1}}
+Click for answer
+
+\emph{Answer:} I am 95\% confident that the relapse rate for despramine will be between 8.3 to 58.3 percent less than the relapse rate for lithium. This completely agrees with the test conclusion that despramine is a better treatment for cocaine addiction. (Figure 2 shows the bootstrap distribution that is centered at the sample difference of -0.333.)
+
+\begin{figure}
+\centering
+\includegraphics{data/DLboot.png}
+\caption{Example 1h}
+\end{figure}
+
+\hypertarget{class-activity-14}{%
+\chapter{Class Activity 14}\label{class-activity-14}}
+
+\hypertarget{example-1-gender-stereotypes-in-children---study-4}{%
+\section{Example 1: Gender stereotypes in children - study 4}\label{example-1-gender-stereotypes-in-children---study-4}}
 
 The data for this example comes from study 4 described in this \emph{Science} article: \url{http://science.sciencemag.org/content/355/6323/389}. This study involved asking children their interest level in a game that researcher described as for ``children who are really, really smart.'' The higher the value of the variable \texttt{interest}, the more interested a child was in playing that game.
 
@@ -5500,9 +5413,9 @@ H_0: \mu_{B5} - \mu_{G5} = 0 \ \ H_0: \mu_{B5} - \mu_{G5} \neq 0
   boy :  -0.10435    girl :  0.02906 
  Observed difference: -0.13341 
 
- Mean of permutation distribution: 0.00191 
- Standard error of permutation distribution: 0.26475 
- P-value:  0.6134 
+ Mean of permutation distribution: 0.00239 
+ Standard error of permutation distribution: 0.26512 
+ P-value:  0.6112 
 
     *-------------*
 \end{verbatim}
