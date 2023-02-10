@@ -166,16 +166,16 @@ Click for answer
 
 \begin{verbatim}
    ID Greeting  Male      Age
-1   1    Hello  TRUE 52.66905
-2   2    Hello FALSE 43.27973
-3   3    Hello  TRUE 59.79710
-4   4    Hello FALSE 42.41947
-5   5    Hello  TRUE 22.89435
-6   6  Goodbye FALSE 43.97699
-7   7  Goodbye  TRUE 49.56618
-8   8  Goodbye FALSE 22.69398
-9   9  Goodbye  TRUE 51.47850
-10 10  Goodbye FALSE 49.51790
+1   1    Hello  TRUE 50.06742
+2   2    Hello FALSE 59.41888
+3   3    Hello  TRUE 54.40156
+4   4    Hello FALSE 34.49491
+5   5    Hello  TRUE 41.67678
+6   6  Goodbye FALSE 39.44751
+7   7  Goodbye  TRUE 44.97138
+8   8  Goodbye FALSE 35.29466
+9   9  Goodbye  TRUE 44.07278
+10 10  Goodbye FALSE 40.84015
 \end{verbatim}
 
 \emph{Answer:} We see a data frame with four columns, where the first column is an \texttt{identifier} for the cases. We have information on the greeting types, whether male or not, and age on these cases in the remaining columns.
@@ -399,7 +399,7 @@ Run the following command to obtain a SRS of 10 words from the 268 that are in t
 \end{Shaded}
 
 \begin{verbatim}
- [1]  32 200  92 107 122 160 129 248  45 234
+ [1] 159 209  15  87 141 265 261 175  31 185
 \end{verbatim}
 
 This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
@@ -415,17 +415,17 @@ We will \emph{subset} the data set \texttt{pop} to obtain only the sampled rows 
 \end{Shaded}
 
 \begin{verbatim}
-    position size        word
-32        32    2          we
-200      200    9   remaining
-92        92    2          It
-107      107    5      sense,
-122      122    6      living
-160      160    4       here.
-129      129   11 consecrated
-248      248    5       birth
-45        45    3         any
-234      234    3         not
+    position size   word
+159      159    3    did
+209      209    4   take
+15        15    3    new
+87        87    4   that
+141      141    5  world
+265      265    6 perish
+261      261    3    the
+175      175    4   work
+31        31    3    Now
+185      185    5  nobly
 \end{verbatim}
 
 \begin{enumerate}
@@ -446,7 +446,7 @@ The word lengths in part (b) are the data for your sample. You can compute your 
 \end{Shaded}
 
 \begin{verbatim}
- [1]  2  9  2  5  6  4 11  5  3  3
+ [1] 3 4 3 4 5 6 3 4 3 5
 \end{verbatim}
 
 Then find the mean of these values:
@@ -458,7 +458,7 @@ Then find the mean of these values:
 \end{Shaded}
 
 \begin{verbatim}
-[1] 5
+[1] 4
 \end{verbatim}
 
 How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?
@@ -3936,7 +3936,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
- [1]  85  85 132 125 125  72  87 147  93  52
+ [1]  72  52  52 185 147  85 125 147 147  85
 \end{verbatim}
 
 (d). Where will be bootstrap distribution be centered? What shape do we expect it to have?
@@ -4293,12 +4293,12 @@ The \texttt{boot(y\ \textasciitilde{}\ x,\ data=)} command generates 10000 boots
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -2.26095 
- Mean of bootstrap distribution: -2.25478 
- Standard error of bootstrap distribution: 0.77458 
+ Mean of bootstrap distribution: -2.27178 
+ Standard error of bootstrap distribution: 0.77031 
 
  Bootstrap percentile interval
       2.5%      97.5% 
--3.7738929 -0.7347024 
+-3.7733452 -0.7633095 
 
         *--------------*
 \end{verbatim}
@@ -5119,9 +5119,9 @@ Then load the \texttt{CarletonStats} package and run the \texttt{permTest(y\ \te
   Caffeine :  12.25      Sleep :  15.25 
  Observed difference: -3 
 
- Mean of permutation distribution: -0.01977 
- Standard error of permutation distribution: 1.50172 
- P-value:  0.051 
+ Mean of permutation distribution: -0.01148 
+ Standard error of permutation distribution: 1.51046 
+ P-value:  0.0534 
 
     *-------------*
 \end{verbatim}
@@ -5235,8 +5235,8 @@ Click for answer
   NonRes :  6405.263     Res :  2821.053 
  Observed difference  NonRes - Res : 3584.211 
 
- Mean of permutation distribution: 21.11737 
- Standard error of permutation distribution: 953.244 
+ Mean of permutation distribution: -4.25569 
+ Standard error of permutation distribution: 952.2308 
  P-value:  1e-04 
 
     *-------------*
@@ -5413,9 +5413,9 @@ H_0: \mu_{B5} - \mu_{G5} = 0 \ \ H_0: \mu_{B5} - \mu_{G5} \neq 0
   boy :  -0.10435    girl :  0.02906 
  Observed difference: -0.13341 
 
- Mean of permutation distribution: 0.00239 
- Standard error of permutation distribution: 0.26512 
- P-value:  0.6112 
+ Mean of permutation distribution: 0.00067 
+ Standard error of permutation distribution: 0.26163 
+ P-value:  0.6074 
 
     *-------------*
 \end{verbatim}
@@ -5424,22 +5424,26 @@ H_0: \mu_{B5} - \mu_{G5} = 0 \ \ H_0: \mu_{B5} - \mu_{G5} \neq 0
 \tightlist
 \item
   What is the SE of this randomization distribution?
-\end{itemize}
 
-\emph{Answer:} SE is about 0.26.
+  Click for answer
+
+  \emph{Answer:} SE is about 0.26.
+\end{itemize}
 
 \begin{itemize}
 \tightlist
 \item
   What is the z-score for the observed difference in means using this distribution? Interpret the value.
   \vspace*{.5in}
-\end{itemize}
 
-\emph{Answer:} The distribution has a center of 0 and SE of 0.26. The z-score is
-\[
-z = \dfrac{-0.13341 - 0}{0.26051} = -0.51
-\]
-This means the observed difference of -0.133 is about 0.51 SEs below the hypothesized difference of 0.
+  Click for answer
+
+  \emph{Answer:} The distribution has a center of 0 and SE of 0.26. The z-score is
+  \[
+  z = \dfrac{-0.13341 - 0}{0.26051} = -0.51
+  \]
+  This means the observed difference of -0.133 is about 0.51 SEs below the hypothesized difference of 0.
+\end{itemize}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -5455,9 +5459,11 @@ This means the observed difference of -0.133 is about 0.51 SEs below the hypothe
 \tightlist
 \item
   How large or small would the observed difference in sample means need to be to reject the null hypothesis using a 5\% significance level.
-\end{itemize}
 
-\emph{Answer:} Since the distribution is bell-shaped, we can use the fact that about 5\% of sample differences are further than 2 SE's above/below the center difference of 0. Any sample difference this extreme will lead to a two-sided p-value that is less than the significance level of 5\%. For this data, 2 SE's is a sample difference of 0.521 so any observed difference that is more extreme than 0.521 would lead to rejecting the null hypothesis of no difference.
+  Click for answer
+
+  \emph{Answer:} Since the distribution is bell-shaped, we can use the fact that about 5\% of sample differences are further than 2 SE's above/below the center difference of 0. Any sample difference this extreme will lead to a two-sided p-value that is less than the significance level of 5\%. For this data, 2 SE's is a sample difference of 0.521 so any observed difference that is more extreme than 0.521 would lead to rejecting the null hypothesis of no difference.
+\end{itemize}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -5477,15 +5483,12 @@ This means the observed difference of -0.133 is about 0.51 SEs below the hypothe
 Consider the 95\% (bootstrap) CI for the true difference in mean interest \(\mu_{B5} - \mu_{G5}\).
 
 \begin{itemize}
-\tightlist
 \item
   Will this interval contain the difference of 0?
-\end{itemize}
 
-\emph{Answer:} Yes, since we didn't reject the null difference of 0 using a 5\% significance level (p-value = 0.617).
+  Click for answer
 
-\begin{itemize}
-\tightlist
+  \emph{Answer:} Yes, since we didn't reject the null difference of 0 using a 5\% significance level (p-value = 0.617).
 \item
   Compute the bootstrap distribution. Does the CI capture 0?
 \end{itemize}
@@ -5514,22 +5517,18 @@ Consider the 95\% (bootstrap) CI for the true difference in mean interest \(\mu_
 
 \includegraphics[width=1\linewidth]{Class_Activity_14_files/figure-latex/unnamed-chunk-5-1}
 
+Click for answer
+
 \emph{Answer:} Yes, the CI captures the difference of 0.
 
-\begin{itemize}
-\tightlist
-\item
-  What is the bootstrap SE? Is it similar to the randomization distribution SE?
-  \vspace*{.5in}
-\end{itemize}
+- What is the bootstrap SE? Is it similar to the randomization distribution SE?
+\vspace*{.5in}
+
+Click for answer
 
 \emph{Answer:} SE is about 0.26, which is very similar to the randomization distribution SE.
 
-\begin{itemize}
-\tightlist
-\item
-  Sketch out both the bootstrap and randomization distributions. Make sure to accurately represent the center and variation of these distributions.
-\end{itemize}
+- Sketch out both the bootstrap and randomization distributions. Make sure to accurately represent the center and variation of these distributions.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -5587,6 +5586,9 @@ Redo part (a) for the age group \texttt{age\ 6\ and\ 7}.
 \tightlist
 \item
   What is the SE of this randomization distribution?
+
+  Click for answer
+
   \emph{Answer:} SE is about 0.225.
 \end{itemize}
 
@@ -5597,13 +5599,15 @@ Redo part (a) for the age group \texttt{age\ 6\ and\ 7}.
 \item
   What is the z-score for the observed difference in means using this distribution? Interpret the value.
   \vspace*{.5in}
-\end{itemize}
 
-\emph{Answer:} The distribution has a center of 0 and SE of 0.225. The z-score is
-\[
-z = \dfrac{0.53505 - 0}{0.22539 } = 2.37
-\]
-This means the observed difference of 0.535 is about 2.37 SEs above the hypothesized difference of 0.
+  Click for answer
+
+  \emph{Answer:} The distribution has a center of 0 and SE of 0.225. The z-score is
+  \[
+  z = \dfrac{0.53505 - 0}{0.22539 } = 2.37
+  \]
+  This means the observed difference of 0.535 is about 2.37 SEs above the hypothesized difference of 0.
+\end{itemize}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -5615,11 +5619,9 @@ This means the observed difference of 0.535 is about 2.37 SEs above the hypothes
 [1] 2.373885
 \end{verbatim}
 
-\begin{itemize}
-\tightlist
-\item
-  How large or small would the observed difference in sample means need to be to reject the null hypothesis using a 5\% significance level.
-\end{itemize}
+- How large or small would the observed difference in sample means need to be to reject the null hypothesis using a 5\% significance level.
+
+Click for answer
 
 \emph{Answer:} Since the distribution is bell-shaped, we can use the fact that about 5\% of sample differences are further than 2 SE's above/below the center difference of 0. Any sample difference this extreme will lead to a two-sided p-value that is less than the significance level of 5\%. For this data, 2 SE's is a sample difference of 0.451 so any observed difference that is more extreme than 0.451 would lead to rejecting the null hypothesis of no difference.
 
@@ -5641,17 +5643,14 @@ This means the observed difference of 0.535 is about 2.37 SEs above the hypothes
 Redo part (b) for 6 and 7 year olds.
 
 \begin{itemize}
-\tightlist
 \item
   Will this interval contain the difference of 0?
-\end{itemize}
 
-\emph{Answer:} No, since we rejected the null difference of 0 using a 5\% significance level (p-value = 0.015).
+  Click for answer
 
-\vspace*{.5in}
+  \emph{Answer:} No, since we rejected the null difference of 0 using a 5\% significance level (p-value = 0.015).
 
-\begin{itemize}
-\tightlist
+  \vspace*{.5in}
 \item
   Compute the bootstrap distribution. Does the CI capture 0?
 \end{itemize}
@@ -5679,22 +5678,21 @@ Redo part (b) for 6 and 7 year olds.
 
 \includegraphics[width=1\linewidth]{Class_Activity_14_files/figure-latex/unnamed-chunk-10-1}
 
+Click for answer
+
 \emph{Answer:} No, the CI does not capture the difference of 0.
 
 \vspace*{.5in}
 
 \begin{itemize}
-\tightlist
 \item
   What is the bootstrap SE? Is it similar to the randomization distribution SE?
-\end{itemize}
 
-\emph{Answer:} SE is about 0.21, which is very similar to the randomization distribution SE.
+  Click for answer
 
-\vspace*{.5in}
+  \emph{Answer:} SE is about 0.21, which is very similar to the randomization distribution SE.
 
-\begin{itemize}
-\tightlist
+  \vspace*{.5in}
 \item
   Sketch out both the bootstrap and randomization distributions. Make sure to accurately represent the center and variation of these distributions.
 \end{itemize}
@@ -5787,22 +5785,21 @@ Then to omit this case, add the argument \texttt{subset\ =\ -39} to the \texttt{
 \includegraphics[width=1\linewidth]{Class_Activity_14_files/figure-latex/unnamed-chunk-13-2}
 
 \begin{itemize}
-\tightlist
 \item
   Does the observed difference get closer or further from 0 with the case omitted? Explain why it changes.
-\end{itemize}
 
-\emph{Answer:} The very low case pulls down the mean response for boys (with: \(\bar{x}_{B5} = -0.10435\), without: \(\bar{x}_{B5} = 0.01417\)). Since the girl mean response doesn't change (\(\bar{x}_{G5} = 0.02906\)), omitting this case will make the \emph{two means closer together} which makes their difference closer to 0 (with: \(\bar{x}_{B5} - \bar{x}_{G5} = -0.13341\), without: \(\bar{x}_{B5} - \bar{x}_{G5} = -0.01488\)).
+  Click for answer
 
-\vspace*{.5in}
+  \emph{Answer:} The very low case pulls down the mean response for boys (with: \(\bar{x}_{B5} = -0.10435\), without: \(\bar{x}_{B5} = 0.01417\)). Since the girl mean response doesn't change (\(\bar{x}_{G5} = 0.02906\)), omitting this case will make the \emph{two means closer together} which makes their difference closer to 0 (with: \(\bar{x}_{B5} - \bar{x}_{G5} = -0.13341\), without: \(\bar{x}_{B5} - \bar{x}_{G5} = -0.01488\)).
 
-\begin{itemize}
-\tightlist
+  \vspace*{.5in}
 \item
   Do the SEs of the distributions (bootstrap and randomization) get smaller or larger with the case omitted? Explain why these change.
-\end{itemize}
 
-\emph{Answer:} The very low case creates larger variability in the sample mean for boys, which in turn makes the SE for the sample mean difference more variable (with: SE about 0.26, without: SE about 0.24).
+  Click for answer
+
+  \emph{Answer:} The very low case creates larger variability in the sample mean for boys, which in turn makes the SE for the sample mean difference more variable (with: SE about 0.26, without: SE about 0.24).
+\end{itemize}
 
 \vspace*{.5in}
 
@@ -5811,6 +5808,8 @@ Then to omit this case, add the argument \texttt{subset\ =\ -39} to the \texttt{
 \item
   Compute the z-score for the observed difference in means using randomization distribution. Is this value futher or closer to a z-score of 0 with the case omitted? Explain why it changes.
 \end{itemize}
+
+Click for answer
 
 \emph{Answer:} The z-score is closer to 0 with the case removed (with: \(z = -0.51\), without: \(z = -0.061\))
 \[
@@ -5824,9 +5823,11 @@ The z-score is closer to 0 because the sample mean difference is closer to 0 wit
 \tightlist
 \item
   Does the p-value get smaller or larger (or doesn't change) with the case omitted? Explain why it changes.
-\end{itemize}
 
-\emph{Answer:} The p-value is larger with the case removed (with: p-value = 0.617, without: p-value = 0.944). This is because the observed difference is closer to 0 (fewer SE away) with the case omitted.
+  Click for answer
+
+  \emph{Answer:} The p-value is larger with the case removed (with: p-value = 0.617, without: p-value = 0.944). This is because the observed difference is closer to 0 (fewer SE away) with the case omitted.
+\end{itemize}
 
 \hypertarget{class-activity-15}{%
 \chapter{Class Activity 15}\label{class-activity-15}}
@@ -6047,6 +6048,202 @@ z = \dfrac{533 - 580}{70} = -0.67
 \begin{verbatim}
 [1] -0.6714286
 \end{verbatim}
+
+\hypertarget{class-activity-16}{%
+\chapter{Class Activity 16}\label{class-activity-16}}
+
+\hypertarget{example-1-is-divorce-morally-acceptable}{%
+\section{Example 1: Is Divorce Morally Acceptable?}\label{example-1-is-divorce-morally-acceptable}}
+
+In a study, we find that 67\% of women in a random sample view divorce as morally acceptable. Does this provide evidence that more than 50\% of women view divorce as morally acceptable? The standard error for the estimate assuming the null hypothesis is true is 0.021.
+
+\hypertarget{a-what-are-the-null-and-alternative-hypotheses-for-this-test}{%
+\subsubsection{(a) What are the null and alternative hypotheses for this test?}\label{a-what-are-the-null-and-alternative-hypotheses-for-this-test}}
+
+Click for answer
+
+\emph{Answer:} If \(p\) denotes the proportion of woman who view divorce as morally acceptable in the population, then our hypotheses are
+\[
+H_0: p = 0.5 \ \ H_A: p > 0.5
+\]
+
+\hypertarget{b-what-is-the-standardized-test-statistic}{%
+\subsubsection{(b) What is the standardized test statistic?}\label{b-what-is-the-standardized-test-statistic}}
+
+Click for answer
+
+\emph{Answer:} The observed sample proportion is 0.67 with a standard error of 0.021. If the null is true, then we would expect the sampling distribution of the sample mean to be (approximately) normally distributed with a center of 0.50 and SE of 0.021. The standardized score for the sample proportion is then
+\[
+z = \dfrac{\textrm{statistic} - \textrm{null parameter}}{SE} = \dfrac{0.67 - 0.50}{0.021} = 8.10
+\]
+The observed proportion is 8.1 SEs above the hypothesized value of 0.5.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\FloatTok{0.67} \SpecialCharTok{{-}} \FloatTok{0.5}\NormalTok{)}\SpecialCharTok{/}\FloatTok{0.021}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 8.095238
+\end{verbatim}
+
+Note that the randomization distribution should look roughly like this (with the observed proportion denoted with a red X):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{curve}\NormalTok{(}\FunctionTok{dnorm}\NormalTok{(x,}\FloatTok{0.5}\NormalTok{,.}\DecValTok{021}\NormalTok{),}\AttributeTok{from=}\NormalTok{.}\DecValTok{3}\NormalTok{,}\AttributeTok{to=}\NormalTok{.}\DecValTok{7}\NormalTok{,}\AttributeTok{xlab=}\StringTok{"sample proportions"}\NormalTok{)}
+\FunctionTok{points}\NormalTok{(}\FloatTok{0.67}\NormalTok{,}\DecValTok{0}\NormalTok{,}\AttributeTok{pch=}\StringTok{"X"}\NormalTok{,}\AttributeTok{col=}\StringTok{"red"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_16_files/figure-latex/unnamed-chunk-2-1}
+
+\hypertarget{c-use-the-normal-distribution-to-find-the-p-value.}{%
+\subsubsection{(c) Use the normal distribution to find the p-value.}\label{c-use-the-normal-distribution-to-find-the-p-value.}}
+
+Click for answer
+
+\emph{Answer:} As we can see in the normal plot above, the p-value will be very small because the alternative is looking for big sample proportions. The p-value is the proportion of times we get a sample proportion as big, or bigger than, 0.67; or equivantly, the proportion of times we get a sample proportion that is at least 8.1 SEs above the hypothesized proportion. We would report a p-value that is less than 0.0001.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1}\SpecialCharTok{{-}}\FunctionTok{pnorm}\NormalTok{(}\FloatTok{8.10}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 2.220446e-16
+\end{verbatim}
+
+\hypertarget{d-what-is-the-conclusion-of-the-test}{%
+\subsubsection{(d) What is the conclusion of the test?}\label{d-what-is-the-conclusion-of-the-test}}
+
+Click for answer
+
+\emph{Answer:} The p-value is very small so we have very strong evidence that more than 50\% of all women view divorce as morally acceptable.
+
+\hypertarget{e-use-the-normal-distribution-to-find-a-99-confidence-interval-for-the-proportion-of-all-women-who-view-divorce-as-morally-acceptable.-interpret-your-answer.}{%
+\subsubsection{(e) Use the normal distribution to find a 99\% confidence interval for the proportion of all women who view divorce as morally acceptable. Interpret your answer.}\label{e-use-the-normal-distribution-to-find-a-99-confidence-interval-for-the-proportion-of-all-women-who-view-divorce-as-morally-acceptable.-interpret-your-answer.}}
+
+Click for answer
+
+\emph{Answer:} Without knowing the bootstrap SE, our best guess at it would be from the randomization distribution SE which is given as 0.021. Our 99\% confidence interval will look like:
+\[
+statistic \pm z^*SE = 0.67 \pm z^* (0.021) 
+\]
+The \(z^*\) for a 99\% CI corresponds to the 99.5th percentile (90\% in middle + 0.5\% in the left tail). With \(z^* = 2.576\), we get a 99\% confidence interval of 0.616 to 0.724.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{qnorm}\NormalTok{(}\FloatTok{0.995}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 2.575829
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FloatTok{0.67} \SpecialCharTok{{-}} \FloatTok{2.576}\SpecialCharTok{*}\FloatTok{0.021}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.615904
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FloatTok{0.67} \SpecialCharTok{+} \FloatTok{2.576}\SpecialCharTok{*}\FloatTok{0.021}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.724096
+\end{verbatim}
+
+\hypertarget{example-2-do-men-and-women-differ-in-opinions-about-divorce}{%
+\section{Example 2: Do Men and Women Differ in Opinions about Divorce?}\label{example-2-do-men-and-women-differ-in-opinions-about-divorce}}
+
+In the same study described above, we find that 71\% of men view divorce as morally acceptable. Use this and the information in the previous example to test whether there is a significant difference between men and women in how they view divorce. The standard error for the difference in proportions under the null hypothesis that the proportions are equal is 0.029.
+
+\hypertarget{a-what-are-the-null-and-alternative-hypotheses-for-this-test-1}{%
+\subsubsection{(a) What are the null and alternative hypotheses for this test?}\label{a-what-are-the-null-and-alternative-hypotheses-for-this-test-1}}
+
+Click for answer
+
+\emph{Answer:} Using the same notation as (3a), except denoting male/female populations, we get
+
+\[
+H_0: p_f = p_m \ \ H_A: p_f \neq p_m
+\]
+
+\hypertarget{b-what-is-the-standardized-test-statistic-1}{%
+\subsubsection{(b) What is the standardized test statistic?}\label{b-what-is-the-standardized-test-statistic-1}}
+
+Click for answer
+
+\emph{Answer:} Suppose we look at the difference \(p_m - p_f\). The observed difference is then 0.04 (0.71 - 0.67). This value is about 1.4 SEs above the hypothesized difference of 0:
+\[
+z = \dfrac{\textrm{statistic} - \textrm{null parameter}}{SE} = \dfrac{(0.71 - 0.67) - 0}{0.029} = 1.379
+\]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\FloatTok{0.04} \SpecialCharTok{{-}} \DecValTok{0}\NormalTok{)}\SpecialCharTok{/}\FloatTok{0.029}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 1.37931
+\end{verbatim}
+
+Note that the randomization distribution for the difference in sample proportions should look roughly like this (with the observed proportion difference denoted with a red X):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{curve}\NormalTok{(}\FunctionTok{dnorm}\NormalTok{(x,}\DecValTok{0}\NormalTok{,.}\DecValTok{029}\NormalTok{),}\AttributeTok{from=}\SpecialCharTok{{-}}\NormalTok{.}\DecValTok{1}\NormalTok{,}\AttributeTok{to=}\NormalTok{.}\DecValTok{1}\NormalTok{,}\AttributeTok{xlab=}\StringTok{"sample proportions"}\NormalTok{)}
+\FunctionTok{points}\NormalTok{(}\FloatTok{0.04}\NormalTok{,}\DecValTok{0}\NormalTok{,}\AttributeTok{pch=}\StringTok{"X"}\NormalTok{,}\AttributeTok{col=}\StringTok{"red"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_16_files/figure-latex/unnamed-chunk-6-1}
+
+\hypertarget{c-use-the-normal-distribution-to-find-the-p-value.-1}{%
+\subsubsection{(c) Use the normal distribution to find the p-value.}\label{c-use-the-normal-distribution-to-find-the-p-value.-1}}
+
+Click for answer
+
+\emph{Answer:} This is a two-tail test. Since the observed difference is less than 2 SEs away from 0 we know that the (two-tailed) p-value should be bigger than 0.05. We see that the p-value is 2(0.084) = 0.168.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1}\SpecialCharTok{{-}}\FunctionTok{pnorm}\NormalTok{(}\FloatTok{1.379}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{) }\CommentTok{\# proportion above z=1.379}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.08394738
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{2}\SpecialCharTok{*}\NormalTok{(}\DecValTok{1}\SpecialCharTok{{-}}\FunctionTok{pnorm}\NormalTok{(}\FloatTok{1.379}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{)) }\CommentTok{\# p{-}value for two{-}sided}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.1678948
+\end{verbatim}
+
+\hypertarget{d-what-is-the-conclusion-of-the-test-1}{%
+\subsubsection{(d) What is the conclusion of the test?}\label{d-what-is-the-conclusion-of-the-test-1}}
+
+Click for answer
+
+\emph{Answer:} The p-value is larger than a 5\% significance level, so we do not find evidence of a difference between men and women in the proportion that view divorce as morally acceptable. About 17\% of the time we would observe a difference in male/female views of 4 percentage points or greater just by chance.
 
 \hypertarget{part-basics-r}{%
 \chapter{(PART*) Basics R}\label{part-basics-r}}

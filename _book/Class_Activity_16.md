@@ -1,64 +1,160 @@
 # Class Activity 16
 
-## Example 1: Is the Economy a Top Priority? 
 
-A survey of 1,502 Americans in January 2012 found that 86% consider the economy a “top priority” for the president and congress.  In the section 3.2 handout, we gave the standard error for this sample proportion as 0.01, then this SE was used to compute a confidence interval. Show how this SE was computed using the appropriate SE formula from chapter 6. 
+## Example 1: Is Divorce Morally Acceptable?
 
-*Answer:*
+In a study, we find that 67% of women in a random sample view divorce as morally acceptable.  Does this provide evidence that more than 50% of women view divorce as morally acceptable?  The standard error for the estimate assuming the null hypothesis is true is 0.021.  
 
-We have a sample proportion of $\hat{p}= 0.86$. The SE of the sample proportion for a confidence interval is given by:
+#### (a)	 What are the null and alternative hypotheses for this test?
 
-$$S E=\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}=\sqrt{\frac{0.86(1-0.86)}{1502}}=0.0089 \approx 0.01$$
+<details><summary><red>Click for answer</red></summary>
+*Answer:* If $p$ denotes the proportion of woman who view divorce as morally acceptable in the population, then our hypotheses are
+$$
+H_0: p = 0.5 \ \ H_A: p > 0.5
+$$
+</details><br>
 
-## Example 2:  Movie Goers are More Likely to Watch at Home
+#### (b)	 What is the standardized test statistic?
+<details><summary><red>Click for answer</red></summary>
+*Answer:* The observed sample proportion is 0.67 with a standard error of 0.021. If the null is true, then we would expect the sampling distribution of the sample mean to be (approximately) normally distributed with a center of 0.50 and SE of 0.021. The standardized score for the sample proportion is then 
+$$
+z = \dfrac{\textrm{statistic} - \textrm{null parameter}}{SE} = \dfrac{0.67 - 0.50}{0.021} = 8.10
+$$
+The observed proportion is 8.1 SEs above the hypothesized value of 0.5.
 
-In a random sample of 500 movie goers in January 2013, 320 of them said they are more likely to wait and watch a new movie in the comfort of their own home.  Compute and interpret a 95% confidence interval for the proportion of movie goers who are more likely to watch a new movie from home.  
+```r
+(0.67 - 0.5)/0.021
+```
 
-*Answer:* 
+```
+[1] 8.095238
+```
+Note that the randomization distribution should look roughly like this (with the observed proportion denoted with a red X):
 
-We see that $\hat{p}=\frac{320}{500}=0.640$ (keep at least 3 decimal spots to ensure accuracy in your SE calculation!) The confidence interval is given by:
+```r
+curve(dnorm(x,0.5,.021),from=.3,to=.7,xlab="sample proportions")
+points(0.67,0,pch="X",col="red")
+```
 
-$$\text { Statistic }+/-Z^{*} S E$$
-
-$$\begin{array}{l}
-\hat{p} \pm z^{*} \cdot \sqrt{\frac{\hat{p}(1-\hat{p})}{n}} \\
-0.64 \pm 1.96 \cdot \sqrt{\frac{0.64(1-0.64)}{500}} \\
-0.64 \pm 0.042\\
-(0.598, 0.682)
-\end{array}$$
-(Make sure to use proportions in your CI, then convert to % at the end if you prefer a percentage interpretation.) We are 95% sure that the proportion of all movie goers who are more likely to wait and watch a new movie at home is between 0.598 and 0.682.
-
-## Example 3:  Sample Size and Margin of Error for Movie Goers
-
-(a)  What sample size is needed in example 2 if we want a margin of error within ±2%?  (Use the sample proportion from the original sample.)
+<img src="Class_Activity_16_files/figure-epub3/unnamed-chunk-2-1.png" width="100%" />
+</details><br>
 
 
-*Answer:*
+#### (c)	Use the normal distribution to find the p-value.
 
-$$\begin{array}{l}
-0.02=z^{*} \sqrt{\frac{\hat{p}(1-\hat{p})}{n}} \\
-n=\left(\frac{z^{*}}{0.02}\right)^{2} \hat{p}(1-\hat{p})\\\quad =\left(\frac{1.96}{0.02}\right)^{2} 0.64(1-0.64)=2212.76
-\end{array}$$
+<details><summary><red>Click for answer</red></summary>
+*Answer:* As we can see in the normal plot above, the p-value will be very small because the alternative is looking for big sample proportions. The p-value is the proportion of times we get a sample proportion as big, or bigger than, 0.67; or equivantly, the proportion of times we get a sample proportion that is at least 8.1 SEs above the hypothesized proportion. We would report a p-value that is less than 0.0001. 
 
-We need a sample size of at least n = 2,213 to have a margin of error this small.  This is substantially more than the sample size of 500 used in the actual survey. 
 
-(b)  What sample size is needed if we want a margin of error within ±2%, and if we use the conservative estimate of p = 0.5?  
+```r
+1-pnorm(8.10,0,1)
+```
 
-*Answer:*
+```
+[1] 2.220446e-16
+```
+</details><br>
 
-$$n=\left(\frac{1.96}{0.02}\right)^{2} 0.5(1-0.5)=2401$$
+#### (d)	What is the conclusion of the test?
+<details><summary><red>Click for answer</red></summary>
+*Answer:* The p-value is very small so we have very strong evidence that more than 50% of all women view divorce as morally acceptable.
+</details><br>
 
-We need a sample size of at least n = 2,401 to have a margin of error this small.  Notice that if we have less knowledge of the actual proportion, we need a larger sample size to arrive at the same margin of error.  
+#### (e)	Use the normal distribution to find a 99% confidence interval for the proportion of all women who view divorce as morally acceptable.  Interpret your answer. 
+<details><summary><red>Click for answer</red></summary>
+*Answer:* Without knowing the bootstrap SE, our best guess at it would be from the randomization distribution SE which is given as 0.021. Our 99% confidence interval will look like:
+$$
+statistic \pm z^*SE = 0.67 \pm z^* (0.021) 
+$$
+The $z^*$ for a 99% CI corresponds to the 99.5th percentile (90% in middle + 0.5% in the left tail). With $z^* = 2.576$, we get a 99% confidence interval of 0.616 to 0.724. 
 
-## Example 4:  Mendel’s green peas?
+```r
+qnorm(0.995)
+```
 
-One of Gregor Mendel’s famous genetic experiments dealt with raising pea plants.  According to Mendel’s genetic theory, under a certain set of conditions the proportion of pea plants that produce smooth green peas should be p=3/16 (0.1875).  A sample of n=556 plants from the experiment had 108 with smooth green peas.  Does this provide evidence of a problem with Mendel’s theory and that the proportion is different from 3/16?  Show all details of the test. 
+```
+[1] 2.575829
+```
 
-*Answer:* We are testing $H_{0}: p=0.1875$ vs $H_{a}: p \neq 0.1875$ where p represents the proportion of pea plans with smooth green peas. The sample proportion is $\hat{p}=\frac{108}{556}=0.1942$ and the sample size is $n=556$. The test statistic is:
+```r
+0.67 - 2.576*0.021
+```
 
-$$z=\frac{\text { Statistic }-\text { Null }}{S E}=\frac{\hat{p}-p_{0}}{\sqrt{\frac{p_{0}\left(1-p_{0}\right)}{n}}}=\frac{0.1942-0.1875}{\sqrt{\frac{0.1875(1-0.1875)}{556}}}=0.405$$
+```
+[1] 0.615904
+```
 
-This is a two-tail test, and we see that the area to the right of 0.405 in a normal distribution is 0.343 `(1-pnorm(0.405))`, so the p-value is 2(0.343) = 0.686.The R command is: `2*(1-pnorm(0.405))`
+```r
+0.67 + 2.576*0.021
+```
 
-We do not reject H0 and conclude that this sample does not provide evidence that the proportion of smooth green pea plants is different from the 3/16 that Mendel’s theory predicts. (It is worth pointing out that this does not “prove” Mendel’s theory, since we don’t “accept” $H_0$– we just find a lack of sufficient evidence to refute it. )
+```
+[1] 0.724096
+```
+</details><br>
+
+## Example 2:  Do Men and Women Differ in Opinions about Divorce?
+
+In the same study described above, we find that 71% of men view divorce as morally acceptable.  Use this and the information in the previous example to test whether there is a significant difference between men and women in how they view divorce.  The standard error for the difference in proportions under the null hypothesis that the proportions are equal is 0.029.
+
+#### (a)	 What are the null and alternative hypotheses for this test?
+<details><summary><red>Click for answer</red></summary>
+*Answer:* Using the same notation as (3a), except denoting male/female populations, we get
+
+$$
+H_0: p_f = p_m \ \ H_A: p_f \neq p_m
+$$
+</details><br>
+
+#### (b)	 What is the standardized test statistic?
+<details><summary><red>Click for answer</red></summary>
+*Answer:* Suppose we look at the difference $p_m - p_f$. The observed difference is then 0.04 (0.71 - 0.67). This value is about 1.4 SEs above the hypothesized difference of 0:
+$$
+z = \dfrac{\textrm{statistic} - \textrm{null parameter}}{SE} = \dfrac{(0.71 - 0.67) - 0}{0.029} = 1.379
+$$
+
+```r
+(0.04 - 0)/0.029
+```
+
+```
+[1] 1.37931
+```
+Note that the randomization distribution for the difference in sample proportions should look roughly like this (with the observed proportion difference denoted with a red X):
+
+```r
+curve(dnorm(x,0,.029),from=-.1,to=.1,xlab="sample proportions")
+points(0.04,0,pch="X",col="red")
+```
+
+<img src="Class_Activity_16_files/figure-epub3/unnamed-chunk-6-1.png" width="100%" />
+</details><br>
+
+#### (c)	Use the normal distribution to find the p-value.
+<details><summary><red>Click for answer</red></summary>
+*Answer:* This is a two-tail test. Since the observed difference is less than 2 SEs away from 0 we know that the (two-tailed) p-value should be bigger than 0.05. We see that the p-value is 2(0.084) = 0.168. 
+
+```r
+1-pnorm(1.379,0,1) # proportion above z=1.379
+```
+
+```
+[1] 0.08394738
+```
+
+```r
+2*(1-pnorm(1.379,0,1)) # p-value for two-sided
+```
+
+```
+[1] 0.1678948
+```
+</details><br>
+
+#### (d)	What is the conclusion of the test?
+<details><summary><red>Click for answer</red></summary>
+*Answer:* The p-value is larger than a 5% significance level, so we do not find evidence of a difference between men and women in the proportion that view divorce as morally acceptable. About 17% of the time we would observe a difference in male/female views of 4 percentage points or greater just by chance. 
+</details><br>
+
+
 

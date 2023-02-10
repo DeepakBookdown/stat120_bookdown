@@ -59,10 +59,11 @@
 <li><a class="" href="class-activity-13.html"><span class="header-section-number">13</span> Class Activity 13</a></li>
 <li><a class="active" href="class-activity-14.html"><span class="header-section-number">14</span> Class Activity 14</a></li>
 <li><a class="" href="class-activity-15.html"><span class="header-section-number">15</span> Class Activity 15</a></li>
+<li><a class="" href="class-activity-16.html"><span class="header-section-number">16</span> Class Activity 16</a></li>
 <li class="book-part">Basics R</li>
-<li><a class="" href="what-is-r.html"><span class="header-section-number">17</span> What is R?</a></li>
-<li><a class="" href="r-markdown.html"><span class="header-section-number">18</span> R Markdown</a></li>
-<li><a class="" href="helpful-r-codes.html"><span class="header-section-number">19</span> Helpful R codes</a></li>
+<li><a class="" href="what-is-r.html"><span class="header-section-number">18</span> What is R?</a></li>
+<li><a class="" href="r-markdown.html"><span class="header-section-number">19</span> R Markdown</a></li>
+<li><a class="" href="helpful-r-codes.html"><span class="header-section-number">20</span> Helpful R codes</a></li>
 </ul>
 
         <div class="book-extra">
@@ -121,34 +122,42 @@ H_0: \mu_{B5} - \mu_{G5} = 0 \ \ H_0: \mu_{B5} - \mu_{G5} \neq 0
   boy :  -0.10435    girl :  0.02906 
  Observed difference: -0.13341 
 
- Mean of permutation distribution: -7e-04 
- Standard error of permutation distribution: 0.26313 
- P-value:  0.6264 
+ Mean of permutation distribution: 0.00187 
+ Standard error of permutation distribution: 0.26276 
+ P-value:  0.6 
 
     *-------------*</code></pre>
 <ul>
-<li>What is the SE of this randomization distribution?</li>
-</ul>
-<p><em>Answer:</em> SE is about 0.26.</p>
-<ul>
-<li>What is the z-score for the observed difference in means using this distribution? Interpret the value.
+<li>What is the SE of this randomization distribution?
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> SE is about 0.26.</details>
 </li>
 </ul>
-<p><em>Answer:</em> The distribution has a center of 0 and SE of 0.26. The z-score is
+<p><br></p>
+<ul>
+<li>What is the z-score for the observed difference in means using this distribution? Interpret the value.
+
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> The distribution has a center of 0 and SE of 0.26. The z-score is
 <span class="math display">\[
 z = \dfrac{-0.13341 - 0}{0.26051} = -0.51
 \]</span>
-This means the observed difference of -0.133 is about 0.51 SEs below the hypothesized difference of 0.</p>
+This means the observed difference of -0.133 is about 0.51 SEs below the hypothesized difference of 0.</details>
+</li>
+</ul>
 <div class="sourceCode" id="cb325"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="op">-</span><span class="fl">0.13341</span><span class="op">/</span><span class="fl">0.26051</span> </span></code></pre></div>
 <pre><code>[1] -0.5121109</code></pre>
+
+<p><br></p>
 <ul>
-<li>How large or small would the observed difference in sample means need to be to reject the null hypothesis using a 5% significance level.</li>
+<li>How large or small would the observed difference in sample means need to be to reject the null hypothesis using a 5% significance level.
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> Since the distribution is bell-shaped, we can use the fact that about 5% of sample differences are further than 2 SE’s above/below the center difference of 0. Any sample difference this extreme will lead to a two-sided p-value that is less than the significance level of 5%. For this data, 2 SE’s is a sample difference of 0.521 so any observed difference that is more extreme than 0.521 would lead to rejecting the null hypothesis of no difference.</details>
+</li>
 </ul>
-<p><em>Answer:</em> Since the distribution is bell-shaped, we can use the fact that about 5% of sample differences are further than 2 SE’s above/below the center difference of 0. Any sample difference this extreme will lead to a two-sided p-value that is less than the significance level of 5%. For this data, 2 SE’s is a sample difference of 0.521 so any observed difference that is more extreme than 0.521 would lead to rejecting the null hypothesis of no difference.</p>
 <div class="sourceCode" id="cb327"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fl">2</span><span class="op">*</span><span class="fl">0.26051</span> </span></code></pre></div>
 <pre><code>[1] 0.52102</code></pre>
+
+<p><br></p>
 </div>
 <div id="b-interest-in-5-year-olds---ci" class="section level4" number="14.1.0.2">
 <h4>
@@ -156,11 +165,13 @@ This means the observed difference of -0.133 is about 0.51 SEs below the hypothe
 </h4>
 <p>Consider the 95% (bootstrap) CI for the true difference in mean interest <span class="math inline">\(\mu_{B5} - \mu_{G5}\)</span>.</p>
 <ul>
-<li>Will this interval contain the difference of 0?</li>
-</ul>
-<p><em>Answer:</em> Yes, since we didn’t reject the null difference of 0 using a 5% significance level (p-value = 0.617).</p>
-<ul>
-<li>Compute the bootstrap distribution. Does the CI capture 0?</li>
+<li>
+<p>Will this interval contain the difference of 0?</p>
+<details><summary><p><red>Click for answer</red></p>
+</summary><p><em>Answer:</em> Yes, since we didn’t reject the null difference of 0 using a 5% significance level (p-value = 0.617).</p>
+</details><p><br></p>
+</li>
+<li><p>Compute the bootstrap distribution. Does the CI capture 0?</p></li>
 </ul>
 <div class="sourceCode" id="cb329"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">7</span><span class="op">)</span></span>
@@ -177,16 +188,13 @@ This means the observed difference of -0.133 is about 0.51 SEs below the hypothe
 -0.6459180  0.3652884 
 
         *--------------*</code></pre>
-<div class="inline-figure"><img src="Class_Activity_14_files/figure-html/unnamed-chunk-5-1.png" width="100%"></div>
-<p><em>Answer:</em> Yes, the CI captures the difference of 0.</p>
-<ul>
-<li>What is the bootstrap SE? Is it similar to the randomization distribution SE?
-</li>
-</ul>
-<p><em>Answer:</em> SE is about 0.26, which is very similar to the randomization distribution SE.</p>
-<ul>
-<li>Sketch out both the bootstrap and randomization distributions. Make sure to accurately represent the center and variation of these distributions.</li>
-</ul>
+<img src="Class_Activity_14_files/figure-html/unnamed-chunk-5-1.png" width="100%"><details><summary><red>Click for answer</red></summary><em>Answer:</em> Yes, the CI captures the difference of 0.
+</details><br>
+- What is the bootstrap SE? Is it similar to the randomization distribution SE?
+
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> SE is about 0.26, which is very similar to the randomization distribution SE.</p>
+</details><p><br>
+- Sketch out both the bootstrap and randomization distributions. Make sure to accurately represent the center and variation of these distributions.</p>
 <div class="sourceCode" id="cb331"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/curve.html">curve</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">dnorm</a></span><span class="op">(</span><span class="va">x</span>,<span class="fl">0</span>,<span class="fl">.26</span><span class="op">)</span>,from<span class="op">=</span><span class="op">-</span><span class="fl">1</span>,to<span class="op">=</span><span class="fl">1</span>, ylab<span class="op">=</span><span class="st">""</span>,xlab<span class="op">=</span><span class="st">"sample mean differences"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html">abline</a></span><span class="op">(</span>v<span class="op">=</span><span class="fl">0</span>, lty<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span>
@@ -222,27 +230,31 @@ This means the observed difference of -0.133 is about 0.51 SEs below the hypothe
     *-------------*</code></pre>
 <ul>
 <li>What is the SE of this randomization distribution?
-<em>Answer:</em> SE is about 0.225.</li>
-</ul>
-<ul>
-<li>What is the z-score for the observed difference in means using this distribution? Interpret the value.
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> SE is about 0.225.</details>
 </li>
 </ul>
-<p><em>Answer:</em> The distribution has a center of 0 and SE of 0.225. The z-score is
+<p><br></p>
+<ul>
+<li>What is the z-score for the observed difference in means using this distribution? Interpret the value.
+
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> The distribution has a center of 0 and SE of 0.225. The z-score is
 <span class="math display">\[
 z = \dfrac{0.53505 - 0}{0.22539 } = 2.37
 \]</span>
-This means the observed difference of 0.535 is about 2.37 SEs above the hypothesized difference of 0.</p>
+This means the observed difference of 0.535 is about 2.37 SEs above the hypothesized difference of 0.</details>
+</li>
+</ul>
 <div class="sourceCode" id="cb335"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fl">0.53505</span><span class="op">/</span><span class="fl">0.22539</span> </span></code></pre></div>
 <pre><code>[1] 2.373885</code></pre>
-<ul>
-<li>How large or small would the observed difference in sample means need to be to reject the null hypothesis using a 5% significance level.</li>
-</ul>
-<p><em>Answer:</em> Since the distribution is bell-shaped, we can use the fact that about 5% of sample differences are further than 2 SE’s above/below the center difference of 0. Any sample difference this extreme will lead to a two-sided p-value that is less than the significance level of 5%. For this data, 2 SE’s is a sample difference of 0.451 so any observed difference that is more extreme than 0.451 would lead to rejecting the null hypothesis of no difference.</p>
+
+<br>
+- How large or small would the observed difference in sample means need to be to reject the null hypothesis using a 5% significance level.
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> Since the distribution is bell-shaped, we can use the fact that about 5% of sample differences are further than 2 SE’s above/below the center difference of 0. Any sample difference this extreme will lead to a two-sided p-value that is less than the significance level of 5%. For this data, 2 SE’s is a sample difference of 0.451 so any observed difference that is more extreme than 0.451 would lead to rejecting the null hypothesis of no difference.</p>
 <div class="sourceCode" id="cb337"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fl">2</span><span class="op">*</span><span class="fl">0.22539</span> </span></code></pre></div>
 <pre><code>[1] 0.45078</code></pre>
+</details><p><br></p>
 </div>
 <div id="d-interest-in-6-and-7-year-olds---ci" class="section level4" number="14.1.0.4">
 <h4>
@@ -250,11 +262,13 @@ This means the observed difference of 0.535 is about 2.37 SEs above the hypothes
 </h4>
 <p>Redo part (b) for 6 and 7 year olds.</p>
 <ul>
-<li>Will this interval contain the difference of 0?</li>
-</ul>
-<p><em>Answer:</em> No, since we rejected the null difference of 0 using a 5% significance level (p-value = 0.015).</p>
-<ul>
-<li>Compute the bootstrap distribution. Does the CI capture 0?</li>
+<li>
+<p>Will this interval contain the difference of 0?</p>
+<details><summary><p><red>Click for answer</red></p>
+</summary><p><em>Answer:</em> No, since we rejected the null difference of 0 using a 5% significance level (p-value = 0.015).</p>
+</details><p><br></p>
+</li>
+<li><p>Compute the bootstrap distribution. Does the CI capture 0?</p></li>
 </ul>
 <div class="sourceCode" id="cb339"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/CarletonStats/man/boot.html">boot</a></span><span class="op">(</span><span class="va">interest</span> <span class="op">~</span> <span class="va">gender</span>, data <span class="op">=</span> <span class="va">study4age67</span><span class="op">)</span></span></code></pre></div>
@@ -270,14 +284,16 @@ This means the observed difference of 0.535 is about 2.37 SEs above the hypothes
 0.1259895 0.9348764 
 
         *--------------*</code></pre>
-<div class="inline-figure"><img src="Class_Activity_14_files/figure-html/unnamed-chunk-10-1.png" width="100%"></div>
-<p><em>Answer:</em> No, the CI does not capture the difference of 0.</p>
+<img src="Class_Activity_14_files/figure-html/unnamed-chunk-10-1.png" width="100%"><details><summary><red>Click for answer</red></summary><em>Answer:</em> No, the CI does not capture the difference of 0.
+</details><p><br></p>
 <ul>
-<li>What is the bootstrap SE? Is it similar to the randomization distribution SE?</li>
-</ul>
-<p><em>Answer:</em> SE is about 0.21, which is very similar to the randomization distribution SE.</p>
-<ul>
-<li>Sketch out both the bootstrap and randomization distributions. Make sure to accurately represent the center and variation of these distributions.</li>
+<li>
+<p>What is the bootstrap SE? Is it similar to the randomization distribution SE?</p>
+<details><summary><p><red>Click for answer</red></p>
+</summary><p><em>Answer:</em> SE is about 0.21, which is very similar to the randomization distribution SE.</p>
+</details><p><br></p>
+</li>
+<li><p>Sketch out both the bootstrap and randomization distributions. Make sure to accurately represent the center and variation of these distributions.</p></li>
 </ul>
 <div class="sourceCode" id="cb341"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/curve.html">curve</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">dnorm</a></span><span class="op">(</span><span class="va">x</span>,<span class="fl">0</span>,<span class="fl">.22</span><span class="op">)</span>,from<span class="op">=</span><span class="op">-</span><span class="fl">.7</span>,to<span class="op">=</span><span class="fl">1.4</span>, ylab<span class="op">=</span><span class="st">""</span>,xlab<span class="op">=</span><span class="st">"sample mean differences"</span><span class="op">)</span></span>
@@ -332,26 +348,34 @@ This means the observed difference of 0.535 is about 2.37 SEs above the hypothes
         *--------------*</code></pre>
 <div class="inline-figure"><img src="Class_Activity_14_files/figure-html/unnamed-chunk-13-2.png" width="100%"></div>
 <ul>
-<li>Does the observed difference get closer or further from 0 with the case omitted? Explain why it changes.</li>
+<li>
+<p>Does the observed difference get closer or further from 0 with the case omitted? Explain why it changes.</p>
+<details><summary><p><red>Click for answer</red></p>
+</summary><p><em>Answer:</em> The very low case pulls down the mean response for boys (with: <span class="math inline">\(\bar{x}_{B5} = -0.10435\)</span>, without: <span class="math inline">\(\bar{x}_{B5} = 0.01417\)</span>). Since the girl mean response doesn’t change (<span class="math inline">\(\bar{x}_{G5} = 0.02906\)</span>), omitting this case will make the <em>two means closer together</em> which makes their difference closer to 0 (with: <span class="math inline">\(\bar{x}_{B5} - \bar{x}_{G5} = -0.13341\)</span>, without: <span class="math inline">\(\bar{x}_{B5} - \bar{x}_{G5} = -0.01488\)</span>).</p>
+</details><p><br></p>
+</li>
+<li>
+<p>Do the SEs of the distributions (bootstrap and randomization) get smaller or larger with the case omitted? Explain why these change.</p>
+<details><summary><p><red>Click for answer</red></p>
+</summary><p><em>Answer:</em> The very low case creates larger variability in the sample mean for boys, which in turn makes the SE for the sample mean difference more variable (with: SE about 0.26, without: SE about 0.24).</p>
+</details><p><br></p>
+</li>
 </ul>
-<p><em>Answer:</em> The very low case pulls down the mean response for boys (with: <span class="math inline">\(\bar{x}_{B5} = -0.10435\)</span>, without: <span class="math inline">\(\bar{x}_{B5} = 0.01417\)</span>). Since the girl mean response doesn’t change (<span class="math inline">\(\bar{x}_{G5} = 0.02906\)</span>), omitting this case will make the <em>two means closer together</em> which makes their difference closer to 0 (with: <span class="math inline">\(\bar{x}_{B5} - \bar{x}_{G5} = -0.13341\)</span>, without: <span class="math inline">\(\bar{x}_{B5} - \bar{x}_{G5} = -0.01488\)</span>).</p>
-<ul>
-<li>Do the SEs of the distributions (bootstrap and randomization) get smaller or larger with the case omitted? Explain why these change.</li>
-</ul>
-<p><em>Answer:</em> The very low case creates larger variability in the sample mean for boys, which in turn makes the SE for the sample mean difference more variable (with: SE about 0.26, without: SE about 0.24).</p>
 <ul>
 <li>Compute the z-score for the observed difference in means using randomization distribution. Is this value futher or closer to a z-score of 0 with the case omitted? Explain why it changes.</li>
 </ul>
-<p><em>Answer:</em> The z-score is closer to 0 with the case removed (with: <span class="math inline">\(z = -0.51\)</span>, without: <span class="math inline">\(z = -0.061\)</span>)
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> The z-score is closer to 0 with the case removed (with: <span class="math inline">\(z = -0.51\)</span>, without: <span class="math inline">\(z = -0.061\)</span>)
 <span class="math display">\[
 z = \dfrac{-0.01488  - 0}{0.24569} = -0.061
 \]</span>
-The z-score is closer to 0 because the sample mean difference is closer to 0 with the case removed, and this change is greater than the relatively small decrease in SE that we noted with the case removed.</p>
+The z-score is closer to 0 because the sample mean difference is closer to 0 with the case removed, and this change is greater than the relatively small decrease in SE that we noted with the case removed.
+</details><p><br></p>
 <ul>
-<li>Does the p-value get smaller or larger (or doesn’t change) with the case omitted? Explain why it changes.</li>
+<li>Does the p-value get smaller or larger (or doesn’t change) with the case omitted? Explain why it changes.
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> The p-value is larger with the case removed (with: p-value = 0.617, without: p-value = 0.944). This is because the observed difference is closer to 0 (fewer SE away) with the case omitted.
+</details><br>
+</li>
 </ul>
-<p><em>Answer:</em> The p-value is larger with the case removed (with: p-value = 0.617, without: p-value = 0.944). This is because the observed difference is closer to 0 (fewer SE away) with the case omitted.</p>
-
 </div>
 </div>
 </div>
