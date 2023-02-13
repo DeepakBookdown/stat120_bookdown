@@ -117,7 +117,7 @@
 
 \title{Stat 120}
 \author{Deepak Bastola}
-\date{2023-02-09}
+\date{2023-02-13}
 
 \begin{document}
 \maketitle
@@ -166,16 +166,16 @@ Click for answer
 
 \begin{verbatim}
    ID Greeting  Male      Age
-1   1    Hello  TRUE 50.06742
-2   2    Hello FALSE 59.41888
-3   3    Hello  TRUE 54.40156
-4   4    Hello FALSE 34.49491
-5   5    Hello  TRUE 41.67678
-6   6  Goodbye FALSE 39.44751
-7   7  Goodbye  TRUE 44.97138
-8   8  Goodbye FALSE 35.29466
-9   9  Goodbye  TRUE 44.07278
-10 10  Goodbye FALSE 40.84015
+1   1    Hello  TRUE 47.89424
+2   2    Hello FALSE 41.59957
+3   3    Hello  TRUE 22.23021
+4   4    Hello FALSE 57.31547
+5   5    Hello  TRUE 46.52537
+6   6  Goodbye FALSE 52.93826
+7   7  Goodbye  TRUE 33.70007
+8   8  Goodbye FALSE 49.17663
+9   9  Goodbye  TRUE 57.19203
+10 10  Goodbye FALSE 37.58463
 \end{verbatim}
 
 \emph{Answer:} We see a data frame with four columns, where the first column is an \texttt{identifier} for the cases. We have information on the greeting types, whether male or not, and age on these cases in the remaining columns.
@@ -399,7 +399,7 @@ Run the following command to obtain a SRS of 10 words from the 268 that are in t
 \end{Shaded}
 
 \begin{verbatim}
- [1] 159 209  15  87 141 265 261 175  31 185
+ [1] 201  12 147  62  33  44 158  43  36 267
 \end{verbatim}
 
 This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
@@ -415,17 +415,17 @@ We will \emph{subset} the data set \texttt{pop} to obtain only the sampled rows 
 \end{Shaded}
 
 \begin{verbatim}
-    position size   word
-159      159    3    did
-209      209    4   take
-15        15    3    new
-87        87    4   that
-141      141    5  world
-265      265    6 perish
-261      261    3    the
-175      175    4   work
-31        31    3    Now
-185      185    5  nobly
+    position size      word
+201      201    6    before
+12        12    4      this
+147      147    8 remember,
+62        62    2        of
+33        33    3       are
+44        44    2        or
+158      158    4      they
+43        43    6   nation,
+36        36    1         a
+267      267    3       the
 \end{verbatim}
 
 \begin{enumerate}
@@ -446,7 +446,7 @@ The word lengths in part (b) are the data for your sample. You can compute your 
 \end{Shaded}
 
 \begin{verbatim}
- [1] 3 4 3 4 5 6 3 4 3 5
+ [1] 6 4 8 2 3 2 4 6 1 3
 \end{verbatim}
 
 Then find the mean of these values:
@@ -458,7 +458,7 @@ Then find the mean of these values:
 \end{Shaded}
 
 \begin{verbatim}
-[1] 4
+[1] 3.9
 \end{verbatim}
 
 How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?
@@ -3936,7 +3936,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
- [1]  72  52  52 185 147  85 125 147 147  85
+ [1] 147  85 185 132 147 185 125  85  85 132
 \end{verbatim}
 
 (d). Where will be bootstrap distribution be centered? What shape do we expect it to have?
@@ -4293,12 +4293,12 @@ The \texttt{boot(y\ \textasciitilde{}\ x,\ data=)} command generates 10000 boots
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -2.26095 
- Mean of bootstrap distribution: -2.27178 
- Standard error of bootstrap distribution: 0.77031 
+ Mean of bootstrap distribution: -2.27141 
+ Standard error of bootstrap distribution: 0.77493 
 
  Bootstrap percentile interval
       2.5%      97.5% 
--3.7733452 -0.7633095 
+-3.7943214 -0.7085595 
 
         *--------------*
 \end{verbatim}
@@ -5119,9 +5119,9 @@ Then load the \texttt{CarletonStats} package and run the \texttt{permTest(y\ \te
   Caffeine :  12.25      Sleep :  15.25 
  Observed difference: -3 
 
- Mean of permutation distribution: -0.01148 
- Standard error of permutation distribution: 1.51046 
- P-value:  0.0534 
+ Mean of permutation distribution: -0.01887 
+ Standard error of permutation distribution: 1.52622 
+ P-value:  0.0524 
 
     *-------------*
 \end{verbatim}
@@ -5235,8 +5235,8 @@ Click for answer
   NonRes :  6405.263     Res :  2821.053 
  Observed difference  NonRes - Res : 3584.211 
 
- Mean of permutation distribution: -4.25569 
- Standard error of permutation distribution: 952.2308 
+ Mean of permutation distribution: 7.99922 
+ Standard error of permutation distribution: 945.3004 
  P-value:  1e-04 
 
     *-------------*
@@ -5413,9 +5413,9 @@ H_0: \mu_{B5} - \mu_{G5} = 0 \ \ H_0: \mu_{B5} - \mu_{G5} \neq 0
   boy :  -0.10435    girl :  0.02906 
  Observed difference: -0.13341 
 
- Mean of permutation distribution: 0.00067 
- Standard error of permutation distribution: 0.26163 
- P-value:  0.6074 
+ Mean of permutation distribution: -0.00116 
+ Standard error of permutation distribution: 0.26155 
+ P-value:  0.6124 
 
     *-------------*
 \end{verbatim}
@@ -6244,6 +6244,92 @@ Click for answer
 Click for answer
 
 \emph{Answer:} The p-value is larger than a 5\% significance level, so we do not find evidence of a difference between men and women in the proportion that view divorce as morally acceptable. About 17\% of the time we would observe a difference in male/female views of 4 percentage points or greater just by chance.
+
+\hypertarget{class-activity-17}{%
+\chapter{Class Activity 17}\label{class-activity-17}}
+
+\hypertarget{example-1-is-the-economy-a-top-priority}{%
+\section{Example 1: Is the Economy a Top Priority?}\label{example-1-is-the-economy-a-top-priority}}
+
+A survey of 1,502 Americans in January 2012 found that 86\% consider the economy a ``top priority'' for the president and congress. In the section 3.2 handout, we gave the standard error for this sample proportion as 0.01, then this SE was used to compute a confidence interval. Show how this SE was computed using the appropriate SE formula from chapter 6.
+
+Click for answer
+
+\emph{Answer:} We have a sample proportion of \(\hat{p}= 0.86\). The SE of the sample proportion for a confidence interval is given by:
+
+\[S E=\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}=\sqrt{\frac{0.86(1-0.86)}{1502}}=0.0089 \approx 0.01\]
+
+\hypertarget{example-2-movie-goers-are-more-likely-to-watch-at-home}{%
+\section{Example 2: Movie Goers are More Likely to Watch at Home}\label{example-2-movie-goers-are-more-likely-to-watch-at-home}}
+
+In a random sample of 500 movie goers in January 2013, 320 of them said they are more likely to wait and watch a new movie in the comfort of their own home. Compute and interpret a 95\% confidence interval for the proportion of movie goers who are more likely to watch a new movie from home.
+
+Click for answer
+
+\emph{Answer:} We see that \(\hat{p}=\frac{320}{500}=0.640\) (keep at least 3 decimal spots to ensure accuracy in your SE calculation!) The confidence interval is given by:
+
+\[\text { Statistic }+/-Z^{*} S E\]
+
+\[\begin{array}{l}
+\hat{p} \pm z^{*} \cdot \sqrt{\frac{\hat{p}(1-\hat{p})}{n}} \\
+0.64 \pm 1.96 \cdot \sqrt{\frac{0.64(1-0.64)}{500}} \\
+0.64 \pm 0.042\\
+(0.598, 0.682)
+\end{array}\]
+
+(Make sure to use proportions in your CI, then convert to \% at the end if you prefer a percentage interpretation.) We are 95\% sure that the proportion of all movie goers who are more likely to wait and watch a new movie at home is between 0.598 and 0.682.
+
+\hypertarget{example-3-sample-size-and-margin-of-error-for-movie-goers}{%
+\section{Example 3: Sample Size and Margin of Error for Movie Goers}\label{example-3-sample-size-and-margin-of-error-for-movie-goers}}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item
+  What sample size is needed in example 2 if we want a margin of error within ±2\%? (Use the sample proportion from the original sample.)
+\end{enumerate}
+
+Click for answer
+
+\emph{Answer:}
+
+\[\begin{array}{l}
+0.02=z^{*} \sqrt{\frac{\hat{p}(1-\hat{p})}{n}} \\
+n=\left(\frac{z^{*}}{0.02}\right)^{2} \hat{p}(1-\hat{p})\\\quad =\left(\frac{1.96}{0.02}\right)^{2} 0.64(1-0.64)=2212.76
+\end{array}\]
+
+We need a sample size of at least n = 2,213 to have a margin of error this small. This is substantially more than the sample size of 500 used in the actual survey.
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  What sample size is needed if we want a margin of error within ±2\%, and if we use the conservative estimate of p = 0.5?
+\end{enumerate}
+
+Click for answer
+
+\emph{Answer:}
+
+\[n=\left(\frac{1.96}{0.02}\right)^{2} 0.5(1-0.5)=2401\]
+
+We need a sample size of at least n = 2,401 to have a margin of error this small. Notice that if we have less knowledge of the actual proportion, we need a larger sample size to arrive at the same margin of error.
+
+\hypertarget{example-4-mendels-green-peas}{%
+\section{Example 4: Mendel's green peas?}\label{example-4-mendels-green-peas}}
+
+One of Gregor Mendel's famous genetic experiments dealt with raising pea plants. According to Mendel's genetic theory, under a certain set of conditions the proportion of pea plants that produce smooth green peas should be p=3/16 (0.1875). A sample of n=556 plants from the experiment had 108 with smooth green peas. Does this provide evidence of a problem with Mendel's theory and that the proportion is different from 3/16? Show all details of the test.
+
+Click for answer
+
+\emph{Answer:} We are testing \(H_{0}: p=0.1875\) vs \(H_{a}: p \neq 0.1875\) where p represents the proportion of pea plans with smooth green peas. The sample proportion is \(\hat{p}=\frac{108}{556}=0.1942\) and the sample size is \(n=556\). The test statistic is:
+
+\[z=\frac{\text { Statistic }-\text { Null }}{S E}=\frac{\hat{p}-p_{0}}{\sqrt{\frac{p_{0}\left(1-p_{0}\right)}{n}}}=\frac{0.1942-0.1875}{\sqrt{\frac{0.1875(1-0.1875)}{556}}}=0.405\]
+
+This is a two-tail test, and we see that the area to the right of 0.405 in a normal distribution is 0.343 \texttt{(1-pnorm(0.405))}, so the p-value is 2(0.343) = 0.686.The R command is: \texttt{2*(1-pnorm(0.405))}
+
+We do not reject H0 and conclude that this sample does not provide evidence that the proportion of smooth green pea plants is different from the 3/16 that Mendel's theory predicts. (It is worth pointing out that this does not ``prove'' Mendel's theory, since we don't ``accept'' \(H_0\)-- we just find a lack of sufficient evidence to refute it. )
 
 \hypertarget{part-basics-r}{%
 \chapter{(PART*) Basics R}\label{part-basics-r}}

@@ -125,6 +125,11 @@ a-what-are-the-null-and-alternative-hypotheses-for-this-test-1
 b-what-is-the-standardized-test-statistic-1
 c-use-the-normal-distribution-to-find-the-p-value.-1
 d-what-is-the-conclusion-of-the-test-1
+class-activity-17
+example-1-is-the-economy-a-top-priority
+example-2-movie-goers-are-more-likely-to-watch-at-home
+example-3-sample-size-and-margin-of-error-for-movie-goers
+example-4-mendels-green-peas
 part-basics-r
 what-is-r
 what-is-rstudio
