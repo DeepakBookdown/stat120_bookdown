@@ -61,10 +61,11 @@
 <li><a class="" href="class-activity-15.html"><span class="header-section-number">15</span> Class Activity 15</a></li>
 <li><a class="" href="class-activity-16.html"><span class="header-section-number">16</span> Class Activity 16</a></li>
 <li><a class="" href="class-activity-17.html"><span class="header-section-number">17</span> Class Activity 17</a></li>
+<li><a class="" href="class-activity-18.html"><span class="header-section-number">18</span> Class Activity 18</a></li>
 <li class="book-part">Basics R</li>
-<li><a class="" href="what-is-r.html"><span class="header-section-number">19</span> What is R?</a></li>
-<li><a class="" href="r-markdown.html"><span class="header-section-number">20</span> R Markdown</a></li>
-<li><a class="" href="helpful-r-codes.html"><span class="header-section-number">21</span> Helpful R codes</a></li>
+<li><a class="" href="what-is-r.html"><span class="header-section-number">20</span> What is R?</a></li>
+<li><a class="" href="r-markdown.html"><span class="header-section-number">21</span> R Markdown</a></li>
+<li><a class="" href="helpful-r-codes.html"><span class="header-section-number">22</span> Helpful R codes</a></li>
 </ul>
 
         <div class="book-extra">
@@ -100,7 +101,7 @@
 <div class="sourceCode" id="cb263"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">resample</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">prices</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="va">resample</span></span></code></pre></div>
-<pre><code> [1]  93  87  52  93  52  87  52 147 132  72</code></pre>
+<pre><code> [1]  85  85  72  52 132 132  52  52 125 185</code></pre>
 <p>(d). Where will be bootstrap distribution be centered? What shape do we expect it to have?</p>
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> It will be centered approximately at the sample mean of 100.1 and we expect it to be roughly bellshaped (it may be a bit skewed since the sample size of 10 is smallish).
 </details><p><br></p>
@@ -301,12 +302,12 @@ We see that 98.6 is not on the interval.</p>
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -2.26095 
- Mean of bootstrap distribution: -2.25399 
- Standard error of bootstrap distribution: 0.77795 
+ Mean of bootstrap distribution: -2.26143 
+ Standard error of bootstrap distribution: 0.77291 
 
  Bootstrap percentile interval
       2.5%      97.5% 
--3.7495476 -0.7228214 
+-3.7542976 -0.7375476 
 
         *--------------*</code></pre>
 <div class="inline-figure"><img src="Class_Activity_8_files/figure-html/unnamed-chunk-10-1.png" width="100%"></div>
@@ -509,7 +510,7 @@ yes, registered under the customers name
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-02-13.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-02-15.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
