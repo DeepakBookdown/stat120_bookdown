@@ -62,10 +62,11 @@
 <li><a class="" href="class-activity-16.html"><span class="header-section-number">16</span> Class Activity 16</a></li>
 <li><a class="" href="class-activity-17.html"><span class="header-section-number">17</span> Class Activity 17</a></li>
 <li><a class="active" href="class-activity-18.html"><span class="header-section-number">18</span> Class Activity 18</a></li>
+<li><a class="" href="class-activity-19.html"><span class="header-section-number">19</span> Class Activity 19</a></li>
 <li class="book-part">Basics R</li>
-<li><a class="" href="what-is-r.html"><span class="header-section-number">20</span> What is R?</a></li>
-<li><a class="" href="r-markdown.html"><span class="header-section-number">21</span> R Markdown</a></li>
-<li><a class="" href="helpful-r-codes.html"><span class="header-section-number">22</span> Helpful R codes</a></li>
+<li><a class="" href="what-is-r.html"><span class="header-section-number">21</span> What is R?</a></li>
+<li><a class="" href="r-markdown.html"><span class="header-section-number">22</span> R Markdown</a></li>
+<li><a class="" href="helpful-r-codes.html"><span class="header-section-number">23</span> Helpful R codes</a></li>
 </ul>
 
         <div class="book-extra">
@@ -92,6 +93,40 @@ We have a 1994 sample proportion of <span class="math inline">\(\hat{p}_{1994} =
 <span class="header-section-number">18.2</span> Example 2: Accuracy of Lie Detectors<a class="anchor" aria-label="anchor" href="#example-2-accuracy-of-lie-detectors"><i class="fas fa-link"></i></a>
 </h2>
 <p>Participants in a study to evaluate the accuracy of lie detectors were divided into two groups, with one group reading true material and the other group reading false material, while connected to a lie detector. Both groups received electric shocks to add stress. The two way table indicates whether the participants were lying or telling the truth and also whether the lie detector indicated they were lying or not.</p>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="24%">
+<col width="32%">
+<col width="31%">
+<col width="11%">
+</colgroup>
+<thead><tr class="header">
+<th> </th>
+<th>Detector Says Lying</th>
+<th>Detector Says Not</th>
+<th>Total</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Person Lying</td>
+<td>31</td>
+<td>17</td>
+<td>48</td>
+</tr>
+<tr class="even">
+<td>Person Not</td>
+<td>27</td>
+<td>21</td>
+<td>48</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td>58</td>
+<td>38</td>
+<td>96</td>
+</tr>
+</tbody>
+</table></div>
 <div id="a-are-the-conditions-met-for-using-the-normal-distribution" class="section level3" number="18.2.1">
 <h3>
 <span class="header-section-number">18.2.1</span> (a) Are the conditions met for using the normal distribution?<a class="anchor" aria-label="anchor" href="#a-are-the-conditions-met-for-using-the-normal-distribution"><i class="fas fa-link"></i></a>
@@ -111,11 +146,10 @@ We have a 1994 sample proportion of <span class="math inline">\(\hat{p}_{1994} =
 <span class="header-section-number">18.2.3</span> (c) Test to see if there is a difference in the proportion of times the lie detector says the person is lying, depending on whether the person is lying or telling the truth. Show all details of the hypothesis test.<a class="anchor" aria-label="anchor" href="#c-test-to-see-if-there-is-a-difference-in-the-proportion-of-times-the-lie-detector-says-the-person-is-lying-depending-on-whether-the-person-is-lying-or-telling-the-truth.-show-all-details-of-the-hypothesis-test."><i class="fas fa-link"></i></a>
 </h3>
 <details><summary><red>Click for answer</red></summary><p><em>Answer:</em></p>
-<p>We are testing <span class="math inline">\(H_0:p_L = p_N\)</span> vs <span class="math inline">\(H_a:p_L \neq p_N\)</span>.</p>
-<p>The test statistic is</p>
+<p>We are testing <span class="math inline">\(H_0:p_L = p_N\)</span> vs <span class="math inline">\(H_a:p_L \neq p_N\)</span>. The test statistic is</p>
 <p><span class="math display">\[z = \frac{statistic-null}{SE} = \frac{(\hat{p}_L - \hat{p}_N) - 0}{\sqrt{\frac{\hat{p}(1-\hat{p})}{n_l} + \frac{\hat{p}(1-\hat{p})}{n_N}}} = \frac{0.6458 - 0.5625}{\sqrt{\frac{0.6042(1-0.6042)}{48}} + \frac{0.6042*(1-0.6042)}{48}} = 0.834 \]</span></p>
 <p>This is a two-tail test, and the area to the right of 0.834 in a normal distribution is 0.202 (1-pnorm(0.834)), so the p-value is 2(0.202) = 0.404. The R command is: 2*(1-pnorm(0.834))</p>
-We fail to reject H0 and conclude that there is not enough evidence that a lie detector can tell whether a person is lying or telling the truth.
+<p>We fail to reject H0 and conclude that there is not enough evidence that a lie detector can tell whether a person is lying or telling the truth.</p>
 </details><p><br></p>
 </div>
 </div>
@@ -124,12 +158,41 @@ We fail to reject H0 and conclude that there is not enough evidence that a lie d
 <span class="header-section-number">18.3</span> Example 3: Smoking and Pregnancy Rate?<a class="anchor" aria-label="anchor" href="#example-3-smoking-and-pregnancy-rate"><i class="fas fa-link"></i></a>
 </h2>
 <p>Does smoking negatively affect a person’s ability to become pregnant? A study collected data on 678 women who were trying to get pregnant. The two-way table shows the proportion who successfully became pregnant during the first cycle trying and smoking status. Find a 90% confidence interval for the difference in proportion of women who get pregnant, between smokers and non-smokers. Interpret the interval in context.</p>
-<p>The conditions are met for using the normal distribution (at least 10 values in each cell of the table). We see that the proportion of smokers who got pregnant is 38/135 = 0.281 while the proportion of non-smokers who got pregnant is 206/543 = 0.379. The confidence interval is given by:</p>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th> </th>
+<th>Smoker</th>
+<th>Non-smoker</th>
+<th>Total</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Pregnant</td>
+<td>38</td>
+<td>206</td>
+<td>244</td>
+</tr>
+<tr class="even">
+<td>Not Pregnant</td>
+<td>97</td>
+<td>337</td>
+<td>434</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td>135</td>
+<td>543</td>
+<td>678</td>
+</tr>
+</tbody>
+</table></div>
+<details><summary><red>Click for answer</red></summary><p>The conditions are met for using the normal distribution (at least 10 values in each cell of the table). We see that the proportion of smokers who got pregnant is 38/135 = 0.281 while the proportion of non-smokers who got pregnant is 206/543 = 0.379. The confidence interval is given by:</p>
 <p><span class="math display">\[statistic \pm z^* \cdot SE \]</span>
 <span class="math display">\[(\hat{p}_S - \hat{p}_N) \pm z^* \cdot \sqrt{\frac{\hat{p}_S(1- \hat{p}_S)}{n_S} + \frac{\hat{p}_N(1- \hat{p}_N)}{n_N}} \]</span></p>
 <p><span class="math display">\[(0.281 - 0.379) \pm 1.645\cdot \sqrt{\frac{0.281(1-0.281)}{135} + \frac{0.379(1-0.379)}{543}} \]</span>
 <span class="math display">\[-0.098 \pm 0.072 = (-0.170, -0.026) \]</span>
 We are 90% sure that the proportion of smokers who get pregnant in the first cycle is between 0.170 and 0.026 less than the proportion of non-smokers who get pregnant on the first cycle. Note that if we had subtracted the other way, the interval would have only positive values, but the interpretation would be the same.</p>
+</details><p><br></p>
 </div>
 <div id="example-4-florida-lakes-ph" class="section level2" number="18.4">
 <h2>
@@ -466,7 +529,7 @@ Using the results without the two outliers, interpret the 95% CI given in this o
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="class-activity-17.html"><span class="header-section-number">17</span> Class Activity 17</a></div>
-<div class="next"><a href="what-is-r.html"><span class="header-section-number">20</span> What is R?</a></div>
+<div class="next"><a href="class-activity-19.html"><span class="header-section-number">19</span> Class Activity 19</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
@@ -501,7 +564,7 @@ Using the results without the two outliers, interpret the 95% CI given in this o
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-02-15.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-02-17.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

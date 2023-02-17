@@ -21,13 +21,11 @@ $$SE = \sqrt{\frac{\hat{p}_{1994} (1 - \hat{p}_{1994} )}{n_{1994}} + \frac{\hat{
 Participants in a study to evaluate the accuracy of lie detectors were divided into two groups, with one group reading true material and the other group reading false material, while connected to a lie detector.  Both groups received electric shocks to add stress.  The two way table indicates whether the participants were lying or telling the truth and also whether the lie detector indicated they were lying or not.  
 
 
-\begin{tabular}{|c|c|c|c|} \hline
-& {Detector Says Lying} & {Detector Says Not} & {Total}\\  \hline
-{Person Lying} & 31 & 17 & 48 \\ \hline
-{Person Not Lying} & 27 & 21 & 48 \\ \hline
-{Total} & 58 & 38 & 96 \\ \hline
-\end{tabular}
-
+|     &nbsp;          | Detector Says Lying | Detector Says Not | Total |
+|---------------|--------------------|-------------------|-------|
+| Person Lying  | 31                 | 17                | 48    |
+| Person Not    | 27                 | 21                | 48    |
+| Total         | 58                 | 38                | 96    |
 
 ### (a)  Are the conditions met for using the normal distribution?
 
@@ -49,9 +47,7 @@ Participants in a study to evaluate the accuracy of lie detectors were divided i
 
 *Answer:*
 
-We are testing $H_0:p_L = p_N$   vs   $H_a:p_L \neq p_N$.    
-
-The test statistic is
+We are testing $H_0:p_L = p_N$   vs   $H_a:p_L \neq p_N$. The test statistic is
 
 $$z = \frac{statistic-null}{SE} = \frac{(\hat{p}_L - \hat{p}_N) - 0}{\sqrt{\frac{\hat{p}(1-\hat{p})}{n_l} + \frac{\hat{p}(1-\hat{p})}{n_N}}} = \frac{0.6458 - 0.5625}{\sqrt{\frac{0.6042(1-0.6042)}{48}} + \frac{0.6042*(1-0.6042)}{48}} = 0.834 $$
 
@@ -59,19 +55,20 @@ This is a two-tail test, and the area to the right of 0.834 in a normal distribu
 
 
 We fail to reject H0 and conclude that there is not enough evidence that a lie detector can tell whether a person is lying or telling the truth.  
+
 </details><br>
 
 ## Example 3:  Smoking and Pregnancy Rate?
 
 Does smoking negatively affect a person’s ability to become pregnant?  A study collected data on 678 women who were trying to get pregnant.  The two-way table shows the proportion who successfully became pregnant during the first cycle trying and smoking status.  Find a 90% confidence interval for the difference in proportion of women who get pregnant, between smokers and non-smokers.  Interpret the interval in context.  
 
-\begin{tabular}{|c|c|c|c|} \hline
-& {Smoker} & {Non-smoker} & {Total}\\  \hline
-{Pregnant} & 38 & 206 & 244 \\ \hline
-{Not Pregnant} & 97 & 337 & 434 \\ \hline
-{Total} & 135 & 543 & 678 \\ \hline
-\end{tabular}
-\normalsize
+|&nbsp;| Smoker | Non-smoker | Total |
+| --- | --- | --- | --- |
+| Pregnant | 38 | 206 | 244 |
+| Not Pregnant | 97 | 337 | 434 |
+| Total | 135 | 543 | 678 | 
+
+<details><summary><red>Click for answer</red></summary>
 
 The conditions are met for using the normal distribution (at least 10 values in each cell of the table).  We see that the proportion of smokers who got pregnant is 38/135 = 0.281 while the proportion of non-smokers who got pregnant is 206/543 = 0.379.  The confidence interval is given by:
 
@@ -82,6 +79,7 @@ $$(0.281 - 0.379) \pm 1.645\cdot \sqrt{\frac{0.281(1-0.281)}{135} + \frac{0.379(
 $$-0.098 \pm 0.072 = (-0.170, -0.026) $$
 We are 90% sure that the proportion of smokers who get pregnant in the first cycle is between 0.170 and 0.026 less than the proportion of non-smokers who get pregnant on the first cycle.   Note that if we had subtracted the other way, the interval would have only positive values, but the interpretation would be the same.
 
+</details><br>
 
 
 
