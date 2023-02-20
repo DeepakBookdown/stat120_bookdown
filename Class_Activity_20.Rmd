@@ -9,30 +9,33 @@ Suppose in an outbreak, 447 of the 998 individuals who ate beef curry were obser
 
 *Answer:*The set of hypotheses are:
 
-$\mathrm{H}_0$ : The proportion of individuals who eat beef curry and get sick is $0.1$ : true $p=0.1 = p_o$
+$\mathrm{H}_0$ : $p_{FP} = 0.1, \qquad p_{NFP} = 0.9$
+$\mathrm{H}_{\mathrm{a}} : \text{One proportion is different}$
 
-$\mathrm{H}_{\mathrm{a}}$ : The proportion of individuals who eat beef curry and get sick is not $0.1$ : true $p \neq 0.1$
-
-The expected count assuming the null hypothesis is true is $n*p_0 = 998*0.1 = 99.8$. The expected count is larger than 5, so we can proceed with the chi-square test. The observed count is 447. So, the test statistics can be constructed as
+where $p_{FP}$ is the proportion of people who had food poisoning and $p_{NFP}$ is the proportion who did not have food poisoning. The expected count assuming the null hypothesis is true is $n*p_{FP} = 998*0.1 = 99.8$ and $n*p_{NFP} = 998*0.9 = 898.2$, respectively. The expected count is larger than 5, so we can proceed with the chi-square test. The observed count is 447 and 551 respectively. So, the test statistics can be constructed as
 
 \begin{align*}
-\chi^2 = \frac{(O-E)^2}{E} = \frac{(447 - 99.8)^2}{99.8} = 1207.894
+\chi^2 = \sum \frac{(O-E)^2}{E} = \frac{(447 - 99.8)^2}{99.8} +   \frac{(551 - 898.2)^2}{898.2}= 1342.105
 \end{align*}
 
 ```{r}
-(447 - 99.8)^2/99.8
+(447 - 99.8)^2/99.8 + (551 - 898.2)^2/898.2
 ```
 
 The degrees of freedom corresponding to this test is 1. So, the p-value can be calculated to be 0 as:
 
 ```{r}
-1 - pchisq(1207.894, df = 1)
+1 - pchisq(1342.105, df = 1)
 ```
 
-We can also do the test in R using the `prop.test` function. The results are slightly different due to continuity correction, but the results will be the same in most scenarios.
+We can also do the test in R using the `chisq.test` function. 
+
+```{r}
+chisq.test(x = c(447, 551), p = c(0.1, 0.9))
+```
 
 
-We reject the null hypothesis $(\chi^2 = 1207.894, df = 1, p-value \approx 0)$. There is a significant evidence that the proportion of individuals who eat beef curry and get sick is not $0.1$ 
+We reject the null hypothesis $(\chi^2 = 1342.105, df = 1, p-value \approx 0)$. There is a significant evidence that the proportion of individuals who eat beef curry and get sick is not $0.1$ 
 
 </details><br>
 
@@ -42,16 +45,16 @@ We reject the null hypothesis $(\chi^2 = 1207.894, df = 1, p-value \approx 0)$. 
 We have bags of candy with five flavors in each bag. We collect a random sample of ten bags. Each bag has 100 pieces of candy and five flavors. Use Chi-square goodness of fit test to test if the proportions of the five flavors in each bag are the same. The data table below shows the combined flavor counts from all 10 bags of candy. Fill in the details below:
 
 
-\begin{tabular}{|c|c|c|c|c|c|} \hline
-Flavor & Observed Count (O) & Expected Count (E) & $O-E$ & $(O-E)^2$ & $(O-E)^2/E$ \\  \hline
-Apple & 180 & 200 & &  &  \\ \hline 
-Lime & 250 & 200 & & &  \\ \hline 
-Cherry & 120 & 200 & & & \\ \hline 
-Orange & 225 & 200 & & &  \\ \hline 
-Grape & 225 & 200 & & & \\ \hline 
-\end{tabular}
-
 <details><summary><red>Click for answer</red></summary>
+
+
+| Flavor | Observed Count (O) | Expected Count (E) | $O-E$ | $(O-E)^2$ | $(O-E)^2/E$ |
+| --- | --- | --- | --- | --- | --- |
+| Apple | 180 | 200 | -20 | 400 | 2 |
+| Lime | 250 | 200 | 50 | 2500 | 12.5 |
+| Cherry | 120 | 200 | -80 | 2500 | 32 |
+| Orange | 225 | 200 | 25 | 625 | 3.125 |
+| Grape | 225 | 200 | 25 | 625 | 3.125 |
 
 *Answer:* 
 

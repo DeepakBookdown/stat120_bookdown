@@ -166,16 +166,16 @@ Click for answer
 
 \begin{verbatim}
    ID Greeting  Male      Age
-1   1    Hello  TRUE 20.24280
-2   2    Hello FALSE 25.31900
-3   3    Hello  TRUE 31.50815
-4   4    Hello FALSE 48.27418
-5   5    Hello  TRUE 42.82245
-6   6  Goodbye FALSE 24.46470
-7   7  Goodbye  TRUE 20.16593
-8   8  Goodbye FALSE 50.04338
-9   9  Goodbye  TRUE 40.51682
-10 10  Goodbye FALSE 49.59987
+1   1    Hello  TRUE 26.43612
+2   2    Hello FALSE 52.78660
+3   3    Hello  TRUE 30.30736
+4   4    Hello FALSE 38.74422
+5   5    Hello  TRUE 52.90107
+6   6  Goodbye FALSE 25.43170
+7   7  Goodbye  TRUE 35.90674
+8   8  Goodbye FALSE 21.13387
+9   9  Goodbye  TRUE 24.47410
+10 10  Goodbye FALSE 38.46684
 \end{verbatim}
 
 \emph{Answer:} We see a data frame with four columns, where the first column is an \texttt{identifier} for the cases. We have information on the greeting types, whether male or not, and age on these cases in the remaining columns.
@@ -399,7 +399,7 @@ Run the following command to obtain a SRS of 10 words from the 268 that are in t
 \end{Shaded}
 
 \begin{verbatim}
- [1] 116 187 245 254 126 250  19  91 174  38
+ [1] 262  18 257 266  37  73  77  67  39 263
 \end{verbatim}
 
 This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
@@ -415,17 +415,17 @@ We will \emph{subset} the data set \texttt{pop} to obtain only the sampled rows 
 \end{Shaded}
 
 \begin{verbatim}
-    position size       word
-116      116    6     hallow
-187      187    2         It
-245      245    4       have
-254      254    2         of
-126      126    9  struggled
-250      250    7   freedom,
-19        19    7   liberty,
-91        91    4      live.
-174      174   10 unfinished
-38        38    5      civil
+    position size    word
+262      262    6 people,
+18        18    2      in
+257      257    2      by
+266      266    4    from
+37        37    5   great
+73        73    4    that
+77        77    5   final
+67        67    4    come
+39        39    3    war,
+263      263    5   shall
 \end{verbatim}
 
 \begin{enumerate}
@@ -446,7 +446,7 @@ The word lengths in part (b) are the data for your sample. You can compute your 
 \end{Shaded}
 
 \begin{verbatim}
- [1]  6  2  4  2  9  7  7  4 10  5
+ [1] 6 2 2 4 5 4 5 4 3 5
 \end{verbatim}
 
 Then find the mean of these values:
@@ -458,7 +458,7 @@ Then find the mean of these values:
 \end{Shaded}
 
 \begin{verbatim}
-[1] 5.6
+[1] 4
 \end{verbatim}
 
 How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?
@@ -3936,7 +3936,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
- [1] 125  87  85 185 147 185 132  52  87  52
+ [1]  87 147  87 147  87 185  87 125 185 147
 \end{verbatim}
 
 (d). Where will be bootstrap distribution be centered? What shape do we expect it to have?
@@ -4293,12 +4293,12 @@ The \texttt{boot(y\ \textasciitilde{}\ x,\ data=)} command generates 10000 boots
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -2.26095 
- Mean of bootstrap distribution: -2.25684 
- Standard error of bootstrap distribution: 0.78269 
+ Mean of bootstrap distribution: -2.25837 
+ Standard error of bootstrap distribution: 0.77424 
 
  Bootstrap percentile interval
       2.5%      97.5% 
--3.7942976 -0.6918214 
+-3.7652976 -0.7180952 
 
         *--------------*
 \end{verbatim}
@@ -5119,9 +5119,9 @@ Then load the \texttt{CarletonStats} package and run the \texttt{permTest(y\ \te
   Caffeine :  12.25      Sleep :  15.25 
  Observed difference: -3 
 
- Mean of permutation distribution: -0.02774 
- Standard error of permutation distribution: 1.50156 
- P-value:  0.0532 
+ Mean of permutation distribution: 0.01003 
+ Standard error of permutation distribution: 1.50796 
+ P-value:  0.0512 
 
     *-------------*
 \end{verbatim}
@@ -5235,9 +5235,9 @@ Click for answer
   NonRes :  6405.263     Res :  2821.053 
  Observed difference  NonRes - Res : 3584.211 
 
- Mean of permutation distribution: 12.95972 
- Standard error of permutation distribution: 940.1671 
- P-value:  2e-04 
+ Mean of permutation distribution: -3.09452 
+ Standard error of permutation distribution: 950.4817 
+ P-value:  1e-04 
 
     *-------------*
 \end{verbatim}
@@ -5413,9 +5413,9 @@ H_0: \mu_{B5} - \mu_{G5} = 0 \ \ H_0: \mu_{B5} - \mu_{G5} \neq 0
   boy :  -0.10435    girl :  0.02906 
  Observed difference: -0.13341 
 
- Mean of permutation distribution: 0.00219 
- Standard error of permutation distribution: 0.26523 
- P-value:  0.6116 
+ Mean of permutation distribution: 0.00039 
+ Standard error of permutation distribution: 0.2641 
+ P-value:  0.614 
 
     *-------------*
 \end{verbatim}
@@ -7490,31 +7490,30 @@ Click for answer
 
 \emph{Answer:}The set of hypotheses are:
 
-\(\mathrm{H}_0\) : The proportion of individuals who eat beef curry and get sick is \(0.1\) : true \(p=0.1 = p_o\)
+\(\mathrm{H}_0\) : \(p_{FP} = 0.1, \qquad p_{NFP} = 0.9\)
+\(\mathrm{H}_{\mathrm{a}} : \text{One proportion is different}\)
 
-\(\mathrm{H}_{\mathrm{a}}\) : The proportion of individuals who eat beef curry and get sick is not \(0.1\) : true \(p \neq 0.1\)
-
-The expected count assuming the null hypothesis is true is \(n*p_0 = 998*0.1 = 99.8\). The expected count is larger than 5, so we can proceed with the chi-square test. The observed count is 447. So, the test statistics can be constructed as
+where \(p_{FP}\) is the proportion of people who had food poisoning and \(p_{NFP}\) is the proportion who did not have food poisoning. The expected count assuming the null hypothesis is true is \(n*p_{FP} = 998*0.1 = 99.8\) and \(n*p_{NFP} = 998*0.9 = 898.2\), respectively. The expected count is larger than 5, so we can proceed with the chi-square test. The observed count is 447 and 551 respectively. So, the test statistics can be constructed as
 
 \begin{align*}
-\chi^2 = \frac{(O-E)^2}{E} = \frac{(447 - 99.8)^2}{99.8} = 1207.894
+\chi^2 = \sum \frac{(O-E)^2}{E} = \frac{(447 - 99.8)^2}{99.8} +   \frac{(551 - 898.2)^2}{898.2}= 1342.105
 \end{align*}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{(}\DecValTok{447} \SpecialCharTok{{-}} \FloatTok{99.8}\NormalTok{)}\SpecialCharTok{\^{}}\DecValTok{2}\SpecialCharTok{/}\FloatTok{99.8}
+\NormalTok{(}\DecValTok{447} \SpecialCharTok{{-}} \FloatTok{99.8}\NormalTok{)}\SpecialCharTok{\^{}}\DecValTok{2}\SpecialCharTok{/}\FloatTok{99.8} \SpecialCharTok{+}\NormalTok{ (}\DecValTok{551} \SpecialCharTok{{-}} \FloatTok{898.2}\NormalTok{)}\SpecialCharTok{\^{}}\DecValTok{2}\SpecialCharTok{/}\FloatTok{898.2}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-[1] 1207.894
+[1] 1342.105
 \end{verbatim}
 
 The degrees of freedom corresponding to this test is 1. So, the p-value can be calculated to be 0 as:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\DecValTok{1} \SpecialCharTok{{-}} \FunctionTok{pchisq}\NormalTok{(}\FloatTok{1207.894}\NormalTok{, }\AttributeTok{df =} \DecValTok{1}\NormalTok{)}
+\DecValTok{1} \SpecialCharTok{{-}} \FunctionTok{pchisq}\NormalTok{(}\FloatTok{1342.105}\NormalTok{, }\AttributeTok{df =} \DecValTok{1}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -7522,25 +7521,61 @@ The degrees of freedom corresponding to this test is 1. So, the p-value can be c
 [1] 0
 \end{verbatim}
 
-We can also do the test in R using the \texttt{prop.test} function. The results are slightly different due to continuity correction, but the results will be the same in most scenarios.
+We can also do the test in R using the \texttt{chisq.test} function.
 
-We reject the null hypothesis \((\chi^2 = 1207.894, df = 1, p-value \approx 0)\). There is a significant evidence that the proportion of individuals who eat beef curry and get sick is not \(0.1\)
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{chisq.test}\NormalTok{(}\AttributeTok{x =} \FunctionTok{c}\NormalTok{(}\DecValTok{447}\NormalTok{, }\DecValTok{551}\NormalTok{), }\AttributeTok{p =} \FunctionTok{c}\NormalTok{(}\FloatTok{0.1}\NormalTok{, }\FloatTok{0.9}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+    Chi-squared test for given probabilities
+
+data:  c(447, 551)
+X-squared = 1342.1, df = 1, p-value < 2.2e-16
+\end{verbatim}
+
+We reject the null hypothesis \((\chi^2 = 1342.105, df = 1, p-value \approx 0)\). There is a significant evidence that the proportion of individuals who eat beef curry and get sick is not \(0.1\)
 
 \hypertarget{example-2-candy-flavors}{%
 \section{Example 2: Candy flavors}\label{example-2-candy-flavors}}
 
 We have bags of candy with five flavors in each bag. We collect a random sample of ten bags. Each bag has 100 pieces of candy and five flavors. Use Chi-square goodness of fit test to test if the proportions of the five flavors in each bag are the same. The data table below shows the combined flavor counts from all 10 bags of candy. Fill in the details below:
 
-\begin{tabular}{|c|c|c|c|c|c|} \hline
-Flavor & Observed Count (O) & Expected Count (E) & $O-E$ & $(O-E)^2$ & $(O-E)^2/E$ \\  \hline
-Apple & 180 & 200 & &  &  \\ \hline 
-Lime & 250 & 200 & & &  \\ \hline 
-Cherry & 120 & 200 & & & \\ \hline 
-Orange & 225 & 200 & & &  \\ \hline 
-Grape & 225 & 200 & & & \\ \hline 
-\end{tabular}
-
 Click for answer
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Flavor
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Observed Count (O)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Expected Count (E)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(O-E\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\((O-E)^2\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\((O-E)^2/E\)
+\end{minipage} \\
+\midrule()
+\endhead
+Apple & 180 & 200 & -20 & 400 & 2 \\
+Lime & 250 & 200 & 50 & 2500 & 12.5 \\
+Cherry & 120 & 200 & -80 & 2500 & 32 \\
+Orange & 225 & 200 & 25 & 625 & 3.125 \\
+Grape & 225 & 200 & 25 & 625 & 3.125 \\
+\bottomrule()
+\end{longtable}
 
 \emph{Answer:}
 

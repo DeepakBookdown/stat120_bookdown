@@ -85,21 +85,28 @@
 </h2>
 <p>Suppose in an outbreak, 447 of the 998 individuals who ate beef curry were observed to have food poisoning symptoms. As researchers, suppose we want to test the hypothesis that the probability (long run proportion) of a “random individual who ate beef curry” having food poisoning is 0.1. Conduct an appropriate hypothesis test.</p>
 <details><summary><red>Click for answer</red></summary><p><em>Answer:</em>The set of hypotheses are:</p>
-<p><span class="math inline">\(\mathrm{H}_0\)</span> : The proportion of individuals who eat beef curry and get sick is <span class="math inline">\(0.1\)</span> : true <span class="math inline">\(p=0.1 = p_o\)</span></p>
-<p><span class="math inline">\(\mathrm{H}_{\mathrm{a}}\)</span> : The proportion of individuals who eat beef curry and get sick is not <span class="math inline">\(0.1\)</span> : true <span class="math inline">\(p \neq 0.1\)</span></p>
-<p>The expected count assuming the null hypothesis is true is <span class="math inline">\(n*p_0 = 998*0.1 = 99.8\)</span>. The expected count is larger than 5, so we can proceed with the chi-square test. The observed count is 447. So, the test statistics can be constructed as</p>
+<p><span class="math inline">\(\mathrm{H}_0\)</span> : <span class="math inline">\(p_{FP} = 0.1, \qquad p_{NFP} = 0.9\)</span>
+<span class="math inline">\(\mathrm{H}_{\mathrm{a}} : \text{One proportion is different}\)</span></p>
+<p>where <span class="math inline">\(p_{FP}\)</span> is the proportion of people who had food poisoning and <span class="math inline">\(p_{NFP}\)</span> is the proportion who did not have food poisoning. The expected count assuming the null hypothesis is true is <span class="math inline">\(n*p_{FP} = 998*0.1 = 99.8\)</span> and <span class="math inline">\(n*p_{NFP} = 998*0.9 = 898.2\)</span>, respectively. The expected count is larger than 5, so we can proceed with the chi-square test. The observed count is 447 and 551 respectively. So, the test statistics can be constructed as</p>
 <p><span class="math display">\[\begin{align*}
-\chi^2 = \frac{(O-E)^2}{E} = \frac{(447 - 99.8)^2}{99.8} = 1207.894
+\chi^2 = \sum \frac{(O-E)^2}{E} = \frac{(447 - 99.8)^2}{99.8} +   \frac{(551 - 898.2)^2}{898.2}= 1342.105
 \end{align*}\]</span></p>
 <div class="sourceCode" id="cb468"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="op">(</span><span class="fl">447</span> <span class="op">-</span> <span class="fl">99.8</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">/</span><span class="fl">99.8</span></span></code></pre></div>
-<pre><code>[1] 1207.894</code></pre>
+<code class="sourceCode R"><span><span class="op">(</span><span class="fl">447</span> <span class="op">-</span> <span class="fl">99.8</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">/</span><span class="fl">99.8</span> <span class="op">+</span> <span class="op">(</span><span class="fl">551</span> <span class="op">-</span> <span class="fl">898.2</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">/</span><span class="fl">898.2</span></span></code></pre></div>
+<pre><code>[1] 1342.105</code></pre>
 <p>The degrees of freedom corresponding to this test is 1. So, the p-value can be calculated to be 0 as:</p>
 <div class="sourceCode" id="cb470"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fl">1</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Chisquare.html">pchisq</a></span><span class="op">(</span><span class="fl">1207.894</span>, df <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fl">1</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Chisquare.html">pchisq</a></span><span class="op">(</span><span class="fl">1342.105</span>, df <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] 0</code></pre>
-<p>We can also do the test in R using the <code>prop.test</code> function. The results are slightly different due to continuity correction, but the results will be the same in most scenarios.</p>
-<p>We reject the null hypothesis <span class="math inline">\((\chi^2 = 1207.894, df = 1, p-value \approx 0)\)</span>. There is a significant evidence that the proportion of individuals who eat beef curry and get sick is not <span class="math inline">\(0.1\)</span></p>
+<p>We can also do the test in R using the <code>chisq.test</code> function.</p>
+<div class="sourceCode" id="cb472"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/chisq.test.html">chisq.test</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">447</span>, <span class="fl">551</span><span class="op">)</span>, p <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.1</span>, <span class="fl">0.9</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<pre><code>
+    Chi-squared test for given probabilities
+
+data:  c(447, 551)
+X-squared = 1342.1, df = 1, p-value &lt; 2.2e-16</code></pre>
+<p>We reject the null hypothesis <span class="math inline">\((\chi^2 = 1342.105, df = 1, p-value \approx 0)\)</span>. There is a significant evidence that the proportion of individuals who eat beef curry and get sick is not <span class="math inline">\(0.1\)</span></p>
 </details><p><br></p>
 </div>
 <div id="example-2-candy-flavors" class="section level2" number="20.2">
@@ -107,10 +114,70 @@
 <span class="header-section-number">20.2</span> Example 2: Candy flavors<a class="anchor" aria-label="anchor" href="#example-2-candy-flavors"><i class="fas fa-link"></i></a>
 </h2>
 <p>We have bags of candy with five flavors in each bag. We collect a random sample of ten bags. Each bag has 100 pieces of candy and five flavors. Use Chi-square goodness of fit test to test if the proportions of the five flavors in each bag are the same. The data table below shows the combined flavor counts from all 10 bags of candy. Fill in the details below:</p>
-<details><summary><red>Click for answer</red></summary><p><em>Answer:</em></p>
+<details><summary><red>Click for answer</red></summary><table style="width:100%;" class="table table-sm">
+<colgroup>
+<col width="16%">
+<col width="16%">
+<col width="16%">
+<col width="16%">
+<col width="16%">
+<col width="16%">
+</colgroup>
+<thead><tr class="header">
+<th>Flavor</th>
+<th>Observed Count (O)</th>
+<th>Expected Count (E)</th>
+<th><span class="math inline">\(O-E\)</span></th>
+<th><span class="math inline">\((O-E)^2\)</span></th>
+<th><span class="math inline">\((O-E)^2/E\)</span></th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Apple</td>
+<td>180</td>
+<td>200</td>
+<td>-20</td>
+<td>400</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>Lime</td>
+<td>250</td>
+<td>200</td>
+<td>50</td>
+<td>2500</td>
+<td>12.5</td>
+</tr>
+<tr class="odd">
+<td>Cherry</td>
+<td>120</td>
+<td>200</td>
+<td>-80</td>
+<td>2500</td>
+<td>32</td>
+</tr>
+<tr class="even">
+<td>Orange</td>
+<td>225</td>
+<td>200</td>
+<td>25</td>
+<td>625</td>
+<td>3.125</td>
+</tr>
+<tr class="odd">
+<td>Grape</td>
+<td>225</td>
+<td>200</td>
+<td>25</td>
+<td>625</td>
+<td>3.125</td>
+</tr>
+</tbody>
+</table>
+<p><em>Answer:</em></p>
 <p><span class="math display">\[H_0: p_1 = p_2 = p_3 = p_4 = p_5 = 1/5\]</span>
 <span class="math display">\[H_a: \text{at least one $p_i$ not equal to 1/5}\]</span></p>
-<div class="sourceCode" id="cb472"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb474"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fl">1</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Chisquare.html">pchisq</a></span><span class="op">(</span><span class="fl">52.75</span>, df <span class="op">=</span> <span class="fl">5</span><span class="op">-</span><span class="fl">1</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] 9.612522e-11</code></pre>
 <p>The observed test statistics is:</p>
@@ -118,7 +185,7 @@
 \chi^2 &amp;= \sum_{i=1}^5 \frac{(O_i-E_i)^2}{E_i} = \frac{(180 - 200)^2}{200} + \frac{(250 - 200)^2}{200}\\ &amp; \qquad + \frac{(120 - 200)^2}{200} + \frac{(225 - 200)^2}{200} + \frac{(225 - 200)^2}{200}\\
 &amp;=  52.75
 \end{align*}\]</span></p>
-<div class="sourceCode" id="cb474"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb476"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/chisq.test.html">chisq.test</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">180</span>, <span class="fl">250</span>, <span class="fl">120</span>, <span class="fl">225</span>, <span class="fl">225</span><span class="op">)</span>, p <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fl">1</span><span class="op">/</span><span class="fl">5</span>,<span class="fl">5</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>
     Chi-squared test for given probabilities
