@@ -1,15 +1,17 @@
 # Class Activity 20
 
 
-## Example 1: Suppose in an outbreak, 447 of the 998 individuals who ate beef curry were observed to have food poisoning symptoms. As researchers, suppose we want to test the hypothesis that the probability (long run proportion) of a "random individual who ate beef curry" having food poisoning is 0.1. Conduct an appropriate hypothesis test.
+## Example 1: Food poisoning
+
+Suppose in an outbreak, 447 of the 998 individuals who ate beef curry were observed to have food poisoning symptoms. As researchers, suppose we want to test the hypothesis that the probability (long run proportion) of a "random individual who ate beef curry" having food poisoning is 0.1. Conduct an appropriate hypothesis test.
 
 <details><summary><red>Click for answer</red></summary>
 
-*Answer:* The set of hypotheses are:
+*Answer:*The set of hypotheses are:
 
-$\mathrm{H}_0$ : The proportion of individuals who eat beefcurry and get sick is $0.1$ : true $p=0.1 = p_o$
+$\mathrm{H}_0$ : The proportion of individuals who eat beef curry and get sick is $0.1$ : true $p=0.1 = p_o$
 
-$\mathrm{H}_{\mathrm{a}}$ : The proportion of individuals who eat beefcurry and get sick is not $0.1$ : true $p \neq 0.1$
+$\mathrm{H}_{\mathrm{a}}$ : The proportion of individuals who eat beef curry and get sick is not $0.1$ : true $p \neq 0.1$
 
 The expected count assuming the null hypothesis is true is $n*p_0 = 998*0.1 = 99.8$. The expected count is larger than 5, so we can proceed with the chi-square test. The observed count is 447. So, the test statistics can be constructed as
 
@@ -40,30 +42,14 @@ The degrees of freedom corresponding to this test is 1. So, the p-value can be c
 We can also do the test in R using the `prop.test` function. The results are slightly different due to continuity correction, but the results will be the same in most scenarios.
 
 
-```r
-prop.test(x = 447, n = 998, p =.1)
-```
-
-```
-
-	1-sample proportions test with continuity correction
-
-data:  447 out of 998, null probability 0.1
-X-squared = 1338.2, df = 1, p-value < 2.2e-16
-alternative hypothesis: true p is not equal to 0.1
-95 percent confidence interval:
- 0.4168064 0.4793912
-sample estimates:
-        p 
-0.4478958 
-```
-
-We reject the null hypothesis $(\chi^2 = 1338.242, df = 1, p-value \approx 0)$. The estimated proportion of people who ate beef curry is $0.448 (95\% CI: 0.42, 0.49)$.
+We reject the null hypothesis $(\chi^2 = 1207.894, df = 1, p-value \approx 0)$. There is a significant evidence that the proportion of individuals who eat beef curry and get sick is not $0.1$ 
 
 </details><br>
 
 
-## Example 2: We have bags of candy with five flavors in each bag. We collect a random sample of ten bags. Each bag has 100 pieces of candy and five flavors. Use Chi-square goodness of fit test to test if the proportions of the five flavors in each bag are the same. The data table below shows the combined flavor counts from all 10 bags of candy. Fill in the details below:
+## Example 2: Candy flavors
+
+We have bags of candy with five flavors in each bag. We collect a random sample of ten bags. Each bag has 100 pieces of candy and five flavors. Use Chi-square goodness of fit test to test if the proportions of the five flavors in each bag are the same. The data table below shows the combined flavor counts from all 10 bags of candy. Fill in the details below:
 
 
 \begin{tabular}{|c|c|c|c|c|c|} \hline
@@ -95,30 +81,25 @@ $$H_a: \text{at least one $p_i$ not equal to 1/5}$$
 The observed test statistics is:
 
 \begin{align*}
-\chi^2 &= \sum_{i=1}^5 \frac{(O_i-E_i)^2}{E_i} = \frac{(180 - 200)^2}{200} + \frac{(250 - 200)^2}{200} + \frac{(120 - 200)^2}{200} + \frac{(225 - 200)^2}{200} + \frac{(225 - 200)^2}{200}\\
+\chi^2 &= \sum_{i=1}^5 \frac{(O_i-E_i)^2}{E_i} = \frac{(180 - 200)^2}{200} + \frac{(250 - 200)^2}{200}\\ & \qquad + \frac{(120 - 200)^2}{200} + \frac{(225 - 200)^2}{200} + \frac{(225 - 200)^2}{200}\\
 &=  52.75
 \end{align*}
 
 
 
 ```r
-prop.test(x = c(180, 250, 120, 225, 225), n = rep(1000,5))
+chisq.test(x = c(180, 250, 120, 225, 225), p = rep(1/5,5))
 ```
 
 ```
 
-	5-sample test for equality of proportions without
-	continuity correction
+	Chi-squared test for given probabilities
 
-data:  c(180, 250, 120, 225, 225) out of rep(1000, 5)
-X-squared = 65.938, df = 4, p-value = 1.633e-13
-alternative hypothesis: two.sided
-sample estimates:
-prop 1 prop 2 prop 3 prop 4 prop 5 
- 0.180  0.250  0.120  0.225  0.225 
+data:  c(180, 250, 120, 225, 225)
+X-squared = 52.75, df = 4, p-value = 9.613e-11
 ```
 
-We reject the null hypothesis $(\chi^2 = 65.938, df = 4, p-value \approx 0)$. We have significant evidence to claim that at least one proportion of flavors is not the same as others.
+We reject the null hypothesis $(\chi^2 = 52.75, df = 4, p-value \approx 0)$. We have significant evidence to claim that at least one proportion of flavors is not the same as others.
 
 </details><br>
 
