@@ -17,45 +17,20 @@ The expected count assuming the null hypothesis is true is $n*p_0 = 998*0.1 = 99
 \chi^2 = \frac{(O-E)^2}{E} = \frac{(447 - 99.8)^2}{99.8} = 1207.894
 \end{align*}
 
-
-```r
+```{r}
 (447 - 99.8)^2/99.8
-```
-
-```
-[1] 1207.894
 ```
 
 The degrees of freedom corresponding to this test is 1. So, the p-value can be calculated to be 0 as:
 
-
-```r
+```{r}
 1 - pchisq(1207.894, df = 1)
-```
-
-```
-[1] 0
 ```
 
 We can also do the test in R using the `prop.test` function. The results are slightly different due to continuity correction, but the results will be the same in most scenarios.
 
-
-```r
+```{r}
 prop.test(x = 447, n = 998, p =.1)
-```
-
-```
-
-	1-sample proportions test with continuity correction
-
-data:  447 out of 998, null probability 0.1
-X-squared = 1338.2, df = 1, p-value < 2.2e-16
-alternative hypothesis: true p is not equal to 0.1
-95 percent confidence interval:
- 0.4168064 0.4793912
-sample estimates:
-        p 
-0.4478958 
 ```
 
 We reject the null hypothesis $(\chi^2 = 1338.242, df = 1, p-value \approx 0)$. The estimated proportion of people who ate beef curry is $0.448 (95\% CI: 0.42, 0.49)$.
@@ -82,13 +57,8 @@ Grape & 225 & 200 & & & \\ \hline
 $$H_0: p_1 = p_2 = p_3 = p_4 = p_5 = 1/5$$
 $$H_a: \text{at least one $p_i$ not equal to 1/5}$$
 
-
-```r
+```{r}
 1 - pchisq(52.75, df = 5-1)
-```
-
-```
-[1] 9.612522e-11
 ```
 
 
@@ -100,22 +70,8 @@ The observed test statistics is:
 \end{align*}
 
 
-
-```r
+```{r}
 prop.test(x = c(180, 250, 120, 225, 225), n = rep(1000,5))
-```
-
-```
-
-	5-sample test for equality of proportions without
-	continuity correction
-
-data:  c(180, 250, 120, 225, 225) out of rep(1000, 5)
-X-squared = 65.938, df = 4, p-value = 1.633e-13
-alternative hypothesis: two.sided
-sample estimates:
-prop 1 prop 2 prop 3 prop 4 prop 5 
- 0.180  0.250  0.120  0.225  0.225 
 ```
 
 We reject the null hypothesis $(\chi^2 = 65.938, df = 4, p-value \approx 0)$. We have significant evidence to claim that at least one proportion of flavors is not the same as others.
