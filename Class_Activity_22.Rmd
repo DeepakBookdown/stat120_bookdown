@@ -1,0 +1,216 @@
+# Class Activity 22
+
+
+## Example 1: Frisbee grip
+
+The data set `Frisbee.csv` contains data on `Distance` thrown (in paces) for three different frisbee `Grip` types. There are 24 difference cases (throws) Here we can compare responses to this question by the religiousness of the respondent:
+```{r, fig.width=8}
+frisbee <- read.csv("https://raw.githubusercontent.com/deepbas/statdatasets/main/Frisbee.csv")
+boxplot(Distance ~ Grip, data = frisbee)
+tapply(frisbee$Distance, frisbee$Grip, summary)
+```
+
+The question we want to answer is whether or not the differences in observed mean distance thrown are statistically significant.  To test this question comparing **means** for a **quantitative** response broken up into **at least 2 groups**, we can conduct a **one-way ANOVA test**. 
+
+#### (a) One-way ANOVA hypotheses
+State the hypotheses for this test. 
+
+<details><summary><red>Click for answer</red></summary>
+
+*Answer:* Let $\mu$ be the true mean distance thrown using a certain grip. Then
+$H_0: \mu_{fout} = \mu_{invert} = \mu_{normal}$
+vs. $H_A:$ at least one mean is different.
+</details><br>
+
+#### (b) One-way ANOVA test
+You can obtain the one-way ANOVA table and test results with the `aov(y ~ x, data=)` command. Running the `summary` function on this anova result gives you the ANOVA table:
+```{r}
+frisbee.anova <- aov(Distance ~ Grip, data = frisbee)
+summary(frisbee.anova)
+```
+
+- What is the F test stat value?
+
+<details><summary><red>Click for answer</red></summary>
+
+*Answer:* $F = 2.045$
+</details><br>
+
+- Interpret the p-value.
+
+<details><summary><red>Click for answer</red></summary>
+
+*Answer:* If grip does not affect distance thrown, then we would see mean differences as larger, or larger, than those observed about 15.4% of the time. 
+</details><br>
+
+- What is your conclusion?
+
+<details><summary><red>Click for answer</red></summary>
+
+*Answer:* This study does not provide evidence that these three grips affect the mean distance thrown. 
+</details><br>
+
+#### (c) Checking assumptions
+Can we trust the p-value obtained above using the F distribution? 
+
+```{r}
+table(frisbee$Grip)  # check n's
+tapply(frisbee$Distance, frisbee$Grip, sd)  # similar SD's?
+library(ggplot2)  # shape?
+boxplot(Distance ~ Grip, data = frisbee)
+ggplot(frisbee, aes(sample = Distance)) + geom_qq() + facet_wrap(~Grip)
+```
+
+<details><summary><red>Click for answer</red></summary>
+
+*Answer:* Sample sizes in all three groups are small (8) but the observed distances thrown within each group are roughly normally distributed. There are small differences in variation of the three groups, but the SD rule is met since largest SD (4.17) is less than twice the smallest SD (3.16). The assumptions are met. 
+</details><br>
+
+## Example 2: Comparing % religious guess by religion
+
+One of the class survey questions asked respondents to give their best guess at the percentage of students at Carleton who practice a religion. Here we can compare responses to this question by the religiousness of the respondent:
+
+```{r, fig.width=8}
+library(dplyr)
+# read the data 
+survey <- read.csv("https://raw.githubusercontent.com/deepbas/statdatasets/main/Survey.csv") 
+
+# and drop the rows containing missing values using the tidyr package
+survey <- survey %>% tidyr::drop_na()
+
+# make a new variable called `practice_religion_percentage` (more informative variable name)
+survey <- survey %>%  mutate(practice_religion = Question.7)
+
+# rename comfort level using fct_recode() from the forcats package
+survey <- survey %>%mutate(religiousness = forcats::fct_recode(Question.8, 
+                          `not religious` = "not religious",
+                          `religious not active` = "religious but not actively practicing",
+                          `religious active` = "religious and actively practicing my religion"),
+                          religiousness = forcats::fct_relevel(religiousness,
+                                                               "not religious",
+                                                               "religious not active",
+                                                               "religious active"))
+ggplot(data = survey) +
+    geom_boxplot(aes(x = religiousness, y = practice_religion))
+tapply(survey$practice_religion, survey$religiousness, summary)
+```
+
+#### (a) One-way ANOVA hypotheses
+
+We want to determine if the differences in observed mean guesses are statistically significant. State the hypotheses for this test.
+
+<details>
+
+<summary><red>Click for answer</red></summary>
+
+*Answer:* Let $\mu$ be the true mean religous % guess in a given religiousness group. Then $H_0: \mu_{notRelig} = \mu_{Relig,Act} = \mu_{Relig,NotAct}$ vs. $H_A:$ at least one mean is different.
+
+</details>
+
+<br>
+
+#### (b) Check assumptions
+
+Can use trust the results from a one-way ANOVA test?
+
+```{r}
+table(survey$religiousness)  
+tapply(survey$practice_religion, survey$religiousness, sd, na.rm=TRUE)  #need na.rm with a missing value  
+ggplot(survey, aes(sample = practice_religion)) + geom_qq() + facet_wrap(~religiousness)
+```
+
+```{r, echo=FALSE}
+sds <- tapply(survey$practice_religion, survey$religiousness, sd, na.rm=TRUE)  
+```
+
+<details>
+
+<summary><red>Click for answer</red></summary>
+
+*Answer:* Yes, the assumptions are met. The distributions within each group are slightly skewed or roughly symmetric, and the sample sizes within each group are all at least 30. In addition, the SD in each group are close to each other (`r round(min(sds),1)`% to `r round(max(sds),1)`%).
+
+</details>
+
+<br>
+
+#### (c) One-way ANOVA test
+
+Assuming part (b) checks out, run the one-way ANOVA test to compare means:
+
+```{r, fig.width=8}
+guess.aov <- aov(practice_religion ~ religiousness, data = survey)
+summary(guess.aov)
+```
+
+-   What is the F test stat value?
+
+<details>
+
+<summary><red>Click for answer</red></summary>
+
+*Answer:* $F = `r round(summary(guess.aov)[[1]][1,4],3)`$
+
+</details>
+
+<br>
+
+-   Interpret the p-value.
+
+<details>
+
+<summary><red>Click for answer</red></summary>
+
+*Answer:* If there is no difference in true mean guess in all three groups, we would see an F test stat of at least `r round(summary(guess.aov)[[1]][1,4],3)` about `r round(summary(guess.aov)[[1]][1,5],3)*100`% of the time.
+
+</details>
+
+<br>
+
+-   What is your conclusion?
+
+<details>
+
+<summary><red>Click for answer</red></summary>
+
+*Answer:* The differences in mean guesses that we've observed in our sample are not statistically significant. We don't have evidence that the true mean guesses for the three religiousness groups are different.
+
+</details>
+
+<br>
+
+#### (d) Describe the association?
+
+If you found a statistically significant difference in means in part (c), describe how the groups differ. If you did not find a statistically significant difference in part (c), estimate the average guess for all students in the (hypothetical) population of 215 students.
+
+<details>
+
+<summary><red>Click for answer</red></summary>
+
+*Answer:* We didn't find a statistically significant difference in part (c). So what is our best estimate of the average guess for all students, since responses don't seem to differ by religiousness?
+
+```{r}
+t.test(survey$practice_religion)
+```
+
+```{r, include=FALSE}
+ttest.result <- t.test(survey$practice_religion)
+```
+
+We are 95% confident that the mean guess at the percentage of religious students at Carleton is between `r round(ttest.result$conf.int[1], 1)`% to `r round(ttest.result$conf.int[2], 1)`% for all math 215 students.
+
+```{r, echo=FALSE}
+mns <- tapply(survey$practice_religion, survey$religiousness, mean, na.rm=TRUE)  
+```
+
+**What if there was a difference?!**
+
+Use EDA to describe how the sample means differ. Does it look like all three means are different, or does one mean look different from the rest? The sample mean responses from the two religious groups look similar (active: `r round(mns[3],1)`%; not active: `r round(mns[2],1)`%) but the mean response of the not religious group is lower (`r round(mns[1],1)`%).
+
+```{r, echo=FALSE, eval=TRUE}
+survey$religion <- ifelse(survey$religiousness == "not religious", "not religious", "religious")
+result <-t.test(practice_religion ~ religion, data=survey)
+```
+
+</details>
+
+<br>
