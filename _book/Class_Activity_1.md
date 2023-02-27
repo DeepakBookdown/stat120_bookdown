@@ -25,16 +25,16 @@ example_data
 
 ```
    ID Greeting  Male      Age
-1   1    Hello  TRUE 50.47403
-2   2    Hello FALSE 43.96134
-3   3    Hello  TRUE 57.43647
-4   4    Hello FALSE 36.03058
-5   5    Hello  TRUE 46.53196
-6   6  Goodbye FALSE 40.85905
-7   7  Goodbye  TRUE 41.65139
-8   8  Goodbye FALSE 26.87341
-9   9  Goodbye  TRUE 58.77664
-10 10  Goodbye FALSE 31.13223
+1   1    Hello  TRUE 25.75044
+2   2    Hello FALSE 48.85720
+3   3    Hello  TRUE 52.22357
+4   4    Hello FALSE 27.74657
+5   5    Hello  TRUE 29.02036
+6   6  Goodbye FALSE 33.92587
+7   7  Goodbye  TRUE 55.94534
+8   8  Goodbye FALSE 37.64662
+9   9  Goodbye  TRUE 32.98002
+10 10  Goodbye FALSE 54.62416
 ```
 
 *Answer:* We see a data frame with four columns, where the first column is an `identifier` for the cases. We have information on the greeting types, whether male or not, and age on these cases in the remaining columns.
