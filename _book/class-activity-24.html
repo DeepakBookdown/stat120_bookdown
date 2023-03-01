@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 24 Class Activity 24 | Stat 120</title>
 <meta name="author" content="Deepak Bastola">
-<meta name="description" content="24.1 Example 1: Data from online reviews of inkjet printers is available under the dataset InkjetPrinters. The data is extracted from reviews of inkjet printers at PCMag.com in August 2011. We are...">
+<meta name="description" content="24.1 Example 1: Cricket Chirps The data on CricketChirps were collected by E.A. Bessey and C.A. Bessey who measured chirp rates for crickets and temperatures during the summer of 1898. Conduct a...">
 <meta name="generator" content="bookdown 0.31 with bs4_book()">
 <meta property="og:title" content="Chapter 24 Class Activity 24 | Stat 120">
 <meta property="og:type" content="book">
-<meta property="og:description" content="24.1 Example 1: Data from online reviews of inkjet printers is available under the dataset InkjetPrinters. The data is extracted from reviews of inkjet printers at PCMag.com in August 2011. We are...">
+<meta property="og:description" content="24.1 Example 1: Cricket Chirps The data on CricketChirps were collected by E.A. Bessey and C.A. Bessey who measured chirp rates for crickets and temperatures during the summer of 1898. Conduct a...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 24 Class Activity 24 | Stat 120">
-<meta name="twitter:description" content="24.1 Example 1: Data from online reviews of inkjet printers is available under the dataset InkjetPrinters. The data is extracted from reviews of inkjet printers at PCMag.com in August 2011. We are...">
+<meta name="twitter:description" content="24.1 Example 1: Cricket Chirps The data on CricketChirps were collected by E.A. Bessey and C.A. Bessey who measured chirp rates for crickets and temperatures during the summer of 1898. Conduct a...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.1/transition.js"></script><script src="libs/bs3compat-0.4.1/tabs.js"></script><script src="libs/bs3compat-0.4.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -68,10 +68,10 @@
 <li><a class="" href="class-activity-22.html"><span class="header-section-number">22</span> Class Activity 22</a></li>
 <li><a class="" href="class-activity-23.html"><span class="header-section-number">23</span> Class Activity 23</a></li>
 <li><a class="active" href="class-activity-24.html"><span class="header-section-number">24</span> Class Activity 24</a></li>
-<li><a class="" href="class-activity-25.html"><span class="header-section-number">25</span> Class Activity 25</a></li>
 <li class="book-part">Basics R</li>
-<li><a class="" href="what-is-r.html"><span class="header-section-number">27</span> What is R?</a></li>
-<li><a class="" href="r-markdown.html"><span class="header-section-number">28</span> R Markdown</a></li>
+<li><a class="" href="what-is-r.html"><span class="header-section-number">26</span> What is R?</a></li>
+<li><a class="" href="r-markdown.html"><span class="header-section-number">27</span> R Markdown</a></li>
+<li><a class="" href="helpful-r-codes.html"><span class="header-section-number">28</span> Helpful R codes</a></li>
 </ul>
 
         <div class="book-extra">
@@ -83,179 +83,235 @@
 <h1>
 <span class="header-section-number">24</span> Class Activity 24<a class="anchor" aria-label="anchor" href="#class-activity-24"><i class="fas fa-link"></i></a>
 </h1>
-<div id="example-1-data-from-online-reviews-of-inkjet-printers-is-available-under-the-dataset-inkjetprinters.-the-data-is-extracted-from-reviews-of-inkjet-printers-at-pcmag.com-in-august-2011.-we-are-interested-in-the-quantitative-variable-price-the-typical-retail-price-of-printers-in-dollars-and-costcolor-the-cost-per-page-in-cents-for-printing-in-color." class="section level2" number="24.1">
+<div id="example-1-cricket-chirps" class="section level2" number="24.1">
 <h2>
-<span class="header-section-number">24.1</span> Example 1: Data from online reviews of inkjet printers is available under the dataset <code>InkjetPrinters</code>. The data is extracted from reviews of inkjet printers at PCMag.com in August 2011. We are interested in the quantitative variable <code>Price</code>, the typical retail price of printers in dollars and <code>CostColor</code>, the cost per page in cents for printing in color.<a class="anchor" aria-label="anchor" href="#example-1-data-from-online-reviews-of-inkjet-printers-is-available-under-the-dataset-inkjetprinters.-the-data-is-extracted-from-reviews-of-inkjet-printers-at-pcmag.com-in-august-2011.-we-are-interested-in-the-quantitative-variable-price-the-typical-retail-price-of-printers-in-dollars-and-costcolor-the-cost-per-page-in-cents-for-printing-in-color."><i class="fas fa-link"></i></a>
+<span class="header-section-number">24.1</span> Example 1: Cricket Chirps<a class="anchor" aria-label="anchor" href="#example-1-cricket-chirps"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb582"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># load the data</span></span>
-<span><span class="va">inkjet</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"https://www.lock5stat.com/datasets2e/InkjetPrinters.csv"</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb583"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">mod1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Price</span><span class="op">~</span><span class="va">CostColor</span>, data <span class="op">=</span> <span class="va">inkjet</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">mod1</span><span class="op">)</span></span></code></pre></div>
+<p>The data on <code>CricketChirps</code> were collected by E.A. Bessey and C.A. Bessey who measured chirp rates for crickets and temperatures during the summer of 1898. Conduct a simple linear regression analysis to predict the temperature by cricket chirp rate.</p>
+<div class="sourceCode" id="cb587"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">cricket</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"https://www.lock5stat.com/datasets3e/CricketChirps.csv"</span><span class="op">)</span></span>
+<span><span class="va">cricket</span></span></code></pre></div>
+<pre><code>  Temperature Chirps
+1        54.5     81
+2        59.5     97
+3        63.5    103
+4        67.5    123
+5        72.0    150
+6        78.5    182
+7        83.0    195</code></pre>
+<div class="sourceCode" id="cb589"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Temperature</span><span class="op">~</span><span class="va">Chirps</span>, data <span class="op">=</span> <span class="va">cricket</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">mod</span><span class="op">)</span></span></code></pre></div>
 <pre><code>
 Call:
-lm(formula = Price ~ CostColor, data = inkjet)
+lm(formula = Temperature ~ Chirps, data = cricket)
 
 Residuals:
-     Min       1Q   Median       3Q      Max 
--132.155  -48.965    1.213   52.629  116.429 
+      1       2       3       4       5       6       7 
+-1.8625 -0.5532  2.0628  1.4495 -0.2785 -1.1598  0.3416 
 
 Coefficients:
             Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)  378.195     61.451   6.154 8.23e-06 ***
-CostColor    -18.560      5.111  -3.631  0.00191 ** 
+(Intercept) 37.67858    1.97817   19.05 7.35e-06 ***
+Chirps       0.23067    0.01423   16.21 1.63e-05 ***
 ---
 Signif. codes:  
 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 66.09 on 18 degrees of freedom
-Multiple R-squared:  0.4228,    Adjusted R-squared:  0.3908 
-F-statistic: 13.19 on 1 and 18 DF,  p-value: 0.00191</code></pre>
-<div class="sourceCode" id="cb585"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/anova.html">anova</a></span><span class="op">(</span><span class="va">mod1</span><span class="op">)</span></span></code></pre></div>
+Residual standard error: 1.528 on 5 degrees of freedom
+Multiple R-squared:  0.9813,    Adjusted R-squared:  0.9776 
+F-statistic: 262.9 on 1 and 5 DF,  p-value: 1.626e-05</code></pre>
+<div id="a-what-is-the-equation-for-the-regression-line-define-all-the-variables." class="section level3" number="24.1.1">
+<h3>
+<span class="header-section-number">24.1.1</span> (1a) What is the equation for the regression line? Define all the variables.<a class="anchor" aria-label="anchor" href="#a-what-is-the-equation-for-the-regression-line-define-all-the-variables."><i class="fas fa-link"></i></a>
+</h3>
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> The equation for the regression line is <span class="math inline">\(\widehat{\text { Temp }}=37.7+0.23 \text{Chirps}\)</span>, where <code>chirps</code> is the cricket chirp rate and <code>Temp</code> is the temperature.
+</details><p><br></p>
+</div>
+<div id="b-what-is-the-standard-errorse-for-the-slope" class="section level3" number="24.1.2">
+<h3>
+<span class="header-section-number">24.1.2</span> (1b) What is the Standard Error(SE) for the slope?<a class="anchor" aria-label="anchor" href="#b-what-is-the-standard-errorse-for-the-slope"><i class="fas fa-link"></i></a>
+</h3>
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> The standard error of the slope is 0.01423.
+</details><p><br></p>
+</div>
+<div id="c-find-a-95-confidence-interval-for-the-slope-of-the-cricket-temperature-model." class="section level3" number="24.1.3">
+<h3>
+<span class="header-section-number">24.1.3</span> (1c) Find a 95% confidence interval for the slope of the cricket temperature model.<a class="anchor" aria-label="anchor" href="#c-find-a-95-confidence-interval-for-the-slope-of-the-cricket-temperature-model."><i class="fas fa-link"></i></a>
+</h3>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The 95% confidence interval for the slope is given by <span class="math inline">\(b_1 \pm t^* \cdot S E\)</span>. It can be calculated as</p>
+<p><span class="math display">\[0.23067 \pm 2.57\cdot 0.01423 = (0.1940,0.2672).\]</span></p>
+<div class="sourceCode" id="cb591"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb591-1"><a href="class-activity-24.html#cb591-1" aria-hidden="true" tabindex="-1"></a><span class="fl">0.23067</span> <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span> <span class="fu">qt</span>(<span class="fl">0.975</span>, <span class="at">df =</span> <span class="dv">5</span>)<span class="sc">*</span> <span class="fl">0.01423</span></span>
+<span id="cb591-2"><a href="class-activity-24.html#cb591-2" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.1940906</span> <span class="fl">0.2672494</span></span></code></pre></div>
+</details><p><br></p>
+</div>
+<div id="d-conduct-a-hypotheis-test-for-the-slope.-include-all-the-steps." class="section level3" number="24.1.4">
+<h3>
+<span class="header-section-number">24.1.4</span> (1d) Conduct a hypotheis test for the slope. Include all the steps.<a class="anchor" aria-label="anchor" href="#d-conduct-a-hypotheis-test-for-the-slope.-include-all-the-steps."><i class="fas fa-link"></i></a>
+</h3>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The hypotheses are:</p>
+<p><span class="math display">\[\begin{align*}
+H_0 :&amp; \beta_1 = 0 \\
+H_a :&amp; \beta_1 \neq 0
+\end{align*}\]</span></p>
+<div class="sourceCode" id="cb592"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">cricket</span><span class="op">$</span><span class="va">Chirps</span>, <span class="va">cricket</span><span class="op">$</span><span class="va">Temperature</span>, type <span class="op">=</span> <span class="st">"p"</span>, pch <span class="op">=</span> <span class="fl">19</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html">abline</a></span><span class="op">(</span><span class="va">mod</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Class_Activity_24_files/figure-html/unnamed-chunk-4-1.png" width="100%"></div>
+<p>The conditions for the slope inference are linearity, normality, constant variability, and independence of the residuals. These can be verified based on the residual and QQ-plot. Based on the residual plot, these residuals are randomly scattered around 0, without any patterns and with constant vertical spread. The individual observations are independent as each cricket are different from one another.</p>
+<div class="sourceCode" id="cb593"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Residual plot</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">mod</span>, which <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Class_Activity_24_files/figure-html/unnamed-chunk-5-1.png" width="100%"></div>
+<div class="sourceCode" id="cb594"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># QQ plot</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">mod</span>, which <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Class_Activity_24_files/figure-html/unnamed-chunk-6-1.png" width="100%"></div>
+<p>So, based on the summary output, the test statistics for the slope test is given by</p>
+<p><span class="math display">\[\begin{align*}
+t=\frac{b_{1}}{S E} = \frac{0.23067 }{0.01423} = 16.21
+\end{align*}\]</span></p>
+<p>The p-value corresponding to the above t-value based on t-distribution with <span class="math inline">\(n-2 = 7-2 = 5\)</span> degrees of freedom is given as <span class="math inline">\(0.00000163\)</span> from the coefficients table, or as seen below:</p>
+<div class="sourceCode" id="cb595"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">2</span><span class="op">*</span><span class="op">(</span><span class="fl">1</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/stats/TDist.html">pt</a></span><span class="op">(</span><span class="fl">16.21</span>, df <span class="op">=</span> <span class="fl">5</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<pre><code>[1] 1.628701e-05</code></pre>
+<p>So, we reject the null at the significance level of 0.05 and conclude that there is significant evidence that the population slope parameter is different from 0.</p>
+</details><p><br></p>
+</div>
+<div id="e-conduct-a-hypothesis-test-to-see-if-there-exists-some-association-between-temperature-and-chirp-rate." class="section level3" number="24.1.5">
+<h3>
+<span class="header-section-number">24.1.5</span> (1e) Conduct a hypothesis test to see if there exists some association between temperature and chirp rate.<a class="anchor" aria-label="anchor" href="#e-conduct-a-hypothesis-test-to-see-if-there-exists-some-association-between-temperature-and-chirp-rate."><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb597"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/anova.html">anova</a></span><span class="op">(</span><span class="va">mod</span><span class="op">)</span></span></code></pre></div>
 <pre><code>Analysis of Variance Table
 
-Response: Price
-          Df Sum Sq Mean Sq F value  Pr(&gt;F)   
-CostColor  1  57604   57604  13.186 0.00191 **
-Residuals 18  78633    4369                   
+Response: Temperature
+          Df Sum Sq Mean Sq F value    Pr(&gt;F)    
+Chirps     1 613.69  613.69  262.92 1.626e-05 ***
+Residuals  5  11.67    2.33                      
 ---
 Signif. codes:  
 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
-<div class="sourceCode" id="cb587"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">coeff</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/coef.html">coefficients</a></span><span class="op">(</span><span class="va">mod1</span><span class="op">)</span></span>
-<span><span class="va">eq</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"y = "</span>, <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">coeff</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,<span class="fl">1</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">coeff</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span>,<span class="fl">1</span><span class="op">)</span>, <span class="st">"*x"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">inkjet</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">CostColor</span>, y<span class="op">=</span><span class="va">Price</span><span class="op">)</span><span class="op">)</span><span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_classic</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
-<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
-<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_abline</a></span><span class="op">(</span>intercept <span class="op">=</span> <span class="va">coeff</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, slope <span class="op">=</span> <span class="va">coeff</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span>, color <span class="op">=</span> <span class="st">"red"</span>,</span>
-<span>                linetype <span class="op">=</span> <span class="st">"dashed"</span>, size <span class="op">=</span> <span class="fl">1.5</span><span class="op">)</span><span class="op">+</span></span>
-<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="va">eq</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="Class_Activity_24_files/figure-html/unnamed-chunk-3-1.png" width="100%"></div>
-<div id="a-what-is-the-regression-line-please-do-not-forget-to-define-the-variables-in-the-regression-equation." class="section level3" number="24.1.1">
-<h3>
-<span class="header-section-number">24.1.1</span> (1a) What is the regression line? Please do not forget to define the variables in the regression equation.<a class="anchor" aria-label="anchor" href="#a-what-is-the-regression-line-please-do-not-forget-to-define-the-variables-in-the-regression-equation."><i class="fas fa-link"></i></a>
-</h3>
-<p><em>Answer:</em></p>
-<p><span class="math display">\[\widehat{Price} = 378.20 - 18.56\cdot CostColor\]</span></p>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em></p>
+<p>The hypotheses can be written as:</p>
+<p><span class="math display">\[\begin{align*}
+H_0 :&amp; \rho = 0 \\
+H_a :&amp; \rho \neq 0
+\end{align*}\]</span></p>
+<p>The conditions for this test are the same as before. So, we assume the conditions are met.</p>
+<p><span class="math display">\[\begin{align*}
+t &amp; =\frac{\text { statistic -null }}{S E}=\frac{r-0}{\sqrt{\frac{1-r^{2}}{n-2}}} = =\frac{r}{\frac{\sqrt{1-r^{2}}}{\sqrt{n-2}}}\\
+&amp;=\left(\frac{r \sqrt{n-2}}{\sqrt{1-r^{2}}}\right)\\
+&amp;=\frac{0.99062 \sqrt{7-2}}{\sqrt{1-0.99062^{2}}}=16.21
+\end{align*}\]</span></p>
+<p>The test statistics is exactly the same as before. So, both of these tests are equivalent and we arrive at the same conclusion as before. If the slope corresponding to the change in mean chirp rate for unit increase in temperature is significantly different from 0, then there is also a significant association between the chirp rate and the temperature.</p>
+</details><p><br></p>
 </div>
-<div id="b-what-price-should-we-expect-when-costcolor-is-9" class="section level3" number="24.1.2">
-<h3>
-<span class="header-section-number">24.1.2</span> (1b) What <code>Price</code> should we expect when <code>CostColor</code> is 9?<a class="anchor" aria-label="anchor" href="#b-what-price-should-we-expect-when-costcolor-is-9"><i class="fas fa-link"></i></a>
-</h3>
-<p><em>Answer:</em></p>
-<div class="sourceCode" id="cb588"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fl">378.20</span> <span class="op">-</span> <span class="fl">18.56</span><span class="op">*</span><span class="fl">9</span></span></code></pre></div>
-<pre><code>[1] 211.16</code></pre>
 </div>
-<div id="c-find-the-95-confidence-interval-for-the-mean-price-of-inkjet-printers-that-cost-9-cents-per-page-to-print-in-color.-you-can-use-the-predict-function-in-r-to-calculate-the-confidence-interval." class="section level3" number="24.1.3">
-<h3>
-<span class="header-section-number">24.1.3</span> (1c) Find the <span class="math inline">\(95\%\)</span> confidence interval for the mean price of inkjet printers that cost 9 cents per page to print in color. You can use the <code>predict</code> function in R to calculate the confidence interval.<a class="anchor" aria-label="anchor" href="#c-find-the-95-confidence-interval-for-the-mean-price-of-inkjet-printers-that-cost-9-cents-per-page-to-print-in-color.-you-can-use-the-predict-function-in-r-to-calculate-the-confidence-interval."><i class="fas fa-link"></i></a>
-</h3>
-<div class="sourceCode" id="cb590"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># new data frame with the new x*</span></span>
-<span><span class="va">newx</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>CostColor<span class="op">=</span><span class="fl">9.0</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/stats/predict.html">predict</a></span><span class="op">(</span><span class="va">mod1</span>,<span class="va">newx</span>, interval<span class="op">=</span><span class="st">"confidence"</span>,  level <span class="op">=</span> <span class="fl">0.95</span><span class="op">)</span></span></code></pre></div>
-<pre><code>       fit      lwr      upr
-1 211.1552 168.8926 253.4178</code></pre>
-<p><em>Answer:</em></p>
-<p>The following is a plot of <span class="math inline">\(95\%\)</span> confidence interval for the mean price.</p>
-<div class="sourceCode" id="cb592"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># 95% confidence interval</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">inkjet</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">CostColor</span>, y<span class="op">=</span><span class="va">Price</span><span class="op">)</span><span class="op">)</span><span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_classic</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
-<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
-<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method<span class="op">=</span><span class="va">lm</span>, se<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="Class_Activity_24_files/figure-html/unnamed-chunk-6-1.png" width="100%"></div>
-</div>
-<div id="d-find-the-95-prediction-interval-for-the-price-of-a-particular-inkjet-printer-that-cost-9-cents-per-page-to-print-in-color.-again-you-can-use-the-predict-function-in-r-to-calculate-the-prediction-interval." class="section level3" number="24.1.4">
-<h3>
-<span class="header-section-number">24.1.4</span> (1d) Find the <span class="math inline">\(95\%\)</span> prediction interval for the price of a particular inkjet printer that cost 9 cents per page to print in color. Again, you can use the <code>predict</code> function in R to calculate the prediction interval.<a class="anchor" aria-label="anchor" href="#d-find-the-95-prediction-interval-for-the-price-of-a-particular-inkjet-printer-that-cost-9-cents-per-page-to-print-in-color.-again-you-can-use-the-predict-function-in-r-to-calculate-the-prediction-interval."><i class="fas fa-link"></i></a>
-</h3>
-<div class="sourceCode" id="cb593"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">newx</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>CostColor<span class="op">=</span><span class="fl">9</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/stats/predict.html">predict</a></span><span class="op">(</span><span class="va">mod1</span>,<span class="va">newx</span>, interval<span class="op">=</span><span class="st">"prediction"</span>, level <span class="op">=</span> <span class="fl">0.95</span><span class="op">)</span></span></code></pre></div>
-<pre><code>       fit      lwr      upr
-1 211.1552 66.00634 356.3041</code></pre>
-<p><em>Answer:</em></p>
-<p>The following is a plot of <span class="math inline">\(95\%\)</span> prediction interval for price of an individual inkjet printer.</p>
-<div class="sourceCode" id="cb595"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">pred_interval</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/predict.html">predict</a></span><span class="op">(</span><span class="va">mod1</span>, interval <span class="op">=</span> <span class="st">"prediction"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">final_df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">inkjet</span>, <span class="va">pred_interval</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">final_df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">CostColor</span>, y<span class="op">=</span><span class="va">Price</span><span class="op">)</span><span class="op">)</span><span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_classic</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
-<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y<span class="op">=</span><span class="va">lwr</span><span class="op">)</span>, color <span class="op">=</span> <span class="st">"red"</span>, linetype <span class="op">=</span> <span class="st">"dashed"</span><span class="op">)</span><span class="op">+</span></span>
-<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y<span class="op">=</span><span class="va">upr</span><span class="op">)</span>, color <span class="op">=</span> <span class="st">"red"</span>, linetype <span class="op">=</span> <span class="st">"dashed"</span><span class="op">)</span><span class="op">+</span></span>
-<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method<span class="op">=</span><span class="va">lm</span>, se<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="Class_Activity_24_files/figure-html/unnamed-chunk-8-1.png" width="100%"></div>
-</div>
-<div id="e-verify-the-confidence-interval-in-part-1c-by-hand.-the-formula-for-calculating-the-confidence-interval-is" class="section level3" number="24.1.5">
-<h3>
-<span class="header-section-number">24.1.5</span> (1e) Verify the confidence interval in part (1c) by hand. The formula for calculating the confidence interval is<a class="anchor" aria-label="anchor" href="#e-verify-the-confidence-interval-in-part-1c-by-hand.-the-formula-for-calculating-the-confidence-interval-is"><i class="fas fa-link"></i></a>
-</h3>
-<p><span class="math display">\[\hat{y} \pm t^{*} s_{\epsilon} \sqrt{\frac{1}{n}+\frac{\left(x^{*}-\bar{x}\right)^{2}}{(n-1) s_{x}^{2}}} \]</span></p>
-<div class="sourceCode" id="cb596"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">inkjet</span><span class="op">$</span><span class="va">CostColor</span><span class="op">)</span></span></code></pre></div>
-<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-  6.500   9.625  11.350  11.670  13.525  18.600 </code></pre>
-<div class="sourceCode" id="cb598"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">inkjet</span><span class="op">$</span><span class="va">CostColor</span><span class="op">)</span></span></code></pre></div>
-<pre><code>[1] 2.966675</code></pre>
-<p><em>Answer:</em></p>
+<div id="example-2-cereals-and-calories" class="section level2" number="24.2">
+<h2>
+<span class="header-section-number">24.2</span> Example 2: Cereals and Calories<a class="anchor" aria-label="anchor" href="#example-2-cereals-and-calories"><i class="fas fa-link"></i></a>
+</h2>
+<p>Nutrition information for a sample of 30 breakfast cereals, derived from nutrition labels are stored under <code>Cereals</code> dataset. Calorie values are per cup of cereal and sugars are measured in grams per cup. We would like to predict the calorie count by the suger content of the cereal.</p>
+<div class="sourceCode" id="cb599"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">cerealdat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"https://www.lock5stat.com/datasets3e/Cereal.csv"</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb600"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="op">(</span><span class="fl">211.1552</span> <span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span><span class="op">*</span><span class="fl">2.101</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fl">4369</span><span class="op">)</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fl">1</span><span class="op">/</span><span class="fl">20</span> <span class="op">+</span> <span class="op">(</span><span class="fl">9</span><span class="op">-</span><span class="fl">11.67</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">/</span><span class="op">(</span><span class="fl">19</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">inkjet</span><span class="op">$</span><span class="va">CostColor</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<pre><code>[1] 168.8887 253.4217</code></pre>
-<p><span class="math display">\[211.1552 \pm 2.101* \sqrt{4369}*\sqrt{\frac{1}{20} + \frac{(9.0 - 11.67)^2}{(20-1)2.966^2}}\]</span></p>
-<p><span class="math display">\[(168.89, 253.42)\]</span></p>
-</div>
-<div id="f-verify-the-prediction-interval-in-part-1d-by-hand.-the-formula-for-calculating-the-prediction-interval-is" class="section level3" number="24.1.6">
+<code class="sourceCode R"><span><span class="va">mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Calories</span><span class="op">~</span><span class="va">Sugars</span>, data <span class="op">=</span> <span class="va">cerealdat</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">mod</span><span class="op">)</span></span></code></pre></div>
+<pre><code>
+Call:
+lm(formula = Calories ~ Sugars, data = cerealdat)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-36.574 -25.282  -2.549  17.796  51.805 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  88.9204    10.8120   8.224 5.96e-09 ***
+Sugars        4.3103     0.9269   4.650 7.22e-05 ***
+---
+Signif. codes:  
+0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 26.61 on 28 degrees of freedom
+Multiple R-squared:  0.4357,    Adjusted R-squared:  0.4156 
+F-statistic: 21.62 on 1 and 28 DF,  p-value: 7.217e-05</code></pre>
+<div id="a-what-is-the-equation-for-the-regression-line-define-all-the-variables.-1" class="section level3" number="24.2.1">
 <h3>
-<span class="header-section-number">24.1.6</span> (1f) Verify the prediction interval in part (1d) by hand. The formula for calculating the prediction interval is<a class="anchor" aria-label="anchor" href="#f-verify-the-prediction-interval-in-part-1d-by-hand.-the-formula-for-calculating-the-prediction-interval-is"><i class="fas fa-link"></i></a>
+<span class="header-section-number">24.2.1</span> (2a) What is the equation for the regression line? Define all the variables.<a class="anchor" aria-label="anchor" href="#a-what-is-the-equation-for-the-regression-line-define-all-the-variables.-1"><i class="fas fa-link"></i></a>
 </h3>
-<p><span class="math display">\[\hat{y} \pm t^{*} s_{\epsilon} \sqrt{1+\frac{1}{n}+\frac{\left(x^{*}-\bar{x}\right)^{2}}{(n-1) s_{x}^{2}}}\]</span></p>
-<p><em>Answer:</em></p>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> <span class="math display">\[\widehat{Calorie} = 88.92 + 4.31 \cdot \text{Sugar}\]</span></p>
+</details><p><br></p>
+</div>
+<div id="b-check-the-conditions-for-using-linear-model." class="section level3" number="24.2.2">
+<h3>
+<span class="header-section-number">24.2.2</span> (2b) Check the conditions for using linear model.<a class="anchor" aria-label="anchor" href="#b-check-the-conditions-for-using-linear-model."><i class="fas fa-link"></i></a>
+</h3>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The assumptions for using linear model seem to have met based on the residual plot and qq-plot.</p>
 <div class="sourceCode" id="cb602"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="op">(</span><span class="fl">211.1552</span> <span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span><span class="op">*</span><span class="fl">2.101</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fl">4369</span><span class="op">)</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fl">1</span><span class="op">+</span><span class="fl">1</span><span class="op">/</span><span class="fl">20</span> <span class="op">+</span> <span class="op">(</span><span class="fl">9</span><span class="op">-</span><span class="fl">11.67</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">/</span><span class="op">(</span><span class="fl">19</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">inkjet</span><span class="op">$</span><span class="va">CostColor</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<pre><code>[1]  65.99288 356.31752</code></pre>
-<p><span class="math display">\[211.1552 \pm 2.101* \sqrt{4369}*\sqrt{1+\frac{1}{20} + \frac{(9.0 - 11.67)^2}{(20-1)2.966^2}}\]</span>
-<span class="math display">\[(65.99, 356.32)\]</span></p>
-</div>
-<div id="g-conduct-a-hypothesis-test-to-see-if-we-can-predict-the-price-of-inkjet-printers-in-dollars-based-on-the-cost-per-page-in-cents-for-printing-in-color-i.e.-test-if-the-linear-model-is-effective.-you-can-check-the-conditions-for-the-test-by-looking-at-the-plots-provided." class="section level3" number="24.1.7">
-<h3>
-<span class="header-section-number">24.1.7</span> (1g) Conduct a hypothesis test to see if we can predict the price of inkjet printers (in dollars) based on the cost per page (in cents) for printing in color (i.e., test if the linear model is effective). You can check the conditions for the test by looking at the plots provided.<a class="anchor" aria-label="anchor" href="#g-conduct-a-hypothesis-test-to-see-if-we-can-predict-the-price-of-inkjet-printers-in-dollars-based-on-the-cost-per-page-in-cents-for-printing-in-color-i.e.-test-if-the-linear-model-is-effective.-you-can-check-the-conditions-for-the-test-by-looking-at-the-plots-provided."><i class="fas fa-link"></i></a>
-</h3>
-<p><em>Answer:</em></p>
-<div class="sourceCode" id="cb604"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">inkjet</span><span class="op">$</span><span class="va">Residuals</span> <span class="op">&lt;-</span> <span class="va">mod1</span><span class="op">$</span><span class="va">residuals</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">inkjet</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">CostColor</span>, y<span class="op">=</span><span class="va">Residuals</span><span class="op">)</span><span class="op">)</span><span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_classic</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_hline</a></span><span class="op">(</span>yintercept <span class="op">=</span> <span class="fl">0</span>, color <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">cerealdat</span><span class="op">$</span><span class="va">Sugars</span>, <span class="va">cerealdat</span><span class="op">$</span><span class="va">Calories</span>, type <span class="op">=</span> <span class="st">"p"</span>, pch <span class="op">=</span> <span class="fl">19</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html">abline</a></span><span class="op">(</span><span class="va">mod</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Class_Activity_24_files/figure-html/unnamed-chunk-11-1.png" width="100%"></div>
+<div class="sourceCode" id="cb603"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">mod</span>, which <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="Class_Activity_24_files/figure-html/unnamed-chunk-12-1.png" width="100%"></div>
-<div class="sourceCode" id="cb605"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">inkjet</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>sample <span class="op">=</span> <span class="va">Residuals</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_qq.html">geom_qq</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_qq.html">geom_qq_line</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_classic</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb604"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">mod</span>, which <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="Class_Activity_24_files/figure-html/unnamed-chunk-13-1.png" width="100%"></div>
+</details><p><br></p>
+</div>
+<div id="c-conduct-a-hypotheis-test-to-determine-if-the-linear-model-is-effective.-include-all-the-steps." class="section level3" number="24.2.3">
+<h3>
+<span class="header-section-number">24.2.3</span> (2c) Conduct a hypotheis test to determine if the linear model is effective. Include all the steps.<a class="anchor" aria-label="anchor" href="#c-conduct-a-hypotheis-test-to-determine-if-the-linear-model-is-effective.-include-all-the-steps."><i class="fas fa-link"></i></a>
+</h3>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em></p>
+<div class="sourceCode" id="cb605"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/anova.html">anova</a></span><span class="op">(</span><span class="va">mod</span><span class="op">)</span></span></code></pre></div>
+<pre><code>Analysis of Variance Table
+
+Response: Calories
+          Df Sum Sq Mean Sq F value    Pr(&gt;F)    
+Sugars     1  15316 15316.5  21.623 7.217e-05 ***
+Residuals 28  19834   708.3                      
+---
+Signif. codes:  
+0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+<p><span class="math display">\[\begin{align*}
+t=\frac{b_{1}}{S E} = \frac{4.3103 }{0.9269} = 4.650
+\end{align*}\]</span></p>
+<p>The p-value corresponding to the above t-value based on t-distribution with <span class="math inline">\(n-2 = 30-2 = 28\)</span> degrees of freedom is given as <span class="math inline">\(0.00000725\)</span> from the coefficients table, or as seen below:</p>
+<div class="sourceCode" id="cb607"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">2</span><span class="op">*</span><span class="op">(</span><span class="fl">1</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/stats/TDist.html">pt</a></span><span class="op">(</span><span class="fl">4.650</span>, df <span class="op">=</span> <span class="fl">28</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<pre><code>[1] 7.218187e-05</code></pre>
+<p>So, we reject the null at the significance level of 0.05 and conclude that there is significant evidence that the population slope parameter is different from 0.</p>
+</details><p><br></p>
 
 </div>
 </div>
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="class-activity-23.html"><span class="header-section-number">23</span> Class Activity 23</a></div>
-<div class="next"><a href="class-activity-25.html"><span class="header-section-number">25</span> Class Activity 25</a></div>
+<div class="next"><a href="what-is-r.html"><span class="header-section-number">26</span> What is R?</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#class-activity-24"><span class="header-section-number">24</span> Class Activity 24</a></li>
 <li>
-<a class="nav-link" href="#example-1-data-from-online-reviews-of-inkjet-printers-is-available-under-the-dataset-inkjetprinters.-the-data-is-extracted-from-reviews-of-inkjet-printers-at-pcmag.com-in-august-2011.-we-are-interested-in-the-quantitative-variable-price-the-typical-retail-price-of-printers-in-dollars-and-costcolor-the-cost-per-page-in-cents-for-printing-in-color."><span class="header-section-number">24.1</span> Example 1: Data from online reviews of inkjet printers is available under the dataset InkjetPrinters. The data is extracted from reviews of inkjet printers at PCMag.com in August 2011. We are interested in the quantitative variable Price, the typical retail price of printers in dollars and CostColor, the cost per page in cents for printing in color.</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#a-what-is-the-regression-line-please-do-not-forget-to-define-the-variables-in-the-regression-equation."><span class="header-section-number">24.1.1</span> (1a) What is the regression line? Please do not forget to define the variables in the regression equation.</a></li>
-<li><a class="nav-link" href="#b-what-price-should-we-expect-when-costcolor-is-9"><span class="header-section-number">24.1.2</span> (1b) What Price should we expect when CostColor is 9?</a></li>
-<li><a class="nav-link" href="#c-find-the-95-confidence-interval-for-the-mean-price-of-inkjet-printers-that-cost-9-cents-per-page-to-print-in-color.-you-can-use-the-predict-function-in-r-to-calculate-the-confidence-interval."><span class="header-section-number">24.1.3</span> (1c) Find the \(95\%\) confidence interval for the mean price of inkjet printers that cost 9 cents per page to print in color. You can use the predict function in R to calculate the confidence interval.</a></li>
-<li><a class="nav-link" href="#d-find-the-95-prediction-interval-for-the-price-of-a-particular-inkjet-printer-that-cost-9-cents-per-page-to-print-in-color.-again-you-can-use-the-predict-function-in-r-to-calculate-the-prediction-interval."><span class="header-section-number">24.1.4</span> (1d) Find the \(95\%\) prediction interval for the price of a particular inkjet printer that cost 9 cents per page to print in color. Again, you can use the predict function in R to calculate the prediction interval.</a></li>
-<li><a class="nav-link" href="#e-verify-the-confidence-interval-in-part-1c-by-hand.-the-formula-for-calculating-the-confidence-interval-is"><span class="header-section-number">24.1.5</span> (1e) Verify the confidence interval in part (1c) by hand. The formula for calculating the confidence interval is</a></li>
-<li><a class="nav-link" href="#f-verify-the-prediction-interval-in-part-1d-by-hand.-the-formula-for-calculating-the-prediction-interval-is"><span class="header-section-number">24.1.6</span> (1f) Verify the prediction interval in part (1d) by hand. The formula for calculating the prediction interval is</a></li>
-<li><a class="nav-link" href="#g-conduct-a-hypothesis-test-to-see-if-we-can-predict-the-price-of-inkjet-printers-in-dollars-based-on-the-cost-per-page-in-cents-for-printing-in-color-i.e.-test-if-the-linear-model-is-effective.-you-can-check-the-conditions-for-the-test-by-looking-at-the-plots-provided."><span class="header-section-number">24.1.7</span> (1g) Conduct a hypothesis test to see if we can predict the price of inkjet printers (in dollars) based on the cost per page (in cents) for printing in color (i.e., test if the linear model is effective). You can check the conditions for the test by looking at the plots provided.</a></li>
+<a class="nav-link" href="#example-1-cricket-chirps"><span class="header-section-number">24.1</span> Example 1: Cricket Chirps</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#a-what-is-the-equation-for-the-regression-line-define-all-the-variables."><span class="header-section-number">24.1.1</span> (1a) What is the equation for the regression line? Define all the variables.</a></li>
+<li><a class="nav-link" href="#b-what-is-the-standard-errorse-for-the-slope"><span class="header-section-number">24.1.2</span> (1b) What is the Standard Error(SE) for the slope?</a></li>
+<li><a class="nav-link" href="#c-find-a-95-confidence-interval-for-the-slope-of-the-cricket-temperature-model."><span class="header-section-number">24.1.3</span> (1c) Find a 95% confidence interval for the slope of the cricket temperature model.</a></li>
+<li><a class="nav-link" href="#d-conduct-a-hypotheis-test-for-the-slope.-include-all-the-steps."><span class="header-section-number">24.1.4</span> (1d) Conduct a hypotheis test for the slope. Include all the steps.</a></li>
+<li><a class="nav-link" href="#e-conduct-a-hypothesis-test-to-see-if-there-exists-some-association-between-temperature-and-chirp-rate."><span class="header-section-number">24.1.5</span> (1e) Conduct a hypothesis test to see if there exists some association between temperature and chirp rate.</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#example-2-cereals-and-calories"><span class="header-section-number">24.2</span> Example 2: Cereals and Calories</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#a-what-is-the-equation-for-the-regression-line-define-all-the-variables.-1"><span class="header-section-number">24.2.1</span> (2a) What is the equation for the regression line? Define all the variables.</a></li>
+<li><a class="nav-link" href="#b-check-the-conditions-for-using-linear-model."><span class="header-section-number">24.2.2</span> (2b) Check the conditions for using linear model.</a></li>
+<li><a class="nav-link" href="#c-conduct-a-hypotheis-test-to-determine-if-the-linear-model-is-effective.-include-all-the-steps."><span class="header-section-number">24.2.3</span> (2c) Conduct a hypotheis test to determine if the linear model is effective. Include all the steps.</a></li>
 </ul>
 </li>
 </ul>
@@ -275,7 +331,7 @@ Signif. codes:
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-01-01.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-03-01.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

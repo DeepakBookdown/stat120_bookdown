@@ -117,7 +117,7 @@
 
 \title{Stat 120}
 \author{Deepak Bastola}
-\date{2023-02-26}
+\date{2023-03-01}
 
 \begin{document}
 \maketitle
@@ -166,16 +166,16 @@ Click for answer
 
 \begin{verbatim}
    ID Greeting  Male      Age
-1   1    Hello  TRUE 39.02883
-2   2    Hello FALSE 42.54085
-3   3    Hello  TRUE 45.13284
-4   4    Hello FALSE 37.52349
-5   5    Hello  TRUE 58.24304
-6   6  Goodbye FALSE 46.34264
-7   7  Goodbye  TRUE 28.33329
-8   8  Goodbye FALSE 31.15743
-9   9  Goodbye  TRUE 32.76741
-10 10  Goodbye FALSE 58.03955
+1   1    Hello  TRUE 54.49879
+2   2    Hello FALSE 44.73834
+3   3    Hello  TRUE 23.73303
+4   4    Hello FALSE 45.09184
+5   5    Hello  TRUE 41.52905
+6   6  Goodbye FALSE 38.22207
+7   7  Goodbye  TRUE 40.70934
+8   8  Goodbye FALSE 28.29063
+9   9  Goodbye  TRUE 31.79735
+10 10  Goodbye FALSE 55.86265
 \end{verbatim}
 
 \emph{Answer:} We see a data frame with four columns, where the first column is an \texttt{identifier} for the cases. We have information on the greeting types, whether male or not, and age on these cases in the remaining columns.
@@ -399,7 +399,7 @@ Run the following command to obtain a SRS of 10 words from the 268 that are in t
 \end{Shaded}
 
 \begin{verbatim}
- [1]  51 204  99 149  92 180 213 241 214 129
+ [1] 156 190 202  28  25 187  93 246 206  32
 \end{verbatim}
 
 This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
@@ -415,17 +415,17 @@ We will \emph{subset} the data set \texttt{pop} to obtain only the sampled rows 
 \end{Shaded}
 
 \begin{verbatim}
-    position size        word
-51        51    9  dedicated,
-204      204    4        from
-99        99    2          we
-149      149    2          we
-92        92    2          It
-180      180    4        here
-213      213    4        that
-241      241    6     nation,
-214      214    5       cause
-129      129   11 consecrated
+    position size    word
+156      156    6  forget
+190      190    3     for
+202      202    2     us,
+28        28    3     are
+25        25    4    that
+187      187    2      It
+93        93    2      is
+246      246    1       a
+206      206    7 honored
+32        32    2      we
 \end{verbatim}
 
 \begin{enumerate}
@@ -446,7 +446,7 @@ The word lengths in part (b) are the data for your sample. You can compute your 
 \end{Shaded}
 
 \begin{verbatim}
- [1]  9  4  2  2  2  4  4  6  5 11
+ [1] 6 3 2 3 4 2 2 1 7 2
 \end{verbatim}
 
 Then find the mean of these values:
@@ -458,7 +458,7 @@ Then find the mean of these values:
 \end{Shaded}
 
 \begin{verbatim}
-[1] 4.9
+[1] 3.2
 \end{verbatim}
 
 How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?
@@ -3936,7 +3936,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
- [1] 147  23  93 185  52  85  23 185  23  93
+ [1] 132 185  87  72  87 132  93 147 125 147
 \end{verbatim}
 
 (d). Where will be bootstrap distribution be centered? What shape do we expect it to have?
@@ -4293,12 +4293,12 @@ The \texttt{boot(y\ \textasciitilde{}\ x,\ data=)} command generates 10000 boots
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -2.26095 
- Mean of bootstrap distribution: -2.24781 
- Standard error of bootstrap distribution: 0.77531 
+ Mean of bootstrap distribution: -2.25704 
+ Standard error of bootstrap distribution: 0.78065 
 
  Bootstrap percentile interval
       2.5%      97.5% 
--3.7553214 -0.7066548 
+-3.7595357 -0.7066429 
 
         *--------------*
 \end{verbatim}
@@ -5119,9 +5119,9 @@ Then load the \texttt{CarletonStats} package and run the \texttt{permTest(y\ \te
   Caffeine :  12.25      Sleep :  15.25 
  Observed difference: -3 
 
- Mean of permutation distribution: 0.00277 
- Standard error of permutation distribution: 1.50432 
- P-value:  0.0452 
+ Mean of permutation distribution: 0.001 
+ Standard error of permutation distribution: 1.49891 
+ P-value:  0.049 
 
     *-------------*
 \end{verbatim}
@@ -5235,9 +5235,9 @@ Click for answer
   NonRes :  6405.263     Res :  2821.053 
  Observed difference  NonRes - Res : 3584.211 
 
- Mean of permutation distribution: 12.87129 
- Standard error of permutation distribution: 945.1306 
- P-value:  1e-04 
+ Mean of permutation distribution: 26.99375 
+ Standard error of permutation distribution: 935.813 
+ P-value:  2e-04 
 
     *-------------*
 \end{verbatim}
@@ -5413,9 +5413,9 @@ H_0: \mu_{B5} - \mu_{G5} = 0 \ \ H_0: \mu_{B5} - \mu_{G5} \neq 0
   boy :  -0.10435    girl :  0.02906 
  Observed difference: -0.13341 
 
- Mean of permutation distribution: 0.00049 
- Standard error of permutation distribution: 0.26175 
- P-value:  0.606 
+ Mean of permutation distribution: 0.00569 
+ Standard error of permutation distribution: 0.26146 
+ P-value:  0.5964 
 
     *-------------*
 \end{verbatim}
@@ -7877,7 +7877,7 @@ If you were concerned that the expected counts weren't large enough to trust usi
     (based on 2000 replicates)
 
 data:  survey$religiousness and survey$comfortness
-X-squared = 19.33, df = NA, p-value = 0.001999
+X-squared = 19.33, df = NA, p-value = 0.0009995
 \end{verbatim}
 
 The p-value is slightly different, but your conclusion should be the same.
@@ -9029,6 +9029,316 @@ We are 95\% confident that the true mean copper concentration at site 1 is 1.63 
 \begin{verbatim}
 [1] 14.28515
 \end{verbatim}
+
+\hypertarget{class-activity-24}{%
+\chapter{Class Activity 24}\label{class-activity-24}}
+
+\hypertarget{example-1-cricket-chirps}{%
+\section{Example 1: Cricket Chirps}\label{example-1-cricket-chirps}}
+
+The data on \texttt{CricketChirps} were collected by E.A. Bessey and C.A. Bessey who measured chirp rates for crickets and temperatures during the summer of 1898. Conduct a simple linear regression analysis to predict the temperature by cricket chirp rate.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{cricket }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://www.lock5stat.com/datasets3e/CricketChirps.csv"}\NormalTok{)}
+\NormalTok{cricket}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+  Temperature Chirps
+1        54.5     81
+2        59.5     97
+3        63.5    103
+4        67.5    123
+5        72.0    150
+6        78.5    182
+7        83.0    195
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mod }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(Temperature}\SpecialCharTok{\textasciitilde{}}\NormalTok{Chirps, }\AttributeTok{data =}\NormalTok{ cricket)}
+\FunctionTok{summary}\NormalTok{(mod)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Call:
+lm(formula = Temperature ~ Chirps, data = cricket)
+
+Residuals:
+      1       2       3       4       5       6       7 
+-1.8625 -0.5532  2.0628  1.4495 -0.2785 -1.1598  0.3416 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 37.67858    1.97817   19.05 7.35e-06 ***
+Chirps       0.23067    0.01423   16.21 1.63e-05 ***
+---
+Signif. codes:  
+0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1.528 on 5 degrees of freedom
+Multiple R-squared:  0.9813,    Adjusted R-squared:  0.9776 
+F-statistic: 262.9 on 1 and 5 DF,  p-value: 1.626e-05
+\end{verbatim}
+
+\hypertarget{a-what-is-the-equation-for-the-regression-line-define-all-the-variables.}{%
+\subsection{(1a) What is the equation for the regression line? Define all the variables.}\label{a-what-is-the-equation-for-the-regression-line-define-all-the-variables.}}
+
+Click for answer
+
+\emph{Answer:} The equation for the regression line is \(\widehat{\text { Temp }}=37.7+0.23 \text{Chirps}\), where \texttt{chirps} is the cricket chirp rate and \texttt{Temp} is the temperature.
+
+\hypertarget{b-what-is-the-standard-errorse-for-the-slope}{%
+\subsection{(1b) What is the Standard Error(SE) for the slope?}\label{b-what-is-the-standard-errorse-for-the-slope}}
+
+Click for answer
+
+\emph{Answer:} The standard error of the slope is 0.01423.
+
+\hypertarget{c-find-a-95-confidence-interval-for-the-slope-of-the-cricket-temperature-model.}{%
+\subsection{(1c) Find a 95\% confidence interval for the slope of the cricket temperature model.}\label{c-find-a-95-confidence-interval-for-the-slope-of-the-cricket-temperature-model.}}
+
+Click for answer
+
+\emph{Answer:} The 95\% confidence interval for the slope is given by \(b_1 \pm t^* \cdot S E\). It can be calculated as
+
+\[0.23067 \pm 2.57\cdot 0.01423 = (0.1940,0.2672).\]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FloatTok{0.23067} \SpecialCharTok{+} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{)}\SpecialCharTok{*} \FunctionTok{qt}\NormalTok{(}\FloatTok{0.975}\NormalTok{, }\AttributeTok{df =} \DecValTok{5}\NormalTok{)}\SpecialCharTok{*} \FloatTok{0.01423}
+\NormalTok{[}\DecValTok{1}\NormalTok{] }\FloatTok{0.1940906} \FloatTok{0.2672494}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{d-conduct-a-hypotheis-test-for-the-slope.-include-all-the-steps.}{%
+\subsection{(1d) Conduct a hypotheis test for the slope. Include all the steps.}\label{d-conduct-a-hypotheis-test-for-the-slope.-include-all-the-steps.}}
+
+Click for answer
+
+\emph{Answer:} The hypotheses are:
+
+\begin{align*}
+H_0 :& \beta_1 = 0 \\
+H_a :& \beta_1 \neq 0
+\end{align*}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(cricket}\SpecialCharTok{$}\NormalTok{Chirps, cricket}\SpecialCharTok{$}\NormalTok{Temperature, }\AttributeTok{type =} \StringTok{"p"}\NormalTok{, }\AttributeTok{pch =} \DecValTok{19}\NormalTok{)}
+\FunctionTok{abline}\NormalTok{(mod)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_24_files/figure-latex/unnamed-chunk-4-1}
+
+The conditions for the slope inference are linearity, normality, constant variability, and independence of the residuals. These can be verified based on the residual and QQ-plot. Based on the residual plot, these residuals are randomly scattered around 0, without any patterns and with constant vertical spread. The individual observations are independent as each cricket are different from one another.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Residual plot}
+\FunctionTok{plot}\NormalTok{(mod, }\AttributeTok{which =} \DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_24_files/figure-latex/unnamed-chunk-5-1}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# QQ plot}
+\FunctionTok{plot}\NormalTok{(mod, }\AttributeTok{which =} \DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_24_files/figure-latex/unnamed-chunk-6-1}
+
+So, based on the summary output, the test statistics for the slope test is given by
+
+\begin{align*}
+t=\frac{b_{1}}{S E} = \frac{0.23067 }{0.01423} = 16.21
+\end{align*}
+
+The p-value corresponding to the above t-value based on t-distribution with \(n-2 = 7-2 = 5\) degrees of freedom is given as \(0.00000163\) from the coefficients table, or as seen below:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{2}\SpecialCharTok{*}\NormalTok{(}\DecValTok{1}\SpecialCharTok{{-}}\FunctionTok{pt}\NormalTok{(}\FloatTok{16.21}\NormalTok{, }\AttributeTok{df =} \DecValTok{5}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 1.628701e-05
+\end{verbatim}
+
+So, we reject the null at the significance level of 0.05 and conclude that there is significant evidence that the population slope parameter is different from 0.
+
+\hypertarget{e-conduct-a-hypothesis-test-to-see-if-there-exists-some-association-between-temperature-and-chirp-rate.}{%
+\subsection{(1e) Conduct a hypothesis test to see if there exists some association between temperature and chirp rate.}\label{e-conduct-a-hypothesis-test-to-see-if-there-exists-some-association-between-temperature-and-chirp-rate.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{anova}\NormalTok{(mod)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Analysis of Variance Table
+
+Response: Temperature
+          Df Sum Sq Mean Sq F value    Pr(>F)    
+Chirps     1 613.69  613.69  262.92 1.626e-05 ***
+Residuals  5  11.67    2.33                      
+---
+Signif. codes:  
+0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{verbatim}
+
+Click for answer
+
+\emph{Answer:}
+
+The hypotheses can be written as:
+
+\begin{align*}
+H_0 :& \rho = 0 \\
+H_a :& \rho \neq 0
+\end{align*}
+
+The conditions for this test are the same as before. So, we assume the conditions are met.
+
+\begin{align*}
+t & =\frac{\text { statistic -null }}{S E}=\frac{r-0}{\sqrt{\frac{1-r^{2}}{n-2}}} = =\frac{r}{\frac{\sqrt{1-r^{2}}}{\sqrt{n-2}}}\\
+&=\left(\frac{r \sqrt{n-2}}{\sqrt{1-r^{2}}}\right)\\
+&=\frac{0.99062 \sqrt{7-2}}{\sqrt{1-0.99062^{2}}}=16.21
+\end{align*}
+
+The test statistics is exactly the same as before. So, both of these tests are equivalent and we arrive at the same conclusion as before. If the slope corresponding to the change in mean chirp rate for unit increase in temperature is significantly different from 0, then there is also a significant association between the chirp rate and the temperature.
+
+\hypertarget{example-2-cereals-and-calories}{%
+\section{Example 2: Cereals and Calories}\label{example-2-cereals-and-calories}}
+
+Nutrition information for a sample of 30 breakfast cereals, derived from nutrition labels are stored under \texttt{Cereals} dataset. Calorie values are per cup of cereal and sugars are measured in grams per cup. We would like to predict the calorie count by the suger content of the cereal.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{cerealdat }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://www.lock5stat.com/datasets3e/Cereal.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mod }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(Calories}\SpecialCharTok{\textasciitilde{}}\NormalTok{Sugars, }\AttributeTok{data =}\NormalTok{ cerealdat)}
+\FunctionTok{summary}\NormalTok{(mod)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Call:
+lm(formula = Calories ~ Sugars, data = cerealdat)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-36.574 -25.282  -2.549  17.796  51.805 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  88.9204    10.8120   8.224 5.96e-09 ***
+Sugars        4.3103     0.9269   4.650 7.22e-05 ***
+---
+Signif. codes:  
+0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 26.61 on 28 degrees of freedom
+Multiple R-squared:  0.4357,    Adjusted R-squared:  0.4156 
+F-statistic: 21.62 on 1 and 28 DF,  p-value: 7.217e-05
+\end{verbatim}
+
+\hypertarget{a-what-is-the-equation-for-the-regression-line-define-all-the-variables.-1}{%
+\subsection{(2a) What is the equation for the regression line? Define all the variables.}\label{a-what-is-the-equation-for-the-regression-line-define-all-the-variables.-1}}
+
+Click for answer
+
+\emph{Answer:} \[\widehat{Calorie} = 88.92 + 4.31 \cdot \text{Sugar}\]
+
+\hypertarget{b-check-the-conditions-for-using-linear-model.}{%
+\subsection{(2b) Check the conditions for using linear model.}\label{b-check-the-conditions-for-using-linear-model.}}
+
+Click for answer
+
+\emph{Answer:} The assumptions for using linear model seem to have met based on the residual plot and qq-plot.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(cerealdat}\SpecialCharTok{$}\NormalTok{Sugars, cerealdat}\SpecialCharTok{$}\NormalTok{Calories, }\AttributeTok{type =} \StringTok{"p"}\NormalTok{, }\AttributeTok{pch =} \DecValTok{19}\NormalTok{)}
+\FunctionTok{abline}\NormalTok{(mod)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_24_files/figure-latex/unnamed-chunk-11-1}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(mod, }\AttributeTok{which =} \DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_24_files/figure-latex/unnamed-chunk-12-1}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(mod, }\AttributeTok{which =} \DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_24_files/figure-latex/unnamed-chunk-13-1}
+
+\hypertarget{c-conduct-a-hypotheis-test-to-determine-if-the-linear-model-is-effective.-include-all-the-steps.}{%
+\subsection{(2c) Conduct a hypotheis test to determine if the linear model is effective. Include all the steps.}\label{c-conduct-a-hypotheis-test-to-determine-if-the-linear-model-is-effective.-include-all-the-steps.}}
+
+Click for answer
+
+\emph{Answer:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{anova}\NormalTok{(mod)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Analysis of Variance Table
+
+Response: Calories
+          Df Sum Sq Mean Sq F value    Pr(>F)    
+Sugars     1  15316 15316.5  21.623 7.217e-05 ***
+Residuals 28  19834   708.3                      
+---
+Signif. codes:  
+0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{verbatim}
+
+\begin{align*}
+t=\frac{b_{1}}{S E} = \frac{4.3103 }{0.9269} = 4.650
+\end{align*}
+
+The p-value corresponding to the above t-value based on t-distribution with \(n-2 = 30-2 = 28\) degrees of freedom is given as \(0.00000725\) from the coefficients table, or as seen below:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{2}\SpecialCharTok{*}\NormalTok{(}\DecValTok{1}\SpecialCharTok{{-}}\FunctionTok{pt}\NormalTok{(}\FloatTok{4.650}\NormalTok{, }\AttributeTok{df =} \DecValTok{28}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 7.218187e-05
+\end{verbatim}
+
+So, we reject the null at the significance level of 0.05 and conclude that there is significant evidence that the population slope parameter is different from 0.
 
 \hypertarget{part-basics-r}{%
 \chapter{(PART*) Basics R}\label{part-basics-r}}

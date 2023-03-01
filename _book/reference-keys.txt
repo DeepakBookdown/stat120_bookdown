@@ -228,6 +228,17 @@ c-anova-table
 d-p-value
 e-conclusion
 f-confidence-interval
+class-activity-24
+example-1-cricket-chirps
+a-what-is-the-equation-for-the-regression-line-define-all-the-variables.
+b-what-is-the-standard-errorse-for-the-slope
+c-find-a-95-confidence-interval-for-the-slope-of-the-cricket-temperature-model.
+d-conduct-a-hypotheis-test-for-the-slope.-include-all-the-steps.
+e-conduct-a-hypothesis-test-to-see-if-there-exists-some-association-between-temperature-and-chirp-rate.
+example-2-cereals-and-calories
+a-what-is-the-equation-for-the-regression-line-define-all-the-variables.-1
+b-check-the-conditions-for-using-linear-model.
+c-conduct-a-hypotheis-test-to-determine-if-the-linear-model-is-effective.-include-all-the-steps.
 part-basics-r
 what-is-r
 what-is-rstudio

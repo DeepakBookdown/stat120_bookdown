@@ -147,9 +147,9 @@ permTest(Words ~ Group, data=wordData)
   Caffeine :  12.25 	 Sleep :  15.25 
  Observed difference: -3 
 
- Mean of permutation distribution: -0.0275 
- Standard error of permutation distribution: 1.49281 
- P-value:  0.05 
+ Mean of permutation distribution: 0.0151 
+ Standard error of permutation distribution: 1.50888 
+ P-value:  0.054 
 
 	*-------------*
 ```
@@ -238,8 +238,8 @@ permTestPaired(NonRes ~ Res,data = tuition, alt = "greater")
   NonRes :  6405.263 	 Res :  2821.053 
  Observed difference  NonRes - Res : 3584.211 
 
- Mean of permutation distribution: -4.07883 
- Standard error of permutation distribution: 945.6216 
+ Mean of permutation distribution: 5.02208 
+ Standard error of permutation distribution: 942.7715 
  P-value:  1e-04 
 
 	*-------------*

@@ -1,264 +1,327 @@
 # Class Activity 24
 
 
-## Example 1: Data from online reviews of inkjet printers is available under the dataset `InkjetPrinters`. The data is extracted from reviews of inkjet printers at PCMag.com in August 2011. We are interested in the quantitative variable `Price`, the typical retail price of printers in dollars and `CostColor`, the cost per page in cents for printing in color.
+
+## Example 1: Cricket Chirps
+
+The data on `CricketChirps` were collected by E.A. Bessey and C.A. Bessey who measured chirp rates for crickets and temperatures during the summer of 1898. Conduct a simple linear regression analysis to predict the temperature by cricket chirp rate.
 
 
 
 ```r
-# load the data
-inkjet <- read.csv("https://www.lock5stat.com/datasets2e/InkjetPrinters.csv")
+cricket <- read.csv("https://www.lock5stat.com/datasets3e/CricketChirps.csv")
+cricket
+```
+
+```
+  Temperature Chirps
+1        54.5     81
+2        59.5     97
+3        63.5    103
+4        67.5    123
+5        72.0    150
+6        78.5    182
+7        83.0    195
 ```
 
 
 
 ```r
-mod1 <- lm(Price~CostColor, data = inkjet)
-summary(mod1)
+mod <- lm(Temperature~Chirps, data = cricket)
+summary(mod)
 ```
 
 ```
 
 Call:
-lm(formula = Price ~ CostColor, data = inkjet)
+lm(formula = Temperature ~ Chirps, data = cricket)
 
 Residuals:
-     Min       1Q   Median       3Q      Max 
--132.155  -48.965    1.213   52.629  116.429 
+      1       2       3       4       5       6       7 
+-1.8625 -0.5532  2.0628  1.4495 -0.2785 -1.1598  0.3416 
 
 Coefficients:
             Estimate Std. Error t value Pr(>|t|)    
-(Intercept)  378.195     61.451   6.154 8.23e-06 ***
-CostColor    -18.560      5.111  -3.631  0.00191 ** 
+(Intercept) 37.67858    1.97817   19.05 7.35e-06 ***
+Chirps       0.23067    0.01423   16.21 1.63e-05 ***
 ---
 Signif. codes:  
 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 66.09 on 18 degrees of freedom
-Multiple R-squared:  0.4228,	Adjusted R-squared:  0.3908 
-F-statistic: 13.19 on 1 and 18 DF,  p-value: 0.00191
+Residual standard error: 1.528 on 5 degrees of freedom
+Multiple R-squared:  0.9813,	Adjusted R-squared:  0.9776 
+F-statistic: 262.9 on 1 and 5 DF,  p-value: 1.626e-05
 ```
 
+### (1a) What is the equation for the regression line? Define all the variables.
+
+<details>
+<summary><red>Click for answer</red></summary>
+
+*Answer:* The equation for the regression line is $\widehat{\text { Temp }}=37.7+0.23 \text{Chirps}$, where `chirps` is the cricket chirp rate and `Temp` is the temperature.
+</details>
+<br>
+
+
+
+### (1b) What is the Standard Error(SE) for the slope?
+
+<details>
+<summary><red>Click for answer</red></summary>
+
+*Answer:* The standard error of the slope is 0.01423.
+</details>
+<br>
+
+### (1c) Find a 95% confidence interval for the slope of the cricket temperature model.
+
+<details>
+<summary><red>Click for answer</red></summary>
+
+*Answer:* The 95% confidence interval for the slope is given by $b_1 \pm t^* \cdot S E$. It can be calculated as 
+
+
+$$0.23067 \pm 2.57\cdot 0.01423 = (0.1940,0.2672).$$
+
+
 ```r
-anova(mod1)
+0.23067 + c(-1,1)* qt(0.975, df = 5)* 0.01423
+[1] 0.1940906 0.2672494
+```
+</details>
+<br>
+
+
+### (1d) Conduct a hypotheis test for the slope. Include all the steps. 
+
+<details>
+<summary><red>Click for answer</red></summary>
+
+*Answer:* The hypotheses are:
+
+\begin{align*}
+H_0 :& \beta_1 = 0 \\
+H_a :& \beta_1 \neq 0
+\end{align*}
+
+
+```r
+plot(cricket$Chirps, cricket$Temperature, type = "p", pch = 19)
+abline(mod)
+```
+
+<img src="Class_Activity_24_files/figure-epub3/unnamed-chunk-4-1.png" width="100%" />
+
+
+The conditions for the slope inference are linearity, normality, constant variability, and independence of the residuals. These can be verified based on the residual and QQ-plot. Based on the residual plot, these residuals are randomly scattered around 0, without any patterns and with constant vertical spread. The individual observations are independent as each cricket are different from one another.
+
+
+```r
+# Residual plot
+plot(mod, which = 1)
+```
+
+<img src="Class_Activity_24_files/figure-epub3/unnamed-chunk-5-1.png" width="100%" />
+
+
+
+```r
+# QQ plot
+plot(mod, which = 2)
+```
+
+<img src="Class_Activity_24_files/figure-epub3/unnamed-chunk-6-1.png" width="100%" />
+
+So, based on the summary output, the test statistics for the slope test is given by
+
+\begin{align*}
+t=\frac{b_{1}}{S E} = \frac{0.23067 }{0.01423} = 16.21
+\end{align*}
+
+The p-value corresponding to the above t-value based on t-distribution with $n-2 = 7-2 = 5$ degrees of freedom is given as $0.00000163$ from the coefficients table, or as seen below:
+
+
+```r
+2*(1-pt(16.21, df = 5))
+```
+
+```
+[1] 1.628701e-05
+```
+
+
+So, we reject the null at the significance level of 0.05 and conclude that there is significant evidence that the population slope parameter is different from 0.
+
+</details>
+<br>
+
+### (1e) Conduct a hypothesis test to see if there exists some association between temperature and chirp rate.
+
+
+```r
+anova(mod)
 ```
 
 ```
 Analysis of Variance Table
 
-Response: Price
-          Df Sum Sq Mean Sq F value  Pr(>F)   
-CostColor  1  57604   57604  13.186 0.00191 **
-Residuals 18  78633    4369                   
+Response: Temperature
+          Df Sum Sq Mean Sq F value    Pr(>F)    
+Chirps     1 613.69  613.69  262.92 1.626e-05 ***
+Residuals  5  11.67    2.33                      
+---
+Signif. codes:  
+0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+```
+
+<details>
+<summary><red>Click for answer</red></summary>
+
+*Answer:*
+
+The hypotheses can be written as:
+
+\begin{align*}
+H_0 :& \rho = 0 \\
+H_a :& \rho \neq 0
+\end{align*}
+
+The conditions for this test are the same as before. So, we assume the conditions are met.
+
+\begin{align*}
+t & =\frac{\text { statistic -null }}{S E}=\frac{r-0}{\sqrt{\frac{1-r^{2}}{n-2}}} = =\frac{r}{\frac{\sqrt{1-r^{2}}}{\sqrt{n-2}}}\\
+&=\left(\frac{r \sqrt{n-2}}{\sqrt{1-r^{2}}}\right)\\
+&=\frac{0.99062 \sqrt{7-2}}{\sqrt{1-0.99062^{2}}}=16.21
+\end{align*}
+
+
+The test statistics is exactly the same as before. So, both of these tests are equivalent and we arrive at the same conclusion as before. If the slope corresponding to the change in mean chirp rate for unit increase in temperature is significantly different from 0, then there is also a significant association between the chirp rate and the temperature. 
+
+</details>
+<br>
+
+## Example 2: Cereals and Calories
+
+Nutrition information for a sample of 30 breakfast cereals, derived from nutrition labels are stored under `Cereals` dataset. Calorie values are per cup of cereal and sugars are measured in grams per cup. We would like to predict the calorie count by the suger content of the cereal.
+
+
+```r
+cerealdat <- read.csv("https://www.lock5stat.com/datasets3e/Cereal.csv")
+```
+
+
+```r
+mod <- lm(Calories~Sugars, data = cerealdat)
+summary(mod)
+```
+
+```
+
+Call:
+lm(formula = Calories ~ Sugars, data = cerealdat)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-36.574 -25.282  -2.549  17.796  51.805 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  88.9204    10.8120   8.224 5.96e-09 ***
+Sugars        4.3103     0.9269   4.650 7.22e-05 ***
+---
+Signif. codes:  
+0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 26.61 on 28 degrees of freedom
+Multiple R-squared:  0.4357,	Adjusted R-squared:  0.4156 
+F-statistic: 21.62 on 1 and 28 DF,  p-value: 7.217e-05
+```
+
+### (2a) What is the equation for the regression line? Define all the variables.
+
+<details>
+<summary><red>Click for answer</red></summary>
+
+*Answer:* $$\widehat{Calorie} = 88.92 + 4.31 \cdot \text{Sugar}$$
+
+</details>
+<br>
+
+### (2b) Check the conditions for using linear model.
+
+<details>
+<summary><red>Click for answer</red></summary>
+
+*Answer:* The assumptions for using linear model seem to have met based on the residual plot and qq-plot.
+
+
+
+```r
+plot(cerealdat$Sugars, cerealdat$Calories, type = "p", pch = 19)
+abline(mod)
+```
+
+<img src="Class_Activity_24_files/figure-epub3/unnamed-chunk-11-1.png" width="100%" />
+
+
+```r
+plot(mod, which = 1)
+```
+
+<img src="Class_Activity_24_files/figure-epub3/unnamed-chunk-12-1.png" width="100%" />
+
+
+```r
+plot(mod, which = 2)
+```
+
+<img src="Class_Activity_24_files/figure-epub3/unnamed-chunk-13-1.png" width="100%" />
+
+</details>
+<br>
+
+### (2c) Conduct a hypotheis test to determine if the linear model is effective. Include all the steps.
+
+<details>
+<summary><red>Click for answer</red></summary>
+
+*Answer:*
+
+
+```r
+anova(mod)
+```
+
+```
+Analysis of Variance Table
+
+Response: Calories
+          Df Sum Sq Mean Sq F value    Pr(>F)    
+Sugars     1  15316 15316.5  21.623 7.217e-05 ***
+Residuals 28  19834   708.3                      
 ---
 Signif. codes:  
 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
 
 
+\begin{align*}
+t=\frac{b_{1}}{S E} = \frac{4.3103 }{0.9269} = 4.650
+\end{align*}
 
-```r
-coeff <- coefficients(mod1)
-eq = paste0("y = ", round(coeff[1],1), round(coeff[2],1), "*x")
-
-ggplot(inkjet, aes(x=CostColor, y=Price))+ theme_classic()+
-    geom_point()+
-    geom_abline(intercept = coeff[1], slope = coeff[2], color = "red",
-                linetype = "dashed", size = 1.5)+
-    ggtitle(eq)
-```
-
-<img src="Class_Activity_24_files/figure-epub3/unnamed-chunk-3-1.png" width="100%" />
-
-
-### (1a) What is the regression line? Please do not forget to define the variables in the regression equation.
-
-
-*Answer:*
-
-$$\widehat{Price} = 378.20 - 18.56\cdot CostColor$$
-
-\vspace*{1in}
-
-
-### (1b) What `Price` should we expect when `CostColor` is 9? 
-
-*Answer:*
+The p-value corresponding to the above t-value based on t-distribution with $n-2 = 30-2 = 28$ degrees of freedom is given as $0.00000725$ from the coefficients table, or as seen below:
 
 
 ```r
-378.20 - 18.56*9
+2*(1-pt(4.650, df = 28))
 ```
 
 ```
-[1] 211.16
+[1] 7.218187e-05
 ```
 
 
-\vspace*{1in}
+So, we reject the null at the significance level of 0.05 and conclude that there is significant evidence that the population slope parameter is different from 0.
 
-
-### (1c) Find the $95\%$ confidence interval for the mean price of inkjet printers that cost 9 cents per page to print in color. You can use the `predict` function in R to calculate the confidence interval.
-
-
-```r
-# new data frame with the new x*
-newx = data.frame(CostColor=9.0)
-predict(mod1,newx, interval="confidence",  level = 0.95)
-```
-
-```
-       fit      lwr      upr
-1 211.1552 168.8926 253.4178
-```
-
-
-*Answer:*
-
-
-\vspace*{1in}
-
-
-The following is a plot of $95\%$ confidence interval for the mean price. 
-
-
-```r
-# 95% confidence interval
-ggplot(inkjet, aes(x=CostColor, y=Price))+ theme_classic()+
-    geom_point()+
-    geom_smooth(method=lm, se=TRUE)
-```
-
-<img src="Class_Activity_24_files/figure-epub3/unnamed-chunk-6-1.png" width="100%" />
-
-\vspace*{1in}
-
-
-### (1d) Find the $95\%$ prediction interval for the price of a particular inkjet printer that cost 9 cents per page to print in color. Again, you can use the `predict` function in R to calculate the prediction interval.
-
-
-```r
-newx=data.frame(CostColor=9)
-predict(mod1,newx, interval="prediction", level = 0.95)
-```
-
-```
-       fit      lwr      upr
-1 211.1552 66.00634 356.3041
-```
-
-
-*Answer:*
-
-
-\vspace*{1in}
-
-
-The following is a plot of $95\%$ prediction interval for price of an individual inkjet printer. 
-
-
-```r
-pred_interval <- predict(mod1, interval = "prediction")
-
-final_df <- cbind(inkjet, pred_interval)
-
-ggplot(final_df, aes(x=CostColor, y=Price))+ theme_classic()+
-    geom_point() +
-    geom_line(aes(y=lwr), color = "red", linetype = "dashed")+
-    geom_line(aes(y=upr), color = "red", linetype = "dashed")+
-    geom_smooth(method=lm, se=TRUE)
-```
-
-<img src="Class_Activity_24_files/figure-epub3/unnamed-chunk-8-1.png" width="100%" />
-
-
-
-### (1e) Verify the confidence interval in part (1c) by hand. The formula for calculating the confidence interval is
-
-$$\hat{y} \pm t^{*} s_{\epsilon} \sqrt{\frac{1}{n}+\frac{\left(x^{*}-\bar{x}\right)^{2}}{(n-1) s_{x}^{2}}} $$
-
-
-```r
-summary(inkjet$CostColor)
-```
-
-```
-   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-  6.500   9.625  11.350  11.670  13.525  18.600 
-```
-
-```r
-sd(inkjet$CostColor)
-```
-
-```
-[1] 2.966675
-```
-
-*Answer:*
-
-
-```r
-(211.1552 ) + c(-1,1)*2.101*sqrt(4369)*sqrt(1/20 + (9-11.67)^2/(19*sd(inkjet$CostColor)^2))
-```
-
-```
-[1] 168.8887 253.4217
-```
-
-$$211.1552 \pm 2.101* \sqrt{4369}*\sqrt{\frac{1}{20} + \frac{(9.0 - 11.67)^2}{(20-1)2.966^2}}$$
-
-$$(168.89, 253.42)$$
-
-\vspace*{3in}
-
-
-
-
-### (1f) Verify the prediction interval in part (1d) by hand.  The formula for calculating the prediction interval is
-
-$$\hat{y} \pm t^{*} s_{\epsilon} \sqrt{1+\frac{1}{n}+\frac{\left(x^{*}-\bar{x}\right)^{2}}{(n-1) s_{x}^{2}}}$$
-
-*Answer:*
-
-
-```r
-(211.1552 ) + c(-1,1)*2.101*sqrt(4369)*sqrt(1+1/20 + (9-11.67)^2/(19*sd(inkjet$CostColor)^2))
-```
-
-```
-[1]  65.99288 356.31752
-```
-
-$$211.1552 \pm 2.101* \sqrt{4369}*\sqrt{1+\frac{1}{20} + \frac{(9.0 - 11.67)^2}{(20-1)2.966^2}}$$
-$$(65.99, 356.32)$$
-
-
-\vspace*{3in}
-
-
-### (1g) Conduct a hypothesis test to see if we can predict the price of inkjet printers (in dollars) based on the cost per page (in cents) for printing in color (i.e., test if the linear model is effective). You can check the conditions for the test by looking at the plots provided.
-
-*Answer:*
-
-
-
-```r
-inkjet$Residuals <- mod1$residuals
-ggplot(inkjet, aes(x=CostColor, y=Residuals))+ theme_classic()+
-geom_point()+
-geom_hline(yintercept = 0, color = "red")
-```
-
-<img src="Class_Activity_24_files/figure-epub3/unnamed-chunk-12-1.png" width="100%" />
-
-
-
-```r
-ggplot(inkjet, aes(sample = Residuals)) + geom_qq() + geom_qq_line()+theme_classic()
-```
-
-<img src="Class_Activity_24_files/figure-epub3/unnamed-chunk-13-1.png" width="100%" />
-
-
-
+</details>
+<br>
