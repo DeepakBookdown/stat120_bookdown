@@ -24,6 +24,6 @@ This is a _sample_ book written in **Markdown** to guide STAT 120 students inter
 ```{r include=FALSE}
 # automatically create a bib database for R packages
 knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+  .packages(), 'bookdown', 'knitr', 'rmarkdown', "ggpairs"
 ), 'packages.bib')
 ```

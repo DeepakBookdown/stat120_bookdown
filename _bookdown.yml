@@ -31,7 +31,7 @@ rmd_files: [
   "Class_Activity_22.Rmd", 
   "Class_Activity_23.Rmd", 
   "Class_Activity_24.Rmd",
-  # "Class_Activity_25.Rmd",
+  "Class_Activity_25.Rmd",
   "RStudio.Rmd", 
   "Rmarkdown.Rmd",
   "Cool_R_codes.Rmd"

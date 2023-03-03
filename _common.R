@@ -14,3 +14,4 @@ knitr::opts_chunk$set(collapse = FALSE,
 
 # load the necessary libraries
 library(tidyverse) 
+library(GGally)
