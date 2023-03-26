@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Chapter 7 Graph Sizing in R | Stat 120</title>
+
+    <meta name="author" content="Deepak Bastola" />
+  
+   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::bs4_book,
+set in the _output.yml file.</p>" />
+   <meta name="generator" content="placeholder" />
+  <meta property="og:title" content="Chapter 7 Graph Sizing in R | Stat 120" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::bs4_book,
+set in the _output.yml file.</p>" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 7 Graph Sizing in R | Stat 120" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::bs4_book,
+set in the _output.yml file.</p>" />
+  
+  <!-- JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script>
+    <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet" />
+    <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script>
+    <script src="libs/bs3compat-0.4.1/transition.js"></script>
+    <script src="libs/bs3compat-0.4.1/tabs.js"></script>
+    <script src="libs/bs3compat-0.4.1/bs3compat.js"></script>
+    <link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet" />
+    <script src="libs/bs4_book-1.0.0/bs4_book.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script>
+
+  <!-- CSS -->
+  <style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+      <link rel="stylesheet" href="style.css" />
+  
+</head>
+
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book">
+    <a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Stat 120</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+      </form>
+
+      <nav aria-label="Table of contents">
+        <h2>Table of contents</h2>
+        <div id="book-toc"></div>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="#">View book source <i class="fab fa-github"></i></a></li></p>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="col-sm-12 col-md-9 col-lg-7" id="content">
+<div id="graph-sizing-in-r" class="section level1" number="7">
+<h1><span class="header-section-number">Chapter 7</span> Graph Sizing in R</h1>
+<p>This worksheet demonstrates how to adjust the size of various plots in R using ggplot2. We will explore different techniques to control the size of the plots and their elements.</p>
+<div id="load-the-necessary-libraries-and-data" class="section level3" number="7.0.1">
+<h3><span class="header-section-number">7.0.1</span> Load the necessary libraries and data</h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="graph-sizing-in-r.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb8-2"><a href="graph-sizing-in-r.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb8-3"><a href="graph-sizing-in-r.html#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="graph-sizing-in-r.html#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the built-in datasets</span></span>
+<span id="cb8-5"><a href="graph-sizing-in-r.html#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;mtcars&quot;</span>)</span>
+<span id="cb8-6"><a href="graph-sizing-in-r.html#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;diamonds&quot;</span>)</span>
+<span id="cb8-7"><a href="graph-sizing-in-r.html#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;iris&quot;</span>)</span></code></pre></div>
+</div>
+<div id="adjusting-the-overall-size-of-the-plot" class="section level3" number="7.0.2">
+<h3><span class="header-section-number">7.0.2</span> Adjusting the overall size of the plot</h3>
+<p>You can control the overall size of the plot using the width and height options within the R Markdown output settings. Another way is to use the ggsave() function when saving the plot as an image file.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="graph-sizing-in-r.html#cb9-1" aria-hidden="true" tabindex="-1"></a>scatter_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> hp, <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
+<span id="cb9-2"><a href="graph-sizing-in-r.html#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb9-3"><a href="graph-sizing-in-r.html#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Miles per Gallon vs. Horsepower&quot;</span>,</span>
+<span id="cb9-4"><a href="graph-sizing-in-r.html#cb9-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Horsepower&quot;</span>,</span>
+<span id="cb9-5"><a href="graph-sizing-in-r.html#cb9-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Miles per Gallon&quot;</span>) <span class="sc">+</span></span>
+<span id="cb9-6"><a href="graph-sizing-in-r.html#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb9-7"><a href="graph-sizing-in-r.html#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="graph-sizing-in-r.html#cb9-8" aria-hidden="true" tabindex="-1"></a>scatter_plot</span></code></pre></div>
+<p><img src="graphformatting_files/figure-html/unnamed-chunk-8-1.png" width="100%" /></p>
+</div>
+<div id="adjusting-the-size-of-points-lines-and-bars" class="section level3" number="7.0.3">
+<h3><span class="header-section-number">7.0.3</span> Adjusting the size of points, lines, and bars</h3>
+<p>Use the size parameter within the geom_*() functions to control the size of points, lines, and bars.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="graph-sizing-in-r.html#cb10-1" aria-hidden="true" tabindex="-1"></a>scatter_plot_large_points <span class="ot">&lt;-</span> scatter_plot <span class="sc">+</span></span>
+<span id="cb10-2"><a href="graph-sizing-in-r.html#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>)</span>
+<span id="cb10-3"><a href="graph-sizing-in-r.html#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="graph-sizing-in-r.html#cb10-4" aria-hidden="true" tabindex="-1"></a>scatter_plot_large_points</span></code></pre></div>
+<p><img src="graphformatting_files/figure-html/unnamed-chunk-9-1.png" width="100%" /></p>
+</div>
+<div id="adjusting-the-size-of-text-elements" class="section level3" number="7.0.4">
+<h3><span class="header-section-number">7.0.4</span> Adjusting the size of text elements</h3>
+<p>You can change the size of text elements, such as axis labels and titles, using the theme() function.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="graph-sizing-in-r.html#cb11-1" aria-hidden="true" tabindex="-1"></a>scatter_plot_custom_text <span class="ot">&lt;-</span> scatter_plot_large_points <span class="sc">+</span></span>
+<span id="cb11-2"><a href="graph-sizing-in-r.html#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">24</span>, <span class="at">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb11-3"><a href="graph-sizing-in-r.html#cb11-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>),</span>
+<span id="cb11-4"><a href="graph-sizing-in-r.html#cb11-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>),</span>
+<span id="cb11-5"><a href="graph-sizing-in-r.html#cb11-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>),</span>
+<span id="cb11-6"><a href="graph-sizing-in-r.html#cb11-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>))</span>
+<span id="cb11-7"><a href="graph-sizing-in-r.html#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="graph-sizing-in-r.html#cb11-8" aria-hidden="true" tabindex="-1"></a>scatter_plot_custom_text</span></code></pre></div>
+<p><img src="graphformatting_files/figure-html/unnamed-chunk-10-1.png" width="100%" /></p>
+</div>
+<div id="adjusting-the-size-of-legend-elements" class="section level3" number="7.0.5">
+<h3><span class="header-section-number">7.0.5</span> Adjusting the size of legend elements</h3>
+<p>You can modify the size of the legend elements using the theme() function along with element_text() and element_rect().</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="graph-sizing-in-r.html#cb12-1" aria-hidden="true" tabindex="-1"></a>iris_scatter_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length, <span class="at">y =</span> Sepal.Width, <span class="at">color =</span> Species)) <span class="sc">+</span></span>
+<span id="cb12-2"><a href="graph-sizing-in-r.html#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb12-3"><a href="graph-sizing-in-r.html#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Sepal Length vs. Sepal Width&quot;</span>,</span>
+<span id="cb12-4"><a href="graph-sizing-in-r.html#cb12-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Sepal Length&quot;</span>,</span>
+<span id="cb12-5"><a href="graph-sizing-in-r.html#cb12-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Sepal Width&quot;</span>,</span>
+<span id="cb12-6"><a href="graph-sizing-in-r.html#cb12-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&quot;Species&quot;</span>) <span class="sc">+</span></span>
+<span id="cb12-7"><a href="graph-sizing-in-r.html#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb12-8"><a href="graph-sizing-in-r.html#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>),</span>
+<span id="cb12-9"><a href="graph-sizing-in-r.html#cb12-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>),</span>
+<span id="cb12-10"><a href="graph-sizing-in-r.html#cb12-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.key.size =</span> <span class="fu">unit</span>(<span class="fl">1.5</span>, <span class="st">&quot;cm&quot;</span>))</span>
+<span id="cb12-11"><a href="graph-sizing-in-r.html#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="graph-sizing-in-r.html#cb12-12" aria-hidden="true" tabindex="-1"></a>iris_scatter_plot</span></code></pre></div>
+<p><img src="graphformatting_files/figure-html/unnamed-chunk-11-1.png" width="100%" /></p>
+</div>
+<div id="adjusting-the-size-of-facet-labels" class="section level3" number="7.0.6">
+<h3><span class="header-section-number">7.0.6</span> Adjusting the size of facet labels</h3>
+<p>You can control the size of facet labels using the theme() function along with element_text().</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="graph-sizing-in-r.html#cb13-1" aria-hidden="true" tabindex="-1"></a>diamonds_facet_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> diamonds <span class="sc">%&gt;%</span> <span class="fu">filter</span>(carat <span class="sc">&lt;</span> <span class="dv">3</span>), <span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price)) <span class="sc">+</span></span>
+<span id="cb13-2"><a href="graph-sizing-in-r.html#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb13-3"><a href="graph-sizing-in-r.html#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">facet_wrap</span>(<span class="sc">~</span>cut) <span class="sc">+</span></span>
+<span id="cb13-4"><a href="graph-sizing-in-r.html#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Price vs. Carat of Diamonds, Faceted by Cut&quot;</span>,</span>
+<span id="cb13-5"><a href="graph-sizing-in-r.html#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="at">x =</span> <span class="st">&quot;Carat&quot;</span>,</span>
+<span id="cb13-6"><a href="graph-sizing-in-r.html#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="at">y =</span> <span class="st">&quot;Price&quot;</span>) <span class="sc">+</span></span>
+<span id="cb13-7"><a href="graph-sizing-in-r.html#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb13-8"><a href="graph-sizing-in-r.html#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="fu">theme</span>(<span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>, <span class="at">face =</span> <span class="st">&quot;bold&quot;</span>))</span>
+<span id="cb13-9"><a href="graph-sizing-in-r.html#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-10"><a href="graph-sizing-in-r.html#cb13-10" aria-hidden="true" tabindex="-1"></a>diamonds_facet_plot</span></code></pre></div>
+<p><img src="graphformatting_files/figure-html/unnamed-chunk-12-1.png" width="100%" /></p>
+</div>
+<div id="adjusting-the-size-of-axis-ticks" class="section level3" number="7.0.7">
+<h3><span class="header-section-number">7.0.7</span> Adjusting the size of axis ticks</h3>
+<p>You can modify the size of axis ticks using the <code>theme()</code> function along with <code>element_line()</code>.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="graph-sizing-in-r.html#cb14-1" aria-hidden="true" tabindex="-1"></a>scatter_plot_custom_ticks <span class="ot">&lt;-</span> scatter_plot <span class="sc">+</span></span>
+<span id="cb14-2"><a href="graph-sizing-in-r.html#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.ticks =</span> <span class="fu">element_line</span>(<span class="at">size =</span> <span class="fl">1.5</span>),</span>
+<span id="cb14-3"><a href="graph-sizing-in-r.html#cb14-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.length =</span> <span class="fu">unit</span>(<span class="fl">0.3</span>, <span class="st">&quot;cm&quot;</span>))</span>
+<span id="cb14-4"><a href="graph-sizing-in-r.html#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="graph-sizing-in-r.html#cb14-5" aria-hidden="true" tabindex="-1"></a>scatter_plot_custom_ticks</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:fig6"></span>
+<img src="graphformatting_files/figure-html/fig6-1.png" alt="Figure 6: Scatterplot of mpg vs. hp with customized axis tick size." width="100%" />
+<p class="caption">
+Figure 7.1: Figure 6: Scatterplot of mpg vs. hp with customized axis tick size.
+</p>
+</div>
+
+</div>
+</div>
+  </main>
+
+  <div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page">
+      <h2>On this page</h2>
+      <div id="book-on-this-page"></div>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          <li><a id="book-source" href="#">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="#">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5">
+  <div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-03-25.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+
+
+</body>
+
+</html>

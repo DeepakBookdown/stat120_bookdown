@@ -1,10 +1,24 @@
-# R Markdown
+# R Markdown Basics
 
-This is a R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+An R Markdown file (.Rmd file) combines R commands and written analyses, which are 'knit' together into an HTML, PDF, or Microsoft Word document. 
 
-You can use asterisk mark to provide emphasis, such as `*italics* or **bold**`.
+An R Markdown file contains three essential elements:
 
-You can create lists with a dash:
+- Header: The header (top) of the file contains information like the document title, author, date and your preferred output format (pdf_document, word_document, or html_document).
+
+- Written analysis: You write up your analysis after the header and embed R code where needed. The online help below shows ways to add formatting details like bold words, lists, section labels, etc to your final pdf/word/html document. For example, adding ** before and after a word will bold that word in your compiled document. 
+
+- R chunks: R chunks contain the R commands that you want evaluated. You embed these chunks within your written analysis and they are evaluated when you compile the document.
+
+
+
+Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+## R Markdown Syntax
+
+### Lists in R Markdown:
+
+You can use asterisk mark to provide emphasis, such as `*italics* or **bold**`. You can create lists with a dash:
 
 ```r
 - Item 1
@@ -13,6 +27,7 @@ You can create lists with a dash:
   + Subitem 1
 * Item 4
 ```
+to produce
 
 - Item 1
 - Item 2
@@ -21,12 +36,13 @@ You can create lists with a dash:
 * Item 4
 
 
-You can embed Latex equations in-line, $\frac{1}{n} \sum_{i=1}^{n} x_{i}$ or in a new line as
+You can embed Latex equations in-line, `$\frac{1}{n} \sum_{i=1}^{n} x_{i}$` to produce $\frac{1}{n} \sum_{i=1}^{n} x_{i}$  or in a new line as `$$\text{Var}(X) = \frac{1}{n-1}\sum_{i-1}^{n} (x_{i} - \bar{x})^2$$` to produce $$\text{Var}(X) = \frac{1}{n-1}\sum_{i-1}^{n} (x_{i} - \bar{x})^2$$
 
-$$\text{Var}(X) = \frac{1}{n-1}\sum_{i-1}^{n} (x_{i} - \bar{x})^2 $$
-## Embed an R code chunk:
 
-Use
+
+### Embed an R code chunk:
+
+Use the following
 
 ````
 ```r
@@ -43,6 +59,7 @@ create a block of code
 ```
 
 You can also evaluate and display the results of R code. Each tasks can be accomplished in a suitably labeled chunk like the following:
+
 
 
 ```r
@@ -75,7 +92,7 @@ Coefficients:
 ```
 
 
-## Including Plots
+### Including Plots:
 
 You can also embed plots. See Figure \@ref(fig:pie) for example:
 
@@ -97,7 +114,7 @@ pie(
 
 (Credit: Yihui Xie)
 
-## Read in data files
+### Read in data files:
 
 
 ```r
@@ -136,7 +153,7 @@ knitr::kable(simple_data)
 |adc      |TX    |  45|5:45 |
 |kme      |CT    |  50|4:19 |
 
-## Hide the code
+### Hide the code:
 
 If we enter the `echo = FALSE` option in the R chunk (see the .Rmd file). This prevents the R code from being printed to your document; you just see the results.
 
@@ -147,4 +164,6 @@ If we enter the `echo = FALSE` option in the R chunk (see the .Rmd file). This p
 |vib      |MA    |  61|6:01 |
 |adc      |TX    |  45|5:45 |
 |kme      |CT    |  50|4:19 |
+
+
 

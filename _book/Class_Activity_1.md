@@ -1,3 +1,4 @@
+# (PART\*) Class Activity {-}
 
 # Class Activity 1
 
@@ -25,16 +26,16 @@ example_data
 
 ```
    ID Greeting  Male      Age
-1   1    Hello  TRUE 25.20338
-2   2    Hello FALSE 43.65266
-3   3    Hello  TRUE 27.67360
-4   4    Hello FALSE 52.93120
-5   5    Hello  TRUE 51.91951
-6   6  Goodbye FALSE 54.28824
-7   7  Goodbye  TRUE 30.59860
-8   8  Goodbye FALSE 28.55640
-9   9  Goodbye  TRUE 45.07356
-10 10  Goodbye FALSE 39.19485
+1   1    Hello  TRUE 23.15246
+2   2    Hello FALSE 26.78182
+3   3    Hello  TRUE 45.20989
+4   4    Hello FALSE 54.99820
+5   5    Hello  TRUE 54.41579
+6   6  Goodbye FALSE 30.30126
+7   7  Goodbye  TRUE 20.02251
+8   8  Goodbye FALSE 43.89100
+9   9  Goodbye  TRUE 33.95876
+10 10  Goodbye FALSE 40.20550
 ```
 
 *Answer:* We see a data frame with four columns, where the first column is an `identifier` for the cases. We have information on the greeting types, whether male or not, and age on these cases in the remaining columns.
@@ -154,49 +155,5 @@ e. If we would like to use education expenditure to predict the literacy rate of
 <summary><red>Click for answer</red></summary>
 *Answer:* The education expenditure is the explanatory variable, and the literacy rate is the response.
 </details>
-
-
----------------------------------------------------------------------
-
-## Quiz
-
-**1. Cases are a set of individual units where the measurements are taken.**
-
-&emsp;  A. TRUE
-  
-&emsp;  B. FALSE
-
-<details>
-<summary><red>Click for answer</red></summary>
-TRUE
-</details><br>
-
-**2. The characteristic that is recorded for each case is called a**
-
-&emsp;A. ledger
-
-&emsp;B. caseholder
-
-&emsp;C. placeholder
-
-&emsp;D. variable
-
-<details>
-<summary><red>Click for answer</red></summary>
-variable
-</details><br>
-
-
-**3. Variables can be either categorical or quantitative.**
-
-&emsp;A. TRUE
-
-&emsp;B. FALSE
-
-<details>
-<summary><red>Click for answer</red></summary>
-TRUE
-</details><br>
-
 
 

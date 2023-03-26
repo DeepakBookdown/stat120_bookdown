@@ -131,7 +131,7 @@ You can create a simple bar graph for one categorical variable with the `barplot
 barplot(counts, ylab = "count")
 ```
 
-<img src="Class_Activity_4_files/figure-epub3/unnamed-chunk-8-1.png" width="100%" />
+<img src="Class_Activity_4_files/figure-html/unnamed-chunk-8-1.png" width="100%" />
 
 (d). Two-way tables
 
@@ -228,7 +228,7 @@ ggplot(jurors, aes(x = race, fill = struck_state)) +
        x = "eligible juror race", fill = "struck by state?")
 ```
 
-<img src="Class_Activity_4_files/figure-epub3/unnamed-chunk-13-1.png" width="100%" />
+<img src="Class_Activity_4_files/figure-html/unnamed-chunk-13-1.png" width="100%" />
 
 The basic syntax for this function is to let `ggplot` know your data set name (`jurors`), then specify the grouping or conditional variable on the x-axis (`race`) in the `aes` (aesthetic) argument. The `fill` variable is the response variable (`struck_state`). We add (`+`) the `geom_bar` geometry to get a bar graph with the `fill` position specified. Adding an informative label and title complete the graph.
 <br>
@@ -261,7 +261,7 @@ ggplot(jurors, aes(x = struck_state, fill = race)) +
        fill = "eligible juror race", x = "struck by state?")
 ```
 
-<img src="Class_Activity_4_files/figure-epub3/unnamed-chunk-15-1.png" width="100%" />
+<img src="Class_Activity_4_files/figure-html/unnamed-chunk-15-1.png" width="100%" />
 
 - What proportion of eligible jurors who were not struck by the state were black? were white?
 
@@ -407,7 +407,7 @@ You can create a simple bar graph for one categorical variable with the `barplot
 barplot(table(grad$result))
 ```
 
-<img src="Class_Activity_4_files/figure-epub3/unnamed-chunk-23-1.png" width="100%" />
+<img src="Class_Activity_4_files/figure-html/unnamed-chunk-23-1.png" width="100%" />
 
 We can add in a title and x and y axis labels too:
 
@@ -417,7 +417,7 @@ barplot(table(grad$result), xlab="application result",
         ylab="Count", main = "Distribution of Results")
 ```
 
-<img src="Class_Activity_4_files/figure-epub3/unnamed-chunk-24-1.png" width="100%" />
+<img src="Class_Activity_4_files/figure-html/unnamed-chunk-24-1.png" width="100%" />
 <br>
 
 (e). Stacked bar graph for two variables
@@ -432,7 +432,7 @@ ggplot(grad, aes(x = sex, fill = result)) +
   labs(y="Proportion", title = "result by sex", fill = "result?", x = "sex")
 ```
 
-<img src="Class_Activity_4_files/figure-epub3/unnamed-chunk-25-1.png" width="100%" />
+<img src="Class_Activity_4_files/figure-html/unnamed-chunk-25-1.png" width="100%" />
 
 The basic syntax for this function is to let `ggplot` know your data set name (`grad`), then specify the grouping or conditional variable on the x-axis (`sex`) in the `aes` (aesthetic) argument. The `fill` variable is the response variable (`result`). We add (`+`) the `geom_bar` geometry to get a bar graph with the `fill` position specified. Adding an informative label and title complete the graph.
 
@@ -521,7 +521,7 @@ ggplot(grad.p1, aes(x = sex, fill = result)) +
  fill = "result?", x = "sex")
 ```
 
-<img src="Class_Activity_4_files/figure-epub3/unnamed-chunk-29-1.png" width="100%" />
+<img src="Class_Activity_4_files/figure-html/unnamed-chunk-29-1.png" width="100%" />
 
 
 ```r
@@ -553,7 +553,7 @@ ggplot(grad.p2, aes(x = sex, fill = result)) +
  fill = "result?", x = "sex")
 ```
 
-<img src="Class_Activity_4_files/figure-epub3/unnamed-chunk-31-1.png" width="100%" />
+<img src="Class_Activity_4_files/figure-html/unnamed-chunk-31-1.png" width="100%" />
 
 
 ```r
@@ -639,7 +639,7 @@ ggplot(grad, aes(x = sex, fill = result)) +
   facet_wrap(~program)
 ```
 
-<img src="Class_Activity_4_files/figure-epub3/unnamed-chunk-35-1.png" width="100%" />
+<img src="Class_Activity_4_files/figure-html/unnamed-chunk-35-1.png" width="100%" />
 <br>
 
 - Verify that this command creates side-by-side stacked bar graphs that match your graphs in parts (g) and (h) for programs 1 and 2.

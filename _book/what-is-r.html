@@ -4,20 +4,21 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 27 What is R? | Stat 120</title>
+<title>Chapter 1 What is R? | Stat 120</title>
 <meta name="author" content="Deepak Bastola">
 <meta name="description" content="R is a free and open source statistical programming language that facilitates statistical computation. There are a myriad of application that can be done in R, thanks to a huge online support...">
 <meta name="generator" content="bookdown 0.31 with bs4_book()">
-<meta property="og:title" content="Chapter 27 What is R? | Stat 120">
+<meta property="og:title" content="Chapter 1 What is R? | Stat 120">
 <meta property="og:type" content="book">
 <meta property="og:description" content="R is a free and open source statistical programming language that facilitates statistical computation. There are a myriad of application that can be done in R, thanks to a huge online support...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 27 What is R? | Stat 120">
+<meta name="twitter:title" content="Chapter 1 What is R? | Stat 120">
 <meta name="twitter:description" content="R is a free and open source statistical programming language that facilitates statistical computation. There are a myriad of application that can be done in R, thanks to a huge online support...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.1/transition.js"></script><script src="libs/bs3compat-0.4.1/tabs.js"></script><script src="libs/bs3compat-0.4.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   </style>
@@ -43,36 +44,17 @@
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
-<li><a class="" href="index.html">About</a></li>
-<li><a class="" href="class-activity-1.html"><span class="header-section-number">1</span> Class Activity 1</a></li>
-<li><a class="" href="class-activity-2.html"><span class="header-section-number">2</span> Class Activity 2</a></li>
-<li><a class="" href="class-activity-3.html"><span class="header-section-number">3</span> Class Activity 3</a></li>
-<li><a class="" href="class-activity-4.html"><span class="header-section-number">4</span> Class Activity 4</a></li>
-<li><a class="" href="class-activity-5.html"><span class="header-section-number">5</span> Class Activity 5</a></li>
-<li><a class="" href="class-activity-6.html"><span class="header-section-number">6</span> Class Activity 6</a></li>
-<li><a class="" href="class-activity-7.html"><span class="header-section-number">7</span> Class Activity 7</a></li>
-<li><a class="" href="class-activity-8.html"><span class="header-section-number">8</span> Class Activity 8</a></li>
-<li><a class="" href="class-activity-9.html"><span class="header-section-number">9</span> Class Activity 9</a></li>
-<li><a class="" href="class-activity-10.html"><span class="header-section-number">10</span> Class Activity 10</a></li>
-<li><a class="" href="class-activity-11.html"><span class="header-section-number">11</span> Class Activity 11</a></li>
-<li><a class="" href="class-activity-12.html"><span class="header-section-number">12</span> Class Activity 12</a></li>
-<li><a class="" href="class-activity-13.html"><span class="header-section-number">13</span> Class Activity 13</a></li>
-<li><a class="" href="class-activity-14.html"><span class="header-section-number">14</span> Class Activity 14</a></li>
-<li><a class="" href="class-activity-15.html"><span class="header-section-number">15</span> Class Activity 15</a></li>
-<li><a class="" href="class-activity-16.html"><span class="header-section-number">16</span> Class Activity 16</a></li>
-<li><a class="" href="class-activity-17.html"><span class="header-section-number">17</span> Class Activity 17</a></li>
-<li><a class="" href="class-activity-18.html"><span class="header-section-number">18</span> Class Activity 18</a></li>
-<li><a class="" href="class-activity-19.html"><span class="header-section-number">19</span> Class Activity 19</a></li>
-<li><a class="" href="class-activity-20.html"><span class="header-section-number">20</span> Class Activity 20</a></li>
-<li><a class="" href="class-activity-21.html"><span class="header-section-number">21</span> Class Activity 21</a></li>
-<li><a class="" href="class-activity-22.html"><span class="header-section-number">22</span> Class Activity 22</a></li>
-<li><a class="" href="class-activity-23.html"><span class="header-section-number">23</span> Class Activity 23</a></li>
-<li><a class="" href="class-activity-24.html"><span class="header-section-number">24</span> Class Activity 24</a></li>
-<li><a class="" href="class-activity-25.html"><span class="header-section-number">25</span> Class Activity 25</a></li>
+<li><a class="" href="index.html">Introduction to Statistics</a></li>
 <li class="book-part">Basics R</li>
-<li><a class="active" href="what-is-r.html"><span class="header-section-number">27</span> What is R?</a></li>
-<li><a class="" href="r-markdown.html"><span class="header-section-number">28</span> R Markdown</a></li>
-<li><a class="" href="helpful-r-codes.html"><span class="header-section-number">29</span> Helpful R codes</a></li>
+<li><a class="active" href="what-is-r.html"><span class="header-section-number">1</span> What is R?</a></li>
+<li><a class="" href="r-markdown-basics.html"><span class="header-section-number">2</span> R Markdown Basics</a></li>
+<li><a class="" href="helpful-r-codes.html"><span class="header-section-number">3</span> Helpful R codes</a></li>
+<li><a class="" href="homework-guidelines.html"><span class="header-section-number">4</span> Homework Guidelines</a></li>
+<li><a class="" href="graph-formatting.html"><span class="header-section-number">5</span> Graph Formatting</a></li>
+<li><a class="" href="table-formatting.html"><span class="header-section-number">6</span> Table Formatting</a></li>
+<li><a class="" href="report-guidelines.html"><span class="header-section-number">7</span> Report Guidelines</a></li>
+<li class="book-part">Class Activity</li>
+<li><a class="" href="class-activity-1.html"><span class="header-section-number">8</span> Class Activity 1</a></li>
 </ul>
 
         <div class="book-extra">
@@ -80,20 +62,20 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="what-is-r" class="section level1" number="27">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="what-is-r" class="section level1" number="1">
 <h1>
-<span class="header-section-number">27</span> What is R?<a class="anchor" aria-label="anchor" href="#what-is-r"><i class="fas fa-link"></i></a>
+<span class="header-section-number">1</span> What is R?<a class="anchor" aria-label="anchor" href="#what-is-r"><i class="fas fa-link"></i></a>
 </h1>
 <p>R is a free and open source statistical programming language that facilitates statistical computation. There are a myriad of application that can be done in R, thanks to a huge online support community and dedicated packages. However, R has no graphical user interface and it has to be run by typing commands into a text interface.</p>
-<div id="what-is-rstudio" class="section level2" number="27.1">
+<div id="what-is-rstudio" class="section level2" number="1.1">
 <h2>
-<span class="header-section-number">27.1</span> What is RStudio?<a class="anchor" aria-label="anchor" href="#what-is-rstudio"><i class="fas fa-link"></i></a>
+<span class="header-section-number">1.1</span> What is RStudio?<a class="anchor" aria-label="anchor" href="#what-is-rstudio"><i class="fas fa-link"></i></a>
 </h2>
 <p>RStudio provides graphical interface to R! You can think of RStudio as a graphical front-end to R that that provides extra functionality. The use of the R programming language with the RStudio interface is an essential component of this course.</p>
 </div>
-<div id="r-studio-server" class="section level2" number="27.2">
+<div id="r-studio-server" class="section level2" number="1.2">
 <h2>
-<span class="header-section-number">27.2</span> R Studio Server<a class="anchor" aria-label="anchor" href="#r-studio-server"><i class="fas fa-link"></i></a>
+<span class="header-section-number">1.2</span> R Studio Server<a class="anchor" aria-label="anchor" href="#r-studio-server"><i class="fas fa-link"></i></a>
 </h2>
 <p>The quickest way to get started is to go to <a href="https://maize.mathcs.carleton.edu">https://maize.mathcs.carleton.edu</a>, which opens an R Studio window in your web browser. Once logged in, I recommend that you do the following:</p>
 <ul>
@@ -102,45 +84,71 @@
 </ul>
 <p>(It is also possible to download RStudio on your own laptop. Instructions may be found at the end of this document.)</p>
 </div>
-<div id="r-markdown-basics" class="section level2" number="27.3">
+<div id="rrstudio" class="section level2" number="1.3">
 <h2>
-<span class="header-section-number">27.3</span> R Markdown Basics<a class="anchor" aria-label="anchor" href="#r-markdown-basics"><i class="fas fa-link"></i></a>
+<span class="header-section-number">1.3</span> R/RStudio<a class="anchor" aria-label="anchor" href="#rrstudio"><i class="fas fa-link"></i></a>
 </h2>
-<p>An R Markdown file (.Rmd file) combines R commands and written analyses, which are ‘knit’ together into an HTML, PDF, or Microsoft Word document.</p>
-<p>An R Markdown file contains three essential elements:</p>
+<p>The use of the R programming language with the RStudio interface is an
+essential component of this course. You have two options for using
+RStudio:</p>
 <ul>
-<li><p>Header: The header (top) of the file contains information like the document title, author, date and your preferred output format (pdf_document, word_document, or html_document).</p></li>
-<li><p>Written analysis: You write up your analysis after the header and embed R code where needed. The online help below shows ways to add formatting details like bold words, lists, section labels, etc to your final pdf/word/html document. For example, adding ** before and after a word will bold that word in your compiled document.</p></li>
-<li><p>R chunks: R chunks contain the R commands that you want evaluated. You embed these chunks within your written analysis and they are evaluated when you compile the document.</p></li>
+<li><p>The <strong>server version</strong> of RStudio on the web at
+(<a href="https://maize.mathcs.carleton.edu" class="uri">https://maize.mathcs.carleton.edu</a>). The advantage of using the
+server version is that all of your work will be stored in the cloud,
+where it is automatically saved and backed up. This means that you
+can access your work from any computer on campus using a web
+browser. This server may run slow during peak days/hours. I also recommend
+you to download a local version of R server in your computer in case of rare outages.</p></li>
+<li><p>A <strong>local version</strong> of RStudio installed on your machine. This
+option is highly recommended due to the computational resources this
+course demands. Using this version you can only store your files in your local machine. Additionally, we can save our work on GitHub. We will learn how to use GitHub in the beginning of the course. Both R and RStudio are free and open-source. Please make sure that you have recently updated both R and RStudio.</p></li>
 </ul>
 </div>
-<div id="installing-rrstudio-not-needed-if-you-are-using-the-maize-server" class="section level2" number="27.4">
+<div id="installing-rrstudio-not-needed-if-you-are-using-the-maize-server" class="section level2" number="1.4">
 <h2>
-<span class="header-section-number">27.4</span> Installing R/RStudio (not needed if you are using the maize server)<a class="anchor" aria-label="anchor" href="#installing-rrstudio-not-needed-if-you-are-using-the-maize-server"><i class="fas fa-link"></i></a>
+<span class="header-section-number">1.4</span> <strong>Installing R/RStudio (not needed if you are using the maize server)</strong><a class="anchor" aria-label="anchor" href="#installing-rrstudio-not-needed-if-you-are-using-the-maize-server"><i class="fas fa-link"></i></a>
 </h2>
+<blockquote>
+<p>Download the latest version of R: <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a></p>
+</blockquote>
+<blockquote>
+<p>Download the free Rstudio desktop version: <a href="https://www.rstudio.com/products/rstudio/download/" class="uri">https://www.rstudio.com/products/rstudio/download/</a></p>
+</blockquote>
+<p>Use the default download and install options for each. For R, download the “precompiled binary” distribution rather than the source code</p>
+<p><strong>Updating R/RStudio (not needed if you are using the maize server)</strong></p>
+<p>If you have used a local version of R/RStudio before and it is still installed on your machine, then you should make sure that you have the most recent versions of each program.</p>
 <ul>
-<li>Download the latest version of R:
-<ul>
-<li>Windows: <a href="http://cran.r-project.org/bin/windows/base/">http://cran.r-project.org/bin/windows/base/</a>
-</li>
-<li>Mac: <a href="http://cran.r-project.org/bin/macosx/">http://cran.r-project.org/bin/macosx/</a>
-</li>
+<li><p>To check your version of R, run the command <code><a href="https://rdrr.io/r/base/numeric_version.html">getRversion()</a></code> and compare your version to the newest version posted on <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a>. If you need an update, then install the newer version using the installation directions above.</p></li>
+<li><p>In RStudio, check for updates with the menu option <code>Help &gt; Check for updates</code>. Follow directions if an update is needed.</p></li>
 </ul>
-</li>
-<li>Download the free Rstudio desktop version (Windows or Mac): <a href="https://www.rstudio.com/products/rstudio/download/" class="uri">https://www.rstudio.com/products/rstudio/download/</a>
-</li>
-</ul>
-<p>Use the default download and install options for each.</p>
+<p><strong>Did it work? (A sanity check after your install/update)</strong></p>
+<p>Do whatever is appropriate for your operating system to launch
+RStudio. You should get a window similar to the screenshot you see
+<a href="https://www.rstudio.com/wp-content/uploads/2014/04/rstudio-workbench.png">here</a>,
+but yours will be more boring because you haven’t written any code
+or made any figures yet!</p>
+<p>Put your cursor in the pane labeled <em>Console</em>, which is where you
+interact with the live R process. Create a simple object with code
+like <code>x &lt;- 2 * 4</code> (followed by enter or return). Then inspect the
+<code>x</code> object by typing <code>x</code> followed by enter or return. You should see
+the value <code>8</code> printed. If this happened, you’ve succeeded in
+installing R and RStudio!</p>
 </div>
-<div id="install-latex-for-knitting-r-markdown-documents-to-pdf" class="section level2" number="27.5">
+<div id="install-latex-for-knitting-r-markdown-documents-to-pdf" class="section level2" number="1.5">
 <h2>
-<span class="header-section-number">27.5</span> Install LaTeX (for knitting R Markdown documents to PDF):<a class="anchor" aria-label="anchor" href="#install-latex-for-knitting-r-markdown-documents-to-pdf"><i class="fas fa-link"></i></a>
+<span class="header-section-number">1.5</span> Install LaTeX (for knitting R Markdown documents to PDF):<a class="anchor" aria-label="anchor" href="#install-latex-for-knitting-r-markdown-documents-to-pdf"><i class="fas fa-link"></i></a>
 </h2>
-<p>If you want to compile R Markdown to .pdf files, you also need a LaTeX distribution (Note: this is not necessary if you choose to compile as a Word document.) Click <a href="http://www.miktex.org/">instructions for Windows</a> or <a href="https://tug.org/mactex/">instructions for Mac</a>, depending on your operating system to complete the installation.</p>
+<p>You need a Latex compiler to create a pdf document from a R Markdown file. If you use the maize server, you don’t need to install anything. If you are using a local RStudio, you should install a Latex compiler. Below are the recommended installers for Windows and Mac:</p>
+<ul>
+<li><p><a href="https://www.tug.org/mactex/">MacTeX</a> for Mac (3.2GB)</p></li>
+<li><p><a href="https://miktex.org/download">MiKTeX</a> for Windows (190MB)</p></li>
+<li><p>Alternatively, you can install the <code>tinytex</code> R package by running
+<code>install.packages("tinytex")</code> in the console.</p></li>
+</ul>
 </div>
-<div id="updating-rrstudio-not-needed-if-you-are-using-the-maize-server" class="section level2" number="27.6">
+<div id="updating-rrstudio-not-needed-if-you-are-using-the-maize2-server" class="section level2" number="1.6">
 <h2>
-<span class="header-section-number">27.6</span> Updating R/RStudio (not needed if you are using the maize server)<a class="anchor" aria-label="anchor" href="#updating-rrstudio-not-needed-if-you-are-using-the-maize-server"><i class="fas fa-link"></i></a>
+<span class="header-section-number">1.6</span> Updating R/RStudio (not needed if you are using the maize2 server)<a class="anchor" aria-label="anchor" href="#updating-rrstudio-not-needed-if-you-are-using-the-maize2-server"><i class="fas fa-link"></i></a>
 </h2>
 <p>If you have used a local version of R/RStudio before and it is still installed on your machine, then you should make sure that you have the most recent versions of each program.</p>
 <ul>
@@ -148,9 +156,9 @@
 <li><p>In RStudio, check for updates with the menu option <code>Help &gt; Check for updates</code>. Follow directions if an update is needed.</p></li>
 </ul>
 </div>
-<div id="instructions" class="section level2" number="27.7">
+<div id="opening-a-new-file" class="section level2" number="1.7">
 <h2>
-<span class="header-section-number">27.7</span> Instructions<a class="anchor" aria-label="anchor" href="#instructions"><i class="fas fa-link"></i></a>
+<span class="header-section-number">1.7</span> Opening a new file<a class="anchor" aria-label="anchor" href="#opening-a-new-file"><i class="fas fa-link"></i></a>
 </h2>
 <p>If using Rstudio on your computer, using the <strong>File&gt;Open File</strong> menu to find and open this .Rmd file.</p>
 <p>If using Maize Rstudio from your browser:</p>
@@ -158,7 +166,11 @@
 <li><p>In the Files tab, select <strong>Upload</strong> and <strong>Choose File</strong> to find the .Rmd that you downloaded. Click <em>OK</em> to upload to your course folder/location in the maize server account.</p></li>
 <li><p>Click on the .Rmd file in the appropriate folder to open the file.</p></li>
 </ul>
-<p>Extra notes:</p>
+</div>
+<div id="running-codes-and-knitting-.rmd-files" class="section level2" number="1.8">
+<h2>
+<span class="header-section-number">1.8</span> Running codes and knitting .Rmd files:<a class="anchor" aria-label="anchor" href="#running-codes-and-knitting-.rmd-files"><i class="fas fa-link"></i></a>
+</h2>
 <ul>
 <li><p>You can run a line of code by placing your cursor in the line of code and clicking <strong>Run Selected Line(s)</strong></p></li>
 <li><p>You can run an entire chunk by clicking the green triangle on the right side of the code chunk.</p></li>
@@ -167,9 +179,9 @@
 <li><p><strong>Maize users</strong>: You may also need to allow for “pop-up” in your web browser when knitting documents.</p></li>
 </ul>
 </div>
-<div id="few-more-instructions" class="section level2" number="27.8">
+<div id="few-more-instructions" class="section level2" number="1.9">
 <h2>
-<span class="header-section-number">27.8</span> Few More Instructions<a class="anchor" aria-label="anchor" href="#few-more-instructions"><i class="fas fa-link"></i></a>
+<span class="header-section-number">1.9</span> Few More Instructions<a class="anchor" aria-label="anchor" href="#few-more-instructions"><i class="fas fa-link"></i></a>
 </h2>
 <p>The default setting in Rstudio when you are running chunks is that the “output” (numbers, graphs) are
 shown <strong>inline</strong> within the Markdown Rmd. If you prefer to have your plots appear on the right of the console and not below the chunk, then change the settings as follows:</p>
@@ -181,24 +193,34 @@ R Markdown documents.</li>
 </ol>
 <p>Now try running R chunks in the .Rmd file to see the difference. You can recheck this box if you prefer
 the default setting.</p>
+</div>
+<div id="vpn" class="section level2" number="1.10">
+<h2>
+<span class="header-section-number">1.10</span> VPN<a class="anchor" aria-label="anchor" href="#vpn"><i class="fas fa-link"></i></a>
+</h2>
+<p>If you plan to do any work off campus this term, you need to install Carleton’s VPN. This will allow you to access the <strong>maize</strong> server (if needed).</p>
+<p><strong>Installing the GlobalProtect VPN</strong></p>
+<p>Follow the directions <a href="https://wiki.carleton.edu/display/itskb/GlobalProtect+VPN">here</a> to install VPN.</p>
 
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="class-activity-25.html"><span class="header-section-number">25</span> Class Activity 25</a></div>
-<div class="next"><a href="r-markdown.html"><span class="header-section-number">28</span> R Markdown</a></div>
+<div class="prev"><a href="index.html">Introduction to Statistics</a></div>
+<div class="next"><a href="r-markdown-basics.html"><span class="header-section-number">2</span> R Markdown Basics</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#what-is-r"><span class="header-section-number">27</span> What is R?</a></li>
-<li><a class="nav-link" href="#what-is-rstudio"><span class="header-section-number">27.1</span> What is RStudio?</a></li>
-<li><a class="nav-link" href="#r-studio-server"><span class="header-section-number">27.2</span> R Studio Server</a></li>
-<li><a class="nav-link" href="#r-markdown-basics"><span class="header-section-number">27.3</span> R Markdown Basics</a></li>
-<li><a class="nav-link" href="#installing-rrstudio-not-needed-if-you-are-using-the-maize-server"><span class="header-section-number">27.4</span> Installing R/RStudio (not needed if you are using the maize server)</a></li>
-<li><a class="nav-link" href="#install-latex-for-knitting-r-markdown-documents-to-pdf"><span class="header-section-number">27.5</span> Install LaTeX (for knitting R Markdown documents to PDF):</a></li>
-<li><a class="nav-link" href="#updating-rrstudio-not-needed-if-you-are-using-the-maize-server"><span class="header-section-number">27.6</span> Updating R/RStudio (not needed if you are using the maize server)</a></li>
-<li><a class="nav-link" href="#instructions"><span class="header-section-number">27.7</span> Instructions</a></li>
-<li><a class="nav-link" href="#few-more-instructions"><span class="header-section-number">27.8</span> Few More Instructions</a></li>
+<li><a class="nav-link" href="#what-is-r"><span class="header-section-number">1</span> What is R?</a></li>
+<li><a class="nav-link" href="#what-is-rstudio"><span class="header-section-number">1.1</span> What is RStudio?</a></li>
+<li><a class="nav-link" href="#r-studio-server"><span class="header-section-number">1.2</span> R Studio Server</a></li>
+<li><a class="nav-link" href="#rrstudio"><span class="header-section-number">1.3</span> R/RStudio</a></li>
+<li><a class="nav-link" href="#installing-rrstudio-not-needed-if-you-are-using-the-maize-server"><span class="header-section-number">1.4</span> Installing R/RStudio (not needed if you are using the maize server)</a></li>
+<li><a class="nav-link" href="#install-latex-for-knitting-r-markdown-documents-to-pdf"><span class="header-section-number">1.5</span> Install LaTeX (for knitting R Markdown documents to PDF):</a></li>
+<li><a class="nav-link" href="#updating-rrstudio-not-needed-if-you-are-using-the-maize2-server"><span class="header-section-number">1.6</span> Updating R/RStudio (not needed if you are using the maize2 server)</a></li>
+<li><a class="nav-link" href="#opening-a-new-file"><span class="header-section-number">1.7</span> Opening a new file</a></li>
+<li><a class="nav-link" href="#running-codes-and-knitting-.rmd-files"><span class="header-section-number">1.8</span> Running codes and knitting .Rmd files:</a></li>
+<li><a class="nav-link" href="#few-more-instructions"><span class="header-section-number">1.9</span> Few More Instructions</a></li>
+<li><a class="nav-link" href="#vpn"><span class="header-section-number">1.10</span> VPN</a></li>
 </ul>
 
       <div class="book-extra">
@@ -216,7 +238,7 @@ the default setting.</p>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-03-03.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-03-25.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
