@@ -78,21 +78,21 @@
 <code class="sourceCode R"><span><span class="va">example_data</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>ID <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">4</span>, <span class="fl">5</span>, <span class="fl">6</span>, <span class="fl">7</span>, <span class="fl">8</span>, <span class="fl">9</span>, <span class="fl">10</span><span class="op">)</span>,</span>
 <span>                          Greeting <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="st">"Hello"</span>, <span class="fl">5</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="st">"Goodbye"</span>,<span class="fl">5</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>                          Male <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="cn">TRUE</span>, <span class="cn">FALSE</span><span class="op">)</span>, <span class="fl">5</span><span class="op">)</span>,</span>
-<span>                          Age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">10</span>, <span class="fl">20</span>, <span class="fl">60</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span>                          Weight <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">10</span>, <span class="fl">50</span>, <span class="fl">300</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <details><summary><red>Click for answer</red></summary><div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">example_data</span></span></code></pre></div>
-<pre><code>   ID Greeting  Male      Age
-1   1    Hello  TRUE 43.56259
-2   2    Hello FALSE 53.73273
-3   3    Hello  TRUE 42.72992
-4   4    Hello FALSE 25.40222
-5   5    Hello  TRUE 36.50045
-6   6  Goodbye FALSE 43.66614
-7   7  Goodbye  TRUE 38.44395
-8   8  Goodbye FALSE 50.76767
-9   9  Goodbye  TRUE 47.44829
-10 10  Goodbye FALSE 47.82143</code></pre>
-<em>Answer:</em> We see a data frame with four columns, where the first column is an <code>identifier</code> for the cases. We have information on the greeting types, whether male or not, and age on these cases in the remaining columns.
+<pre><code>   ID Greeting  Male    Weight
+1   1    Hello  TRUE  71.00526
+2   2    Hello FALSE 225.19194
+3   3    Hello  TRUE  73.71783
+4   4    Hello FALSE 170.55436
+5   5    Hello  TRUE 208.90721
+6   6  Goodbye FALSE 141.85109
+7   7  Goodbye  TRUE 284.32605
+8   8  Goodbye FALSE  87.21098
+9   9  Goodbye  TRUE  76.34776
+10 10  Goodbye FALSE  54.94240</code></pre>
+<em>Answer:</em> We see a data frame with four columns, where the first column is an <code>identifier</code> for the cases. We have information on the greeting types, whether male or not, and weight on these cases in the remaining columns.
 </details><p><br></p>
 <ol start="2" style="list-style-type: lower-alpha">
 <li>What is the dimension of the dataset called ‘example_data’?</li>
@@ -116,20 +116,23 @@
 </ol>
 <details><summary><red>Click for answer</red></summary><div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># read in the data</span></span>
-<span><span class="va">education_lock5</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"https://www.lock5stat.com/datasets2e/EducationLiteracy.csv"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readr.tidyverse.org">readr</a></span><span class="op">)</span></span>
+<span><span class="va">education_lock5</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"https://www.lock5stat.com/datasets2e/EducationLiteracy.csv"</span><span class="op">)</span></span></code></pre></div>
 </details><p><br></p>
 <ol start="2" style="list-style-type: lower-alpha">
 <li>Print the header (i.e. first 6 cases by default) of the dataset in part a.</li>
 </ol>
 <details><summary><red>Click for answer</red></summary><div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">education_lock5</span><span class="op">)</span></span></code></pre></div>
-<pre><code>              Country EducationExpenditure Literacy
-1         Afghanistan                  3.1     31.7
-2             Albania                  3.2     96.8
-3             Algeria                  4.3       NA
-4             Andorra                  3.2       NA
-5              Angola                  3.5     70.6
-6 Antigua and Barbuda                  2.6     99.0</code></pre>
+<pre><code># A tibble: 6 × 3
+  Country             EducationExpenditure Literacy
+  &lt;chr&gt;                              &lt;dbl&gt;    &lt;dbl&gt;
+1 Afghanistan                          3.1     31.7
+2 Albania                              3.2     96.8
+3 Algeria                              4.3     NA  
+4 Andorra                              3.2     NA  
+5 Angola                               3.5     70.6
+6 Antigua and Barbuda                  2.6     99  </code></pre>
 </details><p><br></p>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>What is the dimension of the dataset in a?</li>
@@ -177,7 +180,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-03-25.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-03-26.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

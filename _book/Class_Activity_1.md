@@ -13,7 +13,7 @@ a. Run the following chunk. Comment on the output.
 example_data = data.frame(ID = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10),
                           Greeting = c(rep("Hello", 5), rep("Goodbye",5)),
                           Male = rep(c(TRUE, FALSE), 5),
-                          Age = runif(n=10, 20, 60))
+                          Weight = runif(n=10, 50, 300))
 ```
 
 
@@ -25,20 +25,20 @@ example_data
 ```
 
 ```
-   ID Greeting  Male      Age
-1   1    Hello  TRUE 23.15246
-2   2    Hello FALSE 26.78182
-3   3    Hello  TRUE 45.20989
-4   4    Hello FALSE 54.99820
-5   5    Hello  TRUE 54.41579
-6   6  Goodbye FALSE 30.30126
-7   7  Goodbye  TRUE 20.02251
-8   8  Goodbye FALSE 43.89100
-9   9  Goodbye  TRUE 33.95876
-10 10  Goodbye FALSE 40.20550
+   ID Greeting  Male    Weight
+1   1    Hello  TRUE 102.87216
+2   2    Hello FALSE  96.41793
+3   3    Hello  TRUE  65.56234
+4   4    Hello FALSE 244.14326
+5   5    Hello  TRUE  66.15849
+6   6  Goodbye FALSE 299.04539
+7   7  Goodbye  TRUE 231.84837
+8   8  Goodbye FALSE  50.68936
+9   9  Goodbye  TRUE 188.57463
+10 10  Goodbye FALSE 279.06429
 ```
 
-*Answer:* We see a data frame with four columns, where the first column is an `identifier` for the cases. We have information on the greeting types, whether male or not, and age on these cases in the remaining columns.
+*Answer:* We see a data frame with four columns, where the first column is an `identifier` for the cases. We have information on the greeting types, whether male or not, and weight on these cases in the remaining columns.
 </details>
 
 
@@ -78,13 +78,13 @@ a. Read the dataset `EducationLiteracy` from the [Lock5](https://www.lock5stat.c
 
 ```r
 # read in the data
-education_lock5 <- read.csv("https://www.lock5stat.com/datasets2e/EducationLiteracy.csv")
+library(readr)
+education_lock5 <- read_csv("https://www.lock5stat.com/datasets2e/EducationLiteracy.csv")
 ```
 
 </details>
 
 <br>
-
 
 
 b. Print the header (i.e. first 6 cases by default) of the dataset in part a.
@@ -98,13 +98,15 @@ head(education_lock5)
 ```
 
 ```
-              Country EducationExpenditure Literacy
-1         Afghanistan                  3.1     31.7
-2             Albania                  3.2     96.8
-3             Algeria                  4.3       NA
-4             Andorra                  3.2       NA
-5              Angola                  3.5     70.6
-6 Antigua and Barbuda                  2.6     99.0
+# A tibble: 6 × 3
+  Country             EducationExpenditure Literacy
+  <chr>                              <dbl>    <dbl>
+1 Afghanistan                          3.1     31.7
+2 Albania                              3.2     96.8
+3 Algeria                              4.3     NA  
+4 Andorra                              3.2     NA  
+5 Angola                               3.5     70.6
+6 Antigua and Barbuda                  2.6     99  
 ```
 
 </details>

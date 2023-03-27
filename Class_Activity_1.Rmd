@@ -12,7 +12,7 @@ a. Run the following chunk. Comment on the output.
 example_data = data.frame(ID = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10),
                           Greeting = c(rep("Hello", 5), rep("Goodbye",5)),
                           Male = rep(c(TRUE, FALSE), 5),
-                          Age = runif(n=10, 20, 60))
+                          Weight = runif(n=10, 50, 300))
 ```
 
 
@@ -22,7 +22,7 @@ example_data = data.frame(ID = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10),
 example_data
 ```
 
-*Answer:* We see a data frame with four columns, where the first column is an `identifier` for the cases. We have information on the greeting types, whether male or not, and age on these cases in the remaining columns.
+*Answer:* We see a data frame with four columns, where the first column is an `identifier` for the cases. We have information on the greeting types, whether male or not, and weight on these cases in the remaining columns.
 </details>
 
 
@@ -57,13 +57,13 @@ a. Read the dataset `EducationLiteracy` from the [Lock5](https://www.lock5stat.c
 
 ```{r}
 # read in the data
-education_lock5 <- read.csv("https://www.lock5stat.com/datasets2e/EducationLiteracy.csv")
+library(readr)
+education_lock5 <- read_csv("https://www.lock5stat.com/datasets2e/EducationLiteracy.csv")
 ```
 
 </details>
 
 <br>
-
 
 
 b. Print the header (i.e. first 6 cases by default) of the dataset in part a.
