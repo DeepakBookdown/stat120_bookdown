@@ -1,15 +1,8 @@
 
 # Class Activity 2
 
+
 ## Your Turn 1
-
-This exercise is about finding the average word length in Lincoln's Gettysburg's address.
-
-------------------------------------------
-
-<br>
-
-## Your Turn 2
 
 ### Summary of article on [It depends on how you ask!](https://jech.bmj.com/content/75/4/387.abstract)
 
@@ -24,7 +17,7 @@ This study aimed to measure the effects of psychological biases on estimates of 
 
 ------------------------------------------
 
-## Your Turn 3
+## Your Turn 2
 
 ### Gettysburg random sample
 
@@ -61,7 +54,7 @@ samp
 ```
 
 ```
- [1] 200 210 187  81 170 114 162  66 154 251
+ [1] 261  94 209 168 104  93 230  14 119 192
 ```
 
 This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
@@ -80,17 +73,17 @@ pop[samp,]
 ```
 
 ```
-    position size      word
-200      200    9 remaining
-210      210    9 increased
-187      187    2        It
-81        81    5     those
-170      170    9 dedicated
-114      114    2        we
-162      162    2        is
-66        66    4      have
-154      154    3       can
-251      251    3       and
+    position size       word
+261      261    3        the
+94        94   10 altogether
+209      209    4       take
+168      168    2         to
+104      104    2         in
+93        93    2         is
+230      230    4       that
+14        14    1          a
+119      119    3        The
+192      192    2         to
 ```
 
 <br>
@@ -106,7 +99,7 @@ mysize
 ```
 
 ```
- [1] 9 9 2 5 9 2 2 4 3 3
+ [1]  3 10  4  2  2  2  4  1  3  2
 ```
 
 Then find the mean of these values:
@@ -117,7 +110,7 @@ mean(mysize)
 ```
 
 ```
-[1] 4.8
+[1] 3.3
 ```
 
 How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample? 

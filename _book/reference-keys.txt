@@ -67,3 +67,9 @@ report-guidelines
 class-activity-1
 your-turn-1
 your-turn-2
+class-activity-2
+your-turn-1-1
+summary-of-article-on-it-depends-on-how-you-ask
+your-turn-2-1
+gettysburg-random-sample
+driving-with-a-pet-on-your-lap
