@@ -27,8 +27,8 @@ The researchers found that 10 of 15 subjects in the dolphin therapy group showed
 <details>
 <summary><red>Click for answer</red></summary>
 *Answer:*  The variables in this study can be classified as follows: 
-Categorical: Treatment Group (Dolphin and Control)
-Quantitative: Age, Level of Depression (Beginning and End of Study) 
+Categorical: Treatment Group (Dolphin and Control),   
+Quantitative: Age, Depression Score (Beginning and End of Study)
 </details>
 <br>
 
@@ -113,7 +113,7 @@ The researchers found that 60 of 100 subjects in the new diet group showed subst
 
 <details>
 <summary><red>Click for answer</red></summary>
-*Answer:* This is a matched pairs experiment because each subject is paired with another subject who has similar characteristics and one subject from each pair is randomly assigned to the treatment group and the other to the control group.
+*Answer:* This is a matched pairs experiment because each subject is paired with another subject who has similar characteristics and one subject from each pair is randomly assigned to the treatment group and the other to the control group. More specifically, this is a $pretest - posttest$ matched pairs design.
 </details>
 <br>
 

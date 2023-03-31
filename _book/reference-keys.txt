@@ -73,3 +73,6 @@ summary-of-article-on-it-depends-on-how-you-ask
 your-turn-2-1
 gettysburg-random-sample
 driving-with-a-pet-on-your-lap
+class-activity-3
+case-study-1
+case-study-2
