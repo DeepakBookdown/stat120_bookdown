@@ -7,7 +7,7 @@
 <title>Chapter 9 Class Activity 2 | Stat 120</title>
 <meta name="author" content="Deepak Bastola">
 <meta name="description" content="9.1 Your Turn 1  9.1.1 Summary of article on It depends on how you ask! Click for answerAnswer: This study aimed to measure the effects of psychological biases on estimates of compliance with...">
-<meta name="generator" content="bookdown 0.31 with bs4_book()">
+<meta name="generator" content="bookdown 0.33 with bs4_book()">
 <meta property="og:title" content="Chapter 9 Class Activity 2 | Stat 120">
 <meta property="og:type" content="book">
 <meta property="og:description" content="9.1 Your Turn 1  9.1.1 Summary of article on It depends on how you ask! Click for answerAnswer: This study aimed to measure the effects of psychological biases on estimates of compliance with...">
@@ -16,7 +16,7 @@
 <meta name="twitter:description" content="9.1 Your Turn 1  9.1.1 Summary of article on It depends on how you ask! Click for answerAnswer: This study aimed to measure the effects of psychological biases on estimates of compliance with...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.1/transition.js"></script><script src="libs/bs3compat-0.4.1/tabs.js"></script><script src="libs/bs3compat-0.4.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
@@ -57,6 +57,7 @@
 <li><a class="" href="class-activity-1.html"><span class="header-section-number">8</span> Class Activity 1</a></li>
 <li><a class="active" href="class-activity-2.html"><span class="header-section-number">9</span> Class Activity 2</a></li>
 <li><a class="" href="class-activity-3.html"><span class="header-section-number">10</span> Class Activity 3</a></li>
+<li><a class="" href="class-activity-4.html"><span class="header-section-number">11</span> Class Activity 4</a></li>
 </ul>
 
         <div class="book-extra">
@@ -108,24 +109,24 @@ spreadsheet <code>GettysburgPopulationCounts.csv</code>. Carefully load this dat
 <div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">samp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">268</span>, size<span class="op">=</span><span class="fl">10</span><span class="op">)</span></span>
 <span><span class="va">samp</span></span></code></pre></div>
-<pre><code> [1]  33 252  25 127 173 168  15  46  29 200</code></pre>
+<pre><code> [1] 117  11 248 138 162 107 171  94  64  73</code></pre>
 <p>This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?</p>
 <p><br></p>
 <p>(b). Get words and lengths</p>
 <p>We will <em>subset</em> the data set <code>pop</code> to obtain only the sampled rows listed in <code>samp</code>. We do this using <strong>square bracket notation</strong> `dataset[row number, column number/name]. Run the following command to find your sampled words and sizes:</p>
 <div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">pop</span><span class="op">[</span><span class="va">samp</span>,<span class="op">]</span></span></code></pre></div>
-<pre><code>    position size      word
-33        33    3       are
-252      252    4      that
-25        25    4      that
-127      127    4      here
-173      173    3       the
-168      168    2        to
-15        15    3       new
-46        46    6    nation
-29        29    7   created
-200      200    9 remaining</code></pre>
+<pre><code>    position size       word
+117      117    4       this
+11        11    4       upon
+248      248    5      birth
+138      138    2         or
+162      162    2         is
+107      107    5     sense,
+171      171    4       here
+94        94   10 altogether
+64        64    3       war.
+73        73    4       that</code></pre>
 <p><br></p>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>Compute your sample mean</li>
@@ -134,11 +135,11 @@ spreadsheet <code>GettysburgPopulationCounts.csv</code>. Carefully load this dat
 <div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">mysize</span> <span class="op">&lt;-</span> <span class="va">pop</span><span class="op">[</span><span class="va">samp</span>, <span class="st">"size"</span><span class="op">]</span></span>
 <span><span class="va">mysize</span></span></code></pre></div>
-<pre><code> [1] 3 4 4 4 3 2 3 6 7 9</code></pre>
+<pre><code> [1]  4  4  5  2  2  5  4 10  3  4</code></pre>
 <p>Then find the mean of these values:</p>
 <div class="sourceCode" id="cb60"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">mysize</span><span class="op">)</span></span></code></pre></div>
-<pre><code>[1] 4.5</code></pre>
+<pre><code>[1] 4.3</code></pre>
 <p>How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?</p>
 <details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The true mean is 4.29. Your two means will likely vary. Since the many non-random samples generally overestimated the population mean length, it is possible (but not guaranteed) that <em>your</em> one non-random sample gave a mean length that is greater than the random sample’s mean length.</p>
 </details><p><br></p>
@@ -204,7 +205,7 @@ spreadsheet <code>GettysburgPopulationCounts.csv</code>. Carefully load this dat
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-03-30.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-04-02.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

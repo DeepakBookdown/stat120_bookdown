@@ -139,7 +139,7 @@
 
 \title{Stat 120}
 \author{Deepak Bastola}
-\date{2023-03-30}
+\date{2023-04-02}
 
 \begin{document}
 \maketitle
@@ -1628,16 +1628,16 @@ Click for answer
 
 \begin{verbatim}
    ID Greeting  Male    Weight
-1   1    Hello  TRUE 262.14551
-2   2    Hello FALSE  75.44062
-3   3    Hello  TRUE 215.75501
-4   4    Hello FALSE  72.77618
-5   5    Hello  TRUE 192.17445
-6   6  Goodbye FALSE 261.18275
-7   7  Goodbye  TRUE  61.15052
-8   8  Goodbye FALSE 126.17096
-9   9  Goodbye  TRUE  53.97262
-10 10  Goodbye FALSE 282.88734
+1   1    Hello  TRUE 160.19413
+2   2    Hello FALSE 172.02620
+3   3    Hello  TRUE  56.10925
+4   4    Hello FALSE 127.48601
+5   5    Hello  TRUE 116.91639
+6   6  Goodbye FALSE  66.74723
+7   7  Goodbye  TRUE  93.67351
+8   8  Goodbye FALSE 187.10819
+9   9  Goodbye  TRUE 209.62473
+10 10  Goodbye FALSE 175.89333
 \end{verbatim}
 
 \emph{Answer:} We see a data frame with four columns, where the first column is an \texttt{identifier} for the cases. We have information on the greeting types, whether male or not, and weight on these cases in the remaining columns.
@@ -1818,7 +1818,7 @@ Run the following command to obtain a SRS of 10 words from the 268 that are in t
 \end{Shaded}
 
 \begin{verbatim}
- [1] 126 227 178  10  93  47  52 148 201 192
+ [1]  50 213 170  71  60 197 236 196 115 217
 \end{verbatim}
 
 This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
@@ -1835,16 +1835,16 @@ We will \emph{subset} the data set \texttt{pop} to obtain only the sampled rows 
 
 \begin{verbatim}
     position size      word
-126      126    9 struggled
-227      227    4      here
-178      178    3       who
-10        10    5     forth
-93        93    2        is
-47        47    2        so
-52        52    3       can
-148      148    4      what
-201      201    6    before
-192      192    2        to
+50        50    2        so
+213      213    4      that
+170      170    9 dedicated
+71        71    7   portion
+60        60    5     great
+197      197    3       the
+236      236    4      died
+196      196    2        to
+115      115    6    cannot
+217      217    4      they
 \end{verbatim}
 
 \begin{enumerate}
@@ -1865,7 +1865,7 @@ The word lengths in part (b) are the data for your sample. You can compute your 
 \end{Shaded}
 
 \begin{verbatim}
- [1] 9 4 3 5 2 2 3 4 6 2
+ [1] 2 4 9 7 5 3 4 2 6 4
 \end{verbatim}
 
 Then find the mean of these values:
@@ -1877,7 +1877,7 @@ Then find the mean of these values:
 \end{Shaded}
 
 \begin{verbatim}
-[1] 4
+[1] 4.6
 \end{verbatim}
 
 How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?
@@ -2054,6 +2054,778 @@ No Improvement & 40 & 57 & 97 \\
 Total & 100 & 100 & 200 \\
 \bottomrule()
 \end{longtable}
+
+\hypertarget{class-activity-4}{%
+\chapter{Class Activity 4}\label{class-activity-4}}
+
+\hypertarget{your-turn-1-2}{%
+\section{Your Turn 1}\label{your-turn-1-2}}
+
+\hypertarget{flowers-v.-mississippi}{%
+\subsection{Flowers v. Mississippi}\label{flowers-v.-mississippi}}
+
+The data set \texttt{APM\_DougEvensCases.csv} contains data from 1517 potential black and white jurors for 66 cases that Doug Evans was primary prosecutor for between 1992 and 2017. These jurors were available for Doug Evans to strike using his ``peremptory strikes'' during the jury selection phase.
+
+(a). Inspect data
+
+Read in the data
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{jurors }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/deepbas/statdatasets/main/APM\_DougEvansCases.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# dimension of dataset}
+\FunctionTok{dim}\NormalTok{(jurors)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 1517    6
+\end{verbatim}
+
+Look at the first \textbf{three rows} of the data set
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{jurors[}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{), ]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+  trial__id  race        struck_state defendant_race
+1         4 Black Not struck by State          White
+2         4 Black     Struck by State          White
+3         4 White Not struck by State          White
+       same_race                     struck_by
+1 different race Juror chosen to serve on jury
+2 different race           Struck by the state
+3      same race Juror chosen to serve on jury
+\end{verbatim}
+
+To get the data from one variable, we use the command \texttt{dataset\$variable}. For example, \texttt{jurors\$struck\_state} gives us the data values from the \texttt{struck\_state} variable, which tells us if a juror was struck by the state from the jury pool. Here we can see the first 10 entries in this variable:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{jurors}\SpecialCharTok{$}\NormalTok{struck\_state[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{10}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+ [1] "Not struck by State" "Struck by State"    
+ [3] "Not struck by State" "Not struck by State"
+ [5] "Struck by State"     "Not struck by State"
+ [7] "Struck by State"     "Not struck by State"
+ [9] "Not struck by State" "Not struck by State"
+\end{verbatim}
+
+(b). Table of counts and proportions
+
+The \texttt{summary} command used with a data frame gives summaries of each variable
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(jurors)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+   trial__id         race           struck_state      
+ Min.   :  4.0   Length:1517        Length:1517       
+ 1st Qu.: 52.0   Class :character   Class :character  
+ Median : 82.0   Mode  :character   Mode  :character  
+ Mean   :112.6                                        
+ 3rd Qu.:170.0                                        
+ Max.   :301.0                                        
+ defendant_race      same_race          struck_by        
+ Length:1517        Length:1517        Length:1517       
+ Class :character   Class :character   Class :character  
+ Mode  :character   Mode  :character   Mode  :character  
+                                                         
+                                                         
+                                                         
+\end{verbatim}
+
+The \texttt{table} command gives the distribution of counts for a single categorical variable. To obtain the count table for \texttt{struck\_state} you need to
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{counts }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(jurors}\SpecialCharTok{$}\NormalTok{struck\_state)}
+\NormalTok{counts}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Not struck by State     Struck by State 
+               1084                 433 
+\end{verbatim}
+
+We can add the \texttt{prop.table} command to turn these counts into proportions:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{prop.table}\NormalTok{(counts)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Not struck by State     Struck by State 
+          0.7145682           0.2854318 
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  What proportion of eligible jurors were struck by the state from the jury pool?
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} about 28.5\% of eligible jurors were struck by the state.
+
+(c). Bar graph for one variable
+
+We can create a data frame \texttt{count\_data} containing the counts and their corresponding categories.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{count\_data }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(counts)}
+\NormalTok{count\_data}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+                 Var1 Freq
+1 Not struck by State 1084
+2     Struck by State  433
+\end{verbatim}
+
+Then, we use \texttt{ggplot2} to create a bar plot with the categories on the x-axis and the counts on the y-axis. The column names of \texttt{count\_data} are automatically assigned to be \texttt{Var1} and \texttt{Freq}. We can change the column names to \texttt{category} and \texttt{count}, for example, as:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{colnames}\NormalTok{(count\_data) }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\StringTok{"category"}\NormalTok{, }\StringTok{"count"}\NormalTok{)}
+\NormalTok{count\_data}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+             category count
+1 Not struck by State  1084
+2     Struck by State   433
+\end{verbatim}
+
+The \texttt{geom\_bar(stat\ =\ "identity")} function is used to create the bars, and we set the y-axis label using \texttt{labs()}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Create a bar plot using ggplot2}
+\FunctionTok{library}\NormalTok{(ggplot2)  }\CommentTok{\# load the package}
+\FunctionTok{ggplot}\NormalTok{(count\_data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ category, }\AttributeTok{y =}\NormalTok{ count)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{y =} \StringTok{"count"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_4_files/figure-latex/unnamed-chunk-10-1}
+
+(d). Two-way tables
+
+First 10 entries of \texttt{race} and \texttt{struck\_state} variable is
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{jurors[(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{10}\NormalTok{),(}\DecValTok{2}\SpecialCharTok{:}\DecValTok{3}\NormalTok{)]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+    race        struck_state
+1  Black Not struck by State
+2  Black     Struck by State
+3  White Not struck by State
+4  White Not struck by State
+5  Black     Struck by State
+6  White Not struck by State
+7  Black     Struck by State
+8  White Not struck by State
+9  White Not struck by State
+10 White Not struck by State
+\end{verbatim}
+
+The \texttt{table} command also gives two-way tables when two variables are included. Here is the two-way table for juror race and state struck status:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mytable }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(jurors}\SpecialCharTok{$}\NormalTok{race, jurors}\SpecialCharTok{$}\NormalTok{struck\_state)}
+\NormalTok{mytable}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+       
+        Not struck by State Struck by State
+  Black                 225             310
+  White                 859             123
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  How many jurors were white and were not struck by the state?
+\end{itemize}
+
+Click for answer
+
+\emph{answer:} 859
+
+(e). Conditional proportions: state strike status by juror race
+
+The \texttt{prop.table} command gives conditional proportions for a two-way table. We plug our two-way table into \texttt{prop.table} with a \texttt{margin=1} to get proportions grouped by the \textbf{row} variable:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{prop.table}\NormalTok{(mytable, }\AttributeTok{margin =} \DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+       
+        Not struck by State Struck by State
+  Black           0.4205607       0.5794393
+  White           0.8747454       0.1252546
+\end{verbatim}
+
+Of all eligible black jurors, about 57.9\% were struck by the state.
+
+\begin{itemize}
+\tightlist
+\item
+  What proportion of eligible white jurors were struck by the state?
+\end{itemize}
+
+Click for answer
+
+\emph{answer:} about 12.5\%
+
+\begin{itemize}
+\tightlist
+\item
+  Is there evidence of an association between juror race and state strikes?
+\end{itemize}
+
+Click for answer
+
+\emph{answer:} Yes, there is an association because the rate of state strikes varies greatly by juror race with
+about 60\% of black jurors were struck compared to only 13\% of white jurors
+
+(f). Stacked bar graph for two variables
+
+We can visualize the conditional distribution from part (e) with a stacked bar graph created using the \texttt{ggplot2} graphing package. First, load this package's functions with the \texttt{library} command:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\end{Highlighting}
+\end{Shaded}
+
+Now we can use the \texttt{geom\_bar} command in this package. Here we get the conditional distribution of \texttt{struck\_state} given \texttt{race}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(jurors, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ race, }\AttributeTok{fill =}\NormalTok{ struck\_state)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{position =} \StringTok{"fill"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"State strikes by juror race"}\NormalTok{, }\AttributeTok{y =} \StringTok{"proportion"}\NormalTok{, }
+       \AttributeTok{x =} \StringTok{"eligible juror race"}\NormalTok{, }\AttributeTok{fill =} \StringTok{"struck by state?"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_4_files/figure-latex/unnamed-chunk-15-1}
+
+The basic syntax for this function is to let \texttt{ggplot} know your data set name (\texttt{jurors}), then specify the grouping or conditional variable on the x-axis (\texttt{race}) in the \texttt{aes} (aesthetic) argument. The \texttt{fill} variable is the response variable (\texttt{struck\_state}). We add (\texttt{+}) the \texttt{geom\_bar} geometry to get a bar graph with the \texttt{fill} position specified. Adding an informative label and title complete the graph.
+
+(g). Conditional distribution of race grouped by strike status
+
+We can ``flip'' our response and grouping variables easily (if we think it makes sense to do so). Here we specify the \texttt{margin=2} to get proportions grouped by the \textbf{column} variable:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{prop.table}\NormalTok{(mytable, }\AttributeTok{margin =} \DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+       
+        Not struck by State Struck by State
+  Black           0.2075646       0.7159353
+  White           0.7924354       0.2840647
+\end{verbatim}
+
+Notice that the proportions add to one \textbf{down} each column. Of all eligible jurors struck by the state, about 71.6\% were black.
+
+The stacked bar graph for this distribution is
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(jurors, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ struck\_state, }\AttributeTok{fill =}\NormalTok{ race)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{position =} \StringTok{"fill"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Juror race by state strikes"}\NormalTok{, }\AttributeTok{y =} \StringTok{"proportion"}\NormalTok{, }
+       \AttributeTok{fill =} \StringTok{"eligible juror race"}\NormalTok{, }\AttributeTok{x =} \StringTok{"struck by state?"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_4_files/figure-latex/unnamed-chunk-17-1}
+
+\begin{itemize}
+\tightlist
+\item
+  What proportion of eligible jurors who were not struck by the state were black? were white?
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} Of all jurors not struck by the state, about 20.8\% were black
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{your-turn-2-2}{%
+\section{Your Turn 2}\label{your-turn-2-2}}
+
+\hypertarget{graduate-programs-acceptance-and-sex}{%
+\subsection{Graduate programs acceptance and sex}\label{graduate-programs-acceptance-and-sex}}
+
+How are grad school program acceptance rates associated with sex? We will look at a classic data set from Berkeley grad school applications from 1973 (\emph{Science}, 1975). The data cases are applicants to four graduate programs at Berkeley during 1973. The variable \texttt{result} tells us if the applicant was accepted to the graduate program, \texttt{sex} tells us the sex of the applicant (male or female), and \texttt{program} tells us program type (programs 1,2,3 or 4).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{grad }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/deepbas/statdatasets/main/BerkeleyGrad.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# dimension of the dataset}
+\FunctionTok{dim}\NormalTok{(grad)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 3014    3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# first 6 rows}
+\FunctionTok{head}\NormalTok{(grad)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+   program  sex result
+1 program1 male accept
+2 program1 male accept
+3 program1 male accept
+4 program1 male accept
+5 program1 male accept
+6 program1 male accept
+\end{verbatim}
+
+(a). Table of counts and proportions
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{prop.table}\NormalTok{(}\FunctionTok{table}\NormalTok{(grad}\SpecialCharTok{$}\NormalTok{result))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+   accept    reject 
+0.4260119 0.5739881 
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  What proportion of applicants were accepted?
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} About 43\% (1284/3014) of applicants were accepted.
+
+(b). Two-way tables
+
+The \texttt{table} command also gives two-way tables when two variables are included. Here is the two-way table for result and sex:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{table}\NormalTok{(grad}\SpecialCharTok{$}\NormalTok{sex, grad}\SpecialCharTok{$}\NormalTok{result)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+        
+         accept reject
+  female    262    587
+  male     1022   1143
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  How many applicants involved females who were accepted?
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} : 262 applicants involved females who were accepted.
+
+(c). Conditional proportions: acceptance given sex
+
+The \texttt{prop.table} command gives conditional proportions for a two-way table. First let's save the two-way table in an object named \texttt{mytable}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mytable }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(grad}\SpecialCharTok{$}\NormalTok{sex, grad}\SpecialCharTok{$}\NormalTok{result)}
+\end{Highlighting}
+\end{Shaded}
+
+Then use \texttt{prop.table} to get the distribution of result conditioned (grouped) on applicant's sex:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{prop.table}\NormalTok{(mytable, }\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+        
+            accept    reject
+  female 0.3085984 0.6914016
+  male   0.4720554 0.5279446
+\end{verbatim}
+
+The value of \texttt{1} in this command tell's R that you want \emph{row} proportions (the denominator of the proportion is each row total).
+
+\begin{itemize}
+\tightlist
+\item
+  What proportion of female were accepted?
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} about 31\% (262/(262+587))
+
+\begin{itemize}
+\tightlist
+\item
+  What proportion of males were accepted?
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} about 47\% (1022/(1022+1143))
+
+(d). Bar graph for one variable
+
+We can create a data frame \texttt{count\_data1} containing the counts and their corresponding categories.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{counts1 }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(grad}\SpecialCharTok{$}\NormalTok{result)}
+\NormalTok{count\_data1 }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(counts1)}
+\end{Highlighting}
+\end{Shaded}
+
+Then, we use \texttt{ggplot2} to create a bar plot with the categories on the x-axis and the counts on the y-axis. The column names of \texttt{count\_data} are automatically assigned to be \texttt{Var1} and \texttt{Freq}. We can change the column names to \texttt{category} and \texttt{count}, for example, as:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{colnames}\NormalTok{(count\_data1) }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\StringTok{"category"}\NormalTok{, }\StringTok{"count"}\NormalTok{)}
+\NormalTok{count\_data1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+  category count
+1   accept  1284
+2   reject  1730
+\end{verbatim}
+
+The \texttt{geom\_bar(stat\ =\ "identity")} function is used to create the bars, and we set the y-axis label using \texttt{labs()}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Create a bar plot using ggplot2}
+\FunctionTok{library}\NormalTok{(ggplot2)  }\CommentTok{\# load the package}
+\FunctionTok{ggplot}\NormalTok{(count\_data1, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ category, }\AttributeTok{y =}\NormalTok{ count)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{y =} \StringTok{"count"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_4_files/figure-latex/unnamed-chunk-27-1}
+
+(e). Stacked bar graph for two variables
+
+Now we can use the \texttt{geom\_bar} command in this package. Here we get the conditional distribution of \texttt{result} given \texttt{sex}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2) }\CommentTok{\# don\textquotesingle{}t need if you already entered it for example 1}
+\FunctionTok{ggplot}\NormalTok{(grad, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ sex, }\AttributeTok{fill =}\NormalTok{ result)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{position =} \StringTok{"fill"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{y=}\StringTok{"Proportion"}\NormalTok{, }\AttributeTok{title =} \StringTok{"result by sex"}\NormalTok{, }\AttributeTok{fill =} \StringTok{"result?"}\NormalTok{, }\AttributeTok{x =} \StringTok{"sex"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_4_files/figure-latex/unnamed-chunk-28-1}
+
+The basic syntax for this function is to let \texttt{ggplot} know your data set name (\texttt{grad}), then specify the grouping or conditional variable on the x-axis (\texttt{sex}) in the \texttt{aes} (aesthetic) argument. The \texttt{fill} variable is the response variable (\texttt{result}). We add (\texttt{+}) the \texttt{geom\_bar} geometry to get a bar graph with the \texttt{fill} position specified. Adding an informative label and title complete the graph.
+
+\begin{itemize}
+\tightlist
+\item
+  Verify that this graph is plotting the conditional proportions from part (c)
+\end{itemize}
+
+(f). Subsetting by program type
+
+Finally, we will repeat the previous analysis of result and sex, but this time we will divide (or subset) the data set by program type. To do this we need to know how the values of \texttt{program} are coded:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{table}\NormalTok{(grad}\SpecialCharTok{$}\NormalTok{program)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+program1 program2 program3 program4 
+     933      585      782      714 
+\end{verbatim}
+
+Here we use the \texttt{filter} command available from the \texttt{dplyr} package to get only the applicants to program 1:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(dplyr)}
+\NormalTok{grad.p1 }\OtherTok{\textless{}{-}} \FunctionTok{filter}\NormalTok{(grad, program }\SpecialCharTok{==} \StringTok{"program1"}\NormalTok{)  }\CommentTok{\# gets rows where program equal program1}
+\FunctionTok{head}\NormalTok{(grad.p1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+   program  sex result
+1 program1 male accept
+2 program1 male accept
+3 program1 male accept
+4 program1 male accept
+5 program1 male accept
+6 program1 male accept
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dim}\NormalTok{(grad.p1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 933   3
+\end{verbatim}
+
+Verify that the number of rows in the subsetted program 1 data set matches the number of program 1 applicants shown in the \texttt{table} of counts above.
+
+\begin{itemize}
+\tightlist
+\item
+  Repeat the \texttt{filter} command to get a data set for program 2 and call the new data set \texttt{grad.p2}. Verify that the number of rows in this dataset matches the number of program 2 applicants in the original data set.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# enter R code for (f) here}
+\NormalTok{grad.p2 }\OtherTok{\textless{}{-}} \FunctionTok{filter}\NormalTok{(grad, program }\SpecialCharTok{==} \StringTok{"program2"}\NormalTok{) }\CommentTok{\# gets rows where program equal program1}
+\FunctionTok{head}\NormalTok{(grad.p2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+   program  sex result
+1 program2 male accept
+2 program2 male accept
+3 program2 male accept
+4 program2 male accept
+5 program2 male accept
+6 program2 male accept
+\end{verbatim}
+
+(g). Result by sex for program 1.
+
+\begin{itemize}
+\tightlist
+\item
+  Show the distribution of result conditioned on applicant's sex for the program 1 data set. Get both a table of conditional proportions (or percentages) and a stacked bar graph.
+\end{itemize}
+
+Click for answer
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# enter R code for (g) here}
+\FunctionTok{ggplot}\NormalTok{(grad.p1, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ sex, }\AttributeTok{fill =}\NormalTok{ result)) }\SpecialCharTok{+}
+ \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{position =} \StringTok{"fill"}\NormalTok{) }\SpecialCharTok{+}
+ \FunctionTok{labs}\NormalTok{(}\AttributeTok{y=}\StringTok{"Proportion"}\NormalTok{, }\AttributeTok{title =} \StringTok{"result by sex for program 1"}\NormalTok{,}
+ \AttributeTok{fill =} \StringTok{"result?"}\NormalTok{, }\AttributeTok{x =} \StringTok{"sex"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_4_files/figure-latex/unnamed-chunk-32-1}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{prop.table}\NormalTok{(}\FunctionTok{table}\NormalTok{(grad.p1}\SpecialCharTok{$}\NormalTok{sex, grad.p1}\SpecialCharTok{$}\NormalTok{result),}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+        
+            accept    reject
+  female 0.8240741 0.1759259
+  male   0.6193939 0.3806061
+\end{verbatim}
+
+(h). Result by sex for program 2.
+
+\begin{itemize}
+\tightlist
+\item
+  Repeat part (g) but this time use the program 2 data set. Compare the two bar graphs for (g) and (h) and explain how they show that females have a higher acceptance rate after accounting for program type (1 or 2).
+\end{itemize}
+
+Click for answer
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# enter R code for (h) here}
+\FunctionTok{ggplot}\NormalTok{(grad.p2, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ sex, }\AttributeTok{fill =}\NormalTok{ result)) }\SpecialCharTok{+}
+ \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{position =} \StringTok{"fill"}\NormalTok{) }\SpecialCharTok{+}
+ \FunctionTok{labs}\NormalTok{(}\AttributeTok{y=}\StringTok{"Proportion"}\NormalTok{, }\AttributeTok{title =} \StringTok{"result by sex for program 2"}\NormalTok{,}
+ \AttributeTok{fill =} \StringTok{"result?"}\NormalTok{, }\AttributeTok{x =} \StringTok{"sex"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_4_files/figure-latex/unnamed-chunk-34-1}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{prop.table}\NormalTok{(}\FunctionTok{table}\NormalTok{(grad.p2}\SpecialCharTok{$}\NormalTok{sex, grad.p2}\SpecialCharTok{$}\NormalTok{result),}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+        
+            accept    reject
+  female 0.6800000 0.3200000
+  male   0.6285714 0.3714286
+\end{verbatim}
+
+\emph{Answer:} For both programs 1 and 2, we see that female applicants have a slightly higher rate of acceptance
+than male applicants. After accounting for program type, we now see that black defendants have a higher
+rate of death penalty than white defendants. Without accounting for program type, the opposite was true
+(see parts (c) and (e)).
+
+Why? the confounding affect of program type which is associated with both result and sex:
+
+Click for answer
+
+\begin{itemize}
+\tightlist
+\item
+  females prefer to apply to programs 3 and 4 while males prefer programs 1 and 2 (more than 3 and
+  4).
+
+  \begin{itemize}
+  \tightlist
+  \item
+    44\% of females applied to program 3 and 40\% to program 4
+  \item
+    38\% of males applied to program 1 and 26\% to program 2
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{prop.table}\NormalTok{(}\FunctionTok{table}\NormalTok{(grad}\SpecialCharTok{$}\NormalTok{sex, grad}\SpecialCharTok{$}\NormalTok{program), }\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+        
+           program1   program2   program3   program4
+  female 0.12720848 0.02944641 0.44169611 0.40164900
+  male   0.38106236 0.25866051 0.18799076 0.17228637
+\end{verbatim}
+
+-Programs 3 and 4 were much harder to get into than programs 1 and 2
+- 64\% of applicants to program 1 were accepted and 63\% of applicants to program 2 were accepted
+- 6\% of applicants to program 4 were accepted and 34\% of applicants to program 3 were accepted
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{prop.table}\NormalTok{(}\FunctionTok{table}\NormalTok{(grad}\SpecialCharTok{$}\NormalTok{program, grad}\SpecialCharTok{$}\NormalTok{result), }\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+          
+               accept     reject
+  program1 0.64308682 0.35691318
+  program2 0.63076923 0.36923077
+  program3 0.34398977 0.65601023
+  program4 0.06442577 0.93557423
+\end{verbatim}
+
+So since the majority of females applied to the toughest programs (as measured by acceptance rates),
+there overall rate of acceptance was lower for females compared to males. But when we break down
+these rates by program type, we see that females have higher acceptance rates than males (see the
+visual in part (i)).
+
+(i). A bar graph with three variables
+
+If we simply want to graph the relationship between result and sex for each type of program, we can avoid subsetting the data by using the \texttt{facet\_wrap} command in \texttt{ggplot2}. It is one simple addition to the stacked bar graph in part (e):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(grad, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ sex, }\AttributeTok{fill =}\NormalTok{ result)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{position =} \StringTok{"fill"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{y=}\StringTok{"Proportion"}\NormalTok{, }
+       \AttributeTok{title =} \StringTok{"result by sex for each program"}\NormalTok{, }
+       \AttributeTok{fill =} \StringTok{"result?"}\NormalTok{, }
+       \AttributeTok{x =} \StringTok{"sex"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{facet\_wrap}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{program)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_4_files/figure-latex/unnamed-chunk-38-1}
+
+\begin{itemize}
+\tightlist
+\item
+  Verify that this command creates side-by-side stacked bar graphs that match your graphs in parts (g) and (h) for programs 1 and 2.
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} The graphs match.
 
   \bibliography{book.bib,packages.bib}
 

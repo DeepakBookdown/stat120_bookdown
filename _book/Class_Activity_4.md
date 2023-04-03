@@ -59,6 +59,7 @@ jurors$struck_state[1:10]
  [7] "Struck by State"     "Not struck by State"
  [9] "Not struck by State" "Not struck by State"
 ```
+
 <br>
 
 (b). Table of counts and proportions
@@ -124,14 +125,49 @@ Not struck by State     Struck by State
 
 (c). Bar graph for one variable
 
-You can create a simple bar graph for one categorical variable with the `barplot` command. Here we visualize the distribution of struck status for all eligible jurors:
+We can create a data frame `count_data` containing the counts and their corresponding categories. 
 
 
 ```r
-barplot(counts, ylab = "count")
+count_data <- data.frame(counts)
+count_data
 ```
 
-<img src="Class_Activity_4_files/figure-html/unnamed-chunk-8-1.png" width="100%" />
+```
+                 Var1 Freq
+1 Not struck by State 1084
+2     Struck by State  433
+```
+
+
+Then, we use `ggplot2` to create a bar plot with the categories on the x-axis and the counts on the y-axis. The column names of `count_data` are automatically assigned to be `Var1` and `Freq`. We can change the column names to `category` and `count`, for example, as:
+
+
+```r
+colnames(count_data) = c("category", "count")
+count_data
+```
+
+```
+             category count
+1 Not struck by State  1084
+2     Struck by State   433
+```
+
+
+The `geom_bar(stat = "identity")` function is used to create the bars, and we set the y-axis label using `labs()`.
+
+
+```r
+# Create a bar plot using ggplot2
+library(ggplot2)  # load the package
+ggplot(count_data, aes(x = category, y = count)) +
+  geom_bar(stat = "identity") +
+  labs(y = "count")
+```
+
+<img src="Class_Activity_4_files/figure-epub3/unnamed-chunk-10-1.png" width="100%" />
+
 
 (d). Two-way tables
 
@@ -197,12 +233,14 @@ prop.table(mytable, margin = 1)
 Of all eligible black jurors, about 57.9% were struck by the state.
 
 - What proportion of eligible white jurors were struck by the state?
+
 <details>
 <summary><red>Click for answer</red></summary>
 *answer:* about 12.5%
 </details>
 
 - Is there evidence of an association between juror race and state strikes?
+
 <details>
 <summary><red>Click for answer</red></summary>
 *answer:* Yes, there is an association because the rate of state strikes varies greatly by juror race with
@@ -228,7 +266,7 @@ ggplot(jurors, aes(x = race, fill = struck_state)) +
        x = "eligible juror race", fill = "struck by state?")
 ```
 
-<img src="Class_Activity_4_files/figure-html/unnamed-chunk-13-1.png" width="100%" />
+<img src="Class_Activity_4_files/figure-epub3/unnamed-chunk-15-1.png" width="100%" />
 
 The basic syntax for this function is to let `ggplot` know your data set name (`jurors`), then specify the grouping or conditional variable on the x-axis (`race`) in the `aes` (aesthetic) argument. The `fill` variable is the response variable (`struck_state`). We add (`+`) the `geom_bar` geometry to get a bar graph with the `fill` position specified. Adding an informative label and title complete the graph.
 <br>
@@ -261,7 +299,7 @@ ggplot(jurors, aes(x = struck_state, fill = race)) +
        fill = "eligible juror race", x = "struck by state?")
 ```
 
-<img src="Class_Activity_4_files/figure-html/unnamed-chunk-15-1.png" width="100%" />
+<img src="Class_Activity_4_files/figure-epub3/unnamed-chunk-17-1.png" width="100%" />
 
 - What proportion of eligible jurors who were not struck by the state were black? were white?
 
@@ -400,24 +438,43 @@ The value of `1` in this command tell's R that you want *row* proportions (the d
 
 (d). Bar graph for one variable
 
-You can create a simple bar graph for one categorical variable with the `barplot` command. Here we visualize the distribution of result:
+We can create a data frame `count_data1` containing the counts and their corresponding categories. 
 
 
 ```r
-barplot(table(grad$result))
+counts1 <- table(grad$result)
+count_data1 <- data.frame(counts1)
 ```
 
-<img src="Class_Activity_4_files/figure-html/unnamed-chunk-23-1.png" width="100%" />
 
-We can add in a title and x and y axis labels too:
+Then, we use `ggplot2` to create a bar plot with the categories on the x-axis and the counts on the y-axis. The column names of `count_data` are automatically assigned to be `Var1` and `Freq`. We can change the column names to `category` and `count`, for example, as:
 
 
 ```r
-barplot(table(grad$result), xlab="application result", 
-        ylab="Count", main = "Distribution of Results")
+colnames(count_data1) = c("category", "count")
+count_data1
 ```
 
-<img src="Class_Activity_4_files/figure-html/unnamed-chunk-24-1.png" width="100%" />
+```
+  category count
+1   accept  1284
+2   reject  1730
+```
+
+
+The `geom_bar(stat = "identity")` function is used to create the bars, and we set the y-axis label using `labs()`.
+
+
+```r
+# Create a bar plot using ggplot2
+library(ggplot2)  # load the package
+ggplot(count_data1, aes(x = category, y = count)) +
+  geom_bar(stat = "identity") +
+  labs(y = "count")
+```
+
+<img src="Class_Activity_4_files/figure-epub3/unnamed-chunk-27-1.png" width="100%" />
+
 <br>
 
 (e). Stacked bar graph for two variables
@@ -432,7 +489,7 @@ ggplot(grad, aes(x = sex, fill = result)) +
   labs(y="Proportion", title = "result by sex", fill = "result?", x = "sex")
 ```
 
-<img src="Class_Activity_4_files/figure-html/unnamed-chunk-25-1.png" width="100%" />
+<img src="Class_Activity_4_files/figure-epub3/unnamed-chunk-28-1.png" width="100%" />
 
 The basic syntax for this function is to let `ggplot` know your data set name (`grad`), then specify the grouping or conditional variable on the x-axis (`sex`) in the `aes` (aesthetic) argument. The `fill` variable is the response variable (`result`). We add (`+`) the `geom_bar` geometry to get a bar graph with the `fill` position specified. Adding an informative label and title complete the graph.
 
@@ -521,7 +578,7 @@ ggplot(grad.p1, aes(x = sex, fill = result)) +
  fill = "result?", x = "sex")
 ```
 
-<img src="Class_Activity_4_files/figure-html/unnamed-chunk-29-1.png" width="100%" />
+<img src="Class_Activity_4_files/figure-epub3/unnamed-chunk-32-1.png" width="100%" />
 
 
 ```r
@@ -553,7 +610,7 @@ ggplot(grad.p2, aes(x = sex, fill = result)) +
  fill = "result?", x = "sex")
 ```
 
-<img src="Class_Activity_4_files/figure-html/unnamed-chunk-31-1.png" width="100%" />
+<img src="Class_Activity_4_files/figure-epub3/unnamed-chunk-34-1.png" width="100%" />
 
 
 ```r
@@ -639,7 +696,7 @@ ggplot(grad, aes(x = sex, fill = result)) +
   facet_wrap(~program)
 ```
 
-<img src="Class_Activity_4_files/figure-html/unnamed-chunk-35-1.png" width="100%" />
+<img src="Class_Activity_4_files/figure-epub3/unnamed-chunk-38-1.png" width="100%" />
 <br>
 
 - Verify that this command creates side-by-side stacked bar graphs that match your graphs in parts (g) and (h) for programs 1 and 2.
@@ -650,72 +707,5 @@ ggplot(grad, aes(x = sex, fill = result)) +
 *Answer:* The graphs match.
 
 </details>
-
-
----------------------------------------------------------------------
-
-## Quiz
-
-**1.  A two-way table is shown for two groups, 1 and 2, and two possible outcomes, A and B.**
-
-&nbsp;  | Outcome A |	Outcome B | 	Total
-------------------|----------|--------------|------
-Group 1 |	40 | 	10 |	50
-Group 2 |	30 |	120 |	150
-Total |	70 |	130 |	200
-
-**What proportion of all cases are in Group 1?**
-
-
-&emsp;  A. 0.33
-
-&emsp;  B. 0.20
-
-&emsp;  C. 0.25
-
-&emsp;  D. 0.75
-
-
-<details>
-<summary><red>Click for answer</red></summary>
-C. 0.25
-</details><br>
-
-**2. A disruption of a gene called DYXC1 on chromosome 15 for humans may be related to an increased risk of developing dyslexia. Researchers studied the gene in 109 people diagnosed with dyslexia and in a control group of 195 others who had no learning disorder. The DYXC1 break occurred in 10 of those with dyslexia and in 5 of those in the control group. Is this an experiment or an observational study?**
-
-&emsp;A. Experiment
-
-&emsp;B. Observational Study
-
-<details>
-<summary><red>Click for answer</red></summary>
-Observational Study
-</details><br>
-
-
-**3. The data from question 2 can be summarized in a two way table as:**
-
-&nbsp; | Gene Break |	No Break |	Total
-------------------|----------|--------------|------
-Dyslexia Group |	10 |	99 |	109
-Control Group |	5 |	190 |	195
-Total |	15	| 289 | 	304
-
-
-**What is the proportion of Dyslexia group who have the break on the DYXC1 gene? Round your answer to 3 significant digits after the decimal.**
-
-&emsp;A. 0.026
-
-&emsp;B. 0.667
-
-&emsp;C. 0.127
-
-&emsp;D. 0.092
-
-
-<details>
-<summary><red>Click for answer</red></summary>
-D. 0.092
-</details><br>
 
 

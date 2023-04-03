@@ -17,7 +17,7 @@ rmd_files: [
    "Class_Activity_1.Rmd", 
    "Class_Activity_2.Rmd", 
    "Class_Activity_3.Rmd", 
-   # "Class_Activity_4.Rmd", 
+   "Class_Activity_4.Rmd", 
   # "Class_Activity_5.Rmd", 
   # "Class_Activity_6.Rmd", 
   # "Class_Activity_7.Rmd", 
