@@ -139,7 +139,7 @@
 
 \title{Stat 120}
 \author{Deepak Bastola}
-\date{2023-04-02}
+\date{2023-04-04}
 
 \begin{document}
 \maketitle
@@ -1628,16 +1628,16 @@ Click for answer
 
 \begin{verbatim}
    ID Greeting  Male    Weight
-1   1    Hello  TRUE 160.19413
-2   2    Hello FALSE 172.02620
-3   3    Hello  TRUE  56.10925
-4   4    Hello FALSE 127.48601
-5   5    Hello  TRUE 116.91639
-6   6  Goodbye FALSE  66.74723
-7   7  Goodbye  TRUE  93.67351
-8   8  Goodbye FALSE 187.10819
-9   9  Goodbye  TRUE 209.62473
-10 10  Goodbye FALSE 175.89333
+1   1    Hello  TRUE 224.72116
+2   2    Hello FALSE 212.94090
+3   3    Hello  TRUE 149.06693
+4   4    Hello FALSE  57.35219
+5   5    Hello  TRUE 215.80856
+6   6  Goodbye FALSE  66.07996
+7   7  Goodbye  TRUE 185.16121
+8   8  Goodbye FALSE  70.20083
+9   9  Goodbye  TRUE 283.73964
+10 10  Goodbye FALSE 249.23617
 \end{verbatim}
 
 \emph{Answer:} We see a data frame with four columns, where the first column is an \texttt{identifier} for the cases. We have information on the greeting types, whether male or not, and weight on these cases in the remaining columns.
@@ -1818,7 +1818,7 @@ Run the following command to obtain a SRS of 10 words from the 268 that are in t
 \end{Shaded}
 
 \begin{verbatim}
- [1]  50 213 170  71  60 197 236 196 115 217
+ [1] 161 228 247  36 249 231 101  23 193   6
 \end{verbatim}
 
 This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
@@ -1834,17 +1834,17 @@ We will \emph{subset} the data set \texttt{pop} to obtain only the sampled rows 
 \end{Shaded}
 
 \begin{verbatim}
-    position size      word
-50        50    2        so
-213      213    4      that
-170      170    9 dedicated
-71        71    7   portion
-60        60    5     great
-197      197    3       the
-236      236    4      died
-196      196    2        to
-115      115    6    cannot
-217      217    4      they
+    position size   word
+161      161    2     It
+228      228    6 highly
+247      247    3    new
+36        36    1      a
+249      249    2     of
+231      231    5  these
+101      101    2     do
+23        23    3    the
+193      193    2     be
+6          6    3   ago,
 \end{verbatim}
 
 \begin{enumerate}
@@ -1865,7 +1865,7 @@ The word lengths in part (b) are the data for your sample. You can compute your 
 \end{Shaded}
 
 \begin{verbatim}
- [1] 2 4 9 7 5 3 4 2 6 4
+ [1] 2 6 3 1 2 5 2 3 2 3
 \end{verbatim}
 
 Then find the mean of these values:
@@ -1877,7 +1877,7 @@ Then find the mean of these values:
 \end{Shaded}
 
 \begin{verbatim}
-[1] 4.6
+[1] 2.9
 \end{verbatim}
 
 How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?
@@ -2826,6 +2826,407 @@ If we simply want to graph the relationship between result and sex for each type
 Click for answer
 
 \emph{Answer:} The graphs match.
+
+\hypertarget{class-activity-5}{%
+\chapter{Class Activity 5}\label{class-activity-5}}
+
+\hypertarget{example-1-sleep}{%
+\section{Example 1: Sleep}\label{example-1-sleep}}
+
+This histogram shows the distribution of hours or sleep per night for a large sample of students.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\NormalTok{sleep }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"http://math.carleton.edu/Stats215/Textbook/SleepStudy.csv"}\NormalTok{)}
+\FunctionTok{ggplot}\NormalTok{(sleep, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{AverageSleep)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{fill=}\StringTok{"steelblue"}\NormalTok{, }\AttributeTok{bins =} \DecValTok{30}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Distribution of Sleep Hours"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Hours of Sleep"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_5_files/figure-latex/unnamed-chunk-1-1}
+
+\hypertarget{a-estimate-the-average-hours-of-sleep-per-night.}{%
+\subsection{(a) Estimate the average hours of sleep per night.}\label{a-estimate-the-average-hours-of-sleep-per-night.}}
+
+Click for answer
+
+\emph{Answer:} The mean is around 8 hours
+
+\hypertarget{b-use-the-95-rule-to-estimate-the-standard-deviation-for-this-data.}{%
+\subsection{(b) Use the 95\% rule to estimate the standard deviation for this data.}\label{b-use-the-95-rule-to-estimate-the-standard-deviation-for-this-data.}}
+
+Click for answer
+
+\emph{Answer:} Most of the data is between about 6 and 10, with a mean around 8 (due to the roughly symmetric
+distribution). So two standard deviations is about 2 hours of sleep, making one standard deviation about
+1 hours of sleep.
+
+Let's check the rule! Here are the actual mean and SD:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(sleep}\SpecialCharTok{$}\NormalTok{AverageSleep)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 7.965929
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sd}\NormalTok{(sleep}\SpecialCharTok{$}\NormalTok{AverageSleep)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.9648396
+\end{verbatim}
+
+\hypertarget{example-2-z-scores-for-test-scores}{%
+\section{Example 2: Z-scores for Test Scores}\label{example-2-z-scores-for-test-scores}}
+
+The ACT test has a population mean of 21 and standard deviation of 5. The SAT has a population mean of 1500 and a standard deviation of 325. You earned 28 on the ACT and 2100 on the SAT.
+
+\hypertarget{a-which-test-did-you-do-better-on}{%
+\subsection{(a) Which test did you do better on?}\label{a-which-test-did-you-do-better-on}}
+
+Click for answer
+
+\emph{Answer:}
+
+\begin{itemize}
+\tightlist
+\item
+  ACT: The z-score for the score of 28 is z = (28 - 21)/5 = 1.4.
+\item
+  SAT: The z-score for the score of 2100 is z = (2100 - 1500)/325 = 1.85.
+\item
+  The SAT score is 1.85 standard deviations above average while the ACT score is only 1.4 standard
+  deviations above. You did better on the SAT.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{z\_ACT }\OtherTok{\textless{}{-}}\NormalTok{ (}\DecValTok{28} \SpecialCharTok{{-}} \DecValTok{21}\NormalTok{) }\SpecialCharTok{/} \DecValTok{5}
+\NormalTok{z\_SAT }\OtherTok{\textless{}{-}}\NormalTok{ (}\DecValTok{2100} \SpecialCharTok{{-}} \DecValTok{1500}\NormalTok{) }\SpecialCharTok{/} \DecValTok{325}
+\NormalTok{z\_ACT}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 1.4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{z\_SAT}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 1.846154
+\end{verbatim}
+
+\hypertarget{b-for-each-test-find-the-interval-that-is-likely-to-contain-about-95-of-all-test-scores.}{%
+\subsection{(b) For each test, find the interval that is likely to contain about 95\% of all test scores.}\label{b-for-each-test-find-the-interval-that-is-likely-to-contain-about-95-of-all-test-scores.}}
+
+Click for answer
+
+\emph{Answer:}
+
+\begin{itemize}
+\tightlist
+\item
+  ACT: Two standard deviations is 2(5) = 10. About 95\% of ACT scores are between 21 - 10 = 11
+  and 21 + 10 = 31. This claim assumes that ACT scores follow a bell-shaped distribution.
+\item
+  SAT: Two standard deviations is 2(325) = 650. About 95\% of SAT scores are between 1500 - 650 =
+  850 and 1500 + 650 = 2150. This claim assumes that SAT scores follow a bell-shaped distribution.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ACT\_lower }\OtherTok{\textless{}{-}} \DecValTok{21} \SpecialCharTok{{-}} \DecValTok{2} \SpecialCharTok{*} \DecValTok{5}
+\NormalTok{ACT\_upper }\OtherTok{\textless{}{-}} \DecValTok{21} \SpecialCharTok{+} \DecValTok{2} \SpecialCharTok{*} \DecValTok{5}
+\NormalTok{SAT\_lower }\OtherTok{\textless{}{-}} \DecValTok{1500} \SpecialCharTok{{-}} \DecValTok{2} \SpecialCharTok{*} \DecValTok{325}
+\NormalTok{SAT\_upper }\OtherTok{\textless{}{-}} \DecValTok{1500} \SpecialCharTok{+} \DecValTok{2} \SpecialCharTok{*} \DecValTok{325}
+\FunctionTok{c}\NormalTok{(ACT\_lower, ACT\_upper)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 11 31
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{c}\NormalTok{(SAT\_lower, SAT\_upper)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1]  850 2150
+\end{verbatim}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{example-3-5-number-summaries}{%
+\section{Example 3: 5 number summaries}\label{example-3-5-number-summaries}}
+
+For the given vector of observations indicate whether the resulting data appear to be symmetric, skewed to the right, or skewed to the left.
+
+(2, 10, 15, 20, 69, 34, 23, 2, 45)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{my\_vector }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{15}\NormalTok{, }\DecValTok{20}\NormalTok{, }\DecValTok{69}\NormalTok{, }\DecValTok{34}\NormalTok{, }\DecValTok{23}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{45}\NormalTok{)}
+\FunctionTok{summary}\NormalTok{(my\_vector)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   2.00   10.00   20.00   24.44   34.00   69.00 
+\end{verbatim}
+
+Click for answer
+
+\emph{Answer:} Skewed right. It has a longer right tail than left since max -Q3 \textgreater\textgreater{} Q1 - min
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(}\FunctionTok{data.frame}\NormalTok{(}\AttributeTok{x=}\NormalTok{my\_vector), }\FunctionTok{aes}\NormalTok{(x)) }\SpecialCharTok{+} \FunctionTok{geom\_boxplot}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_5_files/figure-latex/unnamed-chunk-7-1}
+
+\hypertarget{example-4-hot-dog}{%
+\section{Example 4: Hot dog}\label{example-4-hot-dog}}
+
+This boxplot shows the number of hot dogs eaten by the winners of Nathan's Famous hot dog eating contests from 2002-2011.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{hotdogs }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/deepbas/statdatasets/main/HotDogs.csv"}\NormalTok{)}
+\FunctionTok{ggplot}\NormalTok{(hotdogs, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =} \StringTok{""}\NormalTok{, }\AttributeTok{y =}\NormalTok{ HotDogs)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Number of Hot Dogs Consumed"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Number of Hot Dogs"}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_5_files/figure-latex/unnamed-chunk-8-1}
+
+\hypertarget{a-use-the-boxplot-to-estimate-the-5-number-summary-and-iqr-for-this-data.-verify-that-there-are-no-outliers-in-this-data.}{%
+\subsection{(a) Use the boxplot to estimate the 5 number summary and IQR for this data. Verify that there are no outliers in this data.}\label{a-use-the-boxplot-to-estimate-the-5-number-summary-and-iqr-for-this-data.-verify-that-there-are-no-outliers-in-this-data.}}
+
+Click for answer
+
+\emph{Answer:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{hotdog\_q1 }\OtherTok{\textless{}{-}} \FunctionTok{quantile}\NormalTok{(hotdogs}\SpecialCharTok{$}\NormalTok{HotDogs, }\FloatTok{0.25}\NormalTok{)}
+\NormalTok{hotdog\_q3 }\OtherTok{\textless{}{-}} \FunctionTok{quantile}\NormalTok{(hotdogs}\SpecialCharTok{$}\NormalTok{HotDogs, }\FloatTok{0.75}\NormalTok{)}
+\NormalTok{hotdog\_iqr }\OtherTok{\textless{}{-}} \FunctionTok{IQR}\NormalTok{(hotdogs}\SpecialCharTok{$}\NormalTok{HotDogs)}
+\NormalTok{lower\_fence }\OtherTok{\textless{}{-}}\NormalTok{ hotdog\_q1 }\SpecialCharTok{{-}} \FloatTok{1.5} \SpecialCharTok{*}\NormalTok{ hotdog\_iqr}
+\NormalTok{upper\_fence }\OtherTok{\textless{}{-}}\NormalTok{ hotdog\_q3 }\SpecialCharTok{+} \FloatTok{1.5} \SpecialCharTok{*}\NormalTok{ hotdog\_iqr}
+
+\FunctionTok{library}\NormalTok{(dplyr)}
+\NormalTok{outliers }\OtherTok{\textless{}{-}} \FunctionTok{filter}\NormalTok{(hotdogs, HotDogs }\SpecialCharTok{\textless{}}\NormalTok{ lower\_fence }\SpecialCharTok{|}\NormalTok{ HotDogs }\SpecialCharTok{\textgreater{}}\NormalTok{ upper\_fence)}
+\NormalTok{outliers}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] Year    HotDogs
+<0 rows> (or 0-length row.names)
+\end{verbatim}
+
+\hypertarget{example-5-hollywood-movies-world-gross}{%
+\section{Example 5: Hollywood Movies World Gross}\label{example-5-hollywood-movies-world-gross}}
+
+Let's visit the \texttt{WorldGross} analysis from the Hollywood movies data set:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{movies }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/deepbas/statdatasets/main/HollywoodMovies2011.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{a-draw-a-boxplot-of-worldgross.}{%
+\subsection{\texorpdfstring{(a) Draw a boxplot of \texttt{WorldGross}.}{(a) Draw a boxplot of WorldGross.}}\label{a-draw-a-boxplot-of-worldgross.}}
+
+Click for answer
+
+\emph{Answer:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(movies, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ WorldGross, }\AttributeTok{y =} \StringTok{""}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"World Gross of Hollywood Movies"}\NormalTok{, }\AttributeTok{x =} \StringTok{"World Gross (in millions)"}\NormalTok{, }\AttributeTok{y =}\StringTok{""}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_5_files/figure-latex/unnamed-chunk-11-1}
+
+How many movies are identified as outliers for world gross?
+
+\hypertarget{b-calculating-boxplot-values}{%
+\subsection{(b) Calculating boxplot values}\label{b-calculating-boxplot-values}}
+
+Use the boxplot outlier rule to find the ``fence'' (cutoff) between an outlier and non-outlier for \texttt{WorldGross}. Then determine the value (of \texttt{WorldGross}) that the upper ``whisker'' (non-outlier) extends to.
+
+Click for answer
+
+\emph{Answer:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyr)}
+\NormalTok{movies\_no\_na }\OtherTok{\textless{}{-}} \FunctionTok{drop\_na}\NormalTok{(movies) }
+\NormalTok{q1\_world\_gross }\OtherTok{\textless{}{-}} \FunctionTok{quantile}\NormalTok{(movies\_no\_na}\SpecialCharTok{$}\NormalTok{WorldGross, }\FloatTok{0.25}\NormalTok{)}
+\NormalTok{q3\_world\_gross }\OtherTok{\textless{}{-}} \FunctionTok{quantile}\NormalTok{(movies\_no\_na}\SpecialCharTok{$}\NormalTok{WorldGross, }\FloatTok{0.75}\NormalTok{)}
+\NormalTok{iqr\_world\_gross }\OtherTok{\textless{}{-}} \FunctionTok{IQR}\NormalTok{(movies\_no\_na}\SpecialCharTok{$}\NormalTok{WorldGross)}
+\NormalTok{lower\_fence\_world\_gross }\OtherTok{\textless{}{-}}\NormalTok{ q1\_world\_gross }\SpecialCharTok{{-}} \FloatTok{1.5} \SpecialCharTok{*}\NormalTok{ iqr\_world\_gross}
+\NormalTok{upper\_fence\_world\_gross }\OtherTok{\textless{}{-}}\NormalTok{ q3\_world\_gross }\SpecialCharTok{+} \FloatTok{1.5} \SpecialCharTok{*}\NormalTok{ iqr\_world\_gross}
+
+\NormalTok{outliers }\OtherTok{\textless{}{-}} \FunctionTok{filter}\NormalTok{(movies\_no\_na, WorldGross }\SpecialCharTok{\textless{}}\NormalTok{ lower\_fence\_world\_gross }\SpecialCharTok{|}\NormalTok{ WorldGross }\SpecialCharTok{\textgreater{}}\NormalTok{ upper\_fence\_world\_gross)}
+\NormalTok{outliers}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+                                          Movie
+1   Harry Potter and the Deathly Hallows Part 2
+2                          The Hangover Part II
+3                       Twilight: Breaking Dawn
+4                Transformers: Dark of the Moon
+5                                           Rio
+6                Rise of the Planet of the Apes
+7                                    The Smurfs
+8                               Kung Fu Panda 2
+9  Pirates of the Caribbean:\nOn Stranger Tides
+10                           Mission Impossible
+11                            Sherlock Holmes 2
+12                                         Thor
+13                                       Cars 2
+                LeadStudio RottenTomatoes AudienceScore
+1              Warner Bros             96            92
+2       Legendary Pictures             35            58
+3              Independent             26            68
+4      DreamWorks Pictures             35            67
+5         20th Century Fox             71            73
+6         20th Century Fox             83            87
+7  Sony Pictures Animation             23            50
+8     DreamWorks Animation             82            80
+9                   Disney             34            61
+10               Paramount             93            86
+11             Warner Bros             60            79
+12                  Disney             77            80
+13                   Pixar             38            56
+               Story     Genre TheatersOpenWeek
+1            Rivalry   Fantasy             4375
+2             Comedy    Comedy             3615
+3               Love   Romance             4061
+4              Quest    Action             4088
+5              Quest Animation             3826
+6            Revenge    Action             3648
+7  Fish Out Of Water Animation             3395
+8            Rivalry Animation             3925
+9              Quest    Action             4155
+10           Pursuit    Action             3448
+11           Pursuit    Action             3703
+12     Monster Force    Action             3955
+13 Fish Out Of Water Animation             4115
+   BOAverageOpenWeek DomesticGross ForeignGross WorldGross
+1              38672        381.01       947.10   1328.111
+2              23775        254.46       327.00    581.464
+3              34012        260.80       374.00    634.800
+4              23937        352.39       770.81   1123.195
+5              10252        143.62       341.02    484.634
+6              15024        176.70       304.52    481.226
+7              10489        142.61       419.54    562.158
+8              12142        165.25       497.78    663.024
+9              21697        241.07       802.80   1043.871
+10              8672        197.80       336.70    534.500
+11             10704        179.04       261.00    440.040
+12             16618        181.03       267.48    448.512
+13             16072        191.45       360.40    551.850
+   Budget Profitability OpeningWeekend
+1     125     10.624888         169.19
+2      80      7.268300          85.95
+3     110      5.770909         138.12
+4     195      5.759974          97.85
+5      90      5.384822          39.23
+6      93      5.174473          54.81
+7     110      5.110527          35.61
+8     150      4.420160          47.66
+9     250      4.175484          90.15
+10    145      3.686207          29.55
+11    125      3.520320          39.63
+12    150      2.990080          65.72
+13    200      2.759250          66.14
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Create a new dataset called \texttt{movies\_no\_outliers} that contains only the rows from \texttt{movies\_no\_na} where the W\texttt{orldGross} values are within the range defined by the lower and upper fences.
+\end{enumerate}
+
+Click for answer
+
+\emph{Answer:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(dplyr)}
+\NormalTok{movies\_no\_outliers }\OtherTok{\textless{}{-}} \FunctionTok{filter}\NormalTok{(movies\_no\_na, WorldGross }\SpecialCharTok{\textgreater{}=}\NormalTok{ lower\_fence\_world\_gross }\SpecialCharTok{\&}\NormalTok{ WorldGross }\SpecialCharTok{\textless{}=}\NormalTok{ upper\_fence\_world\_gross)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{d-side-by-side-boxplot}{%
+\subsection{(d) Side-by-side boxplot}\label{d-side-by-side-boxplot}}
+
+We can compare boxplots of \texttt{WorldGross} across \texttt{Genre} categories:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(movies, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Genre, }\AttributeTok{y =}\NormalTok{ WorldGross)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"World Gross by Genre"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Genre"}\NormalTok{, }\AttributeTok{y =} \StringTok{"World Gross (in millions)"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.text.x =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{angle =} \DecValTok{45}\NormalTok{, }\AttributeTok{hjust =} \DecValTok{1}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_5_files/figure-latex/unnamed-chunk-14-1}
+
+\begin{itemize}
+\tightlist
+\item
+  What does this type of graph illustrate well about the relationship between \texttt{WorldGross} and \texttt{Genre}?
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} Does a good job comparing median values and extremes
+
+\begin{itemize}
+\tightlist
+\item
+  What does this type of graph not illustrate well about the relationship between \texttt{WorldGross} and \texttt{Genre}?
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} It doesn't illustrate sample sizes well, e.g.~the fantasy genre only has 2 movies in it
 
   \bibliography{book.bib,packages.bib}
 

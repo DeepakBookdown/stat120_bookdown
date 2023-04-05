@@ -81,3 +81,17 @@ your-turn-1-2
 flowers-v.-mississippi
 your-turn-2-2
 graduate-programs-acceptance-and-sex
+class-activity-5
+example-1-sleep
+a-estimate-the-average-hours-of-sleep-per-night.
+b-use-the-95-rule-to-estimate-the-standard-deviation-for-this-data.
+example-2-z-scores-for-test-scores
+a-which-test-did-you-do-better-on
+b-for-each-test-find-the-interval-that-is-likely-to-contain-about-95-of-all-test-scores.
+example-3-5-number-summaries
+example-4-hot-dog
+a-use-the-boxplot-to-estimate-the-5-number-summary-and-iqr-for-this-data.-verify-that-there-are-no-outliers-in-this-data.
+example-5-hollywood-movies-world-gross
+a-draw-a-boxplot-of-worldgross.
+b-calculating-boxplot-values
+d-side-by-side-boxplot
