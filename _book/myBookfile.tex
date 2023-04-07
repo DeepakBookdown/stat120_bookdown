@@ -139,7 +139,7 @@
 
 \title{Stat 120}
 \author{Deepak Bastola}
-\date{2023-04-04}
+\date{2023-04-06}
 
 \begin{document}
 \maketitle
@@ -1628,16 +1628,16 @@ Click for answer
 
 \begin{verbatim}
    ID Greeting  Male    Weight
-1   1    Hello  TRUE 224.72116
-2   2    Hello FALSE 212.94090
-3   3    Hello  TRUE 149.06693
-4   4    Hello FALSE  57.35219
-5   5    Hello  TRUE 215.80856
-6   6  Goodbye FALSE  66.07996
-7   7  Goodbye  TRUE 185.16121
-8   8  Goodbye FALSE  70.20083
-9   9  Goodbye  TRUE 283.73964
-10 10  Goodbye FALSE 249.23617
+1   1    Hello  TRUE 231.94504
+2   2    Hello FALSE 189.01088
+3   3    Hello  TRUE 281.72416
+4   4    Hello FALSE 114.77693
+5   5    Hello  TRUE 114.21746
+6   6  Goodbye FALSE 231.43701
+7   7  Goodbye  TRUE  76.69459
+8   8  Goodbye FALSE 277.08867
+9   9  Goodbye  TRUE 262.21353
+10 10  Goodbye FALSE  74.52584
 \end{verbatim}
 
 \emph{Answer:} We see a data frame with four columns, where the first column is an \texttt{identifier} for the cases. We have information on the greeting types, whether male or not, and weight on these cases in the remaining columns.
@@ -1818,7 +1818,7 @@ Run the following command to obtain a SRS of 10 words from the 268 that are in t
 \end{Shaded}
 
 \begin{verbatim}
- [1] 161 228 247  36 249 231 101  23 193   6
+ [1] 213 165 208 227  49 216 102 106  28 138
 \end{verbatim}
 
 This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
@@ -1835,16 +1835,16 @@ We will \emph{subset} the data set \texttt{pop} to obtain only the sampled rows 
 
 \begin{verbatim}
     position size   word
-161      161    2     It
-228      228    6 highly
-247      247    3    new
-36        36    1      a
-249      249    2     of
-231      231    5  these
-101      101    2     do
-23        23    3    the
-193      193    2     be
-6          6    3   ago,
+213      213    4   that
+165      165    3    the
+208      208    2     we
+227      227    4   here
+49        49    3    and
+216      216    5  which
+102      102    4  this.
+106      106    6 larger
+28        28    3    are
+138      138    2     or
 \end{verbatim}
 
 \begin{enumerate}
@@ -1865,7 +1865,7 @@ The word lengths in part (b) are the data for your sample. You can compute your 
 \end{Shaded}
 
 \begin{verbatim}
- [1] 2 6 3 1 2 5 2 3 2 3
+ [1] 4 3 2 4 3 5 4 6 3 2
 \end{verbatim}
 
 Then find the mean of these values:
@@ -1877,7 +1877,7 @@ Then find the mean of these values:
 \end{Shaded}
 
 \begin{verbatim}
-[1] 2.9
+[1] 3.6
 \end{verbatim}
 
 How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?
@@ -3227,6 +3227,574 @@ Click for answer
 Click for answer
 
 \emph{Answer:} It doesn't illustrate sample sizes well, e.g.~the fantasy genre only has 2 movies in it
+
+\hypertarget{class-activity-6}{%
+\chapter{Class Activity 6}\label{class-activity-6}}
+
+\hypertarget{your-turn-1-3}{%
+\section{Your Turn 1}\label{your-turn-1-3}}
+
+\hypertarget{beer-example}{%
+\subsection{Beer Example}\label{beer-example}}
+
+A study of 16 Ohio State University students looked at the relationship between the number of beers a student consumes and their blood alcohol content (BAC) 30 minutes after their last beer. The regression information from R to predict BAC from number of beers consumed is given below.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(readr)}
+\NormalTok{bac }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/deepbas/statdatasets/main/BAC.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{a-always-start-with-a-visual}{%
+\subsection{(a) Always start with a visual!!!!}\label{a-always-start-with-a-visual}}
+
+Plot the response (BAC) on the y-axis and the explanatory (``predictor'') on the x-axis.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ bac, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Beers, }\AttributeTok{y =}\NormalTok{ BAC)) }\SpecialCharTok{+} \FunctionTok{geom\_point}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_6_files/figure-latex/unnamed-chunk-2-1}
+
+You can modify this basic graph by adding a title and axes labels.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ bac, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Beers, }\AttributeTok{y =}\NormalTok{ BAC)) }\SpecialCharTok{+} 
+     \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{shape =} \DecValTok{19}\NormalTok{) }\SpecialCharTok{+}
+     \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Beer and BAC"}\NormalTok{,}
+          \AttributeTok{x =} \StringTok{"Number of beers drank"}\NormalTok{,}
+          \AttributeTok{y =} \StringTok{"Blood Alcohol Content"}\NormalTok{) }\SpecialCharTok{+}
+     \FunctionTok{theme\_minimal}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_6_files/figure-latex/unnamed-chunk-3-1}
+
+\begin{itemize}
+\tightlist
+\item
+  Is there a relationship?
+
+  \begin{itemize}
+  \tightlist
+  \item
+    direction?
+  \item
+    strength?
+  \item
+    form?
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{b-computing-correlation}{%
+\subsection{(b) Computing correlation}\label{b-computing-correlation}}
+
+Since the \emph{form} of the relationship is linear, we can use \textbf{correlation} to measure its strength:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cor}\NormalTok{(bac}\SpecialCharTok{$}\NormalTok{BAC, bac}\SpecialCharTok{$}\NormalTok{Beers)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.8943381
+\end{verbatim}
+
+If there are any missing values (\texttt{NA}'s) on either of the variables involved in the correlation calculation, use \texttt{use\ =\ "complete.obs"} as an extra argument to the \texttt{cor} function.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cor}\NormalTok{(bac}\SpecialCharTok{$}\NormalTok{BAC, bac}\SpecialCharTok{$}\NormalTok{Beers, }\AttributeTok{use =} \StringTok{"complete.obs"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.8943381
+\end{verbatim}
+
+\hypertarget{c-fitting-a-regression-line}{%
+\subsection{(c) Fitting a regression line}\label{c-fitting-a-regression-line}}
+
+We use the \texttt{lm(y\ \textasciitilde{}\ x,\ data=mydata)} function to fit a \textbf{l}inear (regression) \textbf{m}odel for a response y given an explanatory variable x. This command creates a \textbf{linear model object} that needs to be assigned a name, here we call it \texttt{bac.lm}. You can get the slope and intercept by typing out the object name:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bac.lm }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(BAC }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Beers, }\AttributeTok{data=}\NormalTok{bac)}
+\NormalTok{bac.lm}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Call:
+lm(formula = BAC ~ Beers, data = bac)
+
+Coefficients:
+(Intercept)        Beers  
+   -0.01270      0.01796  
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  After running the \texttt{lm} command above in your R console, check the \textbf{Environment} tab to see that the object \texttt{bac.lm} is now one of the objects stored in R's memory (for this session of Rstudio).
+\item
+  Write down the fitted regression equation to predict BAC from number of beers.
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} \(\hat{y} = \ldots\)
+
+\begin{itemize}
+\tightlist
+\item
+  You can add this regression line to your scatterplot from part (a) by creating the plot and using the \texttt{abline} command:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Customized scatter plot with regression line}
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ bac, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Beers, }\AttributeTok{y =}\NormalTok{ BAC)) }\SpecialCharTok{+} 
+     \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{shape =} \DecValTok{19}\NormalTok{) }\SpecialCharTok{+}
+     \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{"lm"}\NormalTok{, }\AttributeTok{se =} \ConstantTok{FALSE}\NormalTok{, }\AttributeTok{color =} \StringTok{"blue"}\NormalTok{) }\SpecialCharTok{+}
+     \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Beer and BAC"}\NormalTok{,}
+          \AttributeTok{x =} \StringTok{"Number of beers drank"}\NormalTok{,}
+          \AttributeTok{y =} \StringTok{"Blood Alcohol Content"}\NormalTok{) }\SpecialCharTok{+}
+     \FunctionTok{theme\_minimal}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_6_files/figure-latex/unnamed-chunk-7-1}
+
+\hypertarget{d-interpret-the-slope-in-context.}{%
+\subsection{(d) Interpret the slope in context.}\label{d-interpret-the-slope-in-context.}}
+
+Click for answer
+
+\emph{Answer:} Drinking one more beer is associated with a 0.0180 unit increase in predicted BAC.
+
+\hypertarget{e-interpret-the-intercept-in-context-if-it-makes-sense-to-do-so.}{%
+\subsection{(e) Interpret the intercept in context, if it makes sense to do so.}\label{e-interpret-the-intercept-in-context-if-it-makes-sense-to-do-so.}}
+
+Click for answer
+
+\emph{Answer:} The intercept is -0.0127. A student who drinks 0 beers would be predicted to have a negative blood alcohol content. This is not possible so the intercept does not make sense in this context, but the intercept is included in the model to get the best fit line for the data collected.
+
+\hypertarget{f-if-your-friend-at-ohio-state-drank-2-beers-what-would-you-predict-their-bac-to-be}{%
+\subsection{(f) If your friend at Ohio State drank 2 beers, what would you predict their BAC to be?}\label{f-if-your-friend-at-ohio-state-drank-2-beers-what-would-you-predict-their-bac-to-be}}
+
+Click for answer
+
+\emph{Answer:} The predicted BAC is
+
+\[
+\widehat{BAC} = -0.0127 + 0.0180(2) = 0.0233.
+\]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{y.hat }\OtherTok{\textless{}{-}} \SpecialCharTok{{-}}\FloatTok{0.0127} \SpecialCharTok{+} \FloatTok{0.0180}\SpecialCharTok{*}\NormalTok{(}\DecValTok{2}\NormalTok{) }
+\NormalTok{y.hat}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.0233
+\end{verbatim}
+
+\hypertarget{g-find-the-residual-for-the-student-in-the-dataset-who-drank-2-beers-and-had-a-bac-of-0.03.}{%
+\subsection{(g) Find the residual for the student in the dataset who drank 2 beers and had a BAC of 0.03.}\label{g-find-the-residual-for-the-student-in-the-dataset-who-drank-2-beers-and-had-a-bac-of-0.03.}}
+
+Click for answer
+
+\emph{Answer:} The residual is
+
+\[
+BAC - \widehat{BAC} = .03 - .0233=0.0067
+\]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FloatTok{0.03} \SpecialCharTok{{-}}\NormalTok{ (}\SpecialCharTok{{-}}\FloatTok{0.0127} \SpecialCharTok{+} \FloatTok{0.0180}\SpecialCharTok{*}\NormalTok{(}\DecValTok{2}\NormalTok{)) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.0067
+\end{verbatim}
+
+\hypertarget{h-getting-residuals-in-r}{%
+\subsection{(h) Getting residuals in R}\label{h-getting-residuals-in-r}}
+
+We can use the \texttt{resid} command to get the residuals for each case in the data set:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Residuals }
+\NormalTok{residuals }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{Beers =}\NormalTok{ bac}\SpecialCharTok{$}\NormalTok{Beers, }\AttributeTok{Residuals =} \FunctionTok{resid}\NormalTok{(bac.lm))}
+\NormalTok{residuals}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+   Beers    Residuals
+1      5  0.022881795
+2      2  0.006773080
+3      9  0.041026747
+4      8 -0.011009491
+5      3 -0.001190682
+6      7 -0.018045729
+7      3  0.028809318
+8      5 -0.017118205
+9      3 -0.021190682
+10     5 -0.027118205
+11     4  0.010845557
+12     6  0.004918033
+13     5  0.007881795
+14     7 -0.023045729
+15     1  0.004736842
+16     4 -0.009154443
+\end{verbatim}
+
+\hypertarget{i-getting-r2-value}{%
+\subsection{\texorpdfstring{(i) Getting \(R^2\) value}{(i) Getting R\^{}2 value}}\label{i-getting-r2-value}}
+
+You can use the \texttt{summary} command on an \texttt{lm} object to get a more detailed print out of your linear model, along with the \(R^2\) value for your model:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(bac.lm)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Call:
+lm(formula = BAC ~ Beers, data = bac)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.027118 -0.017350  0.001773  0.008623  0.041027 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -0.012701   0.012638  -1.005    0.332    
+Beers        0.017964   0.002402   7.480 2.97e-06 ***
+---
+Signif. codes:  
+0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.02044 on 14 degrees of freedom
+Multiple R-squared:  0.7998,    Adjusted R-squared:  0.7855 
+F-statistic: 55.94 on 1 and 14 DF,  p-value: 2.969e-06
+\end{verbatim}
+
+\hypertarget{j-making-a-residuals-plot}{%
+\subsection{(j) Making a residuals plot}\label{j-making-a-residuals-plot}}
+
+The regression of \texttt{BAC} on \texttt{Beers} has a residuals plot that plots the model's residuals on the y-axis and the explanatory (``predictor'') on the x-axis. We add a horizontal reference line (the detrended regression line) with the \texttt{geom\_hline()} command:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# code for residual plot}
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ residuals, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Beers, }\AttributeTok{y =}\NormalTok{ Residuals)) }\SpecialCharTok{+}
+           \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{shape =} \DecValTok{19}\NormalTok{) }\SpecialCharTok{+}
+           \FunctionTok{geom\_hline}\NormalTok{(}\AttributeTok{yintercept =} \DecValTok{0}\NormalTok{, }\AttributeTok{color =} \StringTok{"blue"}\NormalTok{) }\SpecialCharTok{+}
+           \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Residuals Plot"}\NormalTok{,}
+                \AttributeTok{x =} \StringTok{"Number of beers drank"}\NormalTok{,}
+                \AttributeTok{y =} \StringTok{"Residuals"}\NormalTok{) }\SpecialCharTok{+}
+           \FunctionTok{theme\_minimal}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_6_files/figure-latex/unnamed-chunk-12-1}
+
+\textbf{Interpret:} There is one case of 9 beers with a large residual (much higher BAC than predicted), but since there is no clear pattern (trend) in this plot it looks like our regression model adequately describes the relationship between number of beers and BAC.
+
+\begin{itemize}
+\tightlist
+\item
+  Is the magnitude of the scatter around the horizontal 0-line in the residuals plot greater than, less than, or the same as the magnitude of the scatter around the regression line in the scatterplot?
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} The same! The residuals plot is only a ``detrended'' scatterplot, meaning the vertical distances between a point and the regression line on the scatterplot or a point and the 0-line on the residuals plot are exactly the same. The residual plot looks more scattered because the trend is removed and the scale of the y-axis compressed.
+
+\hypertarget{k-identifying-points}{%
+\subsection{(k) Identifying points}\label{k-identifying-points}}
+
+We can use the functions \texttt{filter} and \texttt{row\_number} from the \texttt{dplyr} package to find the index of Beers equal to 9.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Use \textasciigrave{}which\textasciigrave{} to find the index of Beers equal to 9}
+\NormalTok{index }\OtherTok{\textless{}{-}} \FunctionTok{which}\NormalTok{(bac}\SpecialCharTok{$}\NormalTok{Beers }\SpecialCharTok{==} \DecValTok{9}\NormalTok{)}
+\NormalTok{index}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 3
+\end{verbatim}
+
+Click for answer
+
+\emph{Answer:} Row 3.
+
+What is the row number of the case with the most negative residual? We could eyeball the graph to see that the most negative residual is less than -0.02:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Find residuals less than {-}0.02}
+\NormalTok{resid\_less\_than\_neg\_002 }\OtherTok{\textless{}{-}} \FunctionTok{resid}\NormalTok{(bac.lm) }\SpecialCharTok{\textless{}} \SpecialCharTok{{-}}\FloatTok{0.02}
+\FunctionTok{resid}\NormalTok{(bac.lm)[resid\_less\_than\_neg\_002]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+          9          10          14 
+-0.02119068 -0.02711821 -0.02304573 
+\end{verbatim}
+
+But this identifies 3 cases. We also can see that the lowest residual drank 5 beers. We can add this statement to the original one using the ``and'' sign \texttt{\&}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# which case had resid less than {-}0.02 AND drank 5 beers}
+\FunctionTok{resid}\NormalTok{(bac.lm)[}\FunctionTok{which}\NormalTok{(}\FunctionTok{resid}\NormalTok{(bac.lm) }\SpecialCharTok{\textless{}} \SpecialCharTok{{-}}\FloatTok{0.02} \SpecialCharTok{\&}\NormalTok{ bac}\SpecialCharTok{$}\NormalTok{Beers }\SpecialCharTok{==} \DecValTok{5}\NormalTok{)]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+         10 
+-0.02711821 
+\end{verbatim}
+
+\hypertarget{l-checking-outlier-influence}{%
+\subsection{(l) Checking outlier influence}\label{l-checking-outlier-influence}}
+
+Will the regression line slope increase, decrease or stay the same if we remove case 3, the 9 beer case, from our model?
+
+Check your answer by adding \texttt{subset\ =\ -3} to the \texttt{lm} command (this removes row 3):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# define a different linear model with row 3 removed }
+\NormalTok{bac.lm2 }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(BAC }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Beers, }\AttributeTok{data=}\NormalTok{bac, }\AttributeTok{subset =} \SpecialCharTok{{-}}\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Compare the two models}
+\FunctionTok{summary}\NormalTok{(bac.lm2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Call:
+lm(formula = BAC ~ Beers, data = bac, subset = -3)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.023685 -0.010068 -0.003685  0.011985  0.027208 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 2.481e-05  1.088e-02   0.002    0.998    
+Beers       1.455e-02  2.216e-03   6.568  1.8e-05 ***
+---
+Signif. codes:  
+0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.01624 on 13 degrees of freedom
+Multiple R-squared:  0.7684,    Adjusted R-squared:  0.7506 
+F-statistic: 43.14 on 1 and 13 DF,  p-value: 1.802e-05
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(bac.lm)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Call:
+lm(formula = BAC ~ Beers, data = bac)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.027118 -0.017350  0.001773  0.008623  0.041027 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -0.012701   0.012638  -1.005    0.332    
+Beers        0.017964   0.002402   7.480 2.97e-06 ***
+---
+Signif. codes:  
+0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.02044 on 14 degrees of freedom
+Multiple R-squared:  0.7998,    Adjusted R-squared:  0.7855 
+F-statistic: 55.94 on 1 and 14 DF,  p-value: 2.969e-06
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  After removing case 3, how has the slope changed? Explain the why the change occurred.
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} The slope drops from 0.0180 to 0.0146. Explanation given above.
+
+\begin{itemize}
+\tightlist
+\item
+  After removing case 3, how has the \(R^2\) changed? Explain the why the change occurred.
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} The \(R^2\) descreases from 79.9\% to 76.8\%. This small decrease happens because case 3 actually enhances the overall linear trend and removing it results is a slight decrease to correlation and \(R^2\).
+
+\hypertarget{m-adding-a-categorical-variable-to-your-plot}{%
+\subsection{(m) Adding a categorical variable to your plot}\label{m-adding-a-categorical-variable-to-your-plot}}
+
+We can create a scatterplot with plotting symbols color coded by a categorical grouping variable using \texttt{ggplot2} package. We use the \texttt{geom\_point()} plot geometry to get a scatterplot with the \texttt{x}, \texttt{y}, and \texttt{color} aesthetics specified. Here we look at the \texttt{BAC} vs.~\texttt{Beers} plot with \texttt{Gender} added:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(bac, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Beers, }\AttributeTok{y=}\NormalTok{BAC, }\AttributeTok{color=}\NormalTok{Gender)) }\SpecialCharTok{+} \FunctionTok{geom\_point}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_6_files/figure-latex/unnamed-chunk-18-1}
+
+\begin{itemize}
+\tightlist
+\item
+  Are the associations similiar? (form, strength, direction)
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} Both females and males have similar strong, positive linear associations.
+
+\hypertarget{n-regression-lines-by-groups}{%
+\subsection{(n) Regression lines by groups}\label{n-regression-lines-by-groups}}
+
+A quick way to get the male and female regression line formulas for part (c) is to add a \texttt{subset} argument to the \texttt{lm} command:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Fit linear regression model for female}
+\NormalTok{bac.lm.female }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(BAC }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Beers, }\AttributeTok{data =}\NormalTok{ bac, }\AttributeTok{subset =}\NormalTok{ Gender }\SpecialCharTok{==} \StringTok{"female"}\NormalTok{)}
+\NormalTok{bac.lm.female}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Call:
+lm(formula = BAC ~ Beers, data = bac, subset = Gender == "female")
+
+Coefficients:
+(Intercept)        Beers  
+   -0.01567      0.02067  
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Fit linear regression model for male}
+\NormalTok{bac.lm.male }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(BAC }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Beers, }\AttributeTok{data =}\NormalTok{ bac, }\AttributeTok{subset =}\NormalTok{ Gender }\SpecialCharTok{==} \StringTok{"male"}\NormalTok{)}
+\NormalTok{bac.lm.male}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Call:
+lm(formula = BAC ~ Beers, data = bac, subset = Gender == "male")
+
+Coefficients:
+(Intercept)        Beers  
+  -0.009785     0.015341  
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  What is the regression line for females? for males?
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} For females: \(\widehat{BAC} = -0.016 +0.021(BAC)\) and for males: \(\widehat{BAC} = -0.01 +0.015(BAC)\)
+
+\begin{itemize}
+\tightlist
+\item
+  Which gender has the largest slope? What does this suggest about the relationship between number of beers and BAC for this gender?
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} The slope for females is slightly higher. This shows that the effect of one more beer on predicted BAC in females is larger than males (a 0.021 increase vs.~a 0.015 increase).
+
+Another way to obtain regression models by \texttt{Gender} is to split the data set in a female and male data set, then run your \texttt{lm} on these two data sets. The benefit of this method is you can then create a residuals plot for your model much easier than the quicker method above:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Filter data for female}
+\NormalTok{bac\_female }\OtherTok{\textless{}{-}} \FunctionTok{filter}\NormalTok{(bac, Gender }\SpecialCharTok{==} \StringTok{"female"}\NormalTok{)}
+
+\CommentTok{\# Fit linear regression model for female}
+\NormalTok{bac\_lm\_female }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(BAC }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Beers, }\AttributeTok{data =}\NormalTok{ bac\_female)}
+\NormalTok{bac\_lm\_female}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Call:
+lm(formula = BAC ~ Beers, data = bac_female)
+
+Coefficients:
+(Intercept)        Beers  
+   -0.01567      0.02067  
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Filter data for male}
+\NormalTok{bac\_male }\OtherTok{\textless{}{-}} \FunctionTok{filter}\NormalTok{(bac, Gender }\SpecialCharTok{==} \StringTok{"male"}\NormalTok{)}
+
+\CommentTok{\# Fit linear regression model for male}
+\NormalTok{bac\_lm\_male }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(BAC }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Beers, }\AttributeTok{data =}\NormalTok{ bac\_male)}
+\NormalTok{bac\_lm\_male}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Call:
+lm(formula = BAC ~ Beers, data = bac_male)
+
+Coefficients:
+(Intercept)        Beers  
+  -0.009785     0.015341  
+\end{verbatim}
 
   \bibliography{book.bib,packages.bib}
 
