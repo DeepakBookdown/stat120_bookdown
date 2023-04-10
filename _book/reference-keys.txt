@@ -112,3 +112,16 @@ k-identifying-points
 l-checking-outlier-influence
 m-adding-a-categorical-variable-to-your-plot
 n-regression-lines-by-groups
+class-activity-7
+your-turn-1-4
+example-1-using-search-engines-on-the-internet
+a.-find-the-relevant-proportion-and-give-the-correct-notation-with-it.
+b.-is-your-answer-to-part-a-a-parameter-or-a-statistic
+c.-give-notation-for-and-define-the-population-parameter-that-we-estimate-using-the-result-of-part-a.
+example-2-bootstrapping-mean
+a.-generate-500-bootstrapped-samples-of-the-data-calculate-the-mean-for-each-sample-and-store-the-results-in-a-tibble
+b.-create-a-dot-plot-to-visualize-the-distribution-of-the-bootstrapped-sample-means
+example-3-simulation-of-a-sample-proportion
+a-generate-a-random-sample-of-size-n-100-and-plot-its-sample-proportion.
+b-generate-5-random-samples-of-size-n-100-and-plot-the-sample-proportions.
+c-generate-500-random-samples-of-size-n-100-and-plot-the-sample-proportions.

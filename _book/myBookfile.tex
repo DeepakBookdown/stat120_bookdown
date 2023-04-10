@@ -139,7 +139,7 @@
 
 \title{Stat 120}
 \author{Deepak Bastola}
-\date{2023-04-06}
+\date{2023-04-09}
 
 \begin{document}
 \maketitle
@@ -1628,16 +1628,16 @@ Click for answer
 
 \begin{verbatim}
    ID Greeting  Male    Weight
-1   1    Hello  TRUE 231.94504
-2   2    Hello FALSE 189.01088
-3   3    Hello  TRUE 281.72416
-4   4    Hello FALSE 114.77693
-5   5    Hello  TRUE 114.21746
-6   6  Goodbye FALSE 231.43701
-7   7  Goodbye  TRUE  76.69459
-8   8  Goodbye FALSE 277.08867
-9   9  Goodbye  TRUE 262.21353
-10 10  Goodbye FALSE  74.52584
+1   1    Hello  TRUE 210.20743
+2   2    Hello FALSE  99.84737
+3   3    Hello  TRUE 135.57142
+4   4    Hello FALSE 180.71435
+5   5    Hello  TRUE  58.57853
+6   6  Goodbye FALSE 120.95809
+7   7  Goodbye  TRUE 202.26880
+8   8  Goodbye FALSE 266.24904
+9   9  Goodbye  TRUE 179.10573
+10 10  Goodbye FALSE 182.11903
 \end{verbatim}
 
 \emph{Answer:} We see a data frame with four columns, where the first column is an \texttt{identifier} for the cases. We have information on the greeting types, whether male or not, and weight on these cases in the remaining columns.
@@ -1818,7 +1818,7 @@ Run the following command to obtain a SRS of 10 words from the 268 that are in t
 \end{Shaded}
 
 \begin{verbatim}
- [1] 213 165 208 227  49 216 102 106  28 138
+ [1] 124 114 165 158  38  62  96 123 120 237
 \end{verbatim}
 
 This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
@@ -1834,17 +1834,17 @@ We will \emph{subset} the data set \texttt{pop} to obtain only the sampled rows 
 \end{Shaded}
 
 \begin{verbatim}
-    position size   word
-213      213    4   that
-165      165    3    the
-208      208    2     we
-227      227    4   here
-49        49    3    and
-216      216    5  which
-102      102    4  this.
-106      106    6 larger
-28        28    3    are
-138      138    2     or
+    position size  word
+124      124    4 dead,
+114      114    2    we
+165      165    3   the
+158      158    4  they
+38        38    5 civil
+62        62    2    of
+96        96    3   and
+123      123    3   and
+120      120    5 brave
+237      237    2    in
 \end{verbatim}
 
 \begin{enumerate}
@@ -1865,7 +1865,7 @@ The word lengths in part (b) are the data for your sample. You can compute your 
 \end{Shaded}
 
 \begin{verbatim}
- [1] 4 3 2 4 3 5 4 6 3 2
+ [1] 4 2 3 4 5 2 3 3 5 2
 \end{verbatim}
 
 Then find the mean of these values:
@@ -1877,7 +1877,7 @@ Then find the mean of these values:
 \end{Shaded}
 
 \begin{verbatim}
-[1] 3.6
+[1] 3.3
 \end{verbatim}
 
 How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?
@@ -3794,6 +3794,426 @@ lm(formula = BAC ~ Beers, data = bac_male)
 Coefficients:
 (Intercept)        Beers  
   -0.009785     0.015341  
+\end{verbatim}
+
+\hypertarget{class-activity-7}{%
+\chapter{Class Activity 7}\label{class-activity-7}}
+
+\hypertarget{your-turn-1-4}{%
+\section{Your Turn 1}\label{your-turn-1-4}}
+
+\hypertarget{example-1-using-search-engines-on-the-internet}{%
+\section{Example 1: Using Search Engines on the Internet}\label{example-1-using-search-engines-on-the-internet}}
+
+A 2012 survey of a random sample of 2253 US adults found that 1,329 of them reported using a search engine (such as Google) every day to find information on the Internet.
+
+\hypertarget{a.-find-the-relevant-proportion-and-give-the-correct-notation-with-it.}{%
+\subsection{a). Find the relevant proportion and give the correct notation with it.}\label{a.-find-the-relevant-proportion-and-give-the-correct-notation-with-it.}}
+
+Click for answer
+
+\emph{Answer:} \(\hat{p} = 1329/2253\)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p.hat }\OtherTok{\textless{}{-}} \DecValTok{1329}\SpecialCharTok{/}\DecValTok{2253}
+\NormalTok{p.hat}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.5898802
+\end{verbatim}
+
+\hypertarget{b.-is-your-answer-to-part-a-a-parameter-or-a-statistic}{%
+\subsection{b). Is your answer to part (a) a parameter or a statistic?}\label{b.-is-your-answer-to-part-a-a-parameter-or-a-statistic}}
+
+Click for answer
+
+\emph{Answer:} Statistic
+
+\hypertarget{c.-give-notation-for-and-define-the-population-parameter-that-we-estimate-using-the-result-of-part-a.}{%
+\subsection{c). Give notation for and define the population parameter that we estimate using the result of part (a).}\label{c.-give-notation-for-and-define-the-population-parameter-that-we-estimate-using-the-result-of-part-a.}}
+
+Click for answer
+
+\emph{Answer:} p = the proportion of all US adults that would report that they use an Internet search engine every day
+
+\hypertarget{example-2-bootstrapping-mean}{%
+\section{Example 2: Bootstrapping mean}\label{example-2-bootstrapping-mean}}
+
+Let's use R to perform bootstrapping and visualize the distribution of the sample mean. We need to load the purrr library to do more effective simulation. Create a vector X containing the data points:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{X }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{20}\NormalTok{, }\DecValTok{24}\NormalTok{, }\DecValTok{19}\NormalTok{, }\DecValTok{23}\NormalTok{, }\DecValTok{22}\NormalTok{, }\DecValTok{16}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{a.-generate-500-bootstrapped-samples-of-the-data-calculate-the-mean-for-each-sample-and-store-the-results-in-a-tibble}{%
+\subsection{a. Generate 500 bootstrapped samples of the data, calculate the mean for each sample, and store the results in a tibble:}\label{a.-generate-500-bootstrapped-samples-of-the-data-calculate-the-mean-for-each-sample-and-store-the-results-in-a-tibble}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bootstrapped\_means }\OtherTok{\textless{}{-}} \FunctionTok{tibble}\NormalTok{(}
+  \AttributeTok{iteration =} \DecValTok{1}\SpecialCharTok{:}\DecValTok{500}\NormalTok{,}
+  \AttributeTok{mean =} \FunctionTok{map\_dbl}\NormalTok{(iteration, }
+                 \SpecialCharTok{\textasciitilde{}}\FunctionTok{mean}\NormalTok{(}\FunctionTok{sample}\NormalTok{(X, }\AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{)))}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{b.-create-a-dot-plot-to-visualize-the-distribution-of-the-bootstrapped-sample-means}{%
+\subsection{b. Create a dot plot to visualize the distribution of the bootstrapped sample means:}\label{b.-create-a-dot-plot-to-visualize-the-distribution-of-the-bootstrapped-sample-means}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(bootstrapped\_means, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ mean)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_dotplot}\NormalTok{(}\AttributeTok{dotsize =} \FloatTok{0.7}\NormalTok{, }
+               \AttributeTok{stackratio =} \FloatTok{0.9}\NormalTok{, }
+               \AttributeTok{binwidth =}\NormalTok{ .}\DecValTok{13}\NormalTok{, }
+               \AttributeTok{color =} \StringTok{"gold"}\NormalTok{, }
+               \AttributeTok{fill =} \StringTok{"blue"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{""}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{xlab}\NormalTok{(}\StringTok{""}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{ylab}\NormalTok{(}\StringTok{""}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{limits =} \FunctionTok{c}\NormalTok{(}\DecValTok{17}\NormalTok{, }\DecValTok{24}\NormalTok{), }
+                     \AttributeTok{expand =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{), }
+                     \AttributeTok{breaks =} \FunctionTok{seq}\NormalTok{(}\DecValTok{17}\NormalTok{, }\DecValTok{24}\NormalTok{, }\DecValTok{1}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Bootstrap distribution of sample mean"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_7_files/figure-latex/unnamed-chunk-4-1}
+
+\emph{Question:} What does each dot represent?
+
+Click for answer
+
+\emph{Answer:} One sample mean from the bootstrapped sample.
+
+\emph{Question:} What is the shape of your sampling distribution?
+
+Click for answer
+
+\emph{Answer:} Roughly symmetric.
+
+\emph{Question:} Where is your distribution centered?
+
+Click for answer
+
+\emph{Answer:} About 20.5
+
+\emph{Question:} The distribution should be centered at the original sample mean. Verify it. Do we know the population mean? If not, what does it tell us about the center of this distribution.
+
+Click for answer
+
+\emph{Answer:} It is close to the original sample mean. We do not know the population mean, so the bootstrap distribution will carry the bias of the original sample mean.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# r{-}code}
+\FunctionTok{mean}\NormalTok{(bootstrapped\_means}\SpecialCharTok{$}\NormalTok{mean)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 20.74033
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(X)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 20.66667
+\end{verbatim}
+
+\emph{Question:} What is the standard deviation of this distribution? (Hint: use the 95\% rule.)
+
+Click for answer
+
+\emph{Answer:} About 1.25, it looks like most of the bootstrapped sample means are between 18 to 23 so 2 standard deviations is about 2.5. This makes the SD about 1.25.
+
+\emph{Question:} The standard deviation of sampling distribution has a separate name. It is called the \textbf{Standard Error}. Verify the standard deviation of this distribution using R-code.
+
+Click for answer
+
+\emph{Answer:} It's close.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# r{-}code}
+\FunctionTok{sd}\NormalTok{(bootstrapped\_means}\SpecialCharTok{$}\NormalTok{mean)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 1.091487
+\end{verbatim}
+
+\hypertarget{example-3-simulation-of-a-sample-proportion}{%
+\section{Example 3: Simulation of a Sample Proportion}\label{example-3-simulation-of-a-sample-proportion}}
+
+According to a PEW survey, \(66\%\) of U.S. adult citizens casted a ballot in the 2020 election. Suppose we take a random sample of \(n=100\) eligible U.S. voters and computed the sample proportion who voted.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Call the library}
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Define parameters}
+\NormalTok{pop.prop }\OtherTok{\textless{}{-}}\NormalTok{ .}\DecValTok{66} \CommentTok{\# Population proportion}
+\NormalTok{n.size }\OtherTok{\textless{}{-}} \DecValTok{100}  \CommentTok{\# sample size}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{a-generate-a-random-sample-of-size-n-100-and-plot-its-sample-proportion.}{%
+\subsection{\texorpdfstring{(a) Generate a random sample of size \(n= 100\) and plot its sample proportion.}{(a) Generate a random sample of size n= 100 and plot its sample proportion.}}\label{a-generate-a-random-sample-of-size-n-100-and-plot-its-sample-proportion.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Generate 1 sample}
+\NormalTok{sample1 }\OtherTok{\textless{}{-}} \FunctionTok{rbinom}\NormalTok{(}\AttributeTok{n =} \DecValTok{1}\NormalTok{, }\AttributeTok{size =}\NormalTok{ n.size, }\AttributeTok{p =}\NormalTok{ pop.prop) }\CommentTok{\# R simulates the samples}
+\NormalTok{sample.prop1 }\OtherTok{\textless{}{-}}\NormalTok{ sample1}\SpecialCharTok{/}\NormalTok{n.size }\CommentTok{\#  Proportion = No. of Success / Sample Size}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# define a data frame}
+\NormalTok{mydata }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{x =}\NormalTok{ sample.prop1)}
+
+\CommentTok{\# Plot a dot plot of the sample proportion}
+\FunctionTok{ggplot}\NormalTok{(mydata, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ x)) }\SpecialCharTok{+}
+   \FunctionTok{geom\_dotplot}\NormalTok{(}\AttributeTok{dotsize =} \FloatTok{0.25}\NormalTok{,}
+               \AttributeTok{stackratio =} \FloatTok{0.75}\NormalTok{,}
+               \AttributeTok{binwidth =}\NormalTok{ .}\DecValTok{025}\NormalTok{,}
+               \AttributeTok{color =} \StringTok{"gold"}\NormalTok{,}
+               \AttributeTok{fill =} \StringTok{"blue"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"A single sample proportion"}\NormalTok{) }\SpecialCharTok{+}  \FunctionTok{xlab}\NormalTok{(}\StringTok{"Proportion"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{ylab}\NormalTok{(}\StringTok{"Count"}\NormalTok{)}\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{limits =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{))}\SpecialCharTok{+} 
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{plot.title =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{hjust =} \FloatTok{0.5}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_7_files/figure-latex/unnamed-chunk-10-1}
+
+\hypertarget{b-generate-5-random-samples-of-size-n-100-and-plot-the-sample-proportions.}{%
+\subsection{\texorpdfstring{(b) Generate 5 random samples of size \(n= 100\) and plot the sample proportions.}{(b) Generate 5 random samples of size n= 100 and plot the sample proportions.}}\label{b-generate-5-random-samples-of-size-n-100-and-plot-the-sample-proportions.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# generate 5 random samples of size 100}
+\NormalTok{sample5 }\OtherTok{\textless{}{-}} \FunctionTok{rbinom}\NormalTok{(}\AttributeTok{n =} \DecValTok{5}\NormalTok{, }\AttributeTok{size =}\NormalTok{ n.size, }\AttributeTok{p =}\NormalTok{ pop.prop)  }
+\NormalTok{sample.prop5 }\OtherTok{\textless{}{-}}\NormalTok{ sample5}\SpecialCharTok{/}\NormalTok{n.size }
+
+\NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{x =}\NormalTok{ sample.prop5)}
+
+\FunctionTok{ggplot}\NormalTok{(data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ x)) }\SpecialCharTok{+}
+   \FunctionTok{geom\_dotplot}\NormalTok{(}\AttributeTok{dotsize =} \FloatTok{0.25}\NormalTok{,}
+               \AttributeTok{stackratio =} \FloatTok{0.75}\NormalTok{,}
+               \AttributeTok{binwidth =}\NormalTok{ .}\DecValTok{025}\NormalTok{,}
+               \AttributeTok{color =} \StringTok{"gold"}\NormalTok{,}
+               \AttributeTok{fill =} \StringTok{"blue"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{""}\NormalTok{) }\SpecialCharTok{+}  \FunctionTok{xlab}\NormalTok{(}\StringTok{"Proportion"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{ylab}\NormalTok{(}\StringTok{"Count"}\NormalTok{)}\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{limits =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{))}\SpecialCharTok{+} 
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{plot.title =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{hjust =} \FloatTok{0.5}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_7_files/figure-latex/unnamed-chunk-11-1}
+
+\hypertarget{c-generate-500-random-samples-of-size-n-100-and-plot-the-sample-proportions.}{%
+\subsection{\texorpdfstring{(c) Generate 500 random samples of size \(n= 100\) and plot the sample proportions.}{(c) Generate 500 random samples of size n= 100 and plot the sample proportions.}}\label{c-generate-500-random-samples-of-size-n-100-and-plot-the-sample-proportions.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Generate 500 samples}
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{143}\NormalTok{)}
+\NormalTok{sample500 }\OtherTok{\textless{}{-}} \FunctionTok{rbinom}\NormalTok{(}\AttributeTok{n =} \DecValTok{500}\NormalTok{, }\AttributeTok{size =}\NormalTok{ n.size, }\AttributeTok{p =}\NormalTok{ pop.prop)  }
+\NormalTok{sample.prop500 }\OtherTok{\textless{}{-}}\NormalTok{ sample500}\SpecialCharTok{/}\NormalTok{n.size }
+
+\NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{x =}\NormalTok{ sample.prop500)}
+
+\FunctionTok{ggplot}\NormalTok{(data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ x)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_dotplot}\NormalTok{(}\AttributeTok{dotsize =} \FloatTok{0.25}\NormalTok{,}
+               \AttributeTok{stackratio =} \FloatTok{0.75}\NormalTok{,}
+               \AttributeTok{binwidth =}\NormalTok{ .}\DecValTok{025}\NormalTok{,}
+               \AttributeTok{color =} \StringTok{"gold"}\NormalTok{,}
+               \AttributeTok{fill =} \StringTok{"blue"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{""}\NormalTok{) }\SpecialCharTok{+}  \FunctionTok{xlab}\NormalTok{(}\StringTok{"Proportion"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{ylab}\NormalTok{(}\StringTok{"Count"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{limits =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{))}\SpecialCharTok{+} 
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{plot.title =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{hjust =} \FloatTok{0.5}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_7_files/figure-latex/unnamed-chunk-12-1}
+
+\emph{Question:} What does each dot represent?
+
+Click for answer
+
+\emph{Answer:} One sample proportion from a sample of n=100 eligible voters.
+
+\emph{Question:} What is the shape of your sampling distribution?
+
+Click for answer
+
+\emph{Answer:} Roughly symmetric.
+
+\emph{Question:} Where is your distribution centered?
+
+Click for answer
+
+\emph{Answer:} About 0.66, which is the population proportion.
+
+\emph{Question:} The distribution should be centered at the population proportion. Verify that the distribution is centered around the population proportion, \(p = 0.66\).
+
+Click for answer
+
+\emph{Answer:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# r{-}code}
+\FunctionTok{mean}\NormalTok{(sample.prop500)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.66298
+\end{verbatim}
+
+\emph{Question:} What is the standard deviation of this distribution? (Hint: use the 95\% rule.)
+
+Click for answer
+
+\emph{Answer:} About 0.05, it looks like most sample proportions are between 0.55 to 0.75 so 2 standard deviations is about 0.10. This makes the SD about 0.05.
+
+\emph{Question:} The standard deviation of sampling distribution has a separate name. It is called the \textbf{Standard Error}. Verify the standard deviation of this distribution using R-code.
+
+Click for answer
+
+\emph{Answer:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# r{-}code}
+\FunctionTok{sd}\NormalTok{(sample.prop500)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.0494673
+\end{verbatim}
+
+\#\#\# (d) Repeat part(c) with sample size 20 instead of 100. Generate 500 samples.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{n.size }\OtherTok{\textless{}{-}} \DecValTok{10}
+\NormalTok{pop.prop }\OtherTok{\textless{}{-}}\NormalTok{ .}\DecValTok{66} \CommentTok{\# Population proportion}
+
+\NormalTok{sample500\_size10 }\OtherTok{\textless{}{-}} \FunctionTok{rbinom}\NormalTok{(}\AttributeTok{n =} \DecValTok{500}\NormalTok{, }\AttributeTok{size =}\NormalTok{ n.size, }\AttributeTok{p =}\NormalTok{ pop.prop)  }
+\NormalTok{sample.prop500\_size10 }\OtherTok{\textless{}{-}}\NormalTok{ sample500\_size10}\SpecialCharTok{/}\NormalTok{n.size }
+
+\NormalTok{data\_size10 }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{x =}\NormalTok{ sample.prop500\_size10)}
+
+\FunctionTok{ggplot}\NormalTok{(data\_size10, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ x)) }\SpecialCharTok{+}
+ \FunctionTok{geom\_dotplot}\NormalTok{(}\AttributeTok{dotsize =} \FloatTok{0.25}\NormalTok{,}
+               \AttributeTok{stackratio =} \FloatTok{0.75}\NormalTok{,}
+               \AttributeTok{binwidth =}\NormalTok{ .}\DecValTok{015}\NormalTok{,}
+               \AttributeTok{color =} \StringTok{"gold"}\NormalTok{,}
+               \AttributeTok{fill =} \StringTok{"blue"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{""}\NormalTok{) }\SpecialCharTok{+}  \FunctionTok{xlab}\NormalTok{(}\StringTok{"Proportion"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{ylab}\NormalTok{(}\StringTok{"Count"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{limits =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{))}\SpecialCharTok{+} 
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{plot.title =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{hjust =} \FloatTok{0.5}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_7_files/figure-latex/unnamed-chunk-15-1}
+
+\emph{Question:} How has the sampling distribution changed? (Shape? Center? Variability?)
+
+Click for answer
+
+\emph{Answer:} The shape is slightly left skewed, still centered at 0.66 but with more variability that before (SD of about 0.10). This distribution is more discrete looking because there are just a few sample proportions possible with n=20 (e.g.~20/20, 19/20, 18/20, etc).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(sample.prop500\_size10)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.6618
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sd}\NormalTok{(sample.prop500\_size10)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.1415657
+\end{verbatim}
+
+\#\#\# (d) Now suppose the population proportion is \(p=0.90\) instead of \(p=0.66\) in part (e). Keep n.size=10.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pop.prop.large }\OtherTok{\textless{}{-}} \FloatTok{0.90}
+\NormalTok{n.size }\OtherTok{\textless{}{-}} \DecValTok{10}
+
+\NormalTok{sample500\_size10\_large\_p }\OtherTok{\textless{}{-}} \FunctionTok{rbinom}\NormalTok{(}\AttributeTok{n =} \DecValTok{500}\NormalTok{, }\AttributeTok{size =}\NormalTok{ n.size, }\AttributeTok{p =}\NormalTok{ pop.prop.large)  }
+\NormalTok{sample.prop500\_size10\_large\_p }\OtherTok{\textless{}{-}}\NormalTok{ sample500\_size10\_large\_p}\SpecialCharTok{/}\NormalTok{n.size }
+
+\NormalTok{data\_size10\_large\_p }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{x =}\NormalTok{ sample.prop500\_size10\_large\_p)}
+
+\FunctionTok{ggplot}\NormalTok{(data\_size10\_large\_p, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ x)) }\SpecialCharTok{+}
+ \FunctionTok{geom\_dotplot}\NormalTok{(}\AttributeTok{dotsize =} \FloatTok{0.25}\NormalTok{,}
+               \AttributeTok{stackratio =} \FloatTok{0.75}\NormalTok{,}
+               \AttributeTok{binwidth =}\NormalTok{ .}\DecValTok{015}\NormalTok{,}
+               \AttributeTok{color =} \StringTok{"gold"}\NormalTok{,}
+               \AttributeTok{fill =} \StringTok{"blue"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{""}\NormalTok{) }\SpecialCharTok{+}  \FunctionTok{xlab}\NormalTok{(}\StringTok{"Proportion"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{ylab}\NormalTok{(}\StringTok{"Count"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{limits =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{))}\SpecialCharTok{+} 
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{plot.title =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{hjust =} \FloatTok{0.5}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_7_files/figure-latex/unnamed-chunk-17-1}
+
+\emph{Question:} How has the sampling distribution changed? (Shape? Center? Variability?)
+
+Click for answer
+
+\emph{Answer:} The shape is much more left skewed than when p=0.66. Center is around 0.90 and SD is around 0.07. Note that increasing the population proportion closer to 1 results in a decrease in the SD because most samples give proportion near 1.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(sample.prop500\_size10\_large\_p)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.9
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sd}\NormalTok{(sample.prop500\_size10\_large\_p)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.09261293
 \end{verbatim}
 
   \bibliography{book.bib,packages.bib}
