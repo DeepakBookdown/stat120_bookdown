@@ -162,3 +162,8 @@ b-phone-rate-by-default-type
 c-using-the-boot-command-with-a-categorical-response
 d-95-confidence-interval-for-the-difference-in-phone
 e-interpret
+class-activity-9
+example-1-a-muslim-president
+example-2-biomass-in-tropical-forests
+example-3-change-in-gun-ownership
+example-4-interpreting-a-confidence-interval
