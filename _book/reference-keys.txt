@@ -171,3 +171,14 @@ class-activity-10
 example-1-extrasensory-perception-esp
 example-2
 example-1-revisited
+class-activity-11
+class-activity-12
+example-1-sleep-or-caffeine-for-memory
+a-explain-how-to-generate-a-randomization-distribution-for-barx_s---barx_c-that-is-consistent-with-h_0-mu_s---mu_c-0.
+b-navigate-to-the-statkey-website.
+c-compute-the-randomization-p-value
+d-interpret-conclusion
+e-redo-in-rstudio
+example-2-resident-vs-non-resident-tuition
+a-paired-data
+b-permutation-test-for-paired-data

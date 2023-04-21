@@ -42,7 +42,7 @@ resample
 ```
 
 ```
- [1]  72  72  23  72 125  87 125  87 125 185
+ [1] 125 132 125 125 132  23 125 147 147  52
 ```
 
 ### (d). Where will be bootstrap distribution be centered?  What shape do we expect it to have?
@@ -291,12 +291,12 @@ boot(Age.in.years ~ Good.Loan, data=credit)
 	** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -2.26095 
- Mean of bootstrap distribution: -2.26257 
- Standard error of bootstrap distribution: 0.78545 
+ Mean of bootstrap distribution: -2.24718 
+ Standard error of bootstrap distribution: 0.77981 
 
  Bootstrap percentile interval
       2.5%      97.5% 
--3.7967381 -0.7275952 
+-3.7666786 -0.6946905 
 
 		*--------------*
 ```
@@ -527,12 +527,12 @@ boot(Telephone_binary ~ Good.Loan, data=credit)
 	** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -0.03905 
- Mean of bootstrap distribution: -0.03944 
- Standard error of bootstrap distribution: 0.03339 
+ Mean of bootstrap distribution: -0.03929 
+ Standard error of bootstrap distribution: 0.03354 
 
  Bootstrap percentile interval
        2.5%       97.5% 
--0.10571429  0.02620238 
+-0.10380952  0.02666667 
 
 		*--------------*
 ```

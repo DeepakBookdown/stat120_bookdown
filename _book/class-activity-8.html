@@ -64,6 +64,8 @@
 <li><a class="active" href="class-activity-8.html"><span class="header-section-number">15</span> Class Activity 8</a></li>
 <li><a class="" href="class-activity-9.html"><span class="header-section-number">16</span> Class Activity 9</a></li>
 <li><a class="" href="class-activity-10.html"><span class="header-section-number">17</span> Class Activity 10</a></li>
+<li><a class="" href="class-activity-11.html"><span class="header-section-number">18</span> Class Activity 11</a></li>
+<li><a class="" href="class-activity-12.html"><span class="header-section-number">19</span> Class Activity 12</a></li>
 </ul>
 
         <div class="book-extra">
@@ -106,7 +108,7 @@
 <div class="sourceCode" id="cb224"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">resample</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">prices</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="va">resample</span></span></code></pre></div>
-<pre><code> [1]  72  87  87  85  23  23  85  52  87 147</code></pre>
+<pre><code> [1]  72 125 125  85  93  85 185  23 147  52</code></pre>
 </div>
 <div id="d.-where-will-be-bootstrap-distribution-be-centered-what-shape-do-we-expect-it-to-have" class="section level3" number="15.1.4">
 <h3>
@@ -327,12 +329,12 @@ The sample difference in proportions is <span class="math inline">\(\hat{p}_{Dem
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -2.26095 
- Mean of bootstrap distribution: -2.26715 
- Standard error of bootstrap distribution: 0.77234 
+ Mean of bootstrap distribution: -2.27765 
+ Standard error of bootstrap distribution: 0.77529 
 
  Bootstrap percentile interval
       2.5%      97.5% 
--3.7848571 -0.7390357 
+-3.7852857 -0.7394881 
 
         *--------------*</code></pre>
 <div class="inline-figure"><img src="Class_Activity_8_files/figure-html/unnamed-chunk-5-1.png" width="100%"></div>
@@ -478,12 +480,12 @@ yes, registered under the customers name
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -0.03905 
- Mean of bootstrap distribution: -0.03921 
- Standard error of bootstrap distribution: 0.03358 
+ Mean of bootstrap distribution: -0.0391 
+ Standard error of bootstrap distribution: 0.03384 
 
  Bootstrap percentile interval
        2.5%       97.5% 
--0.10619048  0.02571429 
+-0.10571429  0.02620238 
 
         *--------------*</code></pre>
 <div class="inline-figure"><img src="Class_Activity_8_files/figure-html/unnamed-chunk-14-1.png" width="100%"></div>
@@ -581,7 +583,7 @@ Interpret your percentile interval in context using a directional statement. Doe
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-04-16.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-04-21.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
