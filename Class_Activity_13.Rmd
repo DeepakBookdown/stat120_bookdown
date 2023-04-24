@@ -1,246 +1,184 @@
 # Class Activity 13
 
-## Example 1: ESP
+## Example 1: Effect of Exercise on Heart Rate
 
-In an ESP test, one person writes down one of the letters A, B, C, D, or E and tries to telepathically communicate the choice to a partner.  The partner then tries to guess what letter was selected. The null and alternative hypotheses for testing whether people have ESP are  $H_0: p=0.2$  and $H_A: p > 0.2$ where $p$ is the true proportion correct guesses. To test these hypotheses, we try this $n=10$ times and get 3 correct guesses.
+In a study, 30 participants were randomly assigned to engage in either aerobic exercise or resistance training (15 in each group). Their resting heart rate was measured before and after a 6-week exercise program. We want to test if there is a difference in the mean decrease in resting heart rate between aerobic exercise and resistance training. The hypotheses are:
 
-#### (a) 	Explain how to generate a randomization distribution for $\hat{p}$, the sample proportion of correct guesses, that is consistent with $H_0: p=0.2$.
+$$H_0: \mu_A-\mu_R=0 \quad\quad H_A: \mu_A-\mu_R \neq 0$$
 
-<details><summary><red>Click for answer</red></summary>
-*Answer:* To mimic one random guess, assuming no ESP, we could take 4 black cards and 1 red card and randomly select one card. The red card would be a correct guess. Repeat this a total of 10 times and compute the sample proportion of correct guesses. Plot the sample proportion on a dotplot and repeat lots more times.
-</details><br>
+The sample mean difference is $\bar{x}_A - \bar{x}_R = 5$. We want to know if this difference in sample means is statistically significant.
 
 
-#### (b) Navigate to the Statkey website. 
-Select the **Test for Single Proportion** option under **Randomization Hypothesis Tests**. Click **Edit Data** and enter a **count** of 3 and **sample size** of 10. Then select the **Null Hypothesis** proportion **p** and change its value to **0.20**. 
+### (a) Randomization Distribution
 
-- **Generate 1 Sample** from this null randomization distribution. How many correct guesses were obtained in this sample? Repeat this a couple of times.
-- **Generate 1000 Samples** a couple of times. How unusual is getting at least 3 correct guesses in 10 tries?
-
-\vspace*{.5in}
-
-#### (c) 	Compute the randomization p-value
-
-Select the **Right Tail** button at the top of the plot. Change the x-axis value to $\hat{p}$ = 0.3. What is the p-value: the proportion of resampled $\hat{p}$ values are 0.30 or above? 
+Describe how you could generate a randomization distribution for $\bar{x}_A - \bar{x}_R$ that is consistent with $H_0: \mu_A - \mu_R = 0$.
 
 <details><summary><red>Click for answer</red></summary>
-*Answer:* The p-value is about 31%
+*Answer:* To generate a randomization distribution for the sample mean difference, we would randomly reassign the treatment (aerobic exercise or resistance training) to the study participants. Under the null hypothesis, the mean decrease in resting heart rate would be the same under either treatment. For each reassignment, we would compute the sample mean difference and plot it in the dotplot.
+
 </details><br>
 
-#### (d) 	Interpret + Conclusion
+### (b) Calculating the p-value
 
-Interpret the p-value. Does the p-value support the alternative hypothesis (do you think 3 correct out of 10 tries are statistically significant results) or is it inconclusive? Explain.
+Using a statistical software, generate a randomization distribution for the difference in means and calculate the p-value for the two-tailed test. Is the observed difference of 5 bpm statistically significant?
 
 <details><summary><red>Click for answer</red></summary>
-*Answer:* In about 31% of all samples with 10 attempts, we would get at least 3 correct guesses, just by chance, if ESP does not exist. It is inconclusive; the data we observed is not that unusual if ESP does not exist.
-</details><br>
+*Answer:* We can use the `permTest` function from the `CarletonStats` package to generate a randomization distribution for the difference in means and calculate the p-value for the two-tailed test. We can compare the p-value of $2e^{-4}$ to a chosen significance level (e.g., 0.05) to determine if the observed difference of 5 bpm is statistically significant. Since the p-value is less than the significance level, the observed difference is statistically significant.
 
-## Example 2:  Which P-value shows more evidence?
-
-Using the randomization distribution below to test $H_0: \rho = 0$ vs. $H_A: \rho > 0$.
-
-![Example 2](data/corRand.png){width=75%}
-
-
-#### (a)	Match the p-value and sample statistic
-Match the sample correlation and p-values given below, shading the area on the randomization distribution that corresponds to each sample correlation/p-value combo.
-
-- Sample correlations: $r = 0.1,  r=0.3,  r = 0.5$
-- P-values:  $0.005,   0.15,   0.35$
-
-<details><summary><red>Click for answer</red></summary>
-*Answer:*: $r=0.1$ and $p-value=0.35$; $r=0.3$ and $p-value=0.15$; $r=0.5$ and $p-value=0.005$; 
-</details><br>
-
-#### (b)	Which sample correlation/p-value combo shows the most evidence for the alternative hypothesis?
-
-<details><summary><red>Click for answer</red></summary>
-*Answer:* The smaller the p-value and further the sample correlation is from 0, the stronger the evidence
-</details><br>
-
-
-## Example 3:  Sleep or Caffeine for Memory
-
-In an experiment, 24 students were given words to memorize, then were randomly assigned to take a 90 minute nap or take a caffeine pill (12 in each group).  They were then tested on their recall ability.  We test to see if the sample provides evidence that there is a difference in mean number of words people can recall depending on whether they take a nap or have some caffeine.  The hypotheses are: 
-
-$$
-H_0: \mu_S - \mu_C = 0 \ \ H_A: \mu_S - \mu_C \neq 0
-$$
-
-The sample mean difference is $\bar{x}_S - \bar{x}_C = 3$. We want to know if this difference in sample means is statistically significant. 
-
-#### (a) Explain how to generate a randomization distribution for $\bar{x}_S - \bar{x}_C$ that is consistent with $H_0: \mu_S - \mu_C = 0$.
-
-<details><summary><red>Click for answer</red></summary>
-*Answer:* We could randomly reassign the treatment to the study participants since, under the null, their recall abilities would be the same under either treatment. For each reassignment, we recomputed the sample mean difference and plot it in the dotplot shown below
-</details><br>
-
-
-#### (b) Navigate to the Statkey website. 
-
-Select the **Test for Difference in Means** option under **Randomization Hypothesis Tests**. Change the data set from **Leniency and Smiles** to **Sleep Caffeine Words**. Note that the original sample data has a sample mean difference of 3 words.  
-
-- **Generate 1 Sample** from this null randomization distribution. What is the difference in the average word recall of the two groups in this sample? Repeat this a couple of times.
-- **Generate 1000 Samples** a few of times (get at least 3000 resamples). How unusual is getting a difference in means of 3 or more words?
-
-\vspace*{.5in}
-
-#### (c) 	Compute the randomization p-value
-
-Select the **Two-Tail** button at the top of the plot. Change the positive x-axis value to the observed difference of 3.0. The p-value is 2 times the proportion of resamples that have a difference of 3 or above. What is the p-value? 
-
-![Example 3](data/wordRand.png)
-
-<details><summary><red>Click for answer</red></summary>
-*Answer:* We see in the image that the proportion in the tail beyond the sample statistic of 3.0 is 0.022.  Because this is a two-tail test, we have to account for both tails, so the p-value is 2(0.022) = 0.044.
-</details><br>
-
-#### (d) 	Interpret + Conclusion
-Interpret the p-value. Does the p-value support the alternative hypothesis (do you think difference of means of 3 is statistically significant) or is it inconclusive? Explain.
-
-<details><summary><red>Click for answer</red></summary>
-*Answer:* We would see a difference of at least 3 words recalled, on average, in about 4.4% of all possible samples if the influence of sleep and caffeine on recall was the same The results show some evidence of statistical significance, meaning that the caffeine and sleep may have some difference effects on word recall ability. 
-</details><br>
-
-
-#### (e) Redo in Rstudio
-First get the data from the Lock website and check important summary stats:
-
-```{r}
-wordData <- read.csv("http://math.carleton.edu/Stats215/Textbook/SleepCaffeine.csv")
-boxplot(Words ~ Group , data=wordData)
-tapply(wordData$Words, wordData$Group, summary)
-```
-
-Then load the `CarletonStats` package and run the `permTest(y ~ x, data=)` command where `y` is your quantitative (or 0/1 coded) response and `x` defines the two groups you are comparing. 
 
 ```{r}
 library(CarletonStats)
-permTest(Words ~ Group, data=wordData)
+library(readr)
+exercise <- read_csv("https://raw.githubusercontent.com/deepbas/statdatasets/main/exercise.csv")
+permTest(Decrease_in_Resting_Heart_Rate~Group, data= exercise)
 ```
 
-- Why is the observed difference reported as -3?
-
-<details><summary><red>Click for answer</red></summary>
-*Answer:* The difference is computed alphabetically: Caffeine minus Sleep so the difference in now -3 instead of +3. </details><br>
 
 
-- What is the p-value? Is it the same as the Statkey p-value? The same as your neighbors p-value? Why not?
 
-<details><summary><red>Click for answer</red></summary>
-*Answer:* The p-value is around 5%. Any difference between Statkey, neighbors or different runs of the `permTest` command stem from the fact that different resamples are obtained each time a randomization distribution is generated. There may be some small (inconsequential) difference in p-values due to this.
 </details><br>
 
+### (c) Interpretation and Conclusion
 
-## Example 4:  Resident vs Non-resident Tuition
-The lab manual data set `Tuition2006` is a random sample of state colleges and universities in the U.S. We want to know if the average tuition  charged to  non-residents is higher than residents  for all state colleges and universities:
+Interpret the p-value and state your conclusion regarding the difference in mean decrease in resting heart rate between aerobic exercise and resistance training.
 
-$$
-H_0: \mu_{Non-res} - \mu_{Res} = 0 \ \ H_A: \mu_{Non-res} - \mu_{Res} > 0
-$$
+<details><summary><red>Click for answer</red></summary>
+*Answer:* Since the p-value is less than the significance level, it means that the observed difference of 5 bpm is highly unlikely to occur just by random chance under the null hypothesis. In this case, we would reject the null hypothesis and conclude that there is a statistically significant difference in the mean decrease in resting heart rate between aerobic exercise and resistance training.
 
-#### (a) Paired Data
-Read in the data. Note that each case (school) has a response value for the resident and non-resident tuition variables. This makes this a paired data example. Contrast this with the word recall example in which each case (student) only had one response (word recall) and treatment (caffeine/sleep). 
+</details><br>
+
+## Example 2: Job Interview Success
+
+A study investigated the success rate of job applicants who used a career coaching service (CCS) compared to those who didn't (NCCS). Out of 120 applicants, 60 used the CCS and 60 did not. We want to test if there is a difference in the proportion of successful applicants between CCS and NCCS groups. out of the 60 applicants who used the career coaching service (CCS), 42 were successful and 18 were unsuccessful. Out of the 60 applicants who did not use the career coaching service (NCCS), 30 were successful and 30 were unsuccessful. The hypotheses are:
+
+$$H_0: p_{C C S}-p_{N C C S}=0 H_A: p_{C C S}-p_{N C C S} \neq 0$$
+The sample proportion difference is $\hat{p}{CCS} - \hat{p}{NCCS} = 0.20$. We want to know if this difference in sample proportions is statistically significant.
+
+
+(a) Randomization Distribution
+Describe how you could generate a randomization distribution for $\hat{p}_{CCS} - \hat{p}_{NCCS}$ that is consistent with $H_0: p_{CCS} - p_{NCCS} = 0$.
+
+<details><summary><red>Click for answer</red></summary>
+*Answer:* To generate a randomization distribution for the sample proportion difference, we would randomly reassign the group (CCS or NCCS) to the job applicants. Under the null hypothesis, the proportion of successful applicants would be the same for both groups. For each reassignment, we would compute the sample proportion difference and plot it in the dotplot.
+
+</details><br>
+
+(b) Calculating the p-value
+
+Using a statistical software, generate a randomization distribution for the difference in proportions and calculate the p-value for the two-tailed test. Is the observed difference of 0.12 statistically significant?
+
+<details><summary><red>Click for answer</red></summary>
+*Answer:* Using *Statkey* to generate a randomization distribution for the difference in proportions and observing the p-value for the two-tailed test, we can compare the p-value to a chosen significance level (e.g., 0.05) to determine if the observed difference of 0.20 is statistically significant. If the p-value is less than the significance level, the observed difference is statistically significant; otherwise, it is not. The p-value based on this randomization distribution under null hypothesis is $2 \times 0.018 = 0.036$. So, the observed difference of 0.020 is statistically significant.
+
+<center>
+<img src="data/teaching_methods.png" width="140%" height="120%"><br>
+</center>
+
+</details><br>
+
+(c) Interpretation and Conclusion
+Interpret the p-value and state your conclusion regarding the difference in the proportion of successful job applicants between CCS and NCCS groups.
+
+<details><summary><red>Click for answer</red></summary>
+*Answer:* Since the p-value is less than the significance level, it means that the observed difference of 0.20 would occur with low chance under the null hypothesis. In this case, we would reject the null hypothesis and conclude that there is a statistically significant difference in the proportion of successful job applicants between CCS and NCCS groups. 
+
+</details><br>
+
+## Example 3: New Teaching Method Effectiveness
+
+A school is testing a new teaching method for math. They randomly assign 40 students to either the new method (NM) or the traditional method (TM), 20 in each group. After 3 months, the students take a standardized math test. We want to test if there is a difference in the mean test scores between NM and TM groups. The hypotheses are:
+
+
+$$H_0: \mu_{N M}-\mu_{T M}=0 \mathrm{H}_A: \mu_{NM} - \mu_{TM} \neq 0$$
+The sample mean difference is $\bar{x}_{NM} - \bar{x}_{TM} = 8.9$. We want to know if this difference in sample means is statistically significant.
+
+### (a) Randomization Distribution
+
+Describe how you could generate a randomization distribution for $\bar{x}_{NM} - \bar{x}_{TM}$ that is consistent with $H_0: \mu_{NM} - \mu_{TM} = 0$.
+
+<details><summary><red>Click for answer</red></summary>
+*Answer:* To generate a randomization distribution for the sample proportion difference, we would randomly reassign the teaching method (new or traditional) to the classes. Under the null hypothesis, the proportion of students passing would be the same under either teaching method. For each reassignment, we would compute the sample proportion difference and plot it in the dotplot.
+
+</details><br>
+
+#### (b) Calculating the p-value
+
+Using a statistical software, generate a randomization distribution for the difference in means and calculate the p-value for the two-tailed test. Is the observed difference of 8.9 points statistically significant?
+
+<details><summary><red>Click for answer</red></summary>
+*Answer:* The p-value is the proportion of resamples that have a difference of 8.9 or above. Depending on the generated randomization distribution, the p-value is 0.0002. This means is interpreted in terms of how likely it is to observe a difference of 8.9 or greater under the null hypothesis, which is 0.02%.
+
 
 ```{r}
-tuition <- read.csv("http://math.carleton.edu/Stats215/RLabManual/Tuition2006.csv")
-head(tuition)
+teaching <- read_csv("https://raw.githubusercontent.com/deepbas/statdatasets/main/teaching_method.csv")
+permTest(Math_Test_Score~Group, data= teaching)
 ```
 
-
-#### (b) Permutation test for paired data
-Let's compute the difference of non-resident and resident tuitions (NR minus R):
-
-```{r}
-diff <- tuition$NonRes - tuition$Res
-summary(diff)
-hist(diff)
-```
-
-- What is the average difference in tuition costs?
-
-<details><summary><red>Click for answer</red></summary>
-*Answer:* The observed mean difference is $3584
 </details><br>
 
+#### (c) Interpretation and Conclusion
 
-- Is this observed mean difference statistically significant? To test use the command `permTestPaired`:
-```{r}
-permTestPaired(NonRes ~ Res,data = tuition, alt = "greater")
-```
-The `alt` of `greater` was used because the function `permTestPaired(A ~ B)` computes paired differences as "A" minus "B". 
-
-- What is the p-value for this test?
+Interpret the p-value and state your conclusion regarding the difference in the mean test scores between the new teaching method and the traditional teaching method groups.
 
 <details><summary><red>Click for answer</red></summary>
-*Answer:* Less than 0.0001
+*Answer:* Since the p-value is less than the chosen significance level (e.g., 0.05), the results are statistically significant, and we would reject the null hypothesis in favor of the alternative. This would indicate that there is evidence suggesting the new teaching method is more effective than the traditional method. 
+
+
 </details><br>
 
-- Is this observed mean difference statistically significant? 
+## Example 4: Type I and Type II Error Rates
+
+Consider the previous example of a new teaching method compared to a traditional teaching method. Suppose that the school administration wants to minimize the chances of making Type I and Type II errors when deciding whether to adopt the new teaching method.
+
+### (a) Type I Error
+
+Explain what a Type I error is in the context of this example, and describe the consequences of making such an error.
 
 <details><summary><red>Click for answer</red></summary>
-*Answer:* Yes, an observed mean difference of at least $3584 would rarely occur just by chance which provides us strong evidence that the mean tuition amount of non-residents is higher than residents in the population of state colleges and universities (in 2006).
+*Answer:* A Type I error occurs when we reject the null hypothesis when it's actually true. In this context, it means that we conclude the new teaching method is more effective than the traditional method when, in reality, there is no difference. The consequences of making a Type I error could include investing time and resources into a new teaching method that isn't actually more effective, leading to inefficient allocation of resources.
+
 </details><br>
 
-## Example 5: Evaluating Drugs to Fight Cocaine Addition
-In a randomized experiment on treating cocaine addiction, 48 cocaine addicts who were trying to quit were randomly assigned to take either desipramine (a new drug), or Lithium (an existing drug).  The response variable is whether or not the person relapsed (which means the person was unable to break out of the cycle of addiction and returned to using cocaine.)  **We are testing to see if desipramine is better than lithium at treating cocaine addiction.**  The results are shown in the two-way table.
+### (b) Type II Error
 
-\ | Relapse | No Relapse | total
----- | ---- | ----- | -----
-Desipramine | 10 | 14 | 24
-Lithium | 18 | 6 | 24
-
-#### (a) 	Using $p_D$ for the true proportion of desipramine users who relapse and $p_L$ for the true proportion of lithium users who relapse, write the null and alternative hypotheses.
+Explain what a Type II error is in the context of this example, and describe the consequences of making such an error.
 
 <details><summary><red>Click for answer</red></summary>
-*Answer:* $H_0: p_D - p_L =0$ vs. $H_A: p_D - p_L < 0$
+*Answer:* A Type II error occurs when we fail to reject the null hypothesis when it's actually false. In this context, it means that we conclude that there is no difference between the new teaching method and the traditional method when, in reality, the new method is more effective. The consequences of making a Type II error could include missing out on the opportunity to improve students' learning outcomes by not adopting the more effective teaching method.
+
 </details><br>
 
-#### (b)	Compute the appropriate sample statistic needed to assess the hypotheses above. 
+### (c) Adjusting the Significance Level
+
+If the school administration believes that making a Type I error is much worse than making a Type II error, what adjustments could be made to the significance level to account for this? Explain your reasoning.
 
 <details><summary><red>Click for answer</red></summary>
-*Answer:* We see that $\hat{p}_D = \dfrac{10}{24} = 0.417$ and $\hat{p}_L = \dfrac{18}{24} = 0.75$ so we have $\hat{p}_D -\hat{p}_L =  0.417 - 0.75 = -0.333$. Be sure to compute the **difference** since we need one number (observed difference) to test the hypotheses, not two separate numbers. You could also compute the difference as $L-D$ and get +0.333. 
+*Answer:* To decrease the chance of making a Type I error, the school administration could choose a smaller significance level, such as 0.01 instead of the typical 0.05. By using a smaller significance level, we require stronger evidence (smaller p-value) to reject the null hypothesis, thus reducing the probability of making a Type I error.
+
 </details><br>
 
+### (d) Factors Influencing Type II Error Rate
 
-#### (c)	How might we compute a randomization sample for this data? 
+List the factors that influence the probability of making a Type II error and briefly describe how they affect the error rate in this context.
 
 <details><summary><red>Click for answer</red></summary>
-*Answer:* Since drug doesn’t matter, we combine all 48 patients together and see that 28 relapsed and 20 didn’t.  To see what happens by random chance, we randomly divide them into two groups and compute the difference in proportions of relapses between the two groups.  The difference in proportions is the statistic.
+Answer: Factors that influence the probability of making a Type II error include:
+
+*Effect size:* The true difference between the new teaching method and the traditional method. A larger effect size makes it easier to detect a difference, reducing the Type II error rate.
+
+*Sample size:* The number of students involved in the study. A larger sample size increases the power of the test, making it more likely to detect a true difference and reducing the Type II error rate.
+
+*Variability:* The amount of variation in the students' learning outcomes. Higher variability makes it more difficult to detect a true difference, increasing the Type II error rate.
+
+*Significance level:* The chosen significance level (alpha) also affects the Type II error rate. A larger significance level (e.g., 0.10) decreases the Type II error rate but increases the Type I error rate.
+
 </details><br>
 
-#### (d) Navigate to the Statkey website. 
-Select the **Test for Difference in Proportions** option under **Randomization Hypothesis Tests**. Click **Edit Data** and let Group 1 be "Desipramine" and 2 be "Lithium",  enter relapse **counts** of 10 and 18 and **sample sizes** of 24. Check that the null hypothesis matches yours in (a). Generate a couple thousand samples. Describe the resulting distribution.  Where is it centered? 
+### (e) Balancing Error Rates
+
+Discuss how the school administration could balance the Type I and Type II error rates when evaluating the effectiveness of the new teaching method. What factors should they consider?
 
 <details><summary><red>Click for answer</red></summary>
-*Answer:* The resulting distribution, shown in Figure 1,  will be bell-shaped and centered at the value from the null hypothesis, which is zero.
+*Answer:* Balancing the Type I and Type II error rates involves considering the consequences of each type of error and the desired level of confidence in the results. The administration should weigh the risks and benefits of adopting a new teaching method versus maintaining the traditional method. They should also consider factors such as the cost and feasibility of implementing the new method, as well as the potential impact on student learning outcomes. Ultimately, the administration should choose a significance level and sample size that balance the risks associated with Type I and Type II errors while taking into account practical constraints and priorities.
 
-![Example 1d](data/DLrand.png)
 </details><br>
-
-
-#### (e)	Compute and interpret the p-value for this test.  
-
-<details><summary><red>Click for answer</red></summary>
-*Answer:* This is a left-tail test when computing the difference as D - L, and we see on StatKey that the p-value (proportion of randomization samples with a difference -.333 or smaller) is about 2 (Figure 1).  About 2% of the time we would see at least 33% fewer relapse cases using despramine than lithium just due to chance if there was no difference in the relapse rates of the two treatments. 
-
-Note the two key features of this “in context” interpretation of 2%: it assumes that the null is true (no treatment difference) and it uses the observed statistic (data) used to compute the p-value (rate of despramine relapse is .33 below the rate of lithium).
-</details><br>
-
-#### (f)	Make a formal decision (reject or not) using a 5% significance level, then restate your conclusion in context for the problem (do not use words like “reject” or “hypothesis”).
-
-<details><summary><red>Click for answer</red></summary>
-*Answer:* We reject the null hypothesis since the p-value of 2% is less than 5%.  We can conclude that despramine is better at helping people kick the cocaine habit.
-Note the “in context” conclusion: Just state your conclusion in english, no need to talk about the value of the p-value or “just by chance.”
-</details><br>
-
-
-#### (h)	Use Statkey to compute and interpret a 95% bootstrap confidence interval for the difference in the relapse proportion for the two treatments.  Explain how this CI agrees with your test conclusion in (f).
-
-<details><summary><red>Click for answer</red></summary>
-*Answer:* I am 95% confident that the relapse rate for despramine will be between 8.3 to 58.3 percent less than the relapse rate for lithium.  This completely agrees with the test conclusion that despramine is a better treatment for cocaine addiction. (Figure 2 shows the bootstrap distribution that is centered at the sample difference of -0.333.)
-
-
-![Example 1h](data/DLboot.png)
-</details><br>
-

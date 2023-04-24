@@ -50,6 +50,7 @@ q3-q1
 q1 - 1.5*94
 q3 + 1.5*94
 ```
+
 </details><br>
 
 #### (e) What percent of the population will be deemed an outlier?

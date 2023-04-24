@@ -139,7 +139,7 @@
 
 \title{Stat 120}
 \author{Deepak Bastola}
-\date{2023-04-21}
+\date{2023-04-23}
 
 \begin{document}
 \maketitle
@@ -1628,16 +1628,16 @@ Click for answer
 
 \begin{verbatim}
    ID Greeting  Male    Weight
-1   1    Hello  TRUE 239.92689
-2   2    Hello FALSE  55.73442
-3   3    Hello  TRUE 171.71610
-4   4    Hello FALSE 286.20925
-5   5    Hello  TRUE 264.17192
-6   6  Goodbye FALSE 118.80490
-7   7  Goodbye  TRUE  67.51910
-8   8  Goodbye FALSE  71.89585
-9   9  Goodbye  TRUE  72.13668
-10 10  Goodbye FALSE 254.34443
+1   1    Hello  TRUE 252.62047
+2   2    Hello FALSE  80.30435
+3   3    Hello  TRUE 244.23281
+4   4    Hello FALSE 203.75939
+5   5    Hello  TRUE 160.39213
+6   6  Goodbye FALSE 136.89868
+7   7  Goodbye  TRUE 218.34196
+8   8  Goodbye FALSE 116.67753
+9   9  Goodbye  TRUE 230.88870
+10 10  Goodbye FALSE 181.40428
 \end{verbatim}
 
 \emph{Answer:} We see a data frame with four columns, where the first column is an \texttt{identifier} for the cases. We have information on the greeting types, whether male or not, and weight on these cases in the remaining columns.
@@ -1818,7 +1818,7 @@ Run the following command to obtain a SRS of 10 words from the 268 that are in t
 \end{Shaded}
 
 \begin{verbatim}
- [1] 151  80 182  36 132 148 147 254  17 121
+ [1] 146 225  78  39 219 209 198  34   6 246
 \end{verbatim}
 
 This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
@@ -1834,17 +1834,17 @@ We will \emph{subset} the data set \texttt{pop} to obtain only the sampled rows 
 \end{Shaded}
 
 \begin{verbatim}
-    position size      word
-151      151    4     here,
-80        80    3       for
-182      182    4      thus
-36        36    1         a
-132      132    5     above
-148      148    4      what
-147      147    8 remember,
-254      254    2        of
-17        17    9 conceived
-121      121    3      men,
+    position size    word
+146      146    4    long
+225      225    4    that
+78        78    7 resting
+39        39    3    war,
+219      219    3     the
+209      209    4    take
+198      198    5   great
+34        34    7 engaged
+6          6    3    ago,
+246      246    1       a
 \end{verbatim}
 
 \begin{enumerate}
@@ -1865,7 +1865,7 @@ The word lengths in part (b) are the data for your sample. You can compute your 
 \end{Shaded}
 
 \begin{verbatim}
- [1] 4 3 4 1 5 4 8 2 9 3
+ [1] 4 4 7 3 3 4 5 7 3 1
 \end{verbatim}
 
 Then find the mean of these values:
@@ -1877,7 +1877,7 @@ Then find the mean of these values:
 \end{Shaded}
 
 \begin{verbatim}
-[1] 4.3
+[1] 4.1
 \end{verbatim}
 
 How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?
@@ -3916,7 +3916,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
-[1] 20.611
+[1] 20.65
 \end{verbatim}
 
 \begin{Shaded}
@@ -3949,7 +3949,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
-[1] 1.105018
+[1] 1.154098
 \end{verbatim}
 
 \hypertarget{example-3-simulation-of-a-sample-proportion}{%
@@ -4262,7 +4262,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
- [1]  87  72  85 125 185 125 147  87 147 125
+ [1]  85  93  85 185 125  93  23 185  93  87
 \end{verbatim}
 
 \hypertarget{d.-where-will-be-bootstrap-distribution-be-centered-what-shape-do-we-expect-it-to-have}{%
@@ -4516,12 +4516,12 @@ The \texttt{boot(y\ \textasciitilde{}\ x,\ data=)} command generates 10000 boots
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -2.26095 
- Mean of bootstrap distribution: -2.25809 
- Standard error of bootstrap distribution: 0.77682 
+ Mean of bootstrap distribution: -2.26722 
+ Standard error of bootstrap distribution: 0.77764 
 
  Bootstrap percentile interval
       2.5%      97.5% 
--3.7495476 -0.7380238 
+-3.7962143 -0.7390119 
 
         *--------------*
 \end{verbatim}
@@ -4774,12 +4774,12 @@ We can now use the 0/1 version of telephone in the \texttt{boot} command (like e
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -0.03905 
- Mean of bootstrap distribution: -0.03891 
- Standard error of bootstrap distribution: 0.03357 
+ Mean of bootstrap distribution: -0.03844 
+ Standard error of bootstrap distribution: 0.03371 
 
  Bootstrap percentile interval
        2.5%       97.5% 
--0.10333333  0.02715476 
+-0.10428571  0.02857143 
 
         *--------------*
 \end{verbatim}
@@ -5149,9 +5149,9 @@ Then load the \texttt{CarletonStats} package and run the \texttt{permTest(y\ \te
   Caffeine :  12.25      Sleep :  15.25 
  Observed difference: -3 
 
- Mean of permutation distribution: -0.01125 
- Standard error of permutation distribution: 1.52322 
- P-value:  0.0508 
+ Mean of permutation distribution: -0.01472 
+ Standard error of permutation distribution: 1.49619 
+ P-value:  0.0476 
 
     *-------------*
 \end{verbatim}
@@ -5273,8 +5273,8 @@ Click for answer
   NonRes :  6405.263     Res :  2821.053 
  Observed difference  NonRes - Res : 3584.211 
 
- Mean of permutation distribution: -2.63237 
- Standard error of permutation distribution: 938.0129 
+ Mean of permutation distribution: -3.72406 
+ Standard error of permutation distribution: 940.816 
  P-value:  1e-04 
 
     *-------------*
@@ -5301,6 +5301,234 @@ Click for answer
 Click for answer
 
 \emph{Answer:} Yes, an observed mean difference of at least \$3584 would rarely occur just by chance which provides us strong evidence that the mean tuition amount of non-residents is higher than residents in the population of state colleges and universities (in 2006).
+
+\hypertarget{class-activity-13}{%
+\chapter{Class Activity 13}\label{class-activity-13}}
+
+\hypertarget{example-1-effect-of-exercise-on-heart-rate}{%
+\section{Example 1: Effect of Exercise on Heart Rate}\label{example-1-effect-of-exercise-on-heart-rate}}
+
+In a study, 30 participants were randomly assigned to engage in either aerobic exercise or resistance training (15 in each group). Their resting heart rate was measured before and after a 6-week exercise program. We want to test if there is a difference in the mean decrease in resting heart rate between aerobic exercise and resistance training. The hypotheses are:
+
+\[H_0: \mu_A-\mu_R=0 \quad\quad H_A: \mu_A-\mu_R \neq 0\]
+
+The sample mean difference is \(\bar{x}_A - \bar{x}_R = 5\). We want to know if this difference in sample means is statistically significant.
+
+\hypertarget{a-randomization-distribution}{%
+\subsection{(a) Randomization Distribution}\label{a-randomization-distribution}}
+
+Describe how you could generate a randomization distribution for \(\bar{x}_A - \bar{x}_R\) that is consistent with \(H_0: \mu_A - \mu_R = 0\).
+
+Click for answer
+
+\emph{Answer:} To generate a randomization distribution for the sample mean difference, we would randomly reassign the treatment (aerobic exercise or resistance training) to the study participants. Under the null hypothesis, the mean decrease in resting heart rate would be the same under either treatment. For each reassignment, we would compute the sample mean difference and plot it in the dotplot.
+
+\hypertarget{b-calculating-the-p-value}{%
+\subsection{(b) Calculating the p-value}\label{b-calculating-the-p-value}}
+
+Using a statistical software, generate a randomization distribution for the difference in means and calculate the p-value for the two-tailed test. Is the observed difference of 5 bpm statistically significant?
+
+Click for answer
+
+\emph{Answer:} We can use the \texttt{permTest} function from the \texttt{CarletonStats} package to generate a randomization distribution for the difference in means and calculate the p-value for the two-tailed test. We can compare the p-value of \(2e^{-4}\) to a chosen significance level (e.g., 0.05) to determine if the observed difference of 5 bpm is statistically significant. Since the p-value is less than the significance level, the observed difference is statistically significant.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(CarletonStats)}
+\FunctionTok{library}\NormalTok{(readr)}
+\NormalTok{exercise }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/deepbas/statdatasets/main/exercise.csv"}\NormalTok{)}
+\FunctionTok{permTest}\NormalTok{(Decrease\_in\_Resting\_Heart\_Rate}\SpecialCharTok{\textasciitilde{}}\NormalTok{Group, }\AttributeTok{data=}\NormalTok{ exercise)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_13_files/figure-latex/unnamed-chunk-1-1}
+
+\begin{verbatim}
+
+    ** Permutation test **
+
+ Permutation test with alternative: two.sided 
+ Observed statistic
+  Aerobic_Exercise :  9.2    Resistance_Training :  3 
+ Observed difference: 6.2 
+
+ Mean of permutation distribution: 0.0043 
+ Standard error of permutation distribution: 1.19712 
+ P-value:  2e-04 
+
+    *-------------*
+\end{verbatim}
+
+\hypertarget{c-interpretation-and-conclusion}{%
+\subsection{(c) Interpretation and Conclusion}\label{c-interpretation-and-conclusion}}
+
+Interpret the p-value and state your conclusion regarding the difference in mean decrease in resting heart rate between aerobic exercise and resistance training.
+
+Click for answer
+
+\emph{Answer:} Since the p-value is less than the significance level, it means that the observed difference of 5 bpm is highly unlikely to occur just by random chance under the null hypothesis. In this case, we would reject the null hypothesis and conclude that there is a statistically significant difference in the mean decrease in resting heart rate between aerobic exercise and resistance training.
+
+\hypertarget{example-2-job-interview-success}{%
+\section{Example 2: Job Interview Success}\label{example-2-job-interview-success}}
+
+A study investigated the success rate of job applicants who used a career coaching service (CCS) compared to those who didn't (NCCS). Out of 120 applicants, 60 used the CCS and 60 did not. We want to test if there is a difference in the proportion of successful applicants between CCS and NCCS groups. out of the 60 applicants who used the career coaching service (CCS), 42 were successful and 18 were unsuccessful. Out of the 60 applicants who did not use the career coaching service (NCCS), 30 were successful and 30 were unsuccessful. The hypotheses are:
+
+\[H_0: p_{C C S}-p_{N C C S}=0 H_A: p_{C C S}-p_{N C C S} \neq 0\]
+The sample proportion difference is \(\hat{p}{CCS} - \hat{p}{NCCS} = 0.20\). We want to know if this difference in sample proportions is statistically significant.
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item
+  Randomization Distribution
+  Describe how you could generate a randomization distribution for \(\hat{p}_{CCS} - \hat{p}_{NCCS}\) that is consistent with \(H_0: p_{CCS} - p_{NCCS} = 0\).
+\end{enumerate}
+
+Click for answer
+
+\emph{Answer:} To generate a randomization distribution for the sample proportion difference, we would randomly reassign the group (CCS or NCCS) to the job applicants. Under the null hypothesis, the proportion of successful applicants would be the same for both groups. For each reassignment, we would compute the sample proportion difference and plot it in the dotplot.
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Calculating the p-value
+\end{enumerate}
+
+Using a statistical software, generate a randomization distribution for the difference in proportions and calculate the p-value for the two-tailed test. Is the observed difference of 0.12 statistically significant?
+
+Click for answer
+
+\emph{Answer:} Using \emph{Statkey} to generate a randomization distribution for the difference in proportions and observing the p-value for the two-tailed test, we can compare the p-value to a chosen significance level (e.g., 0.05) to determine if the observed difference of 0.20 is statistically significant. If the p-value is less than the significance level, the observed difference is statistically significant; otherwise, it is not. The p-value based on this randomization distribution under null hypothesis is \(2 \times 0.018 = 0.036\). So, the observed difference of 0.020 is statistically significant.
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Interpretation and Conclusion
+  Interpret the p-value and state your conclusion regarding the difference in the proportion of successful job applicants between CCS and NCCS groups.
+\end{enumerate}
+
+Click for answer
+
+\emph{Answer:} Since the p-value is less than the significance level, it means that the observed difference of 0.20 would occur with low chance under the null hypothesis. In this case, we would reject the null hypothesis and conclude that there is a statistically significant difference in the proportion of successful job applicants between CCS and NCCS groups.
+
+\hypertarget{example-3-new-teaching-method-effectiveness}{%
+\section{Example 3: New Teaching Method Effectiveness}\label{example-3-new-teaching-method-effectiveness}}
+
+A school is testing a new teaching method for math. They randomly assign 40 students to either the new method (NM) or the traditional method (TM), 20 in each group. After 3 months, the students take a standardized math test. We want to test if there is a difference in the mean test scores between NM and TM groups. The hypotheses are:
+
+\[H_0: \mu_{N M}-\mu_{T M}=0 \mathrm{H}_A: \mu_{NM} - \mu_{TM} \neq 0\]
+The sample mean difference is \(\bar{x}_{NM} - \bar{x}_{TM} = 8.9\). We want to know if this difference in sample means is statistically significant.
+
+\hypertarget{a-randomization-distribution-1}{%
+\subsection{(a) Randomization Distribution}\label{a-randomization-distribution-1}}
+
+Describe how you could generate a randomization distribution for \(\bar{x}_{NM} - \bar{x}_{TM}\) that is consistent with \(H_0: \mu_{NM} - \mu_{TM} = 0\).
+
+Click for answer
+
+\emph{Answer:} To generate a randomization distribution for the sample proportion difference, we would randomly reassign the teaching method (new or traditional) to the classes. Under the null hypothesis, the proportion of students passing would be the same under either teaching method. For each reassignment, we would compute the sample proportion difference and plot it in the dotplot.
+
+\hypertarget{b-calculating-the-p-value-1}{%
+\subsubsection{(b) Calculating the p-value}\label{b-calculating-the-p-value-1}}
+
+Using a statistical software, generate a randomization distribution for the difference in means and calculate the p-value for the two-tailed test. Is the observed difference of 8.9 points statistically significant?
+
+Click for answer
+
+\emph{Answer:} The p-value is the proportion of resamples that have a difference of 8.9 or above. Depending on the generated randomization distribution, the p-value is 0.0002. This means is interpreted in terms of how likely it is to observe a difference of 8.9 or greater under the null hypothesis, which is 0.02\%.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{teaching }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/deepbas/statdatasets/main/teaching\_method.csv"}\NormalTok{)}
+\FunctionTok{permTest}\NormalTok{(Math\_Test\_Score}\SpecialCharTok{\textasciitilde{}}\NormalTok{Group, }\AttributeTok{data=}\NormalTok{ teaching)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_13_files/figure-latex/unnamed-chunk-2-1}
+
+\begin{verbatim}
+
+    ** Permutation test **
+
+ Permutation test with alternative: two.sided 
+ Observed statistic
+  New_Method :  91.05    Traditional_Method :  82.15 
+ Observed difference: 8.9 
+
+ Mean of permutation distribution: -0.0079 
+ Standard error of permutation distribution: 1.75358 
+ P-value:  2e-04 
+
+    *-------------*
+\end{verbatim}
+
+\hypertarget{c-interpretation-and-conclusion-1}{%
+\subsubsection{(c) Interpretation and Conclusion}\label{c-interpretation-and-conclusion-1}}
+
+Interpret the p-value and state your conclusion regarding the difference in the mean test scores between the new teaching method and the traditional teaching method groups.
+
+Click for answer
+
+\emph{Answer:} Since the p-value is less than the chosen significance level (e.g., 0.05), the results are statistically significant, and we would reject the null hypothesis in favor of the alternative. This would indicate that there is evidence suggesting the new teaching method is more effective than the traditional method.
+
+\hypertarget{example-4-type-i-and-type-ii-error-rates}{%
+\section{Example 4: Type I and Type II Error Rates}\label{example-4-type-i-and-type-ii-error-rates}}
+
+Consider the previous example of a new teaching method compared to a traditional teaching method. Suppose that the school administration wants to minimize the chances of making Type I and Type II errors when deciding whether to adopt the new teaching method.
+
+\hypertarget{a-type-i-error}{%
+\subsection{(a) Type I Error}\label{a-type-i-error}}
+
+Explain what a Type I error is in the context of this example, and describe the consequences of making such an error.
+
+Click for answer
+
+\emph{Answer:} A Type I error occurs when we reject the null hypothesis when it's actually true. In this context, it means that we conclude the new teaching method is more effective than the traditional method when, in reality, there is no difference. The consequences of making a Type I error could include investing time and resources into a new teaching method that isn't actually more effective, leading to inefficient allocation of resources.
+
+\hypertarget{b-type-ii-error}{%
+\subsection{(b) Type II Error}\label{b-type-ii-error}}
+
+Explain what a Type II error is in the context of this example, and describe the consequences of making such an error.
+
+Click for answer
+
+\emph{Answer:} A Type II error occurs when we fail to reject the null hypothesis when it's actually false. In this context, it means that we conclude that there is no difference between the new teaching method and the traditional method when, in reality, the new method is more effective. The consequences of making a Type II error could include missing out on the opportunity to improve students' learning outcomes by not adopting the more effective teaching method.
+
+\hypertarget{c-adjusting-the-significance-level}{%
+\subsection{(c) Adjusting the Significance Level}\label{c-adjusting-the-significance-level}}
+
+If the school administration believes that making a Type I error is much worse than making a Type II error, what adjustments could be made to the significance level to account for this? Explain your reasoning.
+
+Click for answer
+
+\emph{Answer:} To decrease the chance of making a Type I error, the school administration could choose a smaller significance level, such as 0.01 instead of the typical 0.05. By using a smaller significance level, we require stronger evidence (smaller p-value) to reject the null hypothesis, thus reducing the probability of making a Type I error.
+
+\hypertarget{d-factors-influencing-type-ii-error-rate}{%
+\subsection{(d) Factors Influencing Type II Error Rate}\label{d-factors-influencing-type-ii-error-rate}}
+
+List the factors that influence the probability of making a Type II error and briefly describe how they affect the error rate in this context.
+
+Click for answer
+
+Answer: Factors that influence the probability of making a Type II error include:
+
+\emph{Effect size:} The true difference between the new teaching method and the traditional method. A larger effect size makes it easier to detect a difference, reducing the Type II error rate.
+\emph{Sample size:} The number of students involved in the study. A larger sample size increases the power of the test, making it more likely to detect a true difference and reducing the Type II error rate.
+\emph{Variability:} The amount of variation in the students' learning outcomes. Higher variability makes it more difficult to detect a true difference, increasing the Type II error rate.
+\emph{Significance level:} The chosen significance level (alpha) also affects the Type II error rate. A larger significance level (e.g., 0.10) decreases the Type II error rate but increases the Type I error rate.
+
+\hypertarget{e-balancing-error-rates}{%
+\subsection{(e) Balancing Error Rates}\label{e-balancing-error-rates}}
+
+Discuss how the school administration could balance the Type I and Type II error rates when evaluating the effectiveness of the new teaching method. What factors should they consider?
+
+Click for answer
+
+\emph{Answer:} Balancing the Type I and Type II error rates involves considering the consequences of each type of error and the desired level of confidence in the results. The administration should weigh the risks and benefits of adopting a new teaching method versus maintaining the traditional method. They should also consider factors such as the cost and feasibility of implementing the new method, as well as the potential impact on student learning outcomes. Ultimately, the administration should choose a significance level and sample size that balance the risks associated with Type I and Type II errors while taking into account practical constraints and priorities.
 
   \bibliography{book.bib,packages.bib}
 
