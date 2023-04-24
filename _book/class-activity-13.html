@@ -84,7 +84,7 @@
 </h2>
 <p>In a study, 30 participants were randomly assigned to engage in either aerobic exercise or resistance training (15 in each group). Their resting heart rate was measured before and after a 6-week exercise program. We want to test if there is a difference in the mean decrease in resting heart rate between aerobic exercise and resistance training. The hypotheses are:</p>
 <p><span class="math display">\[H_0: \mu_A-\mu_R=0 \quad\quad H_A: \mu_A-\mu_R \neq 0\]</span></p>
-<p>The sample mean difference is <span class="math inline">\(\bar{x}_A - \bar{x}_R = 5\)</span>. We want to know if this difference in sample means is statistically significant.</p>
+<p>The sample mean difference is <span class="math inline">\(\bar{x}_A - \bar{x}_R = 6.2\)</span>. We want to know if this difference in sample means is statistically significant.</p>
 <div id="a-randomization-distribution" class="section level3" number="20.1.1">
 <h3>
 <span class="header-section-number">20.1.1</span> (a) Randomization Distribution<a class="anchor" aria-label="anchor" href="#a-randomization-distribution"><i class="fas fa-link"></i></a>
@@ -97,8 +97,8 @@
 <h3>
 <span class="header-section-number">20.1.2</span> (b) Calculating the p-value<a class="anchor" aria-label="anchor" href="#b-calculating-the-p-value"><i class="fas fa-link"></i></a>
 </h3>
-<p>Using a statistical software, generate a randomization distribution for the difference in means and calculate the p-value for the two-tailed test. Is the observed difference of 5 bpm statistically significant?</p>
-<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> We can use the <code>permTest</code> function from the <code>CarletonStats</code> package to generate a randomization distribution for the difference in means and calculate the p-value for the two-tailed test. We can compare the p-value of <span class="math inline">\(2e^{-4}\)</span> to a chosen significance level (e.g., 0.05) to determine if the observed difference of 5 bpm is statistically significant. Since the p-value is less than the significance level, the observed difference is statistically significant.</p>
+<p>Using a statistical software, generate a randomization distribution for the difference in means and calculate the p-value for the two-tailed test. Is the observed difference of 6.2 bpm statistically significant?</p>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> We can use the <code>permTest</code> function from the <code>CarletonStats</code> package to generate a randomization distribution for the difference in means and calculate the p-value for the two-tailed test. We can compare the p-value of <span class="math inline">\(2e^{-4}\)</span> to a chosen significance level (e.g., 0.05) to determine if the observed difference of 6.2 bpm is statistically significant. Since the p-value is less than the significance level, the observed difference is statistically significant.</p>
 <div class="sourceCode" id="cb274"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">CarletonStats</span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readr.tidyverse.org">readr</a></span><span class="op">)</span></span>
@@ -113,8 +113,8 @@
   Aerobic_Exercise :  9.2    Resistance_Training :  3 
  Observed difference: 6.2 
 
- Mean of permutation distribution: 0.01463 
- Standard error of permutation distribution: 1.17358 
+ Mean of permutation distribution: -0.01287 
+ Standard error of permutation distribution: 1.17741 
  P-value:  2e-04 
 
     *-------------*</code></pre>
@@ -125,7 +125,7 @@
 <span class="header-section-number">20.1.3</span> (c) Interpretation and Conclusion<a class="anchor" aria-label="anchor" href="#c-interpretation-and-conclusion"><i class="fas fa-link"></i></a>
 </h3>
 <p>Interpret the p-value and state your conclusion regarding the difference in mean decrease in resting heart rate between aerobic exercise and resistance training.</p>
-<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> Since the p-value is less than the significance level, it means that the observed difference of 5 bpm is highly unlikely to occur just by random chance under the null hypothesis. In this case, we would reject the null hypothesis and conclude that there is a statistically significant difference in the mean decrease in resting heart rate between aerobic exercise and resistance training.</p>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> Since the p-value is less than the significance level, it means that the observed difference of 6.2 bpm is highly unlikely to occur just by random chance under the null hypothesis. In this case, we would reject the null hypothesis and conclude that there is a statistically significant difference in the mean decrease in resting heart rate between aerobic exercise and resistance training.</p>
 </details><p><br></p>
 </div>
 </div>
@@ -145,7 +145,7 @@ Describe how you could generate a randomization distribution for <span class="ma
 <ol start="2" style="list-style-type: lower-alpha">
 <li>Calculating the p-value</li>
 </ol>
-<p>Using a statistical software, generate a randomization distribution for the difference in proportions and calculate the p-value for the two-tailed test. Is the observed difference of 0.12 statistically significant?</p>
+<p>Using a statistical software, generate a randomization distribution for the difference in proportions and calculate the p-value for the two-tailed test. Is the observed difference of 0.20 statistically significant?</p>
 <details><summary><red>Click for answer</red></summary><p><em>Answer:</em> Using <em>Statkey</em> to generate a randomization distribution for the difference in proportions and observing the p-value for the two-tailed test, we can compare the p-value to a chosen significance level (e.g., 0.05) to determine if the observed difference of 0.20 is statistically significant. If the p-value is less than the significance level, the observed difference is statistically significant; otherwise, it is not. The p-value based on this randomization distribution under null hypothesis is <span class="math inline">\(2 \times 0.018 = 0.036\)</span>. So, the observed difference of 0.020 is statistically significant.</p>
 <center>
 <img src="data/teaching_methods.png" width="140%" height="120%"><br>
@@ -190,8 +190,8 @@ The sample mean difference is <span class="math inline">\(\bar{x}_{NM} - \bar{x}
   New_Method :  91.05    Traditional_Method :  82.15 
  Observed difference: 8.9 
 
- Mean of permutation distribution: -0.00462 
- Standard error of permutation distribution: 1.7316 
+ Mean of permutation distribution: -0.00232 
+ Standard error of permutation distribution: 1.7436 
  P-value:  2e-04 
 
     *-------------*</code></pre>
@@ -242,10 +242,10 @@ The sample mean difference is <span class="math inline">\(\bar{x}_{NM} - \bar{x}
 </h3>
 <p>List the factors that influence the probability of making a Type II error and briefly describe how they affect the error rate in this context.</p>
 <details><summary><red>Click for answer</red></summary><p>Answer: Factors that influence the probability of making a Type II error include:</p>
-<p><em>Effect size:</em> The true difference between the new teaching method and the traditional method. A larger effect size makes it easier to detect a difference, reducing the Type II error rate.
-<em>Sample size:</em> The number of students involved in the study. A larger sample size increases the power of the test, making it more likely to detect a true difference and reducing the Type II error rate.
-<em>Variability:</em> The amount of variation in the students’ learning outcomes. Higher variability makes it more difficult to detect a true difference, increasing the Type II error rate.
-<em>Significance level:</em> The chosen significance level (alpha) also affects the Type II error rate. A larger significance level (e.g., 0.10) decreases the Type II error rate but increases the Type I error rate.</p>
+<p><em>Effect size:</em> The true difference between the new teaching method and the traditional method. A larger effect size makes it easier to detect a difference, reducing the Type II error rate.</p>
+<p><em>Sample size:</em> The number of students involved in the study. A larger sample size increases the power of the test, making it more likely to detect a true difference and reducing the Type II error rate.</p>
+<p><em>Variability:</em> The amount of variation in the students’ learning outcomes. Higher variability makes it more difficult to detect a true difference, increasing the Type II error rate.</p>
+<p><em>Significance level:</em> The chosen significance level (alpha) also affects the Type II error rate. A larger significance level (e.g., 0.10) decreases the Type II error rate but increases the Type I error rate.</p>
 </details><p><br></p>
 </div>
 <div id="e-balancing-error-rates" class="section level3" number="20.4.5">
@@ -303,7 +303,7 @@ The sample mean difference is <span class="math inline">\(\bar{x}_{NM} - \bar{x}
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-04-23.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-04-24.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

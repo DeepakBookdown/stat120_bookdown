@@ -6,7 +6,7 @@ In a study, 30 participants were randomly assigned to engage in either aerobic e
 
 $$H_0: \mu_A-\mu_R=0 \quad\quad H_A: \mu_A-\mu_R \neq 0$$
 
-The sample mean difference is $\bar{x}_A - \bar{x}_R = 5$. We want to know if this difference in sample means is statistically significant.
+The sample mean difference is $\bar{x}_A - \bar{x}_R = 6.2$. We want to know if this difference in sample means is statistically significant.
 
 
 ### (a) Randomization Distribution
@@ -20,10 +20,10 @@ Describe how you could generate a randomization distribution for $\bar{x}_A - \b
 
 ### (b) Calculating the p-value
 
-Using a statistical software, generate a randomization distribution for the difference in means and calculate the p-value for the two-tailed test. Is the observed difference of 5 bpm statistically significant?
+Using a statistical software, generate a randomization distribution for the difference in means and calculate the p-value for the two-tailed test. Is the observed difference of 6.2 bpm statistically significant?
 
 <details><summary><red>Click for answer</red></summary>
-*Answer:* We can use the `permTest` function from the `CarletonStats` package to generate a randomization distribution for the difference in means and calculate the p-value for the two-tailed test. We can compare the p-value of $2e^{-4}$ to a chosen significance level (e.g., 0.05) to determine if the observed difference of 5 bpm is statistically significant. Since the p-value is less than the significance level, the observed difference is statistically significant.
+*Answer:* We can use the `permTest` function from the `CarletonStats` package to generate a randomization distribution for the difference in means and calculate the p-value for the two-tailed test. We can compare the p-value of $2e^{-4}$ to a chosen significance level (e.g., 0.05) to determine if the observed difference of 6.2 bpm is statistically significant. Since the p-value is less than the significance level, the observed difference is statistically significant.
 
 
 
@@ -45,8 +45,8 @@ permTest(Decrease_in_Resting_Heart_Rate~Group, data= exercise)
   Aerobic_Exercise :  9.2 	 Resistance_Training :  3 
  Observed difference: 6.2 
 
- Mean of permutation distribution: 0.01071 
- Standard error of permutation distribution: 1.18473 
+ Mean of permutation distribution: -0.00099 
+ Standard error of permutation distribution: 1.17849 
  P-value:  2e-04 
 
 	*-------------*
@@ -62,7 +62,7 @@ permTest(Decrease_in_Resting_Heart_Rate~Group, data= exercise)
 Interpret the p-value and state your conclusion regarding the difference in mean decrease in resting heart rate between aerobic exercise and resistance training.
 
 <details><summary><red>Click for answer</red></summary>
-*Answer:* Since the p-value is less than the significance level, it means that the observed difference of 5 bpm is highly unlikely to occur just by random chance under the null hypothesis. In this case, we would reject the null hypothesis and conclude that there is a statistically significant difference in the mean decrease in resting heart rate between aerobic exercise and resistance training.
+*Answer:* Since the p-value is less than the significance level, it means that the observed difference of 6.2 bpm is highly unlikely to occur just by random chance under the null hypothesis. In this case, we would reject the null hypothesis and conclude that there is a statistically significant difference in the mean decrease in resting heart rate between aerobic exercise and resistance training.
 
 </details><br>
 
@@ -84,7 +84,7 @@ Describe how you could generate a randomization distribution for $\hat{p}_{CCS} 
 
 (b) Calculating the p-value
 
-Using a statistical software, generate a randomization distribution for the difference in proportions and calculate the p-value for the two-tailed test. Is the observed difference of 0.12 statistically significant?
+Using a statistical software, generate a randomization distribution for the difference in proportions and calculate the p-value for the two-tailed test. Is the observed difference of 0.20 statistically significant?
 
 <details><summary><red>Click for answer</red></summary>
 *Answer:* Using *Statkey* to generate a randomization distribution for the difference in proportions and observing the p-value for the two-tailed test, we can compare the p-value to a chosen significance level (e.g., 0.05) to determine if the observed difference of 0.20 is statistically significant. If the p-value is less than the significance level, the observed difference is statistically significant; otherwise, it is not. The p-value based on this randomization distribution under null hypothesis is $2 \times 0.018 = 0.036$. So, the observed difference of 0.020 is statistically significant.
@@ -145,8 +145,8 @@ permTest(Math_Test_Score~Group, data= teaching)
   New_Method :  91.05 	 Traditional_Method :  82.15 
  Observed difference: 8.9 
 
- Mean of permutation distribution: -0.01422 
- Standard error of permutation distribution: 1.74138 
+ Mean of permutation distribution: 0.00919 
+ Standard error of permutation distribution: 1.75496 
  P-value:  2e-04 
 
 	*-------------*
@@ -203,8 +203,11 @@ List the factors that influence the probability of making a Type II error and br
 Answer: Factors that influence the probability of making a Type II error include:
 
 *Effect size:* The true difference between the new teaching method and the traditional method. A larger effect size makes it easier to detect a difference, reducing the Type II error rate.
+
 *Sample size:* The number of students involved in the study. A larger sample size increases the power of the test, making it more likely to detect a true difference and reducing the Type II error rate.
+
 *Variability:* The amount of variation in the students' learning outcomes. Higher variability makes it more difficult to detect a true difference, increasing the Type II error rate.
+
 *Significance level:* The chosen significance level (alpha) also affects the Type II error rate. A larger significance level (e.g., 0.10) decreases the Type II error rate but increases the Type I error rate.
 
 </details><br>
