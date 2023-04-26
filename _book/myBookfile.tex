@@ -139,7 +139,7 @@
 
 \title{Stat 120}
 \author{Deepak Bastola}
-\date{2023-04-24}
+\date{2023-04-26}
 
 \begin{document}
 \maketitle
@@ -1628,16 +1628,16 @@ Click for answer
 
 \begin{verbatim}
    ID Greeting  Male    Weight
-1   1    Hello  TRUE 234.06938
-2   2    Hello FALSE  76.77278
-3   3    Hello  TRUE 175.37014
-4   4    Hello FALSE 230.31631
-5   5    Hello  TRUE 123.05224
-6   6  Goodbye FALSE 148.75750
-7   7  Goodbye  TRUE 277.36397
-8   8  Goodbye FALSE 276.98638
-9   9  Goodbye  TRUE 224.06044
-10 10  Goodbye FALSE  83.04465
+1   1    Hello  TRUE  77.37820
+2   2    Hello FALSE  79.56290
+3   3    Hello  TRUE 205.28874
+4   4    Hello FALSE 152.58751
+5   5    Hello  TRUE 276.72296
+6   6  Goodbye FALSE 209.84224
+7   7  Goodbye  TRUE 127.60702
+8   8  Goodbye FALSE  56.25859
+9   9  Goodbye  TRUE 113.54569
+10 10  Goodbye FALSE 227.31659
 \end{verbatim}
 
 \emph{Answer:} We see a data frame with four columns, where the first column is an \texttt{identifier} for the cases. We have information on the greeting types, whether male or not, and weight on these cases in the remaining columns.
@@ -1818,7 +1818,7 @@ Run the following command to obtain a SRS of 10 words from the 268 that are in t
 \end{Shaded}
 
 \begin{verbatim}
- [1] 246 231 106 222 216  66  24 167 148 191
+ [1] 207 153  69 204 169 110  14 201 241 111
 \end{verbatim}
 
 This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
@@ -1834,17 +1834,17 @@ We will \emph{subset} the data set \texttt{pop} to obtain only the sampled rows 
 \end{Shaded}
 
 \begin{verbatim}
-    position size        word
-246      246    1           a
-231      231    5       these
-106      106    6      larger
-222      222    7     measure
-216      216    5       which
-66        66    4        have
-24        24   11 proposition
-167      167    6     rather,
-148      148    4        what
-191      191    2          us
+    position size      word
+207      207    4      dead
+153      153    2        it
+69        69    8  dedicate
+204      204    4      from
+169      169    2        be
+110      110    8 dedicate,
+14        14    1         a
+201      201    6    before
+241      241    6   nation,
+111      111    2        we
 \end{verbatim}
 
 \begin{enumerate}
@@ -1865,7 +1865,7 @@ The word lengths in part (b) are the data for your sample. You can compute your 
 \end{Shaded}
 
 \begin{verbatim}
- [1]  1  5  6  7  5  4 11  6  4  2
+ [1] 4 2 8 4 2 8 1 6 6 2
 \end{verbatim}
 
 Then find the mean of these values:
@@ -1877,7 +1877,7 @@ Then find the mean of these values:
 \end{Shaded}
 
 \begin{verbatim}
-[1] 5.1
+[1] 4.3
 \end{verbatim}
 
 How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?
@@ -3916,7 +3916,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
-[1] 20.611
+[1] 20.66967
 \end{verbatim}
 
 \begin{Shaded}
@@ -3949,7 +3949,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
-[1] 1.118537
+[1] 1.056699
 \end{verbatim}
 
 \hypertarget{example-3-simulation-of-a-sample-proportion}{%
@@ -4262,7 +4262,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
- [1] 125  52  87 147 132 185  72 125  93 125
+ [1]  72 147  23 125  85  23  72 132  72 132
 \end{verbatim}
 
 \hypertarget{d.-where-will-be-bootstrap-distribution-be-centered-what-shape-do-we-expect-it-to-have}{%
@@ -4516,12 +4516,12 @@ The \texttt{boot(y\ \textasciitilde{}\ x,\ data=)} command generates 10000 boots
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -2.26095 
- Mean of bootstrap distribution: -2.25854 
- Standard error of bootstrap distribution: 0.78756 
+ Mean of bootstrap distribution: -2.26989 
+ Standard error of bootstrap distribution: 0.77641 
 
  Bootstrap percentile interval
       2.5%      97.5% 
--3.7914286 -0.7128452 
+-3.7766905 -0.7551905 
 
         *--------------*
 \end{verbatim}
@@ -4774,12 +4774,12 @@ We can now use the 0/1 version of telephone in the \texttt{boot} command (like e
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -0.03905 
- Mean of bootstrap distribution: -0.03917 
- Standard error of bootstrap distribution: 0.03397 
+ Mean of bootstrap distribution: -0.03958 
+ Standard error of bootstrap distribution: 0.03341 
 
  Bootstrap percentile interval
        2.5%       97.5% 
--0.10619048  0.02714286 
+-0.10523810  0.02619048 
 
         *--------------*
 \end{verbatim}
@@ -5149,9 +5149,9 @@ Then load the \texttt{CarletonStats} package and run the \texttt{permTest(y\ \te
   Caffeine :  12.25      Sleep :  15.25 
  Observed difference: -3 
 
- Mean of permutation distribution: 0.01312 
- Standard error of permutation distribution: 1.50875 
- P-value:  0.048 
+ Mean of permutation distribution: -0.0221 
+ Standard error of permutation distribution: 1.49601 
+ P-value:  0.0482 
 
     *-------------*
 \end{verbatim}
@@ -5273,8 +5273,8 @@ Click for answer
   NonRes :  6405.263     Res :  2821.053 
  Observed difference  NonRes - Res : 3584.211 
 
- Mean of permutation distribution: -16.52113 
- Standard error of permutation distribution: 943.7455 
+ Mean of permutation distribution: -0.27108 
+ Standard error of permutation distribution: 942.4698 
  P-value:  1e-04 
 
     *-------------*
@@ -5352,8 +5352,8 @@ Click for answer
   Aerobic_Exercise :  9.2    Resistance_Training :  3 
  Observed difference: 6.2 
 
- Mean of permutation distribution: -0.00899 
- Standard error of permutation distribution: 1.18322 
+ Mean of permutation distribution: -0.00749 
+ Standard error of permutation distribution: 1.17385 
  P-value:  2e-04 
 
     *-------------*
@@ -5459,8 +5459,8 @@ Click for answer
   New_Method :  91.05    Traditional_Method :  82.15 
  Observed difference: 8.9 
 
- Mean of permutation distribution: -0.01264 
- Standard error of permutation distribution: 1.73605 
+ Mean of permutation distribution: 0.02647 
+ Standard error of permutation distribution: 1.73705 
  P-value:  2e-04 
 
     *-------------*
@@ -5532,6 +5532,463 @@ Discuss how the school administration could balance the Type I and Type II error
 Click for answer
 
 \emph{Answer:} Balancing the Type I and Type II error rates involves considering the consequences of each type of error and the desired level of confidence in the results. The administration should weigh the risks and benefits of adopting a new teaching method versus maintaining the traditional method. They should also consider factors such as the cost and feasibility of implementing the new method, as well as the potential impact on student learning outcomes. Ultimately, the administration should choose a significance level and sample size that balance the risks associated with Type I and Type II errors while taking into account practical constraints and priorities.
+
+\hypertarget{class-activity-14}{%
+\chapter{Class Activity 14}\label{class-activity-14}}
+
+\hypertarget{example-1-gender-stereotypes-in-children---study-4}{%
+\section{Example 1: Gender stereotypes in children - study 4}\label{example-1-gender-stereotypes-in-children---study-4}}
+
+The data for this example comes from study 4 described in this \emph{Science} article: \url{http://science.sciencemag.org/content/355/6323/389}. This study involved asking children their interest level in a game that researcher described as for ``children who are really, really smart.'' The higher the value of the variable \texttt{interest}, the more interested a child was in playing that game.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{study4 }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"http://math.carleton.edu/kstclair/data/Stereo4.csv"}\NormalTok{)}
+\FunctionTok{head}\NormalTok{(study4)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+    study subj gender   age    interest race     race2
+1 Study 4   65   girl age 6  0.37953534    5     white
+2 Study 4   66   girl age 6 -0.78071539    5     white
+3 Study 4   67   girl age 6 -0.47631654    5     white
+4 Study 4   68   girl age 6 -0.07234632    5     white
+5 Study 4   69    boy age 6 -0.70319450    6 non-white
+6 Study 4   70   girl age 6  0.52467564    5     white
+  eduave income        ses        age2
+1     16  90000 -0.1543908 age 6 and 7
+2     16 125000  0.2298424 age 6 and 7
+3     18  25000 -0.3446883 age 6 and 7
+4     17 125000  0.4914816 age 6 and 7
+5     19 125000  1.0147600 age 6 and 7
+6     12  65000 -1.4753998 age 6 and 7
+\end{verbatim}
+
+\hypertarget{a-interest-in-5-year-olds---test}{%
+\subsubsection{(a) Interest in 5 year olds - test}\label{a-interest-in-5-year-olds---test}}
+
+Recall the comparison of mean interest level in 5 year old boys and girls. Generate the randomization distribution for this test:
+\[
+H_0: \mu_{B5} - \mu_{G5} = 0 \ \ H_0: \mu_{B5} - \mu_{G5} \neq 0
+\]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(dplyr)}
+\NormalTok{study4age5 }\OtherTok{\textless{}{-}} \FunctionTok{filter}\NormalTok{(study4, age2 }\SpecialCharTok{==} \StringTok{"age 5"}\NormalTok{)}
+\FunctionTok{boxplot}\NormalTok{(interest }\SpecialCharTok{\textasciitilde{}}\NormalTok{ gender, }\AttributeTok{data=}\NormalTok{study4age5)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_14_files/figure-latex/unnamed-chunk-2-1}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(CarletonStats)}
+\FunctionTok{permTest}\NormalTok{(interest }\SpecialCharTok{\textasciitilde{}}\NormalTok{ gender, }\AttributeTok{data =}\NormalTok{ study4age5)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_14_files/figure-latex/unnamed-chunk-2-2}
+
+\begin{verbatim}
+
+    ** Permutation test **
+
+ Permutation test with alternative: two.sided 
+ Observed statistic
+  boy :  -0.10435    girl :  0.02906 
+ Observed difference: -0.13341 
+
+ Mean of permutation distribution: 0.00108 
+ Standard error of permutation distribution: 0.26324 
+ P-value:  0.6154 
+
+    *-------------*
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  What is the SE of this randomization distribution?
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} SE is about 0.26.
+
+\begin{itemize}
+\tightlist
+\item
+  What is the z-score for the observed difference in means using this distribution? Interpret the value.
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} The distribution has a center of 0 and SE of 0.26. The z-score is
+\[
+z = \dfrac{-0.13341 - 0}{0.26051} = -0.51
+\]
+This means the observed difference of -0.133 is about 0.51 SEs below the hypothesized difference of 0.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\SpecialCharTok{{-}}\FloatTok{0.13341}\SpecialCharTok{/}\FloatTok{0.26051} 
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] -0.5121109
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  How large or small would the observed difference in sample means need to be to reject the null hypothesis using a 5\% significance level.
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} Since the distribution is bell-shaped, we can use the fact that about 5\% of sample differences are further than 2 SE's above/below the center difference of 0. Any sample difference this extreme will lead to a two-sided p-value that is less than the significance level of 5\%. For this data, 2 SE's is a sample difference of 0.521 so any observed difference that is more extreme than 0.521 would lead to rejecting the null hypothesis of no difference.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{2}\SpecialCharTok{*}\FloatTok{0.26051} 
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.52102
+\end{verbatim}
+
+\hypertarget{b-interest-in-5-year-olds---ci}{%
+\subsubsection{(b) Interest in 5 year olds - CI}\label{b-interest-in-5-year-olds---ci}}
+
+Consider the 95\% (bootstrap) CI for the true difference in mean interest \(\mu_{B5} - \mu_{G5}\).
+
+\begin{itemize}
+\tightlist
+\item
+  Will this interval contain the difference of 0?
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} Yes, since we didn't reject the null difference of 0 using a 5\% significance level (p-value = 0.617).
+
+\begin{itemize}
+\tightlist
+\item
+  Compute the bootstrap distribution. Does the CI capture 0?
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{7}\NormalTok{)}
+\FunctionTok{boot}\NormalTok{(interest }\SpecialCharTok{\textasciitilde{}}\NormalTok{ gender, }\AttributeTok{data =}\NormalTok{ study4age5)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+    ** Bootstrap interval for difference of statistic
+
+ Observed difference of statistic:  boy - girl =  -0.13341 
+ Mean of bootstrap distribution: -0.13776 
+ Standard error of bootstrap distribution: 0.25939 
+
+ Bootstrap percentile interval
+      2.5%      97.5% 
+-0.6459180  0.3652884 
+
+        *--------------*
+\end{verbatim}
+
+\includegraphics[width=1\linewidth]{Class_Activity_14_files/figure-latex/unnamed-chunk-5-1}
+
+Click for answer
+
+\emph{Answer:} Yes, the CI captures the difference of 0.
+
+\begin{itemize}
+\tightlist
+\item
+  What is the bootstrap SE? Is it similar to the randomization distribution SE?
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} SE is about 0.26, which is very similar to the randomization distribution SE.
+
+\hypertarget{c-interest-in-6-and-7-year-olds---test}{%
+\subsubsection{(c) Interest in 6 and 7 year olds - test}\label{c-interest-in-6-and-7-year-olds---test}}
+
+Redo part (a) for the age group \texttt{age\ 6\ and\ 7}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{study4age67 }\OtherTok{\textless{}{-}} \FunctionTok{filter}\NormalTok{(study4, age2 }\SpecialCharTok{==} \StringTok{"age 6 and 7"}\NormalTok{)}
+\FunctionTok{boxplot}\NormalTok{(interest }\SpecialCharTok{\textasciitilde{}}\NormalTok{ gender, }\AttributeTok{data=}\NormalTok{study4age67)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_14_files/figure-latex/unnamed-chunk-6-1}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{permTest}\NormalTok{(interest }\SpecialCharTok{\textasciitilde{}}\NormalTok{ gender, }\AttributeTok{data =}\NormalTok{ study4age67)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_14_files/figure-latex/unnamed-chunk-6-2}
+
+\begin{verbatim}
+
+    ** Permutation test **
+
+ Permutation test with alternative: two.sided 
+ Observed statistic
+  boy :  0.21635     girl :  -0.31869 
+ Observed difference: 0.53505 
+
+ Mean of permutation distribution: -0.00312 
+ Standard error of permutation distribution: 0.22035 
+ P-value:  0.0114 
+
+    *-------------*
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  What is the SE of this randomization distribution?
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} SE is about 0.225.
+
+\begin{itemize}
+\tightlist
+\item
+  What is the z-score for the observed difference in means using this distribution? Interpret the value.
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} The distribution has a center of 0 and SE of 0.225. The z-score is
+\[
+z = \dfrac{0.53505 - 0}{0.22539 } = 2.37
+\]
+This means the observed difference of 0.535 is about 2.37 SEs above the hypothesized difference of 0.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FloatTok{0.53505}\SpecialCharTok{/}\FloatTok{0.22539} 
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 2.373885
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  How large or small would the observed difference in sample means need to be to reject the null hypothesis using a 5\% significance level.
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} Since the distribution is bell-shaped, we can use the fact that about 5\% of sample differences are further than 2 SE's above/below the center difference of 0. Any sample difference this extreme will lead to a two-sided p-value that is less than the significance level of 5\%. For this data, 2 SE's is a sample difference of 0.451 so any observed difference that is more extreme than 0.451 would lead to rejecting the null hypothesis of no difference.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{2}\SpecialCharTok{*}\FloatTok{0.22539} 
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.45078
+\end{verbatim}
+
+\hypertarget{d-interest-in-6-and-7-year-olds---ci}{%
+\subsubsection{(d) Interest in 6 and 7 year olds - CI}\label{d-interest-in-6-and-7-year-olds---ci}}
+
+Redo part (b) for 6 and 7 year olds.
+
+\begin{itemize}
+\tightlist
+\item
+  Will this interval contain the difference of 0?
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} No, since we rejected the null difference of 0 using a 5\% significance level (p-value = 0.015).
+
+\begin{itemize}
+\tightlist
+\item
+  Compute the bootstrap distribution. Does the CI capture 0?
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boot}\NormalTok{(interest }\SpecialCharTok{\textasciitilde{}}\NormalTok{ gender, }\AttributeTok{data =}\NormalTok{ study4age67)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+    ** Bootstrap interval for difference of statistic
+
+ Observed difference of statistic:  boy - girl =  0.53505 
+ Mean of bootstrap distribution: 0.53468 
+ Standard error of bootstrap distribution: 0.20659 
+
+ Bootstrap percentile interval
+     2.5%     97.5% 
+0.1259895 0.9348764 
+
+        *--------------*
+\end{verbatim}
+
+\includegraphics[width=1\linewidth]{Class_Activity_14_files/figure-latex/unnamed-chunk-9-1}
+
+Click for answer
+
+\emph{Answer:} No, the CI does not capture the difference of 0.
+
+\begin{itemize}
+\tightlist
+\item
+  What is the bootstrap SE? Is it similar to the randomization distribution SE?
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} SE is about 0.21, which is very similar to the randomization distribution SE.
+
+\hypertarget{e-interest-in-5-year-olds}{%
+\subsubsection{(e) Interest in 5 year olds}\label{e-interest-in-5-year-olds}}
+
+Redo the randomization test and bootstrap CI for 5 year olds, but this time omit the outlier boy case that has a very low interest level. Recall how to use the \texttt{which} command:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(interest }\SpecialCharTok{\textasciitilde{}}\NormalTok{ gender, }\AttributeTok{data=}\NormalTok{study4age5)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_14_files/figure-latex/unnamed-chunk-10-1}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{which}\NormalTok{(study4age5}\SpecialCharTok{$}\NormalTok{interest }\SpecialCharTok{\textless{}} \SpecialCharTok{{-}}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 39
+\end{verbatim}
+
+Then to omit this case, add the argument \texttt{subset\ =\ -39} to the \texttt{permTest} and \texttt{boot} commands used in (a) and (b).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{7}\NormalTok{)}
+\FunctionTok{permTest}\NormalTok{(interest }\SpecialCharTok{\textasciitilde{}}\NormalTok{ gender, }\AttributeTok{data =}\NormalTok{ study4age5, }\AttributeTok{subset =} \SpecialCharTok{{-}}\DecValTok{39}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_14_files/figure-latex/unnamed-chunk-11-1}
+
+\begin{verbatim}
+
+    ** Permutation test **
+
+ Permutation test with alternative: two.sided 
+ Observed statistic
+  boy :  0.01417     girl :  0.02906 
+ Observed difference: -0.01488 
+
+ Mean of permutation distribution: -0.00265 
+ Standard error of permutation distribution: 0.2469 
+ P-value:  0.957 
+
+    *-------------*
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boot}\NormalTok{(interest }\SpecialCharTok{\textasciitilde{}}\NormalTok{ gender, }\AttributeTok{data =}\NormalTok{ study4age5, }\AttributeTok{subset =} \SpecialCharTok{{-}}\DecValTok{39}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+    ** Bootstrap interval for difference of statistic
+
+ Observed difference of statistic:  boy - girl =  -0.01488 
+ Mean of bootstrap distribution: -0.01565 
+ Standard error of bootstrap distribution: 0.23826 
+
+ Bootstrap percentile interval
+      2.5%      97.5% 
+-0.4751690  0.4520149 
+
+        *--------------*
+\end{verbatim}
+
+\includegraphics[width=1\linewidth]{Class_Activity_14_files/figure-latex/unnamed-chunk-11-2}
+
+\begin{itemize}
+\tightlist
+\item
+  Does the observed difference get closer or further from 0 with the case omitted? Explain why it changes.
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} The very low case pulls down the mean response for boys (with: \(\bar{x}_{B5} = -0.10435\), without: \(\bar{x}_{B5} = 0.01417\)). Since the girl mean response doesn't change (\(\bar{x}_{G5} = 0.02906\)), omitting this case will make the \emph{two means closer together} which makes their difference closer to 0 (with: \(\bar{x}_{B5} - \bar{x}_{G5} = -0.13341\), without: \(\bar{x}_{B5} - \bar{x}_{G5} = -0.01488\)).
+
+\begin{itemize}
+\tightlist
+\item
+  Do the SEs of the distributions (bootstrap and randomization) get smaller or larger with the case omitted? Explain why these change.
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} The very low case creates larger variability in the sample mean for boys, which in turn makes the SE for the sample mean difference more variable (with: SE about 0.26, without: SE about 0.24).
+
+\begin{itemize}
+\tightlist
+\item
+  Compute the z-score for the observed difference in means using randomization distribution. Is this value futher or closer to a z-score of 0 with the case omitted? Explain why it changes.
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} The z-score is closer to 0 with the case removed (with: \(z = -0.51\), without: \(z = -0.061\))
+\[
+z = \dfrac{-0.01488  - 0}{0.24569} = -0.061
+\]
+The z-score is closer to 0 because the sample mean difference is closer to 0 with the case removed, and this change is greater than the relatively small decrease in SE that we noted with the case removed.
+
+\vspace*{.5in}
+
+\begin{itemize}
+\tightlist
+\item
+  Does the p-value get smaller or larger (or doesn't change) with the case omitted? Explain why it changes.
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} The p-value is larger with the case removed (with: p-value = 0.617, without: p-value = 0.944). This is because the observed difference is closer to 0 (fewer SE away) with the case omitted.
 
   \bibliography{book.bib,packages.bib}
 

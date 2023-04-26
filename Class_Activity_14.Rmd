@@ -11,6 +11,7 @@ head(study4)
 
 
 #### (a) Interest in 5 year olds - test
+
 Recall the comparison of mean interest level in 5 year old boys and girls. Generate the randomization distribution for this test: 
 $$
 H_0: \mu_{B5} - \mu_{G5} = 0 \ \ H_0: \mu_{B5} - \mu_{G5} \neq 0
@@ -25,12 +26,13 @@ permTest(interest ~ gender, data = study4age5)
 ```
 
 - What is the SE of this randomization distribution?
+
 <details><summary><red>Click for answer</red></summary>
 *Answer:* SE is about 0.26. 
 </details><br>
 
 - What is the z-score for the observed difference in means using this distribution? Interpret the value. 
-\vspace*{.5in}
+
 <details><summary><red>Click for answer</red></summary>
 *Answer:* The distribution has a center of 0 and SE of 0.26. The z-score is 
 $$
@@ -41,23 +43,27 @@ This means the observed difference of -0.133 is about 0.51 SEs below the hypothe
 ```{r}
 -0.13341/0.26051 
 ```
+
 </details><br>
 
 - How large or small would the observed difference in sample means need to be to reject the null hypothesis using a 5% significance level. 
+
 <details><summary><red>Click for answer</red></summary>
 *Answer:* Since the distribution is bell-shaped, we can use the fact that about 5% of sample differences are further than 2 SE's above/below the center difference of 0. Any sample difference this extreme will lead to a two-sided p-value that is less than the significance level of 5%. For this data, 2 SE's is a sample difference of 0.521 so any observed difference that is more extreme than 0.521 would lead to rejecting the null hypothesis of no difference. 
 
 ```{r}
 2*0.26051 
 ```
+
+
 </details><br>
-\vspace*{.5in}
 
 
 #### (b) Interest in 5 year olds - CI
 Consider the 95% (bootstrap) CI for the true difference in mean interest $\mu_{B5} - \mu_{G5}$. 
 
 - Will this interval contain the difference of 0?
+
 <details><summary><red>Click for answer</red></summary>
 *Answer:* Yes, since we didn't reject the null difference of 0 using a 5% significance level (p-value = 0.617).
 </details><br>
@@ -68,29 +74,20 @@ Consider the 95% (bootstrap) CI for the true difference in mean interest $\mu_{B
 set.seed(7)
 boot(interest ~ gender, data = study4age5)
 ```
+
 <details><summary><red>Click for answer</red></summary>
 *Answer:* Yes, the CI captures the difference of 0. 
 </details><br>
+
 - What is the bootstrap SE? Is it similar to the randomization distribution SE?
-\vspace*{.5in}
+
 <details><summary><red>Click for answer</red></summary>
 *Answer:* SE is about 0.26, which is very similar to the randomization distribution SE.
-
 </details><br>
-- Sketch out both the bootstrap and randomization distributions. Make sure to accurately represent the center and variation of these distributions. 
 
-
-```{r}
-curve(dnorm(x,0,.26),from=-1,to=1, ylab="",xlab="sample mean differences")
-abline(v=0, lty=3)
-curve(dnorm(x,-0.133,.26),from=-1,to=1, add=T, col="red")
-abline(v=-0.133, col="red", lty=3)
-legend("topleft", col=c("black","red"), legend=c("Randomization","Bootstrap"), lty=1)
-```
-
-\vspace*{1in}
 
 #### (c) Interest in 6 and 7 year olds - test
+
 Redo part (a) for the age group `age 6 and 7`. 
 
 ```{r}
@@ -100,14 +97,15 @@ permTest(interest ~ gender, data = study4age67)
 ```
 
 - What is the SE of this randomization distribution?
+
 <details><summary><red>Click for answer</red></summary>
 *Answer:* SE is about 0.225. 
 
 </details><br>
-\vspace*{.5in}
+
 
 - What is the z-score for the observed difference in means using this distribution? Interpret the value. 
-\vspace*{.5in}
+
 <details><summary><red>Click for answer</red></summary>
 *Answer:* The distribution has a center of 0 and SE of 0.225. The z-score is 
 $$
@@ -118,57 +116,52 @@ This means the observed difference of 0.535 is about 2.37 SEs above the hypothes
 ```{r}
 0.53505/0.22539 
 ```
+
 </details><br>
+
 - How large or small would the observed difference in sample means need to be to reject the null hypothesis using a 5% significance level. 
+
 <details><summary><red>Click for answer</red></summary>
 *Answer:* Since the distribution is bell-shaped, we can use the fact that about 5% of sample differences are further than 2 SE's above/below the center difference of 0. Any sample difference this extreme will lead to a two-sided p-value that is less than the significance level of 5%. For this data, 2 SE's is a sample difference of 0.451 so any observed difference that is more extreme than 0.451 would lead to rejecting the null hypothesis of no difference. 
 
 ```{r}
 2*0.22539 
 ```
+
 </details><br>
-\vspace*{.5in}
+
 
 #### (d) Interest in 6 and 7 year olds - CI
+
 Redo part (b) for 6 and 7 year olds. 
 
 - Will this interval contain the difference of 0?
+
 <details><summary><red>Click for answer</red></summary>
 *Answer:* No, since we rejected the null difference of 0 using a 5% significance level (p-value = 0.015).
 </details><br>
-\vspace*{.5in}
+
 
 - Compute the bootstrap distribution. Does the CI capture 0?
+
 ```{r}
 boot(interest ~ gender, data = study4age67)
 ```
+
 <details><summary><red>Click for answer</red></summary>
 *Answer:* No, the CI does not capture the difference of 0. 
 </details><br>
 
-\vspace*{.5in}
-
 
 - What is the bootstrap SE? Is it similar to the randomization distribution SE?
+
 <details><summary><red>Click for answer</red></summary>
 *Answer:* SE is about 0.21, which is very similar to the randomization distribution SE.
 </details><br>
-\vspace*{.5in}
 
-- Sketch out both the bootstrap and randomization distributions. Make sure to accurately represent the center and variation of these distributions. 
-
-
-```{r}
-curve(dnorm(x,0,.22),from=-.7,to=1.4, ylab="",xlab="sample mean differences")
-abline(v=0, lty=3)
-curve(dnorm(x,0.535,.21),from=-1,to=1.4, add=T, col="red")
-abline(v=0.535, col="red", lty=3)
-legend("topleft", col=c("black","red"), legend=c("Randomization","Bootstrap"), lty=1)
-```
-
-\vspace*{1in}
 
 #### (e) Interest in 5 year olds
+
 Redo the randomization test and bootstrap CI for 5 year olds, but this time omit the outlier boy case that has a very low interest level. Recall how to use the `which` command:
 
 ```{r}
@@ -186,17 +179,17 @@ boot(interest ~ gender, data = study4age5, subset = -39)
 ```
 
 - Does the observed difference get closer or further from 0 with the case omitted? Explain why it changes.
+
 <details><summary><red>Click for answer</red></summary>
 *Answer:* The very low case pulls down the mean response for boys (with: $\bar{x}_{B5} = -0.10435$, without: $\bar{x}_{B5} = 0.01417$). Since the girl mean response doesn't change ($\bar{x}_{G5} = 0.02906$), omitting this case will make the *two means closer together* which makes their difference closer to 0 (with: $\bar{x}_{B5} - \bar{x}_{G5} = -0.13341$, without: $\bar{x}_{B5}  - \bar{x}_{G5} = -0.01488$).
 </details><br>
-\vspace*{.5in}
 
 - Do the SEs of the distributions (bootstrap and randomization) get smaller or larger with the case omitted? Explain why these change. 
+
 <details><summary><red>Click for answer</red></summary>
 *Answer:* The very low case creates larger variability in the sample mean for boys, which in turn makes the SE for the sample mean difference more variable  (with: SE about 0.26, without: SE about 0.24). 
 </details><br>
 
-\vspace*{.5in}
 
 - Compute the z-score for the observed difference in means using randomization distribution. Is this value futher or closer to a z-score of 0 with the case omitted? Explain why it changes. 
 
@@ -212,6 +205,7 @@ The z-score is closer to 0 because the sample mean difference is closer to 0 wit
 \vspace*{.5in}
 
 - Does the p-value get smaller or larger (or doesn't change) with the case omitted? Explain why it changes. 
+
 <details><summary><red>Click for answer</red></summary>
 *Answer:* The p-value is larger with the case removed (with: p-value = 0.617, without: p-value = 0.944). This is because the observed difference is closer to 0 (fewer SE away) with the case omitted. 
 </details><br>
