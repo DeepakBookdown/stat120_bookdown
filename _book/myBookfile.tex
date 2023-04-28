@@ -139,7 +139,7 @@
 
 \title{Stat 120}
 \author{Deepak Bastola}
-\date{2023-04-26}
+\date{2023-04-27}
 
 \begin{document}
 \maketitle
@@ -1628,16 +1628,16 @@ Click for answer
 
 \begin{verbatim}
    ID Greeting  Male    Weight
-1   1    Hello  TRUE  77.37820
-2   2    Hello FALSE  79.56290
-3   3    Hello  TRUE 205.28874
-4   4    Hello FALSE 152.58751
-5   5    Hello  TRUE 276.72296
-6   6  Goodbye FALSE 209.84224
-7   7  Goodbye  TRUE 127.60702
-8   8  Goodbye FALSE  56.25859
-9   9  Goodbye  TRUE 113.54569
-10 10  Goodbye FALSE 227.31659
+1   1    Hello  TRUE  70.34084
+2   2    Hello FALSE 266.02999
+3   3    Hello  TRUE 212.73377
+4   4    Hello FALSE  91.78466
+5   5    Hello  TRUE 138.87224
+6   6  Goodbye FALSE  74.06920
+7   7  Goodbye  TRUE 102.34032
+8   8  Goodbye FALSE 156.79817
+9   9  Goodbye  TRUE 152.41217
+10 10  Goodbye FALSE 152.00503
 \end{verbatim}
 
 \emph{Answer:} We see a data frame with four columns, where the first column is an \texttt{identifier} for the cases. We have information on the greeting types, whether male or not, and weight on these cases in the remaining columns.
@@ -1818,7 +1818,7 @@ Run the following command to obtain a SRS of 10 words from the 268 that are in t
 \end{Shaded}
 
 \begin{verbatim}
- [1] 207 153  69 204 169 110  14 201 241 111
+ [1]  44  50 252  24  58  18 254  74 230  87
 \end{verbatim}
 
 This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
@@ -1834,17 +1834,17 @@ We will \emph{subset} the data set \texttt{pop} to obtain only the sampled rows 
 \end{Shaded}
 
 \begin{verbatim}
-    position size      word
-207      207    4      dead
-153      153    2        it
-69        69    8  dedicate
-204      204    4      from
-169      169    2        be
-110      110    8 dedicate,
-14        14    1         a
-201      201    6    before
-241      241    6   nation,
-111      111    2        we
+    position size        word
+44        44    2          or
+50        50    2          so
+252      252    4        that
+24        24   11 proposition
+58        58    2          on
+18        18    2          in
+254      254    2          of
+74        74    5       field
+230      230    4        that
+87        87    4        that
 \end{verbatim}
 
 \begin{enumerate}
@@ -1865,7 +1865,7 @@ The word lengths in part (b) are the data for your sample. You can compute your 
 \end{Shaded}
 
 \begin{verbatim}
- [1] 4 2 8 4 2 8 1 6 6 2
+ [1]  2  2  4 11  2  2  2  5  4  4
 \end{verbatim}
 
 Then find the mean of these values:
@@ -1877,7 +1877,7 @@ Then find the mean of these values:
 \end{Shaded}
 
 \begin{verbatim}
-[1] 4.3
+[1] 3.8
 \end{verbatim}
 
 How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?
@@ -3916,7 +3916,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
-[1] 20.66967
+[1] 20.56533
 \end{verbatim}
 
 \begin{Shaded}
@@ -3949,7 +3949,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
-[1] 1.056699
+[1] 1.047448
 \end{verbatim}
 
 \hypertarget{example-3-simulation-of-a-sample-proportion}{%
@@ -4262,7 +4262,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
- [1]  72 147  23 125  85  23  72 132  72 132
+ [1]  93 132  52  85  93  72  52 132  72 185
 \end{verbatim}
 
 \hypertarget{d.-where-will-be-bootstrap-distribution-be-centered-what-shape-do-we-expect-it-to-have}{%
@@ -4516,12 +4516,12 @@ The \texttt{boot(y\ \textasciitilde{}\ x,\ data=)} command generates 10000 boots
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -2.26095 
- Mean of bootstrap distribution: -2.26989 
- Standard error of bootstrap distribution: 0.77641 
+ Mean of bootstrap distribution: -2.27758 
+ Standard error of bootstrap distribution: 0.78552 
 
  Bootstrap percentile interval
       2.5%      97.5% 
--3.7766905 -0.7551905 
+-3.8125238 -0.7237976 
 
         *--------------*
 \end{verbatim}
@@ -4774,12 +4774,12 @@ We can now use the 0/1 version of telephone in the \texttt{boot} command (like e
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -0.03905 
- Mean of bootstrap distribution: -0.03958 
- Standard error of bootstrap distribution: 0.03341 
+ Mean of bootstrap distribution: -0.03883 
+ Standard error of bootstrap distribution: 0.03363 
 
  Bootstrap percentile interval
        2.5%       97.5% 
--0.10523810  0.02619048 
+-0.10380952  0.02666667 
 
         *--------------*
 \end{verbatim}
@@ -5149,9 +5149,9 @@ Then load the \texttt{CarletonStats} package and run the \texttt{permTest(y\ \te
   Caffeine :  12.25      Sleep :  15.25 
  Observed difference: -3 
 
- Mean of permutation distribution: -0.0221 
- Standard error of permutation distribution: 1.49601 
- P-value:  0.0482 
+ Mean of permutation distribution: -0.0103 
+ Standard error of permutation distribution: 1.49779 
+ P-value:  0.0506 
 
     *-------------*
 \end{verbatim}
@@ -5273,8 +5273,8 @@ Click for answer
   NonRes :  6405.263     Res :  2821.053 
  Observed difference  NonRes - Res : 3584.211 
 
- Mean of permutation distribution: -0.27108 
- Standard error of permutation distribution: 942.4698 
+ Mean of permutation distribution: 5.64741 
+ Standard error of permutation distribution: 944.1367 
  P-value:  1e-04 
 
     *-------------*
@@ -5352,8 +5352,8 @@ Click for answer
   Aerobic_Exercise :  9.2    Resistance_Training :  3 
  Observed difference: 6.2 
 
- Mean of permutation distribution: -0.00749 
- Standard error of permutation distribution: 1.17385 
+ Mean of permutation distribution: -0.00759 
+ Standard error of permutation distribution: 1.18941 
  P-value:  2e-04 
 
     *-------------*
@@ -5459,8 +5459,8 @@ Click for answer
   New_Method :  91.05    Traditional_Method :  82.15 
  Observed difference: 8.9 
 
- Mean of permutation distribution: 0.02647 
- Standard error of permutation distribution: 1.73705 
+ Mean of permutation distribution: -0.01302 
+ Standard error of permutation distribution: 1.73941 
  P-value:  2e-04 
 
     *-------------*
@@ -5601,9 +5601,9 @@ H_0: \mu_{B5} - \mu_{G5} = 0 \ \ H_0: \mu_{B5} - \mu_{G5} \neq 0
   boy :  -0.10435    girl :  0.02906 
  Observed difference: -0.13341 
 
- Mean of permutation distribution: 0.00108 
- Standard error of permutation distribution: 0.26324 
- P-value:  0.6154 
+ Mean of permutation distribution: -0.00319 
+ Standard error of permutation distribution: 0.26354 
+ P-value:  0.6162 
 
     *-------------*
 \end{verbatim}
@@ -5989,6 +5989,226 @@ The z-score is closer to 0 because the sample mean difference is closer to 0 wit
 Click for answer
 
 \emph{Answer:} The p-value is larger with the case removed (with: p-value = 0.617, without: p-value = 0.944). This is because the observed difference is closer to 0 (fewer SE away) with the case omitted.
+
+\hypertarget{class-activity-15}{%
+\chapter{Class Activity 15}\label{class-activity-15}}
+
+\hypertarget{example-1-sat-verbal-scores}{%
+\section{Example 1: SAT Verbal scores}\label{example-1-sat-verbal-scores}}
+
+Suppose that the verbal SAT scores in a population are normally distributed with a mean \(\mu=580\) and standard deviation \(\sigma = 70\). If \(X\) is shorthand for a verbal SAT score, then we can write this as \(X \sim N(580,70)\).
+
+\hypertarget{a-what-proportion-of-scores-are-above-650}{%
+\subsubsection{(a) What proportion of scores are above 650?}\label{a-what-proportion-of-scores-are-above-650}}
+
+Click for answer
+
+\emph{Answer:} About 15.9\% of the scores are above 650.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pnorm}\NormalTok{(}\DecValTok{650}\NormalTok{,}\AttributeTok{mean=}\DecValTok{580}\NormalTok{,}\AttributeTok{sd=}\DecValTok{70}\NormalTok{) }\CommentTok{\# proportion below}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.8413447
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1}\SpecialCharTok{{-}}\FunctionTok{pnorm}\NormalTok{(}\DecValTok{650}\NormalTok{,}\AttributeTok{mean=}\DecValTok{580}\NormalTok{,}\AttributeTok{sd=}\DecValTok{70}\NormalTok{) }\CommentTok{\# proportion above}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.1586553
+\end{verbatim}
+
+\hypertarget{b-what-is-the-25th-percentile-q1}{%
+\subsubsection{(b) What is the 25th percentile (Q1)?}\label{b-what-is-the-25th-percentile-q1}}
+
+Click for answer
+
+\emph{Answer:} The score of about 533 is the 25th percentile, meaning 25\% of the scores are below this value.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{qnorm}\NormalTok{(.}\DecValTok{25}\NormalTok{,}\AttributeTok{mean=}\DecValTok{580}\NormalTok{,}\AttributeTok{sd=}\DecValTok{70}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 532.7857
+\end{verbatim}
+
+\hypertarget{c-what-is-the-iqr-for-verbal-sat-scores-in-this-population-hint-find-q1-and-q3}{%
+\subsubsection{(c) What is the IQR for verbal SAT scores in this population? (Hint: find Q1 and Q3)}\label{c-what-is-the-iqr-for-verbal-sat-scores-in-this-population-hint-find-q1-and-q3}}
+
+Click for answer
+
+\emph{Answer:} The 25th percentile (Q1) is 533 and the 75th percentile (Q3) is 627. The IQR for this normally distributed variable is about 94 points.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{q1 }\OtherTok{\textless{}{-}} \FunctionTok{qnorm}\NormalTok{(.}\DecValTok{25}\NormalTok{,}\AttributeTok{mean=}\DecValTok{580}\NormalTok{,}\AttributeTok{sd=}\DecValTok{70}\NormalTok{);q1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 532.7857
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{q3 }\OtherTok{\textless{}{-}} \FunctionTok{qnorm}\NormalTok{(.}\DecValTok{75}\NormalTok{,}\AttributeTok{mean=}\DecValTok{580}\NormalTok{,}\AttributeTok{sd=}\DecValTok{70}\NormalTok{);q3}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 627.2143
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{q3}\SpecialCharTok{{-}}\NormalTok{q1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 94.42857
+\end{verbatim}
+
+\hypertarget{d-what-score-high-or-low-will-be-deemed-an-outlier-according-the-boxplot-rules-for-outliers}{%
+\subsubsection{(d) What score, high or low, will be deemed an outlier according the boxplot rules for outliers?}\label{d-what-score-high-or-low-will-be-deemed-an-outlier-according-the-boxplot-rules-for-outliers}}
+
+Click for answer
+
+\emph{Answer:} Using the 1.5IQR's boxplot rule gives a lower fence of 392 and an upper fence of 768. So any score below 392 and above 768 will be called an outlier according to this rule.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FloatTok{1.5}\SpecialCharTok{*}\DecValTok{94}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 141
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{q1 }\SpecialCharTok{{-}} \FloatTok{1.5}\SpecialCharTok{*}\DecValTok{94}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 391.7857
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{q3 }\SpecialCharTok{+} \FloatTok{1.5}\SpecialCharTok{*}\DecValTok{94}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 768.2143
+\end{verbatim}
+
+\hypertarget{e-what-percent-of-the-population-will-be-deemed-an-outlier}{%
+\subsubsection{(e) What percent of the population will be deemed an outlier?}\label{e-what-percent-of-the-population-will-be-deemed-an-outlier}}
+
+Click for answer
+
+\emph{Answer:} We need to find the proportion of scores below 392 and above 768. With this symmetric distribution, we find about 0.004 in both tails. About 0.8\% of the population will be deemed outliers according to the boxplot rule.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pnorm}\NormalTok{(}\DecValTok{392}\NormalTok{,}\AttributeTok{mean=}\DecValTok{580}\NormalTok{,}\AttributeTok{sd=}\DecValTok{70}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.003618747
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1}\SpecialCharTok{{-}}\FunctionTok{pnorm}\NormalTok{(}\DecValTok{768}\NormalTok{,}\AttributeTok{mean=}\DecValTok{580}\NormalTok{,}\AttributeTok{sd=}\DecValTok{70}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.003618747
+\end{verbatim}
+
+\hypertarget{example-2-standard-normal}{%
+\section{Example 2: Standard Normal}\label{example-2-standard-normal}}
+
+The standard normal distribution has a mean of 0 and standard deviation of 1.
+
+\hypertarget{a-what-percent-of-sat-scores-are-at-least-1-standard-deviation-above-average}{%
+\subsubsection{(a) What percent of SAT scores are at least 1 standard deviation above average?}\label{a-what-percent-of-sat-scores-are-at-least-1-standard-deviation-above-average}}
+
+\hfill\break
+
+Click for answer
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pnorm}\NormalTok{(}\DecValTok{1}\NormalTok{)  }\CommentTok{\# proportion below}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.8413447
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1}\SpecialCharTok{{-}}\FunctionTok{pnorm}\NormalTok{(}\DecValTok{1}\NormalTok{) }\CommentTok{\# proportion above}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.1586553
+\end{verbatim}
+
+\emph{Answer:} About 16\% of scores will be at least 1 standard deviation above average. (Note that the score of 580+70 = 650 is 1 standard deviation above average.)
+
+\hypertarget{b-how-many-standard-deviations-away-from-average-is-the-25th-percentile-of-sat-scores}{%
+\subsubsection{(b) How many standard deviations away from average is the 25th percentile of SAT scores?}\label{b-how-many-standard-deviations-away-from-average-is-the-25th-percentile-of-sat-scores}}
+
+Click for answer
+
+\emph{Answer:} The 25th percentile of SAT scores (or any normally distributed values) is 0.67 standard deviations below average. We could also find this value using our answer to (1b):
+
+\hfill\break
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{qnorm}\NormalTok{(.}\DecValTok{25}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] -0.6744898
+\end{verbatim}
+
+\[
+z = \dfrac{533 - 580}{70} = -0.67
+\]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\DecValTok{533} \SpecialCharTok{{-}} \DecValTok{580}\NormalTok{)}\SpecialCharTok{/}\DecValTok{70}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] -0.6714286
+\end{verbatim}
 
   \bibliography{book.bib,packages.bib}
 

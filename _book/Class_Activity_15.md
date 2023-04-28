@@ -104,6 +104,7 @@ q3 + 1.5*94
 ```
 [1] 768.2143
 ```
+
 </details><br>
 
 #### (e) What percent of the population will be deemed an outlier?
