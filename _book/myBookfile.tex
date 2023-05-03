@@ -139,7 +139,7 @@
 
 \title{Stat 120}
 \author{Deepak Bastola}
-\date{2023-04-27}
+\date{2023-05-02}
 
 \begin{document}
 \maketitle
@@ -1628,16 +1628,16 @@ Click for answer
 
 \begin{verbatim}
    ID Greeting  Male    Weight
-1   1    Hello  TRUE  70.34084
-2   2    Hello FALSE 266.02999
-3   3    Hello  TRUE 212.73377
-4   4    Hello FALSE  91.78466
-5   5    Hello  TRUE 138.87224
-6   6  Goodbye FALSE  74.06920
-7   7  Goodbye  TRUE 102.34032
-8   8  Goodbye FALSE 156.79817
-9   9  Goodbye  TRUE 152.41217
-10 10  Goodbye FALSE 152.00503
+1   1    Hello  TRUE 167.17241
+2   2    Hello FALSE  69.09571
+3   3    Hello  TRUE 232.60843
+4   4    Hello FALSE 252.24382
+5   5    Hello  TRUE 232.42839
+6   6  Goodbye FALSE 274.97212
+7   7  Goodbye  TRUE 132.45121
+8   8  Goodbye FALSE 260.37355
+9   9  Goodbye  TRUE 259.36460
+10 10  Goodbye FALSE 131.85474
 \end{verbatim}
 
 \emph{Answer:} We see a data frame with four columns, where the first column is an \texttt{identifier} for the cases. We have information on the greeting types, whether male or not, and weight on these cases in the remaining columns.
@@ -1818,7 +1818,7 @@ Run the following command to obtain a SRS of 10 words from the 268 that are in t
 \end{Shaded}
 
 \begin{verbatim}
- [1]  44  50 252  24  58  18 254  74 230  87
+ [1]  29  47 166 212 139 204  92 219 192 181
 \end{verbatim}
 
 This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
@@ -1834,17 +1834,17 @@ We will \emph{subset} the data set \texttt{pop} to obtain only the sampled rows 
 \end{Shaded}
 
 \begin{verbatim}
-    position size        word
-44        44    2          or
-50        50    2          so
-252      252    4        that
-24        24   11 proposition
-58        58    2          on
-18        18    2          in
-254      254    2          of
-74        74    5       field
-230      230    4        that
-87        87    4        that
+    position size     word
+29        29    7  created
+47        47    2       so
+166      166    6  living,
+212      212    2       to
+139      139    7 detract.
+204      204    4     from
+92        92    2       It
+219      219    3      the
+192      192    2       to
+181      181    4     have
 \end{verbatim}
 
 \begin{enumerate}
@@ -1865,7 +1865,7 @@ The word lengths in part (b) are the data for your sample. You can compute your 
 \end{Shaded}
 
 \begin{verbatim}
- [1]  2  2  4 11  2  2  2  5  4  4
+ [1] 7 2 6 2 7 4 2 3 2 4
 \end{verbatim}
 
 Then find the mean of these values:
@@ -1877,7 +1877,7 @@ Then find the mean of these values:
 \end{Shaded}
 
 \begin{verbatim}
-[1] 3.8
+[1] 3.9
 \end{verbatim}
 
 How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?
@@ -3916,7 +3916,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
-[1] 20.56533
+[1] 20.654
 \end{verbatim}
 
 \begin{Shaded}
@@ -3949,7 +3949,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
-[1] 1.047448
+[1] 1.105116
 \end{verbatim}
 
 \hypertarget{example-3-simulation-of-a-sample-proportion}{%
@@ -4262,7 +4262,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
- [1]  93 132  52  85  93  72  52 132  72 185
+ [1] 125 185 125  72 125 132  72  85 132 147
 \end{verbatim}
 
 \hypertarget{d.-where-will-be-bootstrap-distribution-be-centered-what-shape-do-we-expect-it-to-have}{%
@@ -4516,12 +4516,12 @@ The \texttt{boot(y\ \textasciitilde{}\ x,\ data=)} command generates 10000 boots
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -2.26095 
- Mean of bootstrap distribution: -2.27758 
- Standard error of bootstrap distribution: 0.78552 
+ Mean of bootstrap distribution: -2.26656 
+ Standard error of bootstrap distribution: 0.76861 
 
  Bootstrap percentile interval
       2.5%      97.5% 
--3.8125238 -0.7237976 
+-3.7838452 -0.7304048 
 
         *--------------*
 \end{verbatim}
@@ -4774,12 +4774,12 @@ We can now use the 0/1 version of telephone in the \texttt{boot} command (like e
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -0.03905 
- Mean of bootstrap distribution: -0.03883 
- Standard error of bootstrap distribution: 0.03363 
+ Mean of bootstrap distribution: -0.03877 
+ Standard error of bootstrap distribution: 0.0334 
 
  Bootstrap percentile interval
        2.5%       97.5% 
--0.10380952  0.02666667 
+-0.10523810  0.02619048 
 
         *--------------*
 \end{verbatim}
@@ -5149,9 +5149,9 @@ Then load the \texttt{CarletonStats} package and run the \texttt{permTest(y\ \te
   Caffeine :  12.25      Sleep :  15.25 
  Observed difference: -3 
 
- Mean of permutation distribution: -0.0103 
- Standard error of permutation distribution: 1.49779 
- P-value:  0.0506 
+ Mean of permutation distribution: -0.01028 
+ Standard error of permutation distribution: 1.50062 
+ P-value:  0.0442 
 
     *-------------*
 \end{verbatim}
@@ -5273,8 +5273,8 @@ Click for answer
   NonRes :  6405.263     Res :  2821.053 
  Observed difference  NonRes - Res : 3584.211 
 
- Mean of permutation distribution: 5.64741 
- Standard error of permutation distribution: 944.1367 
+ Mean of permutation distribution: -12.52599 
+ Standard error of permutation distribution: 948.1537 
  P-value:  1e-04 
 
     *-------------*
@@ -5352,8 +5352,8 @@ Click for answer
   Aerobic_Exercise :  9.2    Resistance_Training :  3 
  Observed difference: 6.2 
 
- Mean of permutation distribution: -0.00759 
- Standard error of permutation distribution: 1.18941 
+ Mean of permutation distribution: 0.0031 
+ Standard error of permutation distribution: 1.16907 
  P-value:  2e-04 
 
     *-------------*
@@ -5459,8 +5459,8 @@ Click for answer
   New_Method :  91.05    Traditional_Method :  82.15 
  Observed difference: 8.9 
 
- Mean of permutation distribution: -0.01302 
- Standard error of permutation distribution: 1.73941 
+ Mean of permutation distribution: -0.00089 
+ Standard error of permutation distribution: 1.74063 
  P-value:  2e-04 
 
     *-------------*
@@ -5601,9 +5601,9 @@ H_0: \mu_{B5} - \mu_{G5} = 0 \ \ H_0: \mu_{B5} - \mu_{G5} \neq 0
   boy :  -0.10435    girl :  0.02906 
  Observed difference: -0.13341 
 
- Mean of permutation distribution: -0.00319 
- Standard error of permutation distribution: 0.26354 
- P-value:  0.6162 
+ Mean of permutation distribution: -0.00246 
+ Standard error of permutation distribution: 0.26254 
+ P-value:  0.622 
 
     *-------------*
 \end{verbatim}
@@ -6209,6 +6209,202 @@ z = \dfrac{533 - 580}{70} = -0.67
 \begin{verbatim}
 [1] -0.6714286
 \end{verbatim}
+
+\hypertarget{class-activity-16}{%
+\chapter{Class Activity 16}\label{class-activity-16}}
+
+\hypertarget{example-1-is-divorce-morally-acceptable}{%
+\section{Example 1: Is Divorce Morally Acceptable?}\label{example-1-is-divorce-morally-acceptable}}
+
+In a study, we find that 67\% of women in a random sample view divorce as morally acceptable. Does this provide evidence that more than 50\% of women view divorce as morally acceptable? The standard error for the estimate assuming the null hypothesis is true is 0.021.
+
+\hypertarget{a-what-are-the-null-and-alternative-hypotheses-for-this-test}{%
+\subsubsection{(a) What are the null and alternative hypotheses for this test?}\label{a-what-are-the-null-and-alternative-hypotheses-for-this-test}}
+
+Click for answer
+
+\emph{Answer:} If \(p\) denotes the proportion of woman who view divorce as morally acceptable in the population, then our hypotheses are
+\[
+H_0: p = 0.5 \ \ H_A: p > 0.5
+\]
+
+\hypertarget{b-what-is-the-standardized-test-statistic}{%
+\subsubsection{(b) What is the standardized test statistic?}\label{b-what-is-the-standardized-test-statistic}}
+
+Click for answer
+
+\emph{Answer:} The observed sample proportion is 0.67 with a standard error of 0.021. If the null is true, then we would expect the sampling distribution of the sample mean to be (approximately) normally distributed with a center of 0.50 and SE of 0.021. The standardized score for the sample proportion is then
+\[
+z = \dfrac{\textrm{statistic} - \textrm{null parameter}}{SE} = \dfrac{0.67 - 0.50}{0.021} = 8.10
+\]
+The observed proportion is 8.1 SEs above the hypothesized value of 0.5.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\FloatTok{0.67} \SpecialCharTok{{-}} \FloatTok{0.5}\NormalTok{)}\SpecialCharTok{/}\FloatTok{0.021}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 8.095238
+\end{verbatim}
+
+Note that the randomization distribution should look roughly like this (with the observed proportion denoted with a red X):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{curve}\NormalTok{(}\FunctionTok{dnorm}\NormalTok{(x,}\FloatTok{0.5}\NormalTok{,.}\DecValTok{021}\NormalTok{),}\AttributeTok{from=}\NormalTok{.}\DecValTok{3}\NormalTok{,}\AttributeTok{to=}\NormalTok{.}\DecValTok{7}\NormalTok{,}\AttributeTok{xlab=}\StringTok{"sample proportions"}\NormalTok{)}
+\FunctionTok{points}\NormalTok{(}\FloatTok{0.67}\NormalTok{,}\DecValTok{0}\NormalTok{,}\AttributeTok{pch=}\StringTok{"X"}\NormalTok{,}\AttributeTok{col=}\StringTok{"red"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_16_files/figure-latex/unnamed-chunk-2-1}
+
+\hypertarget{c-use-the-normal-distribution-to-find-the-p-value.}{%
+\subsubsection{(c) Use the normal distribution to find the p-value.}\label{c-use-the-normal-distribution-to-find-the-p-value.}}
+
+Click for answer
+
+\emph{Answer:} As we can see in the normal plot above, the p-value will be very small because the alternative is looking for big sample proportions. The p-value is the proportion of times we get a sample proportion as big, or bigger than, 0.67; or equivantly, the proportion of times we get a sample proportion that is at least 8.1 SEs above the hypothesized proportion. We would report a p-value that is less than 0.0001.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1}\SpecialCharTok{{-}}\FunctionTok{pnorm}\NormalTok{(}\FloatTok{8.10}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 2.220446e-16
+\end{verbatim}
+
+\hypertarget{d-what-is-the-conclusion-of-the-test}{%
+\subsubsection{(d) What is the conclusion of the test?}\label{d-what-is-the-conclusion-of-the-test}}
+
+Click for answer
+
+\emph{Answer:} The p-value is very small so we have very strong evidence that more than 50\% of all women view divorce as morally acceptable.
+
+\hypertarget{e-use-the-normal-distribution-to-find-a-99-confidence-interval-for-the-proportion-of-all-women-who-view-divorce-as-morally-acceptable.-interpret-your-answer.}{%
+\subsubsection{(e) Use the normal distribution to find a 99\% confidence interval for the proportion of all women who view divorce as morally acceptable. Interpret your answer.}\label{e-use-the-normal-distribution-to-find-a-99-confidence-interval-for-the-proportion-of-all-women-who-view-divorce-as-morally-acceptable.-interpret-your-answer.}}
+
+Click for answer
+
+\emph{Answer:} Without knowing the bootstrap SE, our best guess at it would be from the randomization distribution SE which is given as 0.021. Our 99\% confidence interval will look like:
+\[
+statistic \pm z^*SE = 0.67 \pm z^* (0.021) 
+\]
+The \(z^*\) for a 99\% CI corresponds to the 99.5th percentile (90\% in middle + 0.5\% in the left tail). With \(z^* = 2.576\), we get a 99\% confidence interval of 0.616 to 0.724.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{qnorm}\NormalTok{(}\FloatTok{0.995}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 2.575829
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FloatTok{0.67} \SpecialCharTok{{-}} \FloatTok{2.576}\SpecialCharTok{*}\FloatTok{0.021}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.615904
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FloatTok{0.67} \SpecialCharTok{+} \FloatTok{2.576}\SpecialCharTok{*}\FloatTok{0.021}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.724096
+\end{verbatim}
+
+\hypertarget{example-2-do-men-and-women-differ-in-opinions-about-divorce}{%
+\section{Example 2: Do Men and Women Differ in Opinions about Divorce?}\label{example-2-do-men-and-women-differ-in-opinions-about-divorce}}
+
+In the same study described above, we find that 71\% of men view divorce as morally acceptable. Use this and the information in the previous example to test whether there is a significant difference between men and women in how they view divorce. The standard error for the difference in proportions under the null hypothesis that the proportions are equal is 0.029.
+
+\hypertarget{a-what-are-the-null-and-alternative-hypotheses-for-this-test-1}{%
+\subsubsection{(a) What are the null and alternative hypotheses for this test?}\label{a-what-are-the-null-and-alternative-hypotheses-for-this-test-1}}
+
+Click for answer
+
+\emph{Answer:} Using the same notation as (3a), except denoting male/female populations, we get
+
+\[
+H_0: p_f = p_m \ \ H_A: p_f \neq p_m
+\]
+
+\hypertarget{b-what-is-the-standardized-test-statistic-1}{%
+\subsubsection{(b) What is the standardized test statistic?}\label{b-what-is-the-standardized-test-statistic-1}}
+
+Click for answer
+
+\emph{Answer:} Suppose we look at the difference \(p_m - p_f\). The observed difference is then 0.04 (0.71 - 0.67). This value is about 1.4 SEs above the hypothesized difference of 0:
+\[
+z = \dfrac{\textrm{statistic} - \textrm{null parameter}}{SE} = \dfrac{(0.71 - 0.67) - 0}{0.029} = 1.379
+\]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\FloatTok{0.04} \SpecialCharTok{{-}} \DecValTok{0}\NormalTok{)}\SpecialCharTok{/}\FloatTok{0.029}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 1.37931
+\end{verbatim}
+
+Note that the randomization distribution for the difference in sample proportions should look roughly like this (with the observed proportion difference denoted with a red X):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{curve}\NormalTok{(}\FunctionTok{dnorm}\NormalTok{(x,}\DecValTok{0}\NormalTok{,.}\DecValTok{029}\NormalTok{),}\AttributeTok{from=}\SpecialCharTok{{-}}\NormalTok{.}\DecValTok{1}\NormalTok{,}\AttributeTok{to=}\NormalTok{.}\DecValTok{1}\NormalTok{,}\AttributeTok{xlab=}\StringTok{"sample proportions"}\NormalTok{)}
+\FunctionTok{points}\NormalTok{(}\FloatTok{0.04}\NormalTok{,}\DecValTok{0}\NormalTok{,}\AttributeTok{pch=}\StringTok{"X"}\NormalTok{,}\AttributeTok{col=}\StringTok{"red"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_16_files/figure-latex/unnamed-chunk-6-1}
+
+\hypertarget{c-use-the-normal-distribution-to-find-the-p-value.-1}{%
+\subsubsection{(c) Use the normal distribution to find the p-value.}\label{c-use-the-normal-distribution-to-find-the-p-value.-1}}
+
+Click for answer
+
+\emph{Answer:} This is a two-tail test. Since the observed difference is less than 2 SEs away from 0 we know that the (two-tailed) p-value should be bigger than 0.05. We see that the p-value is 2(0.084) = 0.168.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1}\SpecialCharTok{{-}}\FunctionTok{pnorm}\NormalTok{(}\FloatTok{1.379}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{) }\CommentTok{\# proportion above z=1.379}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.08394738
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{2}\SpecialCharTok{*}\NormalTok{(}\DecValTok{1}\SpecialCharTok{{-}}\FunctionTok{pnorm}\NormalTok{(}\FloatTok{1.379}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{)) }\CommentTok{\# p{-}value for two{-}sided}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.1678948
+\end{verbatim}
+
+\hypertarget{d-what-is-the-conclusion-of-the-test-1}{%
+\subsubsection{(d) What is the conclusion of the test?}\label{d-what-is-the-conclusion-of-the-test-1}}
+
+Click for answer
+
+\emph{Answer:} The p-value is larger than a 5\% significance level, so we do not find evidence of a difference between men and women in the proportion that view divorce as morally acceptable. About 17\% of the time we would observe a difference in male/female views of 4 percentage points or greater just by chance.
 
   \bibliography{book.bib,packages.bib}
 
