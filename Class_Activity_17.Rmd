@@ -1,27 +1,14 @@
 # Class Activity 17
 
 
-## Example 1: Is the Economy a Top Priority? 
-
-A survey of 1,502 Americans in January 2012 found that 86% consider the economy a “top priority” for the president and congress.  In the section 3.2 handout, we gave the standard error for this sample proportion as 0.01, then this SE was used to compute a confidence interval. Show how this SE was computed using the appropriate SE formula from chapter 6. 
-
-
-<details><summary><red>Click for answer</red></summary>
-
-*Answer:* We have a sample proportion of $\hat{p}= 0.86$. The SE of the sample proportion for a confidence interval is given by:
-
-$$S E=\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}=\sqrt{\frac{0.86(1-0.86)}{1502}}=0.0089 \approx 0.01$$
-</details><br>
-
-
-## Example 2:  Movie Goers are More Likely to Watch at Home
+## Example 1:  Movie Goers are More Likely to Watch at Home
 
 In a random sample of 500 movie goers in January 2013, 320 of them said they are more likely to wait and watch a new movie in the comfort of their own home.  Compute and interpret a 95% confidence interval for the proportion of movie goers who are more likely to watch a new movie from home.  
 
 <details><summary><red>Click for answer</red></summary>
 *Answer:* We see that $\hat{p}=\frac{320}{500}=0.640$ (keep at least 3 decimal spots to ensure accuracy in your SE calculation!) The confidence interval is given by:
 
-$$\text { Statistic }+/-Z^{*} S E$$
+$$\text { Statistic }\pm z^{*} S E$$
 
 $$\begin{array}{l}
 \hat{p} \pm z^{*} \cdot \sqrt{\frac{\hat{p}(1-\hat{p})}{n}} \\
@@ -34,7 +21,7 @@ $$\begin{array}{l}
 </details><br>
 
 
-## Example 3:  Sample Size and Margin of Error for Movie Goers
+## Example 2:  Sample Size and Margin of Error for Movie Goers
 
 (a)  What sample size is needed in example 2 if we want a margin of error within ±2%?  (Use the sample proportion from the original sample.)
 
@@ -65,7 +52,7 @@ We need a sample size of at least n = 2,401 to have a margin of error this small
 
 
 
-## Example 4:  Mendel’s green peas?
+## Example 3:  Mendel’s green peas?
 
 One of Gregor Mendel’s famous genetic experiments dealt with raising pea plants.  According to Mendel’s genetic theory, under a certain set of conditions the proportion of pea plants that produce smooth green peas should be p=3/16 (0.1875).  A sample of n=556 plants from the experiment had 108 with smooth green peas.  Does this provide evidence of a problem with Mendel’s theory and that the proportion is different from 3/16?  Show all details of the test. 
 
