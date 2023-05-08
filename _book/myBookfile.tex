@@ -139,7 +139,7 @@
 
 \title{Stat 120}
 \author{Deepak Bastola}
-\date{2023-05-05}
+\date{2023-05-07}
 
 \begin{document}
 \maketitle
@@ -1628,16 +1628,16 @@ Click for answer
 
 \begin{verbatim}
    ID Greeting  Male   Weight
-1   1    Hello  TRUE 298.9525
-2   2    Hello FALSE 261.7059
-3   3    Hello  TRUE 104.4244
-4   4    Hello FALSE 139.2508
-5   5    Hello  TRUE 219.6861
-6   6  Goodbye FALSE 194.6124
-7   7  Goodbye  TRUE 185.7253
-8   8  Goodbye FALSE 269.2538
-9   9  Goodbye  TRUE 173.4756
-10 10  Goodbye FALSE 147.7246
+1   1    Hello  TRUE 222.4245
+2   2    Hello FALSE 168.6841
+3   3    Hello  TRUE 102.5703
+4   4    Hello FALSE 295.0161
+5   5    Hello  TRUE 218.7870
+6   6  Goodbye FALSE 117.8464
+7   7  Goodbye  TRUE 142.8414
+8   8  Goodbye FALSE 213.5513
+9   9  Goodbye  TRUE 287.9225
+10 10  Goodbye FALSE 141.4181
 \end{verbatim}
 
 \emph{Answer:} We see a data frame with four columns, where the first column is an \texttt{identifier} for the cases. We have information on the greeting types, whether male or not, and weight on these cases in the remaining columns.
@@ -1818,7 +1818,7 @@ Run the following command to obtain a SRS of 10 words from the 268 that are in t
 \end{Shaded}
 
 \begin{verbatim}
- [1]  87  30 213 237 163 175  18 178 108 211
+ [1]  63 119  69 245 250   3 228 195 111  84
 \end{verbatim}
 
 This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
@@ -1834,17 +1834,17 @@ We will \emph{subset} the data set \texttt{pop} to obtain only the sampled rows 
 \end{Shaded}
 
 \begin{verbatim}
-    position size     word
-87        87    4     that
-30        30    5   equal.
-213      213    4     that
-237      237    2       in
-163      163    3      for
-175      175    4     work
-18        18    2       in
-178      178    3      who
-108      108    2       we
-211      211    8 devotion
+    position size      word
+63        63    4      that
+119      119    3       The
+69        69    8  dedicate
+245      245    4      have
+250      250    7  freedom,
+3          3    3       and
+228      228    6    highly
+195      195    9 dedicated
+111      111    2        we
+84        84    4      gave
 \end{verbatim}
 
 \begin{enumerate}
@@ -1865,7 +1865,7 @@ The word lengths in part (b) are the data for your sample. You can compute your 
 \end{Shaded}
 
 \begin{verbatim}
- [1] 4 5 4 2 3 4 2 3 2 8
+ [1] 4 3 8 4 7 3 6 9 2 4
 \end{verbatim}
 
 Then find the mean of these values:
@@ -1877,7 +1877,7 @@ Then find the mean of these values:
 \end{Shaded}
 
 \begin{verbatim}
-[1] 3.7
+[1] 5
 \end{verbatim}
 
 How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?
@@ -3916,7 +3916,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
-[1] 20.63233
+[1] 20.63567
 \end{verbatim}
 
 \begin{Shaded}
@@ -3949,7 +3949,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
-[1] 1.061664
+[1] 1.108551
 \end{verbatim}
 
 \hypertarget{example-3-simulation-of-a-sample-proportion}{%
@@ -4262,7 +4262,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
- [1]  72  23  52  72 125  85  85 125 185 185
+ [1]  52  93  85 185  23 185  52 132 132 147
 \end{verbatim}
 
 \hypertarget{d.-where-will-be-bootstrap-distribution-be-centered-what-shape-do-we-expect-it-to-have}{%
@@ -4516,12 +4516,12 @@ The \texttt{boot(y\ \textasciitilde{}\ x,\ data=)} command generates 10000 boots
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -2.26095 
- Mean of bootstrap distribution: -2.26278 
- Standard error of bootstrap distribution: 0.77647 
+ Mean of bootstrap distribution: -2.26126 
+ Standard error of bootstrap distribution: 0.76866 
 
  Bootstrap percentile interval
       2.5%      97.5% 
--3.7862024 -0.7513095 
+-3.7424167 -0.7323452 
 
         *--------------*
 \end{verbatim}
@@ -4774,12 +4774,12 @@ We can now use the 0/1 version of telephone in the \texttt{boot} command (like e
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -0.03905 
- Mean of bootstrap distribution: -0.03867 
- Standard error of bootstrap distribution: 0.03359 
+ Mean of bootstrap distribution: -0.03929 
+ Standard error of bootstrap distribution: 0.03371 
 
  Bootstrap percentile interval
        2.5%       97.5% 
--0.10428571  0.02761905 
+-0.10476190  0.02761905 
 
         *--------------*
 \end{verbatim}
@@ -5149,9 +5149,9 @@ Then load the \texttt{CarletonStats} package and run the \texttt{permTest(y\ \te
   Caffeine :  12.25      Sleep :  15.25 
  Observed difference: -3 
 
- Mean of permutation distribution: 0.01672 
- Standard error of permutation distribution: 1.49645 
- P-value:  0.0486 
+ Mean of permutation distribution: 0.0442 
+ Standard error of permutation distribution: 1.50626 
+ P-value:  0.0484 
 
     *-------------*
 \end{verbatim}
@@ -5273,8 +5273,8 @@ Click for answer
   NonRes :  6405.263     Res :  2821.053 
  Observed difference  NonRes - Res : 3584.211 
 
- Mean of permutation distribution: 10.57106 
- Standard error of permutation distribution: 942.668 
+ Mean of permutation distribution: -12.92813 
+ Standard error of permutation distribution: 948.0746 
  P-value:  1e-04 
 
     *-------------*
@@ -5352,8 +5352,8 @@ Click for answer
   Aerobic_Exercise :  9.2    Resistance_Training :  3 
  Observed difference: 6.2 
 
- Mean of permutation distribution: -0.01269 
- Standard error of permutation distribution: 1.17355 
+ Mean of permutation distribution: -0.00187 
+ Standard error of permutation distribution: 1.16244 
  P-value:  2e-04 
 
     *-------------*
@@ -5459,8 +5459,8 @@ Click for answer
   New_Method :  91.05    Traditional_Method :  82.15 
  Observed difference: 8.9 
 
- Mean of permutation distribution: -0.02709 
- Standard error of permutation distribution: 1.75987 
+ Mean of permutation distribution: 0.00054 
+ Standard error of permutation distribution: 1.73408 
  P-value:  2e-04 
 
     *-------------*
@@ -5601,9 +5601,9 @@ H_0: \mu_{B5} - \mu_{G5} = 0 \ \ H_0: \mu_{B5} - \mu_{G5} \neq 0
   boy :  -0.10435    girl :  0.02906 
  Observed difference: -0.13341 
 
- Mean of permutation distribution: -0.00282 
- Standard error of permutation distribution: 0.2638 
- P-value:  0.616 
+ Mean of permutation distribution: -0.00642 
+ Standard error of permutation distribution: 0.25982 
+ P-value:  0.633 
 
     *-------------*
 \end{verbatim}
@@ -6480,6 +6480,176 @@ Click for answer
 This is a two-tail test, and we see that the area to the right of 0.405 in a normal distribution is 0.343 \texttt{(1-pnorm(0.405))}, so the p-value is 2(0.343) = 0.686.The R command is: \texttt{2*(1-pnorm(0.405))}
 
 We do not reject H0 and conclude that this sample does not provide evidence that the proportion of smooth green pea plants is different from the 3/16 that Mendel's theory predicts. (It is worth pointing out that this does not ``prove'' Mendel's theory, since we don't ``accept'' \(H_0\)-- we just find a lack of sufficient evidence to refute it. )
+
+\hypertarget{class-activity-18}{%
+\chapter{Class Activity 18}\label{class-activity-18}}
+
+\hypertarget{example-1-change-in-gun-ownership}{%
+\section{Example 1: Change in gun ownership}\label{example-1-change-in-gun-ownership}}
+
+A 2016 study described in The Guardian found that a random sample of US adults in 1994 found a female rate of gun ownership of 9\%. A similar random sample in 2015 found the rate of female gun ownership rose to 12\%. In the section 3.2 handout, we assumed that the SE for the difference in these two sample proportions is 2\%. Show how this SE was computed using the appropriate SE formula from chapter 6. Assume that the sample sizes in both 1994 and 2015 were 500.
+
+Click for answer
+
+\emph{Answer:}
+We have a 1994 sample proportion of \(\hat{p}_{1994} = 0.09\) and a 2015 sample proportion of \(\hat{p}_{2015} = 0.12\) . The SE of the difference in two sample proportions for a confidence interval is given by:
+
+\[SE = \sqrt{\frac{\hat{p}_{1994} (1 - \hat{p}_{1994} )}{n_{1994}} + \frac{\hat{p}_{2015} (1 - \hat{p}_{2015} )}{n_{2015}}} = 0.0194 \approx 0.02 \]
+
+\hypertarget{example-2-accuracy-of-lie-detectors}{%
+\section{Example 2: Accuracy of Lie Detectors}\label{example-2-accuracy-of-lie-detectors}}
+
+Participants in a study to evaluate the accuracy of lie detectors were divided into two groups, with one group reading true material and the other group reading false material, while connected to a lie detector. Both groups received electric shocks to add stress. The two way table indicates whether the participants were lying or telling the truth and also whether the lie detector indicated they were lying or not.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2459}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3279}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3115}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1148}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+~
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Detector Says Lying
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Detector Says Not
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Total
+\end{minipage} \\
+\midrule()
+\endhead
+Person Lying & 31 & 17 & 48 \\
+Person Not & 27 & 21 & 48 \\
+Total & 58 & 38 & 96 \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{a-are-the-conditions-met-for-using-the-normal-distribution}{%
+\subsection{(a) Are the conditions met for using the normal distribution?}\label{a-are-the-conditions-met-for-using-the-normal-distribution}}
+
+Click for answer
+
+\emph{Answer:} Yes (all cell counts at least 10)
+
+\hypertarget{b-find-the-three-sample-proportions-for-the-proportion-of-times-the-lie-detector-says-the-person-is-lying-the-proportion-for-the-lying-people-the-proportion-for-the-truthful-people-and-the-pooled-proportion.}{%
+\subsection{(b) Find the three sample proportions for the proportion of times the lie detector says the person is lying (the proportion for the lying people, the proportion for the truthful people, and the pooled proportion).}\label{b-find-the-three-sample-proportions-for-the-proportion-of-times-the-lie-detector-says-the-person-is-lying-the-proportion-for-the-lying-people-the-proportion-for-the-truthful-people-and-the-pooled-proportion.}}
+
+Click for answer
+
+\emph{Answer:} We see that the proportion for the lying people is \(\hat{p}_L = \frac{31}{48}= 0.6458\), the proportion for the not lying people is \(\hat{p}_N = 0.5625\) , and the pooled proportion for all 96 people is \(\hat{p} = \frac{58}{96}= 0.6042\).
+
+\hypertarget{c-test-to-see-if-there-is-a-difference-in-the-proportion-of-times-the-lie-detector-says-the-person-is-lying-depending-on-whether-the-person-is-lying-or-telling-the-truth.-show-all-details-of-the-hypothesis-test.}{%
+\subsection{(c) Test to see if there is a difference in the proportion of times the lie detector says the person is lying, depending on whether the person is lying or telling the truth. Show all details of the hypothesis test.}\label{c-test-to-see-if-there-is-a-difference-in-the-proportion-of-times-the-lie-detector-says-the-person-is-lying-depending-on-whether-the-person-is-lying-or-telling-the-truth.-show-all-details-of-the-hypothesis-test.}}
+
+Click for answer
+
+\emph{Answer:}
+
+We are testing \(H_0:p_L = p_N\) vs \(H_a:p_L \neq p_N\). The test statistic is
+
+\[z = \frac{statistic-null}{SE} = \frac{(\hat{p}_L - \hat{p}_N) - 0}{\sqrt{\frac{\hat{p}(1-\hat{p})}{n_l} + \frac{\hat{p}(1-\hat{p})}{n_N}}} = \frac{0.6458 - 0.5625}{\sqrt{\frac{0.6042(1-0.6042)}{48}} + \frac{0.6042*(1-0.6042)}{48}} = 0.834 \]
+
+This is a two-tail test, and the area to the right of 0.834 in a normal distribution is 0.202 (1-pnorm(0.834)), so the p-value is 2(0.202) = 0.404. The R command is: 2*(1-pnorm(0.834))
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pL\_hat }\OtherTok{=} \DecValTok{31}\SpecialCharTok{/}\DecValTok{48}
+\NormalTok{pN\_hat }\OtherTok{=} \DecValTok{27}\SpecialCharTok{/}\DecValTok{48}
+\NormalTok{pooled\_p }\OtherTok{=} \DecValTok{58}\SpecialCharTok{/}\DecValTok{96}
+\NormalTok{nL }\OtherTok{=} \DecValTok{48}
+\NormalTok{nN }\OtherTok{=} \DecValTok{48}
+\NormalTok{SE }\OtherTok{=} \FunctionTok{sqrt}\NormalTok{(pooled\_p}\SpecialCharTok{*}\NormalTok{(}\DecValTok{1}\SpecialCharTok{{-}}\NormalTok{pooled\_p)}\SpecialCharTok{*}\NormalTok{(}\DecValTok{1}\SpecialCharTok{/}\NormalTok{nL }\SpecialCharTok{+} \DecValTok{1}\SpecialCharTok{/}\NormalTok{nN))}
+\NormalTok{z }\OtherTok{=}\NormalTok{ (pL\_hat }\SpecialCharTok{{-}}\NormalTok{ pN\_hat) }\SpecialCharTok{/}\NormalTok{ SE}
+\NormalTok{p\_value }\OtherTok{=} \DecValTok{2}\SpecialCharTok{*}\NormalTok{(}\DecValTok{1}\SpecialCharTok{{-}}\FunctionTok{pnorm}\NormalTok{(z))}
+\NormalTok{p\_value}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.4038223
+\end{verbatim}
+
+We fail to reject H0 and conclude that there is not enough evidence that a lie detector can tell whether a person is lying or telling the truth.
+
+\hypertarget{d-calculate-a-95-confidence-interval-for-the-difference-in-proportions-of-people-correctly-identified-by-the-lie-detector.}{%
+\subsection{(d) Calculate a 95\% confidence interval for the difference in proportions of people correctly identified by the lie detector.}\label{d-calculate-a-95-confidence-interval-for-the-difference-in-proportions-of-people-correctly-identified-by-the-lie-detector.}}
+
+Click for answer
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{conf\_level }\OtherTok{=} \FloatTok{0.95}
+\NormalTok{z\_star }\OtherTok{=} \FunctionTok{qnorm}\NormalTok{(}\DecValTok{1}\SpecialCharTok{{-}}\NormalTok{(}\DecValTok{1}\SpecialCharTok{{-}}\NormalTok{conf\_level)}\SpecialCharTok{/}\DecValTok{2}\NormalTok{)}
+\NormalTok{margin\_of\_error }\OtherTok{=}\NormalTok{ z\_star }\SpecialCharTok{*}\NormalTok{ SE}
+\NormalTok{CI\_lower }\OtherTok{=}\NormalTok{ (pL\_hat }\SpecialCharTok{{-}}\NormalTok{ pN\_hat) }\SpecialCharTok{{-}}\NormalTok{ margin\_of\_error}
+\NormalTok{CI\_upper }\OtherTok{=}\NormalTok{ (pL\_hat }\SpecialCharTok{{-}}\NormalTok{ pN\_hat) }\SpecialCharTok{+}\NormalTok{ margin\_of\_error}
+\NormalTok{CI }\OtherTok{=} \FunctionTok{c}\NormalTok{(CI\_lower, CI\_upper)}
+\NormalTok{CI}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] -0.1123154  0.2789821
+\end{verbatim}
+
+The 95\% confidence interval for the difference in proportions is (-0.299, 0.207). Since, the confidence interval includes the null hypothesized value of 0, we do not reject the null hypothesis, and conclude that there is not enough evidence that a lie detector can tell whether a person is lying or telling the truth.
+
+\hypertarget{example-3-smoking-and-pregnancy-rate}{%
+\section{Example 3: Smoking and Pregnancy Rate?}\label{example-3-smoking-and-pregnancy-rate}}
+
+Does smoking negatively affect a person's ability to become pregnant? A study collected data on 678 women who were trying to get pregnant. The two-way table shows the proportion who successfully became pregnant during the first cycle trying and smoking status.
+
+\hypertarget{a.-find-a-90-confidence-interval-for-the-difference-in-proportion-of-women-who-get-pregnant-between-smokers-and-non-smokers.-interpret-the-interval-in-context.}{%
+\subsection{(a). Find a 90\% confidence interval for the difference in proportion of women who get pregnant, between smokers and non-smokers. Interpret the interval in context.}\label{a.-find-a-90-confidence-interval-for-the-difference-in-proportion-of-women-who-get-pregnant-between-smokers-and-non-smokers.-interpret-the-interval-in-context.}}
+
+\begin{longtable}[]{@{}llll@{}}
+\toprule()
+~ & Smoker & Non-smoker & Total \\
+\midrule()
+\endhead
+Pregnant & 38 & 206 & 244 \\
+Not Pregnant & 97 & 337 & 434 \\
+Total & 135 & 543 & 678 \\
+\bottomrule()
+\end{longtable}
+
+Click for answer
+
+The conditions are met for using the normal distribution (at least 10 values in each cell of the table). We see that the proportion of smokers who got pregnant is 38/135 = 0.281 while the proportion of non-smokers who got pregnant is 206/543 = 0.379. The confidence interval is given by:
+
+\[statistic \pm z^* \cdot SE \]
+\[(\hat{p}_S - \hat{p}_N) \pm z^* \cdot \sqrt{\frac{\hat{p}_S(1- \hat{p}_S)}{n_S} + \frac{\hat{p}_N(1- \hat{p}_N)}{n_N}} \]
+
+\[(0.281 - 0.379) \pm 1.645\cdot \sqrt{\frac{0.281(1-0.281)}{135} + \frac{0.379(1-0.379)}{543}} \]
+\[-0.098 \pm 0.072 = (-0.170, -0.026) \]
+We are 90\% sure that the proportion of smokers who get pregnant in the first cycle is between 0.170 and 0.026 less than the proportion of non-smokers who get pregnant on the first cycle. Note that if we had subtracted the other way, the interval would have only positive values, but the interpretation would be the same.
+
+\hypertarget{b.-now-repeat-the-above-analysis-using-the-hypothesis-test-approach.}{%
+\subsection{(b). Now, repeat the above analysis using the hypothesis test approach.}\label{b.-now-repeat-the-above-analysis-using-the-hypothesis-test-approach.}}
+
+Click for answer
+
+We are testing \(H_0:p_S = p_{NS}\) vs \(H_a:p_S \neq p_{NS}\). The test statistic is:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pS\_hat }\OtherTok{=} \DecValTok{38}\SpecialCharTok{/}\DecValTok{135}
+\NormalTok{pNS\_hat }\OtherTok{=} \DecValTok{206}\SpecialCharTok{/}\DecValTok{543}
+\NormalTok{pooled\_p2 }\OtherTok{=}\NormalTok{ (}\DecValTok{38}\SpecialCharTok{+}\DecValTok{206}\NormalTok{)}\SpecialCharTok{/}\NormalTok{(}\DecValTok{135}\SpecialCharTok{+}\DecValTok{543}\NormalTok{)}
+\NormalTok{nS }\OtherTok{=} \DecValTok{135}
+\NormalTok{nNS }\OtherTok{=} \DecValTok{543}
+\NormalTok{SE2 }\OtherTok{=} \FunctionTok{sqrt}\NormalTok{(pooled\_p2}\SpecialCharTok{*}\NormalTok{(}\DecValTok{1}\SpecialCharTok{{-}}\NormalTok{pooled\_p2)}\SpecialCharTok{*}\NormalTok{(}\DecValTok{1}\SpecialCharTok{/}\NormalTok{nS }\SpecialCharTok{+} \DecValTok{1}\SpecialCharTok{/}\NormalTok{nNS))}
+\NormalTok{z2 }\OtherTok{=}\NormalTok{ (pS\_hat }\SpecialCharTok{{-}}\NormalTok{ pNS\_hat) }\SpecialCharTok{/}\NormalTok{ SE2}
+\NormalTok{p\_value2 }\OtherTok{=} \DecValTok{2}\SpecialCharTok{*}\NormalTok{(}\FunctionTok{pnorm}\NormalTok{(z2))}
+\NormalTok{p\_value2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.03394234
+\end{verbatim}
+
+Based on the p-value, we reject \(H_0\) and conclude that there is a difference in the proportion of women who get pregnant between smokers and non-smokers.
 
   \bibliography{book.bib,packages.bib}
 
