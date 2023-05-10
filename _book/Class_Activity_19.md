@@ -44,7 +44,7 @@ Always plot your data and get summary stats:
 hist(lakes$pH)
 ```
 
-<img src="Class_Activity_19_files/figure-html/unnamed-chunk-2-1.png" width="100%" />
+<img src="Class_Activity_19_files/figure-epub3/unnamed-chunk-2-1.png" width="100%" />
 
 ```r
 mean(lakes$pH)
@@ -206,7 +206,7 @@ qt(.975,52)
 
 ## Example: Nutrition Study
 
-The dataset NutritionStudy contains data on daily calorie intake and other variables for 315 individuals. We want to know if the average daily calorie intake is different from the recommended 2000 calories.
+The dataset `NutritionStudy` contains data on daily calorie intake and other variables for 315 individuals. We want to know if the average daily calorie intake is different from the recommended 2000 calories.
 
 
 ```r
@@ -242,14 +242,14 @@ $ PriorSmoke    <int> 2, 1, 2, 2, 1, 2, 1, 1, 1, 2, 2, 1, …
 
 ### (a) EDA 
 
-# Always plot your data and get summary stats:
+Always plot your data and get summary stats:
 
 
 ```r
 hist(NutritionStudy$Calories)
 ```
 
-<img src="Class_Activity_19_files/figure-html/unnamed-chunk-9-1.png" width="100%" />
+<img src="Class_Activity_19_files/figure-epub3/unnamed-chunk-9-1.png" width="100%" />
 
 ```r
 mean(NutritionStudy$Calories)
@@ -270,7 +270,7 @@ sd(NutritionStudy$Calories)
 
 ### (b) SE for the sample mean
 
-# What is the estimated SE for the sample mean?
+What is the estimated SE for the sample mean?
 
 
 <details><summary><red>Click for answer</red></summary>
@@ -292,7 +292,7 @@ SE
 
 ### (c) t-test statistic
 
-# Compute the t-test statistic for testing if the population mean calorie intake is equal, or not, to 2000.
+Compute the t-test statistic for testing if the population mean calorie intake is equal, or not, to 2000.
 
 <details><summary><red>Click for answer</red></summary>
 
@@ -312,7 +312,7 @@ t_stat
 
 ### (d) One-sample t-test
 
-# Perform a one-sample t-test to test whether the population mean calorie intake is equal to 2000 or not.
+Perform a one-sample t-test to test whether the population mean calorie intake is equal to 2000 or not.
 
 <details><summary><red>Click for answer</red></summary>
 
@@ -341,7 +341,7 @@ mean of x
 
 ### (e) One-sample t confidence interval
 
-# What is the 95% confidence interval for the population mean calorie intake?
+What is the 95% confidence interval for the population mean calorie intake?
 
 <details><summary><red>Click for answer</red></summary>
 
@@ -363,7 +363,7 @@ attr(,"conf.level")
 
 ### (f) `qt` and `pt`
 
-# Show how to compute the p-value for the test in (d) using the pt command. Then show how the confidence interval in (e) is computed with a qt value.
+Show how to compute the p-value for the test in (d) using the pt command. Then show how the confidence interval in (e) is computed with a qt value.
 
 <details><summary><red>Click for answer</red></summary>
 
