@@ -5,6 +5,7 @@
 
 The textbook dataset `FloridaLakes` contains data on 53 lakes in Florida. We want to know if the average pH of lakes in Florida is different from a neutral value of 7. 
 
+
 ```r
 lakes <- read.csv("http://www.lock5stat.com/datasets1e/FloridaLakes.csv")
 head(lakes)
@@ -35,6 +36,7 @@ head(lakes)
 ```
 
 #### (a) EDA 
+
 Always plot your data and get summary stats:
 
 
@@ -42,7 +44,7 @@ Always plot your data and get summary stats:
 hist(lakes$pH)
 ```
 
-<img src="Class_Activity_19_files/figure-epub3/unnamed-chunk-2-1.png" width="100%" />
+<img src="Class_Activity_19_files/figure-html/unnamed-chunk-2-1.png" width="100%" />
 
 ```r
 mean(lakes$pH)
@@ -63,19 +65,19 @@ sd(lakes$pH)
 - What are the sample mean and standard deviation? Use appropriate notation.
 - Can we use t-inference methods with the pH variable?
 
+
 <details><summary><red>Click for answer</red></summary>
 
 *Answer:* The average pH was $\bar{x} = 6.591$ with a standard deviation of $s=1.288$. The distribution of pH is symmetric with no outliers, so we can use t-inference methods.  
-
 </details><br>
 
-
-
 #### (b) SE for the sample mean
+
 What is the estimated SE for the sample mean?
 <details><summary><red>Click for answer</red></summary>
 
 *Answer:* The estimated SE for the sample mean is $SE_{\bar{x}} = 0.1770$.
+
 
 ```r
 sd(lakes$pH)/sqrt(53)
@@ -87,9 +89,10 @@ sd(lakes$pH)/sqrt(53)
 
 </details><br>
 
-
 #### (c) t-test statistic
+
 Using your SE from (b) to compute the t-test statistic for testing if the population mean pH is equal, or not, to 7. Write down your hypotheses then show how the t test statistic is calculated. Interpret this value in context. 
+
 <details><summary><red>Click for answer</red></summary>
 
 *Answer:* The hypotheses are $H_0: \mu = 7$ vs $H_A: \mu \neq 7$. The test stat is 
@@ -100,6 +103,7 @@ $$
 
 The observed mean of 6.591 is 2.3 SEs below the hypothesized mean of 7.
 
+
 ```r
 (mean(lakes$pH) - 7)/(sd(lakes$pH)/sqrt(53)) 
 ```
@@ -108,10 +112,8 @@ The observed mean of 6.591 is 2.3 SEs below the hypothesized mean of 7.
 [1] -2.31342
 ```
 
-</details><br>
-
-
 ### (d) One-sample t-test
+
 The function `t.test(x, mu=)` can be used for a one sample test comparing the sample mean of `x` to the hypothesized value given to  `mu=`. Here we are testing whether the population mean is equal to 7 or not:
 
 
@@ -132,6 +134,8 @@ sample estimates:
 mean of x 
  6.590566 
 ```
+</details><br>
+
 
 - What is the t test stat given in the output? Verify that it matches your answer to (c), within reasonable rounding error.
 
@@ -140,7 +144,6 @@ mean of x
 *Answer:* The test stat  is -2.31. 
 
 </details><br>
-
 
 - What is the p-value for the test? Interpret this value.
 
@@ -159,9 +162,8 @@ mean of x
 
 </details><br>
 
-
-
 #### (e) One-sample t confidence interval
+
 What is the 95% confidence interval for the population mean pH? Interpret this CI. 
 
 <details><summary><red>Click for answer</red></summary>
@@ -174,7 +176,6 @@ What is the 95% confidence interval for the population mean pH? Interpret this C
 #### (f) `qt` and `pt`
 
 Show how to compute the p-value for your test in (d) using the `pt` command. Then show how the confidence interval in (e) is computed with a `qt` value. 
-
 <details><summary><red>Click for answer</red></summary>
 
 *Answer:* For the two-sided test, the p-value is twice the proportion below the test stat $t=-2.313$ under a t-distribution with $df=53-1=52$
@@ -203,326 +204,190 @@ qt(.975,52)
 
 
 
-## Example 2:  API
+## Example: Nutrition Study
 
-The Academic Performance Index (API) is computed for all California schools. It is a number, ranging from a low of 200 to a high of 1000, that reflects a school's performance on a statewide standardized test (http://api.cde.ca.gov). We have a SRS of 200 schools and are interested in how a school's performance is related to the wealth of its students. The variable `growth` measures the growth in API from 1999 to 2000 (API 2000 - API 1999). 
-
-
-```r
-api <- read.csv("http://people.carleton.edu/~kstclair/data/api.csv")
-```
-
-#### (a) Categorizing wealth
-
-Let's define a school as "low wealth" if over 50% of its students are eligible for subsidized `meals` and "high wealth" otherwise. We can use an `ifelse` command to create a variable `wealth` that measures this:
+The dataset NutritionStudy contains data on daily calorie intake and other variables for 315 individuals. We want to know if the average daily calorie intake is different from the recommended 2000 calories.
 
 
 ```r
-api$wealth <- ifelse(api$meals > 50, "low","high")
-table(api$wealth)
-```
-
-```
-
-high  low 
- 102   98 
-```
-
-```r
+#install.packages("Lock5Data")
+library(Lock5Data)
 library(dplyr)
-api %>% group_by(wealth) %>% summarize(mean(growth), sd(growth))
+data(NutritionStudy)
+glimpse(NutritionStudy)
 ```
 
 ```
-# A tibble: 2 × 3
-  wealth `mean(growth)` `sd(growth)`
-  <chr>           <dbl>        <dbl>
-1 high             25.2         28.8
-2 low              38.8         30.0
+Rows: 315
+Columns: 17
+$ ID            <int> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 1…
+$ Age           <int> 64, 76, 38, 40, 72, 40, 65, 58, 35, …
+$ Smoke         <chr> "No", "No", "No", "No", "No", "No", …
+$ Quetelet      <dbl> 21.4838, 23.8763, 20.0108, 25.1406, …
+$ Vitamin       <int> 1, 1, 2, 3, 1, 3, 2, 1, 3, 3, 1, 2, …
+$ Calories      <dbl> 1298.8, 1032.5, 2372.3, 2449.5, 1952…
+$ Fat           <dbl> 57.0, 50.1, 83.6, 97.5, 82.6, 56.0, …
+$ Fiber         <dbl> 6.3, 15.8, 19.1, 26.5, 16.2, 9.6, 28…
+$ Alcohol       <dbl> 0.0, 0.0, 14.1, 0.5, 0.0, 1.3, 0.0, …
+$ Cholesterol   <dbl> 170.3, 75.8, 257.9, 332.6, 170.8, 15…
+$ BetaDiet      <int> 1945, 2653, 6321, 1061, 2863, 1729, …
+$ RetinolDiet   <int> 890, 451, 660, 864, 1209, 1439, 802,…
+$ BetaPlasma    <int> 200, 124, 328, 153, 92, 148, 258, 64…
+$ RetinolPlasma <int> 915, 727, 721, 615, 799, 654, 834, 8…
+$ Sex           <chr> "Female", "Female", "Female", "Femal…
+$ VitaminUse    <chr> "Regular", "Regular", "Occasional", …
+$ PriorSmoke    <int> 2, 1, 2, 2, 1, 2, 1, 1, 1, 2, 2, 1, …
+```
+
+
+### (a) EDA 
+
+# Always plot your data and get summary stats:
+
+
+```r
+hist(NutritionStudy$Calories)
+```
+
+<img src="Class_Activity_19_files/figure-html/unnamed-chunk-9-1.png" width="100%" />
+
+```r
+mean(NutritionStudy$Calories)
+```
+
+```
+[1] 1796.655
 ```
 
 ```r
-boxplot(growth ~ wealth, data=api, xlab="API growth (2000 - 1999)" , horizontal=T)
+sd(NutritionStudy$Calories)
 ```
 
-<img src="Class_Activity_19_files/figure-epub3/unnamed-chunk-9-1.png" width="100%" />
+```
+[1] 680.3474
+```
 
-- How many schools are "low" and "high" wealth.
-- Are wealth and API growth related?
-- What is the observed difference in mean API growth between high and low wealth schools. Use correct notation. 
-- Can we use t-inference methods to compare mean growths?
+
+### (b) SE for the sample mean
+
+# What is the estimated SE for the sample mean?
+
 
 <details><summary><red>Click for answer</red></summary>
 
-*Answer:* There are $n_h = 102$ "high" wealth and $n_l = 98$ "low" wealth schools. The low wealth schools tend to have higher (and more variable) growth than high wealth schools. The difference in observed mean API growth between high and low growth schools is $\bar{x}_h - \bar{x}_l = 25.24510 - 38.82653  = -13.58$. We can use t-methods since both samples sizes (98 and 102) can be deemed large and there isn't severe skewness,  but there are two extreme outliers that will be addressed below.
+*Answer:*
 
-</details><br>
-
-
-#### (b) SE for the sample mean difference
-
-What is the estimated SE for the sample mean difference?
-<details><summary><red>Click for answer</red></summary>
-
-*Answer:* The SE for the mean difference is 4.1544:
-
-$$
-SD_{\bar{x}_h - \bar{x}_l} = \sqrt{\dfrac{28.75380^2}{102} + \dfrac{29.95048^2}{98}} = 4.1544
-$$
 
 ```r
-sqrt(28.75380^2/102 +  29.95048^2/98)
+n <- length(NutritionStudy$Calories)
+SE <- sd(NutritionStudy$Calories) / sqrt(n)
+SE
 ```
 
 ```
-[1] 4.154404
+[1] 38.33324
 ```
 
 </details><br>
 
+### (c) t-test statistic
 
-#### (c) t-test statistic
-
-Using your SE from (b) to compute the t-test statistic that can be used to determine if mean API growth differs for low and high wealth schools. Write down your hypotheses then show how the t test statistic is calculated. Interpret this value in context. 
+# Compute the t-test statistic for testing if the population mean calorie intake is equal, or not, to 2000.
 
 <details><summary><red>Click for answer</red></summary>
 
-*Answer:* The hypotheses are $H_0: \mu_h - \mu_l = 0$ vs $H_A: \mu_h - \mu_l \neq 0$. The test stat is 
-
-$$
-t = \dfrac{(25.24510 - 38.82653) - 0}{4.154404} = -3.2692
-$$
-
-The observed mean difference  is 3.3 SEs below the hypothesized mean difference of 0.
+*Answer:*
 
 
 ```r
-((25.24510 - 38.82653) - 0)/4.154404 
+t_stat <- (mean(NutritionStudy$Calories) - 2000) / SE
+t_stat
 ```
 
 ```
-[1] -3.269164
+[1] -5.304676
 ```
 
 </details><br>
 
+### (d) One-sample t-test
 
-#### (d) Two-sample t-test
-Is there evidence that mean API growth differs for low and high wealth schools? Give the hypotheses for this test, then run the `t.test(y ~ x, data=)` command below to conduct a t-test to give a p-value and conclusion. 
+# Perform a one-sample t-test to test whether the population mean calorie intake is equal to 2000 or not.
+
+<details><summary><red>Click for answer</red></summary>
+
+*Answer:*
 
 
 ```r
-t.test(growth ~ wealth, data=api)
+t.test(NutritionStudy$Calories, mu = 2000)
 ```
 
 ```
 
-	Welch Two Sample t-test
+	One Sample t-test
 
-data:  growth by wealth
-t = -3.2692, df = 196.71, p-value = 0.001273
-alternative hypothesis: true difference in means between group high and group low is not equal to 0
+data:  NutritionStudy$Calories
+t = -5.3047, df = 314, p-value = 2.135e-07
+alternative hypothesis: true mean is not equal to 2000
 95 percent confidence interval:
- -21.774321  -5.388544
+ 1721.232 1872.077
 sample estimates:
-mean in group high  mean in group low 
-          25.24510           38.82653 
+mean of x 
+ 1796.655 
 ```
 
-- What is the t test stat given in the output? Verify that it matches your answer to (c), within reasonable rounding error.
+</details><br>
+
+### (e) One-sample t confidence interval
+
+# What is the 95% confidence interval for the population mean calorie intake?
 
 <details><summary><red>Click for answer</red></summary>
 
-*Answer:* The test stat matches, $t = -3.2692$.
-
-</details><br>
-
-
-- What is the p-value for the test? Interpret this value.
-
-<details><summary><red>Click for answer</red></summary>
-
-*Answer:* The p-value is 0.001273. If there is no difference between mean growth in the two populations, then there is just a 0.13% chance of seeing a sample mean difference that is 3.27 standard errors or more away from 0.
-
-</details><br>
-
-
-- What is your test conclusion?
-
-<details><summary><red>Click for answer</red></summary>
-
-*Answer:* We have strong evidence to suggest that the average API growth in low and high wealth schools are not the same.
-
-</details><br>
-
-
-#### (e)  Consider outliers
-The boxplot in (a) shows a number of outliers for the `high` wealth group, but two cases in particular were very high. Suppose we omitted these two (most) extreme cases when running the test in (d). Will the p-value for this test be smaller or larger than the p-value computed in part (d)? Explain.
-
-<details><summary><red>Click for answer</red></summary>
-
-*Answer:* Removing the two large outliers which will both reduce the mean in the high group and reduce the SD in the high group. Both actions will magnify the difference in mean growth between the high and low groups (increasing the difference and decreasing the SE), so the test stat will increase in magnitude and the p-value will decrease. 
-
-</details><br>
-
-
-#### (f) Check outlier influence
-
-To omit these cases we have to find their row numbers, then `subset` them out of the data:
+*Answer:*
 
 
 ```r
-which(api$growth > 120 )
+ci <- t.test(NutritionStudy$Calories, mu = 2000)$conf.int
+ci
 ```
 
 ```
-[1]  74 119
+[1] 1721.232 1872.077
+attr(,"conf.level")
+[1] 0.95
 ```
+
+</details><br>
+
+### (f) `qt` and `pt`
+
+# Show how to compute the p-value for the test in (d) using the pt command. Then show how the confidence interval in (e) is computed with a qt value.
+
+<details><summary><red>Click for answer</red></summary>
+
+*Answer:*
+
 
 ```r
-api %>% slice(74,119)  # another dplyr package command
+p_value <- 2 * pt(-abs(t_stat), df = n - 1)
+p_value
 ```
 
 ```
-           cds stype            name                 sname
-1 5.471911e+13     E Lincoln Element    Lincoln Elementary
-2 1.975342e+13     E Washington Elem Washington Elementary
-  snum                   dname dnum       cname cnum flag
-1 5873 Exeter Union Elementary  226      Tulare   53   NA
-2 2543   Redondo Beach Unified  585 Los Angeles   18   NA
-  pcttest api00 api99 target growth sch.wide comp.imp both
-1      98   693   504     15    189      Yes      Yes  Yes
-2     100   745   615      9    130      Yes      Yes  Yes
-  awards meals ell yr.rnd mobility acs.k3 acs.46 acs.core
-1    Yes    50  18   <NA>        9     18     NA       NA
-2    Yes    41  20   <NA>       16     19     30       NA
-  pct.resp not.hsg hsg some.col col.grad grad.sch avg.ed
-1       93      28  23       27       14        8   2.51
-2       81      11  26       32       16       16   2.99
-  full emer enroll api.stu    pw  fpc wealth
-1   91    9    196     177 30.97 6194   high
-2  100    3    391     313 30.97 6194   high
+[1] 2.135134e-07
 ```
+
+
 
 ```r
-t.test(growth ~ wealth, data = api, subset = -c(74,119))
+t_star <- qt(0.975, df = n - 1)
+t_star
 ```
 
 ```
-
-	Welch Two Sample t-test
-
-data:  growth by wealth
-t = -4.395, df = 174.97, p-value = 1.916e-05
-alternative hypothesis: true difference in means between group high and group low is not equal to 0
-95 percent confidence interval:
- -23.571116  -8.961945
-sample estimates:
-mean in group high  mean in group low 
-          22.56000           38.82653 
+[1] 1.967548
 ```
 
-- How does the t-test stat change when omitting these two changes? Why does it change in this direction?
-- Check your answer here with your anwer in part (e)!
-
-<details><summary><red>Click for answer</red></summary>
-
-*Answer:* Without these outliers, the p-value decreases to 0.00001916 and we have even stronger evidence for a difference in mean API growth. Why does the p-value decrease? Omitting the two outliers will  decrease the sample SD for the high group, which in turn will (slightly) decrease the SE for the difference in means. Omitting the two outliers will also decrease the sample mean for the high group (from 25.24510 to 22.56000), which will make the observed difference in means larger in magnitude (from -13.58 to -16.27). The test stat gets even further from 0  (drops from -3.2692 to -4.395), meaning the observed difference with outliers omitted is further away from 0 (in terms of SEs) than it was when all data points were included. This means that the p-value will decrease  (from 0.0013 to 0.00002) since the data is deemed more ``extreme" under the null hypothesis.
-
 </details><br>
-
-
-
-#### (g)  95% confidence interval
-Compare the two 95% CI given in the output (with and without outliers). Explain how and why the CIs change after omitting these two outliers.  
-
-<details><summary><red>Click for answer</red></summary>
-
-*Answer:* Without outliers: -23.57 to -8.96 and with outliers: -21.77 to  -5.39. An mentioned above, omitting the two points makes the difference in means further away from 0. This shifts the CI further from a difference of 0. Removing the outliers also decrease the SE of our sample difference, so the margin of error for the interval without outliers is, roughly, 7 while the margin of error with outliers is, roughly, 8. 
-
-</details><br>
-
-
-#### (h)  Interpret two-sample CI
-Using the results without the two outliers, interpret the 95% CI given in this output. Do not use the word ``difference'' in your answer.
-
-<details><summary><red>Click for answer</red></summary>
-
-*Answer:* We are 95% confident that the mean API growth between 1999 and 2000 for all low wealth schools is anywhere from 8.96 points to 23.57 points higher than the mean API growth for all high wealth schools in California.
-
-</details><br>
-
-
-
-## Example 3: Matched Pairs
-A study is conducted to determine the effect of a home meter for helping diabetics control their blood glucose levels. Researchers would like to determine if the home meter is effective in helping patients  reduce their blood glucose levels. A random sample of 36 diabetics had their blood glucose levels measured before they were taught to use the meter and again after they had utilized the meter for 2 weeks. Researchers observed an average decrease (before - after) of blood glucose level of 2.78 mmol/liter with a standard deviation of 6.05 mmol/liter. Analysis results are shown below:
-```
-  Sample mean:  2.78 ; sample standard deviation:  6.05 ; sample size: 36
-  Standard error:  1.0083
-  95 percent confidence interval for true mean:  1.0763  , Infinity
-  Hypothesis test H0: mu =  0  Alternative is  greater
-  t statistic =  2.757 ; degrees of freedom =  35 ; p-value= 0.0046
-```
-
-#### (a) What conditions need to be met by this data to use $t$ inference procedures?
-
-<details><summary><red>Click for answer</red></summary>
-
-*Answer:* There is a moderate sample size of $n=36$ so we need to assume that the observed differences (before-after) are not strongly skewed and that there are no outliers. If these assumptions are not met, then the t-inference procedures above may not be appropriate.
-
-</details><br>
-
-
-#### (b)  Define the unknown parameter of interest (be very specific), then state the null and alternative hypotheses for this test. Make sure your hypotheses agree with the output!
-
-<details><summary><red>Click for answer</red></summary>
-
-*Answer:* Let the $\mu$ represent the population mean decrease in glucose levels measured before and after the treatment (before - after). A positive value of $\mu$ implies that the home meter is effective in reducing blood glucose levels. The alternative hypothesis (the research statement) will be that $\mu$ is greater than 0 and the null statement will be that $\mu$ is equal to 0, meaning there is no benefit to using the treatment.
-$$
-H_0:  \mu = 0 \textrm{ vs. } H_A: \mu > 0
-$$
-
-</details><br>
-
-
-#### (c)   What is the test statistic value for this test? What does this value indicate? 
-
-<details><summary><red>Click for answer</red></summary>
-
-*Answer:* The test stat value is 2.757.  The mean glucose level decrease in the sample was 2.757 SE's above the hypothesized mean decrease of 0.
-
-</details><br>
-
-
-#### (d)   Is there sufficient evidence to claim that the monitor is effective in helping patients  reduce their blood glucose levels? 
-
-<details><summary><red>Click for answer</red></summary>
-
-*Answer:* You  reject $H_0$ when the $p$-value is small. Since the P-value of 0.3% is quite small, we can conclude that there is strong evidence that the use of home meters  lowers blood glucose levels, on average ($H_A$).
-
-</details><br>
-
-
-#### (e)   What type of error (1 or 2) could you have made in part (d)? If you did make this error, what are its implications for people with diabetes?  
-
-<details><summary><red>Click for answer</red></summary>
-
-*Answer:* Since we rejected, we may have made a type 1 error of rejecting the null when it is actually true. This means we would have claimed that the home meter was useful in reducing blood glucose levels, on average, when in fact it doesn't reduce levels. People with diabetes would be encouraged to use these meters (at a cost to themselves or their insurance company) to help control their glucose levels and not see any real benefit.
-
-</details><br>
-
-
-#### (f)  Compute and interpret a 95% confidence interval for the true average decrease in blood glucose levels. (Note that this CI is not given above, the CI given in the  output is a ``one-sided" CI.)   
-
-<details><summary><red>Click for answer</red></summary>
-
-*Answer:* The 95% CI for the population mean decrease in glucose level is
-$$
-\bar{x} \pm t^*_{n-1} \dfrac{s}{\sqrt{n}} = 2.78\pm 2.042 \dfrac{6.05}{\sqrt{36}} = 2.78 \pm 2.017 = (0.72, 4.84)
-$$
-where $t^*$ is based on 36-1=35 degrees of freedom. Using the green table, we round df down to 30 so we get $t^*_{30} = 2.042$. Or using R command `qt(.975,df=35)` we get the exact value $t^*_{35}=2.0301$.
-We are 95% confident that, after learning to use a home meter,  the average decrease in blood glucose in this population is between 0.72 and 4.84 mmol/liter.
-
-</details><br>
-
-

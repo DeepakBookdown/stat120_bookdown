@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>Page not found | Stat 120</title>
+  <title>Chapter 28 Always plot your data and get summary stats: | Stat 120</title>
 
     <meta name="author" content="Deepak Bastola" />
   
@@ -12,7 +12,7 @@
 The HTML output format for this example is bookdown::bs4_book,
 set in the _output.yml file.</p>" />
    <meta name="generator" content="placeholder" />
-  <meta property="og:title" content="Page not found | Stat 120" />
+  <meta property="og:title" content="Chapter 28 Always plot your data and get summary stats: | Stat 120" />
   <meta property="og:type" content="book" />
   
   
@@ -21,7 +21,7 @@ The HTML output format for this example is bookdown::bs4_book,
 set in the _output.yml file.</p>" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Page not found | Stat 120" />
+  <meta name="twitter:title" content="Chapter 28 Always plot your data and get summary stats: | Stat 120" />
   
   <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::bs4_book,
@@ -83,11 +83,17 @@ set in the _output.yml file.</p>" />
   </header>
 
   <main class="col-sm-12 col-md-9 col-lg-7" id="content">
-<div id="page-not-found" class="section level1">
-<h1>Page not found</h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="always-plot-your-data-and-get-summary-stats" class="section level1" number="28">
+<h1><span class="header-section-number">Chapter 28</span> Always plot your data and get summary stats:</h1>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="always-plot-your-data-and-get-summary-stats.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(NutritionStudy<span class="sc">$</span>Calories)</span></code></pre></div>
+<p><img src="Class_Activity_19_files/figure-html/unnamed-chunk-9-1.png" width="100%" /></p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="always-plot-your-data-and-get-summary-stats.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(NutritionStudy<span class="sc">$</span>Calories)</span></code></pre></div>
+<pre><code>[1] 1796.655</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="always-plot-your-data-and-get-summary-stats.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(NutritionStudy<span class="sc">$</span>Calories)</span></code></pre></div>
+<pre><code>[1] 680.3474</code></pre>
+<div id="b-se-for-the-sample-mean-1" class="section level3" number="28.0.1">
+<h3><span class="header-section-number">28.0.1</span> (b) SE for the sample mean</h3>
+</div>
 </div>
   </main>
 
