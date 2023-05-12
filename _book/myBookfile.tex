@@ -139,7 +139,7 @@
 
 \title{Stat 120}
 \author{Deepak Bastola}
-\date{2023-05-10}
+\date{2023-05-12}
 
 \begin{document}
 \maketitle
@@ -1628,16 +1628,16 @@ Click for answer
 
 \begin{verbatim}
    ID Greeting  Male    Weight
-1   1    Hello  TRUE  73.67528
-2   2    Hello FALSE 242.37631
-3   3    Hello  TRUE  64.75217
-4   4    Hello FALSE 218.58980
-5   5    Hello  TRUE 132.11653
-6   6  Goodbye FALSE 111.32560
-7   7  Goodbye  TRUE 246.34589
-8   8  Goodbye FALSE 217.71899
-9   9  Goodbye  TRUE  88.61443
-10 10  Goodbye FALSE 233.09667
+1   1    Hello  TRUE  77.85134
+2   2    Hello FALSE  61.80430
+3   3    Hello  TRUE 135.00728
+4   4    Hello FALSE  70.08288
+5   5    Hello  TRUE 145.25718
+6   6  Goodbye FALSE 245.24742
+7   7  Goodbye  TRUE 196.42950
+8   8  Goodbye FALSE 229.22481
+9   9  Goodbye  TRUE 197.13813
+10 10  Goodbye FALSE 130.61243
 \end{verbatim}
 
 \emph{Answer:} We see a data frame with four columns, where the first column is an \texttt{identifier} for the cases. We have information on the greeting types, whether male or not, and weight on these cases in the remaining columns.
@@ -1818,7 +1818,7 @@ Run the following command to obtain a SRS of 10 words from the 268 that are in t
 \end{Shaded}
 
 \begin{verbatim}
- [1] 156  59 201   4  24  18  86  27  91 134
+ [1] 190 243 146  35 117  21   6  32 263 251
 \end{verbatim}
 
 This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
@@ -1834,17 +1834,17 @@ We will \emph{subset} the data set \texttt{pop} to obtain only the sampled rows 
 \end{Shaded}
 
 \begin{verbatim}
-    position size        word
-156      156    6      forget
-59        59    1           a
-201      201    6      before
-4          4    5       seven
-24        24   11 proposition
-18        18    2          in
-86        86    5       lives
-27        27    3         men
-91        91    4       live.
-134      134    4        poor
+    position size      word
+190      190    3       for
+243      243    3      God,
+146      146    4      long
+35        35    2        in
+117      117    4      this
+21        21    9 dedicated
+6          6    3      ago,
+32        32    2        we
+263      263    5     shall
+251      251    3       and
 \end{verbatim}
 
 \begin{enumerate}
@@ -1865,7 +1865,7 @@ The word lengths in part (b) are the data for your sample. You can compute your 
 \end{Shaded}
 
 \begin{verbatim}
- [1]  6  1  6  5 11  2  5  3  4  4
+ [1] 3 3 4 2 4 9 3 2 5 3
 \end{verbatim}
 
 Then find the mean of these values:
@@ -1877,7 +1877,7 @@ Then find the mean of these values:
 \end{Shaded}
 
 \begin{verbatim}
-[1] 4.7
+[1] 3.8
 \end{verbatim}
 
 How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?
@@ -3916,7 +3916,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
-[1] 20.65133
+[1] 20.646
 \end{verbatim}
 
 \begin{Shaded}
@@ -3949,7 +3949,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
-[1] 1.073034
+[1] 1.06941
 \end{verbatim}
 
 \hypertarget{example-3-simulation-of-a-sample-proportion}{%
@@ -4262,7 +4262,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
- [1]  23 132 125 147 185 125  52 185  72 125
+ [1]  87  72  52  72 185 132  85  87  52  85
 \end{verbatim}
 
 \hypertarget{d.-where-will-be-bootstrap-distribution-be-centered-what-shape-do-we-expect-it-to-have}{%
@@ -4516,12 +4516,12 @@ The \texttt{boot(y\ \textasciitilde{}\ x,\ data=)} command generates 10000 boots
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -2.26095 
- Mean of bootstrap distribution: -2.26522 
- Standard error of bootstrap distribution: 0.78532 
+ Mean of bootstrap distribution: -2.27787 
+ Standard error of bootstrap distribution: 0.78802 
 
  Bootstrap percentile interval
       2.5%      97.5% 
--3.7814524 -0.7357024 
+-3.8019167 -0.7199524 
 
         *--------------*
 \end{verbatim}
@@ -4774,12 +4774,12 @@ We can now use the 0/1 version of telephone in the \texttt{boot} command (like e
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -0.03905 
- Mean of bootstrap distribution: -0.0392 
- Standard error of bootstrap distribution: 0.03406 
+ Mean of bootstrap distribution: -0.0393 
+ Standard error of bootstrap distribution: 0.03367 
 
  Bootstrap percentile interval
        2.5%       97.5% 
--0.10476190  0.02904762 
+-0.10380952  0.02809524 
 
         *--------------*
 \end{verbatim}
@@ -5149,9 +5149,9 @@ Then load the \texttt{CarletonStats} package and run the \texttt{permTest(y\ \te
   Caffeine :  12.25      Sleep :  15.25 
  Observed difference: -3 
 
- Mean of permutation distribution: -0.00215 
- Standard error of permutation distribution: 1.48734 
- P-value:  0.0468 
+ Mean of permutation distribution: 0.03407 
+ Standard error of permutation distribution: 1.50176 
+ P-value:  0.0474 
 
     *-------------*
 \end{verbatim}
@@ -5273,8 +5273,8 @@ Click for answer
   NonRes :  6405.263     Res :  2821.053 
  Observed difference  NonRes - Res : 3584.211 
 
- Mean of permutation distribution: -9.49832 
- Standard error of permutation distribution: 943.2404 
+ Mean of permutation distribution: 4.79574 
+ Standard error of permutation distribution: 942.4296 
  P-value:  1e-04 
 
     *-------------*
@@ -5352,8 +5352,8 @@ Click for answer
   Aerobic_Exercise :  9.2    Resistance_Training :  3 
  Observed difference: 6.2 
 
- Mean of permutation distribution: 0.00345 
- Standard error of permutation distribution: 1.18794 
+ Mean of permutation distribution: 0.00207 
+ Standard error of permutation distribution: 1.17966 
  P-value:  2e-04 
 
     *-------------*
@@ -5459,8 +5459,8 @@ Click for answer
   New_Method :  91.05    Traditional_Method :  82.15 
  Observed difference: 8.9 
 
- Mean of permutation distribution: 0.02845 
- Standard error of permutation distribution: 1.72243 
+ Mean of permutation distribution: -0.00327 
+ Standard error of permutation distribution: 1.72572 
  P-value:  2e-04 
 
     *-------------*
@@ -5601,9 +5601,9 @@ H_0: \mu_{B5} - \mu_{G5} = 0 \ \ H_0: \mu_{B5} - \mu_{G5} \neq 0
   boy :  -0.10435    girl :  0.02906 
  Observed difference: -0.13341 
 
- Mean of permutation distribution: 0.00363 
- Standard error of permutation distribution: 0.26314 
- P-value:  0.6072 
+ Mean of permutation distribution: -0.00079 
+ Standard error of permutation distribution: 0.2616 
+ P-value:  0.616 
 
     *-------------*
 \end{verbatim}
@@ -7066,6 +7066,342 @@ Click for answer
 \begin{verbatim}
 [1] 1.967548
 \end{verbatim}
+
+\hypertarget{class-activity-20}{%
+\chapter{Class Activity 20}\label{class-activity-20}}
+
+\hypertarget{example-1-api}{%
+\section{Example 1: API}\label{example-1-api}}
+
+The Academic Performance Index (API) is computed for all California schools. It is a number, ranging from a low of 200 to a high of 1000, that reflects a school's performance on a statewide standardized test (\url{http://api.cde.ca.gov}). We have a SRS of 200 schools and are interested in how a school's performance is related to the wealth of its students. The variable \texttt{growth} measures the growth in API from 1999 to 2000 (API 2000 - API 1999).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{api }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"http://people.carleton.edu/\textasciitilde{}kstclair/data/api.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{a-categorizing-wealth}{%
+\subsubsection{(a) Categorizing wealth}\label{a-categorizing-wealth}}
+
+Let's define a school as ``low wealth'' if over 50\% of its students are eligible for subsidized \texttt{meals} and ``high wealth'' otherwise. We can use an \texttt{ifelse} command to create a variable \texttt{wealth} that measures this:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{api}\SpecialCharTok{$}\NormalTok{wealth }\OtherTok{\textless{}{-}} \FunctionTok{ifelse}\NormalTok{(api}\SpecialCharTok{$}\NormalTok{meals }\SpecialCharTok{\textgreater{}} \DecValTok{50}\NormalTok{, }\StringTok{"low"}\NormalTok{,}\StringTok{"high"}\NormalTok{)}
+\FunctionTok{table}\NormalTok{(api}\SpecialCharTok{$}\NormalTok{wealth)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+high  low 
+ 102   98 
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(dplyr)}
+\NormalTok{api }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{group\_by}\NormalTok{(wealth) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{summarize}\NormalTok{(}\FunctionTok{mean}\NormalTok{(growth), }\FunctionTok{sd}\NormalTok{(growth))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+# A tibble: 2 x 3
+  wealth `mean(growth)` `sd(growth)`
+  <chr>           <dbl>        <dbl>
+1 high             25.2         28.8
+2 low              38.8         30.0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(growth }\SpecialCharTok{\textasciitilde{}}\NormalTok{ wealth, }\AttributeTok{data=}\NormalTok{api, }\AttributeTok{xlab=}\StringTok{"API growth (2000 {-} 1999)"}\NormalTok{ , }\AttributeTok{horizontal=}\NormalTok{T)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_20_files/figure-latex/unnamed-chunk-2-1}
+
+\begin{itemize}
+\tightlist
+\item
+  How many schools are ``low'' and ``high'' wealth.
+\item
+  Are wealth and API growth related?
+\item
+  What is the observed difference in mean API growth between high and low wealth schools. Use correct notation.
+\item
+  Can we use t-inference methods to compare mean growths?
+
+  Click for answer
+\end{itemize}
+
+\emph{Answer:} There are \(n_h = 102\) ``high'' wealth and \(n_l = 98\) ``low'' wealth schools. The low wealth schools tend to have higher (and more variable) growth than high wealth schools. The difference in observed mean API growth between high and low growth schools is \(\bar{x}_h - \bar{x}_l = 25.24510 - 38.82653 = -13.58\). We can use t-methods since both samples sizes (98 and 102) can be deemed large and there isn't severe skewness, but there are two extreme outliers that will be addressed below.
+
+\hypertarget{b-se-for-the-sample-mean-difference}{%
+\subsubsection{(b) SE for the sample mean difference}\label{b-se-for-the-sample-mean-difference}}
+
+What is the estimated SE for the sample mean difference?
+
+Click for answer
+
+\emph{Answer:} The SE for the mean difference is 4.1544:
+
+\[
+SD_{\bar{x}_h - \bar{x}_l} = \sqrt{\dfrac{28.75380^2}{102} + \dfrac{29.95048^2}{98}} = 4.1544
+\]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sqrt}\NormalTok{(}\FloatTok{28.75380}\SpecialCharTok{\^{}}\DecValTok{2}\SpecialCharTok{/}\DecValTok{102} \SpecialCharTok{+}  \FloatTok{29.95048}\SpecialCharTok{\^{}}\DecValTok{2}\SpecialCharTok{/}\DecValTok{98}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 4.154404
+\end{verbatim}
+
+\hypertarget{c-t-test-statistic-2}{%
+\subsubsection{(c) t-test statistic}\label{c-t-test-statistic-2}}
+
+Using your SE from (b) to compute the t-test statistic that can be used to determine if mean API growth differs for low and high wealth schools. Write down your hypotheses then show how the t test statistic is calculated. Interpret this value in context.
+
+Click for answer
+
+\emph{Answer:} The hypotheses are \(H_0: \mu_h - \mu_l = 0\) vs \(H_A: \mu_h - \mu_l \neq 0\). The test stat is
+
+\[t = \dfrac{(25.24510 - 38.82653) - 0}{4.154404} = -3.2692\]
+
+The observed mean difference is 3.3 SEs below the hypothesized mean difference of 0.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{((}\FloatTok{25.24510} \SpecialCharTok{{-}} \FloatTok{38.82653}\NormalTok{) }\SpecialCharTok{{-}} \DecValTok{0}\NormalTok{)}\SpecialCharTok{/}\FloatTok{4.154404} 
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] -3.269164
+\end{verbatim}
+
+\hypertarget{d-two-sample-t-test}{%
+\subsubsection{(d) Two-sample t-test}\label{d-two-sample-t-test}}
+
+Is there evidence that mean API growth differs for low and high wealth schools? Give the hypotheses for this test, then run the \texttt{t.test(y\ \textasciitilde{}\ x,\ data=)} command below to conduct a t-test to give a p-value and conclusion.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{t.test}\NormalTok{(growth }\SpecialCharTok{\textasciitilde{}}\NormalTok{ wealth, }\AttributeTok{data=}\NormalTok{api)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+    Welch Two Sample t-test
+
+data:  growth by wealth
+t = -3.2692, df = 196.71, p-value = 0.001273
+alternative hypothesis: true difference in means between group high and group low is not equal to 0
+95 percent confidence interval:
+ -21.774321  -5.388544
+sample estimates:
+mean in group high  mean in group low 
+          25.24510           38.82653 
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  What is the t test stat given in the output? Verify that it matches your answer to (c), within reasonable rounding error.
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} The test stat matches, \(t = -3.2692\).
+
+\begin{itemize}
+\tightlist
+\item
+  What is the p-value for the test? Interpret this value.
+
+  Click for answer
+\end{itemize}
+
+\emph{Answer:} The p-value is 0.001273. If there is no difference between mean growth in the two populations, then there is just a 0.13\% chance of seeing a sample mean difference that is 3.27 standard errors or more away from 0.
+
+\begin{itemize}
+\tightlist
+\item
+  What is your test conclusion?
+
+  Click for answer
+\end{itemize}
+
+\emph{Answer:} We have strong evidence to suggest that the average API growth in low and high wealth schools are not the same.
+
+\hypertarget{e-consider-outliers}{%
+\subsubsection{(e) Consider outliers}\label{e-consider-outliers}}
+
+The boxplot in (a) shows a number of outliers for the \texttt{high} wealth group, but two cases in particular were very high. Suppose we omitted these two (most) extreme cases when running the test in (d). Will the p-value for this test be smaller or larger than the p-value computed in part (d)? Explain.
+
+Click for answer
+
+\emph{Answer:} Removing the two large outliers which will both reduce the mean in the high group and reduce the SD in the high group. Both actions will magnify the difference in mean growth between the high and low groups (increasing the difference and decreasing the SE), so the test stat will increase in magnitude and the p-value will decrease.
+
+\hypertarget{f-check-outlier-influence}{%
+\subsubsection{(f) Check outlier influence}\label{f-check-outlier-influence}}
+
+To omit these cases we have to find their row numbers, then \texttt{subset} them out of the data:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{which}\NormalTok{(api}\SpecialCharTok{$}\NormalTok{growth }\SpecialCharTok{\textgreater{}} \DecValTok{120}\NormalTok{ )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1]  74 119
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{api }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{slice}\NormalTok{(}\DecValTok{74}\NormalTok{,}\DecValTok{119}\NormalTok{)  }\CommentTok{\# another dplyr package command}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+           cds stype            name                 sname
+1 5.471911e+13     E Lincoln Element    Lincoln Elementary
+2 1.975342e+13     E Washington Elem Washington Elementary
+  snum                   dname dnum       cname cnum flag
+1 5873 Exeter Union Elementary  226      Tulare   53   NA
+2 2543   Redondo Beach Unified  585 Los Angeles   18   NA
+  pcttest api00 api99 target growth sch.wide comp.imp both
+1      98   693   504     15    189      Yes      Yes  Yes
+2     100   745   615      9    130      Yes      Yes  Yes
+  awards meals ell yr.rnd mobility acs.k3 acs.46 acs.core
+1    Yes    50  18   <NA>        9     18     NA       NA
+2    Yes    41  20   <NA>       16     19     30       NA
+  pct.resp not.hsg hsg some.col col.grad grad.sch avg.ed
+1       93      28  23       27       14        8   2.51
+2       81      11  26       32       16       16   2.99
+  full emer enroll api.stu    pw  fpc wealth
+1   91    9    196     177 30.97 6194   high
+2  100    3    391     313 30.97 6194   high
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{t.test}\NormalTok{(growth }\SpecialCharTok{\textasciitilde{}}\NormalTok{ wealth, }\AttributeTok{data =}\NormalTok{ api, }\AttributeTok{subset =} \SpecialCharTok{{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{74}\NormalTok{,}\DecValTok{119}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+    Welch Two Sample t-test
+
+data:  growth by wealth
+t = -4.395, df = 174.97, p-value = 1.916e-05
+alternative hypothesis: true difference in means between group high and group low is not equal to 0
+95 percent confidence interval:
+ -23.571116  -8.961945
+sample estimates:
+mean in group high  mean in group low 
+          22.56000           38.82653 
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  How does the t-test stat change when omitting these two changes? Why does it change in this direction?
+\item
+  Check your answer here with your anwer in part (e)!
+
+  Click for answer
+\end{itemize}
+
+\emph{Answer:} Without these outliers, the p-value decreases to 0.00001916 and we have even stronger evidence for a difference in mean API growth. Why does the p-value decrease? Omitting the two outliers will decrease the sample SD for the high group, which in turn will (slightly) decrease the SE for the difference in means. Omitting the two outliers will also decrease the sample mean for the high group (from 25.24510 to 22.56000), which will make the observed difference in means larger in magnitude (from -13.58 to -16.27). The test stat gets even further from 0 (drops from -3.2692 to -4.395), meaning the observed difference with outliers omitted is further away from 0 (in terms of SEs) than it was when all data points were included. This means that the p-value will decrease (from 0.0013 to 0.00002) since the data is deemed more ``extreme'' under the null hypothesis.
+
+\hypertarget{g-95-confidence-interval}{%
+\subsubsection{(g) 95\% confidence interval}\label{g-95-confidence-interval}}
+
+Compare the two 95\% CI given in the output (with and without outliers). Explain how and why the CIs change after omitting these two outliers.\\
+
+Click for answer
+
+\emph{Answer:} Without outliers: -23.57 to -8.96 and with outliers: -21.77 to -5.39. An mentioned above, omitting the two points makes the difference in means further away from 0. This shifts the CI further from a difference of 0. Removing the outliers also decrease the SE of our sample difference, so the margin of error for the interval without outliers is, roughly, 7 while the margin of error with outliers is, roughly, 8.
+
+\hypertarget{h-interpret-two-sample-ci}{%
+\subsubsection{(h) Interpret two-sample CI}\label{h-interpret-two-sample-ci}}
+
+Using the results without the two outliers, interpret the 95\% CI given in this output. Do not use the word ``difference'\,' in your answer.
+
+Click for answer
+
+\emph{Answer:} We are 95\% confident that the mean API growth between 1999 and 2000 for all low wealth schools is anywhere from 8.96 points to 23.57 points higher than the mean API growth for all high wealth schools in California.
+
+\hypertarget{example-2-matched-pairs}{%
+\section{Example 2: Matched Pairs}\label{example-2-matched-pairs}}
+
+A study is conducted to determine the effect of a home meter for helping diabetics control their blood glucose levels. Researchers would like to determine if the home meter is effective in helping patients reduce their blood glucose levels. A random sample of 36 diabetics had their blood glucose levels measured before they were taught to use the meter and again after they had utilized the meter for 2 weeks. Researchers observed an average decrease (before - after) of blood glucose level of 2.78 mmol/liter with a standard deviation of 6.05 mmol/liter. Analysis results are shown below:
+
+\begin{verbatim}
+  Sample mean:  2.78 ; sample standard deviation:  6.05 ; sample size: 36
+  Standard error:  1.0083
+  95 percent confidence interval for true mean:  1.0763  , Infinity
+  Hypothesis test H0: mu =  0  Alternative is  greater
+  t statistic =  2.757 ; degrees of freedom =  35 ; p-value= 0.0046
+\end{verbatim}
+
+\hypertarget{a-what-conditions-need-to-be-met-by-this-data-to-use-t-inference-procedures}{%
+\subsubsection{\texorpdfstring{(a) What conditions need to be met by this data to use \(t\) inference procedures?}{(a) What conditions need to be met by this data to use t inference procedures?}}\label{a-what-conditions-need-to-be-met-by-this-data-to-use-t-inference-procedures}}
+
+Click for answer
+
+\emph{Answer:} There is a moderate sample size of \(n=36\) so we need to assume that the observed differences (before-after) are not strongly skewed and that there are no outliers. If these assumptions are not met, then the t-inference procedures above may not be appropriate.
+
+\hypertarget{b-define-the-unknown-parameter-of-interest-be-very-specific-then-state-the-null-and-alternative-hypotheses-for-this-test.-make-sure-your-hypotheses-agree-with-the-output}{%
+\subsubsection{(b) Define the unknown parameter of interest (be very specific), then state the null and alternative hypotheses for this test. Make sure your hypotheses agree with the output!}\label{b-define-the-unknown-parameter-of-interest-be-very-specific-then-state-the-null-and-alternative-hypotheses-for-this-test.-make-sure-your-hypotheses-agree-with-the-output}}
+
+Click for answer
+
+\emph{Answer:} Let the \(\mu\) represent the population mean decrease in glucose levels measured before and after the treatment (before - after). A positive value of \(\mu\) implies that the home meter is effective in reducing blood glucose levels. The alternative hypothesis (the research statement) will be that \(\mu\) is greater than 0 and the null statement will be that \(\mu\) is equal to 0, meaning there is no benefit to using the treatment.
+\[
+H_0:  \mu = 0 \textrm{ vs. } H_A: \mu > 0
+\]
+
+\hypertarget{c-what-is-the-test-statistic-value-for-this-test-what-does-this-value-indicate}{%
+\subsubsection{(c) What is the test statistic value for this test? What does this value indicate?}\label{c-what-is-the-test-statistic-value-for-this-test-what-does-this-value-indicate}}
+
+Click for answer
+
+\emph{Answer:} The test stat value is 2.757. The mean glucose level decrease in the sample was 2.757 SE's above the hypothesized mean decrease of 0.
+
+\hypertarget{d-is-there-sufficient-evidence-to-claim-that-the-monitor-is-effective-in-helping-patients-reduce-their-blood-glucose-levels}{%
+\subsubsection{(d) Is there sufficient evidence to claim that the monitor is effective in helping patients reduce their blood glucose levels?}\label{d-is-there-sufficient-evidence-to-claim-that-the-monitor-is-effective-in-helping-patients-reduce-their-blood-glucose-levels}}
+
+Click for answer
+
+\emph{Answer:} You reject \(H_0\) when the \(p\)-value is small. Since the P-value of 0.3\% is quite small, we can conclude that there is strong evidence that the use of home meters lowers blood glucose levels, on average (\(H_A\)).
+
+\hypertarget{e-what-type-of-error-1-or-2-could-you-have-made-in-part-d-if-you-did-make-this-error-what-are-its-implications-for-people-with-diabetes}{%
+\subsubsection{(e) What type of error (1 or 2) could you have made in part (d)? If you did make this error, what are its implications for people with diabetes?}\label{e-what-type-of-error-1-or-2-could-you-have-made-in-part-d-if-you-did-make-this-error-what-are-its-implications-for-people-with-diabetes}}
+
+Click for answer
+
+\emph{Answer:} Since we rejected, we may have made a type 1 error of rejecting the null when it is actually true. This means we would have claimed that the home meter was useful in reducing blood glucose levels, on average, when in fact it doesn't reduce levels. People with diabetes would be encouraged to use these meters (at a cost to themselves or their insurance company) to help control their glucose levels and not see any real benefit.
+
+\hypertarget{f-compute-and-interpret-a-95-confidence-interval-for-the-true-average-decrease-in-blood-glucose-levels.-note-that-this-ci-is-not-given-above-the-ci-given-in-the-output-is-a-one-sided-ci.}{%
+\subsubsection{(f) Compute and interpret a 95\% confidence interval for the true average decrease in blood glucose levels. (Note that this CI is not given above, the CI given in the output is a ``one-sided'' CI.)}\label{f-compute-and-interpret-a-95-confidence-interval-for-the-true-average-decrease-in-blood-glucose-levels.-note-that-this-ci-is-not-given-above-the-ci-given-in-the-output-is-a-one-sided-ci.}}
+
+Click for answer
+
+\emph{Answer:} The 95\% CI for the population mean decrease in glucose level is
+\[
+\bar{x} \pm t^*_{n-1} \dfrac{s}{\sqrt{n}} = 2.78\pm 2.042 \dfrac{6.05}{\sqrt{36}} = 2.78 \pm 2.017 = (0.72, 4.84)
+\]
+where \(t^*\) is based on 36-1=35 degrees of freedom. Using the green table, we round df down to 30 so we get \(t^*_{30} = 2.042\). Or using R command \texttt{qt(.975,df=35)} we get the exact value \(t^*_{35}=2.0301\).
+We are 95\% confident that, after learning to use a home meter, the average decrease in blood glucose in this population is between 0.72 and 4.84 mmol/liter.
 
   \bibliography{book.bib,packages.bib}
 
