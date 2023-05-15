@@ -45,8 +45,8 @@ permTest(Decrease_in_Resting_Heart_Rate~Group, data= exercise)
   Aerobic_Exercise :  9.2 	 Resistance_Training :  3 
  Observed difference: 6.2 
 
- Mean of permutation distribution: -0.00742 
- Standard error of permutation distribution: 1.18736 
+ Mean of permutation distribution: 0.00743 
+ Standard error of permutation distribution: 1.17347 
  P-value:  2e-04 
 
 	*-------------*
@@ -145,8 +145,8 @@ permTest(Math_Test_Score~Group, data= teaching)
   New_Method :  91.05 	 Traditional_Method :  82.15 
  Observed difference: 8.9 
 
- Mean of permutation distribution: 0.00138 
- Standard error of permutation distribution: 1.72573 
+ Mean of permutation distribution: 0.0292 
+ Standard error of permutation distribution: 1.72677 
  P-value:  2e-04 
 
 	*-------------*

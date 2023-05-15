@@ -139,7 +139,7 @@
 
 \title{Stat 120}
 \author{Deepak Bastola}
-\date{2023-05-12}
+\date{2023-05-14}
 
 \begin{document}
 \maketitle
@@ -1628,16 +1628,16 @@ Click for answer
 
 \begin{verbatim}
    ID Greeting  Male    Weight
-1   1    Hello  TRUE  77.85134
-2   2    Hello FALSE  61.80430
-3   3    Hello  TRUE 135.00728
-4   4    Hello FALSE  70.08288
-5   5    Hello  TRUE 145.25718
-6   6  Goodbye FALSE 245.24742
-7   7  Goodbye  TRUE 196.42950
-8   8  Goodbye FALSE 229.22481
-9   9  Goodbye  TRUE 197.13813
-10 10  Goodbye FALSE 130.61243
+1   1    Hello  TRUE 195.94186
+2   2    Hello FALSE 151.07571
+3   3    Hello  TRUE 284.66988
+4   4    Hello FALSE  63.32311
+5   5    Hello  TRUE 163.75567
+6   6  Goodbye FALSE 201.06088
+7   7  Goodbye  TRUE 120.10670
+8   8  Goodbye FALSE 277.05828
+9   9  Goodbye  TRUE 109.25090
+10 10  Goodbye FALSE 193.66917
 \end{verbatim}
 
 \emph{Answer:} We see a data frame with four columns, where the first column is an \texttt{identifier} for the cases. We have information on the greeting types, whether male or not, and weight on these cases in the remaining columns.
@@ -1818,7 +1818,7 @@ Run the following command to obtain a SRS of 10 words from the 268 that are in t
 \end{Shaded}
 
 \begin{verbatim}
- [1] 190 243 146  35 117  21   6  32 263 251
+ [1] 259 238 248  68 208 114 185 100 135 206
 \end{verbatim}
 
 This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
@@ -1834,17 +1834,17 @@ We will \emph{subset} the data set \texttt{pop} to obtain only the sampled rows 
 \end{Shaded}
 
 \begin{verbatim}
-    position size      word
-190      190    3       for
-243      243    3      God,
-146      146    4      long
-35        35    2        in
-117      117    4      this
-21        21    9 dedicated
-6          6    3      ago,
-32        32    2        we
-263      263    5     shall
-251      251    3       and
+    position size    word
+259      259    6 people,
+238      238    4   vain,
+248      248    5   birth
+68        68    2      to
+208      208    2      we
+114      114    2      we
+185      185    5   nobly
+100      100    6  should
+135      135    5   power
+206      206    7 honored
 \end{verbatim}
 
 \begin{enumerate}
@@ -1865,7 +1865,7 @@ The word lengths in part (b) are the data for your sample. You can compute your 
 \end{Shaded}
 
 \begin{verbatim}
- [1] 3 3 4 2 4 9 3 2 5 3
+ [1] 6 4 5 2 2 2 5 6 5 7
 \end{verbatim}
 
 Then find the mean of these values:
@@ -1877,7 +1877,7 @@ Then find the mean of these values:
 \end{Shaded}
 
 \begin{verbatim}
-[1] 3.8
+[1] 4.4
 \end{verbatim}
 
 How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?
@@ -3916,7 +3916,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
-[1] 20.646
+[1] 20.57233
 \end{verbatim}
 
 \begin{Shaded}
@@ -3949,7 +3949,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
-[1] 1.06941
+[1] 1.108479
 \end{verbatim}
 
 \hypertarget{example-3-simulation-of-a-sample-proportion}{%
@@ -4262,7 +4262,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
- [1]  87  72  52  72 185 132  85  87  52  85
+ [1] 147  23  52 125  87 185 132  85  85  52
 \end{verbatim}
 
 \hypertarget{d.-where-will-be-bootstrap-distribution-be-centered-what-shape-do-we-expect-it-to-have}{%
@@ -4516,12 +4516,12 @@ The \texttt{boot(y\ \textasciitilde{}\ x,\ data=)} command generates 10000 boots
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -2.26095 
- Mean of bootstrap distribution: -2.27787 
- Standard error of bootstrap distribution: 0.78802 
+ Mean of bootstrap distribution: -2.2586 
+ Standard error of bootstrap distribution: 0.76874 
 
  Bootstrap percentile interval
       2.5%      97.5% 
--3.8019167 -0.7199524 
+-3.7596548 -0.7433095 
 
         *--------------*
 \end{verbatim}
@@ -4774,12 +4774,12 @@ We can now use the 0/1 version of telephone in the \texttt{boot} command (like e
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -0.03905 
- Mean of bootstrap distribution: -0.0393 
- Standard error of bootstrap distribution: 0.03367 
+ Mean of bootstrap distribution: -0.03899 
+ Standard error of bootstrap distribution: 0.0333 
 
  Bootstrap percentile interval
        2.5%       97.5% 
--0.10380952  0.02809524 
+-0.10428571  0.02714286 
 
         *--------------*
 \end{verbatim}
@@ -5149,9 +5149,9 @@ Then load the \texttt{CarletonStats} package and run the \texttt{permTest(y\ \te
   Caffeine :  12.25      Sleep :  15.25 
  Observed difference: -3 
 
- Mean of permutation distribution: 0.03407 
- Standard error of permutation distribution: 1.50176 
- P-value:  0.0474 
+ Mean of permutation distribution: -0.01562 
+ Standard error of permutation distribution: 1.49536 
+ P-value:  0.0536 
 
     *-------------*
 \end{verbatim}
@@ -5273,8 +5273,8 @@ Click for answer
   NonRes :  6405.263     Res :  2821.053 
  Observed difference  NonRes - Res : 3584.211 
 
- Mean of permutation distribution: 4.79574 
- Standard error of permutation distribution: 942.4296 
+ Mean of permutation distribution: -0.7406 
+ Standard error of permutation distribution: 947.8897 
  P-value:  1e-04 
 
     *-------------*
@@ -5352,8 +5352,8 @@ Click for answer
   Aerobic_Exercise :  9.2    Resistance_Training :  3 
  Observed difference: 6.2 
 
- Mean of permutation distribution: 0.00207 
- Standard error of permutation distribution: 1.17966 
+ Mean of permutation distribution: 0.0019 
+ Standard error of permutation distribution: 1.1834 
  P-value:  2e-04 
 
     *-------------*
@@ -5459,8 +5459,8 @@ Click for answer
   New_Method :  91.05    Traditional_Method :  82.15 
  Observed difference: 8.9 
 
- Mean of permutation distribution: -0.00327 
- Standard error of permutation distribution: 1.72572 
+ Mean of permutation distribution: -0.0024 
+ Standard error of permutation distribution: 1.72622 
  P-value:  2e-04 
 
     *-------------*
@@ -5601,9 +5601,9 @@ H_0: \mu_{B5} - \mu_{G5} = 0 \ \ H_0: \mu_{B5} - \mu_{G5} \neq 0
   boy :  -0.10435    girl :  0.02906 
  Observed difference: -0.13341 
 
- Mean of permutation distribution: -0.00079 
- Standard error of permutation distribution: 0.2616 
- P-value:  0.616 
+ Mean of permutation distribution: 0.00274 
+ Standard error of permutation distribution: 0.2637 
+ P-value:  0.6164 
 
     *-------------*
 \end{verbatim}
@@ -7402,6 +7402,143 @@ Click for answer
 \]
 where \(t^*\) is based on 36-1=35 degrees of freedom. Using the green table, we round df down to 30 so we get \(t^*_{30} = 2.042\). Or using R command \texttt{qt(.975,df=35)} we get the exact value \(t^*_{35}=2.0301\).
 We are 95\% confident that, after learning to use a home meter, the average decrease in blood glucose in this population is between 0.72 and 4.84 mmol/liter.
+
+\hypertarget{class-activity-21}{%
+\chapter{Class Activity 21}\label{class-activity-21}}
+
+\hypertarget{example-1-food-poisoning}{%
+\section{Example 1: Food poisoning}\label{example-1-food-poisoning}}
+
+Suppose in an outbreak, 447 of the 998 individuals who ate beef curry were observed to have food poisoning symptoms. As researchers, suppose we want to test the hypothesis that the probability (long run proportion) of a ``random individual who ate beef curry'' having food poisoning is 0.1. Conduct an appropriate hypothesis test.
+
+Click for answer
+
+\emph{Answer:}The set of hypotheses are:
+
+\(\mathrm{H}_0\) : \(p_{FP} = 0.1, \qquad p_{NFP} = 0.9\)
+\(\mathrm{H}_{\mathrm{a}} : \text{One proportion is different}\)
+
+where \(p_{FP}\) is the proportion of people who had food poisoning and \(p_{NFP}\) is the proportion who did not have food poisoning. The expected count assuming the null hypothesis is true is \(n*p_{FP} = 998*0.1 = 99.8\) and \(n*p_{NFP} = 998*0.9 = 898.2\), respectively. The expected count is larger than 5, so we can proceed with the chi-square test. The observed count is 447 and 551 respectively. So, the test statistics can be constructed as
+
+\begin{align*}
+\chi^2 = \sum \frac{(O-E)^2}{E} = \frac{(447 - 99.8)^2}{99.8} +   \frac{(551 - 898.2)^2}{898.2}= 1342.105
+\end{align*}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\DecValTok{447} \SpecialCharTok{{-}} \FloatTok{99.8}\NormalTok{)}\SpecialCharTok{\^{}}\DecValTok{2}\SpecialCharTok{/}\FloatTok{99.8} \SpecialCharTok{+}\NormalTok{ (}\DecValTok{551} \SpecialCharTok{{-}} \FloatTok{898.2}\NormalTok{)}\SpecialCharTok{\^{}}\DecValTok{2}\SpecialCharTok{/}\FloatTok{898.2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 1342.105
+\end{verbatim}
+
+The degrees of freedom corresponding to this test is 1. So, the p-value can be calculated to be 0 as:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1} \SpecialCharTok{{-}} \FunctionTok{pchisq}\NormalTok{(}\FloatTok{1342.105}\NormalTok{, }\AttributeTok{df =} \DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0
+\end{verbatim}
+
+We can also do the test in R using the \texttt{chisq.test} function.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{chisq.test}\NormalTok{(}\AttributeTok{x =} \FunctionTok{c}\NormalTok{(}\DecValTok{447}\NormalTok{, }\DecValTok{551}\NormalTok{), }\AttributeTok{p =} \FunctionTok{c}\NormalTok{(}\FloatTok{0.1}\NormalTok{, }\FloatTok{0.9}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+    Chi-squared test for given probabilities
+
+data:  c(447, 551)
+X-squared = 1342.1, df = 1, p-value < 2.2e-16
+\end{verbatim}
+
+We reject the null hypothesis \((\chi^2 = 1342.105, df = 1, p-value \approx 0)\). There is a significant evidence that the proportion of individuals who eat beef curry and get sick is not \(0.1\)
+
+\hypertarget{example-2-candy-flavors}{%
+\section{Example 2: Candy flavors}\label{example-2-candy-flavors}}
+
+We have bags of candy with five flavors in each bag. We collect a random sample of ten bags. Each bag has 100 pieces of candy and five flavors. Use Chi-square goodness of fit test to test if the proportions of the five flavors in each bag are the same. The data table below shows the combined flavor counts from all 10 bags of candy. Fill in the details below:
+
+Click for answer
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Flavor
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Observed Count (O)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Expected Count (E)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(O-E\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\((O-E)^2\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\((O-E)^2/E\)
+\end{minipage} \\
+\midrule()
+\endhead
+Apple & 180 & 200 & -20 & 400 & 2 \\
+Lime & 250 & 200 & 50 & 2500 & 12.5 \\
+Cherry & 120 & 200 & -80 & 2500 & 32 \\
+Orange & 225 & 200 & 25 & 625 & 3.125 \\
+Grape & 225 & 200 & 25 & 625 & 3.125 \\
+\bottomrule()
+\end{longtable}
+
+\emph{Answer:}
+
+\[H_0: p_1 = p_2 = p_3 = p_4 = p_5 = 1/5\]
+\[H_a: \text{at least one $p_i$ not equal to 1/5}\]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1} \SpecialCharTok{{-}} \FunctionTok{pchisq}\NormalTok{(}\FloatTok{52.75}\NormalTok{, }\AttributeTok{df =} \DecValTok{5{-}1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 9.612522e-11
+\end{verbatim}
+
+The observed test statistics is:
+
+\begin{align*}
+\chi^2 &= \sum_{i=1}^5 \frac{(O_i-E_i)^2}{E_i} = \frac{(180 - 200)^2}{200} + \frac{(250 - 200)^2}{200}\\ & \qquad + \frac{(120 - 200)^2}{200} + \frac{(225 - 200)^2}{200} + \frac{(225 - 200)^2}{200}\\
+&=  52.75
+\end{align*}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{chisq.test}\NormalTok{(}\AttributeTok{x =} \FunctionTok{c}\NormalTok{(}\DecValTok{180}\NormalTok{, }\DecValTok{250}\NormalTok{, }\DecValTok{120}\NormalTok{, }\DecValTok{225}\NormalTok{, }\DecValTok{225}\NormalTok{), }\AttributeTok{p =} \FunctionTok{rep}\NormalTok{(}\DecValTok{1}\SpecialCharTok{/}\DecValTok{5}\NormalTok{,}\DecValTok{5}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+    Chi-squared test for given probabilities
+
+data:  c(180, 250, 120, 225, 225)
+X-squared = 52.75, df = 4, p-value = 9.613e-11
+\end{verbatim}
+
+We reject the null hypothesis \((\chi^2 = 52.75, df = 4, p-value \approx 0)\). We have significant evidence to claim that at least one proportion of flavors is not the same as others.
 
   \bibliography{book.bib,packages.bib}
 

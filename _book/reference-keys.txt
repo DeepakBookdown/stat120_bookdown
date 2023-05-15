@@ -273,3 +273,6 @@ c-what-is-the-test-statistic-value-for-this-test-what-does-this-value-indicate
 d-is-there-sufficient-evidence-to-claim-that-the-monitor-is-effective-in-helping-patients-reduce-their-blood-glucose-levels
 e-what-type-of-error-1-or-2-could-you-have-made-in-part-d-if-you-did-make-this-error-what-are-its-implications-for-people-with-diabetes
 f-compute-and-interpret-a-95-confidence-interval-for-the-true-average-decrease-in-blood-glucose-levels.-note-that-this-ci-is-not-given-above-the-ci-given-in-the-output-is-a-one-sided-ci.
+class-activity-21
+example-1-food-poisoning
+example-2-candy-flavors

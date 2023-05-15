@@ -1,0 +1,219 @@
+# Class Activity 25
+
+
+
+## Example 1: Beer
+
+A study of 16 Ohio State University students looked at the relationship between the number of beers a student consumes and their blood alcohol content (BAC) 30 minutes after their last beer.  The regression information from R to predict BAC from number of beers consumed is given below.
+
+```{r, fig.width=7, fig.height=6}
+bac <- read.csv("https://raw.githubusercontent.com/deepbas/statdatasets/main/BAC.csv")
+```
+
+
+
+```{r, echo = FALSE, fig.align='center', fig.width=5, fig.height=5, out.width="70%"}
+library(GGally)
+ggpairs(bac[,3:5]) + theme(axis.text.x = element_text(size = 3))
+```
+
+
+
+```{r}
+bac.lm <- lm(BAC ~ Beers, data=bac)
+summary(bac.lm)
+confint(bac.lm)
+qt(.975,14)
+```
+
+### (a)	Show how the test stat for slope is computed when testing $H_0: \beta_1=0$ vs. $H_A: \beta_1 \neq 0$.
+
+<details>
+<summary><red>Click for answer</red></summary>
+
+*Answer:* The t test stat has the usual form:
+
+$$
+t = \dfrac{0.017964 - 0}{0.002402} = 7.48
+$$
+
+```{r}
+0.017964/0.002402
+```
+
+
+</details>
+<br>
+
+### (b)	Is the effect of beers on BAC statistically significant?
+
+<details>
+<summary><red>Click for answer</red></summary>
+
+*Answer:* Yes, the effect of the number of beers on BAC is statistically significant (t=7.48, df=14, p<0.0001). The observed slope of 0.018 is 7.48 SEs away from the hypothesized slope of 0. If we repeated this experiment many times, less than 0.01% of the time we would see an observed slope that is 7.48 SEs or more away from 0 if the true slope was 0.
+
+
+</details>
+<br>
+
+### (c)	Interpret the 95% confidence interval for slope in context.
+
+<details>
+<summary><red>Click for answer</red></summary>
+
+*Answer:* Each additional beer is associated with an average increase in BAC of 0.018 (95% CI 0.013 to 0.023).
+
+$$
+0.017964 \pm  (2.144787)0.002402 = 0.013, 0.023
+$$
+```{r}
+0.017964 - (2.144787)*0.002402
+0.017964 + (2.144787)*0.002402
+```
+
+
+```{r,fig.height=4,fig.width=4}
+bac.lm2 <- lm(BAC ~ Beers + Weight, data=bac)
+summary(bac.lm2)
+confint(bac.lm2)
+```
+
+
+</details>
+<br>
+
+### (d) What is the fitted line for the multiple regression of BAC on Beers and Weight?
+
+<details>
+<summary><red>Click for answer</red></summary>
+
+*Answer:* The fitted regression line is 
+
+$$
+\widehat{BAC} = \hat{\mu}(BAC | weight,beers) = 0.03986 + 0.01998(Beers) - 0.0003628(Weight)
+$$
+
+
+</details>
+<br>
+
+### (e) Predict the BAC for: John who weighs 160 lbs and drank 4 beers; and Bob who weighs 160 lbs and drank 5 beers. What is the difference in these predictions?
+
+<details>
+<summary><red>Click for answer</red></summary>
+
+*Answer:* John's predicted BAC is 
+
+$$
+\widehat{BAC}_{john} = 0.03986 + 0.01998(4) - 0.0003628(160) = 0.061732
+$$
+Bob's predicted BAC is
+
+$$
+\widehat{BAC}_{bob} = 0.03986 + 0.01998(5) - 0.0003628(160) = 0.081712
+$$
+The difference in predicted BAC between Bob and John is
+
+$$
+\widehat{BAC}_{bob} - \widehat{BAC}_{john} = 0.081712 - 0.061732 = 0.01998
+$$
+If John and Bob both weigh 160 pounds but Bob drank one more beer than John, then we would predict Bob’s BAC to be 0.01998 units higher than John’s BAC. This is exactly the coefficient value for `Beers` in the model!.
+
+```{r}
+(john <- 0.03986 + 0.01998*4 - 0.0003628*160)
+(bob <- 0.03986 + 0.01998*5 - 0.0003628*160)
+bob - john
+```
+
+
+</details>
+<br>
+
+### (f) Interpret the effect of Beers on BAC in context. 
+
+<details>
+<summary><red>Click for answer</red></summary>
+
+*Answer:* One more beer increases predicted BAC by 0.01998 holding weight constant.
+
+</details>
+<br>
+
+### (g) Interpret the effect of Weight on BAC in context. 
+
+<details>
+<summary><red>Click for answer</red></summary>
+
+*Answer:* Holding the number of beers constant, the average BAC would be lowered by 0.00036 in we increase weight by 1 pound. Put another way, if John and Ann drank 4 beers but John weighs 30 pounds more than Ann, then we predict John’s BAC to be 0.0108 ($30 \times 0.00036$) units lower than Ann’s BAC.
+
+</details>
+<br>
+
+### (h) Are the effects of Beers and Weight on BAC statistically significant?
+
+<details>
+<summary><red>Click for answer</red></summary>
+
+*Answer:* Both number of beers and weight are statistically significant predictors of mean BAC (p-value < 0.0001).
+
+```{r,fig.height=4,fig.width=4}
+bac.lm3 <- lm(BAC ~ Beers + Weight + Gender, data=bac)
+summary(bac.lm3)
+```
+
+</details>
+<br>
+
+### (i) Predict the BAC for: Barb who weighs 160 lbs, drank 4 beers and is female; and John who weighs 160 lbs, drank 4 beers and is male. What is the difference in these predictions?
+
+<details>
+<summary><red>Click for answer</red></summary>
+
+*Answer:* Barb's predicted BAC is 
+
+$$
+\widehat{BAC}_{barb} = 0.03871 + 0.01990(4) - 0.0003444(160) - 0.003240(0) = 0.063206
+$$
+John's predicted BAC is
+
+$$
+\widehat{BAC}_{john} =  0.03871 + 0.01990(4) - 0.0003444(160) - 0.003240(1) = 0.059966
+$$
+The difference in predicted BAC between Bob and John is
+
+$$
+\widehat{BAC}_{bob} - \widehat{BAC}_{john} = 0.063206 - 0.059966 = 0.00324
+$$
+If John and Barb both weigh 160 pounds and drank 4 beers but Barb is female and John male,   then we would predict Barb’s BAC to be 0.00324 units higher than John’s BAC. This is exactly the coefficient value for `Gender` in the model!.
+
+```{r}
+(barb <- 0.03871 + 0.01990*4 - 0.0003444*160 - 0.003240*0)
+(john <- 0.03871 + 0.01990*4 - 0.0003444*160 - 0.003240*1)
+barb - john
+```
+
+</details>
+<br>
+
+### (j) Interpret the effect of Gender on BAC in context. 
+
+<details>
+<summary><red>Click for answer</red></summary>
+
+*Answer:* Holding weight and beers constant, we estimate that the
+BAC of males is 0.0032 units lower than females on average.
+
+</details>
+<br>
+
+### (k) Is the effect of Gender on BAC statistically signficant after accounting for weight and number of beers drank? 
+
+<details>
+<summary><red>Click for answer</red></summary>
+
+*Answer:* No, the p-value of 0.6155 shows that there is no
+statistically significant difference between the mean BAC of males and females after accounting for their weight and number of beers drank!
+
+
+</details>
+<br>

@@ -110,7 +110,7 @@ mean(bootstrapped_means$mean)
 ```
 
 ```
-[1] 20.69667
+[1] 20.625
 ```
 
 ```r
@@ -139,7 +139,7 @@ sd(bootstrapped_means$mean)
 ```
 
 ```
-[1] 1.129349
+[1] 1.087513
 ```
 
 </details><br>

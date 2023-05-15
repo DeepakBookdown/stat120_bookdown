@@ -1,219 +1,212 @@
-# Class Activity 25
+# Class Activity 24
 
 
 
-## Example 1: Beer
+## Example 1: Cricket Chirps
 
-A study of 16 Ohio State University students looked at the relationship between the number of beers a student consumes and their blood alcohol content (BAC) 30 minutes after their last beer.  The regression information from R to predict BAC from number of beers consumed is given below.
-
-```{r, fig.width=7, fig.height=6}
-bac <- read.csv("https://raw.githubusercontent.com/deepbas/statdatasets/main/BAC.csv")
-```
-
-
-
-```{r, echo = FALSE, fig.align='center', fig.width=5, fig.height=5, out.width="70%"}
-library(GGally)
-ggpairs(bac[,3:5]) + theme(axis.text.x = element_text(size = 3))
-```
-
+The data on `CricketChirps` were collected by E.A. Bessey and C.A. Bessey who measured chirp rates for crickets and temperatures during the summer of 1898. Conduct a simple linear regression analysis to predict the temperature by cricket chirp rate.
 
 
 ```{r}
-bac.lm <- lm(BAC ~ Beers, data=bac)
-summary(bac.lm)
-confint(bac.lm)
-qt(.975,14)
+cricket <- read.csv("https://www.lock5stat.com/datasets3e/CricketChirps.csv")
+cricket
 ```
 
-### (a)	Show how the test stat for slope is computed when testing $H_0: \beta_1=0$ vs. $H_A: \beta_1 \neq 0$.
-
-<details>
-<summary><red>Click for answer</red></summary>
-
-*Answer:* The t test stat has the usual form:
-
-$$
-t = \dfrac{0.017964 - 0}{0.002402} = 7.48
-$$
 
 ```{r}
-0.017964/0.002402
+mod <- lm(Temperature~Chirps, data = cricket)
+summary(mod)
 ```
 
-
-</details>
-<br>
-
-### (b)	Is the effect of beers on BAC statistically significant?
+### (1a) What is the equation for the regression line? Define all the variables.
 
 <details>
 <summary><red>Click for answer</red></summary>
 
-*Answer:* Yes, the effect of the number of beers on BAC is statistically significant (t=7.48, df=14, p<0.0001). The observed slope of 0.018 is 7.48 SEs away from the hypothesized slope of 0. If we repeated this experiment many times, less than 0.01% of the time we would see an observed slope that is 7.48 SEs or more away from 0 if the true slope was 0.
-
-
+*Answer:* The equation for the regression line is $\widehat{\text { Temp }}=37.7+0.23 \text{Chirps}$, where `chirps` is the cricket chirp rate and `Temp` is the temperature.
 </details>
 <br>
 
-### (c)	Interpret the 95% confidence interval for slope in context.
+
+
+### (1b) What is the Standard Error(SE) for the slope?
 
 <details>
 <summary><red>Click for answer</red></summary>
 
-*Answer:* Each additional beer is associated with an average increase in BAC of 0.018 (95% CI 0.013 to 0.023).
+*Answer:* The standard error of the slope is 0.01423.
+</details>
+<br>
 
-$$
-0.017964 \pm  (2.144787)0.002402 = 0.013, 0.023
-$$
-```{r}
-0.017964 - (2.144787)*0.002402
-0.017964 + (2.144787)*0.002402
+### (1c) Find a 95% confidence interval for the slope of the cricket temperature model.
+
+<details>
+<summary><red>Click for answer</red></summary>
+
+*Answer:* The 95% confidence interval for the slope is given by $b_1 \pm t^* \cdot S E$. It can be calculated as 
+
+
+$$0.23067 \pm 2.57\cdot 0.01423 = (0.1940,0.2672).$$
+
+```{r, collapse=TRUE}
+0.23067 + c(-1,1)* qt(0.975, df = 5)* 0.01423
 ```
-
-
-```{r,fig.height=4,fig.width=4}
-bac.lm2 <- lm(BAC ~ Beers + Weight, data=bac)
-summary(bac.lm2)
-confint(bac.lm2)
-```
-
-
 </details>
 <br>
 
-### (d) What is the fitted line for the multiple regression of BAC on Beers and Weight?
+
+### (1d) Conduct a hypotheis test for the slope. Include all the steps. 
 
 <details>
 <summary><red>Click for answer</red></summary>
 
-*Answer:* The fitted regression line is 
+*Answer:* The hypotheses are:
 
-$$
-\widehat{BAC} = \hat{\mu}(BAC | weight,beers) = 0.03986 + 0.01998(Beers) - 0.0003628(Weight)
-$$
-
-
-</details>
-<br>
-
-### (e) Predict the BAC for: John who weighs 160 lbs and drank 4 beers; and Bob who weighs 160 lbs and drank 5 beers. What is the difference in these predictions?
-
-<details>
-<summary><red>Click for answer</red></summary>
-
-*Answer:* John's predicted BAC is 
-
-$$
-\widehat{BAC}_{john} = 0.03986 + 0.01998(4) - 0.0003628(160) = 0.061732
-$$
-Bob's predicted BAC is
-
-$$
-\widehat{BAC}_{bob} = 0.03986 + 0.01998(5) - 0.0003628(160) = 0.081712
-$$
-The difference in predicted BAC between Bob and John is
-
-$$
-\widehat{BAC}_{bob} - \widehat{BAC}_{john} = 0.081712 - 0.061732 = 0.01998
-$$
-If John and Bob both weigh 160 pounds but Bob drank one more beer than John, then we would predict Bob’s BAC to be 0.01998 units higher than John’s BAC. This is exactly the coefficient value for `Beers` in the model!.
+\begin{align*}
+H_0 :& \beta_1 = 0 \\
+H_a :& \beta_1 \neq 0
+\end{align*}
 
 ```{r}
-(john <- 0.03986 + 0.01998*4 - 0.0003628*160)
-(bob <- 0.03986 + 0.01998*5 - 0.0003628*160)
-bob - john
+plot(cricket$Chirps, cricket$Temperature, type = "p", pch = 19)
+abline(mod)
 ```
 
 
-</details>
-<br>
-
-### (f) Interpret the effect of Beers on BAC in context. 
-
-<details>
-<summary><red>Click for answer</red></summary>
-
-*Answer:* One more beer increases predicted BAC by 0.01998 holding weight constant.
-
-</details>
-<br>
-
-### (g) Interpret the effect of Weight on BAC in context. 
-
-<details>
-<summary><red>Click for answer</red></summary>
-
-*Answer:* Holding the number of beers constant, the average BAC would be lowered by 0.00036 in we increase weight by 1 pound. Put another way, if John and Ann drank 4 beers but John weighs 30 pounds more than Ann, then we predict John’s BAC to be 0.0108 ($30 \times 0.00036$) units lower than Ann’s BAC.
-
-</details>
-<br>
-
-### (h) Are the effects of Beers and Weight on BAC statistically significant?
-
-<details>
-<summary><red>Click for answer</red></summary>
-
-*Answer:* Both number of beers and weight are statistically significant predictors of mean BAC (p-value < 0.0001).
-
-```{r,fig.height=4,fig.width=4}
-bac.lm3 <- lm(BAC ~ Beers + Weight + Gender, data=bac)
-summary(bac.lm3)
-```
-
-</details>
-<br>
-
-### (i) Predict the BAC for: Barb who weighs 160 lbs, drank 4 beers and is female; and John who weighs 160 lbs, drank 4 beers and is male. What is the difference in these predictions?
-
-<details>
-<summary><red>Click for answer</red></summary>
-
-*Answer:* Barb's predicted BAC is 
-
-$$
-\widehat{BAC}_{barb} = 0.03871 + 0.01990(4) - 0.0003444(160) - 0.003240(0) = 0.063206
-$$
-John's predicted BAC is
-
-$$
-\widehat{BAC}_{john} =  0.03871 + 0.01990(4) - 0.0003444(160) - 0.003240(1) = 0.059966
-$$
-The difference in predicted BAC between Bob and John is
-
-$$
-\widehat{BAC}_{bob} - \widehat{BAC}_{john} = 0.063206 - 0.059966 = 0.00324
-$$
-If John and Barb both weigh 160 pounds and drank 4 beers but Barb is female and John male,   then we would predict Barb’s BAC to be 0.00324 units higher than John’s BAC. This is exactly the coefficient value for `Gender` in the model!.
+The conditions for the slope inference are linearity, normality, constant variability, and independence of the residuals. These can be verified based on the residual and QQ-plot. Based on the residual plot, these residuals are randomly scattered around 0, without any patterns and with constant vertical spread. The individual observations are independent as each cricket are different from one another.
 
 ```{r}
-(barb <- 0.03871 + 0.01990*4 - 0.0003444*160 - 0.003240*0)
-(john <- 0.03871 + 0.01990*4 - 0.0003444*160 - 0.003240*1)
-barb - john
+# Residual plot
+plot(mod, which = 1)
+```
+
+
+```{r}
+# QQ plot
+plot(mod, which = 2)
+```
+
+So, based on the summary output, the test statistics for the slope test is given by
+
+\begin{align*}
+t=\frac{b_{1}}{S E} = \frac{0.23067 }{0.01423} = 16.21
+\end{align*}
+
+The p-value corresponding to the above t-value based on t-distribution with $n-2 = 7-2 = 5$ degrees of freedom is given as $0.00000163$ from the coefficients table, or as seen below:
+
+```{r}
+2*(1-pt(16.21, df = 5))
+```
+
+
+So, we reject the null at the significance level of 0.05 and conclude that there is significant evidence that the population slope parameter is different from 0.
+
+</details>
+<br>
+
+### (1e) Conduct a hypothesis test to see if there exists some association between temperature and chirp rate.
+
+```{r}
+anova(mod)
+```
+
+<details>
+<summary><red>Click for answer</red></summary>
+
+*Answer:*
+
+The hypotheses can be written as:
+
+\begin{align*}
+H_0 :& \rho = 0 \\
+H_a :& \rho \neq 0
+\end{align*}
+
+The conditions for this test are the same as before. So, we assume the conditions are met.
+
+\begin{align*}
+t & =\frac{\text { statistic -null }}{S E}=\frac{r-0}{\sqrt{\frac{1-r^{2}}{n-2}}} = =\frac{r}{\frac{\sqrt{1-r^{2}}}{\sqrt{n-2}}}\\
+&=\left(\frac{r \sqrt{n-2}}{\sqrt{1-r^{2}}}\right)\\
+&=\frac{0.99062 \sqrt{7-2}}{\sqrt{1-0.99062^{2}}}=16.21
+\end{align*}
+
+
+The test statistics is exactly the same as before. So, both of these tests are equivalent and we arrive at the same conclusion as before. If the slope corresponding to the change in mean chirp rate for unit increase in temperature is significantly different from 0, then there is also a significant association between the chirp rate and the temperature. 
+
+</details>
+<br>
+
+## Example 2: Cereals and Calories
+
+Nutrition information for a sample of 30 breakfast cereals, derived from nutrition labels are stored under `Cereals` dataset. Calorie values are per cup of cereal and sugars are measured in grams per cup. We would like to predict the calorie count by the suger content of the cereal.
+
+```{r}
+cerealdat <- read.csv("https://www.lock5stat.com/datasets3e/Cereal.csv")
+```
+
+```{r}
+mod <- lm(Calories~Sugars, data = cerealdat)
+summary(mod)
+```
+
+### (2a) What is the equation for the regression line? Define all the variables.
+
+<details>
+<summary><red>Click for answer</red></summary>
+
+*Answer:* $$\widehat{Calorie} = 88.92 + 4.31 \cdot \text{Sugar}$$
+
+</details>
+<br>
+
+### (2b) Check the conditions for using linear model.
+
+<details>
+<summary><red>Click for answer</red></summary>
+
+*Answer:* The assumptions for using linear model seem to have met based on the residual plot and qq-plot.
+
+
+```{r}
+plot(cerealdat$Sugars, cerealdat$Calories, type = "p", pch = 19)
+abline(mod)
+```
+
+```{r}
+plot(mod, which = 1)
+```
+
+```{r}
+plot(mod, which = 2)
 ```
 
 </details>
 <br>
 
-### (j) Interpret the effect of Gender on BAC in context. 
+### (2c) Conduct a hypotheis test to determine if the linear model is effective. Include all the steps.
 
 <details>
 <summary><red>Click for answer</red></summary>
 
-*Answer:* Holding weight and beers constant, we estimate that the
-BAC of males is 0.0032 units lower than females on average.
+*Answer:*
 
-</details>
-<br>
+```{r}
+anova(mod)
+```
 
-### (k) Is the effect of Gender on BAC statistically signficant after accounting for weight and number of beers drank? 
 
-<details>
-<summary><red>Click for answer</red></summary>
+\begin{align*}
+t=\frac{b_{1}}{S E} = \frac{4.3103 }{0.9269} = 4.650
+\end{align*}
 
-*Answer:* No, the p-value of 0.6155 shows that there is no
-statistically significant difference between the mean BAC of males and females after accounting for their weight and number of beers drank!
+The p-value corresponding to the above t-value based on t-distribution with $n-2 = 30-2 = 28$ degrees of freedom is given as $0.00000725$ from the coefficients table, or as seen below:
 
+```{r}
+2*(1-pt(4.650, df = 28))
+```
+
+
+So, we reject the null at the significance level of 0.05 and conclude that there is significant evidence that the population slope parameter is different from 0.
 
 </details>
 <br>
