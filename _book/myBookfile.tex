@@ -139,7 +139,7 @@
 
 \title{Stat 120}
 \author{Deepak Bastola}
-\date{2023-05-14}
+\date{2023-05-17}
 
 \begin{document}
 \maketitle
@@ -1628,16 +1628,16 @@ Click for answer
 
 \begin{verbatim}
    ID Greeting  Male    Weight
-1   1    Hello  TRUE 195.94186
-2   2    Hello FALSE 151.07571
-3   3    Hello  TRUE 284.66988
-4   4    Hello FALSE  63.32311
-5   5    Hello  TRUE 163.75567
-6   6  Goodbye FALSE 201.06088
-7   7  Goodbye  TRUE 120.10670
-8   8  Goodbye FALSE 277.05828
-9   9  Goodbye  TRUE 109.25090
-10 10  Goodbye FALSE 193.66917
+1   1    Hello  TRUE 215.57563
+2   2    Hello FALSE 185.13140
+3   3    Hello  TRUE 124.91917
+4   4    Hello FALSE 151.91407
+5   5    Hello  TRUE 249.44125
+6   6  Goodbye FALSE 140.83101
+7   7  Goodbye  TRUE  72.87565
+8   8  Goodbye FALSE 194.27171
+9   9  Goodbye  TRUE 148.48399
+10 10  Goodbye FALSE 221.33265
 \end{verbatim}
 
 \emph{Answer:} We see a data frame with four columns, where the first column is an \texttt{identifier} for the cases. We have information on the greeting types, whether male or not, and weight on these cases in the remaining columns.
@@ -1818,7 +1818,7 @@ Run the following command to obtain a SRS of 10 words from the 268 that are in t
 \end{Shaded}
 
 \begin{verbatim}
- [1] 259 238 248  68 208 114 185 100 135 206
+ [1] 148  87 140 220 259 108 147  94  13 262
 \end{verbatim}
 
 This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
@@ -1834,17 +1834,17 @@ We will \emph{subset} the data set \texttt{pop} to obtain only the sampled rows 
 \end{Shaded}
 
 \begin{verbatim}
-    position size    word
-259      259    6 people,
-238      238    4   vain,
-248      248    5   birth
-68        68    2      to
-208      208    2      we
-114      114    2      we
-185      185    5   nobly
-100      100    6  should
-135      135    5   power
-206      206    7 honored
+    position size       word
+148      148    4       what
+87        87    4       that
+140      140    3        The
+220      220    4       last
+259      259    6    people,
+108      108    2         we
+147      147    8  remember,
+94        94   10 altogether
+13        13    9  continent
+262      262    6    people,
 \end{verbatim}
 
 \begin{enumerate}
@@ -1865,7 +1865,7 @@ The word lengths in part (b) are the data for your sample. You can compute your 
 \end{Shaded}
 
 \begin{verbatim}
- [1] 6 4 5 2 2 2 5 6 5 7
+ [1]  4  4  3  4  6  2  8 10  9  6
 \end{verbatim}
 
 Then find the mean of these values:
@@ -1877,7 +1877,7 @@ Then find the mean of these values:
 \end{Shaded}
 
 \begin{verbatim}
-[1] 4.4
+[1] 5.6
 \end{verbatim}
 
 How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?
@@ -3916,7 +3916,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
-[1] 20.57233
+[1] 20.637
 \end{verbatim}
 
 \begin{Shaded}
@@ -3949,7 +3949,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
-[1] 1.108479
+[1] 1.105571
 \end{verbatim}
 
 \hypertarget{example-3-simulation-of-a-sample-proportion}{%
@@ -4262,7 +4262,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
- [1] 147  23  52 125  87 185 132  85  85  52
+ [1]  52 132  52  72  72 132 125 132  23  93
 \end{verbatim}
 
 \hypertarget{d.-where-will-be-bootstrap-distribution-be-centered-what-shape-do-we-expect-it-to-have}{%
@@ -4516,12 +4516,12 @@ The \texttt{boot(y\ \textasciitilde{}\ x,\ data=)} command generates 10000 boots
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -2.26095 
- Mean of bootstrap distribution: -2.2586 
- Standard error of bootstrap distribution: 0.76874 
+ Mean of bootstrap distribution: -2.25896 
+ Standard error of bootstrap distribution: 0.78105 
 
  Bootstrap percentile interval
       2.5%      97.5% 
--3.7596548 -0.7433095 
+-3.7724167 -0.7285476 
 
         *--------------*
 \end{verbatim}
@@ -4774,12 +4774,12 @@ We can now use the 0/1 version of telephone in the \texttt{boot} command (like e
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -0.03905 
- Mean of bootstrap distribution: -0.03899 
- Standard error of bootstrap distribution: 0.0333 
+ Mean of bootstrap distribution: -0.03854 
+ Standard error of bootstrap distribution: 0.03361 
 
  Bootstrap percentile interval
        2.5%       97.5% 
--0.10428571  0.02714286 
+-0.10285714  0.02761905 
 
         *--------------*
 \end{verbatim}
@@ -5149,9 +5149,9 @@ Then load the \texttt{CarletonStats} package and run the \texttt{permTest(y\ \te
   Caffeine :  12.25      Sleep :  15.25 
  Observed difference: -3 
 
- Mean of permutation distribution: -0.01562 
- Standard error of permutation distribution: 1.49536 
- P-value:  0.0536 
+ Mean of permutation distribution: 0.00468 
+ Standard error of permutation distribution: 1.4972 
+ P-value:  0.0448 
 
     *-------------*
 \end{verbatim}
@@ -5273,8 +5273,8 @@ Click for answer
   NonRes :  6405.263     Res :  2821.053 
  Observed difference  NonRes - Res : 3584.211 
 
- Mean of permutation distribution: -0.7406 
- Standard error of permutation distribution: 947.8897 
+ Mean of permutation distribution: 1.50699 
+ Standard error of permutation distribution: 948.0836 
  P-value:  1e-04 
 
     *-------------*
@@ -5352,8 +5352,8 @@ Click for answer
   Aerobic_Exercise :  9.2    Resistance_Training :  3 
  Observed difference: 6.2 
 
- Mean of permutation distribution: 0.0019 
- Standard error of permutation distribution: 1.1834 
+ Mean of permutation distribution: -0.00573 
+ Standard error of permutation distribution: 1.19073 
  P-value:  2e-04 
 
     *-------------*
@@ -5459,8 +5459,8 @@ Click for answer
   New_Method :  91.05    Traditional_Method :  82.15 
  Observed difference: 8.9 
 
- Mean of permutation distribution: -0.0024 
- Standard error of permutation distribution: 1.72622 
+ Mean of permutation distribution: 0.01623 
+ Standard error of permutation distribution: 1.74332 
  P-value:  2e-04 
 
     *-------------*
@@ -5601,9 +5601,9 @@ H_0: \mu_{B5} - \mu_{G5} = 0 \ \ H_0: \mu_{B5} - \mu_{G5} \neq 0
   boy :  -0.10435    girl :  0.02906 
  Observed difference: -0.13341 
 
- Mean of permutation distribution: 0.00274 
- Standard error of permutation distribution: 0.2637 
- P-value:  0.6164 
+ Mean of permutation distribution: 0.00186 
+ Standard error of permutation distribution: 0.26371 
+ P-value:  0.6132 
 
     *-------------*
 \end{verbatim}
@@ -7539,6 +7539,659 @@ X-squared = 52.75, df = 4, p-value = 9.613e-11
 \end{verbatim}
 
 We reject the null hypothesis \((\chi^2 = 52.75, df = 4, p-value \approx 0)\). We have significant evidence to claim that at least one proportion of flavors is not the same as others.
+
+\hypertarget{class-activity-22}{%
+\chapter{Class Activity 22}\label{class-activity-22}}
+
+\hypertarget{example-1-does-political-comfort-level-depend-on-religion}{%
+\section{Example 1: Does political comfort level depend on religion?}\label{example-1-does-political-comfort-level-depend-on-religion}}
+
+Consider survey questions about political comfort level and religion. We want know if the response to the comfort level question is associated with their religious practice. To test this question about \textbf{two categorical} variables with one variable containing at least \textbf{3 levels}, we must conduct a chi-square test for association.
+
+\hypertarget{a-hypotheses}{%
+\subsubsection{(a) Hypotheses}\label{a-hypotheses}}
+
+State the hypotheses for this test.
+
+Click for answer
+
+\emph{Answer:} The null can be stated a couple of equivalent ways: There is no association between religion and comfort level; the variables comfort level and religion are independent of one another; the distribution of comfort level is the same for all three religion types.
+
+The alternatives are just ``not the null'' statements: There is an association between religion and comfort level; the variables comfort level and religion are dependent; the distribution of comfort level is the different for at least one religion type.
+
+\hypertarget{b-data}{%
+\subsubsection{(b) Data}\label{b-data}}
+
+Does the data suggest that there is an association between comfort level and religion?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(dplyr)}
+\FunctionTok{library}\NormalTok{(ggplot2)}
+
+\CommentTok{\# read the data }
+\NormalTok{survey }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/deepbas/statdatasets/main/Survey.csv"}\NormalTok{) }
+
+\CommentTok{\# and drop the rows containing missing values using the tidyr package}
+\NormalTok{survey }\OtherTok{\textless{}{-}}\NormalTok{ survey }\SpecialCharTok{\%\textgreater{}\%}\NormalTok{ tidyr}\SpecialCharTok{::}\FunctionTok{drop\_na}\NormalTok{()}
+
+\CommentTok{\# rename comfort level using fct\_recode() from the forcats package}
+\NormalTok{survey }\OtherTok{\textless{}{-}}\NormalTok{ survey }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mutate}\NormalTok{(}\AttributeTok{comfortness =}\NormalTok{ forcats}\SpecialCharTok{::}\FunctionTok{fct\_recode}\NormalTok{(Question}\FloatTok{.9}\NormalTok{, }
+                          \StringTok{\textasciigrave{}}\AttributeTok{rarely}\StringTok{\textasciigrave{}} \OtherTok{=} \StringTok{"rarely, if ever, comfortable"}\NormalTok{,}
+                          \StringTok{\textasciigrave{}}\AttributeTok{sometimes}\StringTok{\textasciigrave{}} \OtherTok{=} \StringTok{"sometimes comfortable"}\NormalTok{,}
+                          \StringTok{\textasciigrave{}}\AttributeTok{almost always}\StringTok{\textasciigrave{}} \OtherTok{=} \StringTok{"almost always comfortable"}\NormalTok{),}
+                          \AttributeTok{comfortness =}\NormalTok{ forcats}\SpecialCharTok{::}\FunctionTok{fct\_relevel}\NormalTok{(comfortness, }
+                                                             \StringTok{"almost always"}\NormalTok{,}
+                                                             \StringTok{"sometimes"}\NormalTok{, }
+                                                             \StringTok{"rarely"}\NormalTok{))}
+
+\CommentTok{\# rename comfort level using fct\_recode() from the forcats package}
+\NormalTok{survey }\OtherTok{\textless{}{-}}\NormalTok{ survey }\SpecialCharTok{\%\textgreater{}\%}\FunctionTok{mutate}\NormalTok{(}\AttributeTok{religiousness =}\NormalTok{ forcats}\SpecialCharTok{::}\FunctionTok{fct\_recode}\NormalTok{(Question}\FloatTok{.8}\NormalTok{, }
+                          \StringTok{\textasciigrave{}}\AttributeTok{not religious}\StringTok{\textasciigrave{}} \OtherTok{=} \StringTok{"not religious"}\NormalTok{,}
+                          \StringTok{\textasciigrave{}}\AttributeTok{religious not active}\StringTok{\textasciigrave{}} \OtherTok{=} \StringTok{"religious but not actively practicing"}\NormalTok{,}
+                          \StringTok{\textasciigrave{}}\AttributeTok{religious active}\StringTok{\textasciigrave{}} \OtherTok{=} \StringTok{"religious and actively practicing my religion"}\NormalTok{),}
+                          \AttributeTok{religiousness =}\NormalTok{ forcats}\SpecialCharTok{::}\FunctionTok{fct\_relevel}\NormalTok{(religiousness,}
+                                                               \StringTok{"not religious"}\NormalTok{,}
+                                                               \StringTok{"religious not active"}\NormalTok{,}
+                                                               \StringTok{"religious active"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Make a two way table}
+\FunctionTok{library}\NormalTok{(kableExtra)}
+\NormalTok{counts }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(survey}\SpecialCharTok{$}\NormalTok{religiousness, survey}\SpecialCharTok{$}\NormalTok{comfortness)}
+\FunctionTok{prop.table}\NormalTok{(counts,}\DecValTok{1}\NormalTok{)  }\CommentTok{\# dist of comfort level given religious level}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+                      
+                       almost always  sometimes     rarely
+  not religious           0.53092784 0.39175258 0.07731959
+  religious not active    0.39393939 0.41414141 0.19191919
+  religious active        0.31578947 0.42105263 0.26315789
+\end{verbatim}
+
+\hypertarget{formatted-tables-in-r}{%
+\subsubsection{Formatted tables in R}\label{formatted-tables-in-r}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{kableExtra}\SpecialCharTok{::}\FunctionTok{kable}\NormalTok{(}\FunctionTok{table}\NormalTok{(survey}\SpecialCharTok{$}\NormalTok{religiousness, survey}\SpecialCharTok{$}\NormalTok{comfortness), }
+                  \AttributeTok{caption =} \StringTok{"A two way table of religious preference and political comfortness"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{kable\_styling}\NormalTok{(}\AttributeTok{position =} \StringTok{"center"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{table}
+
+\caption{\label{tab:unnamed-chunk-3}A two way table of religious preference and political comfortness}
+\centering
+\begin{tabular}[t]{l|r|r|r}
+\hline
+  & almost always & sometimes & rarely\\
+\hline
+not religious & 103 & 76 & 15\\
+\hline
+religious not active & 39 & 41 & 19\\
+\hline
+religious active & 18 & 24 & 15\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(survey, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{religiousness, }\AttributeTok{fill=}\NormalTok{comfortness)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{position=}\StringTok{"fill"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{fill =} \StringTok{"Comfort level"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Religious level"}\NormalTok{, }\AttributeTok{y =} \StringTok{"proportion"}\NormalTok{, }
+       \AttributeTok{title=}\StringTok{"Comfort level by religious level"}\NormalTok{) }\SpecialCharTok{+}
+    \FunctionTok{scale\_x\_discrete}\NormalTok{(}\AttributeTok{labels =} \ControlFlowTok{function}\NormalTok{(x) stringr}\SpecialCharTok{::}\FunctionTok{str\_wrap}\NormalTok{(x, }\AttributeTok{width =} \DecValTok{16}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=1\linewidth]{Class_Activity_22_files/figure-latex/unnamed-chunk-4-1} \end{center}
+
+Click for answer
+
+\emph{Answer:} Yes, there is a much higher rate of ``almost always'' comfortable for the not religious respondents (53.1\%) than those that are religious (not active: 39.4\%; active: 31.6\%).
+
+\hypertarget{c-expected-counts}{%
+\subsubsection{(c) Expected counts}\label{c-expected-counts}}
+
+Compute the expected number of ``not religious'' people who are ``almost always comfortable''.
+
+Click for answer
+
+\emph{Answer:} There are 194 ``not religious'' respondents and the overall rate (ignoring religion) of ``almost always'' comfortable is about 45.7\%. If the null is true (and religion doesn't relate to comfort level), the expected number is about
+
+\[194 \times \dfrac{160}{350} = 88.686\]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{table}\NormalTok{(survey}\SpecialCharTok{$}\NormalTok{religiousness)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+       not religious religious not active 
+                 194                   99 
+    religious active 
+                  57 
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{table}\NormalTok{(survey}\SpecialCharTok{$}\NormalTok{comfortness)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+almost always     sometimes        rarely 
+          160           141            49 
+\end{verbatim}
+
+\hypertarget{d-chi-square-contribution}{%
+\subsubsection{(d) Chi-square contribution}\label{d-chi-square-contribution}}
+
+What is the contribution to the chi-square test statistic from the ``not religious''/``almost always comfortable'' cell?
+
+Click for answer
+
+\emph{Answer:} The contribution to the chi-square test stat from this category is 2.31.
+
+\[
+\dfrac{(103 - 88.6857143)^2}{88.6857143} = 2.31
+\]
+
+\hypertarget{e-chi-square-test}{%
+\subsubsection{(e) Chi-square test}\label{e-chi-square-test}}
+
+The \texttt{chisq.test(x,y)} can be used to give chi-square test results. For this version, \texttt{x} and \texttt{y} are categorical variables from a data set.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ComfortReligion }\OtherTok{\textless{}{-}} \FunctionTok{chisq.test}\NormalTok{(survey}\SpecialCharTok{$}\NormalTok{religiousness, survey}\SpecialCharTok{$}\NormalTok{comfortness)}
+\NormalTok{ComfortReligion}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+    Pearson's Chi-squared test
+
+data:  survey$religiousness and survey$comfortness
+X-squared = 19.33, df = 4, p-value = 0.0006768
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  What is the chi-square test stat value?
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} The test stat value is 19.33
+
+\begin{itemize}
+\tightlist
+\item
+  How is the degrees of freedom of 4 calculated?
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} There are 3 categories for each variable, so the degrees of freedom will be \(df = (3-1)(3-1) = 4\).
+
+\begin{itemize}
+\tightlist
+\item
+  Interpret the p-value for this test.
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} If there is no association between comfort level and religiousness, then we would see a chi-square test stat of 19.33, or one even larger, only about 0.07\% of the time.
+
+\hypertarget{f-conclusion}{%
+\subsubsection{(f) Conclusion}\label{f-conclusion}}
+
+What is your conclusion for this test?
+
+Click for answer
+
+\emph{Answer:} We have strong evidence that there is an association between political comfort level and religiousness (\(\chi^2 = 19.33\), df = 4, p-value = \ensuremath{7\times 10^{-4}}).
+
+\hypertarget{g-expected-counts}{%
+\subsubsection{(g) Expected counts}\label{g-expected-counts}}
+
+Are the expected counts large enough to use the chi-square distribution to compute the p-value?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ComfortReligion}\SpecialCharTok{$}\NormalTok{expected}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+                      survey$comfortness
+survey$religiousness   almost always sometimes rarely
+  not religious             88.68571  78.15429  27.16
+  religious not active      45.25714  39.88286  13.86
+  religious active          26.05714  22.96286   7.98
+\end{verbatim}
+
+Click for answer
+
+\emph{Answer:} Yes, all expected counts are 5 or greater.
+
+\hypertarget{h-simulated-p-value}{%
+\subsubsection{(h) Simulated p-value}\label{h-simulated-p-value}}
+
+If you were concerned that the expected counts weren't large enough to trust using a chi-square distribution to compute a p-value, you can add a \texttt{simulate.p.value\ =\ TRUE} argument to use a randomization distribution to compute the p-value:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{chisq.test}\NormalTok{(survey}\SpecialCharTok{$}\NormalTok{religiousness, survey}\SpecialCharTok{$}\NormalTok{comfortness, }\AttributeTok{simulate.p.value =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+    Pearson's Chi-squared test with simulated p-value
+    (based on 2000 replicates)
+
+data:  survey$religiousness and survey$comfortness
+X-squared = 19.33, df = NA, p-value = 0.001999
+\end{verbatim}
+
+The p-value is slightly different, but your conclusion should be the same.
+
+\hypertarget{i-where-is-the-difference}{%
+\subsubsection{(i) Where is the difference?}\label{i-where-is-the-difference}}
+
+Use the grouped bar graph and conditional percents from part (b) to describe the association you (should have) found in part (f). To help quantify differences, compute a 95\% confidence interval for the difference in the true proportions of ``rarely comfortable'' people in the not religious and actively religious groups.
+
+Click for answer
+
+\emph{Answer:} The largest test stat contributions comes from the not religious/rarely comfortable group and the active religious/rarely comfortable group. We can see that the not religious respondents have a low ``rarely'' comfortable level compared to religious groups (7.7\% vs.~26.3\% for active and 19.2\% for not active) and they have a very high almost always comfortable level compared to religious groups (53.1\% vs.~31.6\% for active and 39.4\% for not active).
+
+If \(p_{not.rel}\) and \(p_{active.rel}\) denote the true proportions of ``rarely comfortable'' for the not religious and active religious groups. We want a 95\% CI for \(p_{not.rel} - p_{active}\). The sample proportions are computed from the \texttt{counts} table (or the \texttt{prop.table} output). Of the 194 ``not religious'' respondents, 15 are rarely comfortable so
+\[\hat{p}_{not.rel} = \frac{15}{194} = 0.077\]
+\[\hat{p}_{active.rel} = \frac{15}{57} = 0.263\]
+
+So a 95\% CI for the difference in the true rates of rarely comfortable is
+\begin{align*}
+CI &= (0.077 - 0.263) \pm 1.96\cdot\sqrt{\frac{0.077(1-0.077)}{194} + \frac{0.263(1-0.263)}{57}}\\
+&= (-0.306, -0.066)
+\end{align*}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{round}\NormalTok{((}\FloatTok{0.077} \SpecialCharTok{{-}} \FloatTok{0.263}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{)}\SpecialCharTok{*} \FloatTok{1.96}\SpecialCharTok{*} \FunctionTok{sqrt}\NormalTok{(}\FloatTok{0.077}\SpecialCharTok{*}\NormalTok{(}\DecValTok{1}\FloatTok{{-}0.077}\NormalTok{)}\SpecialCharTok{/}\DecValTok{194}  \SpecialCharTok{+} \FloatTok{0.263}\SpecialCharTok{*}\NormalTok{(}\DecValTok{1}\FloatTok{{-}0.263}\NormalTok{)}\SpecialCharTok{/}\DecValTok{57}\NormalTok{),}\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] -0.306 -0.066
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  I am 95\% confident that the percentage of all non-religious students who are rarely comfortable is between 7 and 31 percentage points lower than the actively religious students.
+\end{itemize}
+
+\hypertarget{example-2-perry-preschool-project}{%
+\section{Example 2: Perry Preschool Project}\label{example-2-perry-preschool-project}}
+
+In a 1962 social experiment, 123 3- and 4-year-old children from poverty-level families in Ypsilanti, Michigan, were randomly assigned either to a treatment group receiving 2 years of preschool instruction or to a control group receiving no preschool. The participants were followed into their adult years. The following table shows how many in each group were arrested for some crime by the time they were 19 years old. (\emph{Time}, July 29, 1991).
+
+\begin{longtable}[]{@{}llll@{}}
+\toprule()
+~ & Arrested & Not Arrested & Total \\
+\midrule()
+\endhead
+Preschool & 19 & 42 & 61 \\
+Control & 32 & 30 & 62 \\
+Total & 51 & 72 & 123 \\
+\bottomrule()
+\end{longtable}
+
+Is a statistically significant difference between the rate of arrest (or no arrest) in the two treatment groups.
+
+\hypertarget{a-test-choice}{%
+\subsubsection{(a) Test choice}\label{a-test-choice}}
+
+There are two categorical variables, each with two levels. We could either use a two sample test to compare proportions (groups: treatment, response: arrest outcome) OR we could use a chi-square test of independence. These tests will give identical results. For this example, we will use the chi-square test. State your hypotheses needed to test the question above.
+
+Click for answer
+
+\emph{Answer:} The null hypothesis is that the treatment (preschool/control) is not related to the arrest outcome.
+
+\hypertarget{b-chi-square-test-with-summarized-data}{%
+\subsubsection{(b) Chi-square test with summarized data}\label{b-chi-square-test-with-summarized-data}}
+
+This example differs from example 2 because we have data in a summarized two-way table. (Example 2 had the raw categorical variables available.) To run the chi-square test, we first must create a matrix of counts using the \texttt{cbind} command that \textbf{binds} together \textbf{c}olumns of counts:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{counts }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{19}\NormalTok{,}\DecValTok{32}\NormalTok{), }\FunctionTok{c}\NormalTok{(}\DecValTok{42}\NormalTok{,}\DecValTok{30}\NormalTok{))}
+\FunctionTok{colnames}\NormalTok{(counts) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"arrested"}\NormalTok{, }\StringTok{"not arrested"}\NormalTok{) }\CommentTok{\# adds column names}
+\FunctionTok{rownames}\NormalTok{(counts) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"preschool"}\NormalTok{, }\StringTok{"control"}\NormalTok{)  }\CommentTok{\# adds row names}
+\NormalTok{counts}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+          arrested not arrested
+preschool       19           42
+control         32           30
+\end{verbatim}
+
+We then use this in the \texttt{chisq.test} command:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{preschool.test }\OtherTok{\textless{}{-}} \FunctionTok{chisq.test}\NormalTok{(counts)}
+\NormalTok{preschool.test}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+    Pearson's Chi-squared test with Yates' continuity
+    correction
+
+data:  counts
+X-squared = 4.4963, df = 1, p-value = 0.03397
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Are the expected counts large enough to trust these results?
+\end{itemize}
+
+Click for answer
+
+\emph{Answer}: Yes, they are all above 25.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{51}\SpecialCharTok{/}\DecValTok{123}  \CommentTok{\# overall arrest rate}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.4146341
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{72}\SpecialCharTok{/}\DecValTok{123}  \CommentTok{\# overall non arrest rate}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.5853659
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{preschool.test}\SpecialCharTok{$}\NormalTok{expected}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+          arrested not arrested
+preschool 25.29268     35.70732
+control   25.70732     36.29268
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  What is your conclusion?
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} There is some evidence of an association between the treatment (preschool/control) and the arrest outcome (\(\chi^2 = 4.50\), df=1, p-value=0.034).
+
+\hypertarget{c-how-different}{%
+\subsubsection{(c) How different?}\label{c-how-different}}
+
+How do the arrest rates differ for each treatment group? Compute a 95\% confidence interval for the difference in arrest rates between those who had the preschool and control treatments.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{prop.table}\NormalTok{(counts,}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+           arrested not arrested
+preschool 0.3114754    0.6885246
+control   0.5161290    0.4838710
+\end{verbatim}
+
+Click for answer
+
+\emph{Answer:} About 52\% of the control group were arrested while only about 31\% of the preschool group were arrested.
+
+\[
+\hat{p}_{control} = \dfrac{32}{62} = 0.516129, \ \ \ \hat{p}_{preschool} = \dfrac{19}{61} = 0.3114754
+\]
+
+The 95\% for the difference in true arrest rates \(p_{control} - p_{preschool}\) is
+\begin{align*}
+0.516129 - 0.3114754 \pm & 1.96 \sqrt{\dfrac{0.516129(1-0.516129)}{62} + \dfrac{0.3114754(1-0.3114754)}{61}} \\
+0.2046536 \pm & 1.96(0.0868549) \\
+(0.034418, 0.3748892) \\
+\end{align*}
+
+We are 95\% confident that the true rate of arrest for the preschool treatment is 3.4 to 37.5 percentage points lower than the arrest rate for the control group. This is evidence that the preschool treatment lowered the risk of arrest.
+
+\hypertarget{comment}{%
+\subsubsection{Comment}\label{comment}}
+
+The \texttt{chisq.test} command uses a test stat ``correction'' when both of your categorical variables have only 2 levels. With this correction, your chi-square test results won't exactly match a two-sample test for the difference of two proportions. If you turn off the correct with \texttt{correct=FALSE} you will obtain identical results.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{chisq.test}\NormalTok{(counts, }\AttributeTok{correct=}\ConstantTok{FALSE}\NormalTok{) }\CommentTok{\# exact same as two{-}sample proportion test}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+    Pearson's Chi-squared test
+
+data:  counts
+X-squared = 5.3059, df = 1, p-value = 0.02125
+\end{verbatim}
+
+\hypertarget{optional-example-3-college-graduates-and-exercise}{%
+\section{(Optional) Example 3: College graduates and exercise}\label{optional-example-3-college-graduates-and-exercise}}
+
+A survey of college graduates was done to study how frequently they exercised. The survey was completed by 470 graduates. They were asked where they lived their senior year. Use the following data to determine whether there is an association between exercise on campus and students' living arrangements.
+
+\begin{tabular}{|c|c|c|c|c|} \hline
+ & No regular exercise & Sporadic exercise & Regular exercise & Total \\  \hline
+Dormitory & 32 & 30 & 28 & 90  \\ \hline 
+On-Campus Apartment & 74 & 64 & 42 & 180  \\ \hline 
+Off-campus Apartment & 110 & 25 & 15 & 150 \\ \hline 
+At Home & 39 & 6 & 5 &  50 \\ \hline 
+Total & 255 & 125 & 90 & 470 \\ \hline 
+\end{tabular}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{counts3 }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{32}\NormalTok{, }\DecValTok{74}\NormalTok{, }\DecValTok{110}\NormalTok{, }\DecValTok{39}\NormalTok{), }\FunctionTok{c}\NormalTok{(}\DecValTok{30}\NormalTok{,}\DecValTok{64}\NormalTok{,}\DecValTok{25}\NormalTok{,}\DecValTok{6}\NormalTok{), }\FunctionTok{c}\NormalTok{(}\DecValTok{28}\NormalTok{,}\DecValTok{42}\NormalTok{,}\DecValTok{15}\NormalTok{,}\DecValTok{5}\NormalTok{))}
+\FunctionTok{colnames}\NormalTok{(counts3) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"No regular exercise"}\NormalTok{, }\StringTok{"Sporadic exercise"}\NormalTok{, }\StringTok{"Regular exercise"}\NormalTok{) }
+\FunctionTok{rownames}\NormalTok{(counts3) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Dormitory"}\NormalTok{, }\StringTok{"On{-}Campus Apartment"}\NormalTok{, }\StringTok{"Off{-}campus Apartment"}\NormalTok{, }\StringTok{"At Home"}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{kable}\NormalTok{(counts3)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tabular}{l|r|r|r}
+\hline
+  & No regular exercise & Sporadic exercise & Regular exercise\\
+\hline
+Dormitory & 32 & 30 & 28\\
+\hline
+On-Campus Apartment & 74 & 64 & 42\\
+\hline
+Off-campus Apartment & 110 & 25 & 15\\
+\hline
+At Home & 39 & 6 & 5\\
+\hline
+\end{tabular}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{test3 }\OtherTok{\textless{}{-}} \FunctionTok{chisq.test}\NormalTok{(counts3)}
+\end{Highlighting}
+\end{Shaded}
+
+Click for answer
+
+\emph{Answer:}
+
+\hypertarget{step-1}{%
+\subsection{Step 1:}\label{step-1}}
+
+\begin{align*}
+H_0 &: \text{exercise and living arrangements independent of each other}\\
+H_A &: \text{exercise and living arrangements dependent of each other}
+\end{align*}
+
+\hypertarget{step-2}{%
+\subsection{Step 2:}\label{step-2}}
+
+The observed and expected values from the chi square test are:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{test3}\SpecialCharTok{$}\NormalTok{observed}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+                     No regular exercise Sporadic exercise
+Dormitory                             32                30
+On-Campus Apartment                   74                64
+Off-campus Apartment                 110                25
+At Home                               39                 6
+                     Regular exercise
+Dormitory                          28
+On-Campus Apartment                42
+Off-campus Apartment               15
+At Home                             5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{round}\NormalTok{(test3}\SpecialCharTok{$}\NormalTok{expected,}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+                     No regular exercise Sporadic exercise
+Dormitory                          48.83             23.94
+On-Campus Apartment                97.66             47.87
+Off-campus Apartment               81.38             39.89
+At Home                            27.13             13.30
+                     Regular exercise
+Dormitory                       17.23
+On-Campus Apartment             34.47
+Off-campus Apartment            28.72
+At Home                          9.57
+\end{verbatim}
+
+All of the expected counts are greater than 5.
+
+\hypertarget{step-3}{%
+\subsection{Step 3:}\label{step-3}}
+
+The test statistics is calculated as:
+
+\begin{align*}
+\chi^2 & = \sum \frac{(O- E)^2}{E}\\
+&= \frac{(32 - 48.83)^2}{48.83} +  \frac{(30 - 23.94)^2}{23.94} +  \frac{(28 - 17.23)^2}{17.23} +\\
+& \qquad \frac{(74 - 97.66)^2}{97.66} + \frac{(64 - 47.87)^2}{47.87} + \frac{(42 - 34.47)^2}{34.47} + \\
+& \qquad \frac{(110 - 81.38)^2}{81.38} + \frac{(25 - 39.89)^2}{39.89} + \frac{(15 - 28.72)^2}{28.72} + \\
+& \qquad \frac{(39 - 27.13)^2}{27.13} + \frac{(6 - 13.30)^2}{13.30} + \frac{(5 - 9.57)^2}{9.57} \\
+&= 5.80 + 1.53 + 6.73 + 5.73 + 5.44 + 1.64 + 10.06 + 5.56 + 6.55 + 5.19 + 4.01 + 2.18\\
+&= 60.42
+\end{align*}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\DecValTok{32} \SpecialCharTok{{-}} \FloatTok{48.83}\NormalTok{)}\SpecialCharTok{\^{}}\DecValTok{2}\SpecialCharTok{/}\FloatTok{48.83} \SpecialCharTok{+}\NormalTok{ (}\DecValTok{30} \SpecialCharTok{{-}} \FloatTok{23.94}\NormalTok{)}\SpecialCharTok{\^{}}\DecValTok{2}\SpecialCharTok{/}\FloatTok{23.94} \SpecialCharTok{+}\NormalTok{ (}\DecValTok{28} \SpecialCharTok{{-}} \FloatTok{17.23}\NormalTok{)}\SpecialCharTok{\^{}}\DecValTok{2}\SpecialCharTok{/}\FloatTok{17.23} \SpecialCharTok{+}\NormalTok{ (}\DecValTok{74} \SpecialCharTok{{-}} \FloatTok{97.66}\NormalTok{)}\SpecialCharTok{\^{}}\DecValTok{2}\SpecialCharTok{/}\FloatTok{97.66} \SpecialCharTok{+}\NormalTok{ (}\DecValTok{64} \SpecialCharTok{{-}} \FloatTok{47.87}\NormalTok{)}\SpecialCharTok{\^{}}\DecValTok{2}\SpecialCharTok{/}\FloatTok{47.87} \SpecialCharTok{+}\NormalTok{ (}\DecValTok{42} \SpecialCharTok{{-}} \FloatTok{34.47}\NormalTok{)}\SpecialCharTok{\^{}}\DecValTok{2}\SpecialCharTok{/}\FloatTok{34.47} \SpecialCharTok{+}\NormalTok{ (}\DecValTok{110} \SpecialCharTok{{-}} \FloatTok{81.38}\NormalTok{)}\SpecialCharTok{\^{}}\DecValTok{2}\SpecialCharTok{/}\FloatTok{81.38} \SpecialCharTok{+}\NormalTok{ (}\DecValTok{25} \SpecialCharTok{{-}} \FloatTok{39.89}\NormalTok{)}\SpecialCharTok{\^{}}\DecValTok{2}\SpecialCharTok{/}\FloatTok{39.89} \SpecialCharTok{+}\NormalTok{ (}\DecValTok{15} \SpecialCharTok{{-}} \FloatTok{28.72}\NormalTok{)}\SpecialCharTok{\^{}}\DecValTok{2}\SpecialCharTok{/}\FloatTok{28.72} \SpecialCharTok{+}\NormalTok{ (}\DecValTok{39} \SpecialCharTok{{-}} \FloatTok{27.13}\NormalTok{)}\SpecialCharTok{\^{}}\DecValTok{2}\SpecialCharTok{/}\FloatTok{27.13}\SpecialCharTok{+}\NormalTok{(}\DecValTok{6} \SpecialCharTok{{-}} \FloatTok{13.30}\NormalTok{)}\SpecialCharTok{\^{}}\DecValTok{2}\SpecialCharTok{/}\FloatTok{13.30}\SpecialCharTok{+}\NormalTok{(}\DecValTok{5} \SpecialCharTok{{-}} \FloatTok{9.57}\NormalTok{)}\SpecialCharTok{\^{}}\DecValTok{2}\SpecialCharTok{/}\FloatTok{9.57}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 60.43885
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FloatTok{5.80} \SpecialCharTok{+} \FloatTok{1.53} \SpecialCharTok{+} \FloatTok{6.73} \SpecialCharTok{+} \FloatTok{5.73} \SpecialCharTok{+} \FloatTok{5.44} \SpecialCharTok{+} \FloatTok{1.64} \SpecialCharTok{+} \FloatTok{10.06} \SpecialCharTok{+} \FloatTok{5.56} \SpecialCharTok{+} \FloatTok{6.55} \SpecialCharTok{+} \FloatTok{5.19} \SpecialCharTok{+} \FloatTok{4.01} \SpecialCharTok{+} \FloatTok{2.18}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 60.42
+\end{verbatim}
+
+The degree of freedom of \(\chi^2\) is \(df = (4-1)*(3-1) = 6\).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{test3}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+    Pearson's Chi-squared test
+
+data:  counts3
+X-squared = 60.439, df = 6, p-value = 3.664e-11
+\end{verbatim}
+
+\hypertarget{step-4}{%
+\subsection{Step 4:}\label{step-4}}
+
+The p-value can also be calculated as
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1} \SpecialCharTok{{-}} \FunctionTok{pchisq}\NormalTok{(}\FloatTok{60.43}\NormalTok{, }\AttributeTok{df =} \DecValTok{6}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 3.680733e-11
+\end{verbatim}
+
+\hypertarget{step-5}{%
+\subsection{Step 5:}\label{step-5}}
+
+There is significant evidence of an association between the exercise and living arrangements (\(\chi^2 = 60.43\), df=6, p-value \(\approx\) 0).
 
   \bibliography{book.bib,packages.bib}
 

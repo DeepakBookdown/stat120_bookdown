@@ -55,10 +55,18 @@ survey <- survey %>%mutate(religiousness = forcats::fct_recode(Question.8,
 
 ```{r}
 # Make a two way table
+library(kableExtra)
 counts <- table(survey$religiousness, survey$comfortness)
-counts
-sum(counts)  # number of respondents
 prop.table(counts,1)  # dist of comfort level given religious level
+```
+
+
+#### Formatted tables in R
+
+```{r}
+kableExtra::kable(table(survey$religiousness, survey$comfortness), 
+                  caption = "A two way table of religious preference and political comfortness") %>%
+  kable_styling(position = "center")
 ```
 
 
@@ -304,7 +312,7 @@ chisq.test(counts, correct=FALSE) # exact same as two-sample proportion test
 </details><br>
 
 
-## Example 3:  College graduates and exercise
+## (Optional) Example 3:  College graduates and exercise
 
 A survey of college graduates was done to study how frequently they exercised. The survey was completed by 470 graduates. They were asked where they lived their senior year. Use the following data to determine whether there is an association between exercise on campus and students' living arrangements. 
 
