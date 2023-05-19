@@ -26,16 +26,16 @@ example_data
 
 ```
    ID Greeting  Male    Weight
-1   1    Hello  TRUE 230.81779
-2   2    Hello FALSE  95.24604
-3   3    Hello  TRUE 198.85065
-4   4    Hello FALSE  97.78293
-5   5    Hello  TRUE 267.55660
-6   6  Goodbye FALSE 209.03610
-7   7  Goodbye  TRUE 208.91907
-8   8  Goodbye FALSE  73.06024
-9   9  Goodbye  TRUE 131.07838
-10 10  Goodbye FALSE 101.13927
+1   1    Hello  TRUE 193.82964
+2   2    Hello FALSE 287.68708
+3   3    Hello  TRUE 246.53715
+4   4    Hello FALSE  97.36463
+5   5    Hello  TRUE 244.63245
+6   6  Goodbye FALSE 149.55774
+7   7  Goodbye  TRUE 266.05836
+8   8  Goodbye FALSE 193.57323
+9   9  Goodbye  TRUE 123.68520
+10 10  Goodbye FALSE 121.80315
 ```
 
 *Answer:* We see a data frame with four columns, where the first column is an `identifier` for the cases. We have information on the greeting types, whether male or not, and weight on these cases in the remaining columns.
