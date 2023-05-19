@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.5.15)  17 MAY 2023 07:22
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.5.15)  18 MAY 2023 21:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1708,22 +1708,43 @@ Overfull \hbox (19.80954pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 29.3.  (OPTIONAL) EXAMPLE 3: COLLEGE GRADUATES AND EXERCISE \TU/lmr/m/n/10 235
  []
 
-[235]
+[235] [236]
+Chapter 30.
+File: Class_Activity_23_files/figure-latex/unnamed-chunk-1-1.pdf Graphic file (type pdf)
+<use Class_Activity_23_files/figure-latex/unnamed-chunk-1-1.pdf>
+[237
+
+] [238]
+File: Class_Activity_23_files/figure-latex/unnamed-chunk-3-1.pdf Graphic file (type pdf)
+<use Class_Activity_23_files/figure-latex/unnamed-chunk-3-1.pdf>
+[239]
+File: Class_Activity_23_files/figure-latex/unnamed-chunk-3-2.pdf Graphic file (type pdf)
+<use Class_Activity_23_files/figure-latex/unnamed-chunk-3-2.pdf>
+[240]
+File: Class_Activity_23_files/figure-latex/unnamed-chunk-4-1.pdf Graphic file (type pdf)
+<use Class_Activity_23_files/figure-latex/unnamed-chunk-4-1.pdf>
+[241]
+File: Class_Activity_23_files/figure-latex/unnamed-chunk-5-1.pdf Graphic file (type pdf)
+<use Class_Activity_23_files/figure-latex/unnamed-chunk-5-1.pdf>
+
+Underfull \vbox (badness 7963) has occurred while \output is active []
+
+[242] [243] [244]
 No file myBookfile.bbl.
-[236] (./myBookfile.aux)
+[245] (./myBookfile.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `myBookfile.out' has not changed.
-(rerunfilecheck)             Checksum: 01123E268A2FD1D44891D528A9BA9FC5;19541.
+(rerunfilecheck)             Checksum: 24342EFC42BC463E31E608447E17497E;20200.
  ) 
 Here is how much of TeX's memory you used:
- 21605 strings out of 478708
- 434204 string characters out of 5848862
+ 21668 strings out of 478708
+ 437797 string characters out of 5848862
  1866630 words of memory out of 5000000
- 41313 multiletter control sequences out of 15000+600000
+ 41374 multiletter control sequences out of 15000+600000
  519476 words of font info for 108 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  86i,10n,128p,1999b,542s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on myBookfile.pdf (236 pages).
+Output written on myBookfile.pdf (245 pages).

@@ -299,3 +299,13 @@ step-2
 step-3
 step-4
 step-5
+class-activity-23
+example-1-frisbee-grip
+a-one-way-anova-hypotheses
+b-one-way-anova-test
+c-checking-assumptions
+example-2-comparing-religious-guess-by-religion
+a-one-way-anova-hypotheses-1
+b-check-assumptions
+c-one-way-anova-test
+d-describe-the-association

@@ -139,7 +139,7 @@
 
 \title{Stat 120}
 \author{Deepak Bastola}
-\date{2023-05-17}
+\date{2023-05-18}
 
 \begin{document}
 \maketitle
@@ -1627,17 +1627,17 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
-   ID Greeting  Male    Weight
-1   1    Hello  TRUE 215.57563
-2   2    Hello FALSE 185.13140
-3   3    Hello  TRUE 124.91917
-4   4    Hello FALSE 151.91407
-5   5    Hello  TRUE 249.44125
-6   6  Goodbye FALSE 140.83101
-7   7  Goodbye  TRUE  72.87565
-8   8  Goodbye FALSE 194.27171
-9   9  Goodbye  TRUE 148.48399
-10 10  Goodbye FALSE 221.33265
+   ID Greeting  Male   Weight
+1   1    Hello  TRUE 247.5399
+2   2    Hello FALSE 233.6539
+3   3    Hello  TRUE 204.1431
+4   4    Hello FALSE 195.3287
+5   5    Hello  TRUE 137.8626
+6   6  Goodbye FALSE 182.8022
+7   7  Goodbye  TRUE 190.1359
+8   8  Goodbye FALSE 180.6581
+9   9  Goodbye  TRUE 217.4889
+10 10  Goodbye FALSE 241.2069
 \end{verbatim}
 
 \emph{Answer:} We see a data frame with four columns, where the first column is an \texttt{identifier} for the cases. We have information on the greeting types, whether male or not, and weight on these cases in the remaining columns.
@@ -1818,7 +1818,7 @@ Run the following command to obtain a SRS of 10 words from the 268 that are in t
 \end{Shaded}
 
 \begin{verbatim}
- [1] 148  87 140 220 259 108 147  94  13 262
+ [1] 256 239 260 108  18 257  44 113  20 149
 \end{verbatim}
 
 This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
@@ -1834,17 +1834,17 @@ We will \emph{subset} the data set \texttt{pop} to obtain only the sampled rows 
 \end{Shaded}
 
 \begin{verbatim}
-    position size       word
-148      148    4       what
-87        87    4       that
-140      140    3        The
-220      220    4       last
-259      259    6    people,
-108      108    2         we
-147      147    8  remember,
-94        94   10 altogether
-13        13    9  continent
-262      262    6    people,
+    position size        word
+256      256    6     people,
+239      239    4        that
+260      260    3         for
+108      108    2          we
+18        18    2          in
+257      257    2          by
+44        44    2          or
+113      113   10 consecrate,
+20        20    3         and
+149      149    2          we
 \end{verbatim}
 
 \begin{enumerate}
@@ -1865,7 +1865,7 @@ The word lengths in part (b) are the data for your sample. You can compute your 
 \end{Shaded}
 
 \begin{verbatim}
- [1]  4  4  3  4  6  2  8 10  9  6
+ [1]  6  4  3  2  2  2  2 10  3  2
 \end{verbatim}
 
 Then find the mean of these values:
@@ -1877,7 +1877,7 @@ Then find the mean of these values:
 \end{Shaded}
 
 \begin{verbatim}
-[1] 5.6
+[1] 3.6
 \end{verbatim}
 
 How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?
@@ -3916,7 +3916,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
-[1] 20.637
+[1] 20.63167
 \end{verbatim}
 
 \begin{Shaded}
@@ -3949,7 +3949,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
-[1] 1.105571
+[1] 1.099
 \end{verbatim}
 
 \hypertarget{example-3-simulation-of-a-sample-proportion}{%
@@ -4262,7 +4262,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
- [1]  52 132  52  72  72 132 125 132  23  93
+ [1]  85 185  23  93  87 125  87  93  87 125
 \end{verbatim}
 
 \hypertarget{d.-where-will-be-bootstrap-distribution-be-centered-what-shape-do-we-expect-it-to-have}{%
@@ -4516,12 +4516,12 @@ The \texttt{boot(y\ \textasciitilde{}\ x,\ data=)} command generates 10000 boots
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -2.26095 
- Mean of bootstrap distribution: -2.25896 
- Standard error of bootstrap distribution: 0.78105 
+ Mean of bootstrap distribution: -2.24673 
+ Standard error of bootstrap distribution: 0.77318 
 
  Bootstrap percentile interval
-      2.5%      97.5% 
--3.7724167 -0.7285476 
+     2.5%     97.5% 
+-3.745738 -0.728881 
 
         *--------------*
 \end{verbatim}
@@ -4774,12 +4774,12 @@ We can now use the 0/1 version of telephone in the \texttt{boot} command (like e
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -0.03905 
- Mean of bootstrap distribution: -0.03854 
- Standard error of bootstrap distribution: 0.03361 
+ Mean of bootstrap distribution: -0.03886 
+ Standard error of bootstrap distribution: 0.03333 
 
  Bootstrap percentile interval
        2.5%       97.5% 
--0.10285714  0.02761905 
+-0.10428571  0.02666667 
 
         *--------------*
 \end{verbatim}
@@ -5149,9 +5149,9 @@ Then load the \texttt{CarletonStats} package and run the \texttt{permTest(y\ \te
   Caffeine :  12.25      Sleep :  15.25 
  Observed difference: -3 
 
- Mean of permutation distribution: 0.00468 
- Standard error of permutation distribution: 1.4972 
- P-value:  0.0448 
+ Mean of permutation distribution: 0.00228 
+ Standard error of permutation distribution: 1.51745 
+ P-value:  0.0524 
 
     *-------------*
 \end{verbatim}
@@ -5273,8 +5273,8 @@ Click for answer
   NonRes :  6405.263     Res :  2821.053 
  Observed difference  NonRes - Res : 3584.211 
 
- Mean of permutation distribution: 1.50699 
- Standard error of permutation distribution: 948.0836 
+ Mean of permutation distribution: 6.59066 
+ Standard error of permutation distribution: 944.1282 
  P-value:  1e-04 
 
     *-------------*
@@ -5352,8 +5352,8 @@ Click for answer
   Aerobic_Exercise :  9.2    Resistance_Training :  3 
  Observed difference: 6.2 
 
- Mean of permutation distribution: -0.00573 
- Standard error of permutation distribution: 1.19073 
+ Mean of permutation distribution: -0.01458 
+ Standard error of permutation distribution: 1.18834 
  P-value:  2e-04 
 
     *-------------*
@@ -5459,8 +5459,8 @@ Click for answer
   New_Method :  91.05    Traditional_Method :  82.15 
  Observed difference: 8.9 
 
- Mean of permutation distribution: 0.01623 
- Standard error of permutation distribution: 1.74332 
+ Mean of permutation distribution: -0.04333 
+ Standard error of permutation distribution: 1.74226 
  P-value:  2e-04 
 
     *-------------*
@@ -5601,9 +5601,9 @@ H_0: \mu_{B5} - \mu_{G5} = 0 \ \ H_0: \mu_{B5} - \mu_{G5} \neq 0
   boy :  -0.10435    girl :  0.02906 
  Observed difference: -0.13341 
 
- Mean of permutation distribution: 0.00186 
- Standard error of permutation distribution: 0.26371 
- P-value:  0.6132 
+ Mean of permutation distribution: -0.00188 
+ Standard error of permutation distribution: 0.26172 
+ P-value:  0.6176 
 
     *-------------*
 \end{verbatim}
@@ -7807,7 +7807,7 @@ If you were concerned that the expected counts weren't large enough to trust usi
     (based on 2000 replicates)
 
 data:  survey$religiousness and survey$comfortness
-X-squared = 19.33, df = NA, p-value = 0.001999
+X-squared = 19.33, df = NA, p-value = 0.0009995
 \end{verbatim}
 
 The p-value is slightly different, but your conclusion should be the same.
@@ -8192,6 +8192,342 @@ The p-value can also be calculated as
 \subsection{Step 5:}\label{step-5}}
 
 There is significant evidence of an association between the exercise and living arrangements (\(\chi^2 = 60.43\), df=6, p-value \(\approx\) 0).
+
+\hypertarget{class-activity-23}{%
+\chapter{Class Activity 23}\label{class-activity-23}}
+
+\hypertarget{example-1-frisbee-grip}{%
+\section{Example 1: Frisbee grip}\label{example-1-frisbee-grip}}
+
+The data set \texttt{Frisbee.csv} contains data on \texttt{Distance} thrown (in paces) for three different frisbee \texttt{Grip} types. There are 24 difference cases (throws) Here we can compare responses to this question by the religiousness of the respondent:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{frisbee }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/deepbas/statdatasets/main/Frisbee.csv"}\NormalTok{)}
+\FunctionTok{boxplot}\NormalTok{(Distance }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Grip, }\AttributeTok{data =}\NormalTok{ frisbee)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_23_files/figure-latex/unnamed-chunk-1-1}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{tapply}\NormalTok{(frisbee}\SpecialCharTok{$}\NormalTok{Distance, frisbee}\SpecialCharTok{$}\NormalTok{Grip, summary)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+$`Finger Out`
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  23.00   26.75   29.50   29.50   32.25   36.00 
+
+$Inverted
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  28.00   30.00   32.00   32.38   34.50   37.00 
+
+$Normal
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  28.00   30.00   32.50   33.12   36.25   39.00 
+\end{verbatim}
+
+The question we want to answer is whether or not the differences in observed mean distance thrown are statistically significant. To test this question comparing \textbf{means} for a \textbf{quantitative} response broken up into \textbf{at least 2 groups}, we can conduct a \textbf{one-way ANOVA test}.
+
+\hypertarget{a-one-way-anova-hypotheses}{%
+\subsubsection{(a) One-way ANOVA hypotheses}\label{a-one-way-anova-hypotheses}}
+
+State the hypotheses for this test.
+
+Click for answer
+
+\emph{Answer:} Let \(\mu\) be the true mean distance thrown using a certain grip. Then
+\(H_0: \mu_{fout} = \mu_{invert} = \mu_{normal}\)
+vs.~\(H_A:\) at least one mean is different.
+
+\hypertarget{b-one-way-anova-test}{%
+\subsubsection{(b) One-way ANOVA test}\label{b-one-way-anova-test}}
+
+You can obtain the one-way ANOVA table and test results with the \texttt{aov(y\ \textasciitilde{}\ x,\ data=)} command. Running the \texttt{summary} function on this anova result gives you the ANOVA table:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{frisbee.anova }\OtherTok{\textless{}{-}} \FunctionTok{aov}\NormalTok{(Distance }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Grip, }\AttributeTok{data =}\NormalTok{ frisbee)}
+\FunctionTok{summary}\NormalTok{(frisbee.anova)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+            Df Sum Sq Mean Sq F value Pr(>F)
+Grip         2  58.58   29.29   2.045  0.154
+Residuals   21 300.75   14.32               
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  What is the F test stat value?
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} \(F = 2.045\)
+
+\begin{itemize}
+\tightlist
+\item
+  Interpret the p-value.
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} If grip does not affect distance thrown, then we would see mean differences as larger, or larger, than those observed about 15.4\% of the time.
+
+\begin{itemize}
+\tightlist
+\item
+  What is your conclusion?
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} This study does not provide evidence that these three grips affect the mean distance thrown.
+
+\hypertarget{c-checking-assumptions}{%
+\subsubsection{(c) Checking assumptions}\label{c-checking-assumptions}}
+
+Can we trust the p-value obtained above using the F distribution?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{table}\NormalTok{(frisbee}\SpecialCharTok{$}\NormalTok{Grip)  }\CommentTok{\# check n\textquotesingle{}s}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Finger Out   Inverted     Normal 
+         8          8          8 
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{tapply}\NormalTok{(frisbee}\SpecialCharTok{$}\NormalTok{Distance, frisbee}\SpecialCharTok{$}\NormalTok{Grip, sd)  }\CommentTok{\# similar SD\textquotesingle{}s?}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Finger Out   Inverted     Normal 
+  4.174754   3.159453   3.943802 
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)  }\CommentTok{\# shape?}
+\FunctionTok{boxplot}\NormalTok{(Distance }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Grip, }\AttributeTok{data =}\NormalTok{ frisbee)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_23_files/figure-latex/unnamed-chunk-3-1}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(frisbee, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{sample =}\NormalTok{ Distance)) }\SpecialCharTok{+} \FunctionTok{geom\_qq}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{facet\_wrap}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{Grip)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_23_files/figure-latex/unnamed-chunk-3-2}
+
+Click for answer
+
+\emph{Answer:} Sample sizes in all three groups are small (8) but the observed distances thrown within each group are roughly normally distributed. There are small differences in variation of the three groups, but the SD rule is met since largest SD (4.17) is less than twice the smallest SD (3.16). The assumptions are met.
+
+\hypertarget{example-2-comparing-religious-guess-by-religion}{%
+\section{Example 2: Comparing \% religious guess by religion}\label{example-2-comparing-religious-guess-by-religion}}
+
+One of the class survey questions asked respondents to give their best guess at the percentage of students at Carleton who practice a religion. Here we can compare responses to this question by the religiousness of the respondent:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(dplyr)}
+\CommentTok{\# read the data }
+\NormalTok{survey }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/deepbas/statdatasets/main/Survey.csv"}\NormalTok{) }
+
+\CommentTok{\# and drop the rows containing missing values using the tidyr package}
+\NormalTok{survey }\OtherTok{\textless{}{-}}\NormalTok{ survey }\SpecialCharTok{\%\textgreater{}\%}\NormalTok{ tidyr}\SpecialCharTok{::}\FunctionTok{drop\_na}\NormalTok{()}
+
+\CommentTok{\# make a new variable called \textasciigrave{}practice\_religion\_percentage\textasciigrave{} (more informative variable name)}
+\NormalTok{survey }\OtherTok{\textless{}{-}}\NormalTok{ survey }\SpecialCharTok{\%\textgreater{}\%}  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{practice\_religion =}\NormalTok{ Question}\FloatTok{.7}\NormalTok{)}
+
+\CommentTok{\# rename comfort level using fct\_recode() from the forcats package}
+\NormalTok{survey }\OtherTok{\textless{}{-}}\NormalTok{ survey }\SpecialCharTok{\%\textgreater{}\%}\FunctionTok{mutate}\NormalTok{(}\AttributeTok{religiousness =}\NormalTok{ forcats}\SpecialCharTok{::}\FunctionTok{fct\_recode}\NormalTok{(Question}\FloatTok{.8}\NormalTok{, }
+                          \StringTok{\textasciigrave{}}\AttributeTok{not religious}\StringTok{\textasciigrave{}} \OtherTok{=} \StringTok{"not religious"}\NormalTok{,}
+                          \StringTok{\textasciigrave{}}\AttributeTok{religious not active}\StringTok{\textasciigrave{}} \OtherTok{=} \StringTok{"religious but not actively practicing"}\NormalTok{,}
+                          \StringTok{\textasciigrave{}}\AttributeTok{religious active}\StringTok{\textasciigrave{}} \OtherTok{=} \StringTok{"religious and actively practicing my religion"}\NormalTok{),}
+                          \AttributeTok{religiousness =}\NormalTok{ forcats}\SpecialCharTok{::}\FunctionTok{fct\_relevel}\NormalTok{(religiousness,}
+                                                               \StringTok{"not religious"}\NormalTok{,}
+                                                               \StringTok{"religious not active"}\NormalTok{,}
+                                                               \StringTok{"religious active"}\NormalTok{))}
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ survey) }\SpecialCharTok{+}
+    \FunctionTok{geom\_boxplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ religiousness, }\AttributeTok{y =}\NormalTok{ practice\_religion))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_23_files/figure-latex/unnamed-chunk-4-1}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{tapply}\NormalTok{(survey}\SpecialCharTok{$}\NormalTok{practice\_religion, survey}\SpecialCharTok{$}\NormalTok{religiousness, summary)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+$`not religious`
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   3.00   25.00   35.00   38.05   50.00   80.00 
+
+$`religious not active`
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   0.50   25.00   38.00   40.19   55.00   95.00 
+
+$`religious active`
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   3.00   30.00   40.00   41.32   60.00   80.00 
+\end{verbatim}
+
+\hypertarget{a-one-way-anova-hypotheses-1}{%
+\subsubsection{(a) One-way ANOVA hypotheses}\label{a-one-way-anova-hypotheses-1}}
+
+We want to determine if the differences in observed mean guesses are statistically significant. State the hypotheses for this test.
+
+Click for answer
+
+\emph{Answer:} Let \(\mu\) be the true mean religous \% guess in a given religiousness group. Then \(H_0: \mu_{notRelig} = \mu_{Relig,Act} = \mu_{Relig,NotAct}\) vs.~\(H_A:\) at least one mean is different.
+
+\hypertarget{b-check-assumptions}{%
+\subsubsection{(b) Check assumptions}\label{b-check-assumptions}}
+
+Can use trust the results from a one-way ANOVA test?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{table}\NormalTok{(survey}\SpecialCharTok{$}\NormalTok{religiousness)  }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+       not religious religious not active 
+                 194                   99 
+    religious active 
+                  57 
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{tapply}\NormalTok{(survey}\SpecialCharTok{$}\NormalTok{practice\_religion, survey}\SpecialCharTok{$}\NormalTok{religiousness, sd, }\AttributeTok{na.rm=}\ConstantTok{TRUE}\NormalTok{)  }\CommentTok{\#need na.rm with a missing value  }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+       not religious religious not active 
+            17.96535             19.22239 
+    religious active 
+            18.33143 
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(survey, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{sample =}\NormalTok{ practice\_religion)) }\SpecialCharTok{+} \FunctionTok{geom\_qq}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{facet\_wrap}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{religiousness)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_23_files/figure-latex/unnamed-chunk-5-1}
+
+Click for answer
+
+\emph{Answer:} Yes, the assumptions are met. The distributions within each group are slightly skewed or roughly symmetric, and the sample sizes within each group are all at least 30. In addition, the SD in each group are close to each other (18\% to 19.2\%).
+
+\hypertarget{c-one-way-anova-test}{%
+\subsubsection{(c) One-way ANOVA test}\label{c-one-way-anova-test}}
+
+Assuming part (b) checks out, run the one-way ANOVA test to compare means:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{guess.aov }\OtherTok{\textless{}{-}} \FunctionTok{aov}\NormalTok{(practice\_religion }\SpecialCharTok{\textasciitilde{}}\NormalTok{ religiousness, }\AttributeTok{data =}\NormalTok{ survey)}
+\FunctionTok{summary}\NormalTok{(guess.aov)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+               Df Sum Sq Mean Sq F value Pr(>F)
+religiousness   2    607   303.6   0.898  0.408
+Residuals     347 117321   338.1               
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  What is the F test stat value?
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} \(F = 0.898\)
+
+\begin{itemize}
+\tightlist
+\item
+  Interpret the p-value.
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} If there is no difference in true mean guess in all three groups, we would see an F test stat of at least 0.898 about 40.8\% of the time.
+
+\begin{itemize}
+\tightlist
+\item
+  What is your conclusion?
+\end{itemize}
+
+Click for answer
+
+\emph{Answer:} The differences in mean guesses that we've observed in our sample are not statistically significant. We don't have evidence that the true mean guesses for the three religiousness groups are different.
+
+\hypertarget{d-describe-the-association}{%
+\subsubsection{(d) Describe the association?}\label{d-describe-the-association}}
+
+If you found a statistically significant difference in means in part (c), describe how the groups differ. If you did not find a statistically significant difference in part (c), estimate the average guess for all students in the (hypothetical) population of 215 students.
+
+Click for answer
+
+\emph{Answer:} We didn't find a statistically significant difference in part (c). So what is our best estimate of the average guess for all students, since responses don't seem to differ by religiousness?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{t.test}\NormalTok{(survey}\SpecialCharTok{$}\NormalTok{practice\_religion)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+    One Sample t-test
+
+data:  survey$practice_religion
+t = 39.882, df = 349, p-value < 2.2e-16
+alternative hypothesis: true mean is not equal to 0
+95 percent confidence interval:
+ 37.25428 41.11927
+sample estimates:
+mean of x 
+ 39.18677 
+\end{verbatim}
+
+We are 95\% confident that the mean guess at the percentage of religious students at Carleton is between 37.3\% to 41.1\% for all math 215 students.
+
+\textbf{What if there was a difference?!}
+
+Use EDA to describe how the sample means differ. Does it look like all three means are different, or does one mean look different from the rest? The sample mean responses from the two religious groups look similar (active: 41.3\%; not active: 40.2\%) but the mean response of the not religious group is lower (38.1\%).
 
   \bibliography{book.bib,packages.bib}
 
