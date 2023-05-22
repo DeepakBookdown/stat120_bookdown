@@ -77,6 +77,7 @@
 <li><a class="" href="class-activity-21.html"><span class="header-section-number">28</span> Class Activity 21</a></li>
 <li><a class="" href="class-activity-22.html"><span class="header-section-number">29</span> Class Activity 22</a></li>
 <li><a class="" href="class-activity-23.html"><span class="header-section-number">30</span> Class Activity 23</a></li>
+<li><a class="" href="class-activity-24.html"><span class="header-section-number">31</span> Class Activity 24</a></li>
 </ul>
 
         <div class="book-extra">
@@ -128,24 +129,24 @@ spreadsheet <code>GettysburgPopulationCounts.csv</code>. Carefully load this dat
 <div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">samp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">268</span>, size<span class="op">=</span><span class="fl">10</span><span class="op">)</span></span>
 <span><span class="va">samp</span></span></code></pre></div>
-<pre><code> [1] 199 242  83 197 221  68   5 167 101 230</code></pre>
+<pre><code> [1] 244 193 204 171 161  16 240  19  47 123</code></pre>
 <p>This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?</p>
 <p><br></p>
 <p>(b). Get words and lengths</p>
 <p>We will <em>subset</em> the data set <code>pop</code> to obtain only the sampled rows listed in <code>samp</code>. We do this using <strong>square bracket notation</strong> `dataset[row number, column number/name]. Run the following command to find your sampled words and sizes:</p>
 <div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">pop</span><span class="op">[</span><span class="va">samp</span>,<span class="op">]</span></span></code></pre></div>
-<pre><code>    position size    word
-199      199    4    task
-242      242    5   under
-83        83    4    here
-197      197    3     the
-221      221    4    full
-68        68    2      to
-5          5    5   years
-167      167    6 rather,
-101      101    2      do
-230      230    4    that</code></pre>
+<pre><code>    position size     word
+244      244    5    shall
+193      193    2       be
+204      204    4     from
+171      171    4     here
+161      161    2       It
+16        16    6  nation:
+240      240    4     this
+19        19    7 liberty,
+47        47    2       so
+123      123    3      and</code></pre>
 <p><br></p>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>Compute your sample mean</li>
@@ -154,7 +155,7 @@ spreadsheet <code>GettysburgPopulationCounts.csv</code>. Carefully load this dat
 <div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">mysize</span> <span class="op">&lt;-</span> <span class="va">pop</span><span class="op">[</span><span class="va">samp</span>, <span class="st">"size"</span><span class="op">]</span></span>
 <span><span class="va">mysize</span></span></code></pre></div>
-<pre><code> [1] 4 5 4 3 4 2 5 6 2 4</code></pre>
+<pre><code> [1] 5 2 4 4 2 6 4 7 2 3</code></pre>
 <p>Then find the mean of these values:</p>
 <div class="sourceCode" id="cb60"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">mysize</span><span class="op">)</span></span></code></pre></div>
@@ -224,7 +225,7 @@ spreadsheet <code>GettysburgPopulationCounts.csv</code>. Carefully load this dat
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-05-19.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-05-21.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

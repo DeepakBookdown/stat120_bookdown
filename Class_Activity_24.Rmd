@@ -1,4 +1,4 @@
-# Class Activity 23
+# Class Activity 24
 
 ## Example 1: Cuckoo Eggs
 
@@ -161,7 +161,7 @@ $$H_0: \mu_i = \mu_j \text{ vs. } H_a: \mu_i \neq \mu_j$$
 <br>
 
 
-## Example 2: Metal Contamination
+## (Optional) Example 2: Metal Contamination
 
 An environmental studies student working on an independent research project was investigating metal contamination in a local river. The metals can accumulate in organisms that live in the river (known as bioaccumulation). He collected samples of Quagga mussels at three sites in the river and measured the concentration of copper (in micrograms per gram, or mcg/g) in the mussels. His data are summarized in the provided table and plot. He wants to know if there are any significant differences in mean copper concentration among the three sites.  
 

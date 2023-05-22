@@ -1,177 +1,203 @@
 # Class Activity 24
 
+## Example 1: Cuckoo Eggs
+
+The common cuckoo does not build its own nest: it prefers to lay its eggs in another birds' nest. It is known, since 1892, that the type of cuckoo bird eggs are different between different locations. In a study from 1940, it was shown that cuckoos return to the same nesting area each year, and that they always pick the same bird species to be a "foster parent" for their eggs. Over the years, this has lead to the development of geographically determined subspecies of cuckoos. These subspecies have evolved in such a way that their eggs look as similar as possible as those of their foster parents.
+
+The cuckoo dataset contains information on 120 Cuckoo eggs, obtained from randomly selected "foster" nests. For these eggs, researchers have measured the `length` (in mm) and established the `type` (species) of foster parent. The type column is coded as follows:
+
+- `type=1`: Hedge Sparrow
+- `type=2`: Meadow Pit
+- `type=3`: Pied Wagtail
+- `type=4`: European robin
+- `type=5`: Tree Pipit
+- `type=6`: Eurasian wren
+
+The researchers want to test if the type of foster parent has an effect on the average length of the cuckoo eggs. 
 
 
-## Example 1: Cricket Chirps
 
-The data on `CricketChirps` were collected by E.A. Bessey and C.A. Bessey who measured chirp rates for crickets and temperatures during the summer of 1898. Conduct a simple linear regression analysis to predict the temperature by cricket chirp rate.
+
+### 1(a) The boxplot of the length of the eggs across all the species is shown below. Based on these boxplots, do the assumptions of normality and similar variability appear to be met?
+
+
+<img src="Class_Activity_24_files/figure-epub3/unnamed-chunk-2-1.png" width="100%" />
+
+
+### (1b) Formally verify that the assumptions are valid by using the outputs given.
+
+<details>
+<summary><red>Click for answer</red></summary>
+
+*Answer:* Based on the qqplot, the data points in each group are close to the line and there are no major deviations towards the center. So, the normality assumption seems to be satisfied. 
+
+
+```r
+Cuckoo %>% 
+  ggplot(aes(sample=length)) + geom_qq() + geom_qq_line() + facet_grid(~species) +  theme_bw() 
+```
+
+<img src="Class_Activity_24_files/figure-epub3/unnamed-chunk-3-1.png" width="100%" />
+
+Similarly, based on the statistics below, the ratio of the largest $s$ to the smallest $s$ is $1.57$. So, the equal variance assumption is satisfied.
+
+*Caution:* If the equal variance assumption or the normality assumption is not met in ANOVA, then the results of the one-way ANOVA may not be reliable. This is especially true if the sample sizes between the groups are unequal and the variances between the groups are also unequal.
+
+
+```r
+1.0722917/0.6821229
+```
+
+```
+[1] 1.571992
+```
 
 
 
 ```r
-cricket <- read.csv("https://www.lock5stat.com/datasets3e/CricketChirps.csv")
-cricket
+library(dplyr)
+stat <- Cuckoo %>% group_by(species) %>% summarize(mean(length), sd(length), length(length))
+stat <- as.data.frame(stat)
+stat
 ```
 
 ```
-  Temperature Chirps
-1        54.5     81
-2        59.5     97
-3        63.5    103
-4        67.5    123
-5        72.0    150
-6        78.5    182
-7        83.0    195
+        species mean(length) sd(length) length(length)
+1 hedge.sparrow     23.11429  1.0494373             14
+2  meadow.pipit     22.29333  0.9195849             45
+3  pied.wagtail     22.88667  1.0722917             15
+4         robin     22.55625  0.6821229             16
+5    tree.pipit     23.08000  0.8800974             15
+6          wren     21.12000  0.7542262             15
 ```
+</details>
+<br>
 
+### (1c) Fit an ANOVA model to do a formal hypothesis test. Report the test statistics and conclude your hypothesis test.
 
 
 ```r
-mod <- lm(Temperature~Chirps, data = cricket)
-summary(mod)
+fit_anova <- aov(length~species, Cuckoo)
+summary(fit_anova)
 ```
 
 ```
-
-Call:
-lm(formula = Temperature ~ Chirps, data = cricket)
-
-Residuals:
-      1       2       3       4       5       6       7 
--1.8625 -0.5532  2.0628  1.4495 -0.2785 -1.1598  0.3416 
-
-Coefficients:
-            Estimate Std. Error t value Pr(>|t|)    
-(Intercept) 37.67858    1.97817   19.05 7.35e-06 ***
-Chirps       0.23067    0.01423   16.21 1.63e-05 ***
+             Df Sum Sq Mean Sq F value   Pr(>F)    
+species       5  42.81   8.562   10.45 2.85e-08 ***
+Residuals   114  93.41   0.819                     
 ---
 Signif. codes:  
 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Residual standard error: 1.528 on 5 degrees of freedom
-Multiple R-squared:  0.9813,	Adjusted R-squared:  0.9776 
-F-statistic: 262.9 on 1 and 5 DF,  p-value: 1.626e-05
 ```
-
-### (1a) What is the equation for the regression line? Define all the variables.
 
 <details>
 <summary><red>Click for answer</red></summary>
 
-*Answer:* The equation for the regression line is $\widehat{\text { Temp }}=37.7+0.23 \text{Chirps}$, where `chirps` is the cricket chirp rate and `Temp` is the temperature.
+*Answer:* The hypotheses can be stated as:
+
+$$H_0:\mu_1 = \mu_2 = \cdots = \mu_k$$
+$$H_a: \text{at least one } \mu_i \text{ is different}$$
+
+Let's assume the conditions for the test are approximately met. To find which of the species differ from the rest, we need to construct confidence intervals for the mean length differences between each pair of species.
 </details>
 <br>
 
+### (1d)  First, find a 95% confidence interval for the mean cuckoo egg length in `European robin` nests (Type = 4).
+<details>
+<summary><red>Click for answer</red></summary>
+
+*Answer:* 
+
+95 $\%$ confidence interval is:
 
 
-### (1b) What is the Standard Error(SE) for the slope?
+```r
+MSE <- 0.8193847
+stat[4,2] + c(-1,1)*(qt(1-0.05/2, df=113))*sqrt(MSE)/sqrt(stat[4,4])
+```
+
+```
+[1] 22.10791 23.00459
+```
+
+$$22.556 \pm 1.981*\frac{\sqrt{0.8194}}{\sqrt{16}}$$
+$$= (22.108, 23.005)$$
+
+</details>
+<br>
+
+### (1e) Find a 95% CI for the difference in mean egg length between `European robin`(type = 4) and `Eurasian wren`(type = 6) nests.
 
 <details>
 <summary><red>Click for answer</red></summary>
 
-*Answer:* The standard error of the slope is 0.01423.
+*Answer:* 
+
+
+```r
+(stat[4,2] - stat[6,2]) + c(-1,1)* (qt(1-0.05/2, df=113))* sqrt(MSE*(1/stat[4,4] + 1/stat[6,4]))
+```
+
+```
+[1] 0.79172 2.08078
+```
+
+$$(22.556 - 21.120) \pm 1.981 \cdot \sqrt{0.8194\left(\frac{1}{16} + \frac{1}{15} \right)}$$
+
+$=(0.792, 2.081)$
+
 </details>
 <br>
 
-### (1c) Find a 95% confidence interval for the slope of the cricket temperature model.
-
+### (1f) Find a 95% CI for the difference in mean egg length between `Pied Wagtail` (type = 3) and `European robin`(type = 4)  nests.
 <details>
 <summary><red>Click for answer</red></summary>
 
-*Answer:* The 95% confidence interval for the slope is given by $b_1 \pm t^* \cdot S E$. It can be calculated as 
-
-
-$$0.23067 \pm 2.57\cdot 0.01423 = (0.1940,0.2672).$$
+*Answer:* 
 
 
 ```r
-0.23067 + c(-1,1)* qt(0.975, df = 5)* 0.01423
-[1] 0.1940906 0.2672494
+(stat[3,2] - stat[4,2]) + c(-1,1)* (qt(1-0.05/2, df=113))*sqrt(MSE*(1/stat[3,4] + 1/stat[4,4]))
 ```
+
+```
+[1] -0.3141134  0.9749467
+```
+
+$$(22.887 - 22.556) \pm 1.981\cdot \sqrt{0.8194\left(\frac{1}{15} + \frac{1}{16} \right)}$$
+$$ = (-0.314, 0.975)$$
 </details>
 <br>
 
+### (1g) We can use the R function `pairwise.t.test` to analyze which pair of means are significantly different from one another. Using `p.adjust.method = "bonferroni"`, we will see the p-values adjusted for multiple comparison. These adjusted p-values should still be compared with $\alpha = 0.05$ to find any significant differences. 
 
-### (1d) Conduct a hypotheis test for the slope. Include all the steps. 
-
-<details>
-<summary><red>Click for answer</red></summary>
-
-*Answer:* The hypotheses are:
-
-\begin{align*}
-H_0 :& \beta_1 = 0 \\
-H_a :& \beta_1 \neq 0
-\end{align*}
+Based on the R output, which of the pairs are different?
 
 
 ```r
-plot(cricket$Chirps, cricket$Temperature, type = "p", pch = 19)
-abline(mod)
-```
-
-<img src="Class_Activity_24_files/figure-epub3/unnamed-chunk-4-1.png" width="100%" />
-
-
-The conditions for the slope inference are linearity, normality, constant variability, and independence of the residuals. These can be verified based on the residual and QQ-plot. Based on the residual plot, these residuals are randomly scattered around 0, without any patterns and with constant vertical spread. The individual observations are independent as each cricket are different from one another.
-
-
-```r
-# Residual plot
-plot(mod, which = 1)
-```
-
-<img src="Class_Activity_24_files/figure-epub3/unnamed-chunk-5-1.png" width="100%" />
-
-
-
-```r
-# QQ plot
-plot(mod, which = 2)
-```
-
-<img src="Class_Activity_24_files/figure-epub3/unnamed-chunk-6-1.png" width="100%" />
-
-So, based on the summary output, the test statistics for the slope test is given by
-
-\begin{align*}
-t=\frac{b_{1}}{S E} = \frac{0.23067 }{0.01423} = 16.21
-\end{align*}
-
-The p-value corresponding to the above t-value based on t-distribution with $n-2 = 7-2 = 5$ degrees of freedom is given as $0.00000163$ from the coefficients table, or as seen below:
-
-
-```r
-2*(1-pt(16.21, df = 5))
+pairwise.t.test(Cuckoo$length, Cuckoo$species, p.adjust.method =  "bonferroni")
 ```
 
 ```
-[1] 1.628701e-05
-```
 
+	Pairwise comparisons using t tests with pooled SD 
 
-So, we reject the null at the significance level of 0.05 and conclude that there is significant evidence that the population slope parameter is different from 0.
+data:  Cuckoo$length and Cuckoo$species 
 
-</details>
-<br>
+             hedge.sparrow meadow.pipit pied.wagtail
+meadow.pipit 0.05554       -            -           
+pied.wagtail 1.00000       0.44898      -           
+robin        1.00000       1.00000      1.00000     
+tree.pipit   1.00000       0.06426      1.00000     
+wren         5e-07         0.00045      7e-06       
+             robin   tree.pipit
+meadow.pipit -       -         
+pied.wagtail -       -         
+robin        -       -         
+tree.pipit   1.00000 -         
+wren         0.00035 5e-07     
 
-### (1e) Conduct a hypothesis test to see if there exists some association between temperature and chirp rate.
-
-
-```r
-anova(mod)
-```
-
-```
-Analysis of Variance Table
-
-Response: Temperature
-          Df Sum Sq Mean Sq F value    Pr(>F)    
-Chirps     1 613.69  613.69  262.92 1.626e-05 ***
-Residuals  5  11.67    2.33                      
----
-Signif. codes:  
-0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+P value adjustment method: bonferroni 
 ```
 
 <details>
@@ -179,149 +205,205 @@ Signif. codes:
 
 *Answer:*
 
-The hypotheses can be written as:
+Based on the adjusted p-values we can say the five pairs of species `6-1`, `6-2`, `6-3`, `6-4`, and `6-5` are different at the significance level of 5%. Here, each pairwise test is testing:
 
-\begin{align*}
-H_0 :& \rho = 0 \\
-H_a :& \rho \neq 0
-\end{align*}
-
-The conditions for this test are the same as before. So, we assume the conditions are met.
-
-\begin{align*}
-t & =\frac{\text { statistic -null }}{S E}=\frac{r-0}{\sqrt{\frac{1-r^{2}}{n-2}}} = =\frac{r}{\frac{\sqrt{1-r^{2}}}{\sqrt{n-2}}}\\
-&=\left(\frac{r \sqrt{n-2}}{\sqrt{1-r^{2}}}\right)\\
-&=\frac{0.99062 \sqrt{7-2}}{\sqrt{1-0.99062^{2}}}=16.21
-\end{align*}
-
-
-The test statistics is exactly the same as before. So, both of these tests are equivalent and we arrive at the same conclusion as before. If the slope corresponding to the change in mean chirp rate for unit increase in temperature is significantly different from 0, then there is also a significant association between the chirp rate and the temperature. 
-
+$$H_0: \mu_i = \mu_j \text{ vs. } H_a: \mu_i \neq \mu_j$$
 </details>
 <br>
 
-## Example 2: Cereals and Calories
 
-Nutrition information for a sample of 30 breakfast cereals, derived from nutrition labels are stored under `Cereals` dataset. Calorie values are per cup of cereal and sugars are measured in grams per cup. We would like to predict the calorie count by the suger content of the cereal.
+## (Optional) Example 2: Metal Contamination
 
+An environmental studies student working on an independent research project was investigating metal contamination in a local river. The metals can accumulate in organisms that live in the river (known as bioaccumulation). He collected samples of Quagga mussels at three sites in the river and measured the concentration of copper (in micrograms per gram, or mcg/g) in the mussels. His data are summarized in the provided table and plot. He wants to know if there are any significant differences in mean copper concentration among the three sites.  
 
-```r
-cerealdat <- read.csv("https://www.lock5stat.com/datasets3e/Cereal.csv")
-```
+Site | Mean ($\bar{x}$) | SD ($s$) | $n$
+--- | ---- | ---- | ----
+1 | 21.34 | 3.092 | 5
+2 | 16.60 | 2.687 | 4
+3 | 13.16 | 4.274 | 5
 
+#### (a) Assumptions
 
-```r
-mod <- lm(Calories~Sugars, data = cerealdat)
-summary(mod)
-```
-
-```
-
-Call:
-lm(formula = Calories ~ Sugars, data = cerealdat)
-
-Residuals:
-    Min      1Q  Median      3Q     Max 
--36.574 -25.282  -2.549  17.796  51.805 
-
-Coefficients:
-            Estimate Std. Error t value Pr(>|t|)    
-(Intercept)  88.9204    10.8120   8.224 5.96e-09 ***
-Sugars        4.3103     0.9269   4.650 7.22e-05 ***
----
-Signif. codes:  
-0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Residual standard error: 26.61 on 28 degrees of freedom
-Multiple R-squared:  0.4357,	Adjusted R-squared:  0.4156 
-F-statistic: 21.62 on 1 and 28 DF,  p-value: 7.217e-05
-```
-
-### (2a) What is the equation for the regression line? Define all the variables.
+What do we need to assumption about copper concentrations to use one-way ANOVA to compare means at the three sites?
 
 <details>
 <summary><red>Click for answer</red></summary>
 
-*Answer:* $$\widehat{Calorie} = 88.92 + 4.31 \cdot \text{Sugar}$$
-
+*Answer:* With such small sample sizes in each group it would be hard to get a good sense of how they are distributed. We will just need to assume that these measurements are approximately normally distributed. 
 </details>
 <br>
 
-### (2b) Check the conditions for using linear model.
+#### (b) One-way ANOVA hypotheses
+
+State the hypotheses for this test. 
 
 <details>
 <summary><red>Click for answer</red></summary>
 
-*Answer:* The assumptions for using linear model seem to have met based on the residual plot and qq-plot.
+*Answer:* Let $\mu_i$ be the true mean copper concentration at location $i$. Then
 
+$$
+H_0: \mu_{1} = \mu_{2} = \mu_{3} 
+$$
 
-
-```r
-plot(cerealdat$Sugars, cerealdat$Calories, type = "p", pch = 19)
-abline(mod)
-```
-
-<img src="Class_Activity_24_files/figure-epub3/unnamed-chunk-11-1.png" width="100%" />
-
-
-```r
-plot(mod, which = 1)
-```
-
-<img src="Class_Activity_24_files/figure-epub3/unnamed-chunk-12-1.png" width="100%" />
-
-
-```r
-plot(mod, which = 2)
-```
-
-<img src="Class_Activity_24_files/figure-epub3/unnamed-chunk-13-1.png" width="100%" />
-
+vs. $H_A:$ at least one mean is different.
 </details>
 <br>
 
-### (2c) Conduct a hypotheis test to determine if the linear model is effective. Include all the steps.
+
+#### (c) ANOVA table
+Fill in the missing values `A` - `E` from the ANOVA table:
+
+Source | df | SS | MS | F 
+---- | ---- | ---- | ---- | ---- 
+Groups | `A = 2` | 169.05 | `C = 84.525` | `E = 6.99`
+Error | 11 | `B = 132.97` | `D = 12.088` | 
+Total | 13 | 302.02 | | 
 
 <details>
 <summary><red>Click for answer</red></summary>
 
-*Answer:*
+*Answer:* 
+
+- A: The group degrees of freedom is always the number of groups minus 1. Here we have 3 groups so $A = 3-1=2$.
+- B: The group and error sum of squares adds up to the total sum of squares. So we have $B = 302.02 - 169.05 = 132.97$.
+- C: Mean square values are always sum of squares divided by degrees of freedom. For groups MS: $C = 169.05/2 = 84.525$
+- D: Mean square values are always sum of squares divided by degrees of freedom. For error MS: $D = 132.97/11 = 12.088$
+
+- The F test stat is the ratio of the group MS and error MS: $F = 84.525/12.088 = 6.992$.
 
 
 ```r
-anova(mod)
+302.02 - 169.05
 ```
 
 ```
-Analysis of Variance Table
-
-Response: Calories
-          Df Sum Sq Mean Sq F value    Pr(>F)    
-Sugars     1  15316 15316.5  21.623 7.217e-05 ***
-Residuals 28  19834   708.3                      
----
-Signif. codes:  
-0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+[1] 132.97
 ```
 
+```r
+169.05/2
+```
 
-\begin{align*}
-t=\frac{b_{1}}{S E} = \frac{4.3103 }{0.9269} = 4.650
-\end{align*}
+```
+[1] 84.525
+```
 
-The p-value corresponding to the above t-value based on t-distribution with $n-2 = 30-2 = 28$ degrees of freedom is given as $0.00000725$ from the coefficients table, or as seen below:
+```r
+132.97/11
+```
+
+```
+[1] 12.08818
+```
+
+```r
+84.525/12.088
+```
+
+```
+[1] 6.992472
+```
+
+</details>
+<br>
+
+#### (d) p-value
+
+The command `pf(x, df1=, df2=)` gives the area under the F-distribution below the value `x`. Use this command to get the p-value from this one-way ANOVA test. Interpret this value.
+
+<details>
+<summary><red>Click for answer</red></summary>
+
+*Answer:* The p-value is about 1.1%. If the means are the same at the three sites, we would see sample means this different, or even more different, about 1.1% of the time. 
 
 
 ```r
-2*(1-pt(4.650, df = 28))
+1-pf(6.992, df1=2, df2=11)
 ```
 
 ```
-[1] 7.218187e-05
+[1] 0.01097789
 ```
 
+</details>
+<br>
 
-So, we reject the null at the significance level of 0.05 and conclude that there is significant evidence that the population slope parameter is different from 0.
+#### (e) Conclusion
+
+What is your conclusion for this test?
+
+<details>
+<summary><red>Click for answer</red></summary>
+
+*Answer:* We have some evidence that at least one of the true mean copper concentration at the three sites is differenct from the others. 
+
+</details>
+<br>
+
+#### (f) Confidence interval
+Compute a 95% confidence interval for the difference in means between site 1 and 3. Interpret this interval. 
+
+<details>
+<summary><red>Click for answer</red></summary>
+
+*Answer:* Since we don't have the data, we will have to compute the CI by hand. The degrees of freedom "best guess" (since we aren't letting R approximate it), is $11$. The 95% CI for the difference in true means in site 1 and 3 is :
+
+$$
+(21.34 - 13.16)  \pm (2.201)) \sqrt{132.97\left(\dfrac{1}{5} + \dfrac{1}{5}\right)} = 1.63, 14.73
+$$
+
+```r
+(21.34 - 13.16) + c(-1,1)* qt(1-0.05/2, df = 11)*sqrt(12.088*(1/5+1/5))
+```
+
+```
+[1]  3.340234 13.019766
+```
+
+We are 95% confident that the true mean copper concentration at site 1 is 1.63 to 14.3 mcg/g higher than the true mean concentration at site 3. 
+
+
+```r
+(21.34 - 13.16) 
+```
+
+```
+[1] 8.18
+```
+
+```r
+qt(.975, 11)
+```
+
+```
+[1] 2.200985
+```
+
+```r
+sqrt(12.088*(1/5+1/5))
+```
+
+```
+[1] 2.198909
+```
+
+```r
+(21.34 - 13.16) -  qt(.975, 5-1)*sqrt(12.088*(1/5+1/5))
+```
+
+```
+[1] 2.07485
+```
+
+```r
+(21.34 - 13.16) +  qt(.975, 5-1)*sqrt(12.088*(1/5+1/5))
+```
+
+```
+[1] 14.28515
+```
+
 
 </details>
 <br>
