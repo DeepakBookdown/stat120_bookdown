@@ -26,16 +26,16 @@ example_data
 
 ```
    ID Greeting  Male    Weight
-1   1    Hello  TRUE 243.04880
-2   2    Hello FALSE 295.99824
-3   3    Hello  TRUE 243.54801
-4   4    Hello FALSE 215.13691
-5   5    Hello  TRUE 140.93246
-6   6  Goodbye FALSE  75.72411
-7   7  Goodbye  TRUE 260.76345
-8   8  Goodbye FALSE 173.32870
-9   9  Goodbye  TRUE 196.30510
-10 10  Goodbye FALSE 284.74860
+1   1    Hello  TRUE 161.91517
+2   2    Hello FALSE 230.49675
+3   3    Hello  TRUE 119.79488
+4   4    Hello FALSE  79.94697
+5   5    Hello  TRUE 261.24486
+6   6  Goodbye FALSE 275.88771
+7   7  Goodbye  TRUE  87.73368
+8   8  Goodbye FALSE 154.75090
+9   9  Goodbye  TRUE 144.07531
+10 10  Goodbye FALSE 148.73975
 ```
 
 *Answer:* We see a data frame with four columns, where the first column is an `identifier` for the cases. We have information on the greeting types, whether male or not, and weight on these cases in the remaining columns.
@@ -98,7 +98,7 @@ head(education_lock5)
 ```
 
 ```
-# A tibble: 6 × 3
+# A tibble: 6 x 3
   Country             EducationExpenditure Literacy
   <chr>                              <dbl>    <dbl>
 1 Afghanistan                          3.1     31.7

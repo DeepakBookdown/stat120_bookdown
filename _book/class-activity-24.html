@@ -371,29 +371,13 @@ vs. <span class="math inline">\(H_A:\)</span> at least one mean is different.
 <p>Compute a 95% confidence interval for the difference in means between site 1 and 3. Interpret this interval.</p>
 <details><summary><red>Click for answer</red></summary><p><em>Answer:</em> Since we don’t have the data, we will have to compute the CI by hand. The degrees of freedom “best guess” (since we aren’t letting R approximate it), is <span class="math inline">\(11\)</span>. The 95% CI for the difference in true means in site 1 and 3 is :</p>
 <p><span class="math display">\[
-(21.34 - 13.16)  \pm (2.201)) \sqrt{132.97\left(\dfrac{1}{5} + \dfrac{1}{5}\right)} = 1.63, 14.73
+(21.34 - 13.16)  \pm (2.201)) \sqrt{12.088\left(\dfrac{1}{5} + \dfrac{1}{5}\right)} = 3.34, 13.02
 \]</span></p>
 <div class="sourceCode" id="cb518"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="op">(</span><span class="fl">21.34</span> <span class="op">-</span> <span class="fl">13.16</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span><span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/stats/TDist.html">qt</a></span><span class="op">(</span><span class="fl">1</span><span class="op">-</span><span class="fl">0.05</span><span class="op">/</span><span class="fl">2</span>, df <span class="op">=</span> <span class="fl">11</span><span class="op">)</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fl">12.088</span><span class="op">*</span><span class="op">(</span><span class="fl">1</span><span class="op">/</span><span class="fl">5</span><span class="op">+</span><span class="fl">1</span><span class="op">/</span><span class="fl">5</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1]  3.340234 13.019766</code></pre>
-<p>We are 95% confident that the true mean copper concentration at site 1 is 1.63 to 14.3 mcg/g higher than the true mean concentration at site 3.</p>
-<div class="sourceCode" id="cb520"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="op">(</span><span class="fl">21.34</span> <span class="op">-</span> <span class="fl">13.16</span><span class="op">)</span> </span></code></pre></div>
-<pre><code>[1] 8.18</code></pre>
-<div class="sourceCode" id="cb522"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/TDist.html">qt</a></span><span class="op">(</span><span class="fl">.975</span>, <span class="fl">11</span><span class="op">)</span></span></code></pre></div>
-<pre><code>[1] 2.200985</code></pre>
-<div class="sourceCode" id="cb524"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fl">12.088</span><span class="op">*</span><span class="op">(</span><span class="fl">1</span><span class="op">/</span><span class="fl">5</span><span class="op">+</span><span class="fl">1</span><span class="op">/</span><span class="fl">5</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<pre><code>[1] 2.198909</code></pre>
-<div class="sourceCode" id="cb526"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="op">(</span><span class="fl">21.34</span> <span class="op">-</span> <span class="fl">13.16</span><span class="op">)</span> <span class="op">-</span>  <span class="fu"><a href="https://rdrr.io/r/stats/TDist.html">qt</a></span><span class="op">(</span><span class="fl">.975</span>, <span class="fl">5</span><span class="op">-</span><span class="fl">1</span><span class="op">)</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fl">12.088</span><span class="op">*</span><span class="op">(</span><span class="fl">1</span><span class="op">/</span><span class="fl">5</span><span class="op">+</span><span class="fl">1</span><span class="op">/</span><span class="fl">5</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<pre><code>[1] 2.07485</code></pre>
-<div class="sourceCode" id="cb528"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="op">(</span><span class="fl">21.34</span> <span class="op">-</span> <span class="fl">13.16</span><span class="op">)</span> <span class="op">+</span>  <span class="fu"><a href="https://rdrr.io/r/stats/TDist.html">qt</a></span><span class="op">(</span><span class="fl">.975</span>, <span class="fl">5</span><span class="op">-</span><span class="fl">1</span><span class="op">)</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fl">12.088</span><span class="op">*</span><span class="op">(</span><span class="fl">1</span><span class="op">/</span><span class="fl">5</span><span class="op">+</span><span class="fl">1</span><span class="op">/</span><span class="fl">5</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<pre><code>[1] 14.28515</code></pre>
-</details><p><br></p>
-
+<p>We are 95% confident that the true mean copper concentration at site 1 is 3.34 to 13.02 mcg/g higher than the true mean concentration at site 3.</p>
+</details>
 </div>
 </div>
 </div>
@@ -433,7 +417,7 @@ vs. <span class="math inline">\(H_A:\)</span> at least one mean is different.
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-05-21.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-05-22.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

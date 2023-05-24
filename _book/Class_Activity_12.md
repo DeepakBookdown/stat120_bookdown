@@ -57,7 +57,8 @@ ggplot(wordData, aes(x = Group, y = Words)) +
   labs(title = "Boxplot of Words by Group")
 ```
 
-<img src="Class_Activity_12_files/figure-epub3/unnamed-chunk-1-1.png" width="100%" />
+
+\includegraphics[width=1\linewidth]{Class_Activity_12_files/figure-latex/unnamed-chunk-1-1} 
 
 
 
@@ -69,7 +70,7 @@ wordData %>%
 ```
 
 ```
-# A tibble: 2 × 7
+# A tibble: 2 x 7
   Group      fn1    q1   fn2   fn3    q3   fn4
   <chr>    <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
 1 Caffeine     6  10    12.5  12.2  14.2    18
@@ -85,7 +86,8 @@ library(CarletonStats)
 permTest(Words ~ Group, data=wordData)
 ```
 
-<img src="Class_Activity_12_files/figure-epub3/unnamed-chunk-3-1.png" width="100%" />
+
+\includegraphics[width=1\linewidth]{Class_Activity_12_files/figure-latex/unnamed-chunk-3-1} 
 
 ```
 
@@ -96,9 +98,9 @@ permTest(Words ~ Group, data=wordData)
   Caffeine :  12.25 	 Sleep :  15.25 
  Observed difference: -3 
 
- Mean of permutation distribution: 0.00042 
- Standard error of permutation distribution: 1.49834 
- P-value:  0.0484 
+ Mean of permutation distribution: 0.00727 
+ Standard error of permutation distribution: 1.49457 
+ P-value:  0.0492 
 
 	*-------------*
 ```
@@ -134,7 +136,7 @@ head(tuition)
 ```
 
 ```
-# A tibble: 6 × 5
+# A tibble: 6 x 5
    ...1 Institution          Res NonRes  Diff
   <dbl> <chr>              <dbl>  <dbl> <dbl>
 1     1 Univ of Akron (OH)  4200   8800 -4600
@@ -171,7 +173,8 @@ tuition %>%
   labs(title = "Histogram of Differences Between NonRes and Res Tuition")
 ```
 
-<img src="Class_Activity_12_files/figure-epub3/unnamed-chunk-6-1.png" width="100%" />
+
+\includegraphics[width=1\linewidth]{Class_Activity_12_files/figure-latex/unnamed-chunk-6-1} 
 
 
 - What is the average difference in tuition costs?
@@ -187,7 +190,8 @@ tuition %>%
 permTestPaired(NonRes ~ Res,data = tuition, alt = "greater")
 ```
 
-<img src="Class_Activity_12_files/figure-epub3/unnamed-chunk-7-1.png" width="100%" />
+
+\includegraphics[width=1\linewidth]{Class_Activity_12_files/figure-latex/unnamed-chunk-7-1} 
 
 ```
 
@@ -198,8 +202,8 @@ permTestPaired(NonRes ~ Res,data = tuition, alt = "greater")
   NonRes :  6405.263 	 Res :  2821.053 
  Observed difference  NonRes - Res : 3584.211 
 
- Mean of permutation distribution: -11.3743 
- Standard error of permutation distribution: 940.2738 
+ Mean of permutation distribution: 4.88733 
+ Standard error of permutation distribution: 943.036 
  P-value:  1e-04 
 
 	*-------------*

@@ -21,7 +21,8 @@ The researchers want to test if the type of foster parent has an effect on the a
 ### 1(a) The boxplot of the length of the eggs across all the species is shown below. Based on these boxplots, do the assumptions of normality and similar variability appear to be met?
 
 
-<img src="Class_Activity_24_files/figure-epub3/unnamed-chunk-2-1.png" width="100%" />
+
+\includegraphics[width=1\linewidth]{Class_Activity_24_files/figure-latex/unnamed-chunk-2-1} 
 
 
 ### (1b) Formally verify that the assumptions are valid by using the outputs given.
@@ -37,7 +38,8 @@ Cuckoo %>%
   ggplot(aes(sample=length)) + geom_qq() + geom_qq_line() + facet_grid(~species) +  theme_bw() 
 ```
 
-<img src="Class_Activity_24_files/figure-epub3/unnamed-chunk-3-1.png" width="100%" />
+
+\includegraphics[width=1\linewidth]{Class_Activity_24_files/figure-latex/unnamed-chunk-3-1} 
 
 Similarly, based on the statistics below, the ratio of the largest $s$ to the smallest $s$ is $1.57$. So, the equal variance assumption is satisfied.
 
@@ -350,8 +352,9 @@ Compute a 95% confidence interval for the difference in means between site 1 and
 *Answer:* Since we don't have the data, we will have to compute the CI by hand. The degrees of freedom "best guess" (since we aren't letting R approximate it), is $11$. The 95% CI for the difference in true means in site 1 and 3 is :
 
 $$
-(21.34 - 13.16)  \pm (2.201)) \sqrt{132.97\left(\dfrac{1}{5} + \dfrac{1}{5}\right)} = 1.63, 14.73
+(21.34 - 13.16)  \pm (2.201)) \sqrt{12.088\left(\dfrac{1}{5} + \dfrac{1}{5}\right)} = 3.34, 13.02
 $$
+
 
 ```r
 (21.34 - 13.16) + c(-1,1)* qt(1-0.05/2, df = 11)*sqrt(12.088*(1/5+1/5))
@@ -361,49 +364,8 @@ $$
 [1]  3.340234 13.019766
 ```
 
-We are 95% confident that the true mean copper concentration at site 1 is 1.63 to 14.3 mcg/g higher than the true mean concentration at site 3. 
-
-
-```r
-(21.34 - 13.16) 
-```
-
-```
-[1] 8.18
-```
-
-```r
-qt(.975, 11)
-```
-
-```
-[1] 2.200985
-```
-
-```r
-sqrt(12.088*(1/5+1/5))
-```
-
-```
-[1] 2.198909
-```
-
-```r
-(21.34 - 13.16) -  qt(.975, 5-1)*sqrt(12.088*(1/5+1/5))
-```
-
-```
-[1] 2.07485
-```
-
-```r
-(21.34 - 13.16) +  qt(.975, 5-1)*sqrt(12.088*(1/5+1/5))
-```
-
-```
-[1] 14.28515
-```
+We are 95% confident that the true mean copper concentration at site 1 is 3.34  to 13.02 mcg/g higher than the true mean concentration at site 3. 
 
 
 </details>
-<br>
+

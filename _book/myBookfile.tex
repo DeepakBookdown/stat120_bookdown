@@ -139,7 +139,7 @@
 
 \title{Stat 120}
 \author{Deepak Bastola}
-\date{2023-05-21}
+\date{2023-05-22}
 
 \begin{document}
 \maketitle
@@ -1628,16 +1628,16 @@ Click for answer
 
 \begin{verbatim}
    ID Greeting  Male    Weight
-1   1    Hello  TRUE 113.86924
-2   2    Hello FALSE 166.83433
-3   3    Hello  TRUE 100.07502
-4   4    Hello FALSE 252.72217
-5   5    Hello  TRUE 251.31208
-6   6  Goodbye FALSE 253.07894
-7   7  Goodbye  TRUE  92.48060
-8   8  Goodbye FALSE  93.72844
-9   9  Goodbye  TRUE 154.67031
-10 10  Goodbye FALSE 278.21800
+1   1    Hello  TRUE 161.91517
+2   2    Hello FALSE 230.49675
+3   3    Hello  TRUE 119.79488
+4   4    Hello FALSE  79.94697
+5   5    Hello  TRUE 261.24486
+6   6  Goodbye FALSE 275.88771
+7   7  Goodbye  TRUE  87.73368
+8   8  Goodbye FALSE 154.75090
+9   9  Goodbye  TRUE 144.07531
+10 10  Goodbye FALSE 148.73975
 \end{verbatim}
 
 \emph{Answer:} We see a data frame with four columns, where the first column is an \texttt{identifier} for the cases. We have information on the greeting types, whether male or not, and weight on these cases in the remaining columns.
@@ -1818,7 +1818,7 @@ Run the following command to obtain a SRS of 10 words from the 268 that are in t
 \end{Shaded}
 
 \begin{verbatim}
- [1] 247  61  71  38 174 170 254  29  59  47
+ [1] 199 136 241  44  19 130 263  13 258 143
 \end{verbatim}
 
 This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
@@ -1834,17 +1834,17 @@ We will \emph{subset} the data set \texttt{pop} to obtain only the sampled rows 
 \end{Shaded}
 
 \begin{verbatim}
-    position size        word
-247      247    3         new
-61        61   11 battlefield
-71        71    7     portion
-38        38    5       civil
-174      174   10  unfinished
-170      170    9   dedicated
-254      254    2          of
-29        29    7     created
-59        59    1           a
-47        47    2          so
+    position size      word
+199      199    4      task
+136      136    2        to
+241      241    6   nation,
+44        44    2        or
+19        19    7  liberty,
+130      130    2       it,
+263      263    5     shall
+13        13    9 continent
+258      258    3       the
+143      143    6    little
 \end{verbatim}
 
 \begin{enumerate}
@@ -1865,7 +1865,7 @@ The word lengths in part (b) are the data for your sample. You can compute your 
 \end{Shaded}
 
 \begin{verbatim}
- [1]  3 11  7  5 10  9  2  7  1  2
+ [1] 4 2 6 2 7 2 5 9 3 6
 \end{verbatim}
 
 Then find the mean of these values:
@@ -1877,7 +1877,7 @@ Then find the mean of these values:
 \end{Shaded}
 
 \begin{verbatim}
-[1] 5.7
+[1] 4.6
 \end{verbatim}
 
 How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?
@@ -3916,7 +3916,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
-[1] 20.60933
+[1] 20.616
 \end{verbatim}
 
 \begin{Shaded}
@@ -3949,7 +3949,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
-[1] 1.117582
+[1] 1.074123
 \end{verbatim}
 
 \hypertarget{example-3-simulation-of-a-sample-proportion}{%
@@ -4262,7 +4262,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
- [1]  93 185 147 132 147  93 132  52 132 125
+ [1]  23 185 132  93  93 125 147 185  23 125
 \end{verbatim}
 
 \hypertarget{d.-where-will-be-bootstrap-distribution-be-centered-what-shape-do-we-expect-it-to-have}{%
@@ -4516,12 +4516,12 @@ The \texttt{boot(y\ \textasciitilde{}\ x,\ data=)} command generates 10000 boots
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -2.26095 
- Mean of bootstrap distribution: -2.27195 
- Standard error of bootstrap distribution: 0.77773 
+ Mean of bootstrap distribution: -2.26567 
+ Standard error of bootstrap distribution: 0.77556 
 
  Bootstrap percentile interval
       2.5%      97.5% 
--3.7823929 -0.7642262 
+-3.7833690 -0.7261548 
 
         *--------------*
 \end{verbatim}
@@ -4774,12 +4774,12 @@ We can now use the 0/1 version of telephone in the \texttt{boot} command (like e
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -0.03905 
- Mean of bootstrap distribution: -0.03936 
- Standard error of bootstrap distribution: 0.03328 
+ Mean of bootstrap distribution: -0.03947 
+ Standard error of bootstrap distribution: 0.03354 
 
  Bootstrap percentile interval
-      2.5%      97.5% 
--0.1057143  0.0247619 
+       2.5%       97.5% 
+-0.10523810  0.02619048 
 
         *--------------*
 \end{verbatim}
@@ -5149,8 +5149,8 @@ Then load the \texttt{CarletonStats} package and run the \texttt{permTest(y\ \te
   Caffeine :  12.25      Sleep :  15.25 
  Observed difference: -3 
 
- Mean of permutation distribution: 0.01183 
- Standard error of permutation distribution: 1.51458 
+ Mean of permutation distribution: 0.00727 
+ Standard error of permutation distribution: 1.49457 
  P-value:  0.0492 
 
     *-------------*
@@ -5273,8 +5273,8 @@ Click for answer
   NonRes :  6405.263     Res :  2821.053 
  Observed difference  NonRes - Res : 3584.211 
 
- Mean of permutation distribution: 2.96188 
- Standard error of permutation distribution: 929.5252 
+ Mean of permutation distribution: 4.88733 
+ Standard error of permutation distribution: 943.036 
  P-value:  1e-04 
 
     *-------------*
@@ -5352,8 +5352,8 @@ Click for answer
   Aerobic_Exercise :  9.2    Resistance_Training :  3 
  Observed difference: 6.2 
 
- Mean of permutation distribution: -0.00194 
- Standard error of permutation distribution: 1.17614 
+ Mean of permutation distribution: 0.00383 
+ Standard error of permutation distribution: 1.1938 
  P-value:  2e-04 
 
     *-------------*
@@ -5459,8 +5459,8 @@ Click for answer
   New_Method :  91.05    Traditional_Method :  82.15 
  Observed difference: 8.9 
 
- Mean of permutation distribution: -0.01308 
- Standard error of permutation distribution: 1.73176 
+ Mean of permutation distribution: 0.00826 
+ Standard error of permutation distribution: 1.74735 
  P-value:  2e-04 
 
     *-------------*
@@ -5601,9 +5601,9 @@ H_0: \mu_{B5} - \mu_{G5} = 0 \ \ H_0: \mu_{B5} - \mu_{G5} \neq 0
   boy :  -0.10435    girl :  0.02906 
  Observed difference: -0.13341 
 
- Mean of permutation distribution: -0.00253 
- Standard error of permutation distribution: 0.26302 
- P-value:  0.625 
+ Mean of permutation distribution: -0.00156 
+ Standard error of permutation distribution: 0.26564 
+ P-value:  0.623 
 
     *-------------*
 \end{verbatim}
@@ -7807,7 +7807,7 @@ If you were concerned that the expected counts weren't large enough to trust usi
     (based on 2000 replicates)
 
 data:  survey$religiousness and survey$comfortness
-X-squared = 19.33, df = NA, p-value = 0.0009995
+X-squared = 19.33, df = NA, p-value = 0.001499
 \end{verbatim}
 
 The p-value is slightly different, but your conclusion should be the same.
@@ -8895,7 +8895,7 @@ Click for answer
 \emph{Answer:} Since we don't have the data, we will have to compute the CI by hand. The degrees of freedom ``best guess'' (since we aren't letting R approximate it), is \(11\). The 95\% CI for the difference in true means in site 1 and 3 is :
 
 \[
-(21.34 - 13.16)  \pm (2.201)) \sqrt{132.97\left(\dfrac{1}{5} + \dfrac{1}{5}\right)} = 1.63, 14.73
+(21.34 - 13.16)  \pm (2.201)) \sqrt{12.088\left(\dfrac{1}{5} + \dfrac{1}{5}\right)} = 3.34, 13.02
 \]
 
 \begin{Shaded}
@@ -8908,57 +8908,7 @@ Click for answer
 [1]  3.340234 13.019766
 \end{verbatim}
 
-We are 95\% confident that the true mean copper concentration at site 1 is 1.63 to 14.3 mcg/g higher than the true mean concentration at site 3.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{(}\FloatTok{21.34} \SpecialCharTok{{-}} \FloatTok{13.16}\NormalTok{) }
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] 8.18
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{qt}\NormalTok{(.}\DecValTok{975}\NormalTok{, }\DecValTok{11}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] 2.200985
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{sqrt}\NormalTok{(}\FloatTok{12.088}\SpecialCharTok{*}\NormalTok{(}\DecValTok{1}\SpecialCharTok{/}\DecValTok{5}\SpecialCharTok{+}\DecValTok{1}\SpecialCharTok{/}\DecValTok{5}\NormalTok{))}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] 2.198909
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{(}\FloatTok{21.34} \SpecialCharTok{{-}} \FloatTok{13.16}\NormalTok{) }\SpecialCharTok{{-}}  \FunctionTok{qt}\NormalTok{(.}\DecValTok{975}\NormalTok{, }\DecValTok{5{-}1}\NormalTok{)}\SpecialCharTok{*}\FunctionTok{sqrt}\NormalTok{(}\FloatTok{12.088}\SpecialCharTok{*}\NormalTok{(}\DecValTok{1}\SpecialCharTok{/}\DecValTok{5}\SpecialCharTok{+}\DecValTok{1}\SpecialCharTok{/}\DecValTok{5}\NormalTok{))}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] 2.07485
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{(}\FloatTok{21.34} \SpecialCharTok{{-}} \FloatTok{13.16}\NormalTok{) }\SpecialCharTok{+}  \FunctionTok{qt}\NormalTok{(.}\DecValTok{975}\NormalTok{, }\DecValTok{5{-}1}\NormalTok{)}\SpecialCharTok{*}\FunctionTok{sqrt}\NormalTok{(}\FloatTok{12.088}\SpecialCharTok{*}\NormalTok{(}\DecValTok{1}\SpecialCharTok{/}\DecValTok{5}\SpecialCharTok{+}\DecValTok{1}\SpecialCharTok{/}\DecValTok{5}\NormalTok{))}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] 14.28515
-\end{verbatim}
+We are 95\% confident that the true mean copper concentration at site 1 is 3.34 to 13.02 mcg/g higher than the true mean concentration at site 3.
 
   \bibliography{book.bib,packages.bib}
 

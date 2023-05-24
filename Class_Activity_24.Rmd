@@ -268,23 +268,16 @@ Compute a 95% confidence interval for the difference in means between site 1 and
 *Answer:* Since we don't have the data, we will have to compute the CI by hand. The degrees of freedom "best guess" (since we aren't letting R approximate it), is $11$. The 95% CI for the difference in true means in site 1 and 3 is :
 
 $$
-(21.34 - 13.16)  \pm (2.201)) \sqrt{132.97\left(\dfrac{1}{5} + \dfrac{1}{5}\right)} = 1.63, 14.73
+(21.34 - 13.16)  \pm (2.201)) \sqrt{12.088\left(\dfrac{1}{5} + \dfrac{1}{5}\right)} = 3.34, 13.02
 $$
+
 ```{r}
 (21.34 - 13.16) + c(-1,1)* qt(1-0.05/2, df = 11)*sqrt(12.088*(1/5+1/5))
 
 ```
 
-We are 95% confident that the true mean copper concentration at site 1 is 1.63 to 14.3 mcg/g higher than the true mean concentration at site 3. 
-
-```{r}
-(21.34 - 13.16) 
-qt(.975, 11)
-sqrt(12.088*(1/5+1/5))
-(21.34 - 13.16) -  qt(.975, 5-1)*sqrt(12.088*(1/5+1/5))
-(21.34 - 13.16) +  qt(.975, 5-1)*sqrt(12.088*(1/5+1/5))
-```
+We are 95% confident that the true mean copper concentration at site 1 is 3.34  to 13.02 mcg/g higher than the true mean concentration at site 3. 
 
 
 </details>
-<br>
+

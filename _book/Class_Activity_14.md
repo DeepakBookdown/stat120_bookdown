@@ -42,14 +42,16 @@ study4age5 <- filter(study4, age2 == "age 5")
 boxplot(interest ~ gender, data=study4age5)
 ```
 
-<img src="Class_Activity_14_files/figure-epub3/unnamed-chunk-2-1.png" width="100%" />
+
+\includegraphics[width=1\linewidth]{Class_Activity_14_files/figure-latex/unnamed-chunk-2-1} 
 
 ```r
 library(CarletonStats)
 permTest(interest ~ gender, data = study4age5)
 ```
 
-<img src="Class_Activity_14_files/figure-epub3/unnamed-chunk-2-2.png" width="100%" />
+
+\includegraphics[width=1\linewidth]{Class_Activity_14_files/figure-latex/unnamed-chunk-2-2} 
 
 ```
 
@@ -60,9 +62,9 @@ permTest(interest ~ gender, data = study4age5)
   boy :  -0.10435 	 girl :  0.02906 
  Observed difference: -0.13341 
 
- Mean of permutation distribution: -0.00345 
- Standard error of permutation distribution: 0.26365 
- P-value:  0.631 
+ Mean of permutation distribution: -0.00156 
+ Standard error of permutation distribution: 0.26564 
+ P-value:  0.623 
 
 	*-------------*
 ```
@@ -143,7 +145,8 @@ boot(interest ~ gender, data = study4age5)
 		*--------------*
 ```
 
-<img src="Class_Activity_14_files/figure-epub3/unnamed-chunk-5-1.png" width="100%" />
+
+\includegraphics[width=1\linewidth]{Class_Activity_14_files/figure-latex/unnamed-chunk-5-1} 
 
 <details><summary><red>Click for answer</red></summary>
 *Answer:* Yes, the CI captures the difference of 0. 
@@ -166,13 +169,15 @@ study4age67 <- filter(study4, age2 == "age 6 and 7")
 boxplot(interest ~ gender, data=study4age67)
 ```
 
-<img src="Class_Activity_14_files/figure-epub3/unnamed-chunk-6-1.png" width="100%" />
+
+\includegraphics[width=1\linewidth]{Class_Activity_14_files/figure-latex/unnamed-chunk-6-1} 
 
 ```r
 permTest(interest ~ gender, data = study4age67)
 ```
 
-<img src="Class_Activity_14_files/figure-epub3/unnamed-chunk-6-2.png" width="100%" />
+
+\includegraphics[width=1\linewidth]{Class_Activity_14_files/figure-latex/unnamed-chunk-6-2} 
 
 ```
 
@@ -268,7 +273,8 @@ boot(interest ~ gender, data = study4age67)
 		*--------------*
 ```
 
-<img src="Class_Activity_14_files/figure-epub3/unnamed-chunk-9-1.png" width="100%" />
+
+\includegraphics[width=1\linewidth]{Class_Activity_14_files/figure-latex/unnamed-chunk-9-1} 
 
 <details><summary><red>Click for answer</red></summary>
 *Answer:* No, the CI does not capture the difference of 0. 
@@ -291,7 +297,8 @@ Redo the randomization test and bootstrap CI for 5 year olds, but this time omit
 boxplot(interest ~ gender, data=study4age5)
 ```
 
-<img src="Class_Activity_14_files/figure-epub3/unnamed-chunk-10-1.png" width="100%" />
+
+\includegraphics[width=1\linewidth]{Class_Activity_14_files/figure-latex/unnamed-chunk-10-1} 
 
 ```r
 which(study4age5$interest < -2)
@@ -310,7 +317,8 @@ set.seed(7)
 permTest(interest ~ gender, data = study4age5, subset = -39)
 ```
 
-<img src="Class_Activity_14_files/figure-epub3/unnamed-chunk-11-1.png" width="100%" />
+
+\includegraphics[width=1\linewidth]{Class_Activity_14_files/figure-latex/unnamed-chunk-11-1} 
 
 ```
 
@@ -347,7 +355,8 @@ boot(interest ~ gender, data = study4age5, subset = -39)
 		*--------------*
 ```
 
-<img src="Class_Activity_14_files/figure-epub3/unnamed-chunk-11-2.png" width="100%" />
+
+\includegraphics[width=1\linewidth]{Class_Activity_14_files/figure-latex/unnamed-chunk-11-2} 
 
 - Does the observed difference get closer or further from 0 with the case omitted? Explain why it changes.
 
