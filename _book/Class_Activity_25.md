@@ -2,369 +2,237 @@
 
 
 
-## Example 1: Beer
-
-A study of 16 Ohio State University students looked at the relationship between the number of beers a student consumes and their blood alcohol content (BAC) 30 minutes after their last beer.  The regression information from R to predict BAC from number of beers consumed is given below.
-
 
 ```r
-bac <- read.csv("https://raw.githubusercontent.com/deepbas/statdatasets/main/BAC.csv")
+# load necessary libraries
+library(readr) # read_csv
+library(dplyr) # data manipulation
+library(forcats) # categorical variables
+library(janitor) # clean_names
+library(tidyr) # drop_na
+library(tidyverse) # functions form tidy ecosystem
 ```
 
 
 
-<img src="Class_Activity_25_files/figure-epub3/unnamed-chunk-2-1.png" width="70%" style="display: block; margin: auto;" />
+## Linear Regression Analysis: Exploring the Relationship between Average Mathematics GPA and Length of Study in Mathematics
+
+This class activity aims to guide you through a data analysis project involving a school score dataset. You will learn how to load a dataset, inspect its contents, manipulate and clean the data, perform exploratory analysis, and apply linear regression to identify relationships. Towards the end, you will deal with outliers and visualize data to comprehend the results better.
+
+
+### Step 1: Load and Inspect the Data
+
+
+```r
+# Task: Load the school_scores.csv data file from your local directory
+school_scores <- read_csv("~/Desktop/Insync/STAT120_Spring23/class_activities/data/school_scores.csv") 
+```
+
+
+
+```r
+# Task: Use the glimpse() function to view the structure of your data.
+# glimpse(school_scores)
+```
+
+
+### Step 2: Data Cleaning
+
+
+
+```r
+# Task: Use janitor's clean_names() function to standardize column names, 
+# and tidyr's drop_na() to remove missing values.
+school_scores_clean <- school_scores %>%
+  janitor::clean_names() %>% 
+  tidyr::drop_na()
+```
+
+
+### Step 3: Data Manipulation
+
+
+```r
+# Task: Select relevant variables from the dataset for further analysis.
+school_new <- school_scores_clean %>% select(year, 
+                                             state_name, 
+                                             total_math, 
+                                             total_verbal, 
+                                             academic_subjects_mathematics_average_gpa, 
+                                             academic_subjects_mathematics_average_years)
+```
+
+
+
+```r
+# Task: Create a new categorical variable named 'GPA' from 
+# the 'academic_subjects_mathematics_average_gpa' variable.
+school_final <- school_new %>% 
+  mutate(GPA = case_when(academic_subjects_mathematics_average_gpa < 3 ~ "low",
+                         academic_subjects_mathematics_average_gpa >= 3.0 & academic_subjects_mathematics_average_gpa < 3.25 ~ "satisfactory",
+                         academic_subjects_mathematics_average_gpa >= 3.25 & academic_subjects_mathematics_average_gpa < 3.5 ~ "good",
+                         academic_subjects_mathematics_average_gpa >= 3.5 ~ "excellent"))
+```
+
+
+
+```r
+# Task: Convert the new GPA variable into a factor variable.
+school_final <- school_final %>% mutate(GPA = factor(GPA))
+```
+
+
+
+```r
+# Task: Collapse the GPA variable levels into two broad categories.
+school_final <- school_final %>% 
+  mutate(collapsed_GPA = forcats::fct_collapse(GPA,
+                                               Low = c("low", "satisfactory"),
+                                               High = c("good", "excellent")))
+```
+
+
+### Step 4: Data Analysis - Linear Regression
+
+
+```r
+# Fit a linear model
+ggplot(data = school_final, aes(x = academic_subjects_mathematics_average_years, 
+                                y = academic_subjects_mathematics_average_gpa)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linetype = "dashed") +
+  labs(x = "Average Years Studying Mathematics", y = "Average Mathematics GPA", 
+       title = "Linear Regression of Average Mathematics GPA vs. Length of Study") +
+  theme_minimal()
+```
+
+<img src="Class_Activity_25_files/figure-html/unnamed-chunk-9-1.png" width="100%" />
 
 
 
 
 ```r
-bac.lm <- lm(BAC ~ Beers, data=bac)
-summary(bac.lm)
+# Task: Conduct a linear regression analysis with GPA as the response
+# variable and average years studying mathematics as the predictor.
+GPA.lm <- lm(academic_subjects_mathematics_average_gpa ~ academic_subjects_mathematics_average_years, 
+             data = school_final)
+summary(GPA.lm)
 ```
 
 ```
 
 Call:
-lm(formula = BAC ~ Beers, data = bac)
+lm(formula = academic_subjects_mathematics_average_gpa ~ academic_subjects_mathematics_average_years, 
+    data = school_final)
 
 Residuals:
-      Min        1Q    Median        3Q       Max 
--0.027118 -0.017350  0.001773  0.008623  0.041027 
+     Min       1Q   Median       3Q      Max 
+-0.33812 -0.10344  0.00478  0.11188  0.38478 
 
 Coefficients:
-             Estimate Std. Error t value Pr(>|t|)    
-(Intercept) -0.012701   0.012638  -1.005    0.332    
-Beers        0.017964   0.002402   7.480 2.97e-06 ***
+                                            Estimate
+(Intercept)                                  -0.5592
+academic_subjects_mathematics_average_years   0.9823
+                                            Std. Error
+(Intercept)                                     0.1348
+academic_subjects_mathematics_average_years     0.0342
+                                            t value
+(Intercept)                                  -4.147
+academic_subjects_mathematics_average_years  28.725
+                                            Pr(>|t|)    
+(Intercept)                                 3.87e-05 ***
+academic_subjects_mathematics_average_years  < 2e-16 ***
 ---
 Signif. codes:  
 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 0.02044 on 14 degrees of freedom
-Multiple R-squared:  0.7998,	Adjusted R-squared:  0.7855 
-F-statistic: 55.94 on 1 and 14 DF,  p-value: 2.969e-06
-```
-
-```r
-confint(bac.lm)
-```
-
-```
-                  2.5 %     97.5 %
-(Intercept) -0.03980535 0.01440414
-Beers        0.01281262 0.02311490
-```
-
-```r
-qt(.975,14)
-```
-
-```
-[1] 2.144787
-```
-
-### (a)	Show how the test stat for slope is computed when testing $H_0: \beta_1=0$ vs. $H_A: \beta_1 \neq 0$.
-
-<details>
-<summary><red>Click for answer</red></summary>
-
-*Answer:* The t test stat has the usual form:
-
-$$
-t = \dfrac{0.017964 - 0}{0.002402} = 7.48
-$$
-
-
-```r
-0.017964/0.002402
-```
-
-```
-[1] 7.478768
-```
-
-
-</details>
-<br>
-
-### (b)	Is the effect of beers on BAC statistically significant?
-
-<details>
-<summary><red>Click for answer</red></summary>
-
-*Answer:* Yes, the effect of the number of beers on BAC is statistically significant (t=7.48, df=14, p<0.0001). The observed slope of 0.018 is 7.48 SEs away from the hypothesized slope of 0. If we repeated this experiment many times, less than 0.01% of the time we would see an observed slope that is 7.48 SEs or more away from 0 if the true slope was 0.
-
-
-</details>
-<br>
-
-### (c)	Interpret the 95% confidence interval for slope in context.
-
-<details>
-<summary><red>Click for answer</red></summary>
-
-*Answer:* Each additional beer is associated with an average increase in BAC of 0.018 (95% CI 0.013 to 0.023).
-
-$$
-0.017964 \pm  (2.144787)0.002402 = 0.013, 0.023
-$$
-
-```r
-0.017964 - (2.144787)*0.002402
-```
-
-```
-[1] 0.01281222
-```
-
-```r
-0.017964 + (2.144787)*0.002402
-```
-
-```
-[1] 0.02311578
+Residual standard error: 0.138 on 575 degrees of freedom
+Multiple R-squared:  0.5893,	Adjusted R-squared:  0.5886 
+F-statistic: 825.1 on 1 and 575 DF,  p-value: < 2.2e-16
 ```
 
 
 
 ```r
-bac.lm2 <- lm(BAC ~ Beers + Weight, data=bac)
-summary(bac.lm2)
+# Task: Generate a Residual plot to assess the regression model's assumptions.
+plot(GPA.lm, which = 1)
 ```
 
-```
+<img src="Class_Activity_25_files/figure-html/unnamed-chunk-11-1.png" width="100%" />
 
-Call:
-lm(formula = BAC ~ Beers + Weight, data = bac)
-
-Residuals:
-       Min         1Q     Median         3Q        Max 
--0.0162968 -0.0067796  0.0003985  0.0085287  0.0155621 
-
-Coefficients:
-              Estimate Std. Error t value Pr(>|t|)    
-(Intercept)  3.986e-02  1.043e-02   3.821  0.00212 ** 
-Beers        1.998e-02  1.263e-03  15.817 7.16e-10 ***
-Weight      -3.628e-04  5.668e-05  -6.401 2.34e-05 ***
----
-Signif. codes:  
-0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Residual standard error: 0.01041 on 13 degrees of freedom
-Multiple R-squared:  0.9518,	Adjusted R-squared:  0.9444 
-F-statistic: 128.3 on 2 and 13 DF,  p-value: 2.756e-09
-```
-
-```r
-confint(bac.lm2)
-```
-
-```
-                    2.5 %        97.5 %
-(Intercept)  0.0173236162  0.0624030896
-Beers        0.0172473838  0.0227040401
-Weight      -0.0004852704 -0.0002403715
-```
-
-
-</details>
-<br>
-
-### (d) What is the fitted line for the multiple regression of BAC on Beers and Weight?
-
-<details>
-<summary><red>Click for answer</red></summary>
-
-*Answer:* The fitted regression line is 
-
-$$
-\widehat{BAC} = \hat{\mu}(BAC | weight,beers) = 0.03986 + 0.01998(Beers) - 0.0003628(Weight)
-$$
-
-
-</details>
-<br>
-
-### (e) Predict the BAC for: John who weighs 160 lbs and drank 4 beers; and Bob who weighs 160 lbs and drank 5 beers. What is the difference in these predictions?
-
-<details>
-<summary><red>Click for answer</red></summary>
-
-*Answer:* John's predicted BAC is 
-
-$$
-\widehat{BAC}_{john} = 0.03986 + 0.01998(4) - 0.0003628(160) = 0.061732
-$$
-Bob's predicted BAC is
-
-$$
-\widehat{BAC}_{bob} = 0.03986 + 0.01998(5) - 0.0003628(160) = 0.081712
-$$
-The difference in predicted BAC between Bob and John is
-
-$$
-\widehat{BAC}_{bob} - \widehat{BAC}_{john} = 0.081712 - 0.061732 = 0.01998
-$$
-If John and Bob both weigh 160 pounds but Bob drank one more beer than John, then we would predict Bob’s BAC to be 0.01998 units higher than John’s BAC. This is exactly the coefficient value for `Beers` in the model!.
 
 
 ```r
-(john <- 0.03986 + 0.01998*4 - 0.0003628*160)
+# Task: Generate a QQ plot to visualize the normality of residuals.
+plot(GPA.lm, which = 2)
 ```
 
-```
-[1] 0.061732
-```
-
-```r
-(bob <- 0.03986 + 0.01998*5 - 0.0003628*160)
-```
-
-```
-[1] 0.081712
-```
-
-```r
-bob - john
-```
-
-```
-[1] 0.01998
-```
+<img src="Class_Activity_25_files/figure-html/unnamed-chunk-12-1.png" width="100%" />
 
 
-</details>
-<br>
+### Step 5: Handling Outliers
 
-### (f) Interpret the effect of Beers on BAC in context. 
-
-<details>
-<summary><red>Click for answer</red></summary>
-
-*Answer:* One more beer increases predicted BAC by 0.01998 holding weight constant.
-
-</details>
-<br>
-
-### (g) Interpret the effect of Weight on BAC in context. 
-
-<details>
-<summary><red>Click for answer</red></summary>
-
-*Answer:* Holding the number of beers constant, the average BAC would be lowered by 0.00036 in we increase weight by 1 pound. Put another way, if John and Ann drank 4 beers but John weighs 30 pounds more than Ann, then we predict John’s BAC to be 0.0108 ($30 \times 0.00036$) units lower than Ann’s BAC.
-
-</details>
-<br>
-
-### (h) Are the effects of Beers and Weight on BAC statistically significant?
-
-<details>
-<summary><red>Click for answer</red></summary>
-
-*Answer:* Both number of beers and weight are statistically significant predictors of mean BAC (p-value < 0.0001).
 
 
 ```r
-bac.lm3 <- lm(BAC ~ Beers + Weight + Gender, data=bac)
-summary(bac.lm3)
+# Task: Filter the data to only include certain states.
+school_selected <- school_final %>% 
+  filter(state_name %in% c("Alabama", "California", "Montana", "Minnesota", "Nevada"))
 ```
-
-```
-
-Call:
-lm(formula = BAC ~ Beers + Weight + Gender, data = bac)
-
-Residuals:
-      Min        1Q    Median        3Q       Max 
--0.018125 -0.005713  0.001501  0.007896  0.014655 
-
-Coefficients:
-              Estimate Std. Error t value Pr(>|t|)    
-(Intercept)  3.871e-02  1.097e-02   3.528 0.004164 ** 
-Beers        1.990e-02  1.309e-03  15.196 3.35e-09 ***
-Weight      -3.444e-04  6.842e-05  -5.034 0.000292 ***
-Gendermale  -3.240e-03  6.286e-03  -0.515 0.615584    
----
-Signif. codes:  
-0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Residual standard error: 0.01072 on 12 degrees of freedom
-Multiple R-squared:  0.9528,	Adjusted R-squared:  0.941 
-F-statistic: 80.81 on 3 and 12 DF,  p-value: 3.162e-08
-```
-
-</details>
-<br>
-
-### (i) Predict the BAC for: Barb who weighs 160 lbs, drank 4 beers and is female; and John who weighs 160 lbs, drank 4 beers and is male. What is the difference in these predictions?
-
-<details>
-<summary><red>Click for answer</red></summary>
-
-*Answer:* Barb's predicted BAC is 
-
-$$
-\widehat{BAC}_{barb} = 0.03871 + 0.01990(4) - 0.0003444(160) - 0.003240(0) = 0.063206
-$$
-John's predicted BAC is
-
-$$
-\widehat{BAC}_{john} =  0.03871 + 0.01990(4) - 0.0003444(160) - 0.003240(1) = 0.059966
-$$
-The difference in predicted BAC between Bob and John is
-
-$$
-\widehat{BAC}_{bob} - \widehat{BAC}_{john} = 0.063206 - 0.059966 = 0.00324
-$$
-If John and Barb both weigh 160 pounds and drank 4 beers but Barb is female and John male,   then we would predict Barb’s BAC to be 0.00324 units higher than John’s BAC. This is exactly the coefficient value for `Gender` in the model!.
 
 
 ```r
-(barb <- 0.03871 + 0.01990*4 - 0.0003444*160 - 0.003240*0)
+# Task: Visualize math SAT scores across GPA categories for the selected
+# states using a boxplot, and identify potential outliers.
+school_selected %>%
+  ggplot(aes(x=GPA,y=total_math,fill=GPA)) +
+  theme_bw() +
+  geom_boxplot() +
+  geom_jitter(width = 0.2) +
+  labs(title ="Boxplot of math SAT accross GPA categories",
+       y = "Average Math Score",
+       x = "GPA") +
+  stat_summary(fun=mean, geom="point", shape=10,
+               size=2, color="red", fill="black") +
+  ggthemes::theme_tufte()
 ```
 
-```
-[1] 0.063206
-```
+<img src="Class_Activity_25_files/figure-html/unnamed-chunk-14-1.png" width="100%" />
+
+
+
 
 ```r
-(john <- 0.03871 + 0.01990*4 - 0.0003444*160 - 0.003240*1)
+# Task: Remove outliers based on pre-determined conditions.
+school_selected_no_outlier <-  school_selected %>% 
+  filter(GPA == "excellent" & total_math >= 600 &  total_math <= 800 |
+           GPA == "good" & total_math >= 525  &  total_math <= 575 |
+           GPA == "satisfactory" & total_math >= 425  &  total_math <= 525)
 ```
 
-```
-[1] 0.059966
-```
+
+### Step 6: Visualizing Cleaned Data
+
+
+
 
 ```r
-barb - john
+# Task: Re-visualize the boxplot of math SAT scores across
+# GPA categories after removing the outliers.
+school_selected_no_outlier %>%
+  ggplot(aes(x=GPA,y=total_math,fill=GPA)) +
+  theme_bw() +
+  geom_boxplot() +
+  geom_jitter(width = 0.2) +
+  labs(title ="Boxplot of math SAT accross GPA categories",
+       y = "Average Math Score",
+       x = "GPA") +
+  stat_summary(fun=mean, geom="point", shape=10,
+               size=2, color="red", fill="black") +
+  ggthemes::theme_tufte()
 ```
 
-```
-[1] 0.00324
-```
-
-</details>
-<br>
-
-### (j) Interpret the effect of Gender on BAC in context. 
-
-<details>
-<summary><red>Click for answer</red></summary>
-
-*Answer:* Holding weight and beers constant, we estimate that the
-BAC of males is 0.0032 units lower than females on average.
-
-</details>
-<br>
-
-### (k) Is the effect of Gender on BAC statistically signficant after accounting for weight and number of beers drank? 
-
-<details>
-<summary><red>Click for answer</red></summary>
-
-*Answer:* No, the p-value of 0.6155 shows that there is no
-statistically significant difference between the mean BAC of males and females after accounting for their weight and number of beers drank!
+<img src="Class_Activity_25_files/figure-html/unnamed-chunk-16-1.png" width="100%" />
 
 
-</details>
-<br>
+By the end of this activity, you will have practiced various data analysis techniques, including data manipulation, data cleaning, linear regression, and outlier handling.

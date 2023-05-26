@@ -1,212 +1,182 @@
-# Class Activity 24
+# Class Activity 25
 
-
-
-## Example 1: Cricket Chirps
-
-The data on `CricketChirps` were collected by E.A. Bessey and C.A. Bessey who measured chirp rates for crickets and temperatures during the summer of 1898. Conduct a simple linear regression analysis to predict the temperature by cricket chirp rate.
 
 
 ```{r}
-cricket <- read.csv("https://www.lock5stat.com/datasets3e/CricketChirps.csv")
-cricket
+# load necessary libraries
+library(readr) # read_csv
+library(dplyr) # data manipulation
+library(forcats) # categorical variables
+library(janitor) # clean_names
+library(tidyr) # drop_na
+library(tidyverse) # functions form tidy ecosystem
 ```
 
+
+
+## Linear Regression Analysis: Exploring the Relationship between Average Mathematics GPA and Length of Study in Mathematics
+
+This class activity aims to guide you through a data analysis project involving a school score dataset. You will learn how to load a dataset, inspect its contents, manipulate and clean the data, perform exploratory analysis, and apply linear regression to identify relationships. Towards the end, you will deal with outliers and visualize data to comprehend the results better.
+
+
+### Step 1: Load and Inspect the Data
 
 ```{r}
-mod <- lm(Temperature~Chirps, data = cricket)
-summary(mod)
-```
-
-### (1a) What is the equation for the regression line? Define all the variables.
-
-<details>
-<summary><red>Click for answer</red></summary>
-
-*Answer:* The equation for the regression line is $\widehat{\text { Temp }}=37.7+0.23 \text{Chirps}$, where `chirps` is the cricket chirp rate and `Temp` is the temperature.
-</details>
-<br>
-
-
-
-### (1b) What is the Standard Error(SE) for the slope?
-
-<details>
-<summary><red>Click for answer</red></summary>
-
-*Answer:* The standard error of the slope is 0.01423.
-</details>
-<br>
-
-### (1c) Find a 95% confidence interval for the slope of the cricket temperature model.
-
-<details>
-<summary><red>Click for answer</red></summary>
-
-*Answer:* The 95% confidence interval for the slope is given by $b_1 \pm t^* \cdot S E$. It can be calculated as 
-
-
-$$0.23067 \pm 2.57\cdot 0.01423 = (0.1940,0.2672).$$
-
-```{r, collapse=TRUE}
-0.23067 + c(-1,1)* qt(0.975, df = 5)* 0.01423
-```
-</details>
-<br>
-
-
-### (1d) Conduct a hypotheis test for the slope. Include all the steps. 
-
-<details>
-<summary><red>Click for answer</red></summary>
-
-*Answer:* The hypotheses are:
-
-\begin{align*}
-H_0 :& \beta_1 = 0 \\
-H_a :& \beta_1 \neq 0
-\end{align*}
-
-```{r}
-plot(cricket$Chirps, cricket$Temperature, type = "p", pch = 19)
-abline(mod)
-```
-
-
-The conditions for the slope inference are linearity, normality, constant variability, and independence of the residuals. These can be verified based on the residual and QQ-plot. Based on the residual plot, these residuals are randomly scattered around 0, without any patterns and with constant vertical spread. The individual observations are independent as each cricket are different from one another.
-
-```{r}
-# Residual plot
-plot(mod, which = 1)
+# Task: Load the school_scores.csv data file from your local directory
+school_scores <- read_csv("~/Desktop/Insync/STAT120_Spring23/class_activities/data/school_scores.csv") 
 ```
 
 
 ```{r}
-# QQ plot
-plot(mod, which = 2)
-```
-
-So, based on the summary output, the test statistics for the slope test is given by
-
-\begin{align*}
-t=\frac{b_{1}}{S E} = \frac{0.23067 }{0.01423} = 16.21
-\end{align*}
-
-The p-value corresponding to the above t-value based on t-distribution with $n-2 = 7-2 = 5$ degrees of freedom is given as $0.00000163$ from the coefficients table, or as seen below:
-
-```{r}
-2*(1-pt(16.21, df = 5))
+# Task: Use the glimpse() function to view the structure of your data.
+# glimpse(school_scores)
 ```
 
 
-So, we reject the null at the significance level of 0.05 and conclude that there is significant evidence that the population slope parameter is different from 0.
-
-</details>
-<br>
-
-### (1e) Conduct a hypothesis test to see if there exists some association between temperature and chirp rate.
-
-```{r}
-anova(mod)
-```
-
-<details>
-<summary><red>Click for answer</red></summary>
-
-*Answer:*
-
-The hypotheses can be written as:
-
-\begin{align*}
-H_0 :& \rho = 0 \\
-H_a :& \rho \neq 0
-\end{align*}
-
-The conditions for this test are the same as before. So, we assume the conditions are met.
-
-\begin{align*}
-t & =\frac{\text { statistic -null }}{S E}=\frac{r-0}{\sqrt{\frac{1-r^{2}}{n-2}}} = =\frac{r}{\frac{\sqrt{1-r^{2}}}{\sqrt{n-2}}}\\
-&=\left(\frac{r \sqrt{n-2}}{\sqrt{1-r^{2}}}\right)\\
-&=\frac{0.99062 \sqrt{7-2}}{\sqrt{1-0.99062^{2}}}=16.21
-\end{align*}
-
-
-The test statistics is exactly the same as before. So, both of these tests are equivalent and we arrive at the same conclusion as before. If the slope corresponding to the change in mean chirp rate for unit increase in temperature is significantly different from 0, then there is also a significant association between the chirp rate and the temperature. 
-
-</details>
-<br>
-
-## Example 2: Cereals and Calories
-
-Nutrition information for a sample of 30 breakfast cereals, derived from nutrition labels are stored under `Cereals` dataset. Calorie values are per cup of cereal and sugars are measured in grams per cup. We would like to predict the calorie count by the suger content of the cereal.
-
-```{r}
-cerealdat <- read.csv("https://www.lock5stat.com/datasets3e/Cereal.csv")
-```
-
-```{r}
-mod <- lm(Calories~Sugars, data = cerealdat)
-summary(mod)
-```
-
-### (2a) What is the equation for the regression line? Define all the variables.
-
-<details>
-<summary><red>Click for answer</red></summary>
-
-*Answer:* $$\widehat{Calorie} = 88.92 + 4.31 \cdot \text{Sugar}$$
-
-</details>
-<br>
-
-### (2b) Check the conditions for using linear model.
-
-<details>
-<summary><red>Click for answer</red></summary>
-
-*Answer:* The assumptions for using linear model seem to have met based on the residual plot and qq-plot.
+### Step 2: Data Cleaning
 
 
 ```{r}
-plot(cerealdat$Sugars, cerealdat$Calories, type = "p", pch = 19)
-abline(mod)
+# Task: Use janitor's clean_names() function to standardize column names, 
+# and tidyr's drop_na() to remove missing values.
+school_scores_clean <- school_scores %>%
+  janitor::clean_names() %>% 
+  tidyr::drop_na()
+```
+
+
+### Step 3: Data Manipulation
+
+```{r}
+# Task: Select relevant variables from the dataset for further analysis.
+school_new <- school_scores_clean %>% select(year, 
+                                             state_name, 
+                                             total_math, 
+                                             total_verbal, 
+                                             academic_subjects_mathematics_average_gpa, 
+                                             academic_subjects_mathematics_average_years)
+```
+
+
+```{r}
+# Task: Create a new categorical variable named 'GPA' from 
+# the 'academic_subjects_mathematics_average_gpa' variable.
+school_final <- school_new %>% 
+  mutate(GPA = case_when(academic_subjects_mathematics_average_gpa < 3 ~ "low",
+                         academic_subjects_mathematics_average_gpa >= 3.0 & academic_subjects_mathematics_average_gpa < 3.25 ~ "satisfactory",
+                         academic_subjects_mathematics_average_gpa >= 3.25 & academic_subjects_mathematics_average_gpa < 3.5 ~ "good",
+                         academic_subjects_mathematics_average_gpa >= 3.5 ~ "excellent"))
+```
+
+
+```{r}
+# Task: Convert the new GPA variable into a factor variable.
+school_final <- school_final %>% mutate(GPA = factor(GPA))
+```
+
+
+```{r}
+# Task: Collapse the GPA variable levels into two broad categories.
+school_final <- school_final %>% 
+  mutate(collapsed_GPA = forcats::fct_collapse(GPA,
+                                               Low = c("low", "satisfactory"),
+                                               High = c("good", "excellent")))
+```
+
+
+### Step 4: Data Analysis - Linear Regression
+
+```{r}
+# Fit a linear model
+ggplot(data = school_final, aes(x = academic_subjects_mathematics_average_years, 
+                                y = academic_subjects_mathematics_average_gpa)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red", linetype = "dashed") +
+  labs(x = "Average Years Studying Mathematics", y = "Average Mathematics GPA", 
+       title = "Linear Regression of Average Mathematics GPA vs. Length of Study") +
+  theme_minimal()
+```
+
+
+
+```{r}
+# Task: Conduct a linear regression analysis with GPA as the response
+# variable and average years studying mathematics as the predictor.
+GPA.lm <- lm(academic_subjects_mathematics_average_gpa ~ academic_subjects_mathematics_average_years, 
+             data = school_final)
+summary(GPA.lm)
+```
+
+
+```{r}
+# Task: Generate a Residual plot to assess the regression model's assumptions.
+plot(GPA.lm, which = 1)
+```
+
+
+```{r}
+# Task: Generate a QQ plot to visualize the normality of residuals.
+plot(GPA.lm, which = 2)
+```
+
+
+### Step 5: Handling Outliers
+
+
+```{r}
+# Task: Filter the data to only include certain states.
+school_selected <- school_final %>% 
+  filter(state_name %in% c("Alabama", "California", "Montana", "Minnesota", "Nevada"))
 ```
 
 ```{r}
-plot(mod, which = 1)
+# Task: Visualize math SAT scores across GPA categories for the selected
+# states using a boxplot, and identify potential outliers.
+school_selected %>%
+  ggplot(aes(x=GPA,y=total_math,fill=GPA)) +
+  theme_bw() +
+  geom_boxplot() +
+  geom_jitter(width = 0.2) +
+  labs(title ="Boxplot of math SAT accross GPA categories",
+       y = "Average Math Score",
+       x = "GPA") +
+  stat_summary(fun=mean, geom="point", shape=10,
+               size=2, color="red", fill="black") +
+  ggthemes::theme_tufte()
+
 ```
+
+
 
 ```{r}
-plot(mod, which = 2)
+# Task: Remove outliers based on pre-determined conditions.
+school_selected_no_outlier <-  school_selected %>% 
+  filter(GPA == "excellent" & total_math >= 600 &  total_math <= 800 |
+           GPA == "good" & total_math >= 525  &  total_math <= 575 |
+           GPA == "satisfactory" & total_math >= 425  &  total_math <= 525)
+
 ```
 
-</details>
-<br>
 
-### (2c) Conduct a hypotheis test to determine if the linear model is effective. Include all the steps.
+### Step 6: Visualizing Cleaned Data
 
-<details>
-<summary><red>Click for answer</red></summary>
 
-*Answer:*
 
 ```{r}
-anova(mod)
+# Task: Re-visualize the boxplot of math SAT scores across
+# GPA categories after removing the outliers.
+school_selected_no_outlier %>%
+  ggplot(aes(x=GPA,y=total_math,fill=GPA)) +
+  theme_bw() +
+  geom_boxplot() +
+  geom_jitter(width = 0.2) +
+  labs(title ="Boxplot of math SAT accross GPA categories",
+       y = "Average Math Score",
+       x = "GPA") +
+  stat_summary(fun=mean, geom="point", shape=10,
+               size=2, color="red", fill="black") +
+  ggthemes::theme_tufte()
 ```
 
 
-\begin{align*}
-t=\frac{b_{1}}{S E} = \frac{4.3103 }{0.9269} = 4.650
-\end{align*}
-
-The p-value corresponding to the above t-value based on t-distribution with $n-2 = 30-2 = 28$ degrees of freedom is given as $0.00000725$ from the coefficients table, or as seen below:
-
-```{r}
-2*(1-pt(4.650, df = 28))
-```
-
-
-So, we reject the null at the significance level of 0.05 and conclude that there is significant evidence that the population slope parameter is different from 0.
-
-</details>
-<br>
+By the end of this activity, you will have practiced various data analysis techniques, including data manipulation, data cleaning, linear regression, and outlier handling.

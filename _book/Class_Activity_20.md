@@ -31,7 +31,7 @@ api %>% group_by(wealth) %>% summarize(mean(growth), sd(growth))
 ```
 
 ```
-# A tibble: 2 x 3
+# A tibble: 2 × 3
   wealth `mean(growth)` `sd(growth)`
   <chr>           <dbl>        <dbl>
 1 high             25.2         28.8
@@ -42,8 +42,7 @@ api %>% group_by(wealth) %>% summarize(mean(growth), sd(growth))
 boxplot(growth ~ wealth, data=api, xlab="API growth (2000 - 1999)" , horizontal=T)
 ```
 
-
-\includegraphics[width=1\linewidth]{Class_Activity_20_files/figure-latex/unnamed-chunk-2-1} 
+<img src="Class_Activity_20_files/figure-epub3/unnamed-chunk-2-1.png" width="100%" />
 
 - How many schools are "low" and "high" wealth.
 - Are wealth and API growth related?

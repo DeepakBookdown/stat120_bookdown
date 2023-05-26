@@ -22,8 +22,7 @@ Plot the response (BAC) on the y-axis and the explanatory ("predictor") on the x
 ggplot(data = bac, aes(x = Beers, y = BAC)) + geom_point()
 ```
 
-
-\includegraphics[width=1\linewidth]{Class_Activity_6_files/figure-latex/unnamed-chunk-2-1} 
+<img src="Class_Activity_6_files/figure-epub3/unnamed-chunk-2-1.png" width="100%" />
 
 You can modify this basic graph by adding a title and axes labels.
 
@@ -37,8 +36,7 @@ ggplot(data = bac, aes(x = Beers, y = BAC)) +
      theme_minimal()
 ```
 
-
-\includegraphics[width=1\linewidth]{Class_Activity_6_files/figure-latex/unnamed-chunk-3-1} 
+<img src="Class_Activity_6_files/figure-epub3/unnamed-chunk-3-1.png" width="100%" />
 
 
 - Is there a relationship?
@@ -114,8 +112,7 @@ ggplot(data = bac, aes(x = Beers, y = BAC)) +
      theme_minimal()
 ```
 
-
-\includegraphics[width=1\linewidth]{Class_Activity_6_files/figure-latex/unnamed-chunk-7-1} 
+<img src="Class_Activity_6_files/figure-epub3/unnamed-chunk-7-1.png" width="100%" />
 
 </details><br>
 
@@ -256,8 +253,7 @@ ggplot(data = residuals, aes(x = Beers, y = Residuals)) +
            theme_minimal()
 ```
 
-
-\includegraphics[width=1\linewidth]{Class_Activity_6_files/figure-latex/unnamed-chunk-12-1} 
+<img src="Class_Activity_6_files/figure-epub3/unnamed-chunk-12-1.png" width="100%" />
 
 **Interpret:** There is one case of 9 beers with a large residual (much higher BAC than predicted), but since there is no clear pattern (trend) in this plot it looks like our regression model adequately describes the relationship between number of beers and BAC. 
 
@@ -406,8 +402,7 @@ We can create a scatterplot with plotting symbols color coded by a categorical g
 ggplot(bac, aes(x=Beers, y=BAC, color=Gender)) + geom_point()
 ```
 
-
-\includegraphics[width=1\linewidth]{Class_Activity_6_files/figure-latex/unnamed-chunk-18-1} 
+<img src="Class_Activity_6_files/figure-epub3/unnamed-chunk-18-1.png" width="100%" />
 
 - Are the associations similiar? (form, strength, direction)
 

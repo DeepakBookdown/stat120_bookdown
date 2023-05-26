@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.5.20)  22 MAY 2023 08:51
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.5.20)  25 MAY 2023 21:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1756,22 +1756,60 @@ Underfull \hbox (badness 2384) in paragraph at lines 8817--8818
 []\TU/lmr/m/n/10 The F test stat is the ratio of the group MS and error MS:
  []
 
-[254]
+[254] [255] [256
+
+]
+Chapter 32.
+[257] [258]
+File: Class_Activity_25_files/figure-latex/unnamed-chunk-9-1.pdf Graphic file (type pdf)
+<use Class_Activity_25_files/figure-latex/unnamed-chunk-9-1.pdf>
+
+Overfull \hbox (185.25pt too wide) in paragraph at lines 9065--9065
+[]\TU/lmtt/m/n/10 lm(formula = academic_subjects_mathematics_average_gpa ~ academic_subjects_mathematics_average_years,[] 
+ []
+
+
+Overfull \hbox (451.72467pt too wide) has occurred while \output is active
+\TU/lmr/m/sl/10 32.1.  LINEAR REGRESSION ANALYSIS: EXPLORING THE RELATIONSHIP BETWEEN AVERAGE MATHEMATICS GPA AND LENGTH OF STUDY IN MATHEMATICS \TU/lmr/m/n/10 259
+ []
+
+[259]
+File: Class_Activity_25_files/figure-latex/unnamed-chunk-11-1.pdf Graphic file (type pdf)
+<use Class_Activity_25_files/figure-latex/unnamed-chunk-11-1.pdf>
+[260]
+File: Class_Activity_25_files/figure-latex/unnamed-chunk-12-1.pdf Graphic file (type pdf)
+<use Class_Activity_25_files/figure-latex/unnamed-chunk-12-1.pdf>
+File: Class_Activity_25_files/figure-latex/unnamed-chunk-14-1.pdf Graphic file (type pdf)
+<use Class_Activity_25_files/figure-latex/unnamed-chunk-14-1.pdf>
+
+Overfull \hbox (451.72467pt too wide) has occurred while \output is active
+\TU/lmr/m/sl/10 32.1.  LINEAR REGRESSION ANALYSIS: EXPLORING THE RELATIONSHIP BETWEEN AVERAGE MATHEMATICS GPA AND LENGTH OF STUDY IN MATHEMATICS \TU/lmr/m/n/10 261
+ []
+
+[261]
+File: Class_Activity_25_files/figure-latex/unnamed-chunk-16-1.pdf Graphic file (type pdf)
+<use Class_Activity_25_files/figure-latex/unnamed-chunk-16-1.pdf>
+[262]
 No file myBookfile.bbl.
-[255] (./myBookfile.aux)
+
+Overfull \hbox (451.72467pt too wide) has occurred while \output is active
+\TU/lmr/m/sl/10 32.1.  LINEAR REGRESSION ANALYSIS: EXPLORING THE RELATIONSHIP BETWEEN AVERAGE MATHEMATICS GPA AND LENGTH OF STUDY IN MATHEMATICS \TU/lmr/m/n/10 263
+ []
+
+[263] (./myBookfile.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `myBookfile.out' has not changed.
-(rerunfilecheck)             Checksum: DFCFB091DE81E4E13B629AF9B94BDD89;20803.
+(rerunfilecheck)             Checksum: 72DD48C0E3DBC24EC3917FAA6BB65DAC;21656.
  ) 
 Here is how much of TeX's memory you used:
- 21714 strings out of 478759
- 440556 string characters out of 5849975
+ 21775 strings out of 478759
+ 444247 string characters out of 5849975
  1866482 words of memory out of 5000000
- 41365 multiletter control sequences out of 15000+600000
+ 41424 multiletter control sequences out of 15000+600000
  519671 words of font info for 111 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  86i,10n,128p,1999b,542s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on myBookfile.pdf (255 pages).
+Output written on myBookfile.pdf (263 pages).

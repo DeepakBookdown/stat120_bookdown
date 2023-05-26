@@ -21,8 +21,7 @@ The researchers want to test if the type of foster parent has an effect on the a
 ### 1(a) The boxplot of the length of the eggs across all the species is shown below. Based on these boxplots, do the assumptions of normality and similar variability appear to be met?
 
 
-
-\includegraphics[width=1\linewidth]{Class_Activity_24_files/figure-latex/unnamed-chunk-2-1} 
+<img src="Class_Activity_24_files/figure-epub3/unnamed-chunk-2-1.png" width="100%" />
 
 
 ### (1b) Formally verify that the assumptions are valid by using the outputs given.
@@ -38,8 +37,7 @@ Cuckoo %>%
   ggplot(aes(sample=length)) + geom_qq() + geom_qq_line() + facet_grid(~species) +  theme_bw() 
 ```
 
-
-\includegraphics[width=1\linewidth]{Class_Activity_24_files/figure-latex/unnamed-chunk-3-1} 
+<img src="Class_Activity_24_files/figure-epub3/unnamed-chunk-3-1.png" width="100%" />
 
 Similarly, based on the statistics below, the ratio of the largest $s$ to the smallest $s$ is $1.57$. So, the equal variance assumption is satisfied.
 

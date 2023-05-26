@@ -80,22 +80,37 @@ kableExtra::kable(table(survey$religiousness, survey$comfortness),
   kable_styling(position = "center")
 ```
 
-\begin{table}
-
-\caption{(\#tab:unnamed-chunk-3)A two way table of religious preference and political comfortness}
-\centering
-\begin{tabular}[t]{l|r|r|r}
-\hline
-  & almost always & sometimes & rarely\\
-\hline
-not religious & 103 & 76 & 15\\
-\hline
-religious not active & 39 & 41 & 19\\
-\hline
-religious active & 18 & 24 & 15\\
-\hline
-\end{tabular}
-\end{table}
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:unnamed-chunk-3)A two way table of religious preference and political comfortness</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> almost always </th>
+   <th style="text-align:right;"> sometimes </th>
+   <th style="text-align:right;"> rarely </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> not religious </td>
+   <td style="text-align:right;"> 103 </td>
+   <td style="text-align:right;"> 76 </td>
+   <td style="text-align:right;"> 15 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> religious not active </td>
+   <td style="text-align:right;"> 39 </td>
+   <td style="text-align:right;"> 41 </td>
+   <td style="text-align:right;"> 19 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> religious active </td>
+   <td style="text-align:right;"> 18 </td>
+   <td style="text-align:right;"> 24 </td>
+   <td style="text-align:right;"> 15 </td>
+  </tr>
+</tbody>
+</table>
 
 
 
@@ -108,9 +123,7 @@ ggplot(survey, aes(x=religiousness, fill=comfortness)) +
     scale_x_discrete(labels = function(x) stringr::str_wrap(x, width = 16))
 ```
 
-
-
-\begin{center}\includegraphics[width=1\linewidth]{Class_Activity_22_files/figure-latex/unnamed-chunk-4-1} \end{center}
+<img src="Class_Activity_22_files/figure-epub3/unnamed-chunk-4-1.png" width="100%" style="display: block; margin: auto;" />
 
 
 <details><summary><red>Click for answer</red></summary>
@@ -214,7 +227,7 @@ What is your conclusion for this test?
 
 <details><summary><red>Click for answer</red></summary>
 
-*Answer:* We have strong evidence that there is an association between political comfort level and religiousness ($\chi^2 = 19.33$, df = 4, p-value = \ensuremath{7\times 10^{-4}}).
+*Answer:* We have strong evidence that there is an association between political comfort level and religiousness ($\chi^2 = 19.33$, df = 4, p-value = 7\times 10^{-4}).
 </details><br>
 
 #### (g) Expected counts
@@ -254,7 +267,7 @@ chisq.test(survey$religiousness, survey$comfortness, simulate.p.value = TRUE)
 	(based on 2000 replicates)
 
 data:  survey$religiousness and survey$comfortness
-X-squared = 19.33, df = NA, p-value = 0.001499
+X-squared = 19.33, df = NA, p-value = 0.0009995
 ```
 
 The p-value is slightly different, but your conclusion should be the same.
@@ -473,20 +486,42 @@ rownames(counts3) <- c("Dormitory", "On-Campus Apartment", "Off-campus Apartment
 knitr::kable(counts3)
 ```
 
-
-\begin{tabular}{l|r|r|r}
-\hline
-  & No regular exercise & Sporadic exercise & Regular exercise\\
-\hline
-Dormitory & 32 & 30 & 28\\
-\hline
-On-Campus Apartment & 74 & 64 & 42\\
-\hline
-Off-campus Apartment & 110 & 25 & 15\\
-\hline
-At Home & 39 & 6 & 5\\
-\hline
-\end{tabular}
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> No regular exercise </th>
+   <th style="text-align:right;"> Sporadic exercise </th>
+   <th style="text-align:right;"> Regular exercise </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Dormitory </td>
+   <td style="text-align:right;"> 32 </td>
+   <td style="text-align:right;"> 30 </td>
+   <td style="text-align:right;"> 28 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> On-Campus Apartment </td>
+   <td style="text-align:right;"> 74 </td>
+   <td style="text-align:right;"> 64 </td>
+   <td style="text-align:right;"> 42 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Off-campus Apartment </td>
+   <td style="text-align:right;"> 110 </td>
+   <td style="text-align:right;"> 25 </td>
+   <td style="text-align:right;"> 15 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> At Home </td>
+   <td style="text-align:right;"> 39 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 5 </td>
+  </tr>
+</tbody>
+</table>
 
 
 ```r

@@ -107,9 +107,10 @@ pie(
 )
 ```
 
-\begin{figure}
-\includegraphics[width=1\linewidth]{Rmarkdown_files/figure-latex/pie-1} \caption{A fancy pie chart.}(\#fig:pie)
-\end{figure}
+<div class="figure">
+<img src="Rmarkdown_files/figure-epub3/pie-1.png" alt="A fancy pie chart." width="100%" />
+<p class="caption">(\#fig:pie)A fancy pie chart.</p>
+</div>
 
 (Credit: Yihui Xie)
 
@@ -145,17 +146,12 @@ knitr::kable(simple_data)
 ```
 
 
-\begin{tabular}{l|l|r|l}
-\hline
-initials & state & age & time\\
-\hline
-vib & MA & 61 & 6:01\\
-\hline
-adc & TX & 45 & 5:45\\
-\hline
-kme & CT & 50 & 4:19\\
-\hline
-\end{tabular}
+
+|initials |state | age|time |
+|:--------|:-----|---:|:----|
+|vib      |MA    |  61|6:01 |
+|adc      |TX    |  45|5:45 |
+|kme      |CT    |  50|4:19 |
 
 ### Hide the code:
 
@@ -163,17 +159,11 @@ If we enter the `echo = FALSE` option in the R chunk (see the .Rmd file). This p
 
 
 
-\begin{tabular}{l|l|r|l}
-\hline
-initials & state & age & time\\
-\hline
-vib & MA & 61 & 6:01\\
-\hline
-adc & TX & 45 & 5:45\\
-\hline
-kme & CT & 50 & 4:19\\
-\hline
-\end{tabular}
+|initials |state | age|time |
+|:--------|:-----|---:|:----|
+|vib      |MA    |  61|6:01 |
+|adc      |TX    |  45|5:45 |
+|kme      |CT    |  50|4:19 |
 
 
 

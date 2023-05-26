@@ -13,8 +13,7 @@ ggplot(sleep, aes(x=AverageSleep)) +
   labs(title = "Distribution of Sleep Hours", x = "Hours of Sleep")
 ```
 
-
-\includegraphics[width=1\linewidth]{Class_Activity_5_files/figure-latex/unnamed-chunk-1-1} 
+<img src="Class_Activity_5_files/figure-epub3/unnamed-chunk-1-1.png" width="100%" />
 
 ### (a)  Estimate the average hours of sleep per night.
 
@@ -156,8 +155,7 @@ summary(my_vector)
 ggplot(data.frame(x=my_vector), aes(x)) + geom_boxplot()
 ```
 
-
-\includegraphics[width=1\linewidth]{Class_Activity_5_files/figure-latex/unnamed-chunk-7-1} 
+<img src="Class_Activity_5_files/figure-epub3/unnamed-chunk-7-1.png" width="100%" />
 
 </details>
 
@@ -174,8 +172,7 @@ ggplot(hotdogs, aes(x = "", y = HotDogs)) +
   labs(title = "Number of Hot Dogs Consumed", y = "Number of Hot Dogs") 
 ```
 
-
-\includegraphics[width=1\linewidth]{Class_Activity_5_files/figure-latex/unnamed-chunk-8-1} 
+<img src="Class_Activity_5_files/figure-epub3/unnamed-chunk-8-1.png" width="100%" />
 
 
 
@@ -225,8 +222,7 @@ ggplot(movies, aes(x = WorldGross, y = "")) +
   labs(title = "World Gross of Hollywood Movies", x = "World Gross (in millions)", y ="") 
 ```
 
-
-\includegraphics[width=1\linewidth]{Class_Activity_5_files/figure-latex/unnamed-chunk-11-1} 
+<img src="Class_Activity_5_files/figure-epub3/unnamed-chunk-11-1.png" width="100%" />
 
 </details>
 
@@ -354,8 +350,7 @@ ggplot(movies, aes(x = Genre, y = WorldGross)) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-
-\includegraphics[width=1\linewidth]{Class_Activity_5_files/figure-latex/unnamed-chunk-14-1} 
+<img src="Class_Activity_5_files/figure-epub3/unnamed-chunk-14-1.png" width="100%" />
 
 - What does this type of graph illustrate well about the relationship between `WorldGross` and `Genre`?
 

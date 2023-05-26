@@ -40,8 +40,7 @@ curve(dnorm(x,0.5,.021),from=.3,to=.7,xlab="sample proportions")
 points(0.67,0,pch="X",col="red")
 ```
 
-
-\includegraphics[width=1\linewidth]{Class_Activity_16_files/figure-latex/unnamed-chunk-2-1} 
+<img src="Class_Activity_16_files/figure-epub3/unnamed-chunk-2-1.png" width="100%" />
 
 </details><br>
 
@@ -142,8 +141,7 @@ curve(dnorm(x,0,.029),from=-.1,to=.1,xlab="sample proportions")
 points(0.04,0,pch="X",col="red")
 ```
 
-
-\includegraphics[width=1\linewidth]{Class_Activity_16_files/figure-latex/unnamed-chunk-6-1} 
+<img src="Class_Activity_16_files/figure-epub3/unnamed-chunk-6-1.png" width="100%" />
 
 </details><br>
 

@@ -79,8 +79,7 @@ ggplot(bootstrapped_means, aes(x = mean)) +
   labs(title = "Bootstrap distribution of sample mean")
 ```
 
-
-\includegraphics[width=1\linewidth]{Class_Activity_7_files/figure-latex/unnamed-chunk-4-1} 
+<img src="Class_Activity_7_files/figure-epub3/unnamed-chunk-4-1.png" width="100%" />
 
 
 *Question:* What does each dot represent?
@@ -111,7 +110,7 @@ mean(bootstrapped_means$mean)
 ```
 
 ```
-[1] 20.616
+[1] 20.618
 ```
 
 ```r
@@ -140,7 +139,7 @@ sd(bootstrapped_means$mean)
 ```
 
 ```
-[1] 1.074123
+[1] 1.061601
 ```
 
 </details><br>
@@ -192,8 +191,7 @@ ggplot(mydata, aes(x = x)) +
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
-
-\includegraphics[width=1\linewidth]{Class_Activity_7_files/figure-latex/unnamed-chunk-10-1} 
+<img src="Class_Activity_7_files/figure-epub3/unnamed-chunk-10-1.png" width="100%" />
 
 ### (b) Generate 5 random samples of size $n= 100$ and plot the sample proportions.
 
@@ -217,8 +215,7 @@ ggplot(data, aes(x = x)) +
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
-
-\includegraphics[width=1\linewidth]{Class_Activity_7_files/figure-latex/unnamed-chunk-11-1} 
+<img src="Class_Activity_7_files/figure-epub3/unnamed-chunk-11-1.png" width="100%" />
 
 
 ### (c) Generate 500 random samples of size $n= 100$ and plot the sample proportions.
@@ -243,8 +240,7 @@ ggplot(data, aes(x = x)) +
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
-
-\includegraphics[width=1\linewidth]{Class_Activity_7_files/figure-latex/unnamed-chunk-12-1} 
+<img src="Class_Activity_7_files/figure-epub3/unnamed-chunk-12-1.png" width="100%" />
 
 *Question:* What does each dot represent?
 <details>
@@ -321,8 +317,7 @@ ggplot(data_size10, aes(x = x)) +
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
-
-\includegraphics[width=1\linewidth]{Class_Activity_7_files/figure-latex/unnamed-chunk-15-1} 
+<img src="Class_Activity_7_files/figure-epub3/unnamed-chunk-15-1.png" width="100%" />
 
 
 *Question:*  How has the sampling distribution changed? (Shape? Center? Variability?)
@@ -371,8 +366,7 @@ ggplot(data_size10_large_p, aes(x = x)) +
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
-
-\includegraphics[width=1\linewidth]{Class_Activity_7_files/figure-latex/unnamed-chunk-17-1} 
+<img src="Class_Activity_7_files/figure-epub3/unnamed-chunk-17-1.png" width="100%" />
 
 *Question:* How has the sampling distribution changed? (Shape? Center? Variability?)
 <details>

@@ -34,8 +34,7 @@ exercise <- read_csv("https://raw.githubusercontent.com/deepbas/statdatasets/mai
 permTest(Decrease_in_Resting_Heart_Rate~Group, data= exercise)
 ```
 
-
-\includegraphics[width=1\linewidth]{Class_Activity_13_files/figure-latex/unnamed-chunk-1-1} 
+<img src="Class_Activity_13_files/figure-epub3/unnamed-chunk-1-1.png" width="100%" />
 
 ```
 
@@ -46,8 +45,8 @@ permTest(Decrease_in_Resting_Heart_Rate~Group, data= exercise)
   Aerobic_Exercise :  9.2 	 Resistance_Training :  3 
  Observed difference: 6.2 
 
- Mean of permutation distribution: 0.00383 
- Standard error of permutation distribution: 1.1938 
+ Mean of permutation distribution: -0.01017 
+ Standard error of permutation distribution: 1.20142 
  P-value:  2e-04 
 
 	*-------------*
@@ -135,8 +134,7 @@ teaching <- read_csv("https://raw.githubusercontent.com/deepbas/statdatasets/mai
 permTest(Math_Test_Score~Group, data= teaching)
 ```
 
-
-\includegraphics[width=1\linewidth]{Class_Activity_13_files/figure-latex/unnamed-chunk-2-1} 
+<img src="Class_Activity_13_files/figure-epub3/unnamed-chunk-2-1.png" width="100%" />
 
 ```
 
@@ -147,8 +145,8 @@ permTest(Math_Test_Score~Group, data= teaching)
   New_Method :  91.05 	 Traditional_Method :  82.15 
  Observed difference: 8.9 
 
- Mean of permutation distribution: 0.00826 
- Standard error of permutation distribution: 1.74735 
+ Mean of permutation distribution: -0.00337 
+ Standard error of permutation distribution: 1.74338 
  P-value:  2e-04 
 
 	*-------------*

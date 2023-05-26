@@ -42,7 +42,7 @@ resample
 ```
 
 ```
- [1]  23 185 132  93  93 125 147 185  23 125
+ [1]  85 132  23  93  93 185  85  87  23 125
 ```
 
 ### (d). Where will be bootstrap distribution be centered?  What shape do we expect it to have?
@@ -247,8 +247,7 @@ ggplot(credit, aes(x = Good.Loan, y = Age.in.years)) +
   geom_boxplot()
 ```
 
-
-\includegraphics[width=1\linewidth]{Class_Activity_8_files/figure-latex/unnamed-chunk-4-1} 
+<img src="Class_Activity_8_files/figure-epub3/unnamed-chunk-4-1.png" width="100%" />
 
 ```r
 # Mean age for each Good.Loan category using dplyr
@@ -258,7 +257,7 @@ credit %>%
 ```
 
 ```
-# A tibble: 2 x 2
+# A tibble: 2 × 2
   Good.Loan mean_age
   <chr>        <dbl>
 1 BadLoan       34.0
@@ -292,18 +291,17 @@ boot(Age.in.years ~ Good.Loan, data=credit)
 	** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -2.26095 
- Mean of bootstrap distribution: -2.26567 
- Standard error of bootstrap distribution: 0.77556 
+ Mean of bootstrap distribution: -2.24963 
+ Standard error of bootstrap distribution: 0.76838 
 
  Bootstrap percentile interval
       2.5%      97.5% 
--3.7833690 -0.7261548 
+-3.7500238 -0.7466667 
 
 		*--------------*
 ```
 
-
-\includegraphics[width=1\linewidth]{Class_Activity_8_files/figure-latex/unnamed-chunk-5-1} 
+<img src="Class_Activity_8_files/figure-epub3/unnamed-chunk-5-1.png" width="100%" />
 
 - Give the difference in sample mean ages reported by the output. Use correct notation.
 <details>
@@ -417,8 +415,7 @@ library(ggplot2)
 ggplot(credit, aes(x=Good.Loan, fill=Telephone)) + geom_bar(position="fill")
 ```
 
-
-\includegraphics[width=1\linewidth]{Class_Activity_8_files/figure-latex/unnamed-chunk-9-1} 
+<img src="Class_Activity_8_files/figure-epub3/unnamed-chunk-9-1.png" width="100%" />
 
 - What proportion of bad loans have a phone number on the account?
 <details>
@@ -530,18 +527,17 @@ boot(Telephone_binary ~ Good.Loan, data=credit)
 	** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -0.03905 
- Mean of bootstrap distribution: -0.03947 
- Standard error of bootstrap distribution: 0.03354 
+ Mean of bootstrap distribution: -0.03935 
+ Standard error of bootstrap distribution: 0.03334 
 
  Bootstrap percentile interval
        2.5%       97.5% 
--0.10523810  0.02619048 
+-0.10476190  0.02714286 
 
 		*--------------*
 ```
 
-
-\includegraphics[width=1\linewidth]{Class_Activity_8_files/figure-latex/unnamed-chunk-14-1} 
+<img src="Class_Activity_8_files/figure-epub3/unnamed-chunk-14-1.png" width="100%" />
 
 **Even though the language used in the output says "statistic" we are computing a difference in "proportions"!!**
 

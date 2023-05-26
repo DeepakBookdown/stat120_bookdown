@@ -78,6 +78,7 @@
 <li><a class="" href="class-activity-22.html"><span class="header-section-number">29</span> Class Activity 22</a></li>
 <li><a class="" href="class-activity-23.html"><span class="header-section-number">30</span> Class Activity 23</a></li>
 <li><a class="" href="class-activity-24.html"><span class="header-section-number">31</span> Class Activity 24</a></li>
+<li><a class="" href="class-activity-25.html"><span class="header-section-number">32</span> Class Activity 25</a></li>
 </ul>
 
         <div class="book-extra">
@@ -129,24 +130,24 @@ spreadsheet <code>GettysburgPopulationCounts.csv</code>. Carefully load this dat
 <div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">samp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">268</span>, size<span class="op">=</span><span class="fl">10</span><span class="op">)</span></span>
 <span><span class="va">samp</span></span></code></pre></div>
-<pre><code> [1] 161 179 221  53 147  50 141   9  32  43</code></pre>
+<pre><code> [1]  33   8 245 227 223 253 123  93 239 115</code></pre>
 <p>This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?</p>
 <p><br></p>
 <p>(b). Get words and lengths</p>
 <p>We will <em>subset</em> the data set <code>pop</code> to obtain only the sampled rows listed in <code>samp</code>. We do this using <strong>square bracket notation</strong> `dataset[row number, column number/name]. Run the following command to find your sampled words and sizes:</p>
 <div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">pop</span><span class="op">[</span><span class="va">samp</span>,<span class="op">]</span></span></code></pre></div>
-<pre><code>    position size      word
-161      161    2        It
-179      179    6    fought
-221      221    4      full
-53        53    4      long
-147      147    8 remember,
-50        50    2        so
-141      141    5     world
-9          9    7   brought
-32        32    2        we
-43        43    6   nation,</code></pre>
+<pre><code>    position size       word
+33        33    3        are
+8          8    7    fathers
+245      245    4       have
+227      227    4       here
+223      223    2         of
+253      253   10 government
+123      123    3        and
+93        93    2         is
+239      239    4       that
+115      115    6     cannot</code></pre>
 <p><br></p>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>Compute your sample mean</li>
@@ -155,11 +156,11 @@ spreadsheet <code>GettysburgPopulationCounts.csv</code>. Carefully load this dat
 <div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">mysize</span> <span class="op">&lt;-</span> <span class="va">pop</span><span class="op">[</span><span class="va">samp</span>, <span class="st">"size"</span><span class="op">]</span></span>
 <span><span class="va">mysize</span></span></code></pre></div>
-<pre><code> [1] 2 6 4 4 8 2 5 7 2 6</code></pre>
+<pre><code> [1]  3  7  4  4  2 10  3  2  4  6</code></pre>
 <p>Then find the mean of these values:</p>
 <div class="sourceCode" id="cb60"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">mysize</span><span class="op">)</span></span></code></pre></div>
-<pre><code>[1] 4.6</code></pre>
+<pre><code>[1] 4.5</code></pre>
 <p>How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?</p>
 <details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The true mean is 4.29. Your two means will likely vary. Since the many non-random samples generally overestimated the population mean length, it is possible (but not guaranteed) that <em>your</em> one non-random sample gave a mean length that is greater than the random sample’s mean length.</p>
 </details><p><br></p>
@@ -225,7 +226,7 @@ spreadsheet <code>GettysburgPopulationCounts.csv</code>. Carefully load this dat
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-05-22.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-05-25.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

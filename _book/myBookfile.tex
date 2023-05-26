@@ -139,7 +139,7 @@
 
 \title{Stat 120}
 \author{Deepak Bastola}
-\date{2023-05-22}
+\date{2023-05-25}
 
 \begin{document}
 \maketitle
@@ -1628,16 +1628,16 @@ Click for answer
 
 \begin{verbatim}
    ID Greeting  Male    Weight
-1   1    Hello  TRUE 161.91517
-2   2    Hello FALSE 230.49675
-3   3    Hello  TRUE 119.79488
-4   4    Hello FALSE  79.94697
-5   5    Hello  TRUE 261.24486
-6   6  Goodbye FALSE 275.88771
-7   7  Goodbye  TRUE  87.73368
-8   8  Goodbye FALSE 154.75090
-9   9  Goodbye  TRUE 144.07531
-10 10  Goodbye FALSE 148.73975
+1   1    Hello  TRUE 273.44819
+2   2    Hello FALSE 261.67394
+3   3    Hello  TRUE 224.79329
+4   4    Hello FALSE 193.95138
+5   5    Hello  TRUE 140.22001
+6   6  Goodbye FALSE 199.97890
+7   7  Goodbye  TRUE 121.66948
+8   8  Goodbye FALSE  81.25836
+9   9  Goodbye  TRUE 226.12194
+10 10  Goodbye FALSE 183.53788
 \end{verbatim}
 
 \emph{Answer:} We see a data frame with four columns, where the first column is an \texttt{identifier} for the cases. We have information on the greeting types, whether male or not, and weight on these cases in the remaining columns.
@@ -1818,7 +1818,7 @@ Run the following command to obtain a SRS of 10 words from the 268 that are in t
 \end{Shaded}
 
 \begin{verbatim}
- [1] 199 136 241  44  19 130 263  13 258 143
+ [1] 175 259 125 170 120 262 165  47 238 136
 \end{verbatim}
 
 This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
@@ -1835,16 +1835,16 @@ We will \emph{subset} the data set \texttt{pop} to obtain only the sampled rows 
 
 \begin{verbatim}
     position size      word
-199      199    4      task
+175      175    4      work
+259      259    6   people,
+125      125    3       who
+170      170    9 dedicated
+120      120    5     brave
+262      262    6   people,
+165      165    3       the
+47        47    2        so
+238      238    4     vain,
 136      136    2        to
-241      241    6   nation,
-44        44    2        or
-19        19    7  liberty,
-130      130    2       it,
-263      263    5     shall
-13        13    9 continent
-258      258    3       the
-143      143    6    little
 \end{verbatim}
 
 \begin{enumerate}
@@ -1865,7 +1865,7 @@ The word lengths in part (b) are the data for your sample. You can compute your 
 \end{Shaded}
 
 \begin{verbatim}
- [1] 4 2 6 2 7 2 5 9 3 6
+ [1] 4 6 3 9 5 6 3 2 4 2
 \end{verbatim}
 
 Then find the mean of these values:
@@ -1877,7 +1877,7 @@ Then find the mean of these values:
 \end{Shaded}
 
 \begin{verbatim}
-[1] 4.6
+[1] 4.4
 \end{verbatim}
 
 How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?
@@ -3916,7 +3916,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
-[1] 20.616
+[1] 20.54333
 \end{verbatim}
 
 \begin{Shaded}
@@ -3949,7 +3949,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
-[1] 1.074123
+[1] 1.120948
 \end{verbatim}
 
 \hypertarget{example-3-simulation-of-a-sample-proportion}{%
@@ -4262,7 +4262,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
- [1]  23 185 132  93  93 125 147 185  23 125
+ [1] 125 125 147  72  52 147  85  93  23 125
 \end{verbatim}
 
 \hypertarget{d.-where-will-be-bootstrap-distribution-be-centered-what-shape-do-we-expect-it-to-have}{%
@@ -4516,12 +4516,12 @@ The \texttt{boot(y\ \textasciitilde{}\ x,\ data=)} command generates 10000 boots
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -2.26095 
- Mean of bootstrap distribution: -2.26567 
- Standard error of bootstrap distribution: 0.77556 
+ Mean of bootstrap distribution: -2.25219 
+ Standard error of bootstrap distribution: 0.77504 
 
  Bootstrap percentile interval
       2.5%      97.5% 
--3.7833690 -0.7261548 
+-3.7842976 -0.7204167 
 
         *--------------*
 \end{verbatim}
@@ -4774,12 +4774,12 @@ We can now use the 0/1 version of telephone in the \texttt{boot} command (like e
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -0.03905 
- Mean of bootstrap distribution: -0.03947 
- Standard error of bootstrap distribution: 0.03354 
+ Mean of bootstrap distribution: -0.03911 
+ Standard error of bootstrap distribution: 0.03303 
 
  Bootstrap percentile interval
        2.5%       97.5% 
--0.10523810  0.02619048 
+-0.10238095  0.02666667 
 
         *--------------*
 \end{verbatim}
@@ -5149,9 +5149,9 @@ Then load the \texttt{CarletonStats} package and run the \texttt{permTest(y\ \te
   Caffeine :  12.25      Sleep :  15.25 
  Observed difference: -3 
 
- Mean of permutation distribution: 0.00727 
- Standard error of permutation distribution: 1.49457 
- P-value:  0.0492 
+ Mean of permutation distribution: -0.04195 
+ Standard error of permutation distribution: 1.48239 
+ P-value:  0.055 
 
     *-------------*
 \end{verbatim}
@@ -5273,8 +5273,8 @@ Click for answer
   NonRes :  6405.263     Res :  2821.053 
  Observed difference  NonRes - Res : 3584.211 
 
- Mean of permutation distribution: 4.88733 
- Standard error of permutation distribution: 943.036 
+ Mean of permutation distribution: 1.37961 
+ Standard error of permutation distribution: 951.5183 
  P-value:  1e-04 
 
     *-------------*
@@ -5352,8 +5352,8 @@ Click for answer
   Aerobic_Exercise :  9.2    Resistance_Training :  3 
  Observed difference: 6.2 
 
- Mean of permutation distribution: 0.00383 
- Standard error of permutation distribution: 1.1938 
+ Mean of permutation distribution: 0.00713 
+ Standard error of permutation distribution: 1.16749 
  P-value:  2e-04 
 
     *-------------*
@@ -5459,8 +5459,8 @@ Click for answer
   New_Method :  91.05    Traditional_Method :  82.15 
  Observed difference: 8.9 
 
- Mean of permutation distribution: 0.00826 
- Standard error of permutation distribution: 1.74735 
+ Mean of permutation distribution: -0.00075 
+ Standard error of permutation distribution: 1.72562 
  P-value:  2e-04 
 
     *-------------*
@@ -5601,9 +5601,9 @@ H_0: \mu_{B5} - \mu_{G5} = 0 \ \ H_0: \mu_{B5} - \mu_{G5} \neq 0
   boy :  -0.10435    girl :  0.02906 
  Observed difference: -0.13341 
 
- Mean of permutation distribution: -0.00156 
- Standard error of permutation distribution: 0.26564 
- P-value:  0.623 
+ Mean of permutation distribution: -0.00266 
+ Standard error of permutation distribution: 0.26542 
+ P-value:  0.622 
 
     *-------------*
 \end{verbatim}
@@ -7807,7 +7807,7 @@ If you were concerned that the expected counts weren't large enough to trust usi
     (based on 2000 replicates)
 
 data:  survey$religiousness and survey$comfortness
-X-squared = 19.33, df = NA, p-value = 0.001499
+X-squared = 19.33, df = NA, p-value = 0.0004998
 \end{verbatim}
 
 The p-value is slightly different, but your conclusion should be the same.
@@ -8909,6 +8909,244 @@ Click for answer
 \end{verbatim}
 
 We are 95\% confident that the true mean copper concentration at site 1 is 3.34 to 13.02 mcg/g higher than the true mean concentration at site 3.
+
+\hypertarget{class-activity-25}{%
+\chapter{Class Activity 25}\label{class-activity-25}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# load necessary libraries}
+\FunctionTok{library}\NormalTok{(readr) }\CommentTok{\# read\_csv}
+\FunctionTok{library}\NormalTok{(dplyr) }\CommentTok{\# data manipulation}
+\FunctionTok{library}\NormalTok{(forcats) }\CommentTok{\# categorical variables}
+\FunctionTok{library}\NormalTok{(janitor) }\CommentTok{\# clean\_names}
+\FunctionTok{library}\NormalTok{(tidyr) }\CommentTok{\# drop\_na}
+\FunctionTok{library}\NormalTok{(tidyverse) }\CommentTok{\# functions form tidy ecosystem}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{linear-regression-analysis-exploring-the-relationship-between-average-mathematics-gpa-and-length-of-study-in-mathematics}{%
+\section{Linear Regression Analysis: Exploring the Relationship between Average Mathematics GPA and Length of Study in Mathematics}\label{linear-regression-analysis-exploring-the-relationship-between-average-mathematics-gpa-and-length-of-study-in-mathematics}}
+
+This class activity aims to guide you through a data analysis project involving a school score dataset. You will learn how to load a dataset, inspect its contents, manipulate and clean the data, perform exploratory analysis, and apply linear regression to identify relationships. Towards the end, you will deal with outliers and visualize data to comprehend the results better.
+
+\hypertarget{step-1-load-and-inspect-the-data}{%
+\subsection{Step 1: Load and Inspect the Data}\label{step-1-load-and-inspect-the-data}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Task: Load the school\_scores.csv data file from your local directory}
+\NormalTok{school\_scores }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"\textasciitilde{}/Desktop/Insync/STAT120\_Spring23/class\_activities/data/school\_scores.csv"}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Task: Use the glimpse() function to view the structure of your data.}
+\CommentTok{\# glimpse(school\_scores)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{step-2-data-cleaning}{%
+\subsection{Step 2: Data Cleaning}\label{step-2-data-cleaning}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Task: Use janitor\textquotesingle{}s clean\_names() function to standardize column names, }
+\CommentTok{\# and tidyr\textquotesingle{}s drop\_na() to remove missing values.}
+\NormalTok{school\_scores\_clean }\OtherTok{\textless{}{-}}\NormalTok{ school\_scores }\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{  janitor}\SpecialCharTok{::}\FunctionTok{clean\_names}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+\NormalTok{  tidyr}\SpecialCharTok{::}\FunctionTok{drop\_na}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{step-3-data-manipulation}{%
+\subsection{Step 3: Data Manipulation}\label{step-3-data-manipulation}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Task: Select relevant variables from the dataset for further analysis.}
+\NormalTok{school\_new }\OtherTok{\textless{}{-}}\NormalTok{ school\_scores\_clean }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(year, }
+\NormalTok{                                             state\_name, }
+\NormalTok{                                             total\_math, }
+\NormalTok{                                             total\_verbal, }
+\NormalTok{                                             academic\_subjects\_mathematics\_average\_gpa, }
+\NormalTok{                                             academic\_subjects\_mathematics\_average\_years)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Task: Create a new categorical variable named \textquotesingle{}GPA\textquotesingle{} from }
+\CommentTok{\# the \textquotesingle{}academic\_subjects\_mathematics\_average\_gpa\textquotesingle{} variable.}
+\NormalTok{school\_final }\OtherTok{\textless{}{-}}\NormalTok{ school\_new }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{GPA =} \FunctionTok{case\_when}\NormalTok{(academic\_subjects\_mathematics\_average\_gpa }\SpecialCharTok{\textless{}} \DecValTok{3} \SpecialCharTok{\textasciitilde{}} \StringTok{"low"}\NormalTok{,}
+\NormalTok{                         academic\_subjects\_mathematics\_average\_gpa }\SpecialCharTok{\textgreater{}=} \FloatTok{3.0} \SpecialCharTok{\&}\NormalTok{ academic\_subjects\_mathematics\_average\_gpa }\SpecialCharTok{\textless{}} \FloatTok{3.25} \SpecialCharTok{\textasciitilde{}} \StringTok{"satisfactory"}\NormalTok{,}
+\NormalTok{                         academic\_subjects\_mathematics\_average\_gpa }\SpecialCharTok{\textgreater{}=} \FloatTok{3.25} \SpecialCharTok{\&}\NormalTok{ academic\_subjects\_mathematics\_average\_gpa }\SpecialCharTok{\textless{}} \FloatTok{3.5} \SpecialCharTok{\textasciitilde{}} \StringTok{"good"}\NormalTok{,}
+\NormalTok{                         academic\_subjects\_mathematics\_average\_gpa }\SpecialCharTok{\textgreater{}=} \FloatTok{3.5} \SpecialCharTok{\textasciitilde{}} \StringTok{"excellent"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Task: Convert the new GPA variable into a factor variable.}
+\NormalTok{school\_final }\OtherTok{\textless{}{-}}\NormalTok{ school\_final }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mutate}\NormalTok{(}\AttributeTok{GPA =} \FunctionTok{factor}\NormalTok{(GPA))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Task: Collapse the GPA variable levels into two broad categories.}
+\NormalTok{school\_final }\OtherTok{\textless{}{-}}\NormalTok{ school\_final }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{collapsed\_GPA =}\NormalTok{ forcats}\SpecialCharTok{::}\FunctionTok{fct\_collapse}\NormalTok{(GPA,}
+                                               \AttributeTok{Low =} \FunctionTok{c}\NormalTok{(}\StringTok{"low"}\NormalTok{, }\StringTok{"satisfactory"}\NormalTok{),}
+                                               \AttributeTok{High =} \FunctionTok{c}\NormalTok{(}\StringTok{"good"}\NormalTok{, }\StringTok{"excellent"}\NormalTok{)))}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{step-4-data-analysis---linear-regression}{%
+\subsection{Step 4: Data Analysis - Linear Regression}\label{step-4-data-analysis---linear-regression}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Fit a linear model}
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ school\_final, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ academic\_subjects\_mathematics\_average\_years, }
+                                \AttributeTok{y =}\NormalTok{ academic\_subjects\_mathematics\_average\_gpa)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{"lm"}\NormalTok{, }\AttributeTok{se =} \ConstantTok{FALSE}\NormalTok{, }\AttributeTok{color =} \StringTok{"red"}\NormalTok{, }\AttributeTok{linetype =} \StringTok{"dashed"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"Average Years Studying Mathematics"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Average Mathematics GPA"}\NormalTok{, }
+       \AttributeTok{title =} \StringTok{"Linear Regression of Average Mathematics GPA vs. Length of Study"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_25_files/figure-latex/unnamed-chunk-9-1}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Task: Conduct a linear regression analysis with GPA as the response}
+\CommentTok{\# variable and average years studying mathematics as the predictor.}
+\NormalTok{GPA.lm }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(academic\_subjects\_mathematics\_average\_gpa }\SpecialCharTok{\textasciitilde{}}\NormalTok{ academic\_subjects\_mathematics\_average\_years, }
+             \AttributeTok{data =}\NormalTok{ school\_final)}
+\FunctionTok{summary}\NormalTok{(GPA.lm)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Call:
+lm(formula = academic_subjects_mathematics_average_gpa ~ academic_subjects_mathematics_average_years, 
+    data = school_final)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.33812 -0.10344  0.00478  0.11188  0.38478 
+
+Coefficients:
+                                            Estimate
+(Intercept)                                  -0.5592
+academic_subjects_mathematics_average_years   0.9823
+                                            Std. Error
+(Intercept)                                     0.1348
+academic_subjects_mathematics_average_years     0.0342
+                                            t value
+(Intercept)                                  -4.147
+academic_subjects_mathematics_average_years  28.725
+                                            Pr(>|t|)    
+(Intercept)                                 3.87e-05 ***
+academic_subjects_mathematics_average_years  < 2e-16 ***
+---
+Signif. codes:  
+0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.138 on 575 degrees of freedom
+Multiple R-squared:  0.5893,    Adjusted R-squared:  0.5886 
+F-statistic: 825.1 on 1 and 575 DF,  p-value: < 2.2e-16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Task: Generate a Residual plot to assess the regression model\textquotesingle{}s assumptions.}
+\FunctionTok{plot}\NormalTok{(GPA.lm, }\AttributeTok{which =} \DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_25_files/figure-latex/unnamed-chunk-11-1}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Task: Generate a QQ plot to visualize the normality of residuals.}
+\FunctionTok{plot}\NormalTok{(GPA.lm, }\AttributeTok{which =} \DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_25_files/figure-latex/unnamed-chunk-12-1}
+
+\hypertarget{step-5-handling-outliers}{%
+\subsection{Step 5: Handling Outliers}\label{step-5-handling-outliers}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Task: Filter the data to only include certain states.}
+\NormalTok{school\_selected }\OtherTok{\textless{}{-}}\NormalTok{ school\_final }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(state\_name }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{"Alabama"}\NormalTok{, }\StringTok{"California"}\NormalTok{, }\StringTok{"Montana"}\NormalTok{, }\StringTok{"Minnesota"}\NormalTok{, }\StringTok{"Nevada"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Task: Visualize math SAT scores across GPA categories for the selected}
+\CommentTok{\# states using a boxplot, and identify potential outliers.}
+\NormalTok{school\_selected }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{GPA,}\AttributeTok{y=}\NormalTok{total\_math,}\AttributeTok{fill=}\NormalTok{GPA)) }\SpecialCharTok{+}
+  \FunctionTok{theme\_bw}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_jitter}\NormalTok{(}\AttributeTok{width =} \FloatTok{0.2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =}\StringTok{"Boxplot of math SAT accross GPA categories"}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{"Average Math Score"}\NormalTok{,}
+       \AttributeTok{x =} \StringTok{"GPA"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{stat\_summary}\NormalTok{(}\AttributeTok{fun=}\NormalTok{mean, }\AttributeTok{geom=}\StringTok{"point"}\NormalTok{, }\AttributeTok{shape=}\DecValTok{10}\NormalTok{,}
+               \AttributeTok{size=}\DecValTok{2}\NormalTok{, }\AttributeTok{color=}\StringTok{"red"}\NormalTok{, }\AttributeTok{fill=}\StringTok{"black"}\NormalTok{) }\SpecialCharTok{+}
+\NormalTok{  ggthemes}\SpecialCharTok{::}\FunctionTok{theme\_tufte}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_25_files/figure-latex/unnamed-chunk-14-1}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Task: Remove outliers based on pre{-}determined conditions.}
+\NormalTok{school\_selected\_no\_outlier }\OtherTok{\textless{}{-}}\NormalTok{  school\_selected }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(GPA }\SpecialCharTok{==} \StringTok{"excellent"} \SpecialCharTok{\&}\NormalTok{ total\_math }\SpecialCharTok{\textgreater{}=} \DecValTok{600} \SpecialCharTok{\&}\NormalTok{  total\_math }\SpecialCharTok{\textless{}=} \DecValTok{800} \SpecialCharTok{|}
+\NormalTok{           GPA }\SpecialCharTok{==} \StringTok{"good"} \SpecialCharTok{\&}\NormalTok{ total\_math }\SpecialCharTok{\textgreater{}=} \DecValTok{525}  \SpecialCharTok{\&}\NormalTok{  total\_math }\SpecialCharTok{\textless{}=} \DecValTok{575} \SpecialCharTok{|}
+\NormalTok{           GPA }\SpecialCharTok{==} \StringTok{"satisfactory"} \SpecialCharTok{\&}\NormalTok{ total\_math }\SpecialCharTok{\textgreater{}=} \DecValTok{425}  \SpecialCharTok{\&}\NormalTok{  total\_math }\SpecialCharTok{\textless{}=} \DecValTok{525}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{step-6-visualizing-cleaned-data}{%
+\subsection{Step 6: Visualizing Cleaned Data}\label{step-6-visualizing-cleaned-data}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Task: Re{-}visualize the boxplot of math SAT scores across}
+\CommentTok{\# GPA categories after removing the outliers.}
+\NormalTok{school\_selected\_no\_outlier }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{GPA,}\AttributeTok{y=}\NormalTok{total\_math,}\AttributeTok{fill=}\NormalTok{GPA)) }\SpecialCharTok{+}
+  \FunctionTok{theme\_bw}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_jitter}\NormalTok{(}\AttributeTok{width =} \FloatTok{0.2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =}\StringTok{"Boxplot of math SAT accross GPA categories"}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{"Average Math Score"}\NormalTok{,}
+       \AttributeTok{x =} \StringTok{"GPA"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{stat\_summary}\NormalTok{(}\AttributeTok{fun=}\NormalTok{mean, }\AttributeTok{geom=}\StringTok{"point"}\NormalTok{, }\AttributeTok{shape=}\DecValTok{10}\NormalTok{,}
+               \AttributeTok{size=}\DecValTok{2}\NormalTok{, }\AttributeTok{color=}\StringTok{"red"}\NormalTok{, }\AttributeTok{fill=}\StringTok{"black"}\NormalTok{) }\SpecialCharTok{+}
+\NormalTok{  ggthemes}\SpecialCharTok{::}\FunctionTok{theme\_tufte}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=1\linewidth]{Class_Activity_25_files/figure-latex/unnamed-chunk-16-1}
+
+By the end of this activity, you will have practiced various data analysis techniques, including data manipulation, data cleaning, linear regression, and outlier handling.
 
   \bibliography{book.bib,packages.bib}
 

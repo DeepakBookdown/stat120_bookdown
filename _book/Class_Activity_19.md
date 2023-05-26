@@ -44,8 +44,7 @@ Always plot your data and get summary stats:
 hist(lakes$pH)
 ```
 
-
-\includegraphics[width=1\linewidth]{Class_Activity_19_files/figure-latex/unnamed-chunk-2-1} 
+<img src="Class_Activity_19_files/figure-epub3/unnamed-chunk-2-1.png" width="100%" />
 
 ```r
 mean(lakes$pH)
@@ -221,23 +220,23 @@ glimpse(NutritionStudy)
 ```
 Rows: 315
 Columns: 17
-$ ID            <int> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 1~
-$ Age           <int> 64, 76, 38, 40, 72, 40, 65, 58, 35, ~
-$ Smoke         <chr> "No", "No", "No", "No", "No", "No", ~
-$ Quetelet      <dbl> 21.4838, 23.8763, 20.0108, 25.1406, ~
-$ Vitamin       <int> 1, 1, 2, 3, 1, 3, 2, 1, 3, 3, 1, 2, ~
-$ Calories      <dbl> 1298.8, 1032.5, 2372.3, 2449.5, 1952~
-$ Fat           <dbl> 57.0, 50.1, 83.6, 97.5, 82.6, 56.0, ~
-$ Fiber         <dbl> 6.3, 15.8, 19.1, 26.5, 16.2, 9.6, 28~
-$ Alcohol       <dbl> 0.0, 0.0, 14.1, 0.5, 0.0, 1.3, 0.0, ~
-$ Cholesterol   <dbl> 170.3, 75.8, 257.9, 332.6, 170.8, 15~
-$ BetaDiet      <int> 1945, 2653, 6321, 1061, 2863, 1729, ~
-$ RetinolDiet   <int> 890, 451, 660, 864, 1209, 1439, 802,~
-$ BetaPlasma    <int> 200, 124, 328, 153, 92, 148, 258, 64~
-$ RetinolPlasma <int> 915, 727, 721, 615, 799, 654, 834, 8~
-$ Sex           <chr> "Female", "Female", "Female", "Femal~
-$ VitaminUse    <chr> "Regular", "Regular", "Occasional", ~
-$ PriorSmoke    <int> 2, 1, 2, 2, 1, 2, 1, 1, 1, 2, 2, 1, ~
+$ ID            <int> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 1…
+$ Age           <int> 64, 76, 38, 40, 72, 40, 65, 58, 35, …
+$ Smoke         <chr> "No", "No", "No", "No", "No", "No", …
+$ Quetelet      <dbl> 21.4838, 23.8763, 20.0108, 25.1406, …
+$ Vitamin       <int> 1, 1, 2, 3, 1, 3, 2, 1, 3, 3, 1, 2, …
+$ Calories      <dbl> 1298.8, 1032.5, 2372.3, 2449.5, 1952…
+$ Fat           <dbl> 57.0, 50.1, 83.6, 97.5, 82.6, 56.0, …
+$ Fiber         <dbl> 6.3, 15.8, 19.1, 26.5, 16.2, 9.6, 28…
+$ Alcohol       <dbl> 0.0, 0.0, 14.1, 0.5, 0.0, 1.3, 0.0, …
+$ Cholesterol   <dbl> 170.3, 75.8, 257.9, 332.6, 170.8, 15…
+$ BetaDiet      <int> 1945, 2653, 6321, 1061, 2863, 1729, …
+$ RetinolDiet   <int> 890, 451, 660, 864, 1209, 1439, 802,…
+$ BetaPlasma    <int> 200, 124, 328, 153, 92, 148, 258, 64…
+$ RetinolPlasma <int> 915, 727, 721, 615, 799, 654, 834, 8…
+$ Sex           <chr> "Female", "Female", "Female", "Femal…
+$ VitaminUse    <chr> "Regular", "Regular", "Occasional", …
+$ PriorSmoke    <int> 2, 1, 2, 2, 1, 2, 1, 1, 1, 2, 2, 1, …
 ```
 
 
@@ -250,8 +249,7 @@ Always plot your data and get summary stats:
 hist(NutritionStudy$Calories)
 ```
 
-
-\includegraphics[width=1\linewidth]{Class_Activity_19_files/figure-latex/unnamed-chunk-9-1} 
+<img src="Class_Activity_19_files/figure-epub3/unnamed-chunk-9-1.png" width="100%" />
 
 ```r
 mean(NutritionStudy$Calories)

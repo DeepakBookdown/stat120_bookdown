@@ -10,8 +10,7 @@ frisbee <- read.csv("https://raw.githubusercontent.com/deepbas/statdatasets/main
 boxplot(Distance ~ Grip, data = frisbee)
 ```
 
-
-\includegraphics[width=1\linewidth]{Class_Activity_23_files/figure-latex/unnamed-chunk-1-1} 
+<img src="Class_Activity_23_files/figure-epub3/unnamed-chunk-1-1.png" width="100%" />
 
 ```r
 tapply(frisbee$Distance, frisbee$Grip, summary)
@@ -106,15 +105,13 @@ library(ggplot2)  # shape?
 boxplot(Distance ~ Grip, data = frisbee)
 ```
 
-
-\includegraphics[width=1\linewidth]{Class_Activity_23_files/figure-latex/unnamed-chunk-3-1} 
+<img src="Class_Activity_23_files/figure-epub3/unnamed-chunk-3-1.png" width="100%" />
 
 ```r
 ggplot(frisbee, aes(sample = Distance)) + geom_qq() + facet_wrap(~Grip)
 ```
 
-
-\includegraphics[width=1\linewidth]{Class_Activity_23_files/figure-latex/unnamed-chunk-3-2} 
+<img src="Class_Activity_23_files/figure-epub3/unnamed-chunk-3-2.png" width="100%" />
 
 <details><summary><red>Click for answer</red></summary>
 
@@ -150,8 +147,7 @@ ggplot(data = survey) +
     geom_boxplot(aes(x = religiousness, y = practice_religion))
 ```
 
-
-\includegraphics[width=1\linewidth]{Class_Activity_23_files/figure-latex/unnamed-chunk-4-1} 
+<img src="Class_Activity_23_files/figure-epub3/unnamed-chunk-4-1.png" width="100%" />
 
 ```r
 tapply(survey$practice_religion, survey$religiousness, summary)
@@ -217,8 +213,7 @@ tapply(survey$practice_religion, survey$religiousness, sd, na.rm=TRUE)  #need na
 ggplot(survey, aes(sample = practice_religion)) + geom_qq() + facet_wrap(~religiousness)
 ```
 
-
-\includegraphics[width=1\linewidth]{Class_Activity_23_files/figure-latex/unnamed-chunk-5-1} 
+<img src="Class_Activity_23_files/figure-epub3/unnamed-chunk-5-1.png" width="100%" />
 
 
 
