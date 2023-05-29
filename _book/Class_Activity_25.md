@@ -106,7 +106,7 @@ ggplot(data = school_final, aes(x = academic_subjects_mathematics_average_years,
   theme_minimal()
 ```
 
-<img src="Class_Activity_25_files/figure-html/unnamed-chunk-9-1.png" width="100%" />
+<img src="Class_Activity_25_files/figure-epub3/unnamed-chunk-9-1.png" width="100%" />
 
 
 
@@ -158,7 +158,7 @@ F-statistic: 825.1 on 1 and 575 DF,  p-value: < 2.2e-16
 plot(GPA.lm, which = 1)
 ```
 
-<img src="Class_Activity_25_files/figure-html/unnamed-chunk-11-1.png" width="100%" />
+<img src="Class_Activity_25_files/figure-epub3/unnamed-chunk-11-1.png" width="100%" />
 
 
 
@@ -167,7 +167,7 @@ plot(GPA.lm, which = 1)
 plot(GPA.lm, which = 2)
 ```
 
-<img src="Class_Activity_25_files/figure-html/unnamed-chunk-12-1.png" width="100%" />
+<img src="Class_Activity_25_files/figure-epub3/unnamed-chunk-12-1.png" width="100%" />
 
 
 ### Step 5: Handling Outliers
@@ -197,7 +197,7 @@ school_selected %>%
   ggthemes::theme_tufte()
 ```
 
-<img src="Class_Activity_25_files/figure-html/unnamed-chunk-14-1.png" width="100%" />
+<img src="Class_Activity_25_files/figure-epub3/unnamed-chunk-14-1.png" width="100%" />
 
 
 
@@ -232,7 +232,7 @@ school_selected_no_outlier %>%
   ggthemes::theme_tufte()
 ```
 
-<img src="Class_Activity_25_files/figure-html/unnamed-chunk-16-1.png" width="100%" />
+<img src="Class_Activity_25_files/figure-epub3/unnamed-chunk-16-1.png" width="100%" />
 
 
 By the end of this activity, you will have practiced various data analysis techniques, including data manipulation, data cleaning, linear regression, and outlier handling.

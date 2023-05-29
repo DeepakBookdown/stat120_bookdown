@@ -139,7 +139,7 @@
 
 \title{Stat 120}
 \author{Deepak Bastola}
-\date{2023-05-25}
+\date{2023-05-29}
 
 \begin{document}
 \maketitle
@@ -1628,16 +1628,16 @@ Click for answer
 
 \begin{verbatim}
    ID Greeting  Male    Weight
-1   1    Hello  TRUE 273.44819
-2   2    Hello FALSE 261.67394
-3   3    Hello  TRUE 224.79329
-4   4    Hello FALSE 193.95138
-5   5    Hello  TRUE 140.22001
-6   6  Goodbye FALSE 199.97890
-7   7  Goodbye  TRUE 121.66948
-8   8  Goodbye FALSE  81.25836
-9   9  Goodbye  TRUE 226.12194
-10 10  Goodbye FALSE 183.53788
+1   1    Hello  TRUE 249.18007
+2   2    Hello FALSE  74.71655
+3   3    Hello  TRUE 182.15436
+4   4    Hello FALSE 210.92105
+5   5    Hello  TRUE 160.48347
+6   6  Goodbye FALSE 184.25925
+7   7  Goodbye  TRUE  94.87006
+8   8  Goodbye FALSE 219.82143
+9   9  Goodbye  TRUE  79.32896
+10 10  Goodbye FALSE 153.88444
 \end{verbatim}
 
 \emph{Answer:} We see a data frame with four columns, where the first column is an \texttt{identifier} for the cases. We have information on the greeting types, whether male or not, and weight on these cases in the remaining columns.
@@ -1818,7 +1818,7 @@ Run the following command to obtain a SRS of 10 words from the 268 that are in t
 \end{Shaded}
 
 \begin{verbatim}
- [1] 175 259 125 170 120 262 165  47 238 136
+ [1] 107 268  91 187  19 191 130 221 136 194
 \end{verbatim}
 
 This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
@@ -1834,17 +1834,17 @@ We will \emph{subset} the data set \texttt{pop} to obtain only the sampled rows 
 \end{Shaded}
 
 \begin{verbatim}
-    position size      word
-175      175    4      work
-259      259    6   people,
-125      125    3       who
-170      170    9 dedicated
-120      120    5     brave
-262      262    6   people,
-165      165    3       the
-47        47    2        so
-238      238    4     vain,
-136      136    2        to
+    position size     word
+107      107    5   sense,
+268      268    5   earth.
+91        91    4    live.
+187      187    2       It
+19        19    7 liberty,
+191      191    2       us
+130      130    2      it,
+221      221    4     full
+136      136    2       to
+194      194    4     here
 \end{verbatim}
 
 \begin{enumerate}
@@ -1865,7 +1865,7 @@ The word lengths in part (b) are the data for your sample. You can compute your 
 \end{Shaded}
 
 \begin{verbatim}
- [1] 4 6 3 9 5 6 3 2 4 2
+ [1] 5 5 4 2 7 2 2 4 2 4
 \end{verbatim}
 
 Then find the mean of these values:
@@ -1877,7 +1877,7 @@ Then find the mean of these values:
 \end{Shaded}
 
 \begin{verbatim}
-[1] 4.4
+[1] 3.7
 \end{verbatim}
 
 How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?
@@ -3916,7 +3916,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
-[1] 20.54333
+[1] 20.68833
 \end{verbatim}
 
 \begin{Shaded}
@@ -3949,7 +3949,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
-[1] 1.120948
+[1] 1.063099
 \end{verbatim}
 
 \hypertarget{example-3-simulation-of-a-sample-proportion}{%
@@ -4262,7 +4262,7 @@ Click for answer
 \end{Shaded}
 
 \begin{verbatim}
- [1] 125 125 147  72  52 147  85  93  23 125
+ [1] 125  85  72  72 125  23  93  72  93  85
 \end{verbatim}
 
 \hypertarget{d.-where-will-be-bootstrap-distribution-be-centered-what-shape-do-we-expect-it-to-have}{%
@@ -4516,12 +4516,12 @@ The \texttt{boot(y\ \textasciitilde{}\ x,\ data=)} command generates 10000 boots
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -2.26095 
- Mean of bootstrap distribution: -2.25219 
- Standard error of bootstrap distribution: 0.77504 
+ Mean of bootstrap distribution: -2.26555 
+ Standard error of bootstrap distribution: 0.77669 
 
  Bootstrap percentile interval
       2.5%      97.5% 
--3.7842976 -0.7204167 
+-3.7686190 -0.7242857 
 
         *--------------*
 \end{verbatim}
@@ -4774,12 +4774,12 @@ We can now use the 0/1 version of telephone in the \texttt{boot} command (like e
     ** Bootstrap interval for difference of statistic
 
  Observed difference of statistic:  BadLoan - GoodLoan =  -0.03905 
- Mean of bootstrap distribution: -0.03911 
- Standard error of bootstrap distribution: 0.03303 
+ Mean of bootstrap distribution: -0.03923 
+ Standard error of bootstrap distribution: 0.03352 
 
  Bootstrap percentile interval
        2.5%       97.5% 
--0.10238095  0.02666667 
+-0.10380952  0.02761905 
 
         *--------------*
 \end{verbatim}
@@ -5149,9 +5149,9 @@ Then load the \texttt{CarletonStats} package and run the \texttt{permTest(y\ \te
   Caffeine :  12.25      Sleep :  15.25 
  Observed difference: -3 
 
- Mean of permutation distribution: -0.04195 
- Standard error of permutation distribution: 1.48239 
- P-value:  0.055 
+ Mean of permutation distribution: -0.01899 
+ Standard error of permutation distribution: 1.51183 
+ P-value:  0.053 
 
     *-------------*
 \end{verbatim}
@@ -5273,8 +5273,8 @@ Click for answer
   NonRes :  6405.263     Res :  2821.053 
  Observed difference  NonRes - Res : 3584.211 
 
- Mean of permutation distribution: 1.37961 
- Standard error of permutation distribution: 951.5183 
+ Mean of permutation distribution: 7.5676 
+ Standard error of permutation distribution: 945.0632 
  P-value:  1e-04 
 
     *-------------*
@@ -5352,8 +5352,8 @@ Click for answer
   Aerobic_Exercise :  9.2    Resistance_Training :  3 
  Observed difference: 6.2 
 
- Mean of permutation distribution: 0.00713 
- Standard error of permutation distribution: 1.16749 
+ Mean of permutation distribution: -0.00883 
+ Standard error of permutation distribution: 1.17898 
  P-value:  2e-04 
 
     *-------------*
@@ -5459,8 +5459,8 @@ Click for answer
   New_Method :  91.05    Traditional_Method :  82.15 
  Observed difference: 8.9 
 
- Mean of permutation distribution: -0.00075 
- Standard error of permutation distribution: 1.72562 
+ Mean of permutation distribution: -0.00124 
+ Standard error of permutation distribution: 1.73647 
  P-value:  2e-04 
 
     *-------------*
@@ -5601,9 +5601,9 @@ H_0: \mu_{B5} - \mu_{G5} = 0 \ \ H_0: \mu_{B5} - \mu_{G5} \neq 0
   boy :  -0.10435    girl :  0.02906 
  Observed difference: -0.13341 
 
- Mean of permutation distribution: -0.00266 
- Standard error of permutation distribution: 0.26542 
- P-value:  0.622 
+ Mean of permutation distribution: 0.00273 
+ Standard error of permutation distribution: 0.26255 
+ P-value:  0.5956 
 
     *-------------*
 \end{verbatim}
@@ -9147,6 +9147,358 @@ F-statistic: 825.1 on 1 and 575 DF,  p-value: < 2.2e-16
 \includegraphics[width=1\linewidth]{Class_Activity_25_files/figure-latex/unnamed-chunk-16-1}
 
 By the end of this activity, you will have practiced various data analysis techniques, including data manipulation, data cleaning, linear regression, and outlier handling.
+
+\hypertarget{class-activity-25-1}{%
+\chapter{Class Activity 25}\label{class-activity-25-1}}
+
+\hypertarget{example-1-beer}{%
+\section{Example 1: Beer}\label{example-1-beer}}
+
+A study of 16 Ohio State University students looked at the relationship between the number of beers a student consumes and their blood alcohol content (BAC) 30 minutes after their last beer. The regression information from R to predict BAC from number of beers consumed is given below.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bac }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/deepbas/statdatasets/main/BAC.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{Class_Activity_26_files/figure-latex/unnamed-chunk-2-1} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bac.lm }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(BAC }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Beers, }\AttributeTok{data=}\NormalTok{bac)}
+\FunctionTok{summary}\NormalTok{(bac.lm)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Call:
+lm(formula = BAC ~ Beers, data = bac)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.027118 -0.017350  0.001773  0.008623  0.041027 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -0.012701   0.012638  -1.005    0.332    
+Beers        0.017964   0.002402   7.480 2.97e-06 ***
+---
+Signif. codes:  
+0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.02044 on 14 degrees of freedom
+Multiple R-squared:  0.7998,    Adjusted R-squared:  0.7855 
+F-statistic: 55.94 on 1 and 14 DF,  p-value: 2.969e-06
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{confint}\NormalTok{(bac.lm)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+                  2.5 %     97.5 %
+(Intercept) -0.03980535 0.01440414
+Beers        0.01281262 0.02311490
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{qt}\NormalTok{(.}\DecValTok{975}\NormalTok{,}\DecValTok{14}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 2.144787
+\end{verbatim}
+
+\hypertarget{a-show-how-the-test-stat-for-slope-is-computed-when-testing-h_0-beta_10-vs.-h_a-beta_1-neq-0.}{%
+\subsection{\texorpdfstring{(a) Show how the test stat for slope is computed when testing \(H_0: \beta_1=0\) vs.~\(H_A: \beta_1 \neq 0\).}{(a) Show how the test stat for slope is computed when testing H\_0: \textbackslash beta\_1=0 vs.~H\_A: \textbackslash beta\_1 \textbackslash neq 0.}}\label{a-show-how-the-test-stat-for-slope-is-computed-when-testing-h_0-beta_10-vs.-h_a-beta_1-neq-0.}}
+
+Click for answer
+
+\emph{Answer:} The t test stat has the usual form:
+
+\[
+t = \dfrac{0.017964 - 0}{0.002402} = 7.48
+\]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FloatTok{0.017964}\SpecialCharTok{/}\FloatTok{0.002402}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 7.478768
+\end{verbatim}
+
+\hypertarget{b-is-the-effect-of-beers-on-bac-statistically-significant}{%
+\subsection{(b) Is the effect of beers on BAC statistically significant?}\label{b-is-the-effect-of-beers-on-bac-statistically-significant}}
+
+Click for answer
+
+\emph{Answer:} Yes, the effect of the number of beers on BAC is statistically significant (t=7.48, df=14, p\textless0.0001). The observed slope of 0.018 is 7.48 SEs away from the hypothesized slope of 0. If we repeated this experiment many times, less than 0.01\% of the time we would see an observed slope that is 7.48 SEs or more away from 0 if the true slope was 0.
+
+\hypertarget{c-interpret-the-95-confidence-interval-for-slope-in-context.}{%
+\subsection{(c) Interpret the 95\% confidence interval for slope in context.}\label{c-interpret-the-95-confidence-interval-for-slope-in-context.}}
+
+Click for answer
+
+\emph{Answer:} Each additional beer is associated with an average increase in BAC of 0.018 (95\% CI 0.013 to 0.023).
+
+\[
+0.017964 \pm  (2.144787)0.002402 = 0.013, 0.023
+\]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FloatTok{0.017964} \SpecialCharTok{{-}}\NormalTok{ (}\FloatTok{2.144787}\NormalTok{)}\SpecialCharTok{*}\FloatTok{0.002402}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.01281222
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FloatTok{0.017964} \SpecialCharTok{+}\NormalTok{ (}\FloatTok{2.144787}\NormalTok{)}\SpecialCharTok{*}\FloatTok{0.002402}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.02311578
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bac.lm2 }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(BAC }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Beers }\SpecialCharTok{+}\NormalTok{ Weight, }\AttributeTok{data=}\NormalTok{bac)}
+\FunctionTok{summary}\NormalTok{(bac.lm2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Call:
+lm(formula = BAC ~ Beers + Weight, data = bac)
+
+Residuals:
+       Min         1Q     Median         3Q        Max 
+-0.0162968 -0.0067796  0.0003985  0.0085287  0.0155621 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  3.986e-02  1.043e-02   3.821  0.00212 ** 
+Beers        1.998e-02  1.263e-03  15.817 7.16e-10 ***
+Weight      -3.628e-04  5.668e-05  -6.401 2.34e-05 ***
+---
+Signif. codes:  
+0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.01041 on 13 degrees of freedom
+Multiple R-squared:  0.9518,    Adjusted R-squared:  0.9444 
+F-statistic: 128.3 on 2 and 13 DF,  p-value: 2.756e-09
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{confint}\NormalTok{(bac.lm2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+                    2.5 %        97.5 %
+(Intercept)  0.0173236162  0.0624030896
+Beers        0.0172473838  0.0227040401
+Weight      -0.0004852704 -0.0002403715
+\end{verbatim}
+
+\hypertarget{d-what-is-the-fitted-line-for-the-multiple-regression-of-bac-on-beers-and-weight}{%
+\subsection{(d) What is the fitted line for the multiple regression of BAC on Beers and Weight?}\label{d-what-is-the-fitted-line-for-the-multiple-regression-of-bac-on-beers-and-weight}}
+
+Click for answer
+
+\emph{Answer:} The fitted regression line is
+
+\[
+\widehat{BAC} = \hat{\mu}(BAC | weight,beers) = 0.03986 + 0.01998(Beers) - 0.0003628(Weight)
+\]
+
+\hypertarget{e-predict-the-bac-for-john-who-weighs-160-lbs-and-drank-4-beers-and-bob-who-weighs-160-lbs-and-drank-5-beers.-what-is-the-difference-in-these-predictions}{%
+\subsection{(e) Predict the BAC for: John who weighs 160 lbs and drank 4 beers; and Bob who weighs 160 lbs and drank 5 beers. What is the difference in these predictions?}\label{e-predict-the-bac-for-john-who-weighs-160-lbs-and-drank-4-beers-and-bob-who-weighs-160-lbs-and-drank-5-beers.-what-is-the-difference-in-these-predictions}}
+
+Click for answer
+
+\emph{Answer:} John's predicted BAC is
+
+\[
+\widehat{BAC}_{john} = 0.03986 + 0.01998(4) - 0.0003628(160) = 0.061732
+\]
+Bob's predicted BAC is
+
+\[
+\widehat{BAC}_{bob} = 0.03986 + 0.01998(5) - 0.0003628(160) = 0.081712
+\]
+The difference in predicted BAC between Bob and John is
+
+\[
+\widehat{BAC}_{bob} - \widehat{BAC}_{john} = 0.081712 - 0.061732 = 0.01998
+\]
+If John and Bob both weigh 160 pounds but Bob drank one more beer than John, then we would predict Bob's BAC to be 0.01998 units higher than John's BAC. This is exactly the coefficient value for \texttt{Beers} in the model!.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(john }\OtherTok{\textless{}{-}} \FloatTok{0.03986} \SpecialCharTok{+} \FloatTok{0.01998}\SpecialCharTok{*}\DecValTok{4} \SpecialCharTok{{-}} \FloatTok{0.0003628}\SpecialCharTok{*}\DecValTok{160}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.061732
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(bob }\OtherTok{\textless{}{-}} \FloatTok{0.03986} \SpecialCharTok{+} \FloatTok{0.01998}\SpecialCharTok{*}\DecValTok{5} \SpecialCharTok{{-}} \FloatTok{0.0003628}\SpecialCharTok{*}\DecValTok{160}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.081712
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bob }\SpecialCharTok{{-}}\NormalTok{ john}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.01998
+\end{verbatim}
+
+\hypertarget{f-interpret-the-effect-of-beers-on-bac-in-context.}{%
+\subsection{(f) Interpret the effect of Beers on BAC in context.}\label{f-interpret-the-effect-of-beers-on-bac-in-context.}}
+
+Click for answer
+
+\emph{Answer:} One more beer increases predicted BAC by 0.01998 holding weight constant.
+
+\hypertarget{g-interpret-the-effect-of-weight-on-bac-in-context.}{%
+\subsection{(g) Interpret the effect of Weight on BAC in context.}\label{g-interpret-the-effect-of-weight-on-bac-in-context.}}
+
+Click for answer
+
+\emph{Answer:} Holding the number of beers constant, the average BAC would be lowered by 0.00036 in we increase weight by 1 pound. Put another way, if John and Ann drank 4 beers but John weighs 30 pounds more than Ann, then we predict John's BAC to be 0.0108 (\(30 \times 0.00036\)) units lower than Ann's BAC.
+
+\hypertarget{h-are-the-effects-of-beers-and-weight-on-bac-statistically-significant}{%
+\subsection{(h) Are the effects of Beers and Weight on BAC statistically significant?}\label{h-are-the-effects-of-beers-and-weight-on-bac-statistically-significant}}
+
+Click for answer
+
+\emph{Answer:} Both number of beers and weight are statistically significant predictors of mean BAC (p-value \textless{} 0.0001).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bac.lm3 }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(BAC }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Beers }\SpecialCharTok{+}\NormalTok{ Weight }\SpecialCharTok{+}\NormalTok{ Gender, }\AttributeTok{data=}\NormalTok{bac)}
+\FunctionTok{summary}\NormalTok{(bac.lm3)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Call:
+lm(formula = BAC ~ Beers + Weight + Gender, data = bac)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.018125 -0.005713  0.001501  0.007896  0.014655 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  3.871e-02  1.097e-02   3.528 0.004164 ** 
+Beers        1.990e-02  1.309e-03  15.196 3.35e-09 ***
+Weight      -3.444e-04  6.842e-05  -5.034 0.000292 ***
+Gendermale  -3.240e-03  6.286e-03  -0.515 0.615584    
+---
+Signif. codes:  
+0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.01072 on 12 degrees of freedom
+Multiple R-squared:  0.9528,    Adjusted R-squared:  0.941 
+F-statistic: 80.81 on 3 and 12 DF,  p-value: 3.162e-08
+\end{verbatim}
+
+\hypertarget{i-predict-the-bac-for-barb-who-weighs-160-lbs-drank-4-beers-and-is-female-and-john-who-weighs-160-lbs-drank-4-beers-and-is-male.-what-is-the-difference-in-these-predictions}{%
+\subsection{(i) Predict the BAC for: Barb who weighs 160 lbs, drank 4 beers and is female; and John who weighs 160 lbs, drank 4 beers and is male. What is the difference in these predictions?}\label{i-predict-the-bac-for-barb-who-weighs-160-lbs-drank-4-beers-and-is-female-and-john-who-weighs-160-lbs-drank-4-beers-and-is-male.-what-is-the-difference-in-these-predictions}}
+
+Click for answer
+
+\emph{Answer:} Barb's predicted BAC is
+
+\[
+\widehat{BAC}_{barb} = 0.03871 + 0.01990(4) - 0.0003444(160) - 0.003240(0) = 0.063206
+\]
+John's predicted BAC is
+
+\[
+\widehat{BAC}_{john} =  0.03871 + 0.01990(4) - 0.0003444(160) - 0.003240(1) = 0.059966
+\]
+The difference in predicted BAC between Bob and John is
+
+\[
+\widehat{BAC}_{bob} - \widehat{BAC}_{john} = 0.063206 - 0.059966 = 0.00324
+\]
+If John and Barb both weigh 160 pounds and drank 4 beers but Barb is female and John male, then we would predict Barb's BAC to be 0.00324 units higher than John's BAC. This is exactly the coefficient value for \texttt{Gender} in the model!.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(barb }\OtherTok{\textless{}{-}} \FloatTok{0.03871} \SpecialCharTok{+} \FloatTok{0.01990}\SpecialCharTok{*}\DecValTok{4} \SpecialCharTok{{-}} \FloatTok{0.0003444}\SpecialCharTok{*}\DecValTok{160} \SpecialCharTok{{-}} \FloatTok{0.003240}\SpecialCharTok{*}\DecValTok{0}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.063206
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(john }\OtherTok{\textless{}{-}} \FloatTok{0.03871} \SpecialCharTok{+} \FloatTok{0.01990}\SpecialCharTok{*}\DecValTok{4} \SpecialCharTok{{-}} \FloatTok{0.0003444}\SpecialCharTok{*}\DecValTok{160} \SpecialCharTok{{-}} \FloatTok{0.003240}\SpecialCharTok{*}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.059966
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{barb }\SpecialCharTok{{-}}\NormalTok{ john}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.00324
+\end{verbatim}
+
+\hypertarget{j-interpret-the-effect-of-gender-on-bac-in-context.}{%
+\subsection{(j) Interpret the effect of Gender on BAC in context.}\label{j-interpret-the-effect-of-gender-on-bac-in-context.}}
+
+Click for answer
+
+\emph{Answer:} Holding weight and beers constant, we estimate that the
+BAC of males is 0.0032 units lower than females on average.
+
+\hypertarget{k-is-the-effect-of-gender-on-bac-statistically-signficant-after-accounting-for-weight-and-number-of-beers-drank}{%
+\subsection{(k) Is the effect of Gender on BAC statistically signficant after accounting for weight and number of beers drank?}\label{k-is-the-effect-of-gender-on-bac-statistically-signficant-after-accounting-for-weight-and-number-of-beers-drank}}
+
+Click for answer
+
+\emph{Answer:} No, the p-value of 0.6155 shows that there is no
+statistically significant difference between the mean BAC of males and females after accounting for their weight and number of beers drank!
 
   \bibliography{book.bib,packages.bib}
 
