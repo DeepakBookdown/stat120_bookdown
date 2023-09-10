@@ -108,7 +108,7 @@ pie(
 ```
 
 <div class="figure">
-<img src="Rmarkdown_files/figure-epub3/pie-1.png" alt="A fancy pie chart." width="100%" />
+<img src="Rmarkdown_files/figure-html/pie-1.png" alt="A fancy pie chart." width="100%" />
 <p class="caption">(\#fig:pie)A fancy pie chart.</p>
 </div>
 
