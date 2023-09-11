@@ -23,6 +23,6 @@ format
 content
 problems-using-r
 report-guidelines
-class-activity-1
-your-turn-1
-your-turn-2
+practice-problem-1
+problem-1
+problem-2

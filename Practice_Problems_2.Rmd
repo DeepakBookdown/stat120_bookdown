@@ -1,8 +1,8 @@
 
-# Class Activity 2
+# Practice Problems 2
 
 
-## Your Turn 1
+## Problem 1
 
 ### Summary of article on [It depends on how you ask!](https://jech.bmj.com/content/75/4/387.abstract)
 
@@ -17,7 +17,7 @@ This study aimed to measure the effects of psychological biases on estimates of 
 
 ------------------------------------------
 
-## Your Turn 2
+## Problem 2
 
 ### Gettysburg random sample
 

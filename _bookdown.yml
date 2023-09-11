@@ -14,7 +14,7 @@ rmd_files: [
    #"graphformatting.Rmd",
   # "tableformatting.Rmd",
    "reportguidelines.Rmd",
-   "Class_Activity_1.Rmd"
+   "Practice_Problems_1.Rmd"
    # "Class_Activity_2.Rmd", 
    # "Class_Activity_3.Rmd", 
    # "Class_Activity_4.Rmd", 
