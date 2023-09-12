@@ -16,7 +16,7 @@ rmd_files: [
    "reportguidelines.Rmd",
    "Tutorial_1.Rmd",
    "Practice_Problems_1.Rmd",
-   "Practice_Problems_2.Rmd", 
+   #"Practice_Problems_2.Rmd", 
    # "Practice_Problems_3.Rmd", 
    # "Practice_Problems_4.Rmd", 
    # "Practice_Problems_5.Rmd", 
