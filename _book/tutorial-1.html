@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 6 Tutorial 1 | Stat 120</title>
+<meta name="author" content="Deepak Bastola">
+<meta name="description" content="6.1 Introduction This tutorial introduces basic arithmetic operations, data types, and data manipulation functions in R.  6.2 Basic Arithmetic in R Arithmetic operations are straightforward in R....">
+<meta name="generator" content="bookdown 0.35 with bs4_book()">
+<meta property="og:title" content="Chapter 6 Tutorial 1 | Stat 120">
+<meta property="og:type" content="book">
+<meta property="og:description" content="6.1 Introduction This tutorial introduces basic arithmetic operations, data types, and data manipulation functions in R.  6.2 Basic Arithmetic in R Arithmetic operations are straightforward in R....">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 6 Tutorial 1 | Stat 120">
+<meta name="twitter:description" content="6.1 Introduction This tutorial introduces basic arithmetic operations, data types, and data manipulation functions in R.  6.2 Basic Arithmetic in R Arithmetic operations are straightforward in R....">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.1/transition.js"></script><script src="libs/bs3compat-0.5.1/tabs.js"></script><script src="libs/bs3compat-0.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Stat 120</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled"><li><a class="" href="index.html"><span class="header-section-number">Chapter 6</span> Tutorial 1</a></li></ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="tutorial-1" class="section level1" number="6">
+<h1>
+<span class="header-section-number">6</span> Tutorial 1<a class="anchor" aria-label="anchor" href="#tutorial-1"><i class="fas fa-link"></i></a>
+</h1>
+<div id="introduction" class="section level2" number="6.1">
+<h2>
+<span class="header-section-number">6.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction"><i class="fas fa-link"></i></a>
+</h2>
+<p>This tutorial introduces basic arithmetic operations, data types, and data manipulation functions in R.</p>
+<hr>
+</div>
+<div id="basic-arithmetic-in-r" class="section level2" number="6.2">
+<h2>
+<span class="header-section-number">6.2</span> <a href="tutorial-1.html#basic-arithmetic-in-r">Basic Arithmetic in R</a><a class="anchor" aria-label="anchor" href="#basic-arithmetic-in-r"><i class="fas fa-link"></i></a>
+</h2>
+<p>Arithmetic operations are straightforward in R.</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">2</span> <span class="op">+</span> <span class="fl">3</span>  <span class="co"># Addition</span></span></code></pre></div>
+<pre><code>[1] 5</code></pre>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">5</span> <span class="op">-</span> <span class="fl">2</span>  <span class="co"># Subtraction</span></span></code></pre></div>
+<pre><code>[1] 3</code></pre>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">2</span> <span class="op">*</span> <span class="fl">3</span>  <span class="co"># Multiplication</span></span></code></pre></div>
+<pre><code>[1] 6</code></pre>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">6</span> <span class="op">/</span> <span class="fl">2</span>  <span class="co"># Division</span></span></code></pre></div>
+<pre><code>[1] 3</code></pre>
+</div>
+<div id="data-types-vector-and-dataframe" class="section level2" number="6.3">
+<h2>
+<span class="header-section-number">6.3</span> [Data Types: Vector and DataFrame]<a class="anchor" aria-label="anchor" href="#data-types-vector-and-dataframe"><i class="fas fa-link"></i></a>
+</h2>
+<div id="vector" class="section level3" number="6.3.1">
+<h3>
+<span class="header-section-number">6.3.1</span> Vector<a class="anchor" aria-label="anchor" href="#vector"><i class="fas fa-link"></i></a>
+</h3>
+<p>A vector is a 1D array in R. You can create a vector using the <code><a href="https://rdrr.io/r/base/c.html">c()</a></code> function.</p>
+
+</div>
+</div>
+</div>
+
+
+
+  <div class="chapter-nav">
+<div class="empty"></div>
+<div class="empty"></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <div id="book-on-this-page"></div>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-09-12.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

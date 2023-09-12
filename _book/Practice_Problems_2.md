@@ -25,9 +25,20 @@ Let’s take a simple random sample (SRS) of Gettysburg words. The “population
 spreadsheet `GettysburgPopulationCounts.csv`. Carefully load this data into R:
 
 
-```{r}
+
+```r
 pop <- read.csv("https://raw.githubusercontent.com/deepbas/statdatasets/main/GettysbergPopulationCounts.csv")
 head(pop)
+```
+
+```
+  position size  word
+1        1    4  Four
+2        2    5 score
+3        3    3   and
+4        4    5 seven
+5        5    5 years
+6        6    3  ago,
 ```
 
 The `position` variable enumerates the list of words in the population (address).
@@ -36,9 +47,14 @@ The `position` variable enumerates the list of words in the population (address)
 
 Run the following command to obtain a SRS of 10 words from the 268 that are in the population:
 
-```{r}
+
+```r
 samp <- sample(1:268, size=10)
 samp
+```
+
+```
+ [1]  21 103  41 155  10  32  89  39 265 225
 ```
 
 This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
@@ -51,8 +67,23 @@ This tells you the position (row number) of your sampled words. What are your sa
 
 We will *subset* the data set `pop` to obtain only the sampled rows listed in `samp`. We do this using **square bracket notation** `dataset[row number, column number/name]. Run the following command to find your sampled words and sizes:
 
-```{r}
+
+```r
 pop[samp,]
+```
+
+```
+    position size      word
+21        21    9 dedicated
+103      103    3      But,
+41        41    7   whether
+155      155    5     never
+10        10    5     forth
+32        32    2        we
+89        89    6    nation
+39        39    3      war,
+265      265    6    perish
+225      225    4      that
 ```
 
 <br>
@@ -61,15 +92,25 @@ c. Compute your sample mean
 
 The word lengths in part (b) are the data for your sample. You can compute your sample mean using a calculator, or using R. Let's try R (you will find it faster!). First save the quantitative variable `size` in a new variable called `mysize`:
 
-```{r}
+
+```r
 mysize <- pop[samp, "size"]
 mysize
 ```
 
+```
+ [1] 9 3 7 5 5 2 6 3 6 4
+```
+
 Then find the mean of these values:
 
-```{r}
+
+```r
 mean(mysize)
+```
+
+```
+[1] 5
 ```
 
 How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample? 

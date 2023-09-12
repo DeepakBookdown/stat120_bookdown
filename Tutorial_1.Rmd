@@ -1,0 +1,140 @@
+# (PART\*) Tutorials {-}
+
+# Tutorial 1: Embark on Your Data Journey 
+
+
+## Introduction
+
+This tutorial introduces basic arithmetic operations, data types, and data manipulation functions in R.
+
+---
+
+## [Basic Arithmetic in R](#basic-arithmetic-in-r)
+Arithmetic operations in R are straightforward, and the results are immediately displayed in the console.
+
+```{r}
+2 + 3  # Addition
+5 - 2  # Subtraction
+2 * 3  # Multiplication
+6 / 2  # Division
+```
+
+
+However, to make these results accessible and manipulable for future use, you can store them in variables.
+
+```{r}
+# Performing operations and storing results in variables
+addition_result <- 2 + 3  # Addition
+subtraction_result <- 5 - 2  # Subtraction
+multiplication_result <- 2 * 3  # Multiplication
+division_result <- 6 / 2  # Division
+```
+
+
+Now you can use these variables later in your code
+
+```{r}
+addition_result
+```
+
+
+## Data Types: Vector and DataFrame
+
+### Vector
+
+A vector is a 1D array in R. You can create a vector using the `c()` function.
+
+```{r}
+x <- c(1, 2, 3)
+x
+```
+
+#### Using Sequencing
+
+You can also create a vector by using sequences. For example, the following code will create a vector containing numbers from 1 to 10.
+
+
+```{r}
+y <- 1:10
+y
+```
+
+
+### DataFrame
+
+A DataFrame is a 2D table in R. You can create a DataFrame using the `data.frame()` function.
+
+```{r}
+df <- data.frame(Name = c("Alice", "Bob"), Age = c(25, 30))
+df
+```
+
+
+### Creating a Simple Dataset
+
+You can create a simple dataset as follows:
+
+```{r}
+dataset <- data.frame(ID = 1:5, Score = c(90, 85, 88, 92, 89))
+dataset
+```
+
+### Using `sample()` Function
+
+To generate random combinations from a vector, use the `sample()` function.
+
+```{r}
+sample(x = 1:10, size = 10, replace = FALSE)
+```
+
+### Using `head()` Function
+
+```{r}
+head(dataset)
+```
+
+## Vector and Data Indexing Using `[]`
+
+### Vector Indexing
+
+You can index a vector using square brackets `[]`.
+
+```{r}
+x[2]  # Access the 2nd element of vector x
+```
+
+### DataFrame Indexing
+
+You can index a DataFrame using square brackets `[]`.
+
+```{r}
+dataset[1,]  # Access the 1st row
+dataset[,1]  # Access the 1st column
+```
+
+## Reading Data from a URL
+
+To read data from a URL, you can use the `read.csv()` function, or `read_csv()` function from `readr` package.
+
+```{r}
+url <- "https://www.lock5stat.com/datasets2e/EducationLiteracy.csv"
+data_from_url <- read.csv(url)
+```
+
+### Inspecting the Data
+
+To get the first 6 rows of the data, use the following:
+
+```{r}
+head(data_from_url)
+```
+
+To get the dimensions of the data, use the following:
+
+```{r}
+dim(data_from_url)
+```
+
+## Conclusion
+
+This tutorial covered basic arithmetic, data types, and data manipulation functions in R.

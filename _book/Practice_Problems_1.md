@@ -1,6 +1,6 @@
 # (PART\*) Practice Problems {-}
 
-# Practice Problem 1
+# Practice Problems 1
 
 ## Problem 1
 
@@ -26,16 +26,16 @@ example_data
 
 ```
    ID Greeting  Male    Weight
-1   1    Hello  TRUE  51.87056
-2   2    Hello FALSE 150.66892
-3   3    Hello  TRUE 141.28717
-4   4    Hello FALSE  87.60996
-5   5    Hello  TRUE 161.29944
-6   6  Goodbye FALSE 161.53130
-7   7  Goodbye  TRUE 159.29926
-8   8  Goodbye FALSE 290.91834
-9   9  Goodbye  TRUE 220.50028
-10 10  Goodbye FALSE  74.74629
+1   1    Hello  TRUE 213.00335
+2   2    Hello FALSE  83.02076
+3   3    Hello  TRUE  77.96128
+4   4    Hello FALSE 298.80209
+5   5    Hello  TRUE 108.32522
+6   6  Goodbye FALSE 291.50281
+7   7  Goodbye  TRUE 100.56735
+8   8  Goodbye FALSE 254.84875
+9   9  Goodbye  TRUE 207.68272
+10 10  Goodbye FALSE  71.42312
 ```
 
 *Answer:* We see a data frame with four columns, where the first column is an `identifier` for the cases. We have information on the greeting types, whether male or not, and weight on these cases in the remaining columns.
