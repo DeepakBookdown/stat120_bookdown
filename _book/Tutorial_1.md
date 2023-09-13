@@ -1,4 +1,4 @@
-# (PART\*) Tutorials {-}
+# (PART\*) R Tutorials {-}
 
 # Tutorial 1: Embark on Your Data Journey 
 
@@ -148,7 +148,7 @@ sample(x = 1:10, size = 10, replace = FALSE)
 ```
 
 ```
- [1]  8  3  6  7  2  1  4 10  9  5
+ [1]  3  7  9  1  4  6  2  5  8 10
 ```
 
 ### Using `head()` Function

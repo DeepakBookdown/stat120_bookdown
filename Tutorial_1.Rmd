@@ -1,4 +1,4 @@
-# (PART\*) Tutorials {-}
+# (PART\*) R Tutorials {-}
 
 # Tutorial 1: Embark on Your Data Journey 
 

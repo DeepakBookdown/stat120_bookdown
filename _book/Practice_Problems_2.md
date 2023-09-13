@@ -1,23 +1,7 @@
 
 # Practice Problems 2
 
-
 ## Problem 1
-
-### Summary of article on [It depends on how you ask!](https://jech.bmj.com/content/75/4/387.abstract)
-
-<details>
-<summary><red>Click for answer</red></summary>
-
-*Answer:* 
-
-This study aimed to measure the effects of psychological biases on estimates of compliance with public health guidance regarding COVID-19. Results showed that compliance estimates were reduced when questions were framed negatively and anonymity was increased. Effect sizes were large, with compliance estimates diminishing by up to 17% points and 10% points, respectively. These findings suggest that standard tracking surveys pose questions in ways that lead to higher compliance estimates than alternative approaches.
-</details>
-<br>
-
-------------------------------------------
-
-## Problem 2
 
 ### Gettysburg random sample
 
@@ -54,7 +38,7 @@ samp
 ```
 
 ```
- [1] 250 184  78  34 260 254 233 214  22  91
+ [1]  50  54 218  33 246  43  13 231 229 143
 ```
 
 This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?
@@ -73,17 +57,17 @@ pop[samp,]
 ```
 
 ```
-    position size     word
-250      250    7 freedom,
-184      184    2       so
-78        78    7  resting
-34        34    7  engaged
-260      260    3      for
-254      254    2       of
-233      233    5    shall
-214      214    5    cause
-22        22    2       to
-91        91    4    live.
+    position size      word
+50        50    2        so
+54        54    6   endure.
+218      218    4      gave
+33        33    3       are
+246      246    1         a
+43        43    6   nation,
+13        13    9 continent
+231      231    5     these
+229      229    7   resolve
+143      143    6    little
 ```
 
 <br>
@@ -99,7 +83,7 @@ mysize
 ```
 
 ```
- [1] 7 2 7 7 3 2 5 5 2 4
+ [1] 2 6 4 3 1 6 9 5 7 6
 ```
 
 Then find the mean of these values:
@@ -110,7 +94,7 @@ mean(mysize)
 ```
 
 ```
-[1] 4.4
+[1] 4.9
 ```
 
 How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample? 
@@ -122,55 +106,4 @@ How does this sample mean (from a truly random sample) compare to your sample me
 
 </details>
 
-<br>
 
-----------------------------------------------------------------------
-
-## Problem 3
-
-
-### Driving with a Pet on your Lap
-
-Over 30,000 people participated in an online poll on `cnn.com` conducted in April 2012 asking: "Have you ever driven with a pet on your lap"? We see that 34% of the participants answered yes and 66% answered no.
-
-a. Can you conclude that a random sample was used from the description given? Explain.
-
-<details>
-<summary><red>Click for answer</red></summary>
-
-*Answer:* No you can't make this conclusion from the info given. In fact, an online poll at a website like `cnn.com` is almost always reporting results from a non-random sample. The people who respond are individuals who visit `cnn.com`, then see the online poll and decide to respond. 
-</details>
-
-<br>
-
-
-
-b. Explain why it is not appropriate to generalize these results to all drivers, or even to all drivers who visit cnn.com.
-
-<details>
-<summary><red>Click for answer</red></summary>
-
-*Answer:* This is a volunteer sample, and volunteer samples are often biased and can't be generalized to *all drivers* (the population).  It is likely that people who have driven with a pet on their lap are more likely to respond to the poll.
-</details>
-<br>
-
-c. How might we select a sample of people that would give us results that we can generalize to a broader population?
-
-<details>
-<summary><red>Click for answer</red></summary>
-
-*Answer:* A random sample of individuals from all U.S. drivers would need to be selected and given the poll question. (There are many ways to do this, the most common being a variation of random digit dialing where phone numbers are randomly selected from known area codes.)
-</details>
-
-<br>
-
-
-d. Is the variable measured in this study quantitative or categorical?
-
-<details>
-<summary><red>Click for answer</red></summary>
-
-*Answer:* Categorical (yes or no answer to the question).
-</details>
-
- 
