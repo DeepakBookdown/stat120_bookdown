@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 10 Practice Problems 4 | Stat 120</title>
+<meta name="author" content="Deepak Bastola">
+<meta name="description" content="10.1 Problem 1: Flowers v. Mississippi The data set APM_DougEvensCases.csv contains data from 1517 potential black and white jurors for 66 cases that Doug Evans was primary prosecutor for between...">
+<meta name="generator" content="bookdown 0.35 with bs4_book()">
+<meta property="og:title" content="Chapter 10 Practice Problems 4 | Stat 120">
+<meta property="og:type" content="book">
+<meta property="og:description" content="10.1 Problem 1: Flowers v. Mississippi The data set APM_DougEvensCases.csv contains data from 1517 potential black and white jurors for 66 cases that Doug Evans was primary prosecutor for between...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 10 Practice Problems 4 | Stat 120">
+<meta name="twitter:description" content="10.1 Problem 1: Flowers v. Mississippi The data set APM_DougEvensCases.csv contains data from 1517 potential black and white jurors for 66 cases that Doug Evans was primary prosecutor for between...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.1/transition.js"></script><script src="libs/bs3compat-0.5.1/tabs.js"></script><script src="libs/bs3compat-0.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Stat 120</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Introduction to Statistics</a></li>
+<li class="book-part">Basics R</li>
+<li><a class="" href="what-is-r.html"><span class="header-section-number">1</span> What is R?</a></li>
+<li><a class="" href="r-markdown-basics.html"><span class="header-section-number">2</span> R Markdown Basics</a></li>
+<li><a class="" href="homework-guidelines.html"><span class="header-section-number">3</span> Homework Guidelines</a></li>
+<li><a class="" href="report-guidelines.html"><span class="header-section-number">4</span> Report Guidelines</a></li>
+<li class="book-part">R Tutorials</li>
+<li><a class="" href="tutorial-1-embark-on-your-data-journey.html"><span class="header-section-number">5</span> Tutorial 1: Embark on Your Data Journey</a></li>
+<li><a class="" href="tutorial-2-dive-deeper-into-data-visualization-and-statistics-in-r.html"><span class="header-section-number">6</span> Tutorial 2: Dive Deeper into Data Visualization and Statistics in R</a></li>
+<li class="book-part">Practice Problems</li>
+<li><a class="" href="practice-problems-1.html"><span class="header-section-number">7</span> Practice Problems 1</a></li>
+<li><a class="" href="practice-problems-2.html"><span class="header-section-number">8</span> Practice Problems 2</a></li>
+<li><a class="" href="practice-problems-3.html"><span class="header-section-number">9</span> Practice Problems 3</a></li>
+<li><a class="active" href="practice-problems-4.html"><span class="header-section-number">10</span> Practice Problems 4</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="practice-problems-4" class="section level1" number="10">
+<h1>
+<span class="header-section-number">10</span> Practice Problems 4<a class="anchor" aria-label="anchor" href="#practice-problems-4"><i class="fas fa-link"></i></a>
+</h1>
+<div id="problem-1-flowers-v.-mississippi" class="section level2" number="10.1">
+<h2>
+<span class="header-section-number">10.1</span> Problem 1: Flowers v. Mississippi<a class="anchor" aria-label="anchor" href="#problem-1-flowers-v.-mississippi"><i class="fas fa-link"></i></a>
+</h2>
+<p>The data set <code>APM_DougEvensCases.csv</code> contains data from 1517 potential black and white jurors for 66 cases that Doug Evans was primary prosecutor for between 1992 and 2017. These jurors were available for Doug Evans to strike using his “peremptory strikes” during the jury selection phase.</p>
+<p>(a). Inspect data</p>
+<p>Read in the data</p>
+<div class="sourceCode" id="cb76"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">jurors</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"https://raw.githubusercontent.com/deepbas/statdatasets/main/APM_DougEvansCases.csv"</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># dimension of dataset</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">jurors</span><span class="op">)</span></span></code></pre></div>
+<pre><code>[1] 1517    6</code></pre>
+<p>Look at the first <strong>three rows</strong> of the data set</p>
+<div class="sourceCode" id="cb79"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">jurors</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span><span class="op">)</span>, <span class="op">]</span></span></code></pre></div>
+<pre><code>  trial__id  race        struck_state defendant_race
+1         4 Black Not struck by State          White
+2         4 Black     Struck by State          White
+3         4 White Not struck by State          White
+       same_race                     struck_by
+1 different race Juror chosen to serve on jury
+2 different race           Struck by the state
+3      same race Juror chosen to serve on jury</code></pre>
+<p>To get the data from one variable, we use the command <code>dataset$variable</code>. For example, <code>jurors$struck_state</code> gives us the data values from the <code>struck_state</code> variable, which tells us if a juror was struck by the state from the jury pool. Here we can see the first 10 entries in this variable:</p>
+<div class="sourceCode" id="cb81"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">jurors</span><span class="op">$</span><span class="va">struck_state</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">]</span></span></code></pre></div>
+<pre><code> [1] "Not struck by State" "Struck by State"    
+ [3] "Not struck by State" "Not struck by State"
+ [5] "Struck by State"     "Not struck by State"
+ [7] "Struck by State"     "Not struck by State"
+ [9] "Not struck by State" "Not struck by State"</code></pre>
+<p><br></p>
+<p>(b). Table of counts and proportions</p>
+<p>The <code>summary</code> command used with a data frame gives summaries of each variable</p>
+<div class="sourceCode" id="cb83"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">jurors</span><span class="op">)</span></span></code></pre></div>
+<pre><code>   trial__id         race           struck_state      
+ Min.   :  4.0   Length:1517        Length:1517       
+ 1st Qu.: 52.0   Class :character   Class :character  
+ Median : 82.0   Mode  :character   Mode  :character  
+ Mean   :112.6                                        
+ 3rd Qu.:170.0                                        
+ Max.   :301.0                                        
+ defendant_race      same_race          struck_by        
+ Length:1517        Length:1517        Length:1517       
+ Class :character   Class :character   Class :character  
+ Mode  :character   Mode  :character   Mode  :character  
+                                                         
+                                                         
+                                                         </code></pre>
+<p>The <code>table</code> command gives the distribution of counts for a single categorical variable. To obtain the count table for <code>struck_state</code> you need to</p>
+<div class="sourceCode" id="cb85"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">counts</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">jurors</span><span class="op">$</span><span class="va">struck_state</span><span class="op">)</span></span>
+<span><span class="va">counts</span></span></code></pre></div>
+<pre><code>
+Not struck by State     Struck by State 
+               1084                 433 </code></pre>
+<p>We can add the <code>prop.table</code> command to turn these counts into proportions:</p>
+<div class="sourceCode" id="cb87"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/proportions.html">prop.table</a></span><span class="op">(</span><span class="va">counts</span><span class="op">)</span></span></code></pre></div>
+<pre><code>
+Not struck by State     Struck by State 
+          0.7145682           0.2854318 </code></pre>
+<ul>
+<li>What proportion of eligible jurors were struck by the state from the jury pool?</li>
+</ul>
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> about 28.5% of eligible jurors were struck by the state.
+</details><p><br></p>
+<p>(c). Bar graph for one variable</p>
+<p>We can create a data frame <code>count_data</code> containing the counts and their corresponding categories.</p>
+<div class="sourceCode" id="cb89"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">count_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">counts</span><span class="op">)</span></span>
+<span><span class="va">count_data</span></span></code></pre></div>
+<pre><code>                 Var1 Freq
+1 Not struck by State 1084
+2     Struck by State  433</code></pre>
+<p>Then, we use <code>ggplot2</code> to create a bar plot with the categories on the x-axis and the counts on the y-axis. The column names of <code>count_data</code> are automatically assigned to be <code>Var1</code> and <code>Freq</code>. We can change the column names to <code>category</code> and <code>count</code>, for example, as:</p>
+<div class="sourceCode" id="cb91"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">count_data</span><span class="op">)</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"category"</span>, <span class="st">"count"</span><span class="op">)</span></span>
+<span><span class="va">count_data</span></span></code></pre></div>
+<pre><code>             category count
+1 Not struck by State  1084
+2     Struck by State   433</code></pre>
+<p>The <code>geom_bar(stat = "identity")</code> function is used to create the bars, and we set the y-axis label using <code><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs()</a></code>.</p>
+<div class="sourceCode" id="cb93"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Create a bar plot using ggplot2</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>  <span class="co"># load the package</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">count_data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">category</span>, y <span class="op">=</span> <span class="va">count</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>stat <span class="op">=</span> <span class="st">"identity"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>y <span class="op">=</span> <span class="st">"count"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Practice_Problems_4_files/figure-html/unnamed-chunk-10-1.png" width="100%"></div>
+<p>You may simply use <code>geom_bar</code> if the count data is not available.</p>
+<div class="sourceCode" id="cb94"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">jurors</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">struck_state</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"Count"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Practice_Problems_4_files/figure-html/unnamed-chunk-11-1.png" width="100%"></div>
+<p>(d). Two-way tables</p>
+<p>First 10 entries of <code>race</code> and <code>struck_state</code> variable is</p>
+<div class="sourceCode" id="cb95"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">jurors</span><span class="op">[</span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span>,<span class="op">(</span><span class="fl">2</span><span class="op">:</span><span class="fl">3</span><span class="op">)</span><span class="op">]</span></span></code></pre></div>
+<pre><code>    race        struck_state
+1  Black Not struck by State
+2  Black     Struck by State
+3  White Not struck by State
+4  White Not struck by State
+5  Black     Struck by State
+6  White Not struck by State
+7  Black     Struck by State
+8  White Not struck by State
+9  White Not struck by State
+10 White Not struck by State</code></pre>
+<p>The <code>table</code> command also gives two-way tables when two variables are included. Here is the two-way table for juror race and state struck status:</p>
+<div class="sourceCode" id="cb97"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">mytable</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">jurors</span><span class="op">$</span><span class="va">race</span>, <span class="va">jurors</span><span class="op">$</span><span class="va">struck_state</span><span class="op">)</span></span>
+<span><span class="va">mytable</span></span></code></pre></div>
+<pre><code>       
+        Not struck by State Struck by State
+  Black                 225             310
+  White                 859             123</code></pre>
+<ul>
+<li>How many jurors were white and were not struck by the state?</li>
+</ul>
+<details><summary><red>Click for answer</red></summary><em>answer:</em> 859
+</details><p><br></p>
+<p>(e). Conditional proportions: state strike status by juror race</p>
+<p>The <code>prop.table</code> command gives conditional proportions for a two-way table. We plug our two-way table into <code>prop.table</code> with a <code>margin=1</code> to get proportions grouped by the <strong>row</strong> variable:</p>
+<div class="sourceCode" id="cb99"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/proportions.html">prop.table</a></span><span class="op">(</span><span class="va">mytable</span>, margin <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code></pre></div>
+<pre><code>       
+        Not struck by State Struck by State
+  Black           0.4205607       0.5794393
+  White           0.8747454       0.1252546</code></pre>
+<p>Of all eligible black jurors, about 57.9% were struck by the state.</p>
+<ul>
+<li>What proportion of eligible white jurors were struck by the state?</li>
+</ul>
+<details><summary><red>Click for answer</red></summary><em>answer:</em> about 12.5%
+</details><ul>
+<li>Is there evidence of an association between juror race and state strikes?</li>
+</ul>
+<details><summary><red>Click for answer</red></summary><em>answer:</em> Yes, there is an association because the rate of state strikes varies greatly by juror race with
+about 60% of black jurors were struck compared to only 13% of white jurors
+</details><p><br></p>
+<p>(f). Stacked bar graph for two variables</p>
+<p>We can visualize the conditional distribution from part (e) with a stacked bar graph created using the <code>ggplot2</code> graphing package. First, load this package’s functions with the <code>library</code> command:</p>
+<div class="sourceCode" id="cb101"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span></code></pre></div>
+<p>Now we can use the <code>geom_bar</code> command in this package. Here we get the conditional distribution of <code>struck_state</code> given <code>race</code>:</p>
+<div class="sourceCode" id="cb102"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">jurors</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">race</span>, fill <span class="op">=</span> <span class="va">struck_state</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"fill"</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"State strikes by juror race"</span>, y <span class="op">=</span> <span class="st">"proportion"</span>, </span>
+<span>       x <span class="op">=</span> <span class="st">"eligible juror race"</span>, fill <span class="op">=</span> <span class="st">"struck by state?"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Practice_Problems_4_files/figure-html/unnamed-chunk-16-1.png" width="100%"></div>
+<p>The basic syntax for this function is to let <code>ggplot</code> know your data set name (<code>jurors</code>), then specify the grouping or conditional variable on the x-axis (<code>race</code>) in the <code>aes</code> (aesthetic) argument. The <code>fill</code> variable is the response variable (<code>struck_state</code>). We add (<code>+</code>) the <code>geom_bar</code> geometry to get a bar graph with the <code>fill</code> position specified. Adding an informative label and title complete the graph.
+<br></p>
+<p>(g). Conditional distribution of race grouped by strike status</p>
+<p>We can “flip” our response and grouping variables easily (if we think it makes sense to do so). Here we specify the <code>margin=2</code> to get proportions grouped by the <strong>column</strong> variable:</p>
+<div class="sourceCode" id="cb103"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/proportions.html">prop.table</a></span><span class="op">(</span><span class="va">mytable</span>, margin <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
+<pre><code>       
+        Not struck by State Struck by State
+  Black           0.2075646       0.7159353
+  White           0.7924354       0.2840647</code></pre>
+<p>Notice that the proportions add to one <strong>down</strong> each column. Of all eligible jurors struck by the state, about 71.6% were black.</p>
+<p>The stacked bar graph for this distribution is</p>
+<div class="sourceCode" id="cb105"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">jurors</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">struck_state</span>, fill <span class="op">=</span> <span class="va">race</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"fill"</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Juror race by state strikes"</span>, y <span class="op">=</span> <span class="st">"proportion"</span>, </span>
+<span>       fill <span class="op">=</span> <span class="st">"eligible juror race"</span>, x <span class="op">=</span> <span class="st">"struck by state?"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Practice_Problems_4_files/figure-html/unnamed-chunk-18-1.png" width="100%"></div>
+<ul>
+<li>What proportion of eligible jurors who were not struck by the state were black? were white?</li>
+</ul>
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> Of all jurors not struck by the state, about 20.8% were black
+</details><p><br></p>
+<hr>
+</div>
+<div id="problem-2-graduate-programs-acceptance-and-sex" class="section level2" number="10.2">
+<h2>
+<span class="header-section-number">10.2</span> Problem 2: Graduate programs acceptance and sex<a class="anchor" aria-label="anchor" href="#problem-2-graduate-programs-acceptance-and-sex"><i class="fas fa-link"></i></a>
+</h2>
+<p>How are grad school program acceptance rates associated with sex? We will look at a classic data set from Berkeley grad school applications from 1973 (<em>Science</em>, 1975). The data cases are applicants to four graduate programs at Berkeley during 1973. The variable <code>result</code> tells us if the applicant was accepted to the graduate program, <code>sex</code> tells us the sex of the applicant (male or female), and <code>program</code> tells us program type (programs 1,2,3 or 4).</p>
+<div class="sourceCode" id="cb106"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">grad</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"https://raw.githubusercontent.com/deepbas/statdatasets/main/BerkeleyGrad.csv"</span><span class="op">)</span></span></code></pre></div>
+<p>(a). Table of counts and proportions</p>
+<div class="sourceCode" id="cb107"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/proportions.html">prop.table</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">grad</span><span class="op">$</span><span class="va">result</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<pre><code>
+   accept    reject 
+0.4260119 0.5739881 </code></pre>
+<!-- - What proportion of applicants were accepted? -->
+<!-- <details> -->
+<!-- <summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* About 43% (1284/3014) of applicants were accepted. -->
+<!-- </details> -->
+<!-- <br> -->
+<p>(b). Two-way tables</p>
+<p>The <code>table</code> command also gives two-way tables when two variables are included. Here is the two-way table for result and sex:</p>
+<div class="sourceCode" id="cb109"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">grad</span><span class="op">$</span><span class="va">sex</span>, <span class="va">grad</span><span class="op">$</span><span class="va">result</span><span class="op">)</span></span></code></pre></div>
+<pre><code>        
+         accept reject
+  female    262    587
+  male     1022   1143</code></pre>
+<!-- - How many applicants involved females who were accepted? -->
+<!-- <details> -->
+<!-- <summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* : 262 applicants involved females who were accepted. -->
+<!-- </details> -->
+<!-- <br> -->
+<p>(c). Conditional proportions: acceptance given sex</p>
+<p>The <code>prop.table</code> command gives conditional proportions for a two-way table. First let’s save the two-way table in an object named <code>mytable</code>:</p>
+<div class="sourceCode" id="cb111"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">mytable</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">grad</span><span class="op">$</span><span class="va">sex</span>, <span class="va">grad</span><span class="op">$</span><span class="va">result</span><span class="op">)</span></span></code></pre></div>
+<p>Then use <code>prop.table</code> to get the distribution of result conditioned (grouped) on applicant’s sex:</p>
+<div class="sourceCode" id="cb112"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/proportions.html">prop.table</a></span><span class="op">(</span><span class="va">mytable</span>, <span class="fl">1</span><span class="op">)</span></span></code></pre></div>
+<pre><code>        
+            accept    reject
+  female 0.3085984 0.6914016
+  male   0.4720554 0.5279446</code></pre>
+<p>The value of <code>1</code> in this command tell’s R that you want <em>row</em> proportions (the denominator of the proportion is each row total).</p>
+<!-- - What proportion of female were accepted?  -->
+<!-- <details> -->
+<!-- <summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* about 31% (262/(262+587)) -->
+<!-- </details> -->
+<!-- - What proportion of males were accepted? -->
+<!-- <details> -->
+<!-- <summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* about 47% (1022/(1022+1143)) -->
+<!-- </details> -->
+<!-- <br> -->
+<p>(d). Bar graph for one variable</p>
+<p>We can create a data frame <code>count_data1</code> containing the counts and their corresponding categories.</p>
+<div class="sourceCode" id="cb114"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">counts1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">grad</span><span class="op">$</span><span class="va">result</span><span class="op">)</span></span>
+<span><span class="va">count_data1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">counts1</span><span class="op">)</span></span></code></pre></div>
+<p>Then, we use <code>ggplot2</code> to create a bar plot with the categories on the x-axis and the counts on the y-axis. The column names of <code>count_data</code> are automatically assigned to be <code>Var1</code> and <code>Freq</code>. We can change the column names to <code>category</code> and <code>count</code>, for example, as:</p>
+<div class="sourceCode" id="cb115"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">count_data1</span><span class="op">)</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"category"</span>, <span class="st">"count"</span><span class="op">)</span></span>
+<span><span class="va">count_data1</span></span></code></pre></div>
+<pre><code>  category count
+1   accept  1284
+2   reject  1730</code></pre>
+<p>The <code>geom_bar(stat = "identity")</code> function is used to create the bars, and we set the y-axis label using <code><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs()</a></code>.</p>
+<div class="sourceCode" id="cb117"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Create a bar plot using ggplot2</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>  <span class="co"># load the package</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">count_data1</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">category</span>, y <span class="op">=</span> <span class="va">count</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>stat <span class="op">=</span> <span class="st">"identity"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>y <span class="op">=</span> <span class="st">"count"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Practice_Problems_4_files/figure-html/unnamed-chunk-26-1.png" width="100%"></div>
+<p><br></p>
+<p>(e). Stacked bar graph for two variables</p>
+<p>Now we can use the <code>geom_bar</code> command in this package. Here we get the conditional distribution of <code>result</code> given <code>sex</code>:</p>
+<div class="sourceCode" id="cb118"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span> <span class="co"># don't need if you already entered it for example 1</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">grad</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">sex</span>, fill <span class="op">=</span> <span class="va">result</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"fill"</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>y<span class="op">=</span><span class="st">"Proportion"</span>, title <span class="op">=</span> <span class="st">"result by sex"</span>, fill <span class="op">=</span> <span class="st">"result?"</span>, x <span class="op">=</span> <span class="st">"sex"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Practice_Problems_4_files/figure-html/unnamed-chunk-27-1.png" width="100%"></div>
+<p>The basic syntax for this function is to let <code>ggplot</code> know your data set name (<code>grad</code>), then specify the grouping or conditional variable on the x-axis (<code>sex</code>) in the <code>aes</code> (aesthetic) argument. The <code>fill</code> variable is the response variable (<code>result</code>). We add (<code>+</code>) the <code>geom_bar</code> geometry to get a bar graph with the <code>fill</code> position specified. Adding an informative label and title complete the graph.</p>
+<p><br></p>
+<p>(f). Subsetting by program type</p>
+<p>Finally, we will repeat the previous analysis of result and sex, but this time we will divide (or subset) the data set by program type. To do this we need to know how the values of <code>program</code> are coded:</p>
+<div class="sourceCode" id="cb119"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">grad</span><span class="op">$</span><span class="va">program</span><span class="op">)</span></span></code></pre></div>
+<pre><code>
+program1 program2 program3 program4 
+     933      585      782      714 </code></pre>
+<p>Here we use the <code>filter</code> command available from the <code>dplyr</code> package to get only the applicants to program 1:</p>
+<div class="sourceCode" id="cb121"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
+<span><span class="va">grad.p1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">grad</span>, <span class="va">program</span> <span class="op">==</span> <span class="st">"program1"</span><span class="op">)</span>  <span class="co"># gets rows where program equal program1</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">grad.p1</span><span class="op">)</span></span></code></pre></div>
+<pre><code>   program  sex result
+1 program1 male accept
+2 program1 male accept
+3 program1 male accept
+4 program1 male accept
+5 program1 male accept
+6 program1 male accept</code></pre>
+<div class="sourceCode" id="cb123"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">grad.p1</span><span class="op">)</span></span></code></pre></div>
+<pre><code>[1] 933   3</code></pre>
+<ul>
+<li>Repeat the <code>filter</code> command to get a data set for program 2 and call the new data set <code>grad.p2</code>. Verify that the number of rows in this dataset matches the number of program 2 applicants in the original data set.</li>
+</ul>
+<div class="sourceCode" id="cb125"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># enter R code for (f) here</span></span>
+<span><span class="va">grad.p2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">grad</span>, <span class="va">program</span> <span class="op">==</span> <span class="st">"program2"</span><span class="op">)</span> <span class="co"># gets rows where program equal program1</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">grad.p2</span><span class="op">)</span></span></code></pre></div>
+<pre><code>   program  sex result
+1 program2 male accept
+2 program2 male accept
+3 program2 male accept
+4 program2 male accept
+5 program2 male accept
+6 program2 male accept</code></pre>
+<p><br></p>
+<p>(g). Result by sex for program 1.</p>
+<ul>
+<li>The distribution of result conditioned on applicant’s sex for the program 1 data set is shown below.</li>
+</ul>
+<div class="sourceCode" id="cb127"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">grad.p1</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">sex</span>, fill <span class="op">=</span> <span class="va">result</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"fill"</span><span class="op">)</span> <span class="op">+</span></span>
+<span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>y<span class="op">=</span><span class="st">"Proportion"</span>, title <span class="op">=</span> <span class="st">"result by sex for program 1"</span>,</span>
+<span> fill <span class="op">=</span> <span class="st">"result?"</span>, x <span class="op">=</span> <span class="st">"sex"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Practice_Problems_4_files/figure-html/unnamed-chunk-31-1.png" width="100%"></div>
+<p>Get both a table of conditional proportions (or percentages) and a stacked bar graph.</p>
+<!-- <details> -->
+<!-- <summary><red>Click for answer</red></summary> -->
+<!-- ```{r} -->
+<!-- prop.table(table(grad.p1$sex, grad.p1$result),1) -->
+<!-- ``` -->
+<!-- </details> -->
+<!-- <br> -->
+<p>(h). Result by sex for program 2.</p>
+<ul>
+<li>Repeat part (g) but this time use the program 2 data set. Compare the two bar graphs for (g) and (h) and explain how they show that females have a higher acceptance rate after accounting for program type (1 or 2).</li>
+</ul>
+<!-- <details> --><!-- <summary><red>Click for answer</red></summary> --><!-- ```{r} --><!-- # enter R code for (h) here --><!-- ggplot(grad.p2, aes(x = sex, fill = result)) + --><!--  geom_bar(position = "fill") + --><!--  labs(y="Proportion", title = "result by sex for program 2", --><!--  fill = "result?", x = "sex") --><!-- ``` --><!-- ```{r} --><!-- prop.table(table(grad.p2$sex, grad.p2$result),1) --><!-- ``` --><!-- *Answer:* For both programs 1 and 2, we see that female applicants have a slightly higher rate of acceptance --><!-- than male applicants. After accounting for program type, we now see that black defendants have a higher --><!-- rate of death penalty than white defendants. Without accounting for program type, the opposite was true --><!-- (see parts (c) and (e)). --><!-- </details> --><!-- <br> --><p>Why? the confounding affect of program type which is associated with both result and sex:</p>
+<!-- <details> -->
+<!-- <summary><red>Click for answer</red></summary> -->
+<!-- - females prefer to apply to programs 3 and 4 while males prefer programs 1 and 2 (more than 3 and -->
+<!-- 4). -->
+<!--   - 44% of females applied to program 3 and 40% to program 4 -->
+<!--   - 38% of males applied to program 1 and 26% to program 2 -->
+<!-- ```{r} -->
+<!-- prop.table(table(grad$sex, grad$program), 1) -->
+<!-- ``` -->
+<!-- -Programs 3 and 4 were much harder to get into than programs 1 and 2 -->
+<!--   - 64% of applicants to program 1 were accepted and 63% of applicants to program 2 were accepted -->
+<!--   - 6% of applicants to program 4 were accepted and 34% of applicants to program 3 were accepted -->
+<!-- ```{r} -->
+<!-- prop.table(table(grad$program, grad$result), 1) -->
+<!-- ``` -->
+<!-- So since the majority of females applied to the toughest programs (as measured by acceptance rates), -->
+<!-- there overall rate of acceptance was lower for females compared to males. But when we break down -->
+<!-- these rates by program type, we see that females have higher acceptance rates than males (see the -->
+<!-- visual in part (i)). -->
+<!-- </details> -->
+<!-- <br> -->
+<p>(i). A bar graph with three variables</p>
+<p>If we simply want to graph the relationship between result and sex for each type of program, we can avoid subsetting the data by using the <code>facet_wrap</code> command in <code>ggplot2</code>. It is one simple addition to the stacked bar graph in part (e):</p>
+<div class="sourceCode" id="cb128"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">grad</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">sex</span>, fill <span class="op">=</span> <span class="va">result</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"fill"</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>y<span class="op">=</span><span class="st">"Proportion"</span>, </span>
+<span>       title <span class="op">=</span> <span class="st">"result by sex for each program"</span>, </span>
+<span>       fill <span class="op">=</span> <span class="st">"result?"</span>, </span>
+<span>       x <span class="op">=</span> <span class="st">"sex"</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">program</span><span class="op">)</span></span></code></pre></div>
+<p><img src="Practice_Problems_4_files/figure-html/unnamed-chunk-32-1.png" width="100%"><br></p>
+<ul>
+<li>Verify that this command creates side-by-side stacked bar graphs that match your graphs in parts (g) and (h) for programs 1 and 2.</li>
+</ul>
+<!-- <details> --><!-- <summary><red>Click for answer</red></summary> --><!-- *Answer:* The graphs match. --><!-- </details> -->
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="practice-problems-3.html"><span class="header-section-number">9</span> Practice Problems 3</a></div>
+<div class="empty"></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#practice-problems-4"><span class="header-section-number">10</span> Practice Problems 4</a></li>
+<li><a class="nav-link" href="#problem-1-flowers-v.-mississippi"><span class="header-section-number">10.1</span> Problem 1: Flowers v. Mississippi</a></li>
+<li><a class="nav-link" href="#problem-2-graduate-programs-acceptance-and-sex"><span class="header-section-number">10.2</span> Problem 2: Graduate programs acceptance and sex</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/Practice_Problems_4.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/Practice_Problems_4.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-09-17.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

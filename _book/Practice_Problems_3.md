@@ -122,7 +122,7 @@ Consider the following case study:
 <br>
 
 
-(g). Construct a two-way table based on the results of the experiment.
+(g). Construct a hypothetical two-way table based on the experiment.
 
 <details>
 <summary><red>Click for answer</red></summary>
