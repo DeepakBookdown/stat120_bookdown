@@ -211,13 +211,13 @@ grad <- read.csv("https://raw.githubusercontent.com/deepbas/statdatasets/main/Be
 prop.table(table(grad$result))
 ```
 
-<!-- - What proportion of applicants were accepted? -->
+- What proportion of applicants were accepted?
 
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* About 43% (1284/3014) of applicants were accepted. -->
-<!-- </details> -->
-<!-- <br> -->
+<details>
+<summary><red>Click for answer</red></summary>
+*Answer:* About 43% (1284/3014) of applicants were accepted.
+</details>
+<br>
 
 (b). Two-way tables
 
@@ -227,13 +227,13 @@ The `table` command also gives two-way tables when two variables are included. H
 table(grad$sex, grad$result)
 ```
 
-<!-- - How many applicants involved females who were accepted? -->
+- How many applicants involved females who were accepted?
 
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* : 262 applicants involved females who were accepted. -->
-<!-- </details> -->
-<!-- <br> -->
+<details>
+<summary><red>Click for answer</red></summary>
+*Answer:* : 262 applicants involved females who were accepted.
+</details>
+<br>
 
 (c). Conditional proportions: acceptance given sex
 
@@ -251,20 +251,20 @@ prop.table(mytable, 1)
 
 The value of `1` in this command tell's R that you want *row* proportions (the denominator of the proportion is each row total). 
 
-<!-- - What proportion of female were accepted?  -->
+- What proportion of female were accepted?
 
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* about 31% (262/(262+587)) -->
-<!-- </details> -->
+<details>
+<summary><red>Click for answer</red></summary>
+*Answer:* about 31% (262/(262+587))
+</details>
 
-<!-- - What proportion of males were accepted? -->
+- What proportion of males were accepted?
 
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* about 47% (1022/(1022+1143)) -->
-<!-- </details> -->
-<!-- <br> -->
+<details>
+<summary><red>Click for answer</red></summary>
+*Answer:* about 47% (1022/(1022+1143))
+</details>
+<br>
 
 (d). Bar graph for one variable
 
@@ -355,74 +355,73 @@ ggplot(grad.p1, aes(x = sex, fill = result)) +
 
 Get both a table of conditional proportions (or percentages) and a stacked bar graph. 
 
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
+<details>
+<summary><red>Click for answer</red></summary>
 
-<!-- ```{r} -->
-<!-- prop.table(table(grad.p1$sex, grad.p1$result),1) -->
-<!-- ``` -->
+```{r}
+prop.table(table(grad.p1$sex, grad.p1$result),1)
+```
 
-<!-- </details> -->
-<!-- <br> -->
+</details>
+<br>
 
 (h). Result by sex for program 2.
 
 - Repeat part (g) but this time use the program 2 data set. Compare the two bar graphs for (g) and (h) and explain how they show that females have a higher acceptance rate after accounting for program type (1 or 2). 
 
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
+<details>
+<summary><red>Click for answer</red></summary>
 
-<!-- ```{r} -->
-<!-- # enter R code for (h) here -->
-<!-- ggplot(grad.p2, aes(x = sex, fill = result)) + -->
-<!--  geom_bar(position = "fill") + -->
-<!--  labs(y="Proportion", title = "result by sex for program 2", -->
-<!--  fill = "result?", x = "sex") -->
-<!-- ``` -->
+```{r}
+# enter R code for (h) here
+ggplot(grad.p2, aes(x = sex, fill = result)) +
+ geom_bar(position = "fill") +
+ labs(y="Proportion", title = "result by sex for program 2",
+ fill = "result?", x = "sex")
+```
 
 
-<!-- ```{r} -->
-<!-- prop.table(table(grad.p2$sex, grad.p2$result),1) -->
-<!-- ``` -->
+```{r}
+prop.table(table(grad.p2$sex, grad.p2$result),1)
+```
 
-<!-- *Answer:* For both programs 1 and 2, we see that female applicants have a slightly higher rate of acceptance -->
-<!-- than male applicants. After accounting for program type, we now see that black defendants have a higher -->
-<!-- rate of death penalty than white defendants. Without accounting for program type, the opposite was true -->
-<!-- (see parts (c) and (e)). -->
+*Answer:* For both programs 1 and 2, we see that female applicants have a slightly higher rate of acceptance
+than male applicants. After accounting for program type, we now see that female applicants have higher acceptance rate than male applicants. Without accounting for program type, the opposite was true
+(see parts (c) and (e)).
 
-<!-- </details> -->
-<!-- <br> -->
+</details>
+<br>
 
 Why? the confounding affect of program type which is associated with both result and sex:
 
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
+<details>
+<summary><red>Click for answer</red></summary>
 
-<!-- - females prefer to apply to programs 3 and 4 while males prefer programs 1 and 2 (more than 3 and -->
-<!-- 4). -->
-<!--   - 44% of females applied to program 3 and 40% to program 4 -->
-<!--   - 38% of males applied to program 1 and 26% to program 2 -->
+- females prefer to apply to programs 3 and 4 while males prefer programs 1 and 2 (more than 3 and
+4).
+  - 44% of females applied to program 3 and 40% to program 4
+  - 38% of males applied to program 1 and 26% to program 2
 
-<!-- ```{r} -->
-<!-- prop.table(table(grad$sex, grad$program), 1) -->
-<!-- ``` -->
-<!-- -Programs 3 and 4 were much harder to get into than programs 1 and 2 -->
-<!--   - 64% of applicants to program 1 were accepted and 63% of applicants to program 2 were accepted -->
-<!--   - 6% of applicants to program 4 were accepted and 34% of applicants to program 3 were accepted -->
-
-
-<!-- ```{r} -->
-<!-- prop.table(table(grad$program, grad$result), 1) -->
-<!-- ``` -->
+```{r}
+prop.table(table(grad$sex, grad$program), 1)
+```
+-Programs 3 and 4 were much harder to get into than programs 1 and 2
+  - 64% of applicants to program 1 were accepted and 63% of applicants to program 2 were accepted
+  - 6% of applicants to program 4 were accepted and 34% of applicants to program 3 were accepted
 
 
-<!-- So since the majority of females applied to the toughest programs (as measured by acceptance rates), -->
-<!-- there overall rate of acceptance was lower for females compared to males. But when we break down -->
-<!-- these rates by program type, we see that females have higher acceptance rates than males (see the -->
-<!-- visual in part (i)). -->
+```{r}
+prop.table(table(grad$program, grad$result), 1)
+```
 
-<!-- </details> -->
-<!-- <br> -->
+
+So since the majority of females applied to the toughest programs (as measured by acceptance rates),
+there overall rate of acceptance was lower for females compared to males. But when we break down
+these rates by program type, we see that females have higher acceptance rates than males (see the
+visual in part (i)).
+
+</details>
+<br>
 
 (i). A bar graph with three variables
 
@@ -441,11 +440,11 @@ ggplot(grad, aes(x = sex, fill = result)) +
 
 - Verify that this command creates side-by-side stacked bar graphs that match your graphs in parts (g) and (h) for programs 1 and 2.
 
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
+<details>
+<summary><red>Click for answer</red></summary>
 
-<!-- *Answer:* The graphs match. -->
+*Answer:* The graphs match.
 
-<!-- </details> -->
+</details>
 
 

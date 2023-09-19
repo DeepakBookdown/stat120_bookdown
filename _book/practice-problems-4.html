@@ -260,12 +260,11 @@ about 60% of black jurors were struck compared to only 13% of white jurors
 <pre><code>
    accept    reject 
 0.4260119 0.5739881 </code></pre>
-<!-- - What proportion of applicants were accepted? -->
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* About 43% (1284/3014) of applicants were accepted. -->
-<!-- </details> -->
-<!-- <br> -->
+<ul>
+<li>What proportion of applicants were accepted?</li>
+</ul>
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> About 43% (1284/3014) of applicants were accepted.
+</details><p><br></p>
 <p>(b). Two-way tables</p>
 <p>The <code>table</code> command also gives two-way tables when two variables are included. Here is the two-way table for result and sex:</p>
 <div class="sourceCode" id="cb109"><pre class="downlit sourceCode r">
@@ -274,12 +273,11 @@ about 60% of black jurors were struck compared to only 13% of white jurors
          accept reject
   female    262    587
   male     1022   1143</code></pre>
-<!-- - How many applicants involved females who were accepted? -->
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* : 262 applicants involved females who were accepted. -->
-<!-- </details> -->
-<!-- <br> -->
+<ul>
+<li>How many applicants involved females who were accepted?</li>
+</ul>
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> : 262 applicants involved females who were accepted.
+</details><p><br></p>
 <p>(c). Conditional proportions: acceptance given sex</p>
 <p>The <code>prop.table</code> command gives conditional proportions for a two-way table. First let’s save the two-way table in an object named <code>mytable</code>:</p>
 <div class="sourceCode" id="cb111"><pre class="downlit sourceCode r">
@@ -292,17 +290,15 @@ about 60% of black jurors were struck compared to only 13% of white jurors
   female 0.3085984 0.6914016
   male   0.4720554 0.5279446</code></pre>
 <p>The value of <code>1</code> in this command tell’s R that you want <em>row</em> proportions (the denominator of the proportion is each row total).</p>
-<!-- - What proportion of female were accepted?  -->
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* about 31% (262/(262+587)) -->
-<!-- </details> -->
-<!-- - What proportion of males were accepted? -->
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* about 47% (1022/(1022+1143)) -->
-<!-- </details> -->
-<!-- <br> -->
+<ul>
+<li>What proportion of female were accepted?</li>
+</ul>
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> about 31% (262/(262+587))
+</details><ul>
+<li>What proportion of males were accepted?</li>
+</ul>
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> about 47% (1022/(1022+1143))
+</details><p><br></p>
 <p>(d). Bar graph for one variable</p>
 <p>We can create a data frame <code>count_data1</code> containing the counts and their corresponding categories.</p>
 <div class="sourceCode" id="cb114"><pre class="downlit sourceCode r">
@@ -382,42 +378,69 @@ program1 program2 program3 program4
 <span> fill <span class="op">=</span> <span class="st">"result?"</span>, x <span class="op">=</span> <span class="st">"sex"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="Practice_Problems_4_files/figure-html/unnamed-chunk-31-1.png" width="100%"></div>
 <p>Get both a table of conditional proportions (or percentages) and a stacked bar graph.</p>
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- ```{r} -->
-<!-- prop.table(table(grad.p1$sex, grad.p1$result),1) -->
-<!-- ``` -->
-<!-- </details> -->
-<!-- <br> -->
+<details><summary><red>Click for answer</red></summary><div class="sourceCode" id="cb128"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/proportions.html">prop.table</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">grad.p1</span><span class="op">$</span><span class="va">sex</span>, <span class="va">grad.p1</span><span class="op">$</span><span class="va">result</span><span class="op">)</span>,<span class="fl">1</span><span class="op">)</span></span></code></pre></div>
+<pre><code>        
+            accept    reject
+  female 0.8240741 0.1759259
+  male   0.6193939 0.3806061</code></pre>
+</details><p><br></p>
 <p>(h). Result by sex for program 2.</p>
 <ul>
 <li>Repeat part (g) but this time use the program 2 data set. Compare the two bar graphs for (g) and (h) and explain how they show that females have a higher acceptance rate after accounting for program type (1 or 2).</li>
 </ul>
-<!-- <details> --><!-- <summary><red>Click for answer</red></summary> --><!-- ```{r} --><!-- # enter R code for (h) here --><!-- ggplot(grad.p2, aes(x = sex, fill = result)) + --><!--  geom_bar(position = "fill") + --><!--  labs(y="Proportion", title = "result by sex for program 2", --><!--  fill = "result?", x = "sex") --><!-- ``` --><!-- ```{r} --><!-- prop.table(table(grad.p2$sex, grad.p2$result),1) --><!-- ``` --><!-- *Answer:* For both programs 1 and 2, we see that female applicants have a slightly higher rate of acceptance --><!-- than male applicants. After accounting for program type, we now see that black defendants have a higher --><!-- rate of death penalty than white defendants. Without accounting for program type, the opposite was true --><!-- (see parts (c) and (e)). --><!-- </details> --><!-- <br> --><p>Why? the confounding affect of program type which is associated with both result and sex:</p>
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- - females prefer to apply to programs 3 and 4 while males prefer programs 1 and 2 (more than 3 and -->
-<!-- 4). -->
-<!--   - 44% of females applied to program 3 and 40% to program 4 -->
-<!--   - 38% of males applied to program 1 and 26% to program 2 -->
-<!-- ```{r} -->
-<!-- prop.table(table(grad$sex, grad$program), 1) -->
-<!-- ``` -->
-<!-- -Programs 3 and 4 were much harder to get into than programs 1 and 2 -->
-<!--   - 64% of applicants to program 1 were accepted and 63% of applicants to program 2 were accepted -->
-<!--   - 6% of applicants to program 4 were accepted and 34% of applicants to program 3 were accepted -->
-<!-- ```{r} -->
-<!-- prop.table(table(grad$program, grad$result), 1) -->
-<!-- ``` -->
-<!-- So since the majority of females applied to the toughest programs (as measured by acceptance rates), -->
-<!-- there overall rate of acceptance was lower for females compared to males. But when we break down -->
-<!-- these rates by program type, we see that females have higher acceptance rates than males (see the -->
-<!-- visual in part (i)). -->
-<!-- </details> -->
-<!-- <br> -->
+<details><summary><red>Click for answer</red></summary><div class="sourceCode" id="cb130"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># enter R code for (h) here</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">grad.p2</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">sex</span>, fill <span class="op">=</span> <span class="va">result</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"fill"</span><span class="op">)</span> <span class="op">+</span></span>
+<span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>y<span class="op">=</span><span class="st">"Proportion"</span>, title <span class="op">=</span> <span class="st">"result by sex for program 2"</span>,</span>
+<span> fill <span class="op">=</span> <span class="st">"result?"</span>, x <span class="op">=</span> <span class="st">"sex"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Practice_Problems_4_files/figure-html/unnamed-chunk-33-1.png" width="100%"></div>
+<div class="sourceCode" id="cb131"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/proportions.html">prop.table</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">grad.p2</span><span class="op">$</span><span class="va">sex</span>, <span class="va">grad.p2</span><span class="op">$</span><span class="va">result</span><span class="op">)</span>,<span class="fl">1</span><span class="op">)</span></span></code></pre></div>
+<pre><code>        
+            accept    reject
+  female 0.6800000 0.3200000
+  male   0.6285714 0.3714286</code></pre>
+<p><em>Answer:</em> For both programs 1 and 2, we see that female applicants have a slightly higher rate of acceptance
+than male applicants. After accounting for program type, we now see that female applicants have higher acceptance rate than male applicants. Without accounting for program type, the opposite was true
+(see parts (c) and (e)).</p>
+</details><p><br></p>
+<p>Why? the confounding affect of program type which is associated with both result and sex:</p>
+<details><summary><red>Click for answer</red></summary><ul>
+<li>females prefer to apply to programs 3 and 4 while males prefer programs 1 and 2 (more than 3 and
+4).
+<ul>
+<li>44% of females applied to program 3 and 40% to program 4</li>
+<li>38% of males applied to program 1 and 26% to program 2</li>
+</ul>
+</li>
+</ul>
+<div class="sourceCode" id="cb133"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/proportions.html">prop.table</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">grad</span><span class="op">$</span><span class="va">sex</span>, <span class="va">grad</span><span class="op">$</span><span class="va">program</span><span class="op">)</span>, <span class="fl">1</span><span class="op">)</span></span></code></pre></div>
+<pre><code>        
+           program1   program2   program3   program4
+  female 0.12720848 0.02944641 0.44169611 0.40164900
+  male   0.38106236 0.25866051 0.18799076 0.17228637</code></pre>
+<p>-Programs 3 and 4 were much harder to get into than programs 1 and 2
+- 64% of applicants to program 1 were accepted and 63% of applicants to program 2 were accepted
+- 6% of applicants to program 4 were accepted and 34% of applicants to program 3 were accepted</p>
+<div class="sourceCode" id="cb135"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/proportions.html">prop.table</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">grad</span><span class="op">$</span><span class="va">program</span>, <span class="va">grad</span><span class="op">$</span><span class="va">result</span><span class="op">)</span>, <span class="fl">1</span><span class="op">)</span></span></code></pre></div>
+<pre><code>          
+               accept     reject
+  program1 0.64308682 0.35691318
+  program2 0.63076923 0.36923077
+  program3 0.34398977 0.65601023
+  program4 0.06442577 0.93557423</code></pre>
+<p>So since the majority of females applied to the toughest programs (as measured by acceptance rates),
+there overall rate of acceptance was lower for females compared to males. But when we break down
+these rates by program type, we see that females have higher acceptance rates than males (see the
+visual in part (i)).</p>
+</details><p><br></p>
 <p>(i). A bar graph with three variables</p>
 <p>If we simply want to graph the relationship between result and sex for each type of program, we can avoid subsetting the data by using the <code>facet_wrap</code> command in <code>ggplot2</code>. It is one simple addition to the stacked bar graph in part (e):</p>
-<div class="sourceCode" id="cb128"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb137"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">grad</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">sex</span>, fill <span class="op">=</span> <span class="va">result</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"fill"</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>y<span class="op">=</span><span class="st">"Proportion"</span>, </span>
@@ -425,11 +448,12 @@ program1 program2 program3 program4
 <span>       fill <span class="op">=</span> <span class="st">"result?"</span>, </span>
 <span>       x <span class="op">=</span> <span class="st">"sex"</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">program</span><span class="op">)</span></span></code></pre></div>
-<p><img src="Practice_Problems_4_files/figure-html/unnamed-chunk-32-1.png" width="100%"><br></p>
+<p><img src="Practice_Problems_4_files/figure-html/unnamed-chunk-37-1.png" width="100%"><br></p>
 <ul>
 <li>Verify that this command creates side-by-side stacked bar graphs that match your graphs in parts (g) and (h) for programs 1 and 2.</li>
 </ul>
-<!-- <details> --><!-- <summary><red>Click for answer</red></summary> --><!-- *Answer:* The graphs match. --><!-- </details> -->
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The graphs match.</p>
+</details>
 </div>
 </div>
   <div class="chapter-nav">
@@ -458,7 +482,7 @@ program1 program2 program3 program4
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-09-17.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-09-19.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
