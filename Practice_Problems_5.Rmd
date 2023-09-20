@@ -1,6 +1,6 @@
-# Class Activity 5
+# Practice Problems 5
 
-## Example 1: Sleep
+## Problem 1: Sleep
 
 This histogram shows the distribution of hours or sleep per night for a large sample of students. 
 
@@ -41,58 +41,58 @@ sd(sleep$AverageSleep)
 
 </details>
 
-## Example 2: Z-scores for Test Scores
+## Problem 2: Z-scores for Test Scores
 
 The ACT test has a population mean of 21 and standard deviation of 5.  The SAT has a population mean of 1500 and a standard deviation of 325.  You earned 28 on the ACT and 2100 on the SAT. 
 
 ### (a)  Which test did you do better on? 
 
-<details>
-<summary><red>Click for answer</red></summary>
-*Answer:*
+<!-- <details> -->
+<!-- <summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* -->
 
-- ACT: The z-score for the score of 28 is z = (28 - 21)/5 = 1.4.
-- SAT: The z-score for the score of 2100 is z = (2100 - 1500)/325 = 1.85.
-- The SAT score is 1.85 standard deviations above average while the ACT score is only 1.4 standard
-deviations above. You did better on the SAT.
+<!-- - ACT: The z-score for the score of 28 is z = (28 - 21)/5 = 1.4. -->
+<!-- - SAT: The z-score for the score of 2100 is z = (2100 - 1500)/325 = 1.85. -->
+<!-- - The SAT score is 1.85 standard deviations above average while the ACT score is only 1.4 standard -->
+<!-- deviations above. You did better on the SAT. -->
 
 
-```{r}
-z_ACT <- (28 - 21) / 5
-z_SAT <- (2100 - 1500) / 325
-z_ACT
-z_SAT
-```
+<!-- ```{r} -->
+<!-- z_ACT <- (28 - 21) / 5 -->
+<!-- z_SAT <- (2100 - 1500) / 325 -->
+<!-- z_ACT -->
+<!-- z_SAT -->
+<!-- ``` -->
 
-</details>
+<!-- </details> -->
 
 
 ### (b)	For each test, find the interval that is likely to contain about 95% of all test scores. 
 
-<details>
-<summary><red>Click for answer</red></summary>
-*Answer:*
+<!-- <details> -->
+<!-- <summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* -->
 
-- ACT: Two standard deviations is 2(5) = 10. About 95% of ACT scores are between 21 - 10 = 11
-and 21 + 10 = 31. This claim assumes that ACT scores follow a bell-shaped distribution.
-- SAT: Two standard deviations is 2(325) = 650. About 95% of SAT scores are between 1500 - 650 =
-850 and 1500 + 650 = 2150. This claim assumes that SAT scores follow a bell-shaped distribution.
+<!-- - ACT: Two standard deviations is 2(5) = 10. About 95% of ACT scores are between 21 - 10 = 11 -->
+<!-- and 21 + 10 = 31. This claim assumes that ACT scores follow a bell-shaped distribution. -->
+<!-- - SAT: Two standard deviations is 2(325) = 650. About 95% of SAT scores are between 1500 - 650 = -->
+<!-- 850 and 1500 + 650 = 2150. This claim assumes that SAT scores follow a bell-shaped distribution. -->
 
 
-```{r}
-ACT_lower <- 21 - 2 * 5
-ACT_upper <- 21 + 2 * 5
-SAT_lower <- 1500 - 2 * 325
-SAT_upper <- 1500 + 2 * 325
-c(ACT_lower, ACT_upper)
-c(SAT_lower, SAT_upper)
-```
+<!-- ```{r} -->
+<!-- ACT_lower <- 21 - 2 * 5 -->
+<!-- ACT_upper <- 21 + 2 * 5 -->
+<!-- SAT_lower <- 1500 - 2 * 325 -->
+<!-- SAT_upper <- 1500 + 2 * 325 -->
+<!-- c(ACT_lower, ACT_upper) -->
+<!-- c(SAT_lower, SAT_upper) -->
+<!-- ``` -->
 
-</details>
+<!-- </details> -->
 
 ------------------------------------
 
-## Example 3: 5 number summaries
+## Problem 3: 5 number summaries
 
 For the given vector of observations indicate whether the resulting data appear to be symmetric, skewed to the right, or skewed to the left.
 
@@ -103,18 +103,18 @@ my_vector <- c(2, 10, 15, 20, 69, 34, 23, 2, 45)
 summary(my_vector)
 ```
 
-<details>
-<summary><red>Click for answer</red></summary>
-*Answer:* Skewed right. It has a longer right tail than left since max -Q3 >> Q1 - min
+<!-- <details> -->
+<!-- <summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* Skewed right. It has a longer right tail than left since max -Q3 >> Q1 - min -->
 
-```{r}
-ggplot(data.frame(x=my_vector), aes(x)) + geom_boxplot()
-```
+<!-- ```{r} -->
+<!-- ggplot(data.frame(x=my_vector), aes(x)) + geom_boxplot() -->
+<!-- ``` -->
 
-</details>
+<!-- </details> -->
 
 
-## Example 4:  Hot dog
+## Problem 4:  Hot dog
 
 This boxplot shows the number of hot dogs eaten by the winners of Nathan’s Famous hot dog eating contests from 2002-2011. 
 
@@ -129,24 +129,24 @@ ggplot(hotdogs, aes(x = "", y = HotDogs)) +
 
 ### (a)  Use the boxplot to estimate the 5 number summary and IQR for this data. Verify that there are no outliers in this data.
 
-<details>
-<summary><red>Click for answer</red></summary>
-*Answer:* 
-```{r}
-hotdog_q1 <- quantile(hotdogs$HotDogs, 0.25)
-hotdog_q3 <- quantile(hotdogs$HotDogs, 0.75)
-hotdog_iqr <- IQR(hotdogs$HotDogs)
-lower_fence <- hotdog_q1 - 1.5 * hotdog_iqr
-upper_fence <- hotdog_q3 + 1.5 * hotdog_iqr
+<!-- <details> -->
+<!-- <summary><red>Click for answer</red></summary> -->
+<!-- *Answer:*  -->
+<!-- ```{r} -->
+<!-- hotdog_q1 <- quantile(hotdogs$HotDogs, 0.25) -->
+<!-- hotdog_q3 <- quantile(hotdogs$HotDogs, 0.75) -->
+<!-- hotdog_iqr <- IQR(hotdogs$HotDogs) -->
+<!-- lower_fence <- hotdog_q1 - 1.5 * hotdog_iqr -->
+<!-- upper_fence <- hotdog_q3 + 1.5 * hotdog_iqr -->
 
-library(dplyr)
-outliers <- filter(hotdogs, HotDogs < lower_fence | HotDogs > upper_fence)
-outliers
-```
+<!-- library(dplyr) -->
+<!-- outliers <- filter(hotdogs, HotDogs < lower_fence | HotDogs > upper_fence) -->
+<!-- outliers -->
+<!-- ``` -->
 
-</details>
+<!-- </details> -->
 
-## Example 5: Hollywood Movies World Gross
+## Problem 5: Hollywood Movies World Gross
 
 Let's visit the `WorldGross` analysis from the Hollywood movies data set:
 

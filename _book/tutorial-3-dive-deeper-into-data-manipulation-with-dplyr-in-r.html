@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 7 Tutorial 3: Dive Deeper into Data Manipulation with dplyr in R | Stat 120</title>
+<meta name="author" content="Deepak Bastola">
+<meta name="description" content="7.1 Introduction In this tutorial, we will introduce you to the dplyr package, a crucial tool in R for data manipulation. You will learn about various dplyr functions such as group_by, summarise,...">
+<meta name="generator" content="bookdown 0.35 with bs4_book()">
+<meta property="og:title" content="Chapter 7 Tutorial 3: Dive Deeper into Data Manipulation with dplyr in R | Stat 120">
+<meta property="og:type" content="book">
+<meta property="og:description" content="7.1 Introduction In this tutorial, we will introduce you to the dplyr package, a crucial tool in R for data manipulation. You will learn about various dplyr functions such as group_by, summarise,...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 7 Tutorial 3: Dive Deeper into Data Manipulation with dplyr in R | Stat 120">
+<meta name="twitter:description" content="7.1 Introduction In this tutorial, we will introduce you to the dplyr package, a crucial tool in R for data manipulation. You will learn about various dplyr functions such as group_by, summarise,...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.1/transition.js"></script><script src="libs/bs3compat-0.5.1/tabs.js"></script><script src="libs/bs3compat-0.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Stat 120</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Introduction to Statistics</a></li>
+<li class="book-part">Basics R</li>
+<li><a class="" href="what-is-r.html"><span class="header-section-number">1</span> What is R?</a></li>
+<li><a class="" href="r-markdown-basics.html"><span class="header-section-number">2</span> R Markdown Basics</a></li>
+<li><a class="" href="homework-guidelines.html"><span class="header-section-number">3</span> Homework Guidelines</a></li>
+<li><a class="" href="report-guidelines.html"><span class="header-section-number">4</span> Report Guidelines</a></li>
+<li class="book-part">R Tutorials</li>
+<li><a class="" href="tutorial-1-embark-on-your-data-journey.html"><span class="header-section-number">5</span> Tutorial 1: Embark on Your Data Journey</a></li>
+<li><a class="" href="tutorial-2-dive-deeper-into-data-visualization-and-statistics-in-r.html"><span class="header-section-number">6</span> Tutorial 2: Dive Deeper into Data Visualization and Statistics in R</a></li>
+<li><a class="active" href="tutorial-3-dive-deeper-into-data-manipulation-with-dplyr-in-r.html"><span class="header-section-number">7</span> Tutorial 3: Dive Deeper into Data Manipulation with dplyr in R</a></li>
+<li class="book-part">Practice Problems</li>
+<li><a class="" href="practice-problems-1.html"><span class="header-section-number">8</span> Practice Problems 1</a></li>
+<li><a class="" href="practice-problems-2.html"><span class="header-section-number">9</span> Practice Problems 2</a></li>
+<li><a class="" href="practice-problems-3.html"><span class="header-section-number">10</span> Practice Problems 3</a></li>
+<li><a class="" href="practice-problems-4.html"><span class="header-section-number">11</span> Practice Problems 4</a></li>
+<li><a class="" href="practice-problems-5.html"><span class="header-section-number">12</span> Practice Problems 5</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="tutorial-3-dive-deeper-into-data-manipulation-with-dplyr-in-r" class="section level1" number="7">
+<h1>
+<span class="header-section-number">7</span> Tutorial 3: Dive Deeper into Data Manipulation with dplyr in R<a class="anchor" aria-label="anchor" href="#tutorial-3-dive-deeper-into-data-manipulation-with-dplyr-in-r"><i class="fas fa-link"></i></a>
+</h1>
+<div id="introduction-2" class="section level2" number="7.1">
+<h2>
+<span class="header-section-number">7.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction-2"><i class="fas fa-link"></i></a>
+</h2>
+<p>In this tutorial, we will introduce you to the <code>dplyr</code> package, a crucial tool in R for data manipulation. You will learn about various <code>dplyr</code> functions such as <code>group_by</code>, <code>summarise</code>, and <code>filter</code>.</p>
+<hr>
+</div>
+<div id="dplyr-essentials" class="section level2" number="7.2">
+<h2>
+<span class="header-section-number">7.2</span> dplyr Essentials<a class="anchor" aria-label="anchor" href="#dplyr-essentials"><i class="fas fa-link"></i></a>
+</h2>
+<div id="introduction-to-dplyr" class="section level3" number="7.2.1">
+<h3>
+<span class="header-section-number">7.2.1</span> Introduction to dplyr<a class="anchor" aria-label="anchor" href="#introduction-to-dplyr"><i class="fas fa-link"></i></a>
+</h3>
+<p><code>dplyr</code> is a package for data manipulation, offering a set of useful functions to perform operations like filtering, summarizing, and grouping your data. To use <code>dplyr</code>, you’ll first need to install and load the package.</p>
+<div class="sourceCode" id="cb57"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># install.packages("dplyr")   # uncomment to install</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span></code></pre></div>
+</div>
+<div id="using-group_by-function" class="section level3" number="7.2.2">
+<h3>
+<span class="header-section-number">7.2.2</span> Using <code>group_by()</code> Function<a class="anchor" aria-label="anchor" href="#using-group_by-function"><i class="fas fa-link"></i></a>
+</h3>
+<p>The <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code> function is used to group your data based on one or multiple columns.</p>
+<div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Using inbuilt dataset 'mtcars'</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">)</span></span></code></pre></div>
+<pre><code>                   mpg cyl disp  hp drat    wt  qsec vs am
+Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1
+Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1
+Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1
+Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0
+Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0
+Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0
+                  gear carb
+Mazda RX4            4    4
+Mazda RX4 Wag        4    4
+Datsun 710           4    1
+Hornet 4 Drive       3    1
+Hornet Sportabout    3    2
+Valiant              3    1</code></pre>
+<div class="sourceCode" id="cb60"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Grouping by number of gears</span></span>
+<span><span class="va">grouped_data</span> <span class="op">&lt;-</span> <span class="va">mtcars</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">gear</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div id="summarization-using-summarise" class="section level3" number="7.2.3">
+<h3>
+<span class="header-section-number">7.2.3</span> Summarization using <code>summarise()</code><a class="anchor" aria-label="anchor" href="#summarization-using-summarise"><i class="fas fa-link"></i></a>
+</h3>
+<p>After grouping, <code><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise()</a></code> can help to create summary statistics for each group.</p>
+<div class="sourceCode" id="cb61"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Continuing with the 'mtcars' dataset</span></span>
+<span><span class="va">summary_stats</span> <span class="op">&lt;-</span> <span class="va">grouped_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span></span>
+<span>    Mean_MPG <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">mpg</span><span class="op">)</span>,</span>
+<span>    Max_MPG <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">mpg</span><span class="op">)</span>,</span>
+<span>    Min_MPG <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">mpg</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span></span>
+<span><span class="va">summary_stats</span></span></code></pre></div>
+<pre><code># A tibble: 3 × 4
+   gear Mean_MPG Max_MPG Min_MPG
+  &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+1     3     16.1    21.5    10.4
+2     4     24.5    33.9    17.8
+3     5     21.4    30.4    15  </code></pre>
+</div>
+<div id="data-filtering-using-filter" class="section level3" number="7.2.4">
+<h3>
+<span class="header-section-number">7.2.4</span> Data Filtering using <code>filter()</code><a class="anchor" aria-label="anchor" href="#data-filtering-using-filter"><i class="fas fa-link"></i></a>
+</h3>
+<p>The <code><a href="https://dplyr.tidyverse.org/reference/filter.html">filter()</a></code> function filters rows based on a certain condition.</p>
+<div class="sourceCode" id="cb63"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Filter cars with 4 gears</span></span>
+<span><span class="va">filtered_data</span> <span class="op">&lt;-</span> <span class="va">mtcars</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">gear</span> <span class="op">==</span> <span class="fl">4</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div id="identifying-outliers-with-filter" class="section level3" number="7.2.5">
+<h3>
+<span class="header-section-number">7.2.5</span> Identifying Outliers with <code>filter()</code><a class="anchor" aria-label="anchor" href="#identifying-outliers-with-filter"><i class="fas fa-link"></i></a>
+</h3>
+<p>You can use <code><a href="https://dplyr.tidyverse.org/reference/filter.html">filter()</a></code> to identify outliers based on calculated fences or boundaries.</p>
+<div class="sourceCode" id="cb64"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># For demonstration, calculate lower and upper fence for mpg</span></span>
+<span><span class="va">Q1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">$</span><span class="va">mpg</span>, <span class="fl">0.25</span><span class="op">)</span></span>
+<span><span class="va">Q3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">$</span><span class="va">mpg</span>, <span class="fl">0.75</span><span class="op">)</span></span>
+<span><span class="va">IQR</span> <span class="op">&lt;-</span> <span class="va">Q3</span> <span class="op">-</span> <span class="va">Q1</span></span>
+<span><span class="va">lower_fence</span> <span class="op">&lt;-</span> <span class="va">Q1</span> <span class="op">-</span> <span class="fl">1.5</span> <span class="op">*</span> <span class="va">IQR</span></span>
+<span><span class="va">upper_fence</span> <span class="op">&lt;-</span> <span class="va">Q3</span> <span class="op">+</span> <span class="fl">1.5</span> <span class="op">*</span> <span class="va">IQR</span></span>
+<span></span>
+<span><span class="va">outliers</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">mtcars</span>, <span class="va">mpg</span> <span class="op">&lt;</span> <span class="va">lower_fence</span> <span class="op">|</span> <span class="va">mpg</span> <span class="op">&gt;</span> <span class="va">upper_fence</span><span class="op">)</span></span>
+<span><span class="va">outliers</span></span></code></pre></div>
+<pre><code>                mpg cyl disp hp drat    wt qsec vs am gear
+Toyota Corolla 33.9   4 71.1 65 4.22 1.835 19.9  1  1    4
+               carb
+Toyota Corolla    1</code></pre>
+</div>
+<div id="combining-all-together-1" class="section level3" number="7.2.6">
+<h3>
+<span class="header-section-number">7.2.6</span> Combining All Together<a class="anchor" aria-label="anchor" href="#combining-all-together-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>By mastering these <code>dplyr</code> functions, you can significantly streamline your data manipulation tasks in R. From grouping and summarizing data to filtering out specific information, <code>dplyr</code> offers a powerful toolkit for data manipulation.</p>
+<div class="sourceCode" id="cb66"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Combining group_by and summarise</span></span>
+<span><span class="va">mtcars</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">gear</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>Mean_MPG <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">mpg</span><span class="op">)</span>, N <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<pre><code># A tibble: 3 × 3
+   gear Mean_MPG     N
+  &lt;dbl&gt;    &lt;dbl&gt; &lt;int&gt;
+1     3     16.1    15
+2     4     24.5    12
+3     5     21.4     5</code></pre>
+<p>This tutorial covers the <code>group_by</code>, <code>summarise</code>, and <code>filter</code> functions of the <code>dplyr</code> package and demonstrates their use with the built-in dataset <code>mtcars</code>.</p>
+
+</div>
+</div>
+</div>
+
+
+
+  <div class="chapter-nav">
+<div class="prev"><a href="tutorial-2-dive-deeper-into-data-visualization-and-statistics-in-r.html"><span class="header-section-number">6</span> Tutorial 2: Dive Deeper into Data Visualization and Statistics in R</a></div>
+<div class="next"><a href="practice-problems-1.html"><span class="header-section-number">8</span> Practice Problems 1</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#tutorial-3-dive-deeper-into-data-manipulation-with-dplyr-in-r"><span class="header-section-number">7</span> Tutorial 3: Dive Deeper into Data Manipulation with dplyr in R</a></li>
+<li><a class="nav-link" href="#introduction-2"><span class="header-section-number">7.1</span> Introduction</a></li>
+<li>
+<a class="nav-link" href="#dplyr-essentials"><span class="header-section-number">7.2</span> dplyr Essentials</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#introduction-to-dplyr"><span class="header-section-number">7.2.1</span> Introduction to dplyr</a></li>
+<li><a class="nav-link" href="#using-group_by-function"><span class="header-section-number">7.2.2</span> Using group_by() Function</a></li>
+<li><a class="nav-link" href="#summarization-using-summarise"><span class="header-section-number">7.2.3</span> Summarization using summarise()</a></li>
+<li><a class="nav-link" href="#data-filtering-using-filter"><span class="header-section-number">7.2.4</span> Data Filtering using filter()</a></li>
+<li><a class="nav-link" href="#identifying-outliers-with-filter"><span class="header-section-number">7.2.5</span> Identifying Outliers with filter()</a></li>
+<li><a class="nav-link" href="#combining-all-together-1"><span class="header-section-number">7.2.6</span> Combining All Together</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/Tutorial_3.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/Tutorial_3.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-09-19.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

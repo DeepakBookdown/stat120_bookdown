@@ -1,0 +1,102 @@
+
+# Tutorial 3: Dive Deeper into Data Manipulation with dplyr in R
+
+
+## Introduction
+
+In this tutorial, we will introduce you to the `dplyr` package, a crucial tool in R for data manipulation. You will learn about various `dplyr` functions such as `group_by`, `summarise`, and `filter`.
+
+---
+
+## dplyr Essentials
+
+### Introduction to dplyr
+
+`dplyr` is a package for data manipulation, offering a set of useful functions to perform operations like filtering, summarizing, and grouping your data. To use `dplyr`, you'll first need to install and load the package.
+
+```{r}
+# install.packages("dplyr")   # uncomment to install
+library(dplyr)
+```
+
+
+### Using `group_by()` Function
+
+The `group_by()` function is used to group your data based on one or multiple columns.
+
+
+```{r}
+# Using inbuilt dataset 'mtcars'
+data(mtcars)
+head(mtcars)
+```
+
+
+```{r}
+# Grouping by number of gears
+grouped_data <- mtcars %>% group_by(gear)
+```
+
+
+### Summarization using `summarise()`
+
+
+After grouping, `summarise()` can help to create summary statistics for each group.
+
+
+```{r}
+# Continuing with the 'mtcars' dataset
+summary_stats <- grouped_data %>%
+  summarise(
+    Mean_MPG = mean(mpg),
+    Max_MPG = max(mpg),
+    Min_MPG = min(mpg)
+  )
+
+summary_stats
+```
+
+
+### Data Filtering using `filter()`
+
+The `filter()` function filters rows based on a certain condition.
+
+```{r}
+# Filter cars with 4 gears
+filtered_data <- mtcars %>% filter(gear == 4)
+```
+
+### Identifying Outliers with `filter()`
+
+You can use `filter()` to identify outliers based on calculated fences or boundaries.
+
+
+```{r}
+# For demonstration, calculate lower and upper fence for mpg
+Q1 <- quantile(mtcars$mpg, 0.25)
+Q3 <- quantile(mtcars$mpg, 0.75)
+IQR <- Q3 - Q1
+lower_fence <- Q1 - 1.5 * IQR
+upper_fence <- Q3 + 1.5 * IQR
+
+outliers <- filter(mtcars, mpg < lower_fence | mpg > upper_fence)
+outliers
+```
+
+
+### Combining All Together
+
+By mastering these `dplyr` functions, you can significantly streamline your data manipulation tasks in R. From grouping and summarizing data to filtering out specific information, `dplyr` offers a powerful toolkit for data manipulation.
+
+```{r}
+# Combining group_by and summarise
+mtcars %>% 
+  group_by(gear) %>% 
+  summarise(Mean_MPG = mean(mpg), N = n())
+
+```
+
+
+
+This tutorial covers the `group_by`, `summarise`, and `filter` functions of the `dplyr` package and demonstrates their use with the built-in dataset `mtcars`. 
+
