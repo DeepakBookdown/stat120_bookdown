@@ -205,7 +205,7 @@ Use the boxplot outlier rule to find the "fence" (cutoff) between an outlier and
 
 ```r
 library(tidyr)
-movies_no_na <- drop_na(movies) 
+movies_no_na <- drop_na(movies)   # drop missing values
 q1_world_gross <- quantile(movies_no_na$WorldGross, 0.25)
 q3_world_gross <- quantile(movies_no_na$WorldGross, 0.75)
 iqr_world_gross <- IQR(movies_no_na$WorldGross)

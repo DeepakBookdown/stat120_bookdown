@@ -230,7 +230,7 @@ distribution). So two standard deviations is about 2 hours of sleep, making one 
 <details><summary><red>Click for answer</red></summary><p><em>Answer:</em></p>
 <div class="sourceCode" id="cb159"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span></span>
-<span><span class="va">movies_no_na</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">movies</span><span class="op">)</span> </span>
+<span><span class="va">movies_no_na</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">movies</span><span class="op">)</span>   <span class="co"># drop missing values</span></span>
 <span><span class="va">q1_world_gross</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">movies_no_na</span><span class="op">$</span><span class="va">WorldGross</span>, <span class="fl">0.25</span><span class="op">)</span></span>
 <span><span class="va">q3_world_gross</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">movies_no_na</span><span class="op">$</span><span class="va">WorldGross</span>, <span class="fl">0.75</span><span class="op">)</span></span>
 <span><span class="va">iqr_world_gross</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/IQR.html">IQR</a></span><span class="op">(</span><span class="va">movies_no_na</span><span class="op">$</span><span class="va">WorldGross</span><span class="op">)</span></span>
@@ -388,7 +388,7 @@ distribution). So two standard deviations is about 2 hours of sleep, making one 
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-09-19.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-09-20.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
