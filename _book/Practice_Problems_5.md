@@ -60,48 +60,72 @@ The ACT test has a population mean of 21 and standard deviation of 5.  The SAT h
 
 ### (a)  Which test did you do better on? 
 
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* -->
+<details>
+<summary><red>Click for answer</red></summary>
+*Answer:*
 
-<!-- - ACT: The z-score for the score of 28 is z = (28 - 21)/5 = 1.4. -->
-<!-- - SAT: The z-score for the score of 2100 is z = (2100 - 1500)/325 = 1.85. -->
-<!-- - The SAT score is 1.85 standard deviations above average while the ACT score is only 1.4 standard -->
-<!-- deviations above. You did better on the SAT. -->
+- ACT: The z-score for the score of 28 is z = (28 - 21)/5 = 1.4.
+- SAT: The z-score for the score of 2100 is z = (2100 - 1500)/325 = 1.85.
+- The SAT score is 1.85 standard deviations above average while the ACT score is only 1.4 standard
+deviations above. You did better on the SAT.
 
 
-<!-- ```{r} -->
-<!-- z_ACT <- (28 - 21) / 5 -->
-<!-- z_SAT <- (2100 - 1500) / 325 -->
-<!-- z_ACT -->
-<!-- z_SAT -->
-<!-- ``` -->
 
-<!-- </details> -->
+```r
+z_ACT <- (28 - 21) / 5
+z_SAT <- (2100 - 1500) / 325
+z_ACT
+```
+
+```
+[1] 1.4
+```
+
+```r
+z_SAT
+```
+
+```
+[1] 1.846154
+```
+
+</details>
 
 
 ### (b)	For each test, find the interval that is likely to contain about 95% of all test scores. 
 
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* -->
+<details>
+<summary><red>Click for answer</red></summary>
+*Answer:*
 
-<!-- - ACT: Two standard deviations is 2(5) = 10. About 95% of ACT scores are between 21 - 10 = 11 -->
-<!-- and 21 + 10 = 31. This claim assumes that ACT scores follow a bell-shaped distribution. -->
-<!-- - SAT: Two standard deviations is 2(325) = 650. About 95% of SAT scores are between 1500 - 650 = -->
-<!-- 850 and 1500 + 650 = 2150. This claim assumes that SAT scores follow a bell-shaped distribution. -->
+- ACT: Two standard deviations is 2(5) = 10. About 95% of ACT scores are between 21 - 10 = 11
+and 21 + 10 = 31. This claim assumes that ACT scores follow a bell-shaped distribution.
+- SAT: Two standard deviations is 2(325) = 650. About 95% of SAT scores are between 1500 - 650 =
+850 and 1500 + 650 = 2150. This claim assumes that SAT scores follow a bell-shaped distribution.
 
 
-<!-- ```{r} -->
-<!-- ACT_lower <- 21 - 2 * 5 -->
-<!-- ACT_upper <- 21 + 2 * 5 -->
-<!-- SAT_lower <- 1500 - 2 * 325 -->
-<!-- SAT_upper <- 1500 + 2 * 325 -->
-<!-- c(ACT_lower, ACT_upper) -->
-<!-- c(SAT_lower, SAT_upper) -->
-<!-- ``` -->
 
-<!-- </details> -->
+```r
+ACT_lower <- 21 - 2 * 5
+ACT_upper <- 21 + 2 * 5
+SAT_lower <- 1500 - 2 * 325
+SAT_upper <- 1500 + 2 * 325
+c(ACT_lower, ACT_upper)
+```
+
+```
+[1] 11 31
+```
+
+```r
+c(SAT_lower, SAT_upper)
+```
+
+```
+[1]  850 2150
+```
+
+</details>
 
 ------------------------------------
 
@@ -122,15 +146,18 @@ summary(my_vector)
    2.00   10.00   20.00   24.44   34.00   69.00 
 ```
 
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* Skewed right. It has a longer right tail than left since max -Q3 >> Q1 - min -->
+<details>
+<summary><red>Click for answer</red></summary>
+*Answer:* Skewed right. It has a longer right tail than left since max -Q3 >> Q1 - min
 
-<!-- ```{r} -->
-<!-- ggplot(data.frame(x=my_vector), aes(x)) + geom_boxplot() -->
-<!-- ``` -->
 
-<!-- </details> -->
+```r
+ggplot(data.frame(x=my_vector), aes(x)) + geom_boxplot()
+```
+
+<img src="Practice_Problems_5_files/figure-html/unnamed-chunk-7-1.png" width="100%" />
+
+</details>
 
 
 ## Problem 4:  Hot dog
@@ -145,28 +172,72 @@ ggplot(hotdogs, aes(x = "", y = HotDogs)) +
   labs(title = "Number of Hot Dogs Consumed", y = "Number of Hot Dogs") 
 ```
 
-<img src="Practice_Problems_5_files/figure-html/unnamed-chunk-5-1.png" width="100%" />
+<img src="Practice_Problems_5_files/figure-html/unnamed-chunk-8-1.png" width="100%" />
 
 
 
 ### (a)  Use the boxplot to estimate the 5 number summary and IQR for this data. Verify that there are no outliers in this data.
 
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:*  -->
-<!-- ```{r} -->
-<!-- hotdog_q1 <- quantile(hotdogs$HotDogs, 0.25) -->
-<!-- hotdog_q3 <- quantile(hotdogs$HotDogs, 0.75) -->
-<!-- hotdog_iqr <- IQR(hotdogs$HotDogs) -->
-<!-- lower_fence <- hotdog_q1 - 1.5 * hotdog_iqr -->
-<!-- upper_fence <- hotdog_q3 + 1.5 * hotdog_iqr -->
+<details>
+<summary><red>Click for answer</red></summary>
+*Answer:*
 
-<!-- library(dplyr) -->
-<!-- outliers <- filter(hotdogs, HotDogs < lower_fence | HotDogs > upper_fence) -->
-<!-- outliers -->
-<!-- ``` -->
+```r
+hotdog_q1 <- quantile(hotdogs$HotDogs, 0.25); hotdog_q1
+```
 
-<!-- </details> -->
+```
+25% 
+ 54 
+```
+
+```r
+hotdog_q3 <- quantile(hotdogs$HotDogs, 0.75); hotdog_q3
+```
+
+```
+75% 
+ 65 
+```
+
+```r
+hotdog_iqr <- IQR(hotdogs$HotDogs); hotdog_iqr
+```
+
+```
+[1] 11
+```
+
+```r
+lower_fence <- hotdog_q1 - 1.5 * hotdog_iqr; lower_fence
+```
+
+```
+ 25% 
+37.5 
+```
+
+```r
+upper_fence <- hotdog_q3 + 1.5 * hotdog_iqr; upper_fence
+```
+
+```
+ 75% 
+81.5 
+```
+
+```r
+library(dplyr)
+outliers <- filter(hotdogs, HotDogs < lower_fence | HotDogs > upper_fence)
+outliers
+```
+
+```
+[1] Year    HotDogs
+<0 rows> (or 0-length row.names)
+```
+
+</details>
 
 ## Problem 5: Hollywood Movies World Gross
 
@@ -189,7 +260,7 @@ ggplot(movies, aes(x = WorldGross, y = "")) +
   labs(title = "World Gross of Hollywood Movies", x = "World Gross (in millions)", y ="") 
 ```
 
-<img src="Practice_Problems_5_files/figure-html/unnamed-chunk-7-1.png" width="100%" />
+<img src="Practice_Problems_5_files/figure-html/unnamed-chunk-11-1.png" width="100%" />
 
 </details>
 
@@ -317,7 +388,7 @@ ggplot(movies, aes(x = Genre, y = WorldGross)) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-<img src="Practice_Problems_5_files/figure-html/unnamed-chunk-10-1.png" width="100%" />
+<img src="Practice_Problems_5_files/figure-html/unnamed-chunk-14-1.png" width="100%" />
 
 - What does this type of graph illustrate well about the relationship between `WorldGross` and `Genre`?
 
