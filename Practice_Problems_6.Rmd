@@ -289,7 +289,7 @@ The following `Inkjet` dataset deals with 20 observations on the following 6 var
 - `CostBW` Cost per page (in cents) for printing in black \& white
 - `CostColor` Cost per page (in cents) for printing in color
 
-```{r, echo=FALSE}
+```{r}
 library(ggplot2)
 library(dplyr)
 inkjet <- read.csv("https://www.lock5stat.com/datasets2e/InkjetPrinters.csv") 
@@ -297,7 +297,7 @@ knitr::kable(inkjet)
 ```
 
 
-```{r, fig.width=5, fig.height=3, echo=FALSE}
+```{r, fig.width=5, fig.height=3}
 ggplot(data = inkjet, aes(x = Price, y = CostColor)) + 
      geom_point(shape = 19) +
      labs(title = "Price and Cost to print a page in Color",

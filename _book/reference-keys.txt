@@ -112,3 +112,4 @@ d-interpret-the-intercept-in-context-if-it-makes-sense-to-do-so.
 f-if-you-buy-an-injet-printers-worth-200-dollars-what-would-you-estimate-the-cost-per-page-in-cents
 g-what-is-the-value-of-r2-the-coefficient-of-determination-what-does-it-mean
 h-what-is-the-value-of-r-the-correlation-coefficient
+url-your-book-url-like-httpsbookdown.orgyihuibookdown

@@ -479,6 +479,15 @@ The following `Inkjet` dataset deals with 20 observations on the following 6 var
 - `CostColor` Cost per page (in cents) for printing in color
 
 
+```r
+library(ggplot2)
+library(dplyr)
+inkjet <- read.csv("https://www.lock5stat.com/datasets2e/InkjetPrinters.csv") 
+knitr::kable(inkjet)
+```
+
+
+
 |Model                                       | PPM| PhotoTime| Price| CostBW| CostColor|
 |:-------------------------------------------|---:|---------:|-----:|------:|---------:|
 |HP Photosmart Pro 8500A e-All-in-One        | 3.9|        67|   300|    1.6|       7.2|
@@ -502,6 +511,16 @@ The following `Inkjet` dataset deals with 20 observations on the following 6 var
 |Canon Pixma MX360 Office Inkjet All-in-One  | 1.8|        94|    79|    5.5|      13.2|
 |Epson WorkForce 635                         | 4.1|       134|   199|    3.0|      10.2|
 
+
+
+```r
+ggplot(data = inkjet, aes(x = Price, y = CostColor)) + 
+     geom_point(shape = 19) +
+     labs(title = "Price and Cost to print a page in Color",
+          x = "Price (in dollars)",
+          y = "Cost per page (in cents)") +
+     theme_minimal()
+```
 
 <img src="Practice_Problems_6_files/figure-html/unnamed-chunk-18-1.png" width="100%" />
 
