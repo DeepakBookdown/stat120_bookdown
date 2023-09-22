@@ -148,7 +148,7 @@ sample(x = 1:10, size = 10, replace = FALSE)
 ```
 
 ```
- [1]  4  9  6  2  1  5  3  7  8 10
+ [1]  7  6  8  4  2 10  1  3  9  5
 ```
 
 ### Using `head()` Function
