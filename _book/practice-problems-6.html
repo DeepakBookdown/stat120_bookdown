@@ -635,10 +635,8 @@ F-statistic: 62.11 on 1 and 6 DF,  p-value: 0.0002211</code></pre>
 <pre><code>+ direction?
 + strength?
 + form?</code></pre>
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* There is a negative, moderate, and linear relationship. -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> There is a negative, moderate, and linear relationship.
+</details><p><br></p>
 <p>We use the <code>lm(y ~ x, data=mydata)</code> function to fit a <strong>l</strong>inear (regression) <strong>m</strong>odel for a response y given an explanatory variable x.</p>
 <div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">inkjet.lm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">CostColor</span> <span class="op">~</span> <span class="va">Price</span>, data<span class="op">=</span><span class="va">inkjet</span><span class="op">)</span></span>
@@ -667,62 +665,50 @@ F-statistic: 13.19 on 1 and 18 DF,  p-value: 0.00191</code></pre>
 <h3>
 <span class="header-section-number">14.2.2</span> (b) Write down the fitted regression equation to predict cost per page based on the price.<a class="anchor" aria-label="anchor" href="#b-write-down-the-fitted-regression-equation-to-predict-cost-per-page-based-on-the-price."><i class="fas fa-link"></i></a>
 </h3>
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* $\widehat{CostColor} = 15.3514 - 0.02278 * \text{Price}$ -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> <span class="math inline">\(\widehat{CostColor} = 15.3514 - 0.02278 * \text{Price}\)</span></p>
+</details><p><br></p>
 </div>
 <div id="c-interpret-the-slope-in-context." class="section level3" number="14.2.3">
 <h3>
 <span class="header-section-number">14.2.3</span> (c) Interpret the slope in context.<a class="anchor" aria-label="anchor" href="#c-interpret-the-slope-in-context."><i class="fas fa-link"></i></a>
 </h3>
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* For each dollar increase in the price of the inkjet printer, there is a decrease in the cost to print in color by 0.02278 cents. -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> For each dollar increase in the price of the inkjet printer, there is a decrease in the cost to print in color by 0.02278 cents.</p>
+</details><p><br></p>
 </div>
 <div id="d-interpret-the-intercept-in-context-if-it-makes-sense-to-do-so." class="section level3" number="14.2.4">
 <h3>
 <span class="header-section-number">14.2.4</span> (d) Interpret the intercept in context, if it makes sense to do so.<a class="anchor" aria-label="anchor" href="#d-interpret-the-intercept-in-context-if-it-makes-sense-to-do-so."><i class="fas fa-link"></i></a>
 </h3>
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* For a price of printer that costs 0 dollars, the cost to print in color is 15.3514 cents. It is an extrapolation and it's nonsensical to talk about a printer costing 0 dollars in this context. -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> For a price of printer that costs 0 dollars, the cost to print in color is 15.3514 cents. It is an extrapolation and it’s nonsensical to talk about a printer costing 0 dollars in this context.</p>
+</details><p><br></p>
 </div>
 <div id="f-if-you-buy-an-injet-printers-worth-200-dollars-what-would-you-estimate-the-cost-per-page-in-cents" class="section level3" number="14.2.5">
 <h3>
 <span class="header-section-number">14.2.5</span> (f) If you buy an injet printers worth 200 dollars, what would you estimate the cost per page (in cents)?<a class="anchor" aria-label="anchor" href="#f-if-you-buy-an-injet-printers-worth-200-dollars-what-would-you-estimate-the-cost-per-page-in-cents"><i class="fas fa-link"></i></a>
 </h3>
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* The cost per page would be 10.80 cents. -->
-<!-- ```{r} -->
-<!-- 15.3514 - 0.02278*200 -->
-<!-- ``` -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The cost per page would be 10.80 cents.</p>
+<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">15.3514</span> <span class="op">-</span> <span class="fl">0.02278</span><span class="op">*</span><span class="fl">200</span></span></code></pre></div>
+<pre><code>[1] 10.7954</code></pre>
+</details><p><br></p>
 </div>
 <div id="g-what-is-the-value-of-r2-the-coefficient-of-determination-what-does-it-mean" class="section level3" number="14.2.6">
 <h3>
 <span class="header-section-number">14.2.6</span> (g) What is the value of <span class="math inline">\(R^2\)</span>, the coefficient of determination? What does it mean?<a class="anchor" aria-label="anchor" href="#g-what-is-the-value-of-r2-the-coefficient-of-determination-what-does-it-mean"><i class="fas fa-link"></i></a>
 </h3>
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* The value of $R^2$ is 0.4228. It means that about 42.28% of variability in the cost to print in color is explained by the price of the inkjet printer.  -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The value of <span class="math inline">\(R^2\)</span> is 0.4228. It means that about 42.28% of variability in the cost to print in color is explained by the price of the inkjet printer.</p>
+</details><p><br></p>
 </div>
 <div id="h-what-is-the-value-of-r-the-correlation-coefficient" class="section level3" number="14.2.7">
 <h3>
 <span class="header-section-number">14.2.7</span> (h) What is the value of <span class="math inline">\(r\)</span>, the correlation coefficient?<a class="anchor" aria-label="anchor" href="#h-what-is-the-value-of-r-the-correlation-coefficient"><i class="fas fa-link"></i></a>
 </h3>
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* The value of $r$ is - 0.65. -->
-<!-- ```{r} -->
-<!-- sqrt(0.4228) -->
-<!-- ``` -->
-<!-- Note: It's important to note that $R^2$ and $r$ are related but not directly convertible just by taking a square root, especially in multiple regression scenarios. The square root of $R^2$ only equals $r$ in simple linear regression models, and even then, the sign of $r$ depends on the sign of the slope. -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The value of <span class="math inline">\(r\)</span> is - 0.65.</p>
+<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fl">0.4228</span><span class="op">)</span></span></code></pre></div>
+<pre><code>[1] -0.6502307</code></pre>
+<p>Note: It’s important to note that <span class="math inline">\(R^2\)</span> and <span class="math inline">\(r\)</span> are related but not directly convertible just by taking a square root, especially in multiple regression scenarios. The square root of <span class="math inline">\(R^2\)</span> only equals <span class="math inline">\(r\)</span> in simple linear regression models, and even then, the sign of <span class="math inline">\(r\)</span> depends on the sign of the slope.</p>
+</details><p><br></p>
 
 </div>
 </div>
@@ -748,7 +734,7 @@ F-statistic: 13.19 on 1 and 18 DF,  p-value: 0.00191</code></pre>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-09-21.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-09-24.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

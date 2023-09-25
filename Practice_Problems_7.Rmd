@@ -1,10 +1,7 @@
-# Class Activity 7
+# Practice Problems 7
 
 
-## Your Turn 1
-
-
-## Example 1: Using Search Engines on the Internet
+## Problem 1: Using Search Engines on the Internet
 
 A 2012 survey of a random sample of 2253 US adults found that 1,329 of them reported using a search engine (such as Google) every day to find information on the Internet.  
 
@@ -37,27 +34,22 @@ p.hat
 
 ## Example 2: Bootstrapping mean
 
-Let's use R to perform bootstrapping and visualize the distribution of the sample mean. We need to load the purrr library to do more effective simulation.  Create a vector X containing the data points:
+Let's visualize the distribution of the sample mean. The following is a vector X containing the $6$ data points:
 
 ```{r}
 X <- c(20, 24, 19, 23, 22, 16)
 ```
 
 
-### a. Generate 500 bootstrapped samples of the data, calculate the mean for each sample, and store the results in a tibble:
+The bootstrap distribution from 500 bootstrap means from the above sample is:
 
-```{r}
+```{r, echo=FALSE}
 bootstrapped_means <- tibble(
   iteration = 1:500,
   mean = map_dbl(iteration, 
                  ~mean(sample(X, replace = TRUE)))
 )
-```
 
-
-### b. Create a dot plot to visualize the distribution of the bootstrapped sample means:
-
-```{r}
 ggplot(bootstrapped_means, aes(x = mean)) +
   geom_dotplot(dotsize = 0.7, 
                stackratio = 0.9, 

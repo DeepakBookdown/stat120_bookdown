@@ -311,10 +311,10 @@ ggplot(data = inkjet, aes(x = Price, y = CostColor)) +
     + strength?
     + form?
 
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* There is a negative, moderate, and linear relationship. -->
-<!-- </details><br> -->
+<details>
+<summary><red>Click for answer</red></summary>
+*Answer:* There is a negative, moderate, and linear relationship.
+</details><br>
 
 
 We use the `lm(y ~ x, data=mydata)` function to fit a **l**inear (regression) **m**odel for a response y given an explanatory variable x. 
@@ -328,60 +328,60 @@ summary(inkjet.lm)
 ### (b) Write down the fitted regression equation to predict cost per page based on the price. 
 
 
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* $\widehat{CostColor} = 15.3514 - 0.02278 * \text{Price}$ -->
+<details>
+<summary><red>Click for answer</red></summary>
+*Answer:* $\widehat{CostColor} = 15.3514 - 0.02278 * \text{Price}$
 
-<!-- </details><br> -->
+</details><br>
 
 ### (c)	Interpret the slope in context.
 
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* For each dollar increase in the price of the inkjet printer, there is a decrease in the cost to print in color by 0.02278 cents. -->
+<details>
+<summary><red>Click for answer</red></summary>
+*Answer:* For each dollar increase in the price of the inkjet printer, there is a decrease in the cost to print in color by 0.02278 cents.
 
-<!-- </details><br> -->
+</details><br>
 
 ### (d)	Interpret the intercept in context, if it makes sense to do so. 
 
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* For a price of printer that costs 0 dollars, the cost to print in color is 15.3514 cents. It is an extrapolation and it's nonsensical to talk about a printer costing 0 dollars in this context. -->
+<details>
+<summary><red>Click for answer</red></summary>
+*Answer:* For a price of printer that costs 0 dollars, the cost to print in color is 15.3514 cents. It is an extrapolation and it's nonsensical to talk about a printer costing 0 dollars in this context.
 
-<!-- </details><br> -->
+</details><br>
 
 ### (f)	If you buy an injet printers worth 200 dollars, what would you estimate the cost per page (in cents)?
 
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* The cost per page would be 10.80 cents. -->
+<details>
+<summary><red>Click for answer</red></summary>
+*Answer:* The cost per page would be 10.80 cents.
 
-<!-- ```{r} -->
-<!-- 15.3514 - 0.02278*200 -->
-<!-- ``` -->
+```{r}
+15.3514 - 0.02278*200
+```
 
-<!-- </details><br> -->
+</details><br>
 
 ### (g) What is the value of $R^2$, the coefficient of determination? What does it mean?
 
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* The value of $R^2$ is 0.4228. It means that about 42.28% of variability in the cost to print in color is explained by the price of the inkjet printer.  -->
+<details>
+<summary><red>Click for answer</red></summary>
+*Answer:* The value of $R^2$ is 0.4228. It means that about 42.28% of variability in the cost to print in color is explained by the price of the inkjet printer.
 
-<!-- </details><br> -->
+</details><br>
 
 ### (h) What is the value of $r$, the correlation coefficient?
 
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* The value of $r$ is - 0.65. -->
+<details>
+<summary><red>Click for answer</red></summary>
+*Answer:* The value of $r$ is - 0.65.
 
-<!-- ```{r} -->
-<!-- sqrt(0.4228) -->
-<!-- ``` -->
+```{r}
+- sqrt(0.4228)
+```
 
 
 
-<!-- Note: It's important to note that $R^2$ and $r$ are related but not directly convertible just by taking a square root, especially in multiple regression scenarios. The square root of $R^2$ only equals $r$ in simple linear regression models, and even then, the sign of $r$ depends on the sign of the slope. -->
+Note: It's important to note that $R^2$ and $r$ are related but not directly convertible just by taking a square root, especially in multiple regression scenarios. The square root of $R^2$ only equals $r$ in simple linear regression models, and even then, the sign of $r$ depends on the sign of the slope.
 
-<!-- </details><br> -->
+</details><br>
