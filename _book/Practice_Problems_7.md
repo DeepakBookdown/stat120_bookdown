@@ -7,35 +7,30 @@ A 2012 survey of a random sample of 2253 US adults found that 1,329 of them repo
 
 ### a).  Find the relevant proportion and give the correct notation with it.  
 
-<details>
-<summary><red>Click for answer</red></summary>
-*Answer:* $\hat{p} = 1329/2253$
+<!-- <details> -->
+<!-- <summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* $\hat{p} = 1329/2253$ -->
 
+<!-- ```{r} -->
+<!-- p.hat <- 1329/2253 -->
+<!-- p.hat -->
+<!-- ``` -->
 
-```r
-p.hat <- 1329/2253
-p.hat
-```
-
-```
-[1] 0.5898802
-```
-
-</details><br>
+<!-- </details><br> -->
 
 ### b).  Is your answer to part (a) a parameter or a statistic?  
 
-<details>
-<summary><red>Click for answer</red></summary>
-*Answer:* Statistic
-</details><br>
+<!-- <details> -->
+<!-- <summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* Statistic -->
+<!-- </details><br> -->
 
 ### c).  Give notation for and define the population parameter that we estimate using the result of part (a).
 
-<details>
-<summary><red>Click for answer</red></summary>
-*Answer:* p = the proportion of all US adults that would report that they use an Internet search engine every day
-</details><br>
+<!-- <details> -->
+<!-- <summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* p = the proportion of all US adults that would report that they use an Internet search engine every day -->
+<!-- </details><br> -->
 
 ## Problem 2: Bootstrapping mean
 
@@ -54,43 +49,43 @@ mean(X)
 
 The bootstrap distribution from 500 bootstrap means from the above sample is:
 
-<img src="Practice_Problems_7_files/figure-html/unnamed-chunk-3-1.png" width="100%" />
+<img src="Practice_Problems_7_files/figure-html/unnamed-chunk-2-1.png" width="100%" />
 
 
 *Question:* What does each dot represent?
-<details>
-<summary><red>Click for answer</red></summary>
-*Answer:* One sample mean from the bootstrapped sample.
-</details><br>
+<!-- <details> -->
+<!-- <summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* One sample mean from the bootstrapped sample. -->
+<!-- </details><br> -->
  *Question:* What is the shape of your sampling distribution?
-<details>
-<summary><red>Click for answer</red></summary>
-*Answer:* Roughly symmetric.
-</details><br>
+<!-- <details> -->
+<!-- <summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* Roughly symmetric. -->
+<!-- </details><br> -->
 *Question:* Where is your distribution centered?
-<details>
-<summary><red>Click for answer</red></summary>
-*Answer:* About 20.5
-</details><br>
+<!-- <details> -->
+<!-- <summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* About 20.5 -->
+<!-- </details><br> -->
 
 *Question:* The distribution should be centered at the original sample mean. Do we know the population mean? If not, what does it tell us about the center of this distribution.
-<details>
-<summary><red>Click for answer</red></summary>
-*Answer:* It is close to the original sample mean. We do not know the population mean, so the bootstrap distribution will carry the bias of the original sample mean.
+<!-- <details> -->
+<!-- <summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* It is close to the original sample mean. We do not know the population mean, so the bootstrap distribution will carry the bias of the original sample mean. -->
 
-</details><br>
+<!-- </details><br> -->
 *Question:* What is the standard deviation of this distribution? (Hint: use the 95% rule.) 
-<details>
-<summary><red>Click for answer</red></summary>
-*Answer:* About 1.25, it looks like most of the bootstrapped sample means are between 18 to 23 so 2 standard deviations is about 2.5. This makes the SD about 1.25. 
-</details><br>
-*Question:* The standard deviation of sampling distribution has a separate name. It is called the **Standard Error**. The standard deviation of this distribution is 1.1822372.
-<details>
-<summary><red>Click for answer</red></summary>
-*Answer:* It's close.
+<!-- <details> -->
+<!-- <summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* About 1.25, it looks like most of the bootstrapped sample means are between 18 to 23 so 2 standard deviations is about 2.5. This makes the SD about 1.25.  -->
+<!-- </details><br> -->
+*Question:* The standard deviation of sampling distribution has a separate name. It is called the **Standard Error**. The standard deviation of this distribution is 1.103575.
+<!-- <details> -->
+<!-- <summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* It's close. -->
 
 
-</details><br>
+<!-- </details><br> -->
 
 ## Problem 3: Simulation of a Sample Proportion
 
@@ -106,17 +101,17 @@ n.size <- 100  # sample size
 
 Let's plot this sample proportion in R.
 
-<img src="Practice_Problems_7_files/figure-html/unnamed-chunk-5-1.png" width="100%" />
+<img src="Practice_Problems_7_files/figure-html/unnamed-chunk-4-1.png" width="100%" />
 
 Similarly, we can generate 5 random samples of size $n= 100$ and plot the sample proportions.
 
 
-<img src="Practice_Problems_7_files/figure-html/unnamed-chunk-6-1.png" width="100%" />
+<img src="Practice_Problems_7_files/figure-html/unnamed-chunk-5-1.png" width="100%" />
 
 
 Continuing on, we can generate 500 random samples of size $n= 100$ and plot the sample proportions.
 
-<img src="Practice_Problems_7_files/figure-html/unnamed-chunk-7-1.png" width="100%" />
+<img src="Practice_Problems_7_files/figure-html/unnamed-chunk-6-1.png" width="100%" />
 
 *Question:* What does each dot represent?
 <details>
@@ -154,7 +149,7 @@ Continuing on, we can generate 500 random samples of size $n= 100$ and plot the 
 
 ### (d) Now, let's repeat part(c) with sample size 20 instead of 100 by generating and plotting 500 sample proportions.
 
-<img src="Practice_Problems_7_files/figure-html/unnamed-chunk-8-1.png" width="100%" />
+<img src="Practice_Problems_7_files/figure-html/unnamed-chunk-7-1.png" width="100%" />
 
 
 *Question:*  How has the sampling distribution changed? (Shape? Center? Variability?)
@@ -183,7 +178,7 @@ sd(sample.prop500_size10)
 
 ### (d) Now suppose the population proportion is $p=0.90$ instead of $p=0.66$ in part (e). Keep `n=20`. 
 
-<img src="Practice_Problems_7_files/figure-html/unnamed-chunk-10-1.png" width="100%" />
+<img src="Practice_Problems_7_files/figure-html/unnamed-chunk-9-1.png" width="100%" />
 
 *Question:* How has the sampling distribution changed? (Shape? Center? Variability?)
 <details>
