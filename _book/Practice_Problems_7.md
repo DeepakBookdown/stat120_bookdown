@@ -11,9 +11,14 @@ A 2012 survey of a random sample of 2253 US adults found that 1,329 of them repo
 <summary><red>Click for answer</red></summary>
 *Answer:* $\hat{p} = 1329/2253$
 
-```{r}
+
+```r
 p.hat <- 1329/2253
 p.hat
+```
+
+```
+[1] 0.5898802
 ```
 
 </details><br>
@@ -36,33 +41,20 @@ p.hat
 
 Let's visualize the distribution of the sample mean. The following is a vector X containing the $6$ data points:
 
-```{r}
+
+```r
 X <- c(20, 24, 19, 23, 22, 16)
 mean(X)
+```
+
+```
+[1] 20.66667
 ```
 
 
 The bootstrap distribution from 500 bootstrap means from the above sample is:
 
-```{r, echo=FALSE}
-bootstrapped_means <- tibble(
-  iteration = 1:500,
-  mean = map_dbl(iteration, 
-                 ~mean(sample(X, replace = TRUE)))
-)
-
-ggplot(bootstrapped_means, aes(x = mean)) +
-  geom_dotplot(dotsize = 0.7, 
-               stackratio = 0.9, 
-               binwidth = .13, 
-               color = "gold", 
-               fill = "blue") +
-  ggtitle("") + xlab("") + ylab("") +
-  scale_x_continuous(limits = c(17, 24), 
-                     expand = c(0, 0), 
-                     breaks = seq(17, 24, 1)) +
-  labs(title = "Bootstrap distribution of sample mean")
-```
+<img src="Practice_Problems_7_files/figure-html/unnamed-chunk-3-1.png" width="100%" />
 
 
 *Question:* What does each dot represent?
@@ -92,7 +84,7 @@ ggplot(bootstrapped_means, aes(x = mean)) +
 <summary><red>Click for answer</red></summary>
 *Answer:* About 1.25, it looks like most of the bootstrapped sample means are between 18 to 23 so 2 standard deviations is about 2.5. This makes the SD about 1.25. 
 </details><br>
-*Question:* The standard deviation of sampling distribution has a separate name. It is called the **Standard Error**. The standard deviation of this distribution is `r sd(bootstrapped_means$mean)`.
+*Question:* The standard deviation of sampling distribution has a separate name. It is called the **Standard Error**. The standard deviation of this distribution is 1.1822372.
 <details>
 <summary><red>Click for answer</red></summary>
 *Answer:* It's close.
@@ -105,7 +97,8 @@ ggplot(bootstrapped_means, aes(x = mean)) +
 According to a PEW survey, $66\%$ of U.S. adult citizens casted a ballot in the 2020 election. Suppose we take a random sample of $n=100$ eligible U.S. voters and computed the sample proportion who voted. 
 
 
-```{r}
+
+```r
 # Define parameters
 pop.prop <- .66 # Population proportion
 n.size <- 100  # sample size
@@ -113,69 +106,17 @@ n.size <- 100  # sample size
 
 Let's plot this sample proportion in R.
 
-```{r, echo=FALSE}
-# Generate 1 sample
-sample1 <- rbinom(n = 1, size = n.size, p = pop.prop) # R simulates the samples
-sample.prop1 <- sample1/n.size #  Proportion = No. of Success / Sample Size
-
-# define a data frame
-mydata <- data.frame(x = sample.prop1)
-
-# Plot a dot plot of the sample proportion
-ggplot(mydata, aes(x = x)) +
-   geom_dotplot(dotsize = 0.35,
-               stackratio = 0.75,
-               binwidth = .025,
-               color = "gold",
-               fill = "blue") +
-  ggtitle("A single sample proportion") +  xlab("Proportion") + ylab("Count")+
-  scale_x_continuous(limits = c(0, 1))+ 
-  theme(plot.title = element_text(hjust = 0.5))
-```
+<img src="Practice_Problems_7_files/figure-html/unnamed-chunk-5-1.png" width="100%" />
 
 Similarly, we can generate 5 random samples of size $n= 100$ and plot the sample proportions.
 
 
-```{r, echo=FALSE}
-# generate 5 random samples of size 100
-sample5 <- rbinom(n = 5, size = n.size, p = pop.prop)  
-sample.prop5 <- sample5/n.size 
-
-data <- data.frame(x = sample.prop5)
-
-ggplot(data, aes(x = x)) +
-   geom_dotplot(dotsize = 0.35,
-               stackratio = 0.75,
-               binwidth = .025,
-               color = "gold",
-               fill = "blue") +
-  ggtitle("") +  xlab("Proportion") + ylab("Count")+
-  scale_x_continuous(limits = c(0, 1))+ 
-  theme(plot.title = element_text(hjust = 0.5))
-```
+<img src="Practice_Problems_7_files/figure-html/unnamed-chunk-6-1.png" width="100%" />
 
 
 Continuing on, we can generate 500 random samples of size $n= 100$ and plot the sample proportions.
 
-```{r, echo=FALSE}
-# Generate 500 samples
-set.seed(143)
-sample500 <- rbinom(n = 500, size = n.size, p = pop.prop)  
-sample.prop500 <- sample500/n.size 
-
-data <- data.frame(x = sample.prop500)
-
-ggplot(data, aes(x = x)) +
-  geom_dotplot(dotsize = 0.35,
-               stackratio = 0.75,
-               binwidth = .025,
-               color = "gold",
-               fill = "blue") +
-  ggtitle("") +  xlab("Proportion") + ylab("Count") +
-  scale_x_continuous(limits = c(0, 1))+ 
-  theme(plot.title = element_text(hjust = 0.5))
-
-```
+<img src="Practice_Problems_7_files/figure-html/unnamed-chunk-7-1.png" width="100%" />
 
 *Question:* What does each dot represent?
 <details>
@@ -192,7 +133,7 @@ ggplot(data, aes(x = x)) +
 <summary><red>Click for answer</red></summary>
 *Answer:* About 0.66, which is the population proportion. 
 </details><br>
-*Question:* The distribution should be centered at the population proportion. Verify that the distribution is centered around the population proportion, $p = 0.66$. The mean of the sampling distribution of the proportion is `r mean(sample.prop500)`. 
+*Question:* The distribution should be centered at the population proportion. Verify that the distribution is centered around the population proportion, $p = 0.66$. The mean of the sampling distribution of the proportion is 0.66298. 
 <details>
 <summary><red>Click for answer</red></summary>
 *Answer:* 
@@ -203,7 +144,7 @@ ggplot(data, aes(x = x)) +
 <summary><red>Click for answer</red></summary>
 *Answer:* About 0.05, it looks like most sample proportions are between 0.55 to 0.75 so 2 standard deviations is about 0.10. This makes the SD about 0.05. 
 </details><br>
-*Question:* The standard deviation of sampling distribution has a separate name. It is called the **Standard Error**. The standard deviation of this distribution is `r sd(sample.prop500)`.
+*Question:* The standard deviation of sampling distribution has a separate name. It is called the **Standard Error**. The standard deviation of this distribution is 0.0494673.
 <details>
 <summary><red>Click for answer</red></summary>
 *Answer:*
@@ -213,25 +154,7 @@ ggplot(data, aes(x = x)) +
 
 ### (d) Now, let's repeat part(c) with sample size 20 instead of 100 by generating and plotting 500 sample proportions.
 
-```{r, echo=FALSE}
-n.size <- 20
-pop.prop <- .66 # Population proportion
-
-sample500_size10 <- rbinom(n = 500, size = n.size, p = pop.prop)  
-sample.prop500_size10 <- sample500_size10/n.size 
-
-data_size10 <- data.frame(x = sample.prop500_size10)
-
-ggplot(data_size10, aes(x = x)) +
- geom_dotplot(dotsize = 0.35,
-               stackratio = 0.75,
-               binwidth = .015,
-               color = "gold",
-               fill = "blue") + 
-  ggtitle("") +  xlab("Proportion") + ylab("Count") +
-  scale_x_continuous(limits = c(0, 1))+ 
-  theme(plot.title = element_text(hjust = 0.5))
-```
+<img src="Practice_Problems_7_files/figure-html/unnamed-chunk-8-1.png" width="100%" />
 
 
 *Question:*  How has the sampling distribution changed? (Shape? Center? Variability?)
@@ -239,43 +162,49 @@ ggplot(data_size10, aes(x = x)) +
 <summary><red>Click for answer</red></summary>
 *Answer:* The shape is slightly left skewed, still centered at 0.66 but with more variability that before (SD of about 0.10). This distribution is more discrete looking because there are just a few sample proportions possible with n=20 (e.g. 20/20, 19/20, 18/20, etc). 
 
-```{r}
+
+```r
 mean(sample.prop500_size10)
+```
+
+```
+[1] 0.6603
+```
+
+```r
 sd(sample.prop500_size10)
+```
+
+```
+[1] 0.1024202
 ```
 
 </details><br>
 
 ### (d) Now suppose the population proportion is $p=0.90$ instead of $p=0.66$ in part (e). Keep `n=20`. 
 
-```{r, echo=FALSE}
-pop.prop.large <- 0.90
-n.size <- 20
-
-sample500_size10_large_p <- rbinom(n = 500, size = n.size, p = pop.prop.large)  
-sample.prop500_size10_large_p <- sample500_size10_large_p/n.size 
-
-data_size10_large_p <- data.frame(x = sample.prop500_size10_large_p)
-
-ggplot(data_size10_large_p, aes(x = x)) +
- geom_dotplot(dotsize = 0.35,
-               stackratio = 0.75,
-               binwidth = .015,
-               color = "gold",
-               fill = "blue") + 
-  ggtitle("") +  xlab("Proportion") + ylab("Count") +
-  scale_x_continuous(limits = c(0, 1))+ 
-  theme(plot.title = element_text(hjust = 0.5))
-```
+<img src="Practice_Problems_7_files/figure-html/unnamed-chunk-10-1.png" width="100%" />
 
 *Question:* How has the sampling distribution changed? (Shape? Center? Variability?)
 <details>
 <summary><red>Click for answer</red></summary>
 *Answer:*  The shape is much more left skewed than when p=0.66. Center is around 0.90 and SD is around 0.07. Note that increasing the population proportion closer to 1 results in a decrease in the SD because most samples give proportion near 1.  
 
-```{r}
+
+```r
 mean(sample.prop500_size10_large_p)
+```
+
+```
+[1] 0.8989
+```
+
+```r
 sd(sample.prop500_size10_large_p)
+```
+
+```
+[1] 0.06412499
 ```
 
 </details><br>
