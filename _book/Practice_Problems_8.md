@@ -8,9 +8,12 @@ $$ \$132 \quad \$87 \quad \$185 \quad \$52 \quad \$23 \quad \$147 \quad \$125 \q
 
 ### (a). What is the sample mean? Verify using r-code.
 
-<details>
-<summary><red>Click for answer</red></summary>
-*Answer:*  The sample mean is $\bar{x} = 100.1$
+<!-- <details> -->
+<!-- <summary><red>Click for answer</red></summary> -->
+<!-- *Answer:*  The sample mean is $\bar{x} = 100.1$ -->
+<!-- </details><br> -->
+
+
 
 
 ```r
@@ -22,17 +25,16 @@ mean(prices)
 [1] 100.1
 ```
 
-</details><br>
 
 ### (b).  Describe carefully how we could use cards to create one bootstrap statistic from this sample.  Be specific.
 
-<details>
-<summary><red>Click for answer</red></summary>
-*Answer:* We use 10 cards and write the 10 sample values on the cards. We then mix them up and draw one and record the value on it and put it back. Mix them up again, draw another, record the value, and put it back. Do this 10 times to get a “with replacement” sample of size 10. Then compute the sample mean of this bootstrap sample. 
-</details><br>
+<!-- <details> -->
+<!-- <summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* We use 10 cards and write the 10 sample values on the cards. We then mix them up and draw one and record the value on it and put it back. Mix them up again, draw another, record the value, and put it back. Do this 10 times to get a “with replacement” sample of size 10. Then compute the sample mean of this bootstrap sample.  -->
+<!-- </details><br> -->
 
 
-### (c). We can easily instruct R to do this with a simple code as follows:
+### (c). We can easily instruct R to do this with a simple code provided below. Will the mean of this resample be same as the original sample? What about the standsrd deviation?
 
 
 ```r
@@ -41,15 +43,58 @@ resample
 ```
 
 ```
- [1] 185  93  72  87  85 132  93  93  93  85
+ [1] 147 132  23 147  72 185  87 147 132 125
 ```
+
+
+Will the mean of this resample be same as the original sample? What about the standard deviation?
+
+<!-- <details> -->
+<!-- <summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* The mean of the resample, created using bootstrapping, could be the same, more than, or less than the mean of the original sample, depending on which values are randomly chosen during the resampling process. Bootstrapping involves randomly selecting observations from the original sample with replacement, so there's a chance the resample might have more of the higher values, more of the lower values, or a mix similar to the original sample. -->
+<!-- As for the standard deviation, it also depends on the composition of the resampled data. If the resample ends up with values that are close to each other (less variability), its standard deviation might be lower than the original sample. Conversely, if the resample has a wider spread of values, the standard deviation could be higher. However, over many bootstrap samples, the average standard deviation will tend to be close to the standard deviation of the original sample. -->
+<!-- </details><br> -->
+
 
 ### (d). Where will be bootstrap distribution be centered?  What shape do we expect it to have?
 
-<details>
-<summary><red>Click for answer</red></summary>
-*Answer:* It will be centered approximately at the sample mean of 100.1 and we expect it to be roughly bellshaped (it may be a bit skewed since the sample size of 10 is smallish).
-</details><br>
+<!-- <details> -->
+<!-- <summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* It will be centered approximately at the sample mean of 100.1 and we expect it to be roughly bellshaped (it may be a bit skewed since the sample size of 10 is smallish). -->
+<!-- </details><br> -->
+
+
+### (e). The function `boot` from `CarletonStats` R package creates a bootstrap distribution from the original sample of 10 textbook prices. What is the standard error of this bootrtrap distribution. Will this standard error be smaller or larger than the standard deviation of the original sample? Explain.
+
+
+
+```r
+library(CarletonStats)
+boot(prices)
+```
+
+```
+
+	** Bootstrap interval for mean 
+
+ Observed  prices : 100.1 
+ Mean of bootstrap distribution: 99.95379 
+ Standard error of bootstrap distribution: 14.5594 
+
+ Bootstrap percentile interval
+ 2.5% 97.5% 
+ 71.6 128.3 
+
+		*--------------*
+```
+
+<img src="Practice_Problems_8_files/figure-html/unnamed-chunk-3-1.png" width="100%" />
+
+
+<!-- <details> -->
+<!-- <summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* This standard error will typically be smaller than the standard deviation of the original sample because the standard error is estimating the variability of the sample mean, not individual observations. The sample mean tends to have less variability than individual data points, especially when averaged across multiple samples.  -->
+<!-- </details><br> -->
 
 ----------------------------------------------------------------
 
@@ -59,47 +104,48 @@ Go to the website at [Lock5Statkey](http://www.lock5stat.com/StatKey/).  Under t
 
 ### (a). Use the “Original Sample” pane to determine the shape of these 500 commuter distances, along with their mean and standard deviation. Write down these stats using correct notation.
 
-<details>
-<summary><red>Click for answer</red></summary>
-*Answer:*  The sample mean is $\bar{x} = 18.16$  and the sample standard deviation is $s = 13.798$.
-</details><br>
+<!-- <details> -->
+<!-- <summary><red>Click for answer</red></summary> -->
+<!-- *Answer:*  The sample mean is $\bar{x} = 18.16$  and the sample standard deviation is $s = 13.798$. -->
+<!-- </details><br> -->
 
 ### (b). Click “Generate 1 Sample” to create one bootstrap sample from this data. Explain how this sample was generated. Use the “Bootstrap Sample” pane to find the bootstrap statistic that was computed from this sample. What value is this bootstrap statistic? Repeat this a couple times.  
 
-<details>
-<summary><red>Click for answer</red></summary>
-*Answer:*  The bootstrap sample was obtained by resampling from the 500 observed commute distances with
-replacement. Basically we randomly select 500 distances from the data (with replacement).
+<!-- <details> -->
+<!-- <summary><red>Click for answer</red></summary> -->
+<!-- *Answer:*  The bootstrap sample was obtained by resampling from the 500 observed commute distances with -->
+<!-- replacement. Basically we randomly select 500 distances from the data (with replacement). -->
 
-The value of the bootstrap mean will vary. 
-</details><br>
+<!-- The value of the bootstrap mean will vary.  -->
+<!-- </details><br> -->
 
 ### (c). Now click the “Generate 1000 Samples” to get 1000 bootstrap sample means. Is the bootstrap distribution centered at the population or sample mean commute distance?
-<details>
-<summary><red>Click for answer</red></summary>
-*Answer:* The bootstrap distribution is always centered around the statistic that is being bootstrapped. Here it will be centered around the sample mean commute distance of about 18.16 miles. The population mean
-commute distance is unknown!
 
-<img src="data/atalanta.png" width="800"/>
-</details><br>
+<!-- <details> -->
+<!-- <summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* The bootstrap distribution is always centered around the statistic that is being bootstrapped. Here it will be centered around the sample mean commute distance of about 18.16 miles. The population mean -->
+<!-- commute distance is unknown! -->
+
+<!-- <img src="data/atalanta.png" width="800"/> -->
+<!-- </details><br> -->
 
 ### (d). What is the bootstrap SE for the sample mean?  
-<details>
-<summary><red>Click for answer</red></summary>
-*Answer:* The standard error from the bootstrap distribution is about 0.628.
-</details><br>
+<!-- <details> -->
+<!-- <summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* The standard error from the bootstrap distribution is about 0.628. -->
+<!-- </details><br> -->
 
 ### (e). Compute a 95% confidence interval for the average commute distance in metropolitan Atlanta.  
-<details>
-<summary><red>Click for answer</red></summary>
-*Answer:* The sample mean is $\bar{x} = 18.16$ and the standard error from the bootstrap distribution is about 0.618 so we compute the $95\%$ confidence interval using $18.16 \pm 2(0.628)$, giving an interval of 16.90 to 19.42 miles. 
-</details><br>
+<!-- <details> -->
+<!-- <summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* The sample mean is $\bar{x} = 18.16$ and the standard error from the bootstrap distribution is about 0.618 so we compute the $95\%$ confidence interval using $18.16 \pm 2(0.628)$, giving an interval of 16.90 to 19.42 miles.  -->
+<!-- </details><br> -->
 
 ### (f). Interpret your answer to (e) in context.  
-<details>
-<summary><red>Click for answer</red></summary>
-*Answer:* We are 95% confident that the average commuting distance in metropolitan Atlanta is between 16.90 and 19.42 miles. 
-</details><br>
+<!-- <details> -->
+<!-- <summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* We are 95% confident that the average commuting distance in metropolitan Atlanta is between 16.90 and 19.42 miles.  -->
+<!-- </details><br> -->
 
 ------------------------------------------------------------------------------------
 
@@ -167,56 +213,54 @@ and Republicans who believe in global warming, go to the website  at [Lock5Statk
 
 ### (a). Enter the data for this survey by clicking the “Edit Data” button. One big assumption we will make is that the sample sizes for both groups (Dems and Reps) were each 1000. Enter the Democrat data into the “Group 1” boxes (count of 790 and size of 1000) and the Republican data into the “Group 2” boxes (count of 380 and size of 1000). Verify that the sample proportions for the two groups are 79% and 38%. What is the difference in the two sample proportions? Use correct notation.
 
-<details>
-<summary><red>Click for answer</red></summary>
-*Answer:* The sample difference in proportions is $\hat{p}_{Dem} - \hat{p}_{Rep} = 0.79 - 0.38 = 0.41$
-</details><br>
+<!-- <details> -->
+<!-- <summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* The sample difference in proportions is $\hat{p}_{Dem} - \hat{p}_{Rep} = 0.79 - 0.38 = 0.41$ -->
+<!-- </details><br> -->
 
 ### (b). Generate 1 bootstrap sample. Explain how this sample was generated (give this some thought now that you have two samples of data). Use the “Bootstrap Sample” pane to find the bootstrap statistic that was computed from this sample. What value is this bootstrap statistic? Repeat this a couple times.
 
-<details>
-<summary><red>Click for answer</red></summary>
-*Answer:* One bootstrap sample was obtained from the group 1 sample (resampling the observed “believe/not believe” responses with replacement) and a separate bootstrap sample was obtained from the group 2 sample. The difference in the bootstrap proportions for each group was computed for the bootstrap difference statistic. 
+<!-- <details> -->
+<!-- <summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* One bootstrap sample was obtained from the group 1 sample (resampling the observed “believe/not believe” responses with replacement) and a separate bootstrap sample was obtained from the group 2 sample. The difference in the bootstrap proportions for each group was computed for the bootstrap difference statistic.  -->
 
-For individual bootstrap samples: answers will vary.
-</details><br>
+<!-- For individual bootstrap samples: answers will vary. -->
+<!-- </details><br> -->
 
 ### (c). Generate 1000 samples to get 1000 bootstrap sample proportion differences. Describe the shape and center of this bootstrap distribution
 
-<details>
-<summary><red>Click for answer</red></summary>
-*Answer:* The shape is symmetric around a center value of about 0.41 (the sample difference in proportions).
+<!-- <details> -->
+<!-- <summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* The shape is symmetric around a center value of about 0.41 (the sample difference in proportions). -->
 
-<img src="data/diffprop.png" width="800"/>
-</details><br>
+<!-- <img src="data/diffprop.png" width="800"/> -->
+<!-- </details><br> -->
 
 
 ### (d). Compute a 95% confidence interval for the difference between the proportion of Democrats and Republicans who believe in global warming.
 
-<details>
-<summary><red>Click for answer</red></summary>
-*Answer:* 
-The sample difference in proportions is $\hat{p}_{Dem} - \hat{p}_{Rep} = 0.79 - 0.38 = 0.41$, the standard error from the bootstrap distribution is 0.020 so we compute the 95% confidence interval using $0.41 \pm 2(0.020)$ giving an interval of 0.37 to 0.45.
-</details><br>
+<!-- <details> -->
+<!-- <summary><red>Click for answer</red></summary> -->
+<!-- *Answer:*  -->
+<!-- The sample difference in proportions is $\hat{p}_{Dem} - \hat{p}_{Rep} = 0.79 - 0.38 = 0.41$, the standard error from the bootstrap distribution is 0.020 so we compute the 95% confidence interval using $0.41 \pm 2(0.020)$ giving an interval of 0.37 to 0.45. -->
+<!-- </details><br> -->
 
 ### (e). Interpret your interval from part (d) in context and without using the word difference!! (i.e. give a directional claim that uses words like “more” or “less”)  
 
-<details>
-<summary><red>Click for answer</red></summary>
-*Answer:* We are 95% confident that the percent of Democrats who believe there is solid evidence of global warming is between 37 and 45 percentage points higher than the percent of Republicans who believe this.
-</details><br>
+<!-- <details> -->
+<!-- <summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* We are 95% confident that the percent of Democrats who believe there is solid evidence of global warming is between 37 and 45 percentage points higher than the percent of Republicans who believe this. -->
+<!-- </details><br> -->
 
 ### (f). To compute this interval, we assumed that 1000 people were sampled from each subpopulation (Dems and Reps). Suppose this sample size was just 500 people for each group. Would your 95% confidence interval be wider or shorter than the one computed in part (d)? Explain.
 
-<details>
-<summary><red>Click for answer</red></summary>
-*Answer:* With fewer people in each group, we will get a larger bootstrap SE and hence a larger margin of error for the CI. Remember that the SE of a sampling distribution gets smaller as the sample size increases, the same behavior is seen in a bootstrap distribution.
-</details><br>
-
+<!-- <details> -->
+<!-- <summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* With fewer people in each group, we will get a larger bootstrap SE and hence a larger margin of error for the CI. Remember that the SE of a sampling distribution gets smaller as the sample size increases, the same behavior is seen in a bootstrap distribution. -->
+<!-- </details><br> -->
 
 
 ---------------------------------------------------------------------------------------
-
 
 ## Problem 5: Credit Loan Data
 
@@ -246,7 +290,7 @@ ggplot(credit, aes(x = Good.Loan, y = Age.in.years)) +
   geom_boxplot()
 ```
 
-<img src="Practice_Problems_8_files/figure-html/unnamed-chunk-4-1.png" width="100%" />
+<img src="Practice_Problems_8_files/figure-html/unnamed-chunk-5-1.png" width="100%" />
 
 ```r
 # Mean age for each Good.Loan category using dplyr
@@ -290,17 +334,17 @@ boot(Age.in.years ~ Good.Loan, data=credit)
 	** Bootstrap interval for difference of mean 
 
  Observed difference of mean : BadLoan - GoodLoan = -2.26095 
- Mean of bootstrap distribution: -2.2477 
- Standard error of bootstrap distribution: 0.77037 
+ Mean of bootstrap distribution: -2.26596 
+ Standard error of bootstrap distribution: 0.78523 
 
  Bootstrap percentile interval
       2.5%      97.5% 
--3.7457262 -0.7246548 
+-3.8233452 -0.7242857 
 
 		*--------------*
 ```
 
-<img src="Practice_Problems_8_files/figure-html/unnamed-chunk-5-1.png" width="100%" />
+<img src="Practice_Problems_8_files/figure-html/unnamed-chunk-6-1.png" width="100%" />
 
 - Give the difference in sample mean ages reported by the output. Use correct notation.
 <details>
@@ -414,7 +458,7 @@ library(ggplot2)
 ggplot(credit, aes(x=Good.Loan, fill=Telephone)) + geom_bar(position="fill")
 ```
 
-<img src="Practice_Problems_8_files/figure-html/unnamed-chunk-9-1.png" width="100%" />
+<img src="Practice_Problems_8_files/figure-html/unnamed-chunk-10-1.png" width="100%" />
 
 - What proportion of bad loans have a phone number on the account?
 <details>
@@ -526,17 +570,17 @@ boot(Telephone_binary ~ Good.Loan, data=credit)
 	** Bootstrap interval for difference of mean 
 
  Observed difference of mean : BadLoan - GoodLoan = -0.03905 
- Mean of bootstrap distribution: -0.03955 
- Standard error of bootstrap distribution: 0.03343 
+ Mean of bootstrap distribution: -0.03851 
+ Standard error of bootstrap distribution: 0.03391 
 
  Bootstrap percentile interval
        2.5%       97.5% 
--0.10428571  0.02761905 
+-0.10523810  0.02857143 
 
 		*--------------*
 ```
 
-<img src="Practice_Problems_8_files/figure-html/unnamed-chunk-14-1.png" width="100%" />
+<img src="Practice_Problems_8_files/figure-html/unnamed-chunk-15-1.png" width="100%" />
 
 **Even though the language used in the output says "statistic" we are computing a difference in "proportions"!!**
 
