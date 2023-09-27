@@ -194,9 +194,16 @@ ggplot(data, aes(x = x)) +
 *Question:* The distribution should be centered at the population proportion. Verify that the distribution is centered around the population proportion, $p = 0.66$. The mean of the sampling distribution of the proportion is `r mean(sample.prop500)`. 
 <details>
 <summary><red>Click for answer</red></summary>
-*Answer:* 
+*Answer:* The center of the distribution is close to 0.66.
+
+```{r}
+mean(sample.prop500)
+```
+
+
 
 </details><br>
+
 *Question:* What is the standard deviation of this distribution? (Hint: use the 95% rule.) 
 <details>
 <summary><red>Click for answer</red></summary>
@@ -206,7 +213,7 @@ ggplot(data, aes(x = x)) +
 <details>
 <summary><red>Click for answer</red></summary>
 *Answer:*
-
+The standard error is close.
 
 </details><br>
 

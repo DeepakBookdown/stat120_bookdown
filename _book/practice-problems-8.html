@@ -85,7 +85,7 @@
 </h3>
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> The sample mean is <span class="math inline">\(\bar{x} = 100.1\)</span>
 </details><p><br></p>
-<div class="sourceCode" id="cb235"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb237"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">prices</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">132</span>,<span class="fl">87</span>, <span class="fl">185</span>, <span class="fl">52</span>, <span class="fl">23</span>, <span class="fl">147</span>, <span class="fl">125</span>, <span class="fl">93</span>, <span class="fl">85</span>, <span class="fl">72</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">prices</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] 100.1</code></pre>
@@ -101,10 +101,10 @@
 <h3>
 <span class="header-section-number">15.1.3</span> (c). We can easily instruct R to do this with a simple code provided below. Will the mean of this resample be same as the original sample? What about the standsrd deviation?<a class="anchor" aria-label="anchor" href="#c.-we-can-easily-instruct-r-to-do-this-with-a-simple-code-provided-below.-will-the-mean-of-this-resample-be-same-as-the-original-sample-what-about-the-standsrd-deviation"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb237"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb239"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">resample</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">prices</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="va">resample</span></span></code></pre></div>
-<pre><code> [1] 147  52  93 147  93  52 185 147 132  87</code></pre>
+<pre><code> [1] 125 185  85 125  85  85  87  23 147 147</code></pre>
 <p>Will the mean of this resample be same as the original sample? What about the standard deviation?</p>
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> The mean of the resample, created using bootstrapping, could be the same, more than, or less than the mean of the original sample, depending on which values are randomly chosen during the resampling process. Bootstrapping involves randomly selecting observations from the original sample with replacement, so there’s a chance the resample might have more of the higher values, more of the lower values, or a mix similar to the original sample.
 As for the standard deviation, it also depends on the composition of the resampled data. If the resample ends up with values that are close to each other (less variability), its standard deviation might be lower than the original sample. Conversely, if the resample has a wider spread of values, the standard deviation could be higher. However, over many bootstrap samples, the average standard deviation will tend to be close to the standard deviation of the original sample.
@@ -121,19 +121,19 @@ As for the standard deviation, it also depends on the composition of the resampl
 <h3>
 <span class="header-section-number">15.1.5</span> (e). The function <code>boot</code> from <code>CarletonStats</code> R package creates a bootstrap distribution from the original sample of 10 textbook prices. What is the standard error of this bootrtrap distribution. Will this standard error be smaller or larger than the standard deviation of the original sample? Explain.<a class="anchor" aria-label="anchor" href="#e.-the-function-boot-from-carletonstats-r-package-creates-a-bootstrap-distribution-from-the-original-sample-of-10-textbook-prices.-what-is-the-standard-error-of-this-bootrtrap-distribution.-will-this-standard-error-be-smaller-or-larger-than-the-standard-deviation-of-the-original-sample-explain."><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb239"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb241"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/aloy/CarletonStats">CarletonStats</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/CarletonStats/man/boot.html">boot</a></span><span class="op">(</span><span class="va">prices</span><span class="op">)</span></span></code></pre></div>
 <pre><code>
     ** Bootstrap interval for mean 
 
  Observed  prices : 100.1 
- Mean of bootstrap distribution: 100.1386 
- Standard error of bootstrap distribution: 14.11369 
+ Mean of bootstrap distribution: 100.2794 
+ Standard error of bootstrap distribution: 14.34837 
 
  Bootstrap percentile interval
- 2.5% 97.5% 
- 72.9 128.0 
+    2.5%    97.5% 
+ 72.5975 128.6000 
 
         *--------------*</code></pre>
 <div class="inline-figure"><img src="Practice_Problems_8_files/figure-html/unnamed-chunk-3-1.png" width="100%"></div>
@@ -317,7 +317,7 @@ and Republicans who believe in global warming, go to the website at <a href="htt
 <span class="header-section-number">15.5</span> Problem 5: Credit Loan Data<a class="anchor" aria-label="anchor" href="#problem-5-credit-loan-data"><i class="fas fa-link"></i></a>
 </h2>
 <p>The data set <code>CreditData.csv</code> contains records for 1000 loans that either defaulted (BadLoan) or did not default (GoodLoan). There are 300 loans that defaulted and 700 that did not. Let’s consider that the 300 loans that defaulted are random sample of loans that default and the 700 non-defaulting loans are a random sample of loans that don’t default.</p>
-<div class="sourceCode" id="cb241"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb243"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">credit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"https://raw.githubusercontent.com/deepbas/statdatasets/main/CreditData.csv"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">credit</span><span class="op">$</span><span class="va">Good.Loan</span><span class="op">)</span></span></code></pre></div>
 <pre><code>
@@ -328,12 +328,12 @@ and Republicans who believe in global warming, go to the website at <a href="htt
 <span class="header-section-number">15.5.1</span> (a) Visualize age vs. default<a class="anchor" aria-label="anchor" href="#a-visualize-age-vs.-default"><i class="fas fa-link"></i></a>
 </h3>
 <p>The variable <code>Age.in.years</code> gives the age of the person who received the loan. Construct a side-by-side boxplot of age by <code>Good.Loan</code> and compute the sample means for each group.</p>
-<div class="sourceCode" id="cb243"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb245"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Boxplot using ggplot2</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">credit</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Good.Loan</span>, y <span class="op">=</span> <span class="va">Age.in.years</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="Practice_Problems_8_files/figure-html/unnamed-chunk-5-1.png" width="100%"></div>
-<div class="sourceCode" id="cb244"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb246"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Mean age for each Good.Loan category using dplyr</span></span>
 <span><span class="va">credit</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">Good.Loan</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -359,19 +359,19 @@ and Republicans who believe in global warming, go to the website at <a href="htt
 <span class="header-section-number">15.5.1.1</span> (b) Bootstrap CI for a difference in means<a class="anchor" aria-label="anchor" href="#b-bootstrap-ci-for-a-difference-in-means"><i class="fas fa-link"></i></a>
 </h4>
 <p>The <code>boot(y ~ x, data=)</code> command generates 10000 bootstrap samples for the true difference in means of <code>y</code> for each of the two groups in <code>x</code>. The command is contained in the <code>CarletonStats</code> package. Here we use it to compute the bootstrap distribution for the difference in mean ages of the two default groups:</p>
-<div class="sourceCode" id="cb246"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb248"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/aloy/CarletonStats">CarletonStats</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/CarletonStats/man/boot.html">boot</a></span><span class="op">(</span><span class="va">Age.in.years</span> <span class="op">~</span> <span class="va">Good.Loan</span>, data<span class="op">=</span><span class="va">credit</span><span class="op">)</span></span></code></pre></div>
 <pre><code>
     ** Bootstrap interval for difference of mean 
 
  Observed difference of mean : BadLoan - GoodLoan = -2.26095 
- Mean of bootstrap distribution: -2.25794 
- Standard error of bootstrap distribution: 0.78126 
+ Mean of bootstrap distribution: -2.26335 
+ Standard error of bootstrap distribution: 0.77756 
 
  Bootstrap percentile interval
       2.5%      97.5% 
--3.7771667 -0.7289524 
+-3.7909643 -0.7489881 
 
         *--------------*</code></pre>
 <div class="inline-figure"><img src="Practice_Problems_8_files/figure-html/unnamed-chunk-6-1.png" width="100%"></div>
@@ -390,10 +390,10 @@ and Republicans who believe in global warming, go to the website at <a href="htt
 <p><span class="math display">\[
 -2.26095 \pm 2(0.77852) = (-3.81799,  -0.70391)
 \]</span></p>
-<div class="sourceCode" id="cb248"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb250"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="op">-</span><span class="fl">2.26095</span> <span class="op">-</span> <span class="fl">2</span><span class="op">*</span><span class="op">(</span><span class="fl">0.77852</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] -3.81799</code></pre>
-<div class="sourceCode" id="cb250"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb252"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="op">-</span><span class="fl">2.26095</span> <span class="op">+</span> <span class="fl">2</span><span class="op">*</span><span class="op">(</span><span class="fl">0.77852</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] -0.70391</code></pre>
 </details>
@@ -418,14 +418,14 @@ Interpret your percentile interval in context using a directional statement. Doe
 <span class="header-section-number">15.6.0.1</span> (a) Data clean up<a class="anchor" aria-label="anchor" href="#a-data-clean-up"><i class="fas fa-link"></i></a>
 </h4>
 <p>The entries in the <code>Telephone</code> column are either <code>none</code> or <code>yes, registered under the customers name</code>.</p>
-<div class="sourceCode" id="cb252"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb254"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">credit</span><span class="op">$</span><span class="va">Telephone</span><span class="op">)</span></span></code></pre></div>
 <pre><code>
                                     none 
                                      596 
 yes, registered under the customers name 
                                      404 </code></pre>
-<div class="sourceCode" id="cb254"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb256"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Modify the Telephone variable levels using dplyr and forcats</span></span>
 <span><span class="va">credit</span> <span class="op">&lt;-</span> <span class="va">credit</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>Telephone <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/recode.html">recode</a></span><span class="op">(</span><span class="va">Telephone</span>,</span>
@@ -442,13 +442,13 @@ yes, registered under the customers name
 <span class="header-section-number">15.6.0.2</span> (b) Phone rate by default type<a class="anchor" aria-label="anchor" href="#b-phone-rate-by-default-type"><i class="fas fa-link"></i></a>
 </h4>
 <p>Here we get the distribution of phone numbers (yes or no) by default type (good vs bad loan):</p>
-<div class="sourceCode" id="cb256"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb258"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/proportions.html">prop.table</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">credit</span><span class="op">$</span><span class="va">Good.Loan</span>, <span class="va">credit</span><span class="op">$</span><span class="va">Telephone</span><span class="op">)</span>,<span class="fl">1</span><span class="op">)</span></span></code></pre></div>
 <pre><code>          
                   no       yes
   BadLoan  0.6233333 0.3766667
   GoodLoan 0.5842857 0.4157143</code></pre>
-<div class="sourceCode" id="cb258"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb260"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">credit</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Good.Loan</span>, fill<span class="op">=</span><span class="va">Telephone</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>position<span class="op">=</span><span class="st">"fill"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="Practice_Problems_8_files/figure-html/unnamed-chunk-10-1.png" width="100%"></div>
@@ -465,7 +465,7 @@ yes, registered under the customers name
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> Here we get <span class="math inline">\(\hat{p}_{good} - \hat{p}_{bad} =0.4157143 - 0.3766667 = 0.0390476\)</span>.</details>
 </li>
 </ul>
-<div class="sourceCode" id="cb259"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb261"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fl">0.4157143</span> <span class="op">-</span> <span class="fl">0.3766667</span></span></code></pre></div>
 <pre><code>[1] 0.0390476</code></pre>
 
@@ -475,7 +475,7 @@ yes, registered under the customers name
 <span class="header-section-number">15.6.0.3</span> (c) Using the <code>boot</code> command with a categorical response<a class="anchor" aria-label="anchor" href="#c-using-the-boot-command-with-a-categorical-response"><i class="fas fa-link"></i></a>
 </h4>
 <p>In order to get the bootstrap distribution for the sample difference in proportions, we need to recode the “response” variable <code>Telephone</code> to have a 1 indicating a “yes” response and 0 indicating a “no” response. This is done with an <code>ifelse</code> command:</p>
-<div class="sourceCode" id="cb261"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb263"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">credit</span><span class="op">$</span><span class="va">Telephone_binary</span><span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">credit</span><span class="op">$</span><span class="va">Telephone</span> <span class="op">==</span> <span class="st">"yes"</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">credit</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Telephone"</span>, <span class="st">"Telephone_binary"</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
 <pre><code>  Telephone Telephone_binary
@@ -487,21 +487,21 @@ yes, registered under the customers name
 6       yes                1</code></pre>
 <p>which reads “if <code>Telephone</code> equals <code>yes</code> than assign a <code>1</code>, else assign a 0”. These 0’s and 1’s are assigned to a variable called <code>Telephone_binary</code> that is now in your data frame (checked this with the <code>View(credit)</code> command).</p>
 <p>Check your work to make sure <code>Telephone_binary</code> records what you want it to record</p>
-<div class="sourceCode" id="cb263"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb265"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">credit</span><span class="op">$</span><span class="va">Telephone</span><span class="op">)</span></span></code></pre></div>
 <pre><code>
  no yes 
 596 404 </code></pre>
-<div class="sourceCode" id="cb265"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb267"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">credit</span><span class="op">$</span><span class="va">Telephone_binary</span><span class="op">)</span></span></code></pre></div>
 <pre><code>
   0   1 
 596 404 </code></pre>
 <p>The mean of the 0/1 coded variable computes the proportion of “yes” responses:</p>
-<div class="sourceCode" id="cb267"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb269"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">credit</span><span class="op">$</span><span class="va">Telephone_binary</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] 0.404</code></pre>
-<div class="sourceCode" id="cb269"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb271"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fl">404</span><span class="op">/</span><span class="fl">1000</span>  <span class="co"># proportion of yes</span></span></code></pre></div>
 <pre><code>[1] 0.404</code></pre>
 <p>Note: All examples in your <strong>Lab Manual</strong> already have this 0/1 recoding done in the lab manual data sets. But I thought you might want to learn how to do this recoding in case you plan to use this command with other, non-lab manual data sets!</p>
@@ -511,18 +511,18 @@ yes, registered under the customers name
 <span class="header-section-number">15.6.0.4</span> (d) 95% confidence interval for the difference in phone<a class="anchor" aria-label="anchor" href="#d-95-confidence-interval-for-the-difference-in-phone"><i class="fas fa-link"></i></a>
 </h4>
 <p>We can now use the 0/1 version of telephone in the <code>boot</code> command (like example 1) to compute a 95% bootstrap confidence interval for the difference in the population proportion of good loans and bad loans that have a phone number.</p>
-<div class="sourceCode" id="cb271"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb273"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/CarletonStats/man/boot.html">boot</a></span><span class="op">(</span><span class="va">Telephone_binary</span> <span class="op">~</span> <span class="va">Good.Loan</span>, data<span class="op">=</span><span class="va">credit</span><span class="op">)</span></span></code></pre></div>
 <pre><code>
     ** Bootstrap interval for difference of mean 
 
  Observed difference of mean : BadLoan - GoodLoan = -0.03905 
- Mean of bootstrap distribution: -0.03933 
- Standard error of bootstrap distribution: 0.03368 
+ Mean of bootstrap distribution: -0.03904 
+ Standard error of bootstrap distribution: 0.03377 
 
  Bootstrap percentile interval
        2.5%       97.5% 
--0.10571429  0.02666667 
+-0.10476190  0.02714286 
 
         *--------------*</code></pre>
 <div class="inline-figure"><img src="Practice_Problems_8_files/figure-html/unnamed-chunk-15-1.png" width="100%"></div>
@@ -536,10 +536,10 @@ yes, registered under the customers name
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> The SE method gives an interval for Bad <span class="math inline">\(-\)</span> Good of -0.107 to 0.028 which is very similar to the percentile interval.</details>
 </li>
 </ul>
-<div class="sourceCode" id="cb273"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb275"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="op">-</span><span class="fl">0.03905</span> <span class="op">-</span> <span class="fl">2</span><span class="op">*</span> <span class="fl">0.03373</span> </span></code></pre></div>
 <pre><code>[1] -0.10651</code></pre>
-<div class="sourceCode" id="cb275"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb277"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="op">-</span><span class="fl">0.03905</span> <span class="op">+</span> <span class="fl">2</span><span class="op">*</span> <span class="fl">0.</span></span></code></pre></div>
 <pre><code>[1] -0.03905</code></pre>
 

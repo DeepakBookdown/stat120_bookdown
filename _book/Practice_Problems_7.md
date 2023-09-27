@@ -83,7 +83,7 @@ The bootstrap distribution from 500 bootstrap means from the above sample is:
 <summary><red>Click for answer</red></summary>
 *Answer:* About 1.25, it looks like most of the bootstrapped sample means are between 18 to 23 so 2 standard deviations is about 2.5. This makes the SD about 1.25.
 </details><br>
-*Question:* The standard deviation of sampling distribution has a separate name. It is called the **Standard Error**. The standard deviation of this distribution is 1.1068291.
+*Question:* The standard deviation of sampling distribution has a separate name. It is called the **Standard Error**. The standard deviation of this distribution is 1.0720838.
 <details>
 <summary><red>Click for answer</red></summary>
 *Answer:* It's close.
@@ -135,9 +135,21 @@ Continuing on, we can generate 500 random samples of size $n= 100$ and plot the 
 *Question:* The distribution should be centered at the population proportion. Verify that the distribution is centered around the population proportion, $p = 0.66$. The mean of the sampling distribution of the proportion is 0.66298. 
 <details>
 <summary><red>Click for answer</red></summary>
-*Answer:* 
+*Answer:* The center of the distribution is close to 0.66.
+
+
+```r
+mean(sample.prop500)
+```
+
+```
+[1] 0.66298
+```
+
+
 
 </details><br>
+
 *Question:* What is the standard deviation of this distribution? (Hint: use the 95% rule.) 
 <details>
 <summary><red>Click for answer</red></summary>
@@ -147,13 +159,13 @@ Continuing on, we can generate 500 random samples of size $n= 100$ and plot the 
 <details>
 <summary><red>Click for answer</red></summary>
 *Answer:*
-
+The standard error is close.
 
 </details><br>
 
 ### (d) Now, let's repeat part(c) with sample size 20 instead of 100 by generating and plotting 500 sample proportions.
 
-<img src="Practice_Problems_7_files/figure-html/unnamed-chunk-8-1.png" width="100%" />
+<img src="Practice_Problems_7_files/figure-html/unnamed-chunk-9-1.png" width="100%" />
 
 
 *Question:*  How has the sampling distribution changed? (Shape? Center? Variability?)
@@ -182,7 +194,7 @@ sd(sample.prop500_size10)
 
 ### (d) Now suppose the population proportion is $p=0.90$ instead of $p=0.66$ in part (e). Keep `n=20`. 
 
-<img src="Practice_Problems_7_files/figure-html/unnamed-chunk-10-1.png" width="100%" />
+<img src="Practice_Problems_7_files/figure-html/unnamed-chunk-11-1.png" width="100%" />
 
 *Question:* How has the sampling distribution changed? (Shape? Center? Variability?)
 <details>
