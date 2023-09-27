@@ -8,10 +8,10 @@ $$ \$132 \quad \$87 \quad \$185 \quad \$52 \quad \$23 \quad \$147 \quad \$125 \q
 
 ### (a). What is the sample mean? Verify using r-code.
 
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:*  The sample mean is $\bar{x} = 100.1$ -->
-<!-- </details><br> -->
+<details>
+<summary><red>Click for answer</red></summary>
+*Answer:*  The sample mean is $\bar{x} = 100.1$
+</details><br>
 
 
 
@@ -28,10 +28,10 @@ mean(prices)
 
 ### (b).  Describe carefully how we could use cards to create one bootstrap statistic from this sample.  Be specific.
 
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* We use 10 cards and write the 10 sample values on the cards. We then mix them up and draw one and record the value on it and put it back. Mix them up again, draw another, record the value, and put it back. Do this 10 times to get a “with replacement” sample of size 10. Then compute the sample mean of this bootstrap sample.  -->
-<!-- </details><br> -->
+<details>
+<summary><red>Click for answer</red></summary>
+*Answer:* We use 10 cards and write the 10 sample values on the cards. We then mix them up and draw one and record the value on it and put it back. Mix them up again, draw another, record the value, and put it back. Do this 10 times to get a “with replacement” sample of size 10. Then compute the sample mean of this bootstrap sample.
+</details><br>
 
 
 ### (c). We can easily instruct R to do this with a simple code provided below. Will the mean of this resample be same as the original sample? What about the standsrd deviation?
@@ -43,25 +43,25 @@ resample
 ```
 
 ```
- [1] 147 132  23 147  72 185  87 147 132 125
+ [1] 147  52  93 147  93  52 185 147 132  87
 ```
 
 
 Will the mean of this resample be same as the original sample? What about the standard deviation?
 
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* The mean of the resample, created using bootstrapping, could be the same, more than, or less than the mean of the original sample, depending on which values are randomly chosen during the resampling process. Bootstrapping involves randomly selecting observations from the original sample with replacement, so there's a chance the resample might have more of the higher values, more of the lower values, or a mix similar to the original sample. -->
-<!-- As for the standard deviation, it also depends on the composition of the resampled data. If the resample ends up with values that are close to each other (less variability), its standard deviation might be lower than the original sample. Conversely, if the resample has a wider spread of values, the standard deviation could be higher. However, over many bootstrap samples, the average standard deviation will tend to be close to the standard deviation of the original sample. -->
-<!-- </details><br> -->
+<details>
+<summary><red>Click for answer</red></summary>
+*Answer:* The mean of the resample, created using bootstrapping, could be the same, more than, or less than the mean of the original sample, depending on which values are randomly chosen during the resampling process. Bootstrapping involves randomly selecting observations from the original sample with replacement, so there's a chance the resample might have more of the higher values, more of the lower values, or a mix similar to the original sample.
+As for the standard deviation, it also depends on the composition of the resampled data. If the resample ends up with values that are close to each other (less variability), its standard deviation might be lower than the original sample. Conversely, if the resample has a wider spread of values, the standard deviation could be higher. However, over many bootstrap samples, the average standard deviation will tend to be close to the standard deviation of the original sample.
+</details><br>
 
 
 ### (d). Where will be bootstrap distribution be centered?  What shape do we expect it to have?
 
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* It will be centered approximately at the sample mean of 100.1 and we expect it to be roughly bellshaped (it may be a bit skewed since the sample size of 10 is smallish). -->
-<!-- </details><br> -->
+<details>
+<summary><red>Click for answer</red></summary>
+*Answer:* It will be centered approximately at the sample mean of 100.1 and we expect it to be roughly bellshaped (it may be a bit skewed since the sample size of 10 is smallish).
+</details><br>
 
 
 ### (e). The function `boot` from `CarletonStats` R package creates a bootstrap distribution from the original sample of 10 textbook prices. What is the standard error of this bootrtrap distribution. Will this standard error be smaller or larger than the standard deviation of the original sample? Explain.
@@ -78,12 +78,12 @@ boot(prices)
 	** Bootstrap interval for mean 
 
  Observed  prices : 100.1 
- Mean of bootstrap distribution: 99.95379 
- Standard error of bootstrap distribution: 14.5594 
+ Mean of bootstrap distribution: 100.1386 
+ Standard error of bootstrap distribution: 14.11369 
 
  Bootstrap percentile interval
  2.5% 97.5% 
- 71.6 128.3 
+ 72.9 128.0 
 
 		*--------------*
 ```
@@ -91,10 +91,10 @@ boot(prices)
 <img src="Practice_Problems_8_files/figure-html/unnamed-chunk-3-1.png" width="100%" />
 
 
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* This standard error will typically be smaller than the standard deviation of the original sample because the standard error is estimating the variability of the sample mean, not individual observations. The sample mean tends to have less variability than individual data points, especially when averaged across multiple samples.  -->
-<!-- </details><br> -->
+<details>
+<summary><red>Click for answer</red></summary>
+*Answer:* This standard error will typically be smaller than the standard deviation of the original sample because the standard error is estimating the variability of the sample mean, not individual observations. The sample mean tends to have less variability than individual data points, especially when averaged across multiple samples.
+</details><br>
 
 ----------------------------------------------------------------
 
@@ -104,48 +104,48 @@ Go to the website at [Lock5Statkey](http://www.lock5stat.com/StatKey/).  Under t
 
 ### (a). Use the “Original Sample” pane to determine the shape of these 500 commuter distances, along with their mean and standard deviation. Write down these stats using correct notation.
 
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:*  The sample mean is $\bar{x} = 18.16$  and the sample standard deviation is $s = 13.798$. -->
-<!-- </details><br> -->
+<details>
+<summary><red>Click for answer</red></summary>
+*Answer:*  The sample mean is $\bar{x} = 18.16$  and the sample standard deviation is $s = 13.798$.
+</details><br>
 
 ### (b). Click “Generate 1 Sample” to create one bootstrap sample from this data. Explain how this sample was generated. Use the “Bootstrap Sample” pane to find the bootstrap statistic that was computed from this sample. What value is this bootstrap statistic? Repeat this a couple times.  
 
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:*  The bootstrap sample was obtained by resampling from the 500 observed commute distances with -->
-<!-- replacement. Basically we randomly select 500 distances from the data (with replacement). -->
+<details>
+<summary><red>Click for answer</red></summary>
+*Answer:*  The bootstrap sample was obtained by resampling from the 500 observed commute distances with
+replacement. Basically we randomly select 500 distances from the data (with replacement).
 
-<!-- The value of the bootstrap mean will vary.  -->
-<!-- </details><br> -->
+The value of the bootstrap mean will vary.
+</details><br>
 
 ### (c). Now click the “Generate 1000 Samples” to get 1000 bootstrap sample means. Is the bootstrap distribution centered at the population or sample mean commute distance?
 
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* The bootstrap distribution is always centered around the statistic that is being bootstrapped. Here it will be centered around the sample mean commute distance of about 18.16 miles. The population mean -->
-<!-- commute distance is unknown! -->
+<details>
+<summary><red>Click for answer</red></summary>
+*Answer:* The bootstrap distribution is always centered around the statistic that is being bootstrapped. Here it will be centered around the sample mean commute distance of about 18.16 miles. The population mean
+commute distance is unknown!
 
-<!-- <img src="data/atalanta.png" width="800"/> -->
-<!-- </details><br> -->
+<img src="data/atalanta.png" width="800"/>
+</details><br>
 
 ### (d). What is the bootstrap SE for the sample mean?  
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* The standard error from the bootstrap distribution is about 0.628. -->
-<!-- </details><br> -->
+<details>
+<summary><red>Click for answer</red></summary>
+*Answer:* The standard error from the bootstrap distribution is about 0.628.
+</details><br>
 
 ### (e). Compute a 95% confidence interval for the average commute distance in metropolitan Atlanta.  
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* The sample mean is $\bar{x} = 18.16$ and the standard error from the bootstrap distribution is about 0.618 so we compute the $95\%$ confidence interval using $18.16 \pm 2(0.628)$, giving an interval of 16.90 to 19.42 miles.  -->
-<!-- </details><br> -->
+<details>
+<summary><red>Click for answer</red></summary>
+*Answer:* The sample mean is $\bar{x} = 18.16$ and the standard error from the bootstrap distribution is about 0.618 so we compute the $95\%$ confidence interval using $18.16 \pm 2(0.628)$, giving an interval of 16.90 to 19.42 miles.
+</details><br>
 
 ### (f). Interpret your answer to (e) in context.  
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* We are 95% confident that the average commuting distance in metropolitan Atlanta is between 16.90 and 19.42 miles.  -->
-<!-- </details><br> -->
+<details>
+<summary><red>Click for answer</red></summary>
+*Answer:* We are 95% confident that the average commuting distance in metropolitan Atlanta is between 16.90 and 19.42 miles.
+</details><br>
 
 ------------------------------------------------------------------------------------
 
@@ -334,12 +334,12 @@ boot(Age.in.years ~ Good.Loan, data=credit)
 	** Bootstrap interval for difference of mean 
 
  Observed difference of mean : BadLoan - GoodLoan = -2.26095 
- Mean of bootstrap distribution: -2.26596 
- Standard error of bootstrap distribution: 0.78523 
+ Mean of bootstrap distribution: -2.25794 
+ Standard error of bootstrap distribution: 0.78126 
 
  Bootstrap percentile interval
       2.5%      97.5% 
--3.8233452 -0.7242857 
+-3.7771667 -0.7289524 
 
 		*--------------*
 ```
@@ -570,12 +570,12 @@ boot(Telephone_binary ~ Good.Loan, data=credit)
 	** Bootstrap interval for difference of mean 
 
  Observed difference of mean : BadLoan - GoodLoan = -0.03905 
- Mean of bootstrap distribution: -0.03851 
- Standard error of bootstrap distribution: 0.03391 
+ Mean of bootstrap distribution: -0.03933 
+ Standard error of bootstrap distribution: 0.03368 
 
  Bootstrap percentile interval
        2.5%       97.5% 
--0.10523810  0.02857143 
+-0.10571429  0.02666667 
 
 		*--------------*
 ```
