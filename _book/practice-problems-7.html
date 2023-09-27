@@ -81,32 +81,26 @@
 <h3>
 <span class="header-section-number">14.1.1</span> a). Find the relevant proportion and give the correct notation with it.<a class="anchor" aria-label="anchor" href="#a.-find-the-relevant-proportion-and-give-the-correct-notation-with-it."><i class="fas fa-link"></i></a>
 </h3>
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* $\hat{p} = 1329/2253$ -->
-<!-- ```{r} -->
-<!-- p.hat <- 1329/2253 -->
-<!-- p.hat -->
-<!-- ``` -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> <span class="math inline">\(\hat{p} = 1329/2253\)</span></p>
+<div class="sourceCode" id="cb222"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">p.hat</span> <span class="op">&lt;-</span> <span class="fl">1329</span><span class="op">/</span><span class="fl">2253</span></span>
+<span><span class="va">p.hat</span></span></code></pre></div>
+<pre><code>[1] 0.5898802</code></pre>
+</details><p><br></p>
 </div>
 <div id="b.-is-your-answer-to-part-a-a-parameter-or-a-statistic" class="section level3" number="14.1.2">
 <h3>
 <span class="header-section-number">14.1.2</span> b). Is your answer to part (a) a parameter or a statistic?<a class="anchor" aria-label="anchor" href="#b.-is-your-answer-to-part-a-a-parameter-or-a-statistic"><i class="fas fa-link"></i></a>
 </h3>
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* Statistic -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> Statistic
+</details><p><br></p>
 </div>
 <div id="c.-give-notation-for-and-define-the-population-parameter-that-we-estimate-using-the-result-of-part-a." class="section level3" number="14.1.3">
 <h3>
 <span class="header-section-number">14.1.3</span> c). Give notation for and define the population parameter that we estimate using the result of part (a).<a class="anchor" aria-label="anchor" href="#c.-give-notation-for-and-define-the-population-parameter-that-we-estimate-using-the-result-of-part-a."><i class="fas fa-link"></i></a>
 </h3>
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* p = the proportion of all US adults that would report that they use an Internet search engine every day -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> p = the proportion of all US adults that would report that they use an Internet search engine every day
+</details><p><br></p>
 </div>
 </div>
 <div id="problem-2-bootstrapping-mean" class="section level2" number="14.2">
@@ -114,58 +108,42 @@
 <span class="header-section-number">14.2</span> Problem 2: Bootstrapping mean<a class="anchor" aria-label="anchor" href="#problem-2-bootstrapping-mean"><i class="fas fa-link"></i></a>
 </h2>
 <p>Let’s visualize the distribution of the sample mean. The following is a vector X containing the <span class="math inline">\(6\)</span> data points:</p>
-<div class="sourceCode" id="cb222"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb224"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">X</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">20</span>, <span class="fl">24</span>, <span class="fl">19</span>, <span class="fl">23</span>, <span class="fl">22</span>, <span class="fl">16</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">X</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] 20.66667</code></pre>
 <p>The bootstrap distribution from 500 bootstrap means from the above sample is:</p>
-<div class="inline-figure"><img src="Practice_Problems_7_files/figure-html/unnamed-chunk-2-1.png" width="100%"></div>
-<p><em>Question:</em> What does each dot represent?
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* One sample mean from the bootstrapped sample. -->
-<!-- </details><br> -->
-<em>Question:</em> What is the shape of your sampling distribution?
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* Roughly symmetric. -->
-<!-- </details><br> -->
-<em>Question:</em> Where is your distribution centered?
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* About 20.5 -->
-<!-- </details><br> --></p>
-<p><em>Question:</em> The distribution should be centered at the original sample mean. Do we know the population mean? If not, what does it tell us about the center of this distribution.
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* It is close to the original sample mean. We do not know the population mean, so the bootstrap distribution will carry the bias of the original sample mean. --></p>
-<!-- </details><br> -->
-<p><em>Question:</em> What is the standard deviation of this distribution? (Hint: use the 95% rule.)
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* About 1.25, it looks like most of the bootstrapped sample means are between 18 to 23 so 2 standard deviations is about 2.5. This makes the SD about 1.25.  -->
-<!-- </details><br> -->
-<em>Question:</em> The standard deviation of sampling distribution has a separate name. It is called the <strong>Standard Error</strong>. The standard deviation of this distribution is 1.103575.
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* It's close. --></p>
-<!-- </details><br> -->
+<div class="inline-figure"><img src="Practice_Problems_7_files/figure-html/unnamed-chunk-3-1.png" width="100%"></div>
+<em>Question:</em> What does each dot represent?
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> One sample mean from the bootstrapped sample.
+</details><br><em>Question:</em> What is the shape of your sampling distribution?
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> Roughly symmetric.
+</details><br><em>Question:</em> Where is your distribution centered?
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> About 20.5
+</details><p><br></p>
+<em>Question:</em> The distribution should be centered at the original sample mean. Do we know the population mean? If not, what does it tell us about the center of this distribution.
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> It is close to the original sample mean. We do not know the population mean, so the bootstrap distribution will carry the bias of the original sample mean.
+</details><br><em>Question:</em> What is the standard deviation of this distribution? (Hint: use the 95% rule.)
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> About 1.25, it looks like most of the bootstrapped sample means are between 18 to 23 so 2 standard deviations is about 2.5. This makes the SD about 1.25.
+</details><br><em>Question:</em> The standard deviation of sampling distribution has a separate name. It is called the <strong>Standard Error</strong>. The standard deviation of this distribution is 1.0139036.
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> It’s close.</p>
+</details><p><br></p>
 </div>
 <div id="problem-3-simulation-of-a-sample-proportion" class="section level2" number="14.3">
 <h2>
 <span class="header-section-number">14.3</span> Problem 3: Simulation of a Sample Proportion<a class="anchor" aria-label="anchor" href="#problem-3-simulation-of-a-sample-proportion"><i class="fas fa-link"></i></a>
 </h2>
 <p>According to a PEW survey, <span class="math inline">\(66\%\)</span> of U.S. adult citizens casted a ballot in the 2020 election. Suppose we take a random sample of <span class="math inline">\(n=100\)</span> eligible U.S. voters and computed the sample proportion who voted.</p>
-<div class="sourceCode" id="cb224"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb226"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Define parameters</span></span>
 <span><span class="va">pop.prop</span> <span class="op">&lt;-</span> <span class="fl">.66</span> <span class="co"># Population proportion</span></span>
 <span><span class="va">n.size</span> <span class="op">&lt;-</span> <span class="fl">100</span>  <span class="co"># sample size</span></span></code></pre></div>
 <p>Let’s plot this sample proportion in R.</p>
-<div class="inline-figure"><img src="Practice_Problems_7_files/figure-html/unnamed-chunk-4-1.png" width="100%"></div>
-<p>Similarly, we can generate 5 random samples of size <span class="math inline">\(n= 100\)</span> and plot the sample proportions.</p>
 <div class="inline-figure"><img src="Practice_Problems_7_files/figure-html/unnamed-chunk-5-1.png" width="100%"></div>
-<p>Continuing on, we can generate 500 random samples of size <span class="math inline">\(n= 100\)</span> and plot the sample proportions.</p>
+<p>Similarly, we can generate 5 random samples of size <span class="math inline">\(n= 100\)</span> and plot the sample proportions.</p>
 <div class="inline-figure"><img src="Practice_Problems_7_files/figure-html/unnamed-chunk-6-1.png" width="100%"></div>
+<p>Continuing on, we can generate 500 random samples of size <span class="math inline">\(n= 100\)</span> and plot the sample proportions.</p>
+<div class="inline-figure"><img src="Practice_Problems_7_files/figure-html/unnamed-chunk-7-1.png" width="100%"></div>
 <em>Question:</em> What does each dot represent?
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> One sample proportion from a sample of n=100 eligible voters.
 </details><br><em>Question:</em> What is the shape of your sampling distribution?
@@ -183,13 +161,13 @@
 <h3>
 <span class="header-section-number">14.3.1</span> (d) Now, let’s repeat part(c) with sample size 20 instead of 100 by generating and plotting 500 sample proportions.<a class="anchor" aria-label="anchor" href="#d-now-lets-repeat-partc-with-sample-size-20-instead-of-100-by-generating-and-plotting-500-sample-proportions."><i class="fas fa-link"></i></a>
 </h3>
-<div class="inline-figure"><img src="Practice_Problems_7_files/figure-html/unnamed-chunk-7-1.png" width="100%"></div>
+<div class="inline-figure"><img src="Practice_Problems_7_files/figure-html/unnamed-chunk-8-1.png" width="100%"></div>
 <em>Question:</em> How has the sampling distribution changed? (Shape? Center? Variability?)
 <details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The shape is slightly left skewed, still centered at 0.66 but with more variability that before (SD of about 0.10). This distribution is more discrete looking because there are just a few sample proportions possible with n=20 (e.g. 20/20, 19/20, 18/20, etc).</p>
-<div class="sourceCode" id="cb225"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb227"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">sample.prop500_size10</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] 0.6603</code></pre>
-<div class="sourceCode" id="cb227"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb229"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">sample.prop500_size10</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] 0.1024202</code></pre>
 </details><p><br></p>
@@ -198,13 +176,13 @@
 <h3>
 <span class="header-section-number">14.3.2</span> (d) Now suppose the population proportion is <span class="math inline">\(p=0.90\)</span> instead of <span class="math inline">\(p=0.66\)</span> in part (e). Keep <code>n=20</code>.<a class="anchor" aria-label="anchor" href="#d-now-suppose-the-population-proportion-is-p0.90-instead-of-p0.66-in-part-e.-keep-n20."><i class="fas fa-link"></i></a>
 </h3>
-<div class="inline-figure"><img src="Practice_Problems_7_files/figure-html/unnamed-chunk-9-1.png" width="100%"></div>
+<div class="inline-figure"><img src="Practice_Problems_7_files/figure-html/unnamed-chunk-10-1.png" width="100%"></div>
 <em>Question:</em> How has the sampling distribution changed? (Shape? Center? Variability?)
 <details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The shape is much more left skewed than when p=0.66. Center is around 0.90 and SD is around 0.07. Note that increasing the population proportion closer to 1 results in a decrease in the SD because most samples give proportion near 1.</p>
-<div class="sourceCode" id="cb229"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb231"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">sample.prop500_size10_large_p</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] 0.8989</code></pre>
-<div class="sourceCode" id="cb231"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb233"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">sample.prop500_size10_large_p</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] 0.06412499</code></pre>
 </details><p><br></p>
@@ -250,7 +228,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-09-25.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-09-26.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
