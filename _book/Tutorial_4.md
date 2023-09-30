@@ -1,0 +1,77 @@
+
+# Tutorial 4: LaTeX Equations in RMarkdown
+
+
+## Welcome to LaTeX Mastery! 
+
+Hey there, aspiring LaTeX pros! Ready to make your equations look as sleek as a Tesla? Let's get started!
+
+## Inline Equations
+
+For quick math snippets, use single `$` like `$y = a + b * x$`.
+
+Example: The equation $y = a + b * x$ represents a linear model.
+
+## Display-Style Equations
+
+To give your equation the spotlight, encase it with double `$$`:
+
+```latex
+$$
+E = mc^2
+$$
+```
+
+## Mathematical Symbols
+
+### Summation and Indices
+
+In stats, you often sum things up: 
+- `$$ \sum_{i=1}^{n} x_i $$` 
+
+### Fractions
+
+- Simple fraction: `$$ \frac{a}{b} $$`
+
+### Greek Letters and Subscripts
+
+Common in hypothesis testing and statistical theory:
+
+- Mean of a group: `$$ \mu_Y $$`, `$$ \mu_N $$`
+- Sample means: `$$ \bar{x}_N $$`, `$$ \bar{x}_Y $$`
+- Proportions: `$$ \hat{p} $$`
+  
+## Matrices and Vectors
+
+Matrices are a breeze in LaTeX:
+
+```latex
+\begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix}
+```
+
+## Hypothesis Testing
+
+In hypothesis testing, you might define null and alternative hypotheses:
+
+```latex
+\begin{align*}
+\begin{array}{ll}
+H_0: & \mu_N=\mu_Y \\
+H_a: & \mu_N>\mu_Y
+\end{array}
+\end{align*}
+```
+
+## More on Statistical Symbols
+
+- Standard error: `$$ SE $$`
+- Population proportion: `$$ p $$`
+- Margin of error: `$$ \pm $$`
+- Confidence level: `$$ 95\% $$`
+
+That's all for now! Ready to LaTeX like a pro? 
+
+[link to template: [Download Template Here](templates/Modified_LaTeX_Equations_Tutorial.Rmd)]

@@ -43,7 +43,7 @@ resample
 ```
 
 ```
- [1] 125 185  85 125  85  85  87  23 147 147
+ [1] 132  72 125 125 147  85  93 132  72 147
 ```
 
 
@@ -78,12 +78,12 @@ boot(prices)
 	** Bootstrap interval for mean 
 
  Observed  prices : 100.1 
- Mean of bootstrap distribution: 100.2794 
- Standard error of bootstrap distribution: 14.34837 
+ Mean of bootstrap distribution: 100.1123 
+ Standard error of bootstrap distribution: 14.27235 
 
  Bootstrap percentile interval
-    2.5%    97.5% 
- 72.5975 128.6000 
+ 2.5% 97.5% 
+ 72.7 128.7 
 
 		*--------------*
 ```
@@ -334,12 +334,12 @@ boot(Age.in.years ~ Good.Loan, data=credit)
 	** Bootstrap interval for difference of mean 
 
  Observed difference of mean : BadLoan - GoodLoan = -2.26095 
- Mean of bootstrap distribution: -2.26335 
- Standard error of bootstrap distribution: 0.77756 
+ Mean of bootstrap distribution: -2.2602 
+ Standard error of bootstrap distribution: 0.77652 
 
  Bootstrap percentile interval
       2.5%      97.5% 
--3.7909643 -0.7489881 
+-3.7843095 -0.7494524 
 
 		*--------------*
 ```
@@ -570,12 +570,12 @@ boot(Telephone_binary ~ Good.Loan, data=credit)
 	** Bootstrap interval for difference of mean 
 
  Observed difference of mean : BadLoan - GoodLoan = -0.03905 
- Mean of bootstrap distribution: -0.03904 
- Standard error of bootstrap distribution: 0.03377 
+ Mean of bootstrap distribution: -0.03999 
+ Standard error of bootstrap distribution: 0.03393 
 
  Bootstrap percentile interval
        2.5%       97.5% 
--0.10476190  0.02714286 
+-0.10572619  0.02714286 
 
 		*--------------*
 ```
