@@ -170,3 +170,9 @@ b-phone-rate-by-default-type
 c-using-the-boot-command-with-a-categorical-response
 d-95-confidence-interval-for-the-difference-in-phone
 e-interpret
+practice-problems-9
+practice-problems-10
+problem-1-a-muslim-president
+problem-2-biomass-in-tropical-forests
+problem-3-change-in-gun-ownership
+problem-4-interpreting-a-confidence-interval
