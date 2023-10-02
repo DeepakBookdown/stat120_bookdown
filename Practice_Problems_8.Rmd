@@ -185,51 +185,51 @@ and Republicans who believe in global warming, go to the website  at [Lock5Statk
 
 ### (a). Enter the data for this survey by clicking the “Edit Data” button. One big assumption we will make is that the sample sizes for both groups (Dems and Reps) were each 1000. Enter the Democrat data into the “Group 1” boxes (count of 790 and size of 1000) and the Republican data into the “Group 2” boxes (count of 380 and size of 1000). Verify that the sample proportions for the two groups are 79% and 38%. What is the difference in the two sample proportions? Use correct notation.
 
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* The sample difference in proportions is $\hat{p}_{Dem} - \hat{p}_{Rep} = 0.79 - 0.38 = 0.41$ -->
-<!-- </details><br> -->
+<details>
+<summary><red>Click for answer</red></summary>
+*Answer:* The sample difference in proportions is $\hat{p}_{Dem} - \hat{p}_{Rep} = 0.79 - 0.38 = 0.41$
+</details><br>
 
 ### (b). Generate 1 bootstrap sample. Explain how this sample was generated (give this some thought now that you have two samples of data). Use the “Bootstrap Sample” pane to find the bootstrap statistic that was computed from this sample. What value is this bootstrap statistic? Repeat this a couple times.
 
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* One bootstrap sample was obtained from the group 1 sample (resampling the observed “believe/not believe” responses with replacement) and a separate bootstrap sample was obtained from the group 2 sample. The difference in the bootstrap proportions for each group was computed for the bootstrap difference statistic.  -->
+<details>
+<summary><red>Click for answer</red></summary>
+*Answer:* One bootstrap sample was obtained from the group 1 sample (resampling the observed “believe/not believe” responses with replacement) and a separate bootstrap sample was obtained from the group 2 sample. The difference in the bootstrap proportions for each group was computed for the bootstrap difference statistic.
 
-<!-- For individual bootstrap samples: answers will vary. -->
-<!-- </details><br> -->
+For individual bootstrap samples: answers will vary.
+</details><br>
 
 ### (c). Generate 1000 samples to get 1000 bootstrap sample proportion differences. Describe the shape and center of this bootstrap distribution
 
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* The shape is symmetric around a center value of about 0.41 (the sample difference in proportions). -->
+<details>
+<summary><red>Click for answer</red></summary>
+*Answer:* The shape is symmetric around a center value of about 0.41 (the sample difference in proportions).
 
-<!-- <img src="data/diffprop.png" width="800"/> -->
-<!-- </details><br> -->
+<img src="data/diffprop.png" width="800"/>
+</details><br>
 
 
 ### (d). Compute a 95% confidence interval for the difference between the proportion of Democrats and Republicans who believe in global warming.
 
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:*  -->
-<!-- The sample difference in proportions is $\hat{p}_{Dem} - \hat{p}_{Rep} = 0.79 - 0.38 = 0.41$, the standard error from the bootstrap distribution is 0.020 so we compute the 95% confidence interval using $0.41 \pm 2(0.020)$ giving an interval of 0.37 to 0.45. -->
-<!-- </details><br> -->
+<details>
+<summary><red>Click for answer</red></summary>
+*Answer:*
+The sample difference in proportions is $\hat{p}_{Dem} - \hat{p}_{Rep} = 0.79 - 0.38 = 0.41$, the standard error from the bootstrap distribution is 0.020 so we compute the 95% confidence interval using $0.41 \pm 2(0.020)$ giving an interval of 0.37 to 0.45.
+</details><br>
 
 ### (e). Interpret your interval from part (d) in context and without using the word difference!! (i.e. give a directional claim that uses words like “more” or “less”)  
 
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* We are 95% confident that the percent of Democrats who believe there is solid evidence of global warming is between 37 and 45 percentage points higher than the percent of Republicans who believe this. -->
-<!-- </details><br> -->
+<details>
+<summary><red>Click for answer</red></summary>
+*Answer:* We are 95% confident that the percent of Democrats who believe there is solid evidence of global warming is between 37 and 45 percentage points higher than the percent of Republicans who believe this.
+</details><br>
 
 ### (f). To compute this interval, we assumed that 1000 people were sampled from each subpopulation (Dems and Reps). Suppose this sample size was just 500 people for each group. Would your 95% confidence interval be wider or shorter than the one computed in part (d)? Explain.
 
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* With fewer people in each group, we will get a larger bootstrap SE and hence a larger margin of error for the CI. Remember that the SE of a sampling distribution gets smaller as the sample size increases, the same behavior is seen in a bootstrap distribution. -->
-<!-- </details><br> -->
+<details>
+<summary><red>Click for answer</red></summary>
+*Answer:* With fewer people in each group, we will get a larger bootstrap SE and hence a larger margin of error for the CI. Remember that the SE of a sampling distribution gets smaller as the sample size increases, the same behavior is seen in a bootstrap distribution.
+</details><br>
 
 
 ---------------------------------------------------------------------------------------

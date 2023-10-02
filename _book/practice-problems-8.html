@@ -105,7 +105,7 @@
 <div class="sourceCode" id="cb242"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">resample</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">prices</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="va">resample</span></span></code></pre></div>
-<pre><code> [1] 132  72 125 125 147  85  93 132  72 147</code></pre>
+<pre><code> [1]  52  72  52  85 125 125 147 147  23  93</code></pre>
 <p>Will the mean of this resample be same as the original sample? What about the standard deviation?</p>
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> The mean of the resample, created using bootstrapping, could be the same, more than, or less than the mean of the original sample, depending on which values are randomly chosen during the resampling process. Bootstrapping involves randomly selecting observations from the original sample with replacement, so there’s a chance the resample might have more of the higher values, more of the lower values, or a mix similar to the original sample.
 As for the standard deviation, it also depends on the composition of the resampled data. If the resample ends up with values that are close to each other (less variability), its standard deviation might be lower than the original sample. Conversely, if the resample has a wider spread of values, the standard deviation could be higher. However, over many bootstrap samples, the average standard deviation will tend to be close to the standard deviation of the original sample.
@@ -129,12 +129,12 @@ As for the standard deviation, it also depends on the composition of the resampl
     ** Bootstrap interval for mean 
 
  Observed  prices : 100.1 
- Mean of bootstrap distribution: 100.1123 
- Standard error of bootstrap distribution: 14.27235 
+ Mean of bootstrap distribution: 100.2341 
+ Standard error of bootstrap distribution: 14.27937 
 
  Bootstrap percentile interval
  2.5% 97.5% 
- 72.7 128.7 
+ 72.4 128.8 
 
         *--------------*</code></pre>
 <div class="inline-figure"><img src="Practice_Problems_8_files/figure-html/unnamed-chunk-3-1.png" width="100%"></div>
@@ -258,58 +258,45 @@ and Republicans who believe in global warming, go to the website at <a href="htt
 <h3>
 <span class="header-section-number">16.4.1</span> (a). Enter the data for this survey by clicking the “Edit Data” button. One big assumption we will make is that the sample sizes for both groups (Dems and Reps) were each 1000. Enter the Democrat data into the “Group 1” boxes (count of 790 and size of 1000) and the Republican data into the “Group 2” boxes (count of 380 and size of 1000). Verify that the sample proportions for the two groups are 79% and 38%. What is the difference in the two sample proportions? Use correct notation.<a class="anchor" aria-label="anchor" href="#a.-enter-the-data-for-this-survey-by-clicking-the-edit-data-button.-one-big-assumption-we-will-make-is-that-the-sample-sizes-for-both-groups-dems-and-reps-were-each-1000.-enter-the-democrat-data-into-the-group-1-boxes-count-of-790-and-size-of-1000-and-the-republican-data-into-the-group-2-boxes-count-of-380-and-size-of-1000.-verify-that-the-sample-proportions-for-the-two-groups-are-79-and-38.-what-is-the-difference-in-the-two-sample-proportions-use-correct-notation."><i class="fas fa-link"></i></a>
 </h3>
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* The sample difference in proportions is $\hat{p}_{Dem} - \hat{p}_{Rep} = 0.79 - 0.38 = 0.41$ -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> The sample difference in proportions is <span class="math inline">\(\hat{p}_{Dem} - \hat{p}_{Rep} = 0.79 - 0.38 = 0.41\)</span>
+</details><p><br></p>
 </div>
 <div id="b.-generate-1-bootstrap-sample.-explain-how-this-sample-was-generated-give-this-some-thought-now-that-you-have-two-samples-of-data.-use-the-bootstrap-sample-pane-to-find-the-bootstrap-statistic-that-was-computed-from-this-sample.-what-value-is-this-bootstrap-statistic-repeat-this-a-couple-times." class="section level3" number="16.4.2">
 <h3>
 <span class="header-section-number">16.4.2</span> (b). Generate 1 bootstrap sample. Explain how this sample was generated (give this some thought now that you have two samples of data). Use the “Bootstrap Sample” pane to find the bootstrap statistic that was computed from this sample. What value is this bootstrap statistic? Repeat this a couple times.<a class="anchor" aria-label="anchor" href="#b.-generate-1-bootstrap-sample.-explain-how-this-sample-was-generated-give-this-some-thought-now-that-you-have-two-samples-of-data.-use-the-bootstrap-sample-pane-to-find-the-bootstrap-statistic-that-was-computed-from-this-sample.-what-value-is-this-bootstrap-statistic-repeat-this-a-couple-times."><i class="fas fa-link"></i></a>
 </h3>
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* One bootstrap sample was obtained from the group 1 sample (resampling the observed “believe/not believe” responses with replacement) and a separate bootstrap sample was obtained from the group 2 sample. The difference in the bootstrap proportions for each group was computed for the bootstrap difference statistic.  -->
-<!-- For individual bootstrap samples: answers will vary. -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> One bootstrap sample was obtained from the group 1 sample (resampling the observed “believe/not believe” responses with replacement) and a separate bootstrap sample was obtained from the group 2 sample. The difference in the bootstrap proportions for each group was computed for the bootstrap difference statistic.</p>
+For individual bootstrap samples: answers will vary.
+</details><p><br></p>
 </div>
 <div id="c.-generate-1000-samples-to-get-1000-bootstrap-sample-proportion-differences.-describe-the-shape-and-center-of-this-bootstrap-distribution" class="section level3" number="16.4.3">
 <h3>
 <span class="header-section-number">16.4.3</span> (c). Generate 1000 samples to get 1000 bootstrap sample proportion differences. Describe the shape and center of this bootstrap distribution<a class="anchor" aria-label="anchor" href="#c.-generate-1000-samples-to-get-1000-bootstrap-sample-proportion-differences.-describe-the-shape-and-center-of-this-bootstrap-distribution"><i class="fas fa-link"></i></a>
 </h3>
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* The shape is symmetric around a center value of about 0.41 (the sample difference in proportions). -->
-<!-- <img src="data/diffprop.png" width="800"/> -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The shape is symmetric around a center value of about 0.41 (the sample difference in proportions).</p>
+<img src="data/diffprop.png" width="800"></details><p><br></p>
 </div>
 <div id="d.-compute-a-95-confidence-interval-for-the-difference-between-the-proportion-of-democrats-and-republicans-who-believe-in-global-warming." class="section level3" number="16.4.4">
 <h3>
 <span class="header-section-number">16.4.4</span> (d). Compute a 95% confidence interval for the difference between the proportion of Democrats and Republicans who believe in global warming.<a class="anchor" aria-label="anchor" href="#d.-compute-a-95-confidence-interval-for-the-difference-between-the-proportion-of-democrats-and-republicans-who-believe-in-global-warming."><i class="fas fa-link"></i></a>
 </h3>
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:*  -->
-<!-- The sample difference in proportions is $\hat{p}_{Dem} - \hat{p}_{Rep} = 0.79 - 0.38 = 0.41$, the standard error from the bootstrap distribution is 0.020 so we compute the 95% confidence interval using $0.41 \pm 2(0.020)$ giving an interval of 0.37 to 0.45. -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><em>Answer:</em>
+The sample difference in proportions is <span class="math inline">\(\hat{p}_{Dem} - \hat{p}_{Rep} = 0.79 - 0.38 = 0.41\)</span>, the standard error from the bootstrap distribution is 0.020 so we compute the 95% confidence interval using <span class="math inline">\(0.41 \pm 2(0.020)\)</span> giving an interval of 0.37 to 0.45.
+</details><p><br></p>
 </div>
 <div id="e.-interpret-your-interval-from-part-d-in-context-and-without-using-the-word-difference-i.e.-give-a-directional-claim-that-uses-words-like-more-or-less" class="section level3" number="16.4.5">
 <h3>
 <span class="header-section-number">16.4.5</span> (e). Interpret your interval from part (d) in context and without using the word difference!! (i.e. give a directional claim that uses words like “more” or “less”)<a class="anchor" aria-label="anchor" href="#e.-interpret-your-interval-from-part-d-in-context-and-without-using-the-word-difference-i.e.-give-a-directional-claim-that-uses-words-like-more-or-less"><i class="fas fa-link"></i></a>
 </h3>
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* We are 95% confident that the percent of Democrats who believe there is solid evidence of global warming is between 37 and 45 percentage points higher than the percent of Republicans who believe this. -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> We are 95% confident that the percent of Democrats who believe there is solid evidence of global warming is between 37 and 45 percentage points higher than the percent of Republicans who believe this.
+</details><p><br></p>
 </div>
 <div id="f.-to-compute-this-interval-we-assumed-that-1000-people-were-sampled-from-each-subpopulation-dems-and-reps.-suppose-this-sample-size-was-just-500-people-for-each-group.-would-your-95-confidence-interval-be-wider-or-shorter-than-the-one-computed-in-part-d-explain." class="section level3" number="16.4.6">
 <h3>
 <span class="header-section-number">16.4.6</span> (f). To compute this interval, we assumed that 1000 people were sampled from each subpopulation (Dems and Reps). Suppose this sample size was just 500 people for each group. Would your 95% confidence interval be wider or shorter than the one computed in part (d)? Explain.<a class="anchor" aria-label="anchor" href="#f.-to-compute-this-interval-we-assumed-that-1000-people-were-sampled-from-each-subpopulation-dems-and-reps.-suppose-this-sample-size-was-just-500-people-for-each-group.-would-your-95-confidence-interval-be-wider-or-shorter-than-the-one-computed-in-part-d-explain."><i class="fas fa-link"></i></a>
 </h3>
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* With fewer people in each group, we will get a larger bootstrap SE and hence a larger margin of error for the CI. Remember that the SE of a sampling distribution gets smaller as the sample size increases, the same behavior is seen in a bootstrap distribution. -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> With fewer people in each group, we will get a larger bootstrap SE and hence a larger margin of error for the CI. Remember that the SE of a sampling distribution gets smaller as the sample size increases, the same behavior is seen in a bootstrap distribution.
+</details><p><br></p>
 <hr>
 </div>
 </div>
@@ -367,12 +354,12 @@ and Republicans who believe in global warming, go to the website at <a href="htt
     ** Bootstrap interval for difference of mean 
 
  Observed difference of mean : BadLoan - GoodLoan = -2.26095 
- Mean of bootstrap distribution: -2.2602 
- Standard error of bootstrap distribution: 0.77652 
+ Mean of bootstrap distribution: -2.25617 
+ Standard error of bootstrap distribution: 0.7722 
 
  Bootstrap percentile interval
-      2.5%      97.5% 
--3.7843095 -0.7494524 
+    2.5%    97.5% 
+-3.76194 -0.72425 
 
         *--------------*</code></pre>
 <div class="inline-figure"><img src="Practice_Problems_8_files/figure-html/unnamed-chunk-6-1.png" width="100%"></div>
@@ -518,12 +505,12 @@ yes, registered under the customers name
     ** Bootstrap interval for difference of mean 
 
  Observed difference of mean : BadLoan - GoodLoan = -0.03905 
- Mean of bootstrap distribution: -0.03999 
- Standard error of bootstrap distribution: 0.03393 
+ Mean of bootstrap distribution: -0.03936 
+ Standard error of bootstrap distribution: 0.03359 
 
  Bootstrap percentile interval
        2.5%       97.5% 
--0.10572619  0.02714286 
+-0.10477381  0.02667857 
 
         *--------------*</code></pre>
 <div class="inline-figure"><img src="Practice_Problems_8_files/figure-html/unnamed-chunk-15-1.png" width="100%"></div>
@@ -622,7 +609,7 @@ Interpret your percentile interval in context using a directional statement. Doe
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-09-30.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-10-01.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

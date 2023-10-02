@@ -100,24 +100,24 @@ spreadsheet <code>GettysburgPopulationCounts.csv</code>. Carefully load this dat
 <div class="sourceCode" id="cb82"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">samp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">268</span>, size<span class="op">=</span><span class="fl">10</span><span class="op">)</span></span>
 <span><span class="va">samp</span></span></code></pre></div>
-<pre><code> [1]  79 122 140  46 114  23  91  16 162 263</code></pre>
+<pre><code> [1] 201 107 203 248 187 195 148  53 183 184</code></pre>
 <p>This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?</p>
 <p><br></p>
 <p>(b). Get words and lengths</p>
 <p>We will <em>subset</em> the data set <code>pop</code> to obtain only the sampled rows listed in <code>samp</code>. We do this using <strong>square bracket notation</strong> `dataset[row number, column number/name]. Run the following command to find your sampled words and sizes:</p>
 <div class="sourceCode" id="cb84"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">pop</span><span class="op">[</span><span class="va">samp</span>,<span class="op">]</span></span></code></pre></div>
-<pre><code>    position size    word
-79        79    5   place
-122      122    6  living
-140      140    3     The
-46        46    6  nation
-114      114    2      we
-23        23    3     the
-91        91    4   live.
-16        16    6 nation:
-162      162    2      is
-263      263    5   shall</code></pre>
+<pre><code>    position size      word
+201      201    6    before
+107      107    5    sense,
+203      203    4      that
+248      248    5     birth
+187      187    2        It
+195      195    9 dedicated
+148      148    4      what
+53        53    4      long
+183      183    3       far
+184      184    2        so</code></pre>
 <p><br></p>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>Compute your sample mean</li>
@@ -126,11 +126,11 @@ spreadsheet <code>GettysburgPopulationCounts.csv</code>. Carefully load this dat
 <div class="sourceCode" id="cb86"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">mysize</span> <span class="op">&lt;-</span> <span class="va">pop</span><span class="op">[</span><span class="va">samp</span>, <span class="st">"size"</span><span class="op">]</span></span>
 <span><span class="va">mysize</span></span></code></pre></div>
-<pre><code> [1] 5 6 3 6 2 3 4 6 2 5</code></pre>
+<pre><code> [1] 6 5 4 5 2 9 4 4 3 2</code></pre>
 <p>Then find the mean of these values:</p>
 <div class="sourceCode" id="cb88"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">mysize</span><span class="op">)</span></span></code></pre></div>
-<pre><code>[1] 4.2</code></pre>
+<pre><code>[1] 4.4</code></pre>
 <p>How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?</p>
 <details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The true mean is 4.29. Your two means will likely vary. Since the many non-random samples generally overestimated the population mean length, it is possible (but not guaranteed) that <em>your</em> one non-random sample gave a mean length that is greater than the random sample’s mean length.</p>
 </details>
@@ -164,7 +164,7 @@ spreadsheet <code>GettysburgPopulationCounts.csv</code>. Carefully load this dat
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-09-30.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-10-01.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
