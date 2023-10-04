@@ -1,5 +1,23 @@
 # Class Activity 12
 
+
+### Example 1 Revisited: 
+
+ (a). If the results of a test for ESP are statistically significant, what does that mean in terms of ESP?
+<details><summary><red>Click for answer</red></summary>
+*Answer:* 
+
+It means we can conclude that $p > 0.2$ and that the sample results were so strong that we can conclude that ESP does exist and get more right than would be expected by random chance.  
+</details><br>
+
+ (b). If the results are not statistically significant, what does that mean in terms of ESP?
+<details><summary><red>Click for answer</red></summary>
+*Answer:* 
+
+The sample results are inconclusive.  People may or may not have ESP. Sample results could be just random chance.
+</details><br>
+
+
 ## Example 1:  Sleep or Caffeine for Memory
 
 In an experiment, 24 students were given words to memorize, then were randomly assigned to take a 90 minute nap or take a caffeine pill (12 in each group).  They were then tested on their recall ability.  We test to see if the sample provides evidence that there is a difference in mean number of words people can recall depending on whether they take a nap or have some caffeine.  The hypotheses are: 
