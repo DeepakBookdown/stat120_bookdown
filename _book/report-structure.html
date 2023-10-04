@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 10 Report Structure | Stat 120</title>
+<meta name="author" content="Deepak Bastola">
+<meta name="description" content="In statistics, experts often share their work through articles in magazines (called journals) or books. The main type of article is called a ‘primary paper’. It’s like a story of what the...">
+<meta name="generator" content="bookdown 0.35 with bs4_book()">
+<meta property="og:title" content="Chapter 10 Report Structure | Stat 120">
+<meta property="og:type" content="book">
+<meta property="og:description" content="In statistics, experts often share their work through articles in magazines (called journals) or books. The main type of article is called a ‘primary paper’. It’s like a story of what the...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 10 Report Structure | Stat 120">
+<meta name="twitter:description" content="In statistics, experts often share their work through articles in magazines (called journals) or books. The main type of article is called a ‘primary paper’. It’s like a story of what the...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.1/transition.js"></script><script src="libs/bs3compat-0.5.1/tabs.js"></script><script src="libs/bs3compat-0.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Stat 120</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Introduction to Statistics</a></li>
+<li class="book-part">Basics R</li>
+<li><a class="" href="what-is-r.html"><span class="header-section-number">1</span> What is R?</a></li>
+<li><a class="" href="r-markdown-basics.html"><span class="header-section-number">2</span> R Markdown Basics</a></li>
+<li><a class="" href="homework-guidelines.html"><span class="header-section-number">3</span> Homework Guidelines</a></li>
+<li><a class="" href="report-guidelines.html"><span class="header-section-number">4</span> Report Guidelines</a></li>
+<li class="book-part">R Tutorials</li>
+<li><a class="" href="tutorial-1-embark-on-your-data-journey.html"><span class="header-section-number">5</span> Tutorial 1: Embark on Your Data Journey</a></li>
+<li><a class="" href="tutorial-2-dive-deeper-into-data-visualization-and-statistics-in-r.html"><span class="header-section-number">6</span> Tutorial 2: Dive Deeper into Data Visualization and Statistics in R</a></li>
+<li><a class="" href="tutorial-3-dive-deeper-into-data-manipulation-with-dplyr-in-r.html"><span class="header-section-number">7</span> Tutorial 3: Dive Deeper into Data Manipulation with dplyr in R</a></li>
+<li><a class="" href="tutorial-4-latex-equations-in-rmarkdown.html"><span class="header-section-number">8</span> Tutorial 4: LaTeX Equations in RMarkdown</a></li>
+<li class="book-part">Practice Problems</li>
+<li><a class="" href="short-report-1.html"><span class="header-section-number">9</span> Short Report 1</a></li>
+<li><a class="active" href="report-structure.html"><span class="header-section-number">10</span> Report Structure</a></li>
+<li class="book-part">Practice Problems</li>
+<li><a class="" href="practice-problems-1.html"><span class="header-section-number">11</span> Practice Problems 1</a></li>
+<li><a class="" href="practice-problems-2.html"><span class="header-section-number">12</span> Practice Problems 2</a></li>
+<li><a class="" href="practice-problems-3.html"><span class="header-section-number">13</span> Practice Problems 3</a></li>
+<li><a class="" href="practice-problems-4.html"><span class="header-section-number">14</span> Practice Problems 4</a></li>
+<li><a class="" href="practice-problems-5.html"><span class="header-section-number">15</span> Practice Problems 5</a></li>
+<li><a class="" href="practice-problems-6.html"><span class="header-section-number">16</span> Practice Problems 6</a></li>
+<li><a class="" href="practice-problems-7.html"><span class="header-section-number">17</span> Practice Problems 7</a></li>
+<li><a class="" href="practice-problems-8.html"><span class="header-section-number">18</span> Practice Problems 8</a></li>
+<li><a class="" href="practice-problems-9.html"><span class="header-section-number">19</span> Practice Problems 9</a></li>
+<li><a class="" href="practice-problems-10.html"><span class="header-section-number">20</span> Practice Problems 10</a></li>
+<li><a class="" href="practice-problems-11.html"><span class="header-section-number">21</span> Practice Problems 11</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="report-structure" class="section level1" number="10">
+<h1>
+<span class="header-section-number">10</span> Report Structure<a class="anchor" aria-label="anchor" href="#report-structure"><i class="fas fa-link"></i></a>
+</h1>
+<p>In statistics, experts often share their work through articles in magazines (called journals) or books. The main type of article is called a ‘primary paper’. It’s like a story of what the researcher did, how they did it, and what they found out. Since working with data (or ‘data analysis’) is a big part of statistics, it’s important for students, even in beginner classes, to learn how to write in this style.</p>
+<div id="abstract" class="section level3" number="10.0.1">
+<h3>
+<span class="header-section-number">10.0.1</span> Abstract<a class="anchor" aria-label="anchor" href="#abstract"><i class="fas fa-link"></i></a>
+</h3>
+<p>This short section (about 5% of your paper’s length) should quickly summarize your work. It should cover the reason for your analysis, the main question you’re addressing, the statistical methods you used, your findings, and what you believe these findings mean. Essentially, by reading just the abstract, someone should grasp the essence of your entire paper.</p>
+</div>
+<div id="introduction-4" class="section level3" number="10.0.2">
+<h3>
+<span class="header-section-number">10.0.2</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction-4"><i class="fas fa-link"></i></a>
+</h3>
+<p>Start by setting the scene for your analysis: provide some background and mention previous related studies, if available. Clearly state the main focus or objective of your data analysis. Explain why this focus is important or interesting. Briefly outline the methods or approaches you took, highlighting if you conducted an experimental or observational study.</p>
+</div>
+<div id="methods" class="section level3" number="10.0.3">
+<h3>
+<span class="header-section-number">10.0.3</span> Methods<a class="anchor" aria-label="anchor" href="#methods"><i class="fas fa-link"></i></a>
+</h3>
+<p>Detail the techniques you used both to gather and analyze your data. The description should be clear enough that someone else could replicate your analysis. Specify how the data was collected, the statistical tests performed, and any relevant setups. While you can reference the manual for in-depth statistical test details, avoid including complex mathematical formulas. Write in the past tense, describing the entire analysis approach as though you conducted it independently. The aim is to provide a concise overview of your analysis method, not a step-by-step breakdown.</p>
+</div>
+<div id="results" class="section level3" number="10.0.4">
+<h3>
+<span class="header-section-number">10.0.4</span> Results<a class="anchor" aria-label="anchor" href="#results"><i class="fas fa-link"></i></a>
+</h3>
+<p>This section should present the main findings from your data analysis. Describe the key patterns, trends, and notable differences you observed. While visuals like charts and graphs will illustrate your results, it’s essential to explain them verbally too. State the primary data trends and support them with statistical outcomes in brackets. Direct the reader to any relevant figures or tables. Remember, this section is for presenting findings only; interpretations and broader implications should be reserved for the following Discussion section.</p>
+</div>
+<div id="discussion-and-conclusion" class="section level3" number="10.0.5">
+<h3>
+<span class="header-section-number">10.0.5</span> Discussion and Conclusion<a class="anchor" aria-label="anchor" href="#discussion-and-conclusion"><i class="fas fa-link"></i></a>
+</h3>
+<p>Start by recapping your main findings and linking them to your initial questions and hypotheses. Examine your results in the context of existing knowledge and research. Delve into broader implications, and consider how your results fit into a larger landscape. Address potential issues in your analysis like violation of assumptions, outliers, bias, and other errors that could impact the validity of your conclusions. Reflect on any ethical constraints tied to your study and their potential influence.</p>
+</div>
+<div id="grading-rubric" class="section level2" number="10.1">
+<h2>
+<span class="header-section-number">10.1</span> Grading Rubric<a class="anchor" aria-label="anchor" href="#grading-rubric"><i class="fas fa-link"></i></a>
+</h2>
+<p><strong>Introduction</strong></p>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="28%">
+<col width="22%">
+<col width="25%">
+<col width="22%">
+</colgroup>
+<thead><tr class="header">
+<th>Topic</th>
+<th>Excellent: 10</th>
+<th>Satisfactory: 7</th>
+<th>Needs work: 5</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Data introduction</td>
+<td>Clearly and concisely describes the data set, and why it is of interest. Clearly establishes the story (i.e. set of questions) that will be introduced.</td>
+<td>Introduction and story outlined, but could be clearer or more engaging.</td>
+<td>Context and motivation is lacking; story unclear.</td>
+</tr>
+<tr class="even">
+<td>Background &amp; Relevance</td>
+<td>Comprehensive context and background provided with clear relevance to the topic.</td>
+<td>Adequate context given, some relevance noted but could be enhanced.</td>
+<td>Limited or no context and relevance provided.</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Methods</strong></p>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="28%">
+<col width="22%">
+<col width="25%">
+<col width="22%">
+</colgroup>
+<thead><tr class="header">
+<th>Topic</th>
+<th>Excellent: 10</th>
+<th>Satisfactory: 7</th>
+<th>Needs work: 5</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Clarity</td>
+<td>Methods are detailed, replicable, and transparently described.</td>
+<td>Methods are described but may lack some clarity or detail.</td>
+<td>Methods are unclear or insufficiently described.</td>
+</tr>
+<tr class="even">
+<td>Statistical Approach</td>
+<td>Appropriate statistical tests and approaches are clearly outlined and justified.</td>
+<td>Mostly appropriate methods used with some justification.</td>
+<td>Choice of methods is unclear or inappropriate.</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Results</strong></p>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="28%">
+<col width="22%">
+<col width="25%">
+<col width="22%">
+</colgroup>
+<thead><tr class="header">
+<th>Topic</th>
+<th>Excellent: 10</th>
+<th>Satisfactory: 7</th>
+<th>Needs work: 5</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Clarity &amp; Depth</td>
+<td>Results are clearly explained in an engaging way. The questions posed are clearly answered. Potential limitations are outlined.</td>
+<td>Results are explained and the questions posed are answered.</td>
+<td>Results are not completely explained and/or questions are left unanswered.</td>
+</tr>
+<tr class="even">
+<td>Use of Figures &amp; Tables</td>
+<td>Effective and clear use of figures and tables to represent results.</td>
+<td>Adequate use of figures and tables but may lack some clarity.</td>
+<td>Insufficient or confusing use of figures and tables.</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Discussion and Conclusion</strong></p>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="28%">
+<col width="22%">
+<col width="25%">
+<col width="22%">
+</colgroup>
+<thead><tr class="header">
+<th>Topic</th>
+<th>Excellent: 10</th>
+<th>Satisfactory: 7</th>
+<th>Needs work: 5</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Logic</td>
+<td>Discussion and conclusion are based on sound evidence from statistical analyses and make adequate use of statistical jargon.</td>
+<td>There are a few jumps in logic but the conclusion is mostly correct and uses sufficient statistical jargon.</td>
+<td>The conclusion deviates from the main discussion, and the problem statements are not addressed with minimal use of statistical jargon.</td>
+</tr>
+<tr class="even">
+<td>Broader Implications</td>
+<td>Draws insightful implications from the results, considering a wider context.</td>
+<td>Draws some implications but lacks depth or breadth.</td>
+<td>Limited or no discussion of broader implications.</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Organization</strong></p>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="42%">
+<col width="18%">
+<col width="20%">
+<col width="18%">
+</colgroup>
+<thead><tr class="header">
+<th>Topic</th>
+<th>Excellent: 10</th>
+<th>Satisfactory: 7</th>
+<th>Needs work: 5</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Content Readability</td>
+<td>Good sequence of analyses and transitions consisting of effective organization. Introduction and conclusion are clear and somewhat related to the whole.</td>
+<td>Sequence and transitions are fairly clear but the overall structure could be improved. Introduction and conclusion are fairly clear but lacks some coherence.</td>
+<td>unclear or haphazard organization</td>
+</tr>
+<tr class="even">
+<td>R-code Organization (in <strong>Appendix!</strong>)</td>
+<td>R-code is properly presented in order of implementation and commented sparsely</td>
+<td>R-code is presented to get the job done but could be better formatted or organized</td>
+<td>lacks important R-codes or R-code completely missing</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+
+
+
+  <div class="chapter-nav">
+<div class="prev"><a href="short-report-1.html"><span class="header-section-number">9</span> Short Report 1</a></div>
+<div class="next"><a href="practice-problems-1.html"><span class="header-section-number">11</span> Practice Problems 1</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li>
+<a class="nav-link" href="#report-structure"><span class="header-section-number">10</span> Report Structure</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#abstract"><span class="header-section-number">10.0.1</span> Abstract</a></li>
+<li><a class="nav-link" href="#introduction-4"><span class="header-section-number">10.0.2</span> Introduction</a></li>
+<li><a class="nav-link" href="#methods"><span class="header-section-number">10.0.3</span> Methods</a></li>
+<li><a class="nav-link" href="#results"><span class="header-section-number">10.0.4</span> Results</a></li>
+<li><a class="nav-link" href="#discussion-and-conclusion"><span class="header-section-number">10.0.5</span> Discussion and Conclusion</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#grading-rubric"><span class="header-section-number">10.1</span> Grading Rubric</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/Short_Report_1.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/Short_Report_1.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-10-03.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>
