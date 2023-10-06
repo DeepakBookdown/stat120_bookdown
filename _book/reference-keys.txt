@@ -197,3 +197,11 @@ practice-problems-11
 problem-1-extrasensory-perception-esp
 problem-2-sleep-vs-caffeine
 problem-3-hand-dominance-and-gender
+practice-problems-12
+problem-1-revisited
+problem-2-sleep-or-caffeine-for-memory
+a-explain-how-to-generate-a-randomization-distribution-for-barx_s---barx_c-that-is-consistent-with-h_0-mu_s---mu_c-0.
+b-navigate-to-the-statkey-website.
+c-compute-the-randomization-p-value
+d-interpret-conclusion
+e-redo-in-rstudio

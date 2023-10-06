@@ -30,7 +30,7 @@ rmd_files: [
    "Practice_Problems_9.Rmd", 
    "Practice_Problems_10.Rmd", 
    "Practice_Problems_11.Rmd", 
-   # "Practice_Problems_12.Rmd", 
+    "Practice_Problems_12.Rmd", 
    # "Practice_Problems_13.Rmd", 
    # "Practice_Problems_14.Rmd", 
    # "Practice_Problems_15.Rmd", 
