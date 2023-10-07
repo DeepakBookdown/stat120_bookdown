@@ -106,9 +106,8 @@ H_0: \mu_S - \mu_C = 0 \ \ H_A: \mu_S - \mu_C \neq 0
 <h4>
 <span class="header-section-number">21.1.0.1</span> (a) Explain how to generate a randomization distribution for <span class="math inline">\(\bar{x}_S - \bar{x}_C\)</span> that is consistent with <span class="math inline">\(H_0: \mu_S - \mu_C = 0\)</span>.<a class="anchor" aria-label="anchor" href="#a-explain-how-to-generate-a-randomization-distribution-for-barx_s---barx_c-that-is-consistent-with-h_0-mu_s---mu_c-0."><i class="fas fa-link"></i></a>
 </h4>
-<!-- <details><summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* We could randomly reassign the treatment to the study participants since, under the null, their recall abilities would be the same under either treatment. For each reassignment, we recomputed the sample mean difference and plot it in the dotplot shown below -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> We could randomly reassign the treatment to the study participants since, under the null, their recall abilities would be the same under either treatment. For each reassignment, we recomputed the sample mean difference and plot it in the dotplot shown below
+</details><p><br></p>
 </div>
 <div id="b-navigate-to-the-statkey-website." class="section level4" number="21.1.0.2">
 <h4>
@@ -130,18 +129,16 @@ H_0: \mu_S - \mu_C = 0 \ \ H_A: \mu_S - \mu_C \neq 0
 <div class="float">
 <img src="data/wordRand.png" alt="Example 1"><div class="figcaption">Example 1</div>
 </div>
-<!-- <details><summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* We see in the image that the proportion in the tail beyond the sample statistic of 3.0 is 0.022.  Because this is a two-tail test, we have to account for both tails, so the p-value is 2(0.022) = 0.044. -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> We see in the image that the proportion in the tail beyond the sample statistic of 3.0 is 0.022. Because this is a two-tail test, we have to account for both tails, so the p-value is 2(0.022) = 0.044.
+</details><p><br></p>
 </div>
 <div id="d-interpret-conclusion" class="section level4" number="21.1.0.4">
 <h4>
 <span class="header-section-number">21.1.0.4</span> (d) Interpret + Conclusion<a class="anchor" aria-label="anchor" href="#d-interpret-conclusion"><i class="fas fa-link"></i></a>
 </h4>
 <p>Interpret the p-value. Does the p-value support the alternative hypothesis (do you think difference of means of 3 is statistically significant) or is it inconclusive? Explain.</p>
-<!-- <details><summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* We would see a difference of at least 3 words recalled, on average, in about 4.4% of all possible samples if the influence of sleep and caffeine on recall was the same The results show some evidence of statistical significance, meaning that the caffeine and sleep may have some difference effects on word recall ability.  -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> We would see a difference of at least 3 words recalled, on average, in about 4.4% of all possible samples if the influence of sleep and caffeine on recall was the same The results show some evidence of statistical significance, meaning that the caffeine and sleep may have some difference effects on word recall ability.
+</details><p><br></p>
 </div>
 <div id="e-redo-in-rstudio" class="section level4" number="21.1.0.5">
 <h4>
@@ -178,19 +175,23 @@ H_0: \mu_S - \mu_C = 0 \ \ H_A: \mu_S - \mu_C \neq 0
   Caffeine :  12.25      Sleep :  15.25 
  Observed difference: -3 
 
- Mean of permutation distribution: -0.01315 
- Standard error of permutation distribution: 1.50708 
- P-value:  0.0525 
+ Mean of permutation distribution: 0.00822 
+ Standard error of permutation distribution: 1.49145 
+ P-value:  0.0475 
 
     *-------------*</code></pre>
 <div class="inline-figure"><img src="Practice_Problems_12_files/figure-html/unnamed-chunk-3-1.png" width="100%"></div>
 <ul>
 <li>Why is the observed difference reported as -3?</li>
 </ul>
-<!-- <details><summary><red>Click for answer</red></summary> --><!-- *Answer:* The difference is computed alphabetically: Caffeine minus Sleep so the difference in now -3 instead of +3. </details><br> --><ul>
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> The difference is computed alphabetically: Caffeine minus Sleep so the difference in now -3 instead of +3.
+</details><p><br></p>
+<ul>
 <li>What is the p-value? Is it the same as the Statkey p-value? The same as your neighbors p-value? Why not?</li>
 </ul>
-<!-- <details><summary><red>Click for answer</red></summary> --><!-- *Answer:* The p-value is around 5%. Any difference between Statkey, neighbors or different runs of the `permTest` command stem from the fact that different resamples are obtained each time a randomization distribution is generated. There may be some small (inconsequential) difference in p-values due to this. --><!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> The p-value is around 5%. Any difference between Statkey, neighbors or different runs of the <code>permTest</code> command stem from the fact that different resamples are obtained each time a randomization distribution is generated. There may be some small (inconsequential) difference in p-values due to this.
+</details><p><br></p>
+
 </div>
 </div>
 </div>
@@ -221,7 +222,7 @@ H_0: \mu_S - \mu_C = 0 \ \ H_A: \mu_S - \mu_C \neq 0
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-10-06.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-10-07.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

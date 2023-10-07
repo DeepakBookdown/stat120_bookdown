@@ -30,9 +30,9 @@ The sample mean difference is $\bar{x}_S - \bar{x}_C = 3$. We want to know if th
 
 #### (a) Explain how to generate a randomization distribution for $\bar{x}_S - \bar{x}_C$ that is consistent with $H_0: \mu_S - \mu_C = 0$.
 
-<!-- <details><summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* We could randomly reassign the treatment to the study participants since, under the null, their recall abilities would be the same under either treatment. For each reassignment, we recomputed the sample mean difference and plot it in the dotplot shown below -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary>
+*Answer:* We could randomly reassign the treatment to the study participants since, under the null, their recall abilities would be the same under either treatment. For each reassignment, we recomputed the sample mean difference and plot it in the dotplot shown below
+</details><br>
 
 
 #### (b) Navigate to the Statkey website. 
@@ -50,17 +50,17 @@ Select the **Two-Tail** button at the top of the plot. Change the positive x-axi
 
 ![Example 1](data/wordRand.png)
 
-<!-- <details><summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* We see in the image that the proportion in the tail beyond the sample statistic of 3.0 is 0.022.  Because this is a two-tail test, we have to account for both tails, so the p-value is 2(0.022) = 0.044. -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary>
+*Answer:* We see in the image that the proportion in the tail beyond the sample statistic of 3.0 is 0.022.  Because this is a two-tail test, we have to account for both tails, so the p-value is 2(0.022) = 0.044.
+</details><br>
 
 #### (d) 	Interpret + Conclusion
 
 Interpret the p-value. Does the p-value support the alternative hypothesis (do you think difference of means of 3 is statistically significant) or is it inconclusive? Explain.
 
-<!-- <details><summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* We would see a difference of at least 3 words recalled, on average, in about 4.4% of all possible samples if the influence of sleep and caffeine on recall was the same The results show some evidence of statistical significance, meaning that the caffeine and sleep may have some difference effects on word recall ability.  -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary>
+*Answer:* We would see a difference of at least 3 words recalled, on average, in about 4.4% of all possible samples if the influence of sleep and caffeine on recall was the same The results show some evidence of statistical significance, meaning that the caffeine and sleep may have some difference effects on word recall ability.
+</details><br>
 
 
 #### (e) Redo in Rstudio
@@ -114,9 +114,9 @@ permTest(Words ~ Group, data=wordData)
   Caffeine :  12.25 	 Sleep :  15.25 
  Observed difference: -3 
 
- Mean of permutation distribution: -0.01315 
- Standard error of permutation distribution: 1.50708 
- P-value:  0.0525 
+ Mean of permutation distribution: 0.00822 
+ Standard error of permutation distribution: 1.49145 
+ P-value:  0.0475 
 
 	*-------------*
 ```
@@ -125,13 +125,13 @@ permTest(Words ~ Group, data=wordData)
 
 - Why is the observed difference reported as -3?
 
-<!-- <details><summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* The difference is computed alphabetically: Caffeine minus Sleep so the difference in now -3 instead of +3. </details><br> -->
+<details><summary><red>Click for answer</red></summary>
+*Answer:* The difference is computed alphabetically: Caffeine minus Sleep so the difference in now -3 instead of +3. </details><br>
 
 
 - What is the p-value? Is it the same as the Statkey p-value? The same as your neighbors p-value? Why not?
 
-<!-- <details><summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* The p-value is around 5%. Any difference between Statkey, neighbors or different runs of the `permTest` command stem from the fact that different resamples are obtained each time a randomization distribution is generated. There may be some small (inconsequential) difference in p-values due to this. -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary>
+*Answer:* The p-value is around 5%. Any difference between Statkey, neighbors or different runs of the `permTest` command stem from the fact that different resamples are obtained each time a randomization distribution is generated. There may be some small (inconsequential) difference in p-values due to this.
+</details><br>
 
