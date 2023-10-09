@@ -114,9 +114,9 @@ permTest(Words ~ Group, data=wordData)
   Caffeine :  12.25 	 Sleep :  15.25 
  Observed difference: -3 
 
- Mean of permutation distribution: 0.03497 
- Standard error of permutation distribution: 1.49531 
- P-value:  0.0497 
+ Mean of permutation distribution: 0.00323 
+ Standard error of permutation distribution: 1.4978 
+ P-value:  0.0473 
 
 	*-------------*
 ```
