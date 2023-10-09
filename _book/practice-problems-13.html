@@ -105,9 +105,8 @@
 <span class="header-section-number">22.1.1</span> (a) Observation and Conclusion<a class="anchor" aria-label="anchor" href="#a-observation-and-conclusion"><i class="fas fa-link"></i></a>
 </h3>
 <p>What is the observed correlation? What conclusion do you draw from the test?</p>
-<!-- <details><summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* Since the p-value is less than the significance level, it means that the observed correlation of -0.6502 is highly unlikely to occur just by random chance under the null hypothesis. In this case, we would reject the null hypothesis and conclude that there is statistically discernible non-zero population correlation between the cost of color and price of inkjet printers. -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> Since the p-value is less than the significance level, it means that the observed correlation of -0.6502 is highly unlikely to occur just by random chance under the null hypothesis. In this case, we would reject the null hypothesis and conclude that there is statistically discernible non-zero population correlation between the cost of color and price of inkjet printers.</p>
+</details><p><br></p>
 </div>
 </div>
 <div id="problem-2-paired-permutation-tests" class="section level2" number="22.2">
@@ -124,13 +123,14 @@
 </h3>
 <div class="sourceCode" id="cb291"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/CarletonStats/man/permTestPaired.html">permTestPaired</a></span><span class="op">(</span><span class="va">MileTime</span><span class="op">~</span><span class="va">BeerTime</span>, data<span class="op">=</span> <span class="va">beermilers</span><span class="op">)</span></span></code></pre></div>
-<!-- <details><summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* -->
-<!-- Our hypotheses are: -->
-<!-- 1. Null Hypothesis $H_0$ : The paired mean differences between the two groups are 0 . -->
-<!-- 2. Alternative Hypothesis $H_a$ : The paired mean differences between the two groups are not 0 . -->
-<!-- Given the very small p-value of 0.0001 (which is well below the common significance level of 0.05), we reject the null hypothesis. This suggests that there is a statistically significant difference in the paired mean times of 'MileTime' and 'BeerTime'. Thus, the data provides strong evidence to conclude that the difference in the paired mean times for 'MileTime' and 'BeerTime 'is not due to random chance but is statistically discernible. -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em></p>
+<p>Our hypotheses are:</p>
+<ol style="list-style-type: decimal">
+<li>Null Hypothesis <span class="math inline">\(H_0\)</span> : The paired mean differences between the two groups are 0 .</li>
+<li>Alternative Hypothesis <span class="math inline">\(H_a\)</span> : The paired mean differences between the two groups are not 0 .</li>
+</ol>
+<p>Given the very small p-value of 0.0001 (which is well below the common significance level of 0.05), we reject the null hypothesis. This suggests that there is a statistically significant difference in the paired mean times of ‘MileTime’ and ‘BeerTime’. Thus, the data provides strong evidence to conclude that the difference in the paired mean times for ‘MileTime’ and ’BeerTime ’is not due to random chance but is statistically discernible.</p>
+</details><p><br></p>
 </div>
 </div>
 <div id="problem-3-new-teaching-method-effectiveness" class="section level2" number="22.3">
@@ -165,8 +165,8 @@ The sample mean difference is <span class="math inline">\(\bar{x}_{NM} - \bar{x}
   New_Method :  91.05    Traditional_Method :  82.15 
  Observed difference: 8.9 
 
- Mean of permutation distribution: 0.00422 
- Standard error of permutation distribution: 1.73079 
+ Mean of permutation distribution: -0.01874 
+ Standard error of permutation distribution: 1.74631 
  P-value:  1e-04 
 
     *-------------*</code></pre>
@@ -193,36 +193,32 @@ The sample mean difference is <span class="math inline">\(\bar{x}_{NM} - \bar{x}
 <span class="header-section-number">22.4.1</span> (a) Type I Error<a class="anchor" aria-label="anchor" href="#a-type-i-error"><i class="fas fa-link"></i></a>
 </h3>
 <p>Explain what a Type I error is in the context of this example, and describe the consequences of making such an error.</p>
-<!-- <details><summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* A Type I error occurs when we reject the null hypothesis when it's actually true. In this context, it means that we conclude the new teaching method is more effective than the traditional method when, in reality, there is no difference. The consequences of making a Type I error could include investing time and resources into a new teaching method that isn't actually more effective, leading to inefficient allocation of resources. -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> A Type I error occurs when we reject the null hypothesis when it’s actually true. In this context, it means that we conclude the new teaching method is more effective than the traditional method when, in reality, there is no difference. The consequences of making a Type I error could include investing time and resources into a new teaching method that isn’t actually more effective, leading to inefficient allocation of resources.</p>
+</details><p><br></p>
 </div>
 <div id="b-type-ii-error" class="section level3" number="22.4.2">
 <h3>
 <span class="header-section-number">22.4.2</span> (b) Type II Error<a class="anchor" aria-label="anchor" href="#b-type-ii-error"><i class="fas fa-link"></i></a>
 </h3>
 <p>Explain what a Type II error is in the context of this example, and describe the consequences of making such an error.</p>
-<!-- <details><summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* A Type II error occurs when we fail to reject the null hypothesis when it's actually false. In this context, it means that we conclude that there is no difference between the new teaching method and the traditional method when, in reality, the new method is more effective. The consequences of making a Type II error could include missing out on the opportunity to improve students' learning outcomes by not adopting the more effective teaching method. -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> A Type II error occurs when we fail to reject the null hypothesis when it’s actually false. In this context, it means that we conclude that there is no difference between the new teaching method and the traditional method when, in reality, the new method is more effective. The consequences of making a Type II error could include missing out on the opportunity to improve students’ learning outcomes by not adopting the more effective teaching method.</p>
+</details><p><br></p>
 </div>
 <div id="c-adjusting-the-significance-level" class="section level3" number="22.4.3">
 <h3>
 <span class="header-section-number">22.4.3</span> (c) Adjusting the Significance Level<a class="anchor" aria-label="anchor" href="#c-adjusting-the-significance-level"><i class="fas fa-link"></i></a>
 </h3>
 <p>If the school administration believes that making a Type I error is much worse than making a Type II error, what adjustments could be made to the significance level to account for this? Explain your reasoning.</p>
-<!-- <details><summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* To decrease the chance of making a Type I error, the school administration could choose a smaller significance level, such as 0.01 instead of the typical 0.05. By using a smaller significance level, we require stronger evidence (smaller p-value) to reject the null hypothesis, thus reducing the probability of making a Type I error. -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> To decrease the chance of making a Type I error, the school administration could choose a smaller significance level, such as 0.01 instead of the typical 0.05. By using a smaller significance level, we require stronger evidence (smaller p-value) to reject the null hypothesis, thus reducing the probability of making a Type I error.</p>
+</details><p><br></p>
 </div>
 <div id="d-balancing-error-rates" class="section level3" number="22.4.4">
 <h3>
 <span class="header-section-number">22.4.4</span> (d) Balancing Error Rates<a class="anchor" aria-label="anchor" href="#d-balancing-error-rates"><i class="fas fa-link"></i></a>
 </h3>
 <p>Discuss how the school administration could balance the Type I and Type II error rates when evaluating the effectiveness of the new teaching method. What factors should they consider?</p>
-<!-- <details><summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* Balancing the Type I and Type II error rates involves considering the consequences of each type of error and the desired level of confidence in the results. The administration should weigh the risks and benefits of adopting a new teaching method versus maintaining the traditional method. They should also consider factors such as the cost and feasibility of implementing the new method, as well as the potential impact on student learning outcomes. Ultimately, the administration should choose a significance level and sample size that balance the risks associated with Type I and Type II errors while taking into account practical constraints and priorities. -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> Balancing the Type I and Type II error rates involves considering the consequences of each type of error and the desired level of confidence in the results. The administration should weigh the risks and benefits of adopting a new teaching method versus maintaining the traditional method. They should also consider factors such as the cost and feasibility of implementing the new method, as well as the potential impact on student learning outcomes. Ultimately, the administration should choose a significance level and sample size that balance the risks associated with Type I and Type II errors while taking into account practical constraints and priorities.</p>
+</details><p><br></p>
 </div>
 </div>
 <div id="extra-problem-5-job-interview-success" class="section level2" number="22.5">

@@ -33,10 +33,10 @@ permTestCor(CostColor~Price, data= inkjet)
 
 What is the observed correlation? What conclusion do you draw from the test?
 
-<!-- <details><summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* Since the p-value is less than the significance level, it means that the observed correlation of -0.6502 is highly unlikely to occur just by random chance under the null hypothesis. In this case, we would reject the null hypothesis and conclude that there is statistically discernible non-zero population correlation between the cost of color and price of inkjet printers. -->
+<details><summary><red>Click for answer</red></summary>
+*Answer:* Since the p-value is less than the significance level, it means that the observed correlation of -0.6502 is highly unlikely to occur just by random chance under the null hypothesis. In this case, we would reject the null hypothesis and conclude that there is statistically discernible non-zero population correlation between the cost of color and price of inkjet printers.
 
-<!-- </details><br> -->
+</details><br>
 
 
 ## Problem 2: Paired permutation tests
@@ -58,17 +58,17 @@ permTestPaired(MileTime~BeerTime, data= beermilers)
 ```
 
 
-<!-- <details><summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* -->
+<details><summary><red>Click for answer</red></summary>
+*Answer:*
 
-<!-- Our hypotheses are: -->
+Our hypotheses are:
 
-<!-- 1. Null Hypothesis $H_0$ : The paired mean differences between the two groups are 0 . -->
-<!-- 2. Alternative Hypothesis $H_a$ : The paired mean differences between the two groups are not 0 . -->
+1. Null Hypothesis $H_0$ : The paired mean differences between the two groups are 0 .
+2. Alternative Hypothesis $H_a$ : The paired mean differences between the two groups are not 0 .
 
-<!-- Given the very small p-value of 0.0001 (which is well below the common significance level of 0.05), we reject the null hypothesis. This suggests that there is a statistically significant difference in the paired mean times of 'MileTime' and 'BeerTime'. Thus, the data provides strong evidence to conclude that the difference in the paired mean times for 'MileTime' and 'BeerTime 'is not due to random chance but is statistically discernible. -->
+Given the very small p-value of 0.0001 (which is well below the common significance level of 0.05), we reject the null hypothesis. This suggests that there is a statistically significant difference in the paired mean times of 'MileTime' and 'BeerTime'. Thus, the data provides strong evidence to conclude that the difference in the paired mean times for 'MileTime' and 'BeerTime 'is not due to random chance but is statistically discernible.
 
-<!-- </details><br> -->
+</details><br>
 
 
 ## Problem 3: New Teaching Method Effectiveness
@@ -112,8 +112,8 @@ permTest(Math_Test_Score~Group, data= teaching)
   New_Method :  91.05 	 Traditional_Method :  82.15 
  Observed difference: 8.9 
 
- Mean of permutation distribution: 0.00422 
- Standard error of permutation distribution: 1.73079 
+ Mean of permutation distribution: -0.01874 
+ Standard error of permutation distribution: 1.74631 
  P-value:  1e-04 
 
 	*-------------*
@@ -142,37 +142,37 @@ Consider the example of a new teaching method compared to a traditional teaching
 
 Explain what a Type I error is in the context of this example, and describe the consequences of making such an error.
 
-<!-- <details><summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* A Type I error occurs when we reject the null hypothesis when it's actually true. In this context, it means that we conclude the new teaching method is more effective than the traditional method when, in reality, there is no difference. The consequences of making a Type I error could include investing time and resources into a new teaching method that isn't actually more effective, leading to inefficient allocation of resources. -->
+<details><summary><red>Click for answer</red></summary>
+*Answer:* A Type I error occurs when we reject the null hypothesis when it's actually true. In this context, it means that we conclude the new teaching method is more effective than the traditional method when, in reality, there is no difference. The consequences of making a Type I error could include investing time and resources into a new teaching method that isn't actually more effective, leading to inefficient allocation of resources.
 
-<!-- </details><br> -->
+</details><br>
 
 ### (b) Type II Error
 
 Explain what a Type II error is in the context of this example, and describe the consequences of making such an error.
 
-<!-- <details><summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* A Type II error occurs when we fail to reject the null hypothesis when it's actually false. In this context, it means that we conclude that there is no difference between the new teaching method and the traditional method when, in reality, the new method is more effective. The consequences of making a Type II error could include missing out on the opportunity to improve students' learning outcomes by not adopting the more effective teaching method. -->
+<details><summary><red>Click for answer</red></summary>
+*Answer:* A Type II error occurs when we fail to reject the null hypothesis when it's actually false. In this context, it means that we conclude that there is no difference between the new teaching method and the traditional method when, in reality, the new method is more effective. The consequences of making a Type II error could include missing out on the opportunity to improve students' learning outcomes by not adopting the more effective teaching method.
 
-<!-- </details><br> -->
+</details><br>
 
 ### (c) Adjusting the Significance Level
 
 If the school administration believes that making a Type I error is much worse than making a Type II error, what adjustments could be made to the significance level to account for this? Explain your reasoning.
 
-<!-- <details><summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* To decrease the chance of making a Type I error, the school administration could choose a smaller significance level, such as 0.01 instead of the typical 0.05. By using a smaller significance level, we require stronger evidence (smaller p-value) to reject the null hypothesis, thus reducing the probability of making a Type I error. -->
+<details><summary><red>Click for answer</red></summary>
+*Answer:* To decrease the chance of making a Type I error, the school administration could choose a smaller significance level, such as 0.01 instead of the typical 0.05. By using a smaller significance level, we require stronger evidence (smaller p-value) to reject the null hypothesis, thus reducing the probability of making a Type I error.
 
-<!-- </details><br> -->
+</details><br>
 
 ### (d) Balancing Error Rates
 
 Discuss how the school administration could balance the Type I and Type II error rates when evaluating the effectiveness of the new teaching method. What factors should they consider?
 
-<!-- <details><summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* Balancing the Type I and Type II error rates involves considering the consequences of each type of error and the desired level of confidence in the results. The administration should weigh the risks and benefits of adopting a new teaching method versus maintaining the traditional method. They should also consider factors such as the cost and feasibility of implementing the new method, as well as the potential impact on student learning outcomes. Ultimately, the administration should choose a significance level and sample size that balance the risks associated with Type I and Type II errors while taking into account practical constraints and priorities. -->
+<details><summary><red>Click for answer</red></summary>
+*Answer:* Balancing the Type I and Type II error rates involves considering the consequences of each type of error and the desired level of confidence in the results. The administration should weigh the risks and benefits of adopting a new teaching method versus maintaining the traditional method. They should also consider factors such as the cost and feasibility of implementing the new method, as well as the potential impact on student learning outcomes. Ultimately, the administration should choose a significance level and sample size that balance the risks associated with Type I and Type II errors while taking into account practical constraints and priorities.
 
-<!-- </details><br> -->
+</details><br>
 
 ## (Extra) Problem 5: Job Interview Success
 
