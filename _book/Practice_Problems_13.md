@@ -41,7 +41,7 @@ What is the observed correlation? What conclusion do you draw from the test?
 
 ## Problem 2: Paired permutation tests
 
-Quinn Stewart (2013) collected data on unemployment rates and percentage of high school graduates in the counties of California and Minnesota (year 2000). Let's load the data into the R session.
+Tonya Piergies (2019) collected data on a sample of elite beer milers: professional runners who competed in “beer mile” races. These runners drink a can of beer, run a quarter mile, and then repeat three more times.  Let's load the data into the R session.
 
 
 ```r
@@ -112,8 +112,8 @@ permTest(Math_Test_Score~Group, data= teaching)
   New_Method :  91.05 	 Traditional_Method :  82.15 
  Observed difference: 8.9 
 
- Mean of permutation distribution: 0.0234 
- Standard error of permutation distribution: 1.73163 
+ Mean of permutation distribution: 0.00422 
+ Standard error of permutation distribution: 1.73079 
  P-value:  1e-04 
 
 	*-------------*

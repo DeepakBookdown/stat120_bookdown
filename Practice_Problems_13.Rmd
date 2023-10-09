@@ -37,7 +37,7 @@ What is the observed correlation? What conclusion do you draw from the test?
 
 ## Problem 2: Paired permutation tests
 
-Quinn Stewart (2013) collected data on unemployment rates and percentage of high school graduates in the counties of California and Minnesota (year 2000). Let's load the data into the R session.
+Tonya Piergies (2019) collected data on a sample of elite beer milers: professional runners who competed in “beer mile” races. These runners drink a can of beer, run a quarter mile, and then repeat three more times.  Let's load the data into the R session.
 
 ```{r}
 # Load the data
