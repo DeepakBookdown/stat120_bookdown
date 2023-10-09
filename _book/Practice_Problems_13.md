@@ -1,6 +1,6 @@
-# Class Activity 13
+# Practice Problems 13
 
-## Example 1: Effect of Exercise on Heart Rate
+## Problem 1: Effect of Exercise on Heart Rate
 
 In a study, 30 participants were randomly assigned to engage in either aerobic exercise or resistance training (15 in each group). Their resting heart rate was measured before and after a 6-week exercise program. We want to test if there is a difference in the mean decrease in resting heart rate between aerobic exercise and resistance training. The hypotheses are:
 
@@ -22,11 +22,13 @@ Describe how you could generate a randomization distribution for $\bar{x}_A - \b
 
 Using a statistical software, generate a randomization distribution for the difference in means and calculate the p-value for the two-tailed test. Is the observed difference of 6.2 bpm statistically significant?
 
-<details><summary><red>Click for answer</red></summary>
-*Answer:* We can use the `permTest` function from the `CarletonStats` package to generate a randomization distribution for the difference in means and calculate the p-value for the two-tailed test. We can compare the p-value of $2e^{-4}$ to a chosen significance level (e.g., 0.05) to determine if the observed difference of 6.2 bpm is statistically significant. Since the p-value is less than the significance level, the observed difference is statistically significant.
+<!-- <details><summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* We can use the `permTest` function from the `CarletonStats` package to generate a randomization distribution for the difference in means and calculate the p-value for the two-tailed test. We can compare the p-value of $2e^{-4}$ to a chosen significance level (e.g., 0.05) to determine if the observed difference of 6.2 bpm is statistically significant. Since the p-value is less than the significance level, the observed difference is statistically significant. -->
+
+<!-- </details><br> -->
 
 
-```{r}
+```r
 library(CarletonStats)
 library(readr)
 exercise <- read_csv("https://raw.githubusercontent.com/deepbas/statdatasets/main/exercise.csv")
@@ -36,18 +38,90 @@ permTest(Decrease_in_Resting_Heart_Rate~Group, data= exercise)
 
 
 
-</details><br>
+
 
 ### (c) Interpretation and Conclusion
 
 Interpret the p-value and state your conclusion regarding the difference in mean decrease in resting heart rate between aerobic exercise and resistance training.
 
-<details><summary><red>Click for answer</red></summary>
-*Answer:* Since the p-value is less than the significance level, it means that the observed difference of 6.2 bpm is highly unlikely to occur just by random chance under the null hypothesis. In this case, we would reject the null hypothesis and conclude that there is a statistically significant difference in the mean decrease in resting heart rate between aerobic exercise and resistance training.
+<!-- <details><summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* Since the p-value is less than the significance level, it means that the observed difference of 6.2 bpm is highly unlikely to occur just by random chance under the null hypothesis. In this case, we would reject the null hypothesis and conclude that there is a statistically significant difference in the mean decrease in resting heart rate between aerobic exercise and resistance training. -->
 
-</details><br>
+<!-- </details><br> -->
 
-## Example 2: Job Interview Success
+
+## Problem 2: Paired permutation tests
+
+Quinn Stewart (2013) collected data on unemployment rates and percentage of high school graduates in the counties of California and Minnesota (year 2000). Let's load the data into the R session.
+
+
+```r
+# Load the data
+beermilers <- read.csv("https://math.carleton.edu/Stats215/RLabManual/BeerMilers.csv")
+```
+
+### (a) Conduct a permutation test to determine whether or not the difference in the (paired!) mean times is statistically discernible. What are your hypotheses?
+
+
+
+```r
+permTestPaired(MileTime~BeerTime, data= beermilers)
+```
+
+
+<!-- <details><summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* -->
+
+<!-- Our hypotheses are: -->
+
+<!-- 1. Null Hypothesis $H_0$ : The paired mean differences between the two groups are 0 . -->
+<!-- 2. Alternative Hypothesis $H_a$ : The paired mean differences between the two groups are not 0 . -->
+
+<!-- Given the very small p-value of 0.0001 (which is well below the common significance level of 0.05), we reject the null hypothesis. This suggests that there is a statistically significant difference in the paired mean times of 'MileTime' and 'BeerTime'. Thus, the data provides strong evidence to conclude that the difference in the paired mean times for 'MileTime' and 'BeerTime 'is not due to random chance but is statistically discernible. -->
+
+<!-- </details><br> -->
+
+## Problem 3: Type I and Type II Error Rates
+
+Consider the previous example of a new teaching method compared to a traditional teaching method. Suppose that the school administration wants to minimize the chances of making Type I and Type II errors when deciding whether to adopt the new teaching method.
+
+### (a) Type I Error
+
+Explain what a Type I error is in the context of this example, and describe the consequences of making such an error.
+
+<!-- <details><summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* A Type I error occurs when we reject the null hypothesis when it's actually true. In this context, it means that we conclude the new teaching method is more effective than the traditional method when, in reality, there is no difference. The consequences of making a Type I error could include investing time and resources into a new teaching method that isn't actually more effective, leading to inefficient allocation of resources. -->
+
+<!-- </details><br> -->
+
+### (b) Type II Error
+
+Explain what a Type II error is in the context of this example, and describe the consequences of making such an error.
+
+<!-- <details><summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* A Type II error occurs when we fail to reject the null hypothesis when it's actually false. In this context, it means that we conclude that there is no difference between the new teaching method and the traditional method when, in reality, the new method is more effective. The consequences of making a Type II error could include missing out on the opportunity to improve students' learning outcomes by not adopting the more effective teaching method. -->
+
+<!-- </details><br> -->
+
+### (c) Adjusting the Significance Level
+
+If the school administration believes that making a Type I error is much worse than making a Type II error, what adjustments could be made to the significance level to account for this? Explain your reasoning.
+
+<!-- <details><summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* To decrease the chance of making a Type I error, the school administration could choose a smaller significance level, such as 0.01 instead of the typical 0.05. By using a smaller significance level, we require stronger evidence (smaller p-value) to reject the null hypothesis, thus reducing the probability of making a Type I error. -->
+
+<!-- </details><br> -->
+
+### (d) Balancing Error Rates
+
+Discuss how the school administration could balance the Type I and Type II error rates when evaluating the effectiveness of the new teaching method. What factors should they consider?
+
+<!-- <details><summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* Balancing the Type I and Type II error rates involves considering the consequences of each type of error and the desired level of confidence in the results. The administration should weigh the risks and benefits of adopting a new teaching method versus maintaining the traditional method. They should also consider factors such as the cost and feasibility of implementing the new method, as well as the potential impact on student learning outcomes. Ultimately, the administration should choose a significance level and sample size that balance the risks associated with Type I and Type II errors while taking into account practical constraints and priorities. -->
+
+<!-- </details><br> -->
+
+## Problem 4: Job Interview Success
 
 A study investigated the success rate of job applicants who used a career coaching service (CCS) compared to those who didn't (NCCS). Out of 120 applicants, 60 used the CCS and 60 did not. We want to test if there is a difference in the proportion of successful applicants between CCS and NCCS groups. out of the 60 applicants who used the career coaching service (CCS), 42 were successful and 18 were unsuccessful. Out of the 60 applicants who did not use the career coaching service (NCCS), 30 were successful and 30 were unsuccessful. The hypotheses are:
 
@@ -84,7 +158,7 @@ Interpret the p-value and state your conclusion regarding the difference in the 
 
 </details><br>
 
-## Example 3: New Teaching Method Effectiveness
+## Problem 5: New Teaching Method Effectiveness
 
 A school is testing a new teaching method for math. They randomly assign 40 students to either the new method (NM) or the traditional method (TM), 20 in each group. After 3 months, the students take a standardized math test. We want to test if there is a difference in the mean test scores between NM and TM groups. The hypotheses are:
 
@@ -109,10 +183,30 @@ Using a statistical software, generate a randomization distribution for the diff
 *Answer:* The p-value is the proportion of resamples that have a difference of 8.9 or above. Depending on the generated randomization distribution, the p-value is 0.0002. This means is interpreted in terms of how likely it is to observe a difference of 8.9 or greater under the null hypothesis, which is 0.02%.
 
 
-```{r}
+
+```r
+library(CarletonStats)
 teaching <- read_csv("https://raw.githubusercontent.com/deepbas/statdatasets/main/teaching_method.csv")
 permTest(Math_Test_Score~Group, data= teaching)
 ```
+
+```
+
+	** Permutation test **
+
+ Permutation test with alternative: two.sided 
+ Observed statistic
+  New_Method :  91.05 	 Traditional_Method :  82.15 
+ Observed difference: 8.9 
+
+ Mean of permutation distribution: 0.0134 
+ Standard error of permutation distribution: 1.72247 
+ P-value:  1e-04 
+
+	*-------------*
+```
+
+<img src="Practice_Problems_13_files/figure-html/unnamed-chunk-4-1.png" width="100%" />
 
 </details><br>
 
@@ -126,59 +220,4 @@ Interpret the p-value and state your conclusion regarding the difference in the 
 
 </details><br>
 
-## Example 4: Type I and Type II Error Rates
 
-Consider the previous example of a new teaching method compared to a traditional teaching method. Suppose that the school administration wants to minimize the chances of making Type I and Type II errors when deciding whether to adopt the new teaching method.
-
-### (a) Type I Error
-
-Explain what a Type I error is in the context of this example, and describe the consequences of making such an error.
-
-<details><summary><red>Click for answer</red></summary>
-*Answer:* A Type I error occurs when we reject the null hypothesis when it's actually true. In this context, it means that we conclude the new teaching method is more effective than the traditional method when, in reality, there is no difference. The consequences of making a Type I error could include investing time and resources into a new teaching method that isn't actually more effective, leading to inefficient allocation of resources.
-
-</details><br>
-
-### (b) Type II Error
-
-Explain what a Type II error is in the context of this example, and describe the consequences of making such an error.
-
-<details><summary><red>Click for answer</red></summary>
-*Answer:* A Type II error occurs when we fail to reject the null hypothesis when it's actually false. In this context, it means that we conclude that there is no difference between the new teaching method and the traditional method when, in reality, the new method is more effective. The consequences of making a Type II error could include missing out on the opportunity to improve students' learning outcomes by not adopting the more effective teaching method.
-
-</details><br>
-
-### (c) Adjusting the Significance Level
-
-If the school administration believes that making a Type I error is much worse than making a Type II error, what adjustments could be made to the significance level to account for this? Explain your reasoning.
-
-<details><summary><red>Click for answer</red></summary>
-*Answer:* To decrease the chance of making a Type I error, the school administration could choose a smaller significance level, such as 0.01 instead of the typical 0.05. By using a smaller significance level, we require stronger evidence (smaller p-value) to reject the null hypothesis, thus reducing the probability of making a Type I error.
-
-</details><br>
-
-### (d) Factors Influencing Type II Error Rate
-
-List the factors that influence the probability of making a Type II error and briefly describe how they affect the error rate in this context.
-
-<details><summary><red>Click for answer</red></summary>
-Answer: Factors that influence the probability of making a Type II error include:
-
-*Effect size:* The true difference between the new teaching method and the traditional method. A larger effect size makes it easier to detect a difference, reducing the Type II error rate.
-
-*Sample size:* The number of students involved in the study. A larger sample size increases the power of the test, making it more likely to detect a true difference and reducing the Type II error rate.
-
-*Variability:* The amount of variation in the students' learning outcomes. Higher variability makes it more difficult to detect a true difference, increasing the Type II error rate.
-
-*Significance level:* The chosen significance level (alpha) also affects the Type II error rate. A larger significance level (e.g., 0.10) decreases the Type II error rate but increases the Type I error rate.
-
-</details><br>
-
-### (e) Balancing Error Rates
-
-Discuss how the school administration could balance the Type I and Type II error rates when evaluating the effectiveness of the new teaching method. What factors should they consider?
-
-<details><summary><red>Click for answer</red></summary>
-*Answer:* Balancing the Type I and Type II error rates involves considering the consequences of each type of error and the desired level of confidence in the results. The administration should weigh the risks and benefits of adopting a new teaching method versus maintaining the traditional method. They should also consider factors such as the cost and feasibility of implementing the new method, as well as the potential impact on student learning outcomes. Ultimately, the administration should choose a significance level and sample size that balance the risks associated with Type I and Type II errors while taking into account practical constraints and priorities.
-
-</details><br>

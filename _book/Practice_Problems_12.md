@@ -3,14 +3,14 @@
 
 ### Problem 1 Revisited: 
 
- (a). If the results of a test for ESP are statistically significant, what does that mean in terms of ESP?
+ (a). If the results of a test for ESP are statistically discernible, what does that mean in terms of ESP?
 <details><summary><red>Click for answer</red></summary>
 *Answer:* 
 
 It means we can conclude that $p > 0.2$ and that the sample results were so strong that we can conclude that ESP does exist and get more right than would be expected by random chance.  
 </details><br>
 
- (b). If the results are not statistically significant, what does that mean in terms of ESP?
+ (b). If the results are not statistically discernible, what does that mean in terms of ESP?
 <details><summary><red>Click for answer</red></summary>
 *Answer:* 
 
@@ -26,7 +26,7 @@ $$
 H_0: \mu_S - \mu_C = 0 \ \ H_A: \mu_S - \mu_C \neq 0
 $$
 
-The sample mean difference is $\bar{x}_S - \bar{x}_C = 3$. We want to know if this difference in sample means is statistically significant. 
+The sample mean difference is $\bar{x}_S - \bar{x}_C = 3$. We want to know if this difference in sample means is statistically discernible. 
 
 #### (a) Explain how to generate a randomization distribution for $\bar{x}_S - \bar{x}_C$ that is consistent with $H_0: \mu_S - \mu_C = 0$.
 
@@ -56,7 +56,7 @@ Select the **Two-Tail** button at the top of the plot. Change the positive x-axi
 
 #### (d) 	Interpret + Conclusion
 
-Interpret the p-value. Does the p-value support the alternative hypothesis (do you think difference of means of 3 is statistically significant) or is it inconclusive? Explain.
+Interpret the p-value. Does the p-value support the alternative hypothesis (do you think difference of means of 3 is statistically discernible) or is it inconclusive? Explain.
 
 <details><summary><red>Click for answer</red></summary>
 *Answer:* We would see a difference of at least 3 words recalled, on average, in about 4.4% of all possible samples if the influence of sleep and caffeine on recall was the same The results show some evidence of statistical significance, meaning that the caffeine and sleep may have some difference effects on word recall ability.
@@ -114,9 +114,9 @@ permTest(Words ~ Group, data=wordData)
   Caffeine :  12.25 	 Sleep :  15.25 
  Observed difference: -3 
 
- Mean of permutation distribution: 0.00822 
- Standard error of permutation distribution: 1.49145 
- P-value:  0.0475 
+ Mean of permutation distribution: 0.03497 
+ Standard error of permutation distribution: 1.49531 
+ P-value:  0.0497 
 
 	*-------------*
 ```
