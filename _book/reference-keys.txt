@@ -220,4 +220,10 @@ b-type-ii-error
 c-adjusting-the-significance-level
 d-balancing-error-rates
 extra-problem-5-job-interview-success
-url-your-book-url-like-httpsbookdown.orgyihuibookdown
+practice-problems-14
+problem-1-gender-stereotypes-in-children---study-4
+a-interest-in-5-year-olds---test
+b-interest-in-5-year-olds---ci
+c-interest-in-6-and-7-year-olds---test
+d-interest-in-6-and-7-year-olds---ci
+e-interest-in-5-year-olds

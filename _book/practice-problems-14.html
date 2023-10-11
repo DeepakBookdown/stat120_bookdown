@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 23 Practice Problems 14 | Stat 120</title>
+<meta name="author" content="Deepak Bastola">
+<meta name="description" content="23.1 Problem 1: Gender stereotypes in children - study 4 The data for this example comes from study 4 described in this Science article: https://www.science.org/doi/10.1126/science.aah6524. This...">
+<meta name="generator" content="bookdown 0.35 with bs4_book()">
+<meta property="og:title" content="Chapter 23 Practice Problems 14 | Stat 120">
+<meta property="og:type" content="book">
+<meta property="og:description" content="23.1 Problem 1: Gender stereotypes in children - study 4 The data for this example comes from study 4 described in this Science article: https://www.science.org/doi/10.1126/science.aah6524. This...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 23 Practice Problems 14 | Stat 120">
+<meta name="twitter:description" content="23.1 Problem 1: Gender stereotypes in children - study 4 The data for this example comes from study 4 described in this Science article: https://www.science.org/doi/10.1126/science.aah6524. This...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.1/transition.js"></script><script src="libs/bs3compat-0.5.1/tabs.js"></script><script src="libs/bs3compat-0.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Stat 120</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Introduction to Statistics</a></li>
+<li class="book-part">Basics R</li>
+<li><a class="" href="what-is-r.html"><span class="header-section-number">1</span> What is R?</a></li>
+<li><a class="" href="r-markdown-basics.html"><span class="header-section-number">2</span> R Markdown Basics</a></li>
+<li><a class="" href="homework-guidelines.html"><span class="header-section-number">3</span> Homework Guidelines</a></li>
+<li><a class="" href="report-guidelines.html"><span class="header-section-number">4</span> Report Guidelines</a></li>
+<li class="book-part">R Tutorials</li>
+<li><a class="" href="tutorial-1-embark-on-your-data-journey.html"><span class="header-section-number">5</span> Tutorial 1: Embark on Your Data Journey</a></li>
+<li><a class="" href="tutorial-2-dive-deeper-into-data-visualization-and-statistics-in-r.html"><span class="header-section-number">6</span> Tutorial 2: Dive Deeper into Data Visualization and Statistics in R</a></li>
+<li><a class="" href="tutorial-3-dive-deeper-into-data-manipulation-with-dplyr-in-r.html"><span class="header-section-number">7</span> Tutorial 3: Dive Deeper into Data Manipulation with dplyr in R</a></li>
+<li><a class="" href="tutorial-4-latex-equations-in-rmarkdown.html"><span class="header-section-number">8</span> Tutorial 4: LaTeX Equations in RMarkdown</a></li>
+<li class="book-part">Short Reports</li>
+<li><a class="" href="short-report-1.html"><span class="header-section-number">9</span> Short Report 1</a></li>
+<li class="book-part">Practice Problems</li>
+<li><a class="" href="practice-problems-1.html"><span class="header-section-number">10</span> Practice Problems 1</a></li>
+<li><a class="" href="practice-problems-2.html"><span class="header-section-number">11</span> Practice Problems 2</a></li>
+<li><a class="" href="practice-problems-3.html"><span class="header-section-number">12</span> Practice Problems 3</a></li>
+<li><a class="" href="practice-problems-4.html"><span class="header-section-number">13</span> Practice Problems 4</a></li>
+<li><a class="" href="practice-problems-5.html"><span class="header-section-number">14</span> Practice Problems 5</a></li>
+<li><a class="" href="practice-problems-6.html"><span class="header-section-number">15</span> Practice Problems 6</a></li>
+<li><a class="" href="practice-problems-7.html"><span class="header-section-number">16</span> Practice Problems 7</a></li>
+<li><a class="" href="practice-problems-8.html"><span class="header-section-number">17</span> Practice Problems 8</a></li>
+<li><a class="" href="practice-problems-9.html"><span class="header-section-number">18</span> Practice Problems 9</a></li>
+<li><a class="" href="practice-problems-10.html"><span class="header-section-number">19</span> Practice Problems 10</a></li>
+<li><a class="" href="practice-problems-11.html"><span class="header-section-number">20</span> Practice Problems 11</a></li>
+<li><a class="" href="practice-problems-12.html"><span class="header-section-number">21</span> Practice Problems 12</a></li>
+<li><a class="" href="practice-problems-13.html"><span class="header-section-number">22</span> Practice Problems 13</a></li>
+<li><a class="active" href="practice-problems-14.html"><span class="header-section-number">23</span> Practice Problems 14</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="practice-problems-14" class="section level1" number="23">
+<h1>
+<span class="header-section-number">23</span> Practice Problems 14<a class="anchor" aria-label="anchor" href="#practice-problems-14"><i class="fas fa-link"></i></a>
+</h1>
+<div id="problem-1-gender-stereotypes-in-children---study-4" class="section level2" number="23.1">
+<h2>
+<span class="header-section-number">23.1</span> Problem 1: Gender stereotypes in children - study 4<a class="anchor" aria-label="anchor" href="#problem-1-gender-stereotypes-in-children---study-4"><i class="fas fa-link"></i></a>
+</h2>
+<p>The data for this example comes from study 4 described in this <em>Science</em> article: <a href="https://www.science.org/doi/10.1126/science.aah6524">https://www.science.org/doi/10.1126/science.aah6524</a>. This study involved asking children their interest level in a game that researcher described as for “children who are really, really smart.” The higher the value of the variable <code>interest</code>, the more interested a child was in playing that game.</p>
+<div class="sourceCode" id="cb294"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">study4</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"http://math.carleton.edu/kstclair/data/Stereo4.csv"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">study4</span><span class="op">)</span></span></code></pre></div>
+<pre><code>    study subj gender   age    interest race     race2
+1 Study 4   65   girl age 6  0.37953534    5     white
+2 Study 4   66   girl age 6 -0.78071539    5     white
+3 Study 4   67   girl age 6 -0.47631654    5     white
+4 Study 4   68   girl age 6 -0.07234632    5     white
+5 Study 4   69    boy age 6 -0.70319450    6 non-white
+6 Study 4   70   girl age 6  0.52467564    5     white
+  eduave income        ses        age2
+1     16  90000 -0.1543908 age 6 and 7
+2     16 125000  0.2298424 age 6 and 7
+3     18  25000 -0.3446883 age 6 and 7
+4     17 125000  0.4914816 age 6 and 7
+5     19 125000  1.0147600 age 6 and 7
+6     12  65000 -1.4753998 age 6 and 7</code></pre>
+<div id="a-interest-in-5-year-olds---test" class="section level4" number="23.1.0.1">
+<h4>
+<span class="header-section-number">23.1.0.1</span> (a) Interest in 5 year olds - test<a class="anchor" aria-label="anchor" href="#a-interest-in-5-year-olds---test"><i class="fas fa-link"></i></a>
+</h4>
+<p>Let’s compare the mean interest level in 5 year old boys and girls. Generate the randomization distribution for this test:</p>
+<p><span class="math display">\[
+H_0: \mu_{B5} - \mu_{G5} = 0 \ \ H_0: \mu_{B5} - \mu_{G5} \neq 0
+\]</span></p>
+<div class="sourceCode" id="cb296"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/aloy/CarletonStats">CarletonStats</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
+<span><span class="va">study4age5</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">study4</span>, <span class="va">age2</span> <span class="op">==</span> <span class="st">"age 5"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">study4age5</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">gender</span>, y<span class="op">=</span><span class="va">interest</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Practice_Problems_14_files/figure-html/unnamed-chunk-2-1.png" width="100%"></div>
+<div class="sourceCode" id="cb297"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/CarletonStats/man/permTest.html">permTest</a></span><span class="op">(</span><span class="va">interest</span> <span class="op">~</span> <span class="va">gender</span>, data <span class="op">=</span> <span class="va">study4age5</span><span class="op">)</span></span></code></pre></div>
+<pre><code>
+    ** Permutation test **
+
+ Permutation test with alternative: two.sided 
+ Observed statistic
+  boy :  -0.1043526      girl :  0.02905667 
+ Observed difference: -0.13341 
+
+ Mean of permutation distribution: 0.00017 
+ Standard error of permutation distribution: 0.2639 
+ P-value:  0.6186 
+
+    *-------------*</code></pre>
+<div class="inline-figure"><img src="Practice_Problems_14_files/figure-html/unnamed-chunk-2-2.png" width="100%"></div>
+<ul>
+<li>What is the SE of this randomization distribution?</li>
+</ul>
+<!-- <details><summary><red>Click for answer</red></summary> --><!-- *Answer:* SE is about 0.26.  --><!-- </details><br> --><ul>
+<li>What is the z-score for the observed difference in means using this distribution? Interpret the value.</li>
+</ul>
+<!-- <details><summary><red>Click for answer</red></summary> --><!-- *Answer:* The distribution has a center of 0 and SE of 0.26. The z-score is  --><!-- $$ --><!-- z = \dfrac{-0.13341 - 0}{0.26051} = -0.51 --><!-- $$ --><!-- This means the observed difference of -0.133 is about 0.51 SEs below the hypothesized difference of 0.  --><!-- ```{r} --><!-- -0.13341/0.26051  --><!-- ``` --><!-- </details><br> --><ul>
+<li>How large or small would the observed difference in sample means need to be to reject the null hypothesis using a 5% significance level.</li>
+</ul>
+<!-- <details><summary><red>Click for answer</red></summary> --><!-- *Answer:* Since the distribution is bell-shaped, we can use the fact that about 5% of sample differences are further than 2 SE's above/below the center difference of 0. Any sample difference this extreme will lead to a two-sided p-value that is less than the significance level of 5%. For this data, 2 SE's is a sample difference of 0.521 so any observed difference that is more extreme than 0.521 would lead to rejecting the null hypothesis of no difference.  --><!-- ```{r} --><!-- 2*0.26051  --><!-- ``` --><!-- </details><br> -->
+</div>
+<div id="b-interest-in-5-year-olds---ci" class="section level4" number="23.1.0.2">
+<h4>
+<span class="header-section-number">23.1.0.2</span> (b) Interest in 5 year olds - CI<a class="anchor" aria-label="anchor" href="#b-interest-in-5-year-olds---ci"><i class="fas fa-link"></i></a>
+</h4>
+<p>Consider the 95% (bootstrap) CI for the true difference in mean interest <span class="math inline">\(\mu_{B5} - \mu_{G5}\)</span>.</p>
+<ul>
+<li>Will this interval contain the difference of 0?</li>
+</ul>
+<!-- <details><summary><red>Click for answer</red></summary> --><!-- *Answer:* Yes, since we didn't reject the null difference of 0 using a 5% significance level (p-value = 0.617). --><!-- </details><br> --><ul>
+<li>Compute the bootstrap distribution. Does the CI capture 0?</li>
+</ul>
+<div class="sourceCode" id="cb299"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">7</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/CarletonStats/man/boot.html">boot</a></span><span class="op">(</span><span class="va">interest</span> <span class="op">~</span> <span class="va">gender</span>, data <span class="op">=</span> <span class="va">study4age5</span><span class="op">)</span></span></code></pre></div>
+<pre><code>
+    ** Bootstrap interval for difference of mean 
+
+ Observed difference of mean : boy - girl = -0.13341 
+ Mean of bootstrap distribution: -0.13776 
+ Standard error of bootstrap distribution: 0.25939 
+
+ Bootstrap percentile interval
+      2.5%      97.5% 
+-0.6459180  0.3652884 
+
+        *--------------*</code></pre>
+<div class="inline-figure"><img src="Practice_Problems_14_files/figure-html/unnamed-chunk-3-1.png" width="100%"></div>
+<!-- <details><summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* Yes, the CI captures the difference of 0.  -->
+<!-- </details><br> -->
+<ul>
+<li>What is the bootstrap SE? Is it similar to the randomization distribution SE?</li>
+</ul>
+<!-- <details><summary><red>Click for answer</red></summary> --><!-- *Answer:* SE is about 0.26, which is very similar to the randomization distribution SE. --><!-- </details><br> -->
+</div>
+<div id="c-interest-in-6-and-7-year-olds---test" class="section level4" number="23.1.0.3">
+<h4>
+<span class="header-section-number">23.1.0.3</span> (c) Interest in 6 and 7 year olds - test<a class="anchor" aria-label="anchor" href="#c-interest-in-6-and-7-year-olds---test"><i class="fas fa-link"></i></a>
+</h4>
+<p>Redo part (a) for the age group <code>age 6 and 7</code>.</p>
+<div class="sourceCode" id="cb301"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">study4age67</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">study4</span>, <span class="va">age2</span> <span class="op">==</span> <span class="st">"age 6 and 7"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">study4age67</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">gender</span>, y<span class="op">=</span><span class="va">interest</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Practice_Problems_14_files/figure-html/unnamed-chunk-4-1.png" width="100%"></div>
+<div class="sourceCode" id="cb302"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/CarletonStats/man/permTest.html">permTest</a></span><span class="op">(</span><span class="va">interest</span> <span class="op">~</span> <span class="va">gender</span>, data <span class="op">=</span> <span class="va">study4age67</span><span class="op">)</span></span></code></pre></div>
+<pre><code>
+    ** Permutation test **
+
+ Permutation test with alternative: two.sided 
+ Observed statistic
+  boy :  0.2163512   girl :  -0.3186948 
+ Observed difference: 0.53505 
+
+ Mean of permutation distribution: -0.00312 
+ Standard error of permutation distribution: 0.22035 
+ P-value:  0.0112 
+
+    *-------------*</code></pre>
+<div class="inline-figure"><img src="Practice_Problems_14_files/figure-html/unnamed-chunk-4-2.png" width="100%"></div>
+<ul>
+<li>What is the SE of this randomization distribution?</li>
+</ul>
+<!-- <details><summary><red>Click for answer</red></summary> --><!-- *Answer:* SE is about 0.225.  --><!-- </details><br> --><ul>
+<li>What is the z-score for the observed difference in means using this distribution? Interpret the value.</li>
+</ul>
+<!-- <details><summary><red>Click for answer</red></summary> --><!-- *Answer:* The distribution has a center of 0 and SE of 0.225. The z-score is  --><!-- $$ --><!-- z = \dfrac{0.53505 - 0}{0.22539 } = 2.37 --><!-- $$ --><!-- This means the observed difference of 0.535 is about 2.37 SEs above the hypothesized difference of 0.  --><!-- ```{r} --><!-- 0.53505/0.22539  --><!-- ``` --><!-- </details><br> --><ul>
+<li>How large or small would the observed difference in sample means need to be to reject the null hypothesis using a 5% significance level.</li>
+</ul>
+<!-- <details><summary><red>Click for answer</red></summary> --><!-- *Answer:* Since the distribution is bell-shaped, we can use the fact that about 5% of sample differences are further than 2 SE's above/below the center difference of 0. Any sample difference this extreme will lead to a two-sided p-value that is less than the significance level of 5%. For this data, 2 SE's is a sample difference of 0.451 so any observed difference that is more extreme than 0.451 would lead to rejecting the null hypothesis of no difference.  --><!-- ```{r} --><!-- 2*0.22539  --><!-- ``` --><!-- </details><br> -->
+</div>
+<div id="d-interest-in-6-and-7-year-olds---ci" class="section level4" number="23.1.0.4">
+<h4>
+<span class="header-section-number">23.1.0.4</span> (d) Interest in 6 and 7 year olds - CI<a class="anchor" aria-label="anchor" href="#d-interest-in-6-and-7-year-olds---ci"><i class="fas fa-link"></i></a>
+</h4>
+<p>Redo part (b) for 6 and 7 year olds.</p>
+<ul>
+<li>Will this interval contain the difference of 0?</li>
+</ul>
+<!-- <details><summary><red>Click for answer</red></summary> --><!-- *Answer:* No, since we rejected the null difference of 0 using a 5% significance level (p-value = 0.015). --><!-- </details><br> --><ul>
+<li>Compute the bootstrap distribution. Does the CI capture 0?</li>
+</ul>
+<div class="sourceCode" id="cb304"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/CarletonStats/man/boot.html">boot</a></span><span class="op">(</span><span class="va">interest</span> <span class="op">~</span> <span class="va">gender</span>, data <span class="op">=</span> <span class="va">study4age67</span><span class="op">)</span></span></code></pre></div>
+<pre><code>
+    ** Bootstrap interval for difference of mean 
+
+ Observed difference of mean : boy - girl = 0.53505 
+ Mean of bootstrap distribution: 0.53468 
+ Standard error of bootstrap distribution: 0.20659 
+
+ Bootstrap percentile interval
+     2.5%     97.5% 
+0.1259895 0.9348764 
+
+        *--------------*</code></pre>
+<div class="inline-figure"><img src="Practice_Problems_14_files/figure-html/unnamed-chunk-5-1.png" width="100%"></div>
+<!-- <details><summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* No, the CI does not capture the difference of 0.  -->
+<!-- </details><br> -->
+<ul>
+<li>What is the bootstrap SE? Is it similar to the randomization distribution SE?</li>
+</ul>
+<!-- <details><summary><red>Click for answer</red></summary> --><!-- *Answer:* SE is about 0.21, which is very similar to the randomization distribution SE. --><!-- </details><br> -->
+</div>
+<div id="e-interest-in-5-year-olds" class="section level4" number="23.1.0.5">
+<h4>
+<span class="header-section-number">23.1.0.5</span> (e) Interest in 5 year olds<a class="anchor" aria-label="anchor" href="#e-interest-in-5-year-olds"><i class="fas fa-link"></i></a>
+</h4>
+<p>Redo the randomization test and bootstrap CI for 5 year olds, but this time omit the outlier boy case that has a very low interest level. Recall how to use the <code>which</code> command:</p>
+<div class="sourceCode" id="cb306"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">study4age5</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">gender</span>, y<span class="op">=</span><span class="va">interest</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Practice_Problems_14_files/figure-html/unnamed-chunk-6-1.png" width="100%"></div>
+<div class="sourceCode" id="cb307"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Identify which rows have 'interest' less than -2 using dplyr</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/which.html">which</a></span><span class="op">(</span><span class="va">study4age5</span><span class="op">$</span><span class="va">interest</span> <span class="op">&lt;</span> <span class="op">-</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
+<pre><code>[1] 39</code></pre>
+<p>Then to omit this case, add the argument <code>subset = -39</code> to the <code>permTest</code> and <code>boot</code> commands used in (a) and (b).</p>
+<div class="sourceCode" id="cb309"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">7</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/CarletonStats/man/permTest.html">permTest</a></span><span class="op">(</span><span class="va">interest</span> <span class="op">~</span> <span class="va">gender</span>, data <span class="op">=</span> <span class="va">study4age5</span>, subset <span class="op">=</span> <span class="op">-</span><span class="fl">39</span><span class="op">)</span></span></code></pre></div>
+<pre><code>
+    ** Permutation test **
+
+ Permutation test with alternative: two.sided 
+ Observed statistic
+  boy :  0.01417256      girl :  0.02905667 
+ Observed difference: -0.01488 
+
+ Mean of permutation distribution: -0.00265 
+ Standard error of permutation distribution: 0.2469 
+ P-value:  0.9516 
+
+    *-------------*</code></pre>
+<div class="inline-figure"><img src="Practice_Problems_14_files/figure-html/unnamed-chunk-7-1.png" width="100%"></div>
+<div class="sourceCode" id="cb311"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/CarletonStats/man/boot.html">boot</a></span><span class="op">(</span><span class="va">interest</span> <span class="op">~</span> <span class="va">gender</span>, data <span class="op">=</span> <span class="va">study4age5</span>, subset <span class="op">=</span> <span class="op">-</span><span class="fl">39</span><span class="op">)</span></span></code></pre></div>
+<pre><code>
+    ** Bootstrap interval for difference of mean 
+
+ Observed difference of mean : boy - girl = -0.01488 
+ Mean of bootstrap distribution: -0.01565 
+ Standard error of bootstrap distribution: 0.23826 
+
+ Bootstrap percentile interval
+      2.5%      97.5% 
+-0.4751690  0.4520149 
+
+        *--------------*</code></pre>
+<div class="inline-figure"><img src="Practice_Problems_14_files/figure-html/unnamed-chunk-7-2.png" width="100%"></div>
+<ul>
+<li>Does the observed difference get closer or further from 0 with the case omitted? Explain why it changes.</li>
+</ul>
+<!-- <details><summary><red>Click for answer</red></summary> --><!-- *Answer:* The very low case pulls down the mean response for boys (with: $\bar{x}_{B5} = -0.10435$, without: $\bar{x}_{B5} = 0.01417$). Since the girl mean response doesn't change ($\bar{x}_{G5} = 0.02906$), omitting this case will make the *two means closer together* which makes their difference closer to 0 (with: $\bar{x}_{B5} - \bar{x}_{G5} = -0.13341$, without: $\bar{x}_{B5}  - \bar{x}_{G5} = -0.01488$). --><!-- </details><br> --><ul>
+<li>Do the SEs of the distributions (bootstrap and randomization) get smaller or larger with the case omitted? Explain why these change.</li>
+</ul>
+<!-- <details><summary><red>Click for answer</red></summary> --><!-- *Answer:* The very low case creates larger variability in the sample mean for boys, which in turn makes the SE for the sample mean difference more variable  (with: SE about 0.26, without: SE about 0.24).  --><!-- </details><br> --><ul>
+<li>Compute the z-score for the observed difference in means using randomization distribution. Is this value futher or closer to a z-score of 0 with the case omitted? Explain why it changes.</li>
+</ul>
+<!-- <details><summary><red>Click for answer</red></summary> --><!-- *Answer:* The z-score is closer to 0 with the case removed (with: $z = -0.51$, without: $z = -0.061$) --><!-- $$ --><!-- z = \dfrac{-0.01488  - 0}{0.24569} = -0.061 --><!-- $$ --><!-- The z-score is closer to 0 because the sample mean difference is closer to 0 with the case removed, and this change is greater than the relatively small decrease in SE that we noted with the case removed.  --><!-- </details><br> --><ul>
+<li>Does the p-value get smaller or larger (or doesn’t change) with the case omitted? Explain why it changes.</li>
+</ul>
+<!-- <details><summary><red>Click for answer</red></summary> --><!-- *Answer:* The p-value is larger with the case removed (with: p-value = 0.617, without: p-value = 0.944). This is because the observed difference is closer to 0 (fewer SE away) with the case omitted.  --><!-- </details><br> -->
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="practice-problems-13.html"><span class="header-section-number">22</span> Practice Problems 13</a></div>
+<div class="empty"></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#practice-problems-14"><span class="header-section-number">23</span> Practice Problems 14</a></li>
+<li><a class="nav-link" href="#problem-1-gender-stereotypes-in-children---study-4"><span class="header-section-number">23.1</span> Problem 1: Gender stereotypes in children - study 4</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/Practice_Problems_14.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/Practice_Problems_14.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-10-10.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>
