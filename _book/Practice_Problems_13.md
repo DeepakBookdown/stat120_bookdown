@@ -66,7 +66,7 @@ Our hypotheses are:
 1. Null Hypothesis $H_0$ : The paired mean differences between the two groups are 0 .
 2. Alternative Hypothesis $H_a$ : The paired mean differences between the two groups are not 0 .
 
-Given the very small p-value of 0.0001 (which is well below the common significance level of 0.05), we reject the null hypothesis. This suggests that there is a statistically significant difference in the paired mean times of 'MileTime' and 'BeerTime'. Thus, the data provides strong evidence to conclude that the difference in the paired mean times for 'MileTime' and 'BeerTime 'is not due to random chance but is statistically discernible.
+Given the very small p-value of 0.0001 (which is well below the common significance level of 0.05), we reject the null hypothesis. This suggests that there is a statistically discernible difference in the paired mean times of 'MileTime' and 'BeerTime'. Thus, the data provides strong evidence to conclude that the difference in the paired mean times for 'MileTime' and 'BeerTime 'is not due to random chance but is statistically discernible.
 
 </details><br>
 
@@ -77,7 +77,7 @@ A school is testing a new teaching method for math. They randomly assign 40 stud
 
 
 $$H_0: \mu_{N M}-\mu_{T M}=0 \mathrm{H}_A: \mu_{NM} - \mu_{TM} \neq 0$$
-The sample mean difference is $\bar{x}_{NM} - \bar{x}_{TM} = 8.9$. We want to know if this difference in sample means is statistically significant.
+The sample mean difference is $\bar{x}_{NM} - \bar{x}_{TM} = 8.9$. We want to know if this difference in sample means is statistically discernible.
 
 ### (a) Randomization Distribution
 
@@ -90,7 +90,7 @@ Describe how you could generate a randomization distribution for $\bar{x}_{NM} -
 
 #### (b) Calculating the p-value
 
-Using a statistical software, generate a randomization distribution for the difference in means and calculate the p-value for the two-tailed test. Is the observed difference of 8.9 points statistically significant?
+Using a statistical software, generate a randomization distribution for the difference in means and calculate the p-value for the two-tailed test. Is the observed difference of 8.9 points statistically discernible?
 
 <details><summary><red>Click for answer</red></summary>
 *Answer:* The p-value is the proportion of resamples that have a difference of 8.9 or above. Depending on the generated randomization distribution, the p-value is 0.0002. This means is interpreted in terms of how likely it is to observe a difference of 8.9 or greater under the null hypothesis, which is 0.02%.
@@ -112,8 +112,8 @@ permTest(Math_Test_Score~Group, data= teaching)
   New_Method :  91.05 	 Traditional_Method :  82.15 
  Observed difference: 8.9 
 
- Mean of permutation distribution: -0.01874 
- Standard error of permutation distribution: 1.74631 
+ Mean of permutation distribution: 0.0038 
+ Standard error of permutation distribution: 1.71601 
  P-value:  1e-04 
 
 	*-------------*
@@ -128,7 +128,7 @@ permTest(Math_Test_Score~Group, data= teaching)
 Interpret the p-value and state your conclusion regarding the difference in the mean test scores between the new teaching method and the traditional teaching method groups.
 
 <details><summary><red>Click for answer</red></summary>
-*Answer:* Since the p-value is less than the chosen significance level (e.g., 0.05), the results are statistically significant, and we would reject the null hypothesis in favor of the alternative. This would indicate that there is evidence suggesting the new teaching method is more effective than the traditional method. 
+*Answer:* Since the p-value is less than the chosen significance level (e.g., 0.05), the results are statistically discernible, and we would reject the null hypothesis in favor of the alternative. This would indicate that there is evidence suggesting the new teaching method is more effective than the traditional method. 
 
 
 </details><br>
@@ -179,7 +179,7 @@ Discuss how the school administration could balance the Type I and Type II error
 A study investigated the success rate of job applicants who used a career coaching service (CCS) compared to those who didn't (NCCS). Out of 120 applicants, 60 used the CCS and 60 did not. We want to test if there is a difference in the proportion of successful applicants between CCS and NCCS groups. out of the 60 applicants who used the career coaching service (CCS), 42 were successful and 18 were unsuccessful. Out of the 60 applicants who did not use the career coaching service (NCCS), 30 were successful and 30 were unsuccessful. The hypotheses are:
 
 $$H_0: p_{C C S}-p_{N C C S}=0 H_A: p_{C C S}-p_{N C C S} \neq 0$$
-The sample proportion difference is $\hat{p}{CCS} - \hat{p}{NCCS} = 0.20$. We want to know if this difference in sample proportions is statistically significant.
+The sample proportion difference is $\hat{p}{CCS} - \hat{p}{NCCS} = 0.20$. We want to know if this difference in sample proportions is statistically discernible.
 
 
 (a) Randomization Distribution
@@ -192,10 +192,10 @@ Describe how you could generate a randomization distribution for $\hat{p}_{CCS} 
 
 (b) Calculating the p-value
 
-Using a statistical software, generate a randomization distribution for the difference in proportions and calculate the p-value for the two-tailed test. Is the observed difference of 0.20 statistically significant?
+Using a statistical software, generate a randomization distribution for the difference in proportions and calculate the p-value for the two-tailed test. Is the observed difference of 0.20 statistically discernible?
 
 <details><summary><red>Click for answer</red></summary>
-*Answer:* Using *Statkey* to generate a randomization distribution for the difference in proportions and observing the p-value for the two-tailed test, we can compare the p-value to a chosen significance level (e.g., 0.05) to determine if the observed difference of 0.20 is statistically significant. If the p-value is less than the significance level, the observed difference is statistically significant; otherwise, it is not. The p-value based on this randomization distribution under null hypothesis is $2 \times 0.018 = 0.036$. So, the observed difference of 0.020 is statistically significant.
+*Answer:* Using *Statkey* to generate a randomization distribution for the difference in proportions and observing the p-value for the two-tailed test, we can compare the p-value to a chosen significance level (e.g., 0.05) to determine if the observed difference of 0.20 is statistically discernible. If the p-value is less than the significance level, the observed difference is statistically discernible; otherwise, it is not. The p-value based on this randomization distribution under null hypothesis is $2 \times 0.018 = 0.036$. So, the observed difference of 0.020 is statistically discernible.
 
 <center>
 <img src="data/teaching_methods.png" width="140%" height="120%"><br>
@@ -207,7 +207,7 @@ Using a statistical software, generate a randomization distribution for the diff
 Interpret the p-value and state your conclusion regarding the difference in the proportion of successful job applicants between CCS and NCCS groups.
 
 <details><summary><red>Click for answer</red></summary>
-*Answer:* Since the p-value is less than the significance level, it means that the observed difference of 0.20 would occur with low chance under the null hypothesis. In this case, we would reject the null hypothesis and conclude that there is a statistically significant difference in the proportion of successful job applicants between CCS and NCCS groups. 
+*Answer:* Since the p-value is less than the significance level, it means that the observed difference of 0.20 would occur with low chance under the null hypothesis. In this case, we would reject the null hypothesis and conclude that there is a statistically discernible difference in the proportion of successful job applicants between CCS and NCCS groups. 
 
 </details><br>
 

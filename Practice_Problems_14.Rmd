@@ -1,7 +1,7 @@
-# Class Activity 14
+# Practice Problems 14
 
 
-## Example 1:  Gender stereotypes in children - study 4
+## Problem 1:  Gender stereotypes in children - study 4
 The data for this example comes from study 4 described in this *Science* article: [http://science.sciencemag.org/content/355/6323/389](http://science.sciencemag.org/content/355/6323/389). This study involved asking children their interest level in a game that researcher described as for "children who are really, really smart." The higher the value of the variable `interest`, the more interested a child was in playing that game.  
 
 ```{r}

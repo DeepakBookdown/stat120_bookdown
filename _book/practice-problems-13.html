@@ -129,7 +129,7 @@
 <li>Null Hypothesis <span class="math inline">\(H_0\)</span> : The paired mean differences between the two groups are 0 .</li>
 <li>Alternative Hypothesis <span class="math inline">\(H_a\)</span> : The paired mean differences between the two groups are not 0 .</li>
 </ol>
-<p>Given the very small p-value of 0.0001 (which is well below the common significance level of 0.05), we reject the null hypothesis. This suggests that there is a statistically significant difference in the paired mean times of ‘MileTime’ and ‘BeerTime’. Thus, the data provides strong evidence to conclude that the difference in the paired mean times for ‘MileTime’ and ’BeerTime ’is not due to random chance but is statistically discernible.</p>
+<p>Given the very small p-value of 0.0001 (which is well below the common significance level of 0.05), we reject the null hypothesis. This suggests that there is a statistically discernible difference in the paired mean times of ‘MileTime’ and ‘BeerTime’. Thus, the data provides strong evidence to conclude that the difference in the paired mean times for ‘MileTime’ and ’BeerTime ’is not due to random chance but is statistically discernible.</p>
 </details><p><br></p>
 </div>
 </div>
@@ -139,7 +139,7 @@
 </h2>
 <p>A school is testing a new teaching method for math. They randomly assign 40 students to either the new method (NM) or the traditional method (TM), 20 in each group. After 3 months, the students take a standardized math test. We want to test if there is a difference in the mean test scores between NM and TM groups. The hypotheses are:</p>
 <p><span class="math display">\[H_0: \mu_{N M}-\mu_{T M}=0 \mathrm{H}_A: \mu_{NM} - \mu_{TM} \neq 0\]</span>
-The sample mean difference is <span class="math inline">\(\bar{x}_{NM} - \bar{x}_{TM} = 8.9\)</span>. We want to know if this difference in sample means is statistically significant.</p>
+The sample mean difference is <span class="math inline">\(\bar{x}_{NM} - \bar{x}_{TM} = 8.9\)</span>. We want to know if this difference in sample means is statistically discernible.</p>
 <div id="a-randomization-distribution" class="section level3" number="22.3.1">
 <h3>
 <span class="header-section-number">22.3.1</span> (a) Randomization Distribution<a class="anchor" aria-label="anchor" href="#a-randomization-distribution"><i class="fas fa-link"></i></a>
@@ -151,7 +151,7 @@ The sample mean difference is <span class="math inline">\(\bar{x}_{NM} - \bar{x}
 <h4>
 <span class="header-section-number">22.3.1.1</span> (b) Calculating the p-value<a class="anchor" aria-label="anchor" href="#b-calculating-the-p-value"><i class="fas fa-link"></i></a>
 </h4>
-<p>Using a statistical software, generate a randomization distribution for the difference in means and calculate the p-value for the two-tailed test. Is the observed difference of 8.9 points statistically significant?</p>
+<p>Using a statistical software, generate a randomization distribution for the difference in means and calculate the p-value for the two-tailed test. Is the observed difference of 8.9 points statistically discernible?</p>
 <details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The p-value is the proportion of resamples that have a difference of 8.9 or above. Depending on the generated randomization distribution, the p-value is 0.0002. This means is interpreted in terms of how likely it is to observe a difference of 8.9 or greater under the null hypothesis, which is 0.02%.</p>
 <div class="sourceCode" id="cb292"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/aloy/CarletonStats">CarletonStats</a></span><span class="op">)</span></span>
@@ -165,8 +165,8 @@ The sample mean difference is <span class="math inline">\(\bar{x}_{NM} - \bar{x}
   New_Method :  91.05    Traditional_Method :  82.15 
  Observed difference: 8.9 
 
- Mean of permutation distribution: -0.01874 
- Standard error of permutation distribution: 1.74631 
+ Mean of permutation distribution: 0.0038 
+ Standard error of permutation distribution: 1.71601 
  P-value:  1e-04 
 
     *-------------*</code></pre>
@@ -178,7 +178,7 @@ The sample mean difference is <span class="math inline">\(\bar{x}_{NM} - \bar{x}
 <span class="header-section-number">22.3.1.2</span> (c) Interpretation and Conclusion<a class="anchor" aria-label="anchor" href="#c-interpretation-and-conclusion"><i class="fas fa-link"></i></a>
 </h4>
 <p>Interpret the p-value and state your conclusion regarding the difference in the mean test scores between the new teaching method and the traditional teaching method groups.</p>
-<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> Since the p-value is less than the chosen significance level (e.g., 0.05), the results are statistically significant, and we would reject the null hypothesis in favor of the alternative. This would indicate that there is evidence suggesting the new teaching method is more effective than the traditional method.</p>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> Since the p-value is less than the chosen significance level (e.g., 0.05), the results are statistically discernible, and we would reject the null hypothesis in favor of the alternative. This would indicate that there is evidence suggesting the new teaching method is more effective than the traditional method.</p>
 </details><p><br></p>
 </div>
 </div>
@@ -227,7 +227,7 @@ The sample mean difference is <span class="math inline">\(\bar{x}_{NM} - \bar{x}
 </h2>
 <p>A study investigated the success rate of job applicants who used a career coaching service (CCS) compared to those who didn’t (NCCS). Out of 120 applicants, 60 used the CCS and 60 did not. We want to test if there is a difference in the proportion of successful applicants between CCS and NCCS groups. out of the 60 applicants who used the career coaching service (CCS), 42 were successful and 18 were unsuccessful. Out of the 60 applicants who did not use the career coaching service (NCCS), 30 were successful and 30 were unsuccessful. The hypotheses are:</p>
 <p><span class="math display">\[H_0: p_{C C S}-p_{N C C S}=0 H_A: p_{C C S}-p_{N C C S} \neq 0\]</span>
-The sample proportion difference is <span class="math inline">\(\hat{p}{CCS} - \hat{p}{NCCS} = 0.20\)</span>. We want to know if this difference in sample proportions is statistically significant.</p>
+The sample proportion difference is <span class="math inline">\(\hat{p}{CCS} - \hat{p}{NCCS} = 0.20\)</span>. We want to know if this difference in sample proportions is statistically discernible.</p>
 <ol style="list-style-type: lower-alpha">
 <li>Randomization Distribution
 Describe how you could generate a randomization distribution for <span class="math inline">\(\hat{p}_{CCS} - \hat{p}_{NCCS}\)</span> that is consistent with <span class="math inline">\(H_0: p_{CCS} - p_{NCCS} = 0\)</span>.</li>
@@ -237,8 +237,8 @@ Describe how you could generate a randomization distribution for <span class="ma
 <ol start="2" style="list-style-type: lower-alpha">
 <li>Calculating the p-value</li>
 </ol>
-<p>Using a statistical software, generate a randomization distribution for the difference in proportions and calculate the p-value for the two-tailed test. Is the observed difference of 0.20 statistically significant?</p>
-<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> Using <em>Statkey</em> to generate a randomization distribution for the difference in proportions and observing the p-value for the two-tailed test, we can compare the p-value to a chosen significance level (e.g., 0.05) to determine if the observed difference of 0.20 is statistically significant. If the p-value is less than the significance level, the observed difference is statistically significant; otherwise, it is not. The p-value based on this randomization distribution under null hypothesis is <span class="math inline">\(2 \times 0.018 = 0.036\)</span>. So, the observed difference of 0.020 is statistically significant.</p>
+<p>Using a statistical software, generate a randomization distribution for the difference in proportions and calculate the p-value for the two-tailed test. Is the observed difference of 0.20 statistically discernible?</p>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> Using <em>Statkey</em> to generate a randomization distribution for the difference in proportions and observing the p-value for the two-tailed test, we can compare the p-value to a chosen significance level (e.g., 0.05) to determine if the observed difference of 0.20 is statistically discernible. If the p-value is less than the significance level, the observed difference is statistically discernible; otherwise, it is not. The p-value based on this randomization distribution under null hypothesis is <span class="math inline">\(2 \times 0.018 = 0.036\)</span>. So, the observed difference of 0.020 is statistically discernible.</p>
 <center>
 <img src="data/teaching_methods.png" width="140%" height="120%"><br>
 </center>
@@ -247,7 +247,7 @@ Describe how you could generate a randomization distribution for <span class="ma
 <li>Interpretation and Conclusion
 Interpret the p-value and state your conclusion regarding the difference in the proportion of successful job applicants between CCS and NCCS groups.</li>
 </ol>
-<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> Since the p-value is less than the significance level, it means that the observed difference of 0.20 would occur with low chance under the null hypothesis. In this case, we would reject the null hypothesis and conclude that there is a statistically significant difference in the proportion of successful job applicants between CCS and NCCS groups.</p>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> Since the p-value is less than the significance level, it means that the observed difference of 0.20 would occur with low chance under the null hypothesis. In this case, we would reject the null hypothesis and conclude that there is a statistically discernible difference in the proportion of successful job applicants between CCS and NCCS groups.</p>
 </details><p><br></p>
 
 </div>
@@ -294,7 +294,7 @@ Interpret the p-value and state your conclusion regarding the difference in the 
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-10-09.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-10-10.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
