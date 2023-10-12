@@ -113,7 +113,7 @@
 <div class="sourceCode" id="cb243"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">resample</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">prices</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="va">resample</span></span></code></pre></div>
-<pre><code> [1] 185  93  52 185 132  52 132 125 147  72</code></pre>
+<pre><code> [1] 132  52 125  85 132  23 147 185 132 132</code></pre>
 <p>Will the mean of this resample be same as the original sample? What about the standard deviation?</p>
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> The mean of the resample, created using bootstrapping, could be the same, more than, or less than the mean of the original sample, depending on which values are randomly chosen during the resampling process. Bootstrapping involves randomly selecting observations from the original sample with replacement, so there’s a chance the resample might have more of the higher values, more of the lower values, or a mix similar to the original sample.
 As for the standard deviation, it also depends on the composition of the resampled data. If the resample ends up with values that are close to each other (less variability), its standard deviation might be lower than the original sample. Conversely, if the resample has a wider spread of values, the standard deviation could be higher. However, over many bootstrap samples, the average standard deviation will tend to be close to the standard deviation of the original sample.
@@ -137,12 +137,12 @@ As for the standard deviation, it also depends on the composition of the resampl
     ** Bootstrap interval for mean 
 
  Observed  prices : 100.1 
- Mean of bootstrap distribution: 100.434 
- Standard error of bootstrap distribution: 14.3797 
+ Mean of bootstrap distribution: 100.3609 
+ Standard error of bootstrap distribution: 14.29514 
 
  Bootstrap percentile interval
-    2.5%    97.5% 
- 72.7000 129.0025 
+ 2.5% 97.5% 
+ 73.4 128.7 
 
         *--------------*</code></pre>
 <div class="inline-figure"><img src="Practice_Problems_8_files/figure-html/unnamed-chunk-3-1.png" width="100%"></div>
@@ -362,12 +362,12 @@ The sample difference in proportions is <span class="math inline">\(\hat{p}_{Dem
     ** Bootstrap interval for difference of mean 
 
  Observed difference of mean : BadLoan - GoodLoan = -2.26095 
- Mean of bootstrap distribution: -2.2596 
- Standard error of bootstrap distribution: 0.77734 
+ Mean of bootstrap distribution: -2.25537 
+ Standard error of bootstrap distribution: 0.78283 
 
  Bootstrap percentile interval
       2.5%      97.5% 
--3.7624167 -0.7237619 
+-3.8000119 -0.7052381 
 
         *--------------*</code></pre>
 <div class="inline-figure"><img src="Practice_Problems_8_files/figure-html/unnamed-chunk-6-1.png" width="100%"></div>
@@ -513,12 +513,12 @@ yes, registered under the customers name
     ** Bootstrap interval for difference of mean 
 
  Observed difference of mean : BadLoan - GoodLoan = -0.03905 
- Mean of bootstrap distribution: -0.03953 
- Standard error of bootstrap distribution: 0.03379 
+ Mean of bootstrap distribution: -0.03933 
+ Standard error of bootstrap distribution: 0.03411 
 
  Bootstrap percentile interval
        2.5%       97.5% 
--0.10525000  0.02572619 
+-0.10619048  0.02761905 
 
         *--------------*</code></pre>
 <div class="inline-figure"><img src="Practice_Problems_8_files/figure-html/unnamed-chunk-15-1.png" width="100%"></div>
@@ -617,7 +617,7 @@ Interpret your percentile interval in context using a directional statement. Doe
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-10-10.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-10-11.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

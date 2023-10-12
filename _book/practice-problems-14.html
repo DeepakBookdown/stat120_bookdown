@@ -130,22 +130,37 @@ H_0: \mu_{B5} - \mu_{G5} = 0 \ \ H_0: \mu_{B5} - \mu_{G5} \neq 0
   boy :  -0.1043526      girl :  0.02905667 
  Observed difference: -0.13341 
 
- Mean of permutation distribution: 0.00017 
- Standard error of permutation distribution: 0.2639 
- P-value:  0.6186 
+ Mean of permutation distribution: -4e-04 
+ Standard error of permutation distribution: 0.2615 
+ P-value:  0.6191 
 
     *-------------*</code></pre>
 <div class="inline-figure"><img src="Practice_Problems_14_files/figure-html/unnamed-chunk-2-2.png" width="100%"></div>
 <ul>
 <li>What is the SE of this randomization distribution?</li>
 </ul>
-<!-- <details><summary><red>Click for answer</red></summary> --><!-- *Answer:* SE is about 0.26.  --><!-- </details><br> --><ul>
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> SE is about 0.26.
+</details><p><br></p>
+<ul>
 <li>What is the z-score for the observed difference in means using this distribution? Interpret the value.</li>
 </ul>
-<!-- <details><summary><red>Click for answer</red></summary> --><!-- *Answer:* The distribution has a center of 0 and SE of 0.26. The z-score is  --><!-- $$ --><!-- z = \dfrac{-0.13341 - 0}{0.26051} = -0.51 --><!-- $$ --><!-- This means the observed difference of -0.133 is about 0.51 SEs below the hypothesized difference of 0.  --><!-- ```{r} --><!-- -0.13341/0.26051  --><!-- ``` --><!-- </details><br> --><ul>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The distribution has a center of 0 and SE of 0.26. The z-score is
+<span class="math display">\[
+z = \dfrac{-0.13341 - 0}{0.26051} = -0.51
+\]</span>
+This means the observed difference of -0.133 is about 0.51 SEs below the hypothesized difference of 0.</p>
+<div class="sourceCode" id="cb299"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="op">-</span><span class="fl">0.13341</span><span class="op">/</span><span class="fl">0.26051</span></span></code></pre></div>
+<pre><code>[1] -0.5121109</code></pre>
+</details><p><br></p>
+<ul>
 <li>How large or small would the observed difference in sample means need to be to reject the null hypothesis using a 5% significance level.</li>
 </ul>
-<!-- <details><summary><red>Click for answer</red></summary> --><!-- *Answer:* Since the distribution is bell-shaped, we can use the fact that about 5% of sample differences are further than 2 SE's above/below the center difference of 0. Any sample difference this extreme will lead to a two-sided p-value that is less than the significance level of 5%. For this data, 2 SE's is a sample difference of 0.521 so any observed difference that is more extreme than 0.521 would lead to rejecting the null hypothesis of no difference.  --><!-- ```{r} --><!-- 2*0.26051  --><!-- ``` --><!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> Since the distribution is bell-shaped, we can use the fact that about 5% of sample differences are further than 2 SE’s above/below the center difference of 0. Any sample difference this extreme will lead to a two-sided p-value that is less than the significance level of 5%. For this data, 2 SE’s is a sample difference of 0.521 so any observed difference that is more extreme than 0.521 would lead to rejecting the null hypothesis of no difference.</p>
+<div class="sourceCode" id="cb301"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">2</span><span class="op">*</span><span class="fl">0.26051</span></span></code></pre></div>
+<pre><code>[1] 0.52102</code></pre>
+</details><p><br></p>
 </div>
 <div id="b-interest-in-5-year-olds---ci" class="section level4" number="23.1.0.2">
 <h4>
@@ -155,10 +170,12 @@ H_0: \mu_{B5} - \mu_{G5} = 0 \ \ H_0: \mu_{B5} - \mu_{G5} \neq 0
 <ul>
 <li>Will this interval contain the difference of 0?</li>
 </ul>
-<!-- <details><summary><red>Click for answer</red></summary> --><!-- *Answer:* Yes, since we didn't reject the null difference of 0 using a 5% significance level (p-value = 0.617). --><!-- </details><br> --><ul>
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> Yes, since we didn’t reject the null difference of 0 using a 5% significance level (p-value = 0.617).
+</details><p><br></p>
+<ul>
 <li>Compute the bootstrap distribution. Does the CI capture 0?</li>
 </ul>
-<div class="sourceCode" id="cb299"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb303"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">7</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/CarletonStats/man/boot.html">boot</a></span><span class="op">(</span><span class="va">interest</span> <span class="op">~</span> <span class="va">gender</span>, data <span class="op">=</span> <span class="va">study4age5</span><span class="op">)</span></span></code></pre></div>
 <pre><code>
@@ -173,26 +190,26 @@ H_0: \mu_{B5} - \mu_{G5} = 0 \ \ H_0: \mu_{B5} - \mu_{G5} \neq 0
 -0.6459180  0.3652884 
 
         *--------------*</code></pre>
-<div class="inline-figure"><img src="Practice_Problems_14_files/figure-html/unnamed-chunk-3-1.png" width="100%"></div>
-<!-- <details><summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* Yes, the CI captures the difference of 0.  -->
-<!-- </details><br> -->
+<div class="inline-figure"><img src="Practice_Problems_14_files/figure-html/unnamed-chunk-5-1.png" width="100%"></div>
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> Yes, the CI captures the difference of 0.
+</details><p><br></p>
 <ul>
 <li>What is the bootstrap SE? Is it similar to the randomization distribution SE?</li>
 </ul>
-<!-- <details><summary><red>Click for answer</red></summary> --><!-- *Answer:* SE is about 0.26, which is very similar to the randomization distribution SE. --><!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> SE is about 0.26, which is very similar to the randomization distribution SE.
+</details><p><br></p>
 </div>
 <div id="c-interest-in-6-and-7-year-olds---test" class="section level4" number="23.1.0.3">
 <h4>
 <span class="header-section-number">23.1.0.3</span> (c) Interest in 6 and 7 year olds - test<a class="anchor" aria-label="anchor" href="#c-interest-in-6-and-7-year-olds---test"><i class="fas fa-link"></i></a>
 </h4>
 <p>Redo part (a) for the age group <code>age 6 and 7</code>.</p>
-<div class="sourceCode" id="cb301"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb305"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">study4age67</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">study4</span>, <span class="va">age2</span> <span class="op">==</span> <span class="st">"age 6 and 7"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">study4age67</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">gender</span>, y<span class="op">=</span><span class="va">interest</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="Practice_Problems_14_files/figure-html/unnamed-chunk-4-1.png" width="100%"></div>
-<div class="sourceCode" id="cb302"><pre class="downlit sourceCode r">
+<div class="inline-figure"><img src="Practice_Problems_14_files/figure-html/unnamed-chunk-6-1.png" width="100%"></div>
+<div class="sourceCode" id="cb306"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/CarletonStats/man/permTest.html">permTest</a></span><span class="op">(</span><span class="va">interest</span> <span class="op">~</span> <span class="va">gender</span>, data <span class="op">=</span> <span class="va">study4age67</span><span class="op">)</span></span></code></pre></div>
 <pre><code>
     ** Permutation test **
@@ -207,17 +224,32 @@ H_0: \mu_{B5} - \mu_{G5} = 0 \ \ H_0: \mu_{B5} - \mu_{G5} \neq 0
  P-value:  0.0112 
 
     *-------------*</code></pre>
-<div class="inline-figure"><img src="Practice_Problems_14_files/figure-html/unnamed-chunk-4-2.png" width="100%"></div>
+<div class="inline-figure"><img src="Practice_Problems_14_files/figure-html/unnamed-chunk-6-2.png" width="100%"></div>
 <ul>
 <li>What is the SE of this randomization distribution?</li>
 </ul>
-<!-- <details><summary><red>Click for answer</red></summary> --><!-- *Answer:* SE is about 0.225.  --><!-- </details><br> --><ul>
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> SE is about 0.225.
+</details><p><br></p>
+<ul>
 <li>What is the z-score for the observed difference in means using this distribution? Interpret the value.</li>
 </ul>
-<!-- <details><summary><red>Click for answer</red></summary> --><!-- *Answer:* The distribution has a center of 0 and SE of 0.225. The z-score is  --><!-- $$ --><!-- z = \dfrac{0.53505 - 0}{0.22539 } = 2.37 --><!-- $$ --><!-- This means the observed difference of 0.535 is about 2.37 SEs above the hypothesized difference of 0.  --><!-- ```{r} --><!-- 0.53505/0.22539  --><!-- ``` --><!-- </details><br> --><ul>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The distribution has a center of 0 and SE of 0.225. The z-score is</p>
+<p><span class="math display">\[
+z = \dfrac{0.53505 - 0}{0.22539 } = 2.37
+\]</span>
+This means the observed difference of 0.535 is about 2.37 SEs above the hypothesized difference of 0.</p>
+<div class="sourceCode" id="cb308"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">0.53505</span><span class="op">/</span><span class="fl">0.22539</span></span></code></pre></div>
+<pre><code>[1] 2.373885</code></pre>
+</details><p><br></p>
+<ul>
 <li>How large or small would the observed difference in sample means need to be to reject the null hypothesis using a 5% significance level.</li>
 </ul>
-<!-- <details><summary><red>Click for answer</red></summary> --><!-- *Answer:* Since the distribution is bell-shaped, we can use the fact that about 5% of sample differences are further than 2 SE's above/below the center difference of 0. Any sample difference this extreme will lead to a two-sided p-value that is less than the significance level of 5%. For this data, 2 SE's is a sample difference of 0.451 so any observed difference that is more extreme than 0.451 would lead to rejecting the null hypothesis of no difference.  --><!-- ```{r} --><!-- 2*0.22539  --><!-- ``` --><!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> Since the distribution is bell-shaped, we can use the fact that about 5% of sample differences are further than 2 SE’s above/below the center difference of 0. Any sample difference this extreme will lead to a two-sided p-value that is less than the significance level of 5%. For this data, 2 SE’s is a sample difference of 0.451 so any observed difference that is more extreme than 0.451 would lead to rejecting the null hypothesis of no difference.</p>
+<div class="sourceCode" id="cb310"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">2</span><span class="op">*</span><span class="fl">0.22539</span></span></code></pre></div>
+<pre><code>[1] 0.45078</code></pre>
+</details><p><br></p>
 </div>
 <div id="d-interest-in-6-and-7-year-olds---ci" class="section level4" number="23.1.0.4">
 <h4>
@@ -227,10 +259,12 @@ H_0: \mu_{B5} - \mu_{G5} = 0 \ \ H_0: \mu_{B5} - \mu_{G5} \neq 0
 <ul>
 <li>Will this interval contain the difference of 0?</li>
 </ul>
-<!-- <details><summary><red>Click for answer</red></summary> --><!-- *Answer:* No, since we rejected the null difference of 0 using a 5% significance level (p-value = 0.015). --><!-- </details><br> --><ul>
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> No, since we rejected the null difference of 0 using a 5% significance level (p-value = 0.015).
+</details><p><br></p>
+<ul>
 <li>Compute the bootstrap distribution. Does the CI capture 0?</li>
 </ul>
-<div class="sourceCode" id="cb304"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb312"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/CarletonStats/man/boot.html">boot</a></span><span class="op">(</span><span class="va">interest</span> <span class="op">~</span> <span class="va">gender</span>, data <span class="op">=</span> <span class="va">study4age67</span><span class="op">)</span></span></code></pre></div>
 <pre><code>
     ** Bootstrap interval for difference of mean 
@@ -244,30 +278,30 @@ H_0: \mu_{B5} - \mu_{G5} = 0 \ \ H_0: \mu_{B5} - \mu_{G5} \neq 0
 0.1259895 0.9348764 
 
         *--------------*</code></pre>
-<div class="inline-figure"><img src="Practice_Problems_14_files/figure-html/unnamed-chunk-5-1.png" width="100%"></div>
-<!-- <details><summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* No, the CI does not capture the difference of 0.  -->
-<!-- </details><br> -->
+<div class="inline-figure"><img src="Practice_Problems_14_files/figure-html/unnamed-chunk-9-1.png" width="100%"></div>
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> No, the CI does not capture the difference of 0.
+</details><p><br></p>
 <ul>
 <li>What is the bootstrap SE? Is it similar to the randomization distribution SE?</li>
 </ul>
-<!-- <details><summary><red>Click for answer</red></summary> --><!-- *Answer:* SE is about 0.21, which is very similar to the randomization distribution SE. --><!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> SE is about 0.21, which is very similar to the randomization distribution SE.
+</details><p><br></p>
 </div>
 <div id="e-interest-in-5-year-olds" class="section level4" number="23.1.0.5">
 <h4>
 <span class="header-section-number">23.1.0.5</span> (e) Interest in 5 year olds<a class="anchor" aria-label="anchor" href="#e-interest-in-5-year-olds"><i class="fas fa-link"></i></a>
 </h4>
 <p>Redo the randomization test and bootstrap CI for 5 year olds, but this time omit the outlier boy case that has a very low interest level. Recall how to use the <code>which</code> command:</p>
-<div class="sourceCode" id="cb306"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb314"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">study4age5</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">gender</span>, y<span class="op">=</span><span class="va">interest</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="Practice_Problems_14_files/figure-html/unnamed-chunk-6-1.png" width="100%"></div>
-<div class="sourceCode" id="cb307"><pre class="downlit sourceCode r">
+<div class="inline-figure"><img src="Practice_Problems_14_files/figure-html/unnamed-chunk-10-1.png" width="100%"></div>
+<div class="sourceCode" id="cb315"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Identify which rows have 'interest' less than -2 using dplyr</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/which.html">which</a></span><span class="op">(</span><span class="va">study4age5</span><span class="op">$</span><span class="va">interest</span> <span class="op">&lt;</span> <span class="op">-</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] 39</code></pre>
 <p>Then to omit this case, add the argument <code>subset = -39</code> to the <code>permTest</code> and <code>boot</code> commands used in (a) and (b).</p>
-<div class="sourceCode" id="cb309"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb317"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">7</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/CarletonStats/man/permTest.html">permTest</a></span><span class="op">(</span><span class="va">interest</span> <span class="op">~</span> <span class="va">gender</span>, data <span class="op">=</span> <span class="va">study4age5</span>, subset <span class="op">=</span> <span class="op">-</span><span class="fl">39</span><span class="op">)</span></span></code></pre></div>
 <pre><code>
@@ -283,8 +317,8 @@ H_0: \mu_{B5} - \mu_{G5} = 0 \ \ H_0: \mu_{B5} - \mu_{G5} \neq 0
  P-value:  0.9516 
 
     *-------------*</code></pre>
-<div class="inline-figure"><img src="Practice_Problems_14_files/figure-html/unnamed-chunk-7-1.png" width="100%"></div>
-<div class="sourceCode" id="cb311"><pre class="downlit sourceCode r">
+<div class="inline-figure"><img src="Practice_Problems_14_files/figure-html/unnamed-chunk-11-1.png" width="100%"></div>
+<div class="sourceCode" id="cb319"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/CarletonStats/man/boot.html">boot</a></span><span class="op">(</span><span class="va">interest</span> <span class="op">~</span> <span class="va">gender</span>, data <span class="op">=</span> <span class="va">study4age5</span>, subset <span class="op">=</span> <span class="op">-</span><span class="fl">39</span><span class="op">)</span></span></code></pre></div>
 <pre><code>
     ** Bootstrap interval for difference of mean 
@@ -298,20 +332,32 @@ H_0: \mu_{B5} - \mu_{G5} = 0 \ \ H_0: \mu_{B5} - \mu_{G5} \neq 0
 -0.4751690  0.4520149 
 
         *--------------*</code></pre>
-<div class="inline-figure"><img src="Practice_Problems_14_files/figure-html/unnamed-chunk-7-2.png" width="100%"></div>
+<div class="inline-figure"><img src="Practice_Problems_14_files/figure-html/unnamed-chunk-11-2.png" width="100%"></div>
 <ul>
 <li>Does the observed difference get closer or further from 0 with the case omitted? Explain why it changes.</li>
 </ul>
-<!-- <details><summary><red>Click for answer</red></summary> --><!-- *Answer:* The very low case pulls down the mean response for boys (with: $\bar{x}_{B5} = -0.10435$, without: $\bar{x}_{B5} = 0.01417$). Since the girl mean response doesn't change ($\bar{x}_{G5} = 0.02906$), omitting this case will make the *two means closer together* which makes their difference closer to 0 (with: $\bar{x}_{B5} - \bar{x}_{G5} = -0.13341$, without: $\bar{x}_{B5}  - \bar{x}_{G5} = -0.01488$). --><!-- </details><br> --><ul>
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> The very low case pulls down the mean response for boys (with: <span class="math inline">\(\bar{x}_{B5} = -0.10435\)</span>, without: <span class="math inline">\(\bar{x}_{B5} = 0.01417\)</span>). Since the girl mean response doesn’t change (<span class="math inline">\(\bar{x}_{G5} = 0.02906\)</span>), omitting this case will make the <em>two means closer together</em> which makes their difference closer to 0 (with: <span class="math inline">\(\bar{x}_{B5} - \bar{x}_{G5} = -0.13341\)</span>, without: <span class="math inline">\(\bar{x}_{B5} - \bar{x}_{G5} = -0.01488\)</span>).
+</details><p><br></p>
+<ul>
 <li>Do the SEs of the distributions (bootstrap and randomization) get smaller or larger with the case omitted? Explain why these change.</li>
 </ul>
-<!-- <details><summary><red>Click for answer</red></summary> --><!-- *Answer:* The very low case creates larger variability in the sample mean for boys, which in turn makes the SE for the sample mean difference more variable  (with: SE about 0.26, without: SE about 0.24).  --><!-- </details><br> --><ul>
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> The very low case creates larger variability in the sample mean for boys, which in turn makes the SE for the sample mean difference more variable (with: SE about 0.26, without: SE about 0.24).
+</details><p><br></p>
+<ul>
 <li>Compute the z-score for the observed difference in means using randomization distribution. Is this value futher or closer to a z-score of 0 with the case omitted? Explain why it changes.</li>
 </ul>
-<!-- <details><summary><red>Click for answer</red></summary> --><!-- *Answer:* The z-score is closer to 0 with the case removed (with: $z = -0.51$, without: $z = -0.061$) --><!-- $$ --><!-- z = \dfrac{-0.01488  - 0}{0.24569} = -0.061 --><!-- $$ --><!-- The z-score is closer to 0 because the sample mean difference is closer to 0 with the case removed, and this change is greater than the relatively small decrease in SE that we noted with the case removed.  --><!-- </details><br> --><ul>
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> The z-score is closer to 0 with the case removed (with: <span class="math inline">\(z = -0.51\)</span>, without: <span class="math inline">\(z = -0.061\)</span>)
+<span class="math display">\[
+z = \dfrac{-0.01488  - 0}{0.24569} = -0.061
+\]</span>
+The z-score is closer to 0 because the sample mean difference is closer to 0 with the case removed, and this change is greater than the relatively small decrease in SE that we noted with the case removed.
+</details><p><br></p>
+<ul>
 <li>Does the p-value get smaller or larger (or doesn’t change) with the case omitted? Explain why it changes.</li>
 </ul>
-<!-- <details><summary><red>Click for answer</red></summary> --><!-- *Answer:* The p-value is larger with the case removed (with: p-value = 0.617, without: p-value = 0.944). This is because the observed difference is closer to 0 (fewer SE away) with the case omitted.  --><!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> The p-value is larger with the case removed (with: p-value = 0.617, without: p-value = 0.944). This is because the observed difference is closer to 0 (fewer SE away) with the case omitted.
+</details><p><br></p>
+
 </div>
 </div>
 </div>
@@ -340,7 +386,7 @@ H_0: \mu_{B5} - \mu_{G5} = 0 \ \ H_0: \mu_{B5} - \mu_{G5} \neq 0
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-10-10.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-10-11.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
