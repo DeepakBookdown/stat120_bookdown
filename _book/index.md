@@ -1,7 +1,7 @@
 --- 
 title: "Stat 120"
 author: "Deepak Bastola"
-date: "2023-10-11"
+date: "2023-10-12"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
