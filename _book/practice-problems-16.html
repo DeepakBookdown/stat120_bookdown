@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 25 Practice Problems 16 | Stat 120</title>
+<meta name="author" content="Deepak Bastola">
+<meta name="description" content="25.1 Problem 1: Is Divorce Morally Acceptable? In a study, we find that 67% of women in a random sample view divorce as morally acceptable. Does this provide evidence that more than 50% of women...">
+<meta name="generator" content="bookdown 0.35 with bs4_book()">
+<meta property="og:title" content="Chapter 25 Practice Problems 16 | Stat 120">
+<meta property="og:type" content="book">
+<meta property="og:description" content="25.1 Problem 1: Is Divorce Morally Acceptable? In a study, we find that 67% of women in a random sample view divorce as morally acceptable. Does this provide evidence that more than 50% of women...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 25 Practice Problems 16 | Stat 120">
+<meta name="twitter:description" content="25.1 Problem 1: Is Divorce Morally Acceptable? In a study, we find that 67% of women in a random sample view divorce as morally acceptable. Does this provide evidence that more than 50% of women...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.1/transition.js"></script><script src="libs/bs3compat-0.5.1/tabs.js"></script><script src="libs/bs3compat-0.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Stat 120</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Introduction to Statistics</a></li>
+<li class="book-part">Basics R</li>
+<li><a class="" href="what-is-r.html"><span class="header-section-number">1</span> What is R?</a></li>
+<li><a class="" href="r-markdown-basics.html"><span class="header-section-number">2</span> R Markdown Basics</a></li>
+<li><a class="" href="homework-guidelines.html"><span class="header-section-number">3</span> Homework Guidelines</a></li>
+<li><a class="" href="report-guidelines.html"><span class="header-section-number">4</span> Report Guidelines</a></li>
+<li class="book-part">R Tutorials</li>
+<li><a class="" href="tutorial-1-embark-on-your-data-journey.html"><span class="header-section-number">5</span> Tutorial 1: Embark on Your Data Journey</a></li>
+<li><a class="" href="tutorial-2-dive-deeper-into-data-visualization-and-statistics-in-r.html"><span class="header-section-number">6</span> Tutorial 2: Dive Deeper into Data Visualization and Statistics in R</a></li>
+<li><a class="" href="tutorial-3-dive-deeper-into-data-manipulation-with-dplyr-in-r.html"><span class="header-section-number">7</span> Tutorial 3: Dive Deeper into Data Manipulation with dplyr in R</a></li>
+<li><a class="" href="tutorial-4-latex-equations-in-rmarkdown.html"><span class="header-section-number">8</span> Tutorial 4: LaTeX Equations in RMarkdown</a></li>
+<li class="book-part">Short Reports</li>
+<li><a class="" href="short-report-1.html"><span class="header-section-number">9</span> Short Report 1</a></li>
+<li class="book-part">Practice Problems</li>
+<li><a class="" href="practice-problems-1.html"><span class="header-section-number">10</span> Practice Problems 1</a></li>
+<li><a class="" href="practice-problems-2.html"><span class="header-section-number">11</span> Practice Problems 2</a></li>
+<li><a class="" href="practice-problems-3.html"><span class="header-section-number">12</span> Practice Problems 3</a></li>
+<li><a class="" href="practice-problems-4.html"><span class="header-section-number">13</span> Practice Problems 4</a></li>
+<li><a class="" href="practice-problems-5.html"><span class="header-section-number">14</span> Practice Problems 5</a></li>
+<li><a class="" href="practice-problems-6.html"><span class="header-section-number">15</span> Practice Problems 6</a></li>
+<li><a class="" href="practice-problems-7.html"><span class="header-section-number">16</span> Practice Problems 7</a></li>
+<li><a class="" href="practice-problems-8.html"><span class="header-section-number">17</span> Practice Problems 8</a></li>
+<li><a class="" href="practice-problems-9.html"><span class="header-section-number">18</span> Practice Problems 9</a></li>
+<li><a class="" href="practice-problems-10.html"><span class="header-section-number">19</span> Practice Problems 10</a></li>
+<li><a class="" href="practice-problems-11.html"><span class="header-section-number">20</span> Practice Problems 11</a></li>
+<li><a class="" href="practice-problems-12.html"><span class="header-section-number">21</span> Practice Problems 12</a></li>
+<li><a class="" href="practice-problems-13.html"><span class="header-section-number">22</span> Practice Problems 13</a></li>
+<li><a class="" href="practice-problems-14.html"><span class="header-section-number">23</span> Practice Problems 14</a></li>
+<li><a class="" href="practice-problems-15.html"><span class="header-section-number">24</span> Practice Problems 15</a></li>
+<li><a class="active" href="practice-problems-16.html"><span class="header-section-number">25</span> Practice Problems 16</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="practice-problems-16" class="section level1" number="25">
+<h1>
+<span class="header-section-number">25</span> Practice Problems 16<a class="anchor" aria-label="anchor" href="#practice-problems-16"><i class="fas fa-link"></i></a>
+</h1>
+<div id="problem-1-is-divorce-morally-acceptable" class="section level2" number="25.1">
+<h2>
+<span class="header-section-number">25.1</span> Problem 1: Is Divorce Morally Acceptable?<a class="anchor" aria-label="anchor" href="#problem-1-is-divorce-morally-acceptable"><i class="fas fa-link"></i></a>
+</h2>
+<p>In a study, we find that 67% of women in a random sample view divorce as morally acceptable. Does this provide evidence that more than 50% of women view divorce as morally acceptable? The standard error for the estimate assuming the null hypothesis is true is 0.021.</p>
+<div id="a-what-are-the-null-and-alternative-hypotheses-for-this-test" class="section level4" number="25.1.0.1">
+<h4>
+<span class="header-section-number">25.1.0.1</span> (a) What are the null and alternative hypotheses for this test?<a class="anchor" aria-label="anchor" href="#a-what-are-the-null-and-alternative-hypotheses-for-this-test"><i class="fas fa-link"></i></a>
+</h4>
+<!-- <details><summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* If $p$ denotes the proportion of woman who view divorce as morally acceptable in the population, then our hypotheses are -->
+<!-- $$ -->
+<!-- H_0: p = 0.5 \ \ H_A: p > 0.5 -->
+<!-- $$ -->
+<!-- </details><br> -->
+</div>
+<div id="b-what-is-the-standardized-test-statistic" class="section level4" number="25.1.0.2">
+<h4>
+<span class="header-section-number">25.1.0.2</span> (b) What is the standardized test statistic?<a class="anchor" aria-label="anchor" href="#b-what-is-the-standardized-test-statistic"><i class="fas fa-link"></i></a>
+</h4>
+<!-- <details><summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* The observed sample proportion is 0.67 with a standard error of 0.021. If the null is true, then we would expect the sampling distribution of the sample mean to be (approximately) normally distributed with a center of 0.50 and SE of 0.021. The standardized score for the sample proportion is then  -->
+<!-- $$ -->
+<!-- z = \dfrac{\textrm{statistic} - \textrm{null parameter}}{SE} = \dfrac{0.67 - 0.50}{0.021} = 8.10 -->
+<!-- $$ -->
+<!-- The observed proportion is 8.1 SEs above the hypothesized value of 0.5. -->
+<!-- ```{r} -->
+<!-- (0.67 - 0.5)/0.021 -->
+<!-- ``` -->
+<!-- </details><br> -->
+<p>Note that the randomization distribution should look roughly like this (with the observed proportion denoted with a red X):</p>
+<div class="sourceCode" id="cb351"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/curve.html">curve</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">dnorm</a></span><span class="op">(</span><span class="va">x</span>,<span class="fl">0.5</span>,<span class="fl">.021</span><span class="op">)</span>,from<span class="op">=</span><span class="fl">.3</span>,to<span class="op">=</span><span class="fl">.7</span>,xlab<span class="op">=</span><span class="st">"sample proportions"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/points.html">points</a></span><span class="op">(</span><span class="fl">0.67</span>,<span class="fl">0</span>,pch<span class="op">=</span><span class="st">"X"</span>,col<span class="op">=</span><span class="st">"red"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Practice_Problems_16_files/figure-html/unnamed-chunk-1-1.png" width="100%"></div>
+</div>
+<div id="c-use-the-normal-distribution-to-find-the-p-value." class="section level4" number="25.1.0.3">
+<h4>
+<span class="header-section-number">25.1.0.3</span> (c) Use the normal distribution to find the p-value.<a class="anchor" aria-label="anchor" href="#c-use-the-normal-distribution-to-find-the-p-value."><i class="fas fa-link"></i></a>
+</h4>
+<!-- <details><summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* As we can see in the normal plot above, the p-value will be very small because the alternative is looking for big sample proportions. The p-value is the proportion of times we get a sample proportion as big, or bigger than, 0.67; or equivantly, the proportion of times we get a sample proportion that is at least 8.1 SEs above the hypothesized proportion. We would report a p-value that is less than 0.0001.  -->
+<!-- ```{r} -->
+<!-- 1-pnorm(8.10,0,1) -->
+<!-- ``` -->
+<!-- </details><br> -->
+</div>
+<div id="d-what-is-the-conclusion-of-the-test" class="section level4" number="25.1.0.4">
+<h4>
+<span class="header-section-number">25.1.0.4</span> (d) What is the conclusion of the test?<a class="anchor" aria-label="anchor" href="#d-what-is-the-conclusion-of-the-test"><i class="fas fa-link"></i></a>
+</h4>
+<!-- <details><summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* The p-value is very small so we have very strong evidence that more than 50% of all women view divorce as morally acceptable. -->
+<!-- </details><br> -->
+</div>
+<div id="e-use-the-normal-distribution-to-find-a-99-confidence-interval-for-the-proportion-of-all-women-who-view-divorce-as-morally-acceptable.-interpret-your-answer." class="section level4" number="25.1.0.5">
+<h4>
+<span class="header-section-number">25.1.0.5</span> (e) Use the normal distribution to find a 99% confidence interval for the proportion of all women who view divorce as morally acceptable. Interpret your answer.<a class="anchor" aria-label="anchor" href="#e-use-the-normal-distribution-to-find-a-99-confidence-interval-for-the-proportion-of-all-women-who-view-divorce-as-morally-acceptable.-interpret-your-answer."><i class="fas fa-link"></i></a>
+</h4>
+<!-- <details><summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* Without knowing the bootstrap SE, our best guess at it would be from the randomization distribution SE which is given as 0.021. Our 99% confidence interval will look like: -->
+<!-- $$ -->
+<!-- statistic \pm z^*SE = 0.67 \pm z^* (0.021)  -->
+<!-- $$ -->
+<!-- The $z^*$ for a 99% CI corresponds to the 99.5th percentile (90% in middle + 0.5% in the left tail). With $z^* = 2.576$, we get a 99% confidence interval of 0.616 to 0.724.  -->
+<!-- ```{r} -->
+<!-- qnorm(0.995) -->
+<!-- 0.67 - 2.576*0.021 -->
+<!-- 0.67 + 2.576*0.021 -->
+<!-- ``` -->
+<!-- </details><br> -->
+</div>
+</div>
+<div id="problem-2-do-men-and-women-differ-in-opinions-about-divorce" class="section level2" number="25.2">
+<h2>
+<span class="header-section-number">25.2</span> Problem 2: Do Men and Women Differ in Opinions about Divorce?<a class="anchor" aria-label="anchor" href="#problem-2-do-men-and-women-differ-in-opinions-about-divorce"><i class="fas fa-link"></i></a>
+</h2>
+<p>In the same study described above, we find that 71% of men view divorce as morally acceptable. Use this and the information in the previous example to test whether there is a significant difference between men and women in how they view divorce. The standard error for the difference in proportions under the null hypothesis that the proportions are equal is 0.029.</p>
+<div id="a-what-are-the-null-and-alternative-hypotheses-for-this-test-1" class="section level4" number="25.2.0.1">
+<h4>
+<span class="header-section-number">25.2.0.1</span> (a) What are the null and alternative hypotheses for this test?<a class="anchor" aria-label="anchor" href="#a-what-are-the-null-and-alternative-hypotheses-for-this-test-1"><i class="fas fa-link"></i></a>
+</h4>
+<!-- <details><summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* Using the same notation as (3a), except denoting male/female populations, we get -->
+<!-- $$ -->
+<!-- H_0: p_f = p_m \ \ H_A: p_f \neq p_m -->
+<!-- $$ -->
+<!-- </details><br> -->
+</div>
+<div id="b-what-is-the-standardized-test-statistic-1" class="section level4" number="25.2.0.2">
+<h4>
+<span class="header-section-number">25.2.0.2</span> (b) What is the standardized test statistic?<a class="anchor" aria-label="anchor" href="#b-what-is-the-standardized-test-statistic-1"><i class="fas fa-link"></i></a>
+</h4>
+<!-- <details><summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* Suppose we look at the difference $p_m - p_f$. The observed difference is then 0.04 (0.71 - 0.67). This value is about 1.4 SEs above the hypothesized difference of 0: -->
+<!-- $$ -->
+<!-- z = \dfrac{\textrm{statistic} - \textrm{null parameter}}{SE} = \dfrac{(0.71 - 0.67) - 0}{0.029} = 1.379 -->
+<!-- $$ -->
+<!-- ```{r} -->
+<!-- (0.04 - 0)/0.029 -->
+<!-- ``` -->
+<!-- Note that the randomization distribution for the difference in sample proportions should look roughly like this (with the observed proportion difference denoted with a red X): -->
+<!-- ```{r} -->
+<!-- curve(dnorm(x,0,.029),from=-.1,to=.1,xlab="sample proportions") -->
+<!-- points(0.04,0,pch="X",col="red") -->
+<!-- ``` -->
+<!-- </details><br> -->
+</div>
+<div id="c-use-the-normal-distribution-to-find-the-p-value.-1" class="section level4" number="25.2.0.3">
+<h4>
+<span class="header-section-number">25.2.0.3</span> (c) Use the normal distribution to find the p-value.<a class="anchor" aria-label="anchor" href="#c-use-the-normal-distribution-to-find-the-p-value.-1"><i class="fas fa-link"></i></a>
+</h4>
+<!-- <details><summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* This is a two-tail test. Since the observed difference is less than 2 SEs away from 0 we know that the (two-tailed) p-value should be bigger than 0.05. We see that the p-value is 2(0.084) = 0.168.  -->
+<!-- ```{r} -->
+<!-- 1-pnorm(1.379,0,1) # proportion above z=1.379 -->
+<!-- 2*(1-pnorm(1.379,0,1)) # p-value for two-sided -->
+<!-- ``` -->
+<!-- </details><br> -->
+</div>
+<div id="d-what-is-the-conclusion-of-the-test-1" class="section level4" number="25.2.0.4">
+<h4>
+<span class="header-section-number">25.2.0.4</span> (d) What is the conclusion of the test?<a class="anchor" aria-label="anchor" href="#d-what-is-the-conclusion-of-the-test-1"><i class="fas fa-link"></i></a>
+</h4>
+<!-- <details><summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* The p-value is larger than a 5% significance level, so we do not find evidence of a difference between men and women in the proportion that view divorce as morally acceptable. About 17% of the time we would observe a difference in male/female views of 4 percentage points or greater just by chance.  -->
+<!-- </details><br> -->
+
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="practice-problems-15.html"><span class="header-section-number">24</span> Practice Problems 15</a></div>
+<div class="empty"></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#practice-problems-16"><span class="header-section-number">25</span> Practice Problems 16</a></li>
+<li><a class="nav-link" href="#problem-1-is-divorce-morally-acceptable"><span class="header-section-number">25.1</span> Problem 1: Is Divorce Morally Acceptable?</a></li>
+<li><a class="nav-link" href="#problem-2-do-men-and-women-differ-in-opinions-about-divorce"><span class="header-section-number">25.2</span> Problem 2: Do Men and Women Differ in Opinions about Divorce?</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/Practice_Problems_16.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/Practice_Problems_16.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-10-17.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

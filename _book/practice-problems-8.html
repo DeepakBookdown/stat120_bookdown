@@ -72,6 +72,7 @@
 <li><a class="" href="practice-problems-13.html"><span class="header-section-number">22</span> Practice Problems 13</a></li>
 <li><a class="" href="practice-problems-14.html"><span class="header-section-number">23</span> Practice Problems 14</a></li>
 <li><a class="" href="practice-problems-15.html"><span class="header-section-number">24</span> Practice Problems 15</a></li>
+<li><a class="" href="practice-problems-16.html"><span class="header-section-number">25</span> Practice Problems 16</a></li>
 </ul>
 
         <div class="book-extra">
@@ -114,7 +115,7 @@
 <div class="sourceCode" id="cb243"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">resample</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">prices</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="va">resample</span></span></code></pre></div>
-<pre><code> [1] 147  23  52 132  85  72  23  85  87  93</code></pre>
+<pre><code> [1] 125  23  52  52  23  23 132 125  93 125</code></pre>
 <p>Will the mean of this resample be same as the original sample? What about the standard deviation?</p>
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> The mean of the resample, created using bootstrapping, could be the same, more than, or less than the mean of the original sample, depending on which values are randomly chosen during the resampling process. Bootstrapping involves randomly selecting observations from the original sample with replacement, so there’s a chance the resample might have more of the higher values, more of the lower values, or a mix similar to the original sample.
 As for the standard deviation, it also depends on the composition of the resampled data. If the resample ends up with values that are close to each other (less variability), its standard deviation might be lower than the original sample. Conversely, if the resample has a wider spread of values, the standard deviation could be higher. However, over many bootstrap samples, the average standard deviation will tend to be close to the standard deviation of the original sample.
@@ -138,12 +139,12 @@ As for the standard deviation, it also depends on the composition of the resampl
     ** Bootstrap interval for mean 
 
  Observed  prices : 100.1 
- Mean of bootstrap distribution: 100.0715 
- Standard error of bootstrap distribution: 14.26355 
+ Mean of bootstrap distribution: 100.099 
+ Standard error of bootstrap distribution: 14.39511 
 
  Bootstrap percentile interval
  2.5% 97.5% 
- 72.9 128.5 
+ 72.5 128.2 
 
         *--------------*</code></pre>
 <div class="inline-figure"><img src="Practice_Problems_8_files/figure-html/unnamed-chunk-3-1.png" width="100%"></div>
@@ -363,12 +364,12 @@ The sample difference in proportions is <span class="math inline">\(\hat{p}_{Dem
     ** Bootstrap interval for difference of mean 
 
  Observed difference of mean : BadLoan - GoodLoan = -2.26095 
- Mean of bootstrap distribution: -2.26645 
- Standard error of bootstrap distribution: 0.77863 
+ Mean of bootstrap distribution: -2.24256 
+ Standard error of bootstrap distribution: 0.7728 
 
  Bootstrap percentile interval
       2.5%      97.5% 
--3.7905476 -0.7309524 
+-3.7352738 -0.7104643 
 
         *--------------*</code></pre>
 <div class="inline-figure"><img src="Practice_Problems_8_files/figure-html/unnamed-chunk-6-1.png" width="100%"></div>
@@ -514,12 +515,12 @@ yes, registered under the customers name
     ** Bootstrap interval for difference of mean 
 
  Observed difference of mean : BadLoan - GoodLoan = -0.03905 
- Mean of bootstrap distribution: -0.03869 
- Standard error of bootstrap distribution: 0.03402 
+ Mean of bootstrap distribution: -0.03908 
+ Standard error of bootstrap distribution: 0.03416 
 
  Bootstrap percentile interval
        2.5%       97.5% 
--0.10619048  0.02857143 
+-0.10666667  0.02857143 
 
         *--------------*</code></pre>
 <div class="inline-figure"><img src="Practice_Problems_8_files/figure-html/unnamed-chunk-15-1.png" width="100%"></div>
@@ -618,7 +619,7 @@ Interpret your percentile interval in context using a directional statement. Doe
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-10-14.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-10-17.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
