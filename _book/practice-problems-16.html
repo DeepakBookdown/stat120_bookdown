@@ -93,68 +93,67 @@
 <h4>
 <span class="header-section-number">25.1.0.1</span> (a) What are the null and alternative hypotheses for this test?<a class="anchor" aria-label="anchor" href="#a-what-are-the-null-and-alternative-hypotheses-for-this-test"><i class="fas fa-link"></i></a>
 </h4>
-<!-- <details><summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* If $p$ denotes the proportion of woman who view divorce as morally acceptable in the population, then our hypotheses are -->
-<!-- $$ -->
-<!-- H_0: p = 0.5 \ \ H_A: p > 0.5 -->
-<!-- $$ -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> If <span class="math inline">\(p\)</span> denotes the proportion of woman who view divorce as morally acceptable in the population, then our hypotheses are
+<span class="math display">\[
+H_0: p = 0.5 \ \ H_A: p &gt; 0.5
+\]</span>
+</details><p><br></p>
 </div>
 <div id="b-what-is-the-standardized-test-statistic" class="section level4" number="25.1.0.2">
 <h4>
 <span class="header-section-number">25.1.0.2</span> (b) What is the standardized test statistic?<a class="anchor" aria-label="anchor" href="#b-what-is-the-standardized-test-statistic"><i class="fas fa-link"></i></a>
 </h4>
-<!-- <details><summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* The observed sample proportion is 0.67 with a standard error of 0.021. If the null is true, then we would expect the sampling distribution of the sample mean to be (approximately) normally distributed with a center of 0.50 and SE of 0.021. The standardized score for the sample proportion is then  -->
-<!-- $$ -->
-<!-- z = \dfrac{\textrm{statistic} - \textrm{null parameter}}{SE} = \dfrac{0.67 - 0.50}{0.021} = 8.10 -->
-<!-- $$ -->
-<!-- The observed proportion is 8.1 SEs above the hypothesized value of 0.5. -->
-<!-- ```{r} -->
-<!-- (0.67 - 0.5)/0.021 -->
-<!-- ``` -->
-<!-- </details><br> -->
-<p>Note that the randomization distribution should look roughly like this (with the observed proportion denoted with a red X):</p>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The observed sample proportion is 0.67 with a standard error of 0.021. If the null is true, then we would expect the sampling distribution of the sample mean to be (approximately) normally distributed with a center of 0.50 and SE of 0.021. The standardized score for the sample proportion is then
+<span class="math display">\[
+z = \dfrac{\textrm{statistic} - \textrm{null parameter}}{SE} = \dfrac{0.67 - 0.50}{0.021} = 8.10
+\]</span>
+The observed proportion is 8.1 SEs above the hypothesized value of 0.5.</p>
 <div class="sourceCode" id="cb351"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="op">(</span><span class="fl">0.67</span> <span class="op">-</span> <span class="fl">0.5</span><span class="op">)</span><span class="op">/</span><span class="fl">0.021</span></span></code></pre></div>
+<pre><code>[1] 8.095238</code></pre>
+</details><p><br></p>
+<p>Note that the randomization distribution should look roughly like this (with the observed proportion denoted with a red X):</p>
+<div class="sourceCode" id="cb353"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/curve.html">curve</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">dnorm</a></span><span class="op">(</span><span class="va">x</span>,<span class="fl">0.5</span>,<span class="fl">.021</span><span class="op">)</span>,from<span class="op">=</span><span class="fl">.3</span>,to<span class="op">=</span><span class="fl">.7</span>,xlab<span class="op">=</span><span class="st">"sample proportions"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/points.html">points</a></span><span class="op">(</span><span class="fl">0.67</span>,<span class="fl">0</span>,pch<span class="op">=</span><span class="st">"X"</span>,col<span class="op">=</span><span class="st">"red"</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="Practice_Problems_16_files/figure-html/unnamed-chunk-1-1.png" width="100%"></div>
+<div class="inline-figure"><img src="Practice_Problems_16_files/figure-html/unnamed-chunk-2-1.png" width="100%"></div>
 </div>
 <div id="c-use-the-normal-distribution-to-find-the-p-value." class="section level4" number="25.1.0.3">
 <h4>
 <span class="header-section-number">25.1.0.3</span> (c) Use the normal distribution to find the p-value.<a class="anchor" aria-label="anchor" href="#c-use-the-normal-distribution-to-find-the-p-value."><i class="fas fa-link"></i></a>
 </h4>
-<!-- <details><summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* As we can see in the normal plot above, the p-value will be very small because the alternative is looking for big sample proportions. The p-value is the proportion of times we get a sample proportion as big, or bigger than, 0.67; or equivantly, the proportion of times we get a sample proportion that is at least 8.1 SEs above the hypothesized proportion. We would report a p-value that is less than 0.0001.  -->
-<!-- ```{r} -->
-<!-- 1-pnorm(8.10,0,1) -->
-<!-- ``` -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> As we can see in the normal plot above, the p-value will be very small because the alternative is looking for big sample proportions. The p-value is the proportion of times we get a sample proportion as big, or bigger than, 0.67; or equivantly, the proportion of times we get a sample proportion that is at least 8.1 SEs above the hypothesized proportion. We would report a p-value that is less than 0.0001.</p>
+<div class="sourceCode" id="cb354"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">1</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">pnorm</a></span><span class="op">(</span><span class="fl">8.10</span>,<span class="fl">0</span>,<span class="fl">1</span><span class="op">)</span></span></code></pre></div>
+<pre><code>[1] 2.220446e-16</code></pre>
+</details><p><br></p>
 </div>
 <div id="d-what-is-the-conclusion-of-the-test" class="section level4" number="25.1.0.4">
 <h4>
 <span class="header-section-number">25.1.0.4</span> (d) What is the conclusion of the test?<a class="anchor" aria-label="anchor" href="#d-what-is-the-conclusion-of-the-test"><i class="fas fa-link"></i></a>
 </h4>
-<!-- <details><summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* The p-value is very small so we have very strong evidence that more than 50% of all women view divorce as morally acceptable. -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> The p-value is very small so we have very strong evidence that more than 50% of all women view divorce as morally acceptable.
+</details><p><br></p>
 </div>
 <div id="e-use-the-normal-distribution-to-find-a-99-confidence-interval-for-the-proportion-of-all-women-who-view-divorce-as-morally-acceptable.-interpret-your-answer." class="section level4" number="25.1.0.5">
 <h4>
 <span class="header-section-number">25.1.0.5</span> (e) Use the normal distribution to find a 99% confidence interval for the proportion of all women who view divorce as morally acceptable. Interpret your answer.<a class="anchor" aria-label="anchor" href="#e-use-the-normal-distribution-to-find-a-99-confidence-interval-for-the-proportion-of-all-women-who-view-divorce-as-morally-acceptable.-interpret-your-answer."><i class="fas fa-link"></i></a>
 </h4>
-<!-- <details><summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* Without knowing the bootstrap SE, our best guess at it would be from the randomization distribution SE which is given as 0.021. Our 99% confidence interval will look like: -->
-<!-- $$ -->
-<!-- statistic \pm z^*SE = 0.67 \pm z^* (0.021)  -->
-<!-- $$ -->
-<!-- The $z^*$ for a 99% CI corresponds to the 99.5th percentile (90% in middle + 0.5% in the left tail). With $z^* = 2.576$, we get a 99% confidence interval of 0.616 to 0.724.  -->
-<!-- ```{r} -->
-<!-- qnorm(0.995) -->
-<!-- 0.67 - 2.576*0.021 -->
-<!-- 0.67 + 2.576*0.021 -->
-<!-- ``` -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> Without knowing the bootstrap SE, our best guess at it would be from the randomization distribution SE which is given as 0.021. Our 99% confidence interval will look like:
+<span class="math display">\[
+statistic \pm z^*SE = 0.67 \pm z^* (0.021)
+\]</span>
+The <span class="math inline">\(z^*\)</span> for a 99% CI corresponds to the 99.5th percentile (90% in middle + 0.5% in the left tail). With <span class="math inline">\(z^* = 2.576\)</span>, we get a 99% confidence interval of 0.616 to 0.724.</p>
+<div class="sourceCode" id="cb356"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">qnorm</a></span><span class="op">(</span><span class="fl">0.995</span><span class="op">)</span></span></code></pre></div>
+<pre><code>[1] 2.575829</code></pre>
+<div class="sourceCode" id="cb358"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">0.67</span> <span class="op">-</span> <span class="fl">2.576</span><span class="op">*</span><span class="fl">0.021</span></span></code></pre></div>
+<pre><code>[1] 0.615904</code></pre>
+<div class="sourceCode" id="cb360"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">0.67</span> <span class="op">+</span> <span class="fl">2.576</span><span class="op">*</span><span class="fl">0.021</span></span></code></pre></div>
+<pre><code>[1] 0.724096</code></pre>
+</details><p><br></p>
 </div>
 </div>
 <div id="problem-2-do-men-and-women-differ-in-opinions-about-divorce" class="section level2" number="25.2">
@@ -166,51 +165,49 @@
 <h4>
 <span class="header-section-number">25.2.0.1</span> (a) What are the null and alternative hypotheses for this test?<a class="anchor" aria-label="anchor" href="#a-what-are-the-null-and-alternative-hypotheses-for-this-test-1"><i class="fas fa-link"></i></a>
 </h4>
-<!-- <details><summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* Using the same notation as (3a), except denoting male/female populations, we get -->
-<!-- $$ -->
-<!-- H_0: p_f = p_m \ \ H_A: p_f \neq p_m -->
-<!-- $$ -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> Using the same notation as (3a), except denoting male/female populations, we get</p>
+<p><span class="math display">\[
+H_0: p_f = p_m \ \ H_A: p_f \neq p_m
+\]</span></p>
+</details><p><br></p>
 </div>
 <div id="b-what-is-the-standardized-test-statistic-1" class="section level4" number="25.2.0.2">
 <h4>
 <span class="header-section-number">25.2.0.2</span> (b) What is the standardized test statistic?<a class="anchor" aria-label="anchor" href="#b-what-is-the-standardized-test-statistic-1"><i class="fas fa-link"></i></a>
 </h4>
-<!-- <details><summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* Suppose we look at the difference $p_m - p_f$. The observed difference is then 0.04 (0.71 - 0.67). This value is about 1.4 SEs above the hypothesized difference of 0: -->
-<!-- $$ -->
-<!-- z = \dfrac{\textrm{statistic} - \textrm{null parameter}}{SE} = \dfrac{(0.71 - 0.67) - 0}{0.029} = 1.379 -->
-<!-- $$ -->
-<!-- ```{r} -->
-<!-- (0.04 - 0)/0.029 -->
-<!-- ``` -->
-<!-- Note that the randomization distribution for the difference in sample proportions should look roughly like this (with the observed proportion difference denoted with a red X): -->
-<!-- ```{r} -->
-<!-- curve(dnorm(x,0,.029),from=-.1,to=.1,xlab="sample proportions") -->
-<!-- points(0.04,0,pch="X",col="red") -->
-<!-- ``` -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> Suppose we look at the difference <span class="math inline">\(p_m - p_f\)</span>. The observed difference is then 0.04 (0.71 - 0.67). This value is about 1.4 SEs above the hypothesized difference of 0:
+<span class="math display">\[
+z = \dfrac{\textrm{statistic} - \textrm{null parameter}}{SE} = \dfrac{(0.71 - 0.67) - 0}{0.029} = 1.379
+\]</span></p>
+<div class="sourceCode" id="cb362"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="op">(</span><span class="fl">0.04</span> <span class="op">-</span> <span class="fl">0</span><span class="op">)</span><span class="op">/</span><span class="fl">0.029</span></span></code></pre></div>
+<pre><code>[1] 1.37931</code></pre>
+<p>Note that the randomization distribution for the difference in sample proportions should look roughly like this (with the observed proportion difference denoted with a red X):</p>
+<div class="sourceCode" id="cb364"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/curve.html">curve</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">dnorm</a></span><span class="op">(</span><span class="va">x</span>,<span class="fl">0</span>,<span class="fl">.029</span><span class="op">)</span>,from<span class="op">=</span><span class="op">-</span><span class="fl">.1</span>,to<span class="op">=</span><span class="fl">.1</span>,xlab<span class="op">=</span><span class="st">"sample proportions"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/points.html">points</a></span><span class="op">(</span><span class="fl">0.04</span>,<span class="fl">0</span>,pch<span class="op">=</span><span class="st">"X"</span>,col<span class="op">=</span><span class="st">"red"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Practice_Problems_16_files/figure-html/unnamed-chunk-6-1.png" width="100%"></div>
+</details><p><br></p>
 </div>
 <div id="c-use-the-normal-distribution-to-find-the-p-value.-1" class="section level4" number="25.2.0.3">
 <h4>
 <span class="header-section-number">25.2.0.3</span> (c) Use the normal distribution to find the p-value.<a class="anchor" aria-label="anchor" href="#c-use-the-normal-distribution-to-find-the-p-value.-1"><i class="fas fa-link"></i></a>
 </h4>
-<!-- <details><summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* This is a two-tail test. Since the observed difference is less than 2 SEs away from 0 we know that the (two-tailed) p-value should be bigger than 0.05. We see that the p-value is 2(0.084) = 0.168.  -->
-<!-- ```{r} -->
-<!-- 1-pnorm(1.379,0,1) # proportion above z=1.379 -->
-<!-- 2*(1-pnorm(1.379,0,1)) # p-value for two-sided -->
-<!-- ``` -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> This is a two-tail test. Since the observed difference is less than 2 SEs away from 0 we know that the (two-tailed) p-value should be bigger than 0.05. We see that the p-value is 2(0.084) = 0.168.</p>
+<div class="sourceCode" id="cb365"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">1</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">pnorm</a></span><span class="op">(</span><span class="fl">1.379</span>,<span class="fl">0</span>,<span class="fl">1</span><span class="op">)</span> <span class="co"># proportion above z=1.379</span></span></code></pre></div>
+<pre><code>[1] 0.08394738</code></pre>
+<div class="sourceCode" id="cb367"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">2</span><span class="op">*</span><span class="op">(</span><span class="fl">1</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">pnorm</a></span><span class="op">(</span><span class="fl">1.379</span>,<span class="fl">0</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="co"># p-value for two-sided</span></span></code></pre></div>
+<pre><code>[1] 0.1678948</code></pre>
+</details><p><br></p>
 </div>
 <div id="d-what-is-the-conclusion-of-the-test-1" class="section level4" number="25.2.0.4">
 <h4>
 <span class="header-section-number">25.2.0.4</span> (d) What is the conclusion of the test?<a class="anchor" aria-label="anchor" href="#d-what-is-the-conclusion-of-the-test-1"><i class="fas fa-link"></i></a>
 </h4>
-<!-- <details><summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* The p-value is larger than a 5% significance level, so we do not find evidence of a difference between men and women in the proportion that view divorce as morally acceptable. About 17% of the time we would observe a difference in male/female views of 4 percentage points or greater just by chance.  -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> The p-value is larger than a 5% significance level, so we do not find evidence of a difference between men and women in the proportion that view divorce as morally acceptable. About 17% of the time we would observe a difference in male/female views of 4 percentage points or greater just by chance.
+</details><p><br></p>
 
 </div>
 </div>
@@ -241,7 +238,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-10-17.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-10-19.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
