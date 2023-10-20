@@ -110,7 +110,7 @@ In the same study described above, we find that 71% of men view divorce as moral
 #### (a)	 What are the null and alternative hypotheses for this test?
 
 <details><summary><red>Click for answer</red></summary>
-*Answer:* Using the same notation as (3a), except denoting male/female populations, we get
+*Answer:* Using the same notation as (1a), except denoting male/female populations, we get
 
 $$
 H_0: p_f = p_m \ \ H_A: p_f \neq p_m
