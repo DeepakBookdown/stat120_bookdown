@@ -91,11 +91,10 @@
 <span class="header-section-number">27.1</span> Problem 1: Change in gun ownership<a class="anchor" aria-label="anchor" href="#problem-1-change-in-gun-ownership"><i class="fas fa-link"></i></a>
 </h2>
 <p>A 2016 study described in The Guardian found that a random sample of US adults in 1994 found a female rate of gun ownership of 9%. A similar random sample in 2015 found the rate of female gun ownership rose to 12%. In the section 3.2 handout, we assumed that the SE for the difference in these two sample proportions is 2%. Show how this SE was computed using the appropriate SE formula from chapter 6. Assume that the sample sizes in both 1994 and 2015 were 500.</p>
-<!-- <details><summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* -->
-<!-- We have a 1994 sample proportion of $\hat{p}_{1994} = 0.09$  and a 2015 sample proportion of $\hat{p}_{2015} = 0.12$ . The SE of the difference in two sample proportions for a confidence interval is given by: -->
-<!-- $$SE = \sqrt{\frac{\hat{p}_{1994} (1 - \hat{p}_{1994} )}{n_{1994}} + \frac{\hat{p}_{2015} (1 - \hat{p}_{2015} )}{n_{2015}}} = 0.0194 \approx 0.02 $$ -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em></p>
+<p>We have a 1994 sample proportion of <span class="math inline">\(\hat{p}_{1994} = 0.09\)</span> and a 2015 sample proportion of <span class="math inline">\(\hat{p}_{2015} = 0.12\)</span> . The SE of the difference in two sample proportions for a confidence interval is given by:</p>
+<span class="math display">\[SE = \sqrt{\frac{\hat{p}_{1994} (1 - \hat{p}_{1994} )}{n_{1994}} + \frac{\hat{p}_{2015} (1 - \hat{p}_{2015} )}{n_{2015}}} = 0.0194 \approx 0.02 \]</span>
+</details><p><br></p>
 </div>
 <div id="problem-2-accuracy-of-lie-detectors" class="section level2" number="27.2">
 <h2>
@@ -140,40 +139,53 @@
 <h3>
 <span class="header-section-number">27.2.1</span> (a) Are the conditions met for using the normal distribution?<a class="anchor" aria-label="anchor" href="#a-are-the-conditions-met-for-using-the-normal-distribution"><i class="fas fa-link"></i></a>
 </h3>
-<!-- <details><summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* Yes (all cell counts at least 10) -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> Yes (all cell counts at least 10)
+</details><p><br></p>
 </div>
 <div id="b-find-the-three-sample-proportions-for-the-proportion-of-times-the-lie-detector-says-the-person-is-lying-the-proportion-for-the-lying-people-the-proportion-for-the-truthful-people-and-the-pooled-proportion." class="section level3" number="27.2.2">
 <h3>
 <span class="header-section-number">27.2.2</span> (b) Find the three sample proportions for the proportion of times the lie detector says the person is lying (the proportion for the lying people, the proportion for the truthful people, and the pooled proportion).<a class="anchor" aria-label="anchor" href="#b-find-the-three-sample-proportions-for-the-proportion-of-times-the-lie-detector-says-the-person-is-lying-the-proportion-for-the-lying-people-the-proportion-for-the-truthful-people-and-the-pooled-proportion."><i class="fas fa-link"></i></a>
 </h3>
-<!-- <details><summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* We see that the proportion for the lying people is $\hat{p}_L = \frac{31}{48}= 0.6458$, the proportion for the not lying people is $\hat{p}_N = 0.5625$ , and the pooled proportion for all 96 people is $\hat{p} = \frac{58}{96}= 0.6042$. -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> We see that the proportion for the lying people is <span class="math inline">\(\hat{p}_L = \frac{31}{48}= 0.6458\)</span>, the proportion for the not lying people is <span class="math inline">\(\hat{p}_N = 0.5625\)</span> , and the pooled proportion for all 96 people is <span class="math inline">\(\hat{p} = \frac{58}{96}= 0.6042\)</span>.
+</details><p><br></p>
 </div>
 <div id="c-test-to-see-if-there-is-a-difference-in-the-proportion-of-times-the-lie-detector-says-the-person-is-lying-depending-on-whether-the-person-is-lying-or-telling-the-truth.-show-all-details-of-the-hypothesis-test." class="section level3" number="27.2.3">
 <h3>
 <span class="header-section-number">27.2.3</span> (c) Test to see if there is a difference in the proportion of times the lie detector says the person is lying, depending on whether the person is lying or telling the truth. Show all details of the hypothesis test.<a class="anchor" aria-label="anchor" href="#c-test-to-see-if-there-is-a-difference-in-the-proportion-of-times-the-lie-detector-says-the-person-is-lying-depending-on-whether-the-person-is-lying-or-telling-the-truth.-show-all-details-of-the-hypothesis-test."><i class="fas fa-link"></i></a>
 </h3>
-<details><summary><red>Click for answer</red></summary><!-- *Answer:* --><!-- We are testing $H_0:p_L = p_N$   vs   $H_a:p_L \neq p_N$. The test statistic is --><!-- $$z = \frac{statistic-null}{SE} = \frac{(\hat{p}_L - \hat{p}_N) - 0}{\sqrt{\frac{\hat{p}(1-\hat{p})}{n_l} + \frac{\hat{p}(1-\hat{p})}{n_N}}} = \frac{0.6458 - 0.5625}{\sqrt{\frac{0.6042(1-0.6042)}{48}} + \frac{0.6042*(1-0.6042)}{48}} = 0.834 $$ --><!-- This is a two-tail test, and the area to the right of 0.834 in a normal distribution is 0.202 (1-pnorm(0.834)), so the p-value is  2(0.202) = 0.404. The R command is: 2*(1-pnorm(0.834)) --><!-- ```{r} --><!-- pL_hat = 31/48 --><!-- pN_hat = 27/48 --><!-- pooled_p = 58/96 --><!-- nL = 48 --><!-- nN = 48 --><!-- SE = sqrt(pooled_p*(1-pooled_p)*(1/nL + 1/nN)) --><!-- z = (pL_hat - pN_hat) / SE --><!-- p_value = 2*(1-pnorm(z)) --><!-- p_value --><!-- ``` --><!-- We fail to reject H0 and conclude that there is not enough evidence that a lie detector can tell whether a person is lying or telling the truth.   --><!-- </details><br> --></details>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em></p>
+<p>We are testing <span class="math inline">\(H_0:p_L = p_N\)</span> vs <span class="math inline">\(H_a:p_L \neq p_N\)</span>. The test statistic is</p>
+<p><span class="math display">\[z = \frac{statistic-null}{SE} = \frac{(\hat{p}_L - \hat{p}_N) - 0}{\sqrt{\frac{\hat{p}(1-\hat{p})}{n_l} + \frac{\hat{p}(1-\hat{p})}{n_N}}} = \frac{0.6458 - 0.5625}{\sqrt{\frac{0.6042(1-0.6042)}{48}} + \frac{0.6042*(1-0.6042)}{48}} = 0.834 \]</span></p>
+<p>This is a two-tail test, and the area to the right of 0.834 in a normal distribution is 0.202 (1-pnorm(0.834)), so the p-value is 2(0.202) = 0.404. The R command is: 2*(1-pnorm(0.834))</p>
+<div class="sourceCode" id="cb369"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">pL_hat</span> <span class="op">=</span> <span class="fl">31</span><span class="op">/</span><span class="fl">48</span></span>
+<span><span class="va">pN_hat</span> <span class="op">=</span> <span class="fl">27</span><span class="op">/</span><span class="fl">48</span></span>
+<span><span class="va">pooled_p</span> <span class="op">=</span> <span class="fl">58</span><span class="op">/</span><span class="fl">96</span></span>
+<span><span class="va">nL</span> <span class="op">=</span> <span class="fl">48</span></span>
+<span><span class="va">nN</span> <span class="op">=</span> <span class="fl">48</span></span>
+<span><span class="va">SE</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="va">pooled_p</span><span class="op">*</span><span class="op">(</span><span class="fl">1</span><span class="op">-</span><span class="va">pooled_p</span><span class="op">)</span><span class="op">*</span><span class="op">(</span><span class="fl">1</span><span class="op">/</span><span class="va">nL</span> <span class="op">+</span> <span class="fl">1</span><span class="op">/</span><span class="va">nN</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">z</span> <span class="op">=</span> <span class="op">(</span><span class="va">pL_hat</span> <span class="op">-</span> <span class="va">pN_hat</span><span class="op">)</span> <span class="op">/</span> <span class="va">SE</span></span>
+<span><span class="va">p_value</span> <span class="op">=</span> <span class="fl">2</span><span class="op">*</span><span class="op">(</span><span class="fl">1</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">pnorm</a></span><span class="op">(</span><span class="va">z</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">p_value</span></span></code></pre></div>
+<pre><code>[1] 0.4038223</code></pre>
+<p>We fail to reject H0 and conclude that there is not enough evidence that a lie detector can tell whether a person is lying or telling the truth.</p>
+</details><p><br></p>
 </div>
 <div id="d-calculate-a-95-confidence-interval-for-the-difference-in-proportions-of-people-correctly-identified-by-the-lie-detector." class="section level3" number="27.2.4">
 <h3>
 <span class="header-section-number">27.2.4</span> (d) Calculate a 95% confidence interval for the difference in proportions of people correctly identified by the lie detector.<a class="anchor" aria-label="anchor" href="#d-calculate-a-95-confidence-interval-for-the-difference-in-proportions-of-people-correctly-identified-by-the-lie-detector."><i class="fas fa-link"></i></a>
 </h3>
-<!-- <details><summary><red>Click for answer</red></summary> -->
-<!-- ```{r} -->
-<!-- conf_level = 0.95 -->
-<!-- z_star = qnorm(1-(1-conf_level)/2) -->
-<!-- margin_of_error = z_star * SE -->
-<!-- CI_lower = (pL_hat - pN_hat) - margin_of_error -->
-<!-- CI_upper = (pL_hat - pN_hat) + margin_of_error -->
-<!-- CI = c(CI_lower, CI_upper) -->
-<!-- CI -->
-<!-- ``` -->
-<!-- The 95% confidence interval for the difference in proportions is (-0.299, 0.207). Since, the confidence interval includes the null hypothesized value of 0, we do not reject the null hypothesis, and conclude that there is not enough evidence that a lie detector can tell whether a person is lying or telling the truth. -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><div class="sourceCode" id="cb371"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">conf_level</span> <span class="op">=</span> <span class="fl">0.95</span></span>
+<span><span class="va">z_star</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">qnorm</a></span><span class="op">(</span><span class="fl">1</span><span class="op">-</span><span class="op">(</span><span class="fl">1</span><span class="op">-</span><span class="va">conf_level</span><span class="op">)</span><span class="op">/</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="va">margin_of_error</span> <span class="op">=</span> <span class="va">z_star</span> <span class="op">*</span> <span class="va">SE</span></span>
+<span><span class="va">CI_lower</span> <span class="op">=</span> <span class="op">(</span><span class="va">pL_hat</span> <span class="op">-</span> <span class="va">pN_hat</span><span class="op">)</span> <span class="op">-</span> <span class="va">margin_of_error</span></span>
+<span><span class="va">CI_upper</span> <span class="op">=</span> <span class="op">(</span><span class="va">pL_hat</span> <span class="op">-</span> <span class="va">pN_hat</span><span class="op">)</span> <span class="op">+</span> <span class="va">margin_of_error</span></span>
+<span><span class="va">CI</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">CI_lower</span>, <span class="va">CI_upper</span><span class="op">)</span></span>
+<span><span class="va">CI</span></span></code></pre></div>
+<pre><code>[1] -0.1123154  0.2789821</code></pre>
+<p>The 95% confidence interval for the difference in proportions is (-0.299, 0.207). Since, the confidence interval includes the null hypothesized value of 0, we do not reject the null hypothesis, and conclude that there is not enough evidence that a lie detector can tell whether a person is lying or telling the truth.</p>
+</details><p><br></p>
 </div>
 </div>
 <div id="problem-3-smoking-and-pregnancy-rate" class="section level2" number="27.3">
@@ -213,27 +225,32 @@
 </tr>
 </tbody>
 </table></div>
-<!-- <details><summary><red>Click for answer</red></summary> --><!-- The conditions are met for using the normal distribution (at least 10 values in each cell of the table).  We see that the proportion of smokers who got pregnant is 38/135 = 0.281 while the proportion of non-smokers who got pregnant is 206/543 = 0.379.  The confidence interval is given by: --><!-- $$statistic \pm z^* \cdot SE $$ --><!-- $$(\hat{p}_S - \hat{p}_N) \pm z^* \cdot \sqrt{\frac{\hat{p}_S(1- \hat{p}_S)}{n_S} + \frac{\hat{p}_N(1- \hat{p}_N)}{n_N}} $$ --><!-- $$(0.281 - 0.379) \pm 1.645\cdot \sqrt{\frac{0.281(1-0.281)}{135} + \frac{0.379(1-0.379)}{543}} $$ --><!-- $$-0.098 \pm 0.072 = (-0.170, -0.026) $$ --><!-- We are 90% sure that the proportion of smokers who get pregnant in the first cycle is between 0.170 and 0.026 less than the proportion of non-smokers who get pregnant on the first cycle.   Note that if we had subtracted the other way, the interval would have only positive values, but the interpretation would be the same. --><!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><p>The conditions are met for using the normal distribution (at least 10 values in each cell of the table). We see that the proportion of smokers who got pregnant is 38/135 = 0.281 while the proportion of non-smokers who got pregnant is 206/543 = 0.379. The confidence interval is given by:</p>
+<p><span class="math display">\[statistic \pm z^* \cdot SE \]</span>
+<span class="math display">\[(\hat{p}_S - \hat{p}_N) \pm z^* \cdot \sqrt{\frac{\hat{p}_S(1- \hat{p}_S)}{n_S} + \frac{\hat{p}_N(1- \hat{p}_N)}{n_N}} \]</span></p>
+<p><span class="math display">\[(0.281 - 0.379) \pm 1.645\cdot \sqrt{\frac{0.281(1-0.281)}{135} + \frac{0.379(1-0.379)}{543}} \]</span>
+<span class="math display">\[-0.098 \pm 0.072 = (-0.170, -0.026) \]</span>
+We are 90% sure that the proportion of smokers who get pregnant in the first cycle is between 0.170 and 0.026 less than the proportion of non-smokers who get pregnant on the first cycle. Note that if we had subtracted the other way, the interval would have only positive values, but the interpretation would be the same.</p>
+</details><p><br></p>
 </div>
 <div id="b.-now-repeat-the-above-analysis-using-the-hypothesis-test-approach." class="section level3" number="27.3.2">
 <h3>
 <span class="header-section-number">27.3.2</span> (b). Now, repeat the above analysis using the hypothesis test approach.<a class="anchor" aria-label="anchor" href="#b.-now-repeat-the-above-analysis-using-the-hypothesis-test-approach."><i class="fas fa-link"></i></a>
 </h3>
-<!-- <details><summary><red>Click for answer</red></summary> -->
-<!-- We are testing $H_0:p_S = p_{NS}$ vs $H_a:p_S \neq p_{NS}$. The test statistic is: -->
-<!-- ```{r} -->
-<!-- pS_hat = 38/135 -->
-<!-- pNS_hat = 206/543 -->
-<!-- pooled_p2 = (38+206)/(135+543) -->
-<!-- nS = 135 -->
-<!-- nNS = 543 -->
-<!-- SE2 = sqrt(pooled_p2*(1-pooled_p2)*(1/nS + 1/nNS)) -->
-<!-- z2 = (pS_hat - pNS_hat) / SE2 -->
-<!-- p_value2 = 2*(pnorm(z2)) -->
-<!-- p_value2 -->
-<!-- ``` -->
-<!-- Based on the p-value, we reject $H_0$ and conclude that there is a difference in the proportion of women who get pregnant between smokers and non-smokers. -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><p>We are testing <span class="math inline">\(H_0:p_S = p_{NS}\)</span> vs <span class="math inline">\(H_a:p_S \neq p_{NS}\)</span>. The test statistic is:</p>
+<div class="sourceCode" id="cb373"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">pS_hat</span> <span class="op">=</span> <span class="fl">38</span><span class="op">/</span><span class="fl">135</span></span>
+<span><span class="va">pNS_hat</span> <span class="op">=</span> <span class="fl">206</span><span class="op">/</span><span class="fl">543</span></span>
+<span><span class="va">pooled_p2</span> <span class="op">=</span> <span class="op">(</span><span class="fl">38</span><span class="op">+</span><span class="fl">206</span><span class="op">)</span><span class="op">/</span><span class="op">(</span><span class="fl">135</span><span class="op">+</span><span class="fl">543</span><span class="op">)</span></span>
+<span><span class="va">nS</span> <span class="op">=</span> <span class="fl">135</span></span>
+<span><span class="va">nNS</span> <span class="op">=</span> <span class="fl">543</span></span>
+<span><span class="va">SE2</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="va">pooled_p2</span><span class="op">*</span><span class="op">(</span><span class="fl">1</span><span class="op">-</span><span class="va">pooled_p2</span><span class="op">)</span><span class="op">*</span><span class="op">(</span><span class="fl">1</span><span class="op">/</span><span class="va">nS</span> <span class="op">+</span> <span class="fl">1</span><span class="op">/</span><span class="va">nNS</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">z2</span> <span class="op">=</span> <span class="op">(</span><span class="va">pS_hat</span> <span class="op">-</span> <span class="va">pNS_hat</span><span class="op">)</span> <span class="op">/</span> <span class="va">SE2</span></span>
+<span><span class="va">p_value2</span> <span class="op">=</span> <span class="fl">2</span><span class="op">*</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">pnorm</a></span><span class="op">(</span><span class="va">z2</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">p_value2</span></span></code></pre></div>
+<pre><code>[1] 0.03394234</code></pre>
+<p>Based on the p-value, we reject <span class="math inline">\(H_0\)</span> and conclude that there is a difference in the proportion of women who get pregnant between smokers and non-smokers.</p>
+</details><p><br></p>
 
 </div>
 </div>
@@ -277,7 +294,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-10-22.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-10-23.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
