@@ -15,7 +15,7 @@ head(lakes)
 Always plot your data and get summary stats:
 
 ```{r}
-hist(lakes$pH)
+ggplot(lakes, aes(pH)) + geom_histogram()
 mean(lakes$pH)
 sd(lakes$pH)
 ```
@@ -145,7 +145,8 @@ glimpse(NutritionStudy)
 Always plot your data and get summary stats:
 
 ```{r}
-hist(NutritionStudy$Calories)
+library(ggplot2)
+ggplot(NutritionStudy, aes(Calories)) + geom_histogram()
 mean(NutritionStudy$Calories)
 sd(NutritionStudy$Calories)
 ```
@@ -156,79 +157,79 @@ sd(NutritionStudy$Calories)
 What is the estimated SE for the sample mean?
 
 
-<!-- <details><summary><red>Click for answer</red></summary> -->
+<details><summary><red>Click for answer</red></summary>
 
-<!-- *Answer:* -->
+*Answer:*
 
-<!-- ```{r} -->
-<!-- n <- length(NutritionStudy$Calories) -->
-<!-- SE <- sd(NutritionStudy$Calories) / sqrt(n) -->
-<!-- SE -->
-<!-- ``` -->
+```{r}
+n <- length(NutritionStudy$Calories)
+SE <- sd(NutritionStudy$Calories) / sqrt(n)
+SE
+```
 
-<!-- </details><br> -->
+</details><br>
 
 ### (c) t-test statistic
 
 Compute the t-test statistic for testing if the population mean calorie intake is equal, or not, to 2000.
 
-<!-- <details><summary><red>Click for answer</red></summary> -->
+<details><summary><red>Click for answer</red></summary>
 
-<!-- *Answer:* -->
+*Answer:*
 
-<!-- ```{r} -->
-<!-- t_stat <- (mean(NutritionStudy$Calories) - 2000) / SE -->
-<!-- t_stat -->
-<!-- ``` -->
+```{r}
+t_stat <- (mean(NutritionStudy$Calories) - 2000) / SE
+t_stat
+```
 
-<!-- </details><br> -->
+</details><br>
 
 ### (d) One-sample t-test
 
 Perform a one-sample t-test to test whether the population mean calorie intake is equal to 2000 or not.
 
-<!-- <details><summary><red>Click for answer</red></summary> -->
+<details><summary><red>Click for answer</red></summary>
 
-<!-- *Answer:* -->
+*Answer:*
 
-<!-- ```{r} -->
-<!-- t.test(NutritionStudy$Calories, mu = 2000) -->
-<!-- ``` -->
+```{r}
+t.test(NutritionStudy$Calories, mu = 2000)
+```
 
-<!-- </details><br> -->
+</details><br>
 
 ### (e) One-sample t confidence interval
 
 What is the 95% confidence interval for the population mean calorie intake?
 
-<!-- <details><summary><red>Click for answer</red></summary> -->
+<details><summary><red>Click for answer</red></summary>
 
-<!-- *Answer:* -->
+*Answer:*
 
-<!-- ```{r} -->
-<!-- ci <- t.test(NutritionStudy$Calories, mu = 2000)$conf.int -->
-<!-- ci -->
-<!-- ``` -->
+```{r}
+ci <- t.test(NutritionStudy$Calories, mu = 2000)$conf.int
+ci
+```
 
-<!-- </details><br> -->
+</details><br>
 
 ### (f) `qt` and `pt`
 
 Show how to compute the p-value for the test in (d) using the pt command. Then show how the confidence interval in (e) is computed with a qt value.
 
-<!-- <details><summary><red>Click for answer</red></summary> -->
+<details><summary><red>Click for answer</red></summary>
 
-<!-- *Answer:* -->
+*Answer:*
 
-<!-- ```{r} -->
-<!-- p_value <- 2 * pt(-abs(t_stat), df = n - 1) -->
-<!-- p_value -->
-<!-- ``` -->
+```{r}
+p_value <- 2 * pt(-abs(t_stat), df = n - 1)
+p_value
+```
 
 
-<!-- ```{r} -->
-<!-- t_star <- qt(0.975, df = n - 1) -->
-<!-- t_star -->
-<!-- ``` -->
+```{r}
+t_star <- qt(0.975, df = n - 1)
+t_star
+```
 
-<!-- </details><br> -->
+</details><br>

@@ -41,7 +41,7 @@ Always plot your data and get summary stats:
 
 
 ```r
-hist(lakes$pH)
+ggplot(lakes, aes(pH)) + geom_histogram()
 ```
 
 <img src="Practice_Problems_19_files/figure-html/unnamed-chunk-2-1.png" width="100%" />
@@ -246,7 +246,8 @@ Always plot your data and get summary stats:
 
 
 ```r
-hist(NutritionStudy$Calories)
+library(ggplot2)
+ggplot(NutritionStudy, aes(Calories)) + geom_histogram()
 ```
 
 <img src="Practice_Problems_19_files/figure-html/unnamed-chunk-9-1.png" width="100%" />
@@ -273,79 +274,121 @@ sd(NutritionStudy$Calories)
 What is the estimated SE for the sample mean?
 
 
-<!-- <details><summary><red>Click for answer</red></summary> -->
+<details><summary><red>Click for answer</red></summary>
 
-<!-- *Answer:* -->
+*Answer:*
 
-<!-- ```{r} -->
-<!-- n <- length(NutritionStudy$Calories) -->
-<!-- SE <- sd(NutritionStudy$Calories) / sqrt(n) -->
-<!-- SE -->
-<!-- ``` -->
 
-<!-- </details><br> -->
+```r
+n <- length(NutritionStudy$Calories)
+SE <- sd(NutritionStudy$Calories) / sqrt(n)
+SE
+```
+
+```
+[1] 38.33324
+```
+
+</details><br>
 
 ### (c) t-test statistic
 
 Compute the t-test statistic for testing if the population mean calorie intake is equal, or not, to 2000.
 
-<!-- <details><summary><red>Click for answer</red></summary> -->
+<details><summary><red>Click for answer</red></summary>
 
-<!-- *Answer:* -->
+*Answer:*
 
-<!-- ```{r} -->
-<!-- t_stat <- (mean(NutritionStudy$Calories) - 2000) / SE -->
-<!-- t_stat -->
-<!-- ``` -->
 
-<!-- </details><br> -->
+```r
+t_stat <- (mean(NutritionStudy$Calories) - 2000) / SE
+t_stat
+```
+
+```
+[1] -5.304676
+```
+
+</details><br>
 
 ### (d) One-sample t-test
 
 Perform a one-sample t-test to test whether the population mean calorie intake is equal to 2000 or not.
 
-<!-- <details><summary><red>Click for answer</red></summary> -->
+<details><summary><red>Click for answer</red></summary>
 
-<!-- *Answer:* -->
+*Answer:*
 
-<!-- ```{r} -->
-<!-- t.test(NutritionStudy$Calories, mu = 2000) -->
-<!-- ``` -->
 
-<!-- </details><br> -->
+```r
+t.test(NutritionStudy$Calories, mu = 2000)
+```
+
+```
+
+	One Sample t-test
+
+data:  NutritionStudy$Calories
+t = -5.3047, df = 314, p-value = 2.135e-07
+alternative hypothesis: true mean is not equal to 2000
+95 percent confidence interval:
+ 1721.232 1872.077
+sample estimates:
+mean of x 
+ 1796.655 
+```
+
+</details><br>
 
 ### (e) One-sample t confidence interval
 
 What is the 95% confidence interval for the population mean calorie intake?
 
-<!-- <details><summary><red>Click for answer</red></summary> -->
+<details><summary><red>Click for answer</red></summary>
 
-<!-- *Answer:* -->
+*Answer:*
 
-<!-- ```{r} -->
-<!-- ci <- t.test(NutritionStudy$Calories, mu = 2000)$conf.int -->
-<!-- ci -->
-<!-- ``` -->
 
-<!-- </details><br> -->
+```r
+ci <- t.test(NutritionStudy$Calories, mu = 2000)$conf.int
+ci
+```
+
+```
+[1] 1721.232 1872.077
+attr(,"conf.level")
+[1] 0.95
+```
+
+</details><br>
 
 ### (f) `qt` and `pt`
 
 Show how to compute the p-value for the test in (d) using the pt command. Then show how the confidence interval in (e) is computed with a qt value.
 
-<!-- <details><summary><red>Click for answer</red></summary> -->
+<details><summary><red>Click for answer</red></summary>
 
-<!-- *Answer:* -->
-
-<!-- ```{r} -->
-<!-- p_value <- 2 * pt(-abs(t_stat), df = n - 1) -->
-<!-- p_value -->
-<!-- ``` -->
+*Answer:*
 
 
-<!-- ```{r} -->
-<!-- t_star <- qt(0.975, df = n - 1) -->
-<!-- t_star -->
-<!-- ``` -->
+```r
+p_value <- 2 * pt(-abs(t_stat), df = n - 1)
+p_value
+```
 
-<!-- </details><br> -->
+```
+[1] 2.135134e-07
+```
+
+
+
+```r
+t_star <- qt(0.975, df = n - 1)
+t_star
+```
+
+```
+[1] 1.967548
+```
+
+</details><br>
