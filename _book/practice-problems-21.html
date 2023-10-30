@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 31 Practice Problems 21 | Stat 120</title>
+<meta name="author" content="Deepak Bastola">
+<meta name="description" content="31.1 Problem 1: API The Academic Performance Index (API) is computed for all California schools. It is a number, ranging from a low of 200 to a high of 1000, that reflects a school’s performance...">
+<meta name="generator" content="bookdown 0.35 with bs4_book()">
+<meta property="og:title" content="Chapter 31 Practice Problems 21 | Stat 120">
+<meta property="og:type" content="book">
+<meta property="og:description" content="31.1 Problem 1: API The Academic Performance Index (API) is computed for all California schools. It is a number, ranging from a low of 200 to a high of 1000, that reflects a school’s performance...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 31 Practice Problems 21 | Stat 120">
+<meta name="twitter:description" content="31.1 Problem 1: API The Academic Performance Index (API) is computed for all California schools. It is a number, ranging from a low of 200 to a high of 1000, that reflects a school’s performance...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.1/transition.js"></script><script src="libs/bs3compat-0.5.1/tabs.js"></script><script src="libs/bs3compat-0.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Stat 120</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Introduction to Statistics</a></li>
+<li class="book-part">Basics R</li>
+<li><a class="" href="what-is-r.html"><span class="header-section-number">1</span> What is R?</a></li>
+<li><a class="" href="r-markdown-basics.html"><span class="header-section-number">2</span> R Markdown Basics</a></li>
+<li><a class="" href="homework-guidelines.html"><span class="header-section-number">3</span> Homework Guidelines</a></li>
+<li><a class="" href="report-guidelines.html"><span class="header-section-number">4</span> Report Guidelines</a></li>
+<li class="book-part">R Tutorials</li>
+<li><a class="" href="tutorial-1-embark-on-your-data-journey.html"><span class="header-section-number">5</span> Tutorial 1: Embark on Your Data Journey</a></li>
+<li><a class="" href="tutorial-2-dive-deeper-into-data-visualization-and-statistics-in-r.html"><span class="header-section-number">6</span> Tutorial 2: Dive Deeper into Data Visualization and Statistics in R</a></li>
+<li><a class="" href="tutorial-3-dive-deeper-into-data-manipulation-with-dplyr-in-r.html"><span class="header-section-number">7</span> Tutorial 3: Dive Deeper into Data Manipulation with dplyr in R</a></li>
+<li><a class="" href="tutorial-4-latex-equations-in-rmarkdown.html"><span class="header-section-number">8</span> Tutorial 4: LaTeX Equations in RMarkdown</a></li>
+<li class="book-part">Short Reports</li>
+<li><a class="" href="short-report-1.html"><span class="header-section-number">9</span> Short Report 1</a></li>
+<li><a class="" href="short-report-2.html"><span class="header-section-number">10</span> Short Report 2</a></li>
+<li class="book-part">Practice Problems</li>
+<li><a class="" href="practice-problems-1.html"><span class="header-section-number">11</span> Practice Problems 1</a></li>
+<li><a class="" href="practice-problems-2.html"><span class="header-section-number">12</span> Practice Problems 2</a></li>
+<li><a class="" href="practice-problems-3.html"><span class="header-section-number">13</span> Practice Problems 3</a></li>
+<li><a class="" href="practice-problems-4.html"><span class="header-section-number">14</span> Practice Problems 4</a></li>
+<li><a class="" href="practice-problems-5.html"><span class="header-section-number">15</span> Practice Problems 5</a></li>
+<li><a class="" href="practice-problems-6.html"><span class="header-section-number">16</span> Practice Problems 6</a></li>
+<li><a class="" href="practice-problems-7.html"><span class="header-section-number">17</span> Practice Problems 7</a></li>
+<li><a class="" href="practice-problems-8.html"><span class="header-section-number">18</span> Practice Problems 8</a></li>
+<li><a class="" href="practice-problems-9.html"><span class="header-section-number">19</span> Practice Problems 9</a></li>
+<li><a class="" href="practice-problems-10.html"><span class="header-section-number">20</span> Practice Problems 10</a></li>
+<li><a class="" href="practice-problems-11.html"><span class="header-section-number">21</span> Practice Problems 11</a></li>
+<li><a class="" href="practice-problems-12.html"><span class="header-section-number">22</span> Practice Problems 12</a></li>
+<li><a class="" href="practice-problems-13.html"><span class="header-section-number">23</span> Practice Problems 13</a></li>
+<li><a class="" href="practice-problems-14.html"><span class="header-section-number">24</span> Practice Problems 14</a></li>
+<li><a class="" href="practice-problems-15.html"><span class="header-section-number">25</span> Practice Problems 15</a></li>
+<li><a class="" href="practice-problems-16.html"><span class="header-section-number">26</span> Practice Problems 16</a></li>
+<li><a class="" href="practice-problems-17.html"><span class="header-section-number">27</span> Practice Problems 17</a></li>
+<li><a class="" href="practice-problems-18.html"><span class="header-section-number">28</span> Practice Problems 18</a></li>
+<li><a class="" href="practice-problems-19.html"><span class="header-section-number">29</span> Practice Problems 19</a></li>
+<li><a class="" href="practice-problems-20.html"><span class="header-section-number">30</span> Practice Problems 20</a></li>
+<li><a class="active" href="practice-problems-21.html"><span class="header-section-number">31</span> Practice Problems 21</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="practice-problems-21" class="section level1" number="31">
+<h1>
+<span class="header-section-number">31</span> Practice Problems 21<a class="anchor" aria-label="anchor" href="#practice-problems-21"><i class="fas fa-link"></i></a>
+</h1>
+<div id="problem-1-api" class="section level2" number="31.1">
+<h2>
+<span class="header-section-number">31.1</span> Problem 1: API<a class="anchor" aria-label="anchor" href="#problem-1-api"><i class="fas fa-link"></i></a>
+</h2>
+<p>The Academic Performance Index (API) is computed for all California schools. It is a number, ranging from a low of 200 to a high of 1000, that reflects a school’s performance on a statewide standardized test (<a href="http://api.cde.ca.gov" class="uri">http://api.cde.ca.gov</a>). We have a SRS of 200 schools and are interested in how a school’s performance is related to the wealth of its students. The variable <code>growth</code> measures the growth in API from 1999 to 2000 (API 2000 - API 1999).</p>
+<div class="sourceCode" id="cb413"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">api</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"http://people.carleton.edu/~kstclair/data/api.csv"</span><span class="op">)</span></span></code></pre></div>
+<div id="a-categorizing-wealth" class="section level4" number="31.1.0.1">
+<h4>
+<span class="header-section-number">31.1.0.1</span> (a) Categorizing wealth<a class="anchor" aria-label="anchor" href="#a-categorizing-wealth"><i class="fas fa-link"></i></a>
+</h4>
+<p>Let’s define a school as “low wealth” if over 50% of its students are eligible for subsidized <code>meals</code> and “high wealth” otherwise. We can use an <code>ifelse</code> command to create a variable <code>wealth</code> that measures this:</p>
+<div class="sourceCode" id="cb414"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">api</span><span class="op">$</span><span class="va">wealth</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">api</span><span class="op">$</span><span class="va">meals</span> <span class="op">&gt;</span> <span class="fl">50</span>, <span class="st">"low"</span>,<span class="st">"high"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">api</span><span class="op">$</span><span class="va">wealth</span><span class="op">)</span></span></code></pre></div>
+<pre><code>
+high  low 
+ 102   98 </code></pre>
+<div class="sourceCode" id="cb416"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
+<span><span class="va">api</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">wealth</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">growth</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">growth</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<pre><code># A tibble: 2 × 3
+  wealth `mean(growth)` `sd(growth)`
+  &lt;chr&gt;           &lt;dbl&gt;        &lt;dbl&gt;
+1 high             25.2         28.8
+2 low              38.8         30.0</code></pre>
+<div class="sourceCode" id="cb418"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/boxplot.html">boxplot</a></span><span class="op">(</span><span class="va">growth</span> <span class="op">~</span> <span class="va">wealth</span>, data<span class="op">=</span><span class="va">api</span>, xlab<span class="op">=</span><span class="st">"API growth (2000 - 1999)"</span> , horizontal<span class="op">=</span><span class="cn">T</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Practice_Problems_21_files/figure-html/unnamed-chunk-2-1.png" width="100%"></div>
+<ul>
+<li>How many schools are “low” and “high” wealth.</li>
+<li>Are wealth and API growth related?</li>
+<li>What is the observed difference in mean API growth between high and low wealth schools. Use correct notation.</li>
+<li>Can we use t-inference methods to compare mean growths?</li>
+</ul>
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> There are <span class="math inline">\(n_h = 102\)</span> “high” wealth and <span class="math inline">\(n_l = 98\)</span> “low” wealth schools. The low wealth schools tend to have higher (and more variable) growth than high wealth schools. The difference in observed mean API growth between high and low growth schools is <span class="math inline">\(\bar{x}_h - \bar{x}_l = 25.24510 - 38.82653 = -13.58\)</span>. We can use t-methods since both samples sizes (98 and 102) can be deemed large and there isn’t severe skewness, but there are two extreme outliers that will be addressed below.
+</details><p><br></p>
+</div>
+<div id="b-se-for-the-sample-mean-difference" class="section level4" number="31.1.0.2">
+<h4>
+<span class="header-section-number">31.1.0.2</span> (b) SE for the sample mean difference<a class="anchor" aria-label="anchor" href="#b-se-for-the-sample-mean-difference"><i class="fas fa-link"></i></a>
+</h4>
+What is the estimated SE for the sample mean difference?
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The SE for the mean difference is 4.1544:</p>
+<p><span class="math display">\[
+SD_{\bar{x}_h - \bar{x}_l} = \sqrt{\dfrac{28.75380^2}{102} + \dfrac{29.95048^2}{98}} = 4.1544
+\]</span></p>
+<div class="sourceCode" id="cb419"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fl">28.75380</span><span class="op">^</span><span class="fl">2</span><span class="op">/</span><span class="fl">102</span> <span class="op">+</span>  <span class="fl">29.95048</span><span class="op">^</span><span class="fl">2</span><span class="op">/</span><span class="fl">98</span><span class="op">)</span></span></code></pre></div>
+<pre><code>[1] 4.154404</code></pre>
+</details><p><br></p>
+</div>
+<div id="c-t-test-statistic-2" class="section level4" number="31.1.0.3">
+<h4>
+<span class="header-section-number">31.1.0.3</span> (c) t-test statistic<a class="anchor" aria-label="anchor" href="#c-t-test-statistic-2"><i class="fas fa-link"></i></a>
+</h4>
+Using your SE from (b) to compute the t-test statistic that can be used to determine if mean API growth differs for low and high wealth schools. Write down your hypotheses then show how the t test statistic is calculated. Interpret this value in context.
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The hypotheses are <span class="math inline">\(H_0: \mu_h - \mu_l = 0\)</span> vs <span class="math inline">\(H_A: \mu_h - \mu_l \neq 0\)</span>. The test stat is</p>
+<p><span class="math display">\[t = \dfrac{(25.24510 - 38.82653) - 0}{4.154404} = -3.2692\]</span></p>
+<p>The observed mean difference is 3.3 SEs below the hypothesized mean difference of 0.</p>
+<div class="sourceCode" id="cb421"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="op">(</span><span class="op">(</span><span class="fl">25.24510</span> <span class="op">-</span> <span class="fl">38.82653</span><span class="op">)</span> <span class="op">-</span> <span class="fl">0</span><span class="op">)</span><span class="op">/</span><span class="fl">4.154404</span> </span></code></pre></div>
+<pre><code>[1] -3.269164</code></pre>
+</details><p><br></p>
+</div>
+<div id="d-two-sample-t-test" class="section level4" number="31.1.0.4">
+<h4>
+<span class="header-section-number">31.1.0.4</span> (d) Two-sample t-test<a class="anchor" aria-label="anchor" href="#d-two-sample-t-test"><i class="fas fa-link"></i></a>
+</h4>
+<p>Is there evidence that mean API growth differs for low and high wealth schools? Give the hypotheses for this test, then run the <code>t.test(y ~ x, data=)</code> command below to conduct a t-test to give a p-value and conclusion.</p>
+<div class="sourceCode" id="cb423"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">growth</span> <span class="op">~</span> <span class="va">wealth</span>, data<span class="op">=</span><span class="va">api</span><span class="op">)</span></span></code></pre></div>
+<pre><code>
+    Welch Two Sample t-test
+
+data:  growth by wealth
+t = -3.2692, df = 196.71, p-value = 0.001273
+alternative hypothesis: true difference in means between group high and group low is not equal to 0
+95 percent confidence interval:
+ -21.774321  -5.388544
+sample estimates:
+mean in group high  mean in group low 
+          25.24510           38.82653 </code></pre>
+<ul>
+<li>What is the t test stat given in the output? Verify that it matches your answer to (c), within reasonable rounding error.</li>
+</ul>
+<!-- <details><summary><red>Click for answer</red></summary> --><!-- *Answer:* The test stat matches, $t = -3.2692$. --><!-- </details><br> --><ul>
+<li>What is the p-value for the test? Interpret this value.
+<!-- <details><summary><red>Click for answer</red></summary> -->
+</li>
+</ul>
+<!-- *Answer:* The p-value is 0.001273. If there is no difference between mean growth in the two populations, then there is just a 0.13% chance of seeing a sample mean difference that is 3.27 standard errors or more away from 0. --><!-- </details><br> --><ul>
+<li>What is your test conclusion?
+<!-- <details><summary><red>Click for answer</red></summary> -->
+</li>
+</ul>
+<!-- *Answer:* We have strong evidence to suggest that the average API growth in low and high wealth schools are not the same. --><!-- </details><br> -->
+</div>
+<div id="e-consider-outliers" class="section level4" number="31.1.0.5">
+<h4>
+<span class="header-section-number">31.1.0.5</span> (e) Consider outliers<a class="anchor" aria-label="anchor" href="#e-consider-outliers"><i class="fas fa-link"></i></a>
+</h4>
+<p>The boxplot in (a) shows a number of outliers for the <code>high</code> wealth group, but two cases in particular were very high. Suppose we omitted these two (most) extreme cases when running the test in (d). Will the p-value for this test be smaller or larger than the p-value computed in part (d)? Explain.</p>
+<!-- <details><summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* Removing the two large outliers which will both reduce the mean in the high group and reduce the SD in the high group. Both actions will magnify the difference in mean growth between the high and low groups (increasing the difference and decreasing the SE), so the test stat will increase in magnitude and the p-value will decrease.  -->
+<!-- </details><br> -->
+</div>
+<div id="f-check-outlier-influence" class="section level4" number="31.1.0.6">
+<h4>
+<span class="header-section-number">31.1.0.6</span> (f) Check outlier influence<a class="anchor" aria-label="anchor" href="#f-check-outlier-influence"><i class="fas fa-link"></i></a>
+</h4>
+<p>To omit these cases we have to find their row numbers, then <code>subset</code> them out of the data:</p>
+<div class="sourceCode" id="cb425"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/which.html">which</a></span><span class="op">(</span><span class="va">api</span><span class="op">$</span><span class="va">growth</span> <span class="op">&gt;</span> <span class="fl">120</span> <span class="op">)</span></span></code></pre></div>
+<pre><code>[1]  74 119</code></pre>
+<div class="sourceCode" id="cb427"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">api</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">74</span>,<span class="fl">119</span><span class="op">)</span>  <span class="co"># another dplyr package command</span></span></code></pre></div>
+<pre><code>           cds stype            name                 sname
+1 5.471911e+13     E Lincoln Element    Lincoln Elementary
+2 1.975342e+13     E Washington Elem Washington Elementary
+  snum                   dname dnum       cname cnum flag
+1 5873 Exeter Union Elementary  226      Tulare   53   NA
+2 2543   Redondo Beach Unified  585 Los Angeles   18   NA
+  pcttest api00 api99 target growth sch.wide comp.imp both
+1      98   693   504     15    189      Yes      Yes  Yes
+2     100   745   615      9    130      Yes      Yes  Yes
+  awards meals ell yr.rnd mobility acs.k3 acs.46 acs.core
+1    Yes    50  18   &lt;NA&gt;        9     18     NA       NA
+2    Yes    41  20   &lt;NA&gt;       16     19     30       NA
+  pct.resp not.hsg hsg some.col col.grad grad.sch avg.ed
+1       93      28  23       27       14        8   2.51
+2       81      11  26       32       16       16   2.99
+  full emer enroll api.stu    pw  fpc wealth
+1   91    9    196     177 30.97 6194   high
+2  100    3    391     313 30.97 6194   high</code></pre>
+<div class="sourceCode" id="cb429"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">growth</span> <span class="op">~</span> <span class="va">wealth</span>, data <span class="op">=</span> <span class="va">api</span>, subset <span class="op">=</span> <span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">74</span>,<span class="fl">119</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<pre><code>
+    Welch Two Sample t-test
+
+data:  growth by wealth
+t = -4.395, df = 174.97, p-value = 1.916e-05
+alternative hypothesis: true difference in means between group high and group low is not equal to 0
+95 percent confidence interval:
+ -23.571116  -8.961945
+sample estimates:
+mean in group high  mean in group low 
+          22.56000           38.82653 </code></pre>
+<ul>
+<li>How does the t-test stat change when omitting these two changes? Why does it change in this direction?</li>
+<li>Check your answer here with your anwer in part (e)!
+<!-- <details><summary><red>Click for answer</red></summary> -->
+</li>
+</ul>
+<!-- *Answer:* Without these outliers, the p-value decreases to 0.00001916 and we have even stronger evidence for a difference in mean API growth. Why does the p-value decrease? Omitting the two outliers will  decrease the sample SD for the high group, which in turn will (slightly) decrease the SE for the difference in means. Omitting the two outliers will also decrease the sample mean for the high group (from 25.24510 to 22.56000), which will make the observed difference in means larger in magnitude (from -13.58 to -16.27). The test stat gets even further from 0  (drops from -3.2692 to -4.395), meaning the observed difference with outliers omitted is further away from 0 (in terms of SEs) than it was when all data points were included. This means that the p-value will decrease  (from 0.0013 to 0.00002) since the data is deemed more ``extreme" under the null hypothesis. --><!-- </details><br> -->
+</div>
+<div id="g-95-confidence-interval" class="section level4" number="31.1.0.7">
+<h4>
+<span class="header-section-number">31.1.0.7</span> (g) 95% confidence interval<a class="anchor" aria-label="anchor" href="#g-95-confidence-interval"><i class="fas fa-link"></i></a>
+</h4>
+<p>Compare the two 95% CI given in the output (with and without outliers). Explain how and why the CIs change after omitting these two outliers.<br><!-- <details><summary><red>Click for answer</red></summary> --></p>
+<!-- *Answer:* Without outliers: -23.57 to -8.96 and with outliers: -21.77 to  -5.39. An mentioned above, omitting the two points makes the difference in means further away from 0. This shifts the CI further from a difference of 0. Removing the outliers also decrease the SE of our sample difference, so the margin of error for the interval without outliers is, roughly, 7 while the margin of error with outliers is, roughly, 8.  -->
+<!-- </details><br> -->
+</div>
+<div id="h-interpret-two-sample-ci" class="section level4" number="31.1.0.8">
+<h4>
+<span class="header-section-number">31.1.0.8</span> (h) Interpret two-sample CI<a class="anchor" aria-label="anchor" href="#h-interpret-two-sample-ci"><i class="fas fa-link"></i></a>
+</h4>
+<p>Using the results without the two outliers, interpret the 95% CI given in this output. Do not use the word ``difference’’ in your answer.</p>
+<!-- <details><summary><red>Click for answer</red></summary> -->
+<!-- *Answer:* We are 95% confident that the mean API growth between 1999 and 2000 for all low wealth schools is anywhere from 8.96 points to 23.57 points higher than the mean API growth for all high wealth schools in California. -->
+<!-- </details><br> -->
+</div>
+</div>
+<div id="problem-2-matched-pairs" class="section level2" number="31.2">
+<h2>
+<span class="header-section-number">31.2</span> Problem 2: Matched Pairs<a class="anchor" aria-label="anchor" href="#problem-2-matched-pairs"><i class="fas fa-link"></i></a>
+</h2>
+<p>A study is conducted to determine the effect of a home meter for helping diabetics control their blood glucose levels. Researchers would like to determine if the home meter is effective in helping patients reduce their blood glucose levels. A random sample of 36 diabetics had their blood glucose levels measured before they were taught to use the meter and again after they had utilized the meter for 2 weeks. Researchers observed an average decrease (before - after) of blood glucose level of 2.78 mmol/liter with a standard deviation of 6.05 mmol/liter. Analysis results are shown below:</p>
+<pre><code>  Sample mean:  2.78 ; sample standard deviation:  6.05 ; sample size: 36
+  Standard error:  1.0083
+  95 percent confidence interval for true mean:  1.0763  , Infinity
+  Hypothesis test H0: mu =  0  Alternative is  greater
+  t statistic =  2.757 ; degrees of freedom =  35 ; p-value= 0.0046</code></pre>
+<div id="a-what-conditions-need-to-be-met-by-this-data-to-use-t-inference-procedures" class="section level4" number="31.2.0.1">
+<h4>
+<span class="header-section-number">31.2.0.1</span> (a) What conditions need to be met by this data to use <span class="math inline">\(t\)</span> inference procedures?<a class="anchor" aria-label="anchor" href="#a-what-conditions-need-to-be-met-by-this-data-to-use-t-inference-procedures"><i class="fas fa-link"></i></a>
+</h4>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> There is a moderate sample size of <span class="math inline">\(n=36\)</span> so we need to assume that the observed differences (before-after) are not strongly skewed and that there are no outliers. If these assumptions are not met, then the t-inference procedures above may not be appropriate.</p>
+</details><p><br></p>
+</div>
+<div id="b-define-the-unknown-parameter-of-interest-be-very-specific-then-state-the-null-and-alternative-hypotheses-for-this-test.-make-sure-your-hypotheses-agree-with-the-output" class="section level4" number="31.2.0.2">
+<h4>
+<span class="header-section-number">31.2.0.2</span> (b) Define the unknown parameter of interest (be very specific), then state the null and alternative hypotheses for this test. Make sure your hypotheses agree with the output!<a class="anchor" aria-label="anchor" href="#b-define-the-unknown-parameter-of-interest-be-very-specific-then-state-the-null-and-alternative-hypotheses-for-this-test.-make-sure-your-hypotheses-agree-with-the-output"><i class="fas fa-link"></i></a>
+</h4>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> Let the <span class="math inline">\(\mu\)</span> represent the population mean decrease in glucose levels measured before and after the treatment (before - after). A positive value of <span class="math inline">\(\mu\)</span> implies that the home meter is effective in reducing blood glucose levels. The alternative hypothesis (the research statement) will be that <span class="math inline">\(\mu\)</span> is greater than 0 and the null statement will be that <span class="math inline">\(\mu\)</span> is equal to 0, meaning there is no benefit to using the treatment.
+<span class="math display">\[
+H_0:  \mu = 0 \textrm{ vs. } H_A: \mu &gt; 0
+\]</span></p>
+</details><p><br></p>
+</div>
+<div id="c-what-is-the-test-statistic-value-for-this-test-what-does-this-value-indicate" class="section level4" number="31.2.0.3">
+<h4>
+<span class="header-section-number">31.2.0.3</span> (c) What is the test statistic value for this test? What does this value indicate?<a class="anchor" aria-label="anchor" href="#c-what-is-the-test-statistic-value-for-this-test-what-does-this-value-indicate"><i class="fas fa-link"></i></a>
+</h4>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The test stat value is 2.757. The mean glucose level decrease in the sample was 2.757 SE’s above the hypothesized mean decrease of 0.</p>
+</details><p><br></p>
+</div>
+<div id="d-is-there-sufficient-evidence-to-claim-that-the-monitor-is-effective-in-helping-patients-reduce-their-blood-glucose-levels" class="section level4" number="31.2.0.4">
+<h4>
+<span class="header-section-number">31.2.0.4</span> (d) Is there sufficient evidence to claim that the monitor is effective in helping patients reduce their blood glucose levels?<a class="anchor" aria-label="anchor" href="#d-is-there-sufficient-evidence-to-claim-that-the-monitor-is-effective-in-helping-patients-reduce-their-blood-glucose-levels"><i class="fas fa-link"></i></a>
+</h4>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> You reject <span class="math inline">\(H_0\)</span> when the <span class="math inline">\(p\)</span>-value is small. Since the P-value of 0.3% is quite small, we can conclude that there is strong evidence that the use of home meters lowers blood glucose levels, on average (<span class="math inline">\(H_A\)</span>).</p>
+</details><p><br></p>
+</div>
+<div id="e-what-type-of-error-1-or-2-could-you-have-made-in-part-d-if-you-did-make-this-error-what-are-its-implications-for-people-with-diabetes" class="section level4" number="31.2.0.5">
+<h4>
+<span class="header-section-number">31.2.0.5</span> (e) What type of error (1 or 2) could you have made in part (d)? If you did make this error, what are its implications for people with diabetes?<a class="anchor" aria-label="anchor" href="#e-what-type-of-error-1-or-2-could-you-have-made-in-part-d-if-you-did-make-this-error-what-are-its-implications-for-people-with-diabetes"><i class="fas fa-link"></i></a>
+</h4>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> Since we rejected, we may have made a type 1 error of rejecting the null when it is actually true. This means we would have claimed that the home meter was useful in reducing blood glucose levels, on average, when in fact it doesn’t reduce levels. People with diabetes would be encouraged to use these meters (at a cost to themselves or their insurance company) to help control their glucose levels and not see any real benefit.</p>
+</details><p><br></p>
+</div>
+<div id="f-compute-and-interpret-a-95-confidence-interval-for-the-true-average-decrease-in-blood-glucose-levels.-note-that-this-ci-is-not-given-above-the-ci-given-in-the-output-is-a-one-sided-ci." class="section level4" number="31.2.0.6">
+<h4>
+<span class="header-section-number">31.2.0.6</span> (f) Compute and interpret a 95% confidence interval for the true average decrease in blood glucose levels. (Note that this CI is not given above, the CI given in the output is a ``one-sided” CI.)<a class="anchor" aria-label="anchor" href="#f-compute-and-interpret-a-95-confidence-interval-for-the-true-average-decrease-in-blood-glucose-levels.-note-that-this-ci-is-not-given-above-the-ci-given-in-the-output-is-a-one-sided-ci."><i class="fas fa-link"></i></a>
+</h4>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The 95% CI for the population mean decrease in glucose level is
+<span class="math display">\[
+\bar{x} \pm t^*_{n-1} \dfrac{s}{\sqrt{n}} = 2.78\pm 2.042 \dfrac{6.05}{\sqrt{36}} = 2.78 \pm 2.017 = (0.72, 4.84)
+\]</span>
+where <span class="math inline">\(t^*\)</span> is based on 36-1=35 degrees of freedom. Using the green table, we round df down to 30 so we get <span class="math inline">\(t^*_{30} = 2.042\)</span>. Or using R command <code>qt(.975,df=35)</code> we get the exact value <span class="math inline">\(t^*_{35}=2.0301\)</span>.
+We are 95% confident that, after learning to use a home meter, the average decrease in blood glucose in this population is between 0.72 and 4.84 mmol/liter.</p>
+</details><p><br></p>
+</div>
+</div>
+<div id="problem-3" class="section level2" number="31.3">
+<h2>
+<span class="header-section-number">31.3</span> Problem 3<a class="anchor" aria-label="anchor" href="#problem-3"><i class="fas fa-link"></i></a>
+</h2>
+<div id="beer-example-revisited" class="section level3" number="31.3.1">
+<h3>
+<span class="header-section-number">31.3.1</span> Beer Example Revisited<a class="anchor" aria-label="anchor" href="#beer-example-revisited"><i class="fas fa-link"></i></a>
+</h3>
+<p>A study of 16 Ohio State University students looked at the relationship between the number of beers a student consumes and their blood alcohol content (BAC) 30 minutes after their last beer. The regression information from R to predict BAC from number of beers consumed is given below.</p>
+<div class="sourceCode" id="cb432"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>; <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
+<span><span class="va">bac</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"https://raw.githubusercontent.com/deepbas/statdatasets/main/BAC.csv"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">bac</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Beers</span>, y <span class="op">=</span> <span class="va">BAC</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>shape <span class="op">=</span> <span class="fl">19</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Beer and BAC"</span>, x <span class="op">=</span> <span class="st">"Number of beers"</span>, y <span class="op">=</span> <span class="st">"Blood Alcohol Content"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Practice_Problems_21_files/figure-html/unnamed-chunk-7-1.png" width="100%"></div>
+<p>We use the <code>lm(y ~ x, data=mydata)</code> function to fit a <strong>l</strong>inear (regression) <strong>m</strong>odel for a response y given an explanatory variable x. This command creates a <strong>linear model object</strong> that needs to be assigned a name, here we call it <code>bac.lm</code>. You can get the slope and intercept by typing out the object name:</p>
+<div class="sourceCode" id="cb433"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">bac.lm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">BAC</span> <span class="op">~</span> <span class="va">Beers</span>, data<span class="op">=</span><span class="va">bac</span><span class="op">)</span></span>
+<span><span class="va">bac.lm</span></span></code></pre></div>
+<pre><code>
+Call:
+lm(formula = BAC ~ Beers, data = bac)
+
+Coefficients:
+(Intercept)        Beers  
+   -0.01270      0.01796  </code></pre>
+<p>The fitted regression equation to predict BAC from number of beers is: <span class="math inline">\(\hat{y} = -0.01270 + 0.01796*x\)</span>. We can add this regression line to your scatterplot by creating the plot and using the <code><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth()</a></code> function:</p>
+<div class="sourceCode" id="cb435"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">bac</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Beers</span>, y <span class="op">=</span> <span class="va">BAC</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>shape <span class="op">=</span> <span class="fl">19</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span>, se <span class="op">=</span> <span class="cn">FALSE</span>, color <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Beer and BAC"</span>, x <span class="op">=</span> <span class="st">"Number of beers"</span>, y <span class="op">=</span> <span class="st">"Blood Alcohol Content"</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Practice_Problems_21_files/figure-html/unnamed-chunk-9-1.png" width="100%"></div>
+<div class="sourceCode" id="cb436"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">bac.lm</span><span class="op">)</span></span></code></pre></div>
+<pre><code>
+Call:
+lm(formula = BAC ~ Beers, data = bac)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.027118 -0.017350  0.001773  0.008623  0.041027 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) -0.012701   0.012638  -1.005    0.332    
+Beers        0.017964   0.002402   7.480 2.97e-06 ***
+---
+Signif. codes:  
+0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.02044 on 14 degrees of freedom
+Multiple R-squared:  0.7998,    Adjusted R-squared:  0.7855 
+F-statistic: 55.94 on 1 and 14 DF,  p-value: 2.969e-06</code></pre>
+<p>If we were to test whether the slope parameter in a simple linear regression is statistically different from zero, we could do a formal hypothesis test. If the slope is statistically different from zero, it means that the explanatory variable has a significant effect on the response variable. We want to test the null and alternative hypotheses:</p>
+<ul>
+<li><p><span class="math inline">\(H_0: \beta_1=0\)</span> (The slope parameter is zero, implying no relationship between <span class="math inline">\(\mathrm{X}\)</span> and <span class="math inline">\(\mathrm{Y}\)</span> )</p></li>
+<li><p><span class="math inline">\(H_1: \beta_1 \neq 0\)</span> (The slope parameter is different from zero, implying a relationship between <span class="math inline">\(\mathrm{X}\)</span> and <span class="math inline">\(Y\)</span> )</p></li>
+</ul>
+<p>The t-statistic for the slope parameter <span class="math inline">\(\beta_1\)</span> in simple linear regression, as also provided on the <code>summary</code> output is calculated as:</p>
+<p><span class="math display">\[\begin{align*}
+t=\frac{\hat{\beta}_1-\beta_{1,0}}{S E\left(\hat{\beta}_1\right)}
+\end{align*}\]</span></p>
+<p>where</p>
+<ul>
+<li><p><span class="math inline">\(\hat{\beta}_1\)</span> is the estimated slope from the sample</p></li>
+<li><p><span class="math inline">\(\beta_{1,0}\)</span> is the hypothesized slope under the null hypothesis (usually 0 )</p></li>
+<li><p><span class="math inline">\(S E\left(\hat{\beta}_1\right)\)</span> is the standard error of the estimated slope <span class="math inline">\(\hat{\beta}_1\)</span></p></li>
+</ul>
+<p>The <code>summary(bac.1m)</code> output provides the following relevant information:</p>
+<ul>
+<li>Estimate of <span class="math inline">\(\hat{\beta}_1\)</span> (Beers) <span class="math inline">\(=0.017964\)</span>
+</li>
+<li>Std. Error for <span class="math inline">\(\hat{\beta}_1\)</span> (Beers) <span class="math inline">\(=0.002402\)</span>
+</li>
+<li>
+<span class="math inline">\(\mathrm{t}\)</span> value <span class="math inline">\(=7.480\)</span>
+</li>
+<li><span class="math inline">\(\operatorname{Pr}(&gt;|t|)=2.97 \times 10^{-6}\)</span></li>
+</ul>
+<p>We can double-check the calculated t-value using the formula:</p>
+<p><span class="math display">\[\begin{align*}
+\begin{aligned}
+t &amp; =\frac{0.017964-0}{0.002402} \\
+&amp; =7.480
+\end{aligned}
+\end{align*}\]</span></p>
+<p>This value matches the <span class="math inline">\(t\)</span>-value in the output, confirming our calculation. Since the p-value <span class="math inline">\(\left(2.97 \times 10^{-6}\right)\)</span> is much smaller than the commonly used alpha level of 0.05 , we reject the null hypothesis. This suggests that the number of beers consumed is a significant predictor of <span class="math inline">\(\mathrm{BAC} 30\)</span> minutes later.</p>
+
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="practice-problems-20.html"><span class="header-section-number">30</span> Practice Problems 20</a></div>
+<div class="empty"></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#practice-problems-21"><span class="header-section-number">31</span> Practice Problems 21</a></li>
+<li><a class="nav-link" href="#problem-1-api"><span class="header-section-number">31.1</span> Problem 1: API</a></li>
+<li><a class="nav-link" href="#problem-2-matched-pairs"><span class="header-section-number">31.2</span> Problem 2: Matched Pairs</a></li>
+<li>
+<a class="nav-link" href="#problem-3"><span class="header-section-number">31.3</span> Problem 3</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#beer-example-revisited"><span class="header-section-number">31.3.1</span> Beer Example Revisited</a></li></ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/Practice_Problems_21.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/Practice_Problems_21.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-10-29.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>
