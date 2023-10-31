@@ -72,32 +72,32 @@ t.test(growth ~ wealth, data=api)
 
 - What is the t test stat given in the output? Verify that it matches your answer to (c), within reasonable rounding error.
 
-<!-- <details><summary><red>Click for answer</red></summary> -->
+<details><summary><red>Click for answer</red></summary>
 
-<!-- *Answer:* The test stat matches, $t = -3.2692$. -->
-<!-- </details><br> -->
+*Answer:* The test stat matches, $t = -3.2692$.
+</details><br>
 
 - What is the p-value for the test? Interpret this value.
-<!-- <details><summary><red>Click for answer</red></summary> -->
+<details><summary><red>Click for answer</red></summary>
 
-<!-- *Answer:* The p-value is 0.001273. If there is no difference between mean growth in the two populations, then there is just a 0.13% chance of seeing a sample mean difference that is 3.27 standard errors or more away from 0. -->
-<!-- </details><br> -->
+*Answer:* The p-value is 0.001273. If there is no difference between mean growth in the two populations, then there is just a 0.13% chance of seeing a sample mean difference that is 3.27 standard errors or more away from 0.
+</details><br>
 
 - What is your test conclusion?
-<!-- <details><summary><red>Click for answer</red></summary> -->
+<details><summary><red>Click for answer</red></summary>
 
-<!-- *Answer:* We have strong evidence to suggest that the average API growth in low and high wealth schools are not the same. -->
-<!-- </details><br> -->
+*Answer:* We have strong evidence to suggest that the average API growth in low and high wealth schools are not the same.
+</details><br>
 
 
 #### (e)  Consider outliers
 
 The boxplot in (a) shows a number of outliers for the `high` wealth group, but two cases in particular were very high. Suppose we omitted these two (most) extreme cases when running the test in (d). Will the p-value for this test be smaller or larger than the p-value computed in part (d)? Explain.
 
-<!-- <details><summary><red>Click for answer</red></summary> -->
+<details><summary><red>Click for answer</red></summary>
 
-<!-- *Answer:* Removing the two large outliers which will both reduce the mean in the high group and reduce the SD in the high group. Both actions will magnify the difference in mean growth between the high and low groups (increasing the difference and decreasing the SE), so the test stat will increase in magnitude and the p-value will decrease.  -->
-<!-- </details><br> -->
+*Answer:* Removing the two large outliers which will both reduce the mean in the high group and reduce the SD in the high group. Both actions will magnify the difference in mean growth between the high and low groups (increasing the difference and decreasing the SE), so the test stat will increase in magnitude and the p-value will decrease.
+</details><br>
 
 #### (f) Check outlier influence
 
@@ -110,27 +110,27 @@ t.test(growth ~ wealth, data = api, subset = -c(74,119))
 
 - How does the t-test stat change when omitting these two changes? Why does it change in this direction?
 - Check your answer here with your anwer in part (e)!
-<!-- <details><summary><red>Click for answer</red></summary> -->
+<details><summary><red>Click for answer</red></summary>
 
-<!-- *Answer:* Without these outliers, the p-value decreases to 0.00001916 and we have even stronger evidence for a difference in mean API growth. Why does the p-value decrease? Omitting the two outliers will  decrease the sample SD for the high group, which in turn will (slightly) decrease the SE for the difference in means. Omitting the two outliers will also decrease the sample mean for the high group (from 25.24510 to 22.56000), which will make the observed difference in means larger in magnitude (from -13.58 to -16.27). The test stat gets even further from 0  (drops from -3.2692 to -4.395), meaning the observed difference with outliers omitted is further away from 0 (in terms of SEs) than it was when all data points were included. This means that the p-value will decrease  (from 0.0013 to 0.00002) since the data is deemed more ``extreme" under the null hypothesis. -->
-<!-- </details><br> -->
+*Answer:* Without these outliers, the p-value decreases to 0.00001916 and we have even stronger evidence for a difference in mean API growth. Why does the p-value decrease? Omitting the two outliers will  decrease the sample SD for the high group, which in turn will (slightly) decrease the SE for the difference in means. Omitting the two outliers will also decrease the sample mean for the high group (from 25.24510 to 22.56000), which will make the observed difference in means larger in magnitude (from -13.58 to -16.27). The test stat gets even further from 0  (drops from -3.2692 to -4.395), meaning the observed difference with outliers omitted is further away from 0 (in terms of SEs) than it was when all data points were included. This means that the p-value will decrease  (from 0.0013 to 0.00002) since the data is deemed more ``extreme" under the null hypothesis.
+</details><br>
 
 #### (g)  95% confidence interval
 
 Compare the two 95% CI given in the output (with and without outliers). Explain how and why the CIs change after omitting these two outliers.  
-<!-- <details><summary><red>Click for answer</red></summary> -->
+<details><summary><red>Click for answer</red></summary>
 
-<!-- *Answer:* Without outliers: -23.57 to -8.96 and with outliers: -21.77 to  -5.39. An mentioned above, omitting the two points makes the difference in means further away from 0. This shifts the CI further from a difference of 0. Removing the outliers also decrease the SE of our sample difference, so the margin of error for the interval without outliers is, roughly, 7 while the margin of error with outliers is, roughly, 8.  -->
-<!-- </details><br> -->
+*Answer:* Without outliers: -23.57 to -8.96 and with outliers: -21.77 to  -5.39. An mentioned above, omitting the two points makes the difference in means further away from 0. This shifts the CI further from a difference of 0. Removing the outliers also decrease the SE of our sample difference, so the margin of error for the interval without outliers is, roughly, 7 while the margin of error with outliers is, roughly, 8.
+</details><br>
 
 #### (h)  Interpret two-sample CI
 
 Using the results without the two outliers, interpret the 95% CI given in this output. Do not use the word ``difference'' in your answer.
 
-<!-- <details><summary><red>Click for answer</red></summary> -->
+<details><summary><red>Click for answer</red></summary>
 
-<!-- *Answer:* We are 95% confident that the mean API growth between 1999 and 2000 for all low wealth schools is anywhere from 8.96 points to 23.57 points higher than the mean API growth for all high wealth schools in California. -->
-<!-- </details><br> -->
+*Answer:* We are 95% confident that the mean API growth between 1999 and 2000 for all low wealth schools is anywhere from 8.96 points to 23.57 points higher than the mean API growth for all high wealth schools in California.
+</details><br>
 
 
 
