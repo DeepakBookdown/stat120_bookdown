@@ -83,7 +83,7 @@ The bootstrap distribution from 500 bootstrap means from the above sample is:
 <summary><red>Click for answer</red></summary>
 *Answer:* About 1.25, it looks like most of the bootstrapped sample means are between 18 to 23 so 2 standard deviations is about 2.5. This makes the SD about 1.25.
 </details><br>
-*Question:* The standard deviation of sampling distribution has a separate name. It is called the **Standard Error**. The standard deviation of this distribution is 1.1257717.
+*Question:* The standard deviation of sampling distribution has a separate name. It is called the **Standard Error**. The standard deviation of this distribution is 1.1443081.
 <details>
 <summary><red>Click for answer</red></summary>
 *Answer:* It's close.

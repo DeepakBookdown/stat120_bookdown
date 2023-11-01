@@ -314,3 +314,12 @@ e-what-type-of-error-1-or-2-could-you-have-made-in-part-d-if-you-did-make-this-e
 f-compute-and-interpret-a-95-confidence-interval-for-the-true-average-decrease-in-blood-glucose-levels.-note-that-this-ci-is-not-given-above-the-ci-given-in-the-output-is-a-one-sided-ci.
 problem-3
 beer-example-revisited
+practice-problems-22
+problem-1-food-preferences
+a-what-are-the-null-and-alternate-hypotheses
+b-verify-the-above-chi-square-statistics-calculation-by-hand.
+c-write-the-conclusion-of-the-hypothesis-test.
+problem-2-transportation-preferences
+a-what-are-the-null-and-alternate-hypotheses-1
+b-verify-the-above-chi-square-statistics-calculation-by-hand.-1
+c-write-the-conclusion-of-the-hypothesis-test.-1
