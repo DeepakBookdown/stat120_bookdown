@@ -1,4 +1,5 @@
 fig:pie
+tab:unnamed-chunk-11
 learning-objectives
 what-is-r
 what-is-rstudio
@@ -323,3 +324,21 @@ problem-2-transportation-preferences
 a-what-are-the-null-and-alternate-hypotheses-1
 b-verify-the-above-chi-square-statistics-calculation-by-hand.-1
 c-write-the-conclusion-of-the-hypothesis-test.-1
+practice-problems-23
+problem-1-perry-preschool-project
+a-test-choice
+b-chi-square-test-with-summarized-data
+c-how-different
+comment
+problem-2-college-graduates-and-exercise
+problem-3-does-political-comfort-level-depend-on-religion
+a-hypotheses
+b-data
+formatted-tables-in-r
+c-expected-counts
+d-chi-square-contribution
+e-chi-square-test
+f-conclusion
+g-expected-counts
+h-simulated-p-value
+i-where-is-the-difference
