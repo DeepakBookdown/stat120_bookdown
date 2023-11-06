@@ -1,5 +1,5 @@
 fig:pie
-tab:unnamed-chunk-11
+tab:unnamed-chunk-17
 learning-objectives
 what-is-r
 what-is-rstudio
@@ -331,6 +331,11 @@ b-chi-square-test-with-summarized-data
 c-how-different
 comment
 problem-2-college-graduates-and-exercise
+step-1
+step-2
+step-3
+step-4
+step-5
 problem-3-does-political-comfort-level-depend-on-religion
 a-hypotheses
 b-data
@@ -342,3 +347,13 @@ f-conclusion
 g-expected-counts
 h-simulated-p-value
 i-where-is-the-difference
+practice-problems-24
+problem-1-comparing-religious-guess-by-religion
+a-one-way-anova-hypotheses
+b-check-assumptions
+c-one-way-anova-test
+d-describe-the-association
+problem-2-frisbee-grip
+a-one-way-anova-hypotheses-1
+b-one-way-anova-test
+c-checking-assumptions

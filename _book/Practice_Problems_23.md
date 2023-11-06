@@ -17,10 +17,10 @@ Is a statistically significant difference between the rate of arrest (or no arre
 
 There are two categorical variables, each with two levels. We could either use a two sample test to compare proportions (groups: treatment, response: arrest outcome) OR we could use a chi-square test of independence. These tests will give identical results. For this example, we will use the chi-square test. State your hypotheses needed to test the question above.
 
-<!-- <details><summary><red>Click for answer</red></summary> -->
+<details><summary><red>Click for answer</red></summary>
 
-<!-- *Answer:* The null hypothesis is that the treatment (preschool/control) is not related to the arrest outcome.  -->
-<!-- </details><br> -->
+*Answer:* The null hypothesis is that the treatment (preschool/control) is not related to the arrest outcome.
+</details><br>
 
 #### (b) Chi-square test with summarized data
 
@@ -59,23 +59,44 @@ X-squared = 4.4963, df = 1, p-value = 0.03397
 
 - Are the expected counts large enough to trust these results?
 
-<!-- <details><summary><red>Click for answer</red></summary> -->
+<details><summary><red>Click for answer</red></summary>
 
-<!-- *Answer*: Yes, they are all above 25. -->
+*Answer*: Yes, they are all above 25.
 
-<!-- ```{r} -->
-<!-- 51/123  # overall arrest rate -->
-<!-- 72/123  # overall non arrest rate -->
-<!-- preschool.test$expected -->
-<!-- ``` -->
-<!-- </details><br> -->
+
+```r
+51/123  # overall arrest rate
+```
+
+```
+[1] 0.4146341
+```
+
+```r
+72/123  # overall non arrest rate
+```
+
+```
+[1] 0.5853659
+```
+
+```r
+preschool.test$expected
+```
+
+```
+          arrested not arrested
+preschool 25.29268     35.70732
+control   25.70732     36.29268
+```
+</details><br>
 
 - What is your conclusion? 
 
-<!-- <details><summary><red>Click for answer</red></summary> -->
+<details><summary><red>Click for answer</red></summary>
 
-<!-- *Answer:* There is some evidence of an association between the treatment (preschool/control) and the arrest outcome ($\chi^2 = 4.50$, df=1, p-value=0.034). -->
-<!-- </details><br> -->
+*Answer:* There is some evidence of an association between the treatment (preschool/control) and the arrest outcome ($\chi^2 = 4.50$, df=1, p-value=0.034).
+</details><br>
 
 #### (c) How different?
 
@@ -176,78 +197,132 @@ knitr::kable(counts3)
 test3 <- chisq.test(counts3)
 ```
 
-<!-- <details><summary><red>Click for answer</red></summary> -->
+<details><summary><red>Click for answer</red></summary>
 
-<!-- *Answer:*  -->
-
-
-<!-- ### Step 1: -->
-
-<!-- \begin{align*} -->
-<!-- H_0 &: \text{exercise and living arrangements independent of each other}\\ -->
-<!-- H_A &: \text{exercise and living arrangements dependent of each other} -->
-<!-- \end{align*} -->
+*Answer:*
 
 
-<!-- ### Step 2: -->
+### Step 1:
 
-<!-- The observed and expected values from the chi square test are: -->
-
-<!-- ```{r} -->
-<!-- test3$observed -->
-<!-- round(test3$expected,2) -->
-<!-- ``` -->
+\begin{align*}
+H_0 &: \text{exercise and living arrangements independent of each other}\\
+H_A &: \text{exercise and living arrangements dependent of each other}
+\end{align*}
 
 
-<!-- All of the expected counts are greater than 5. -->
+### Step 2:
+
+The observed and expected values from the chi square test are:
 
 
-<!-- ### Step 3: -->
+```r
+test3$observed
+```
 
-<!-- The test statistics is calculated as: -->
+```
+                     No regular exercise Sporadic exercise
+Dormitory                             32                30
+On-Campus Apartment                   74                64
+Off-campus Apartment                 110                25
+At Home                               39                 6
+                     Regular exercise
+Dormitory                          28
+On-Campus Apartment                42
+Off-campus Apartment               15
+At Home                             5
+```
 
-<!-- \begin{align*} -->
-<!-- \chi^2 & = \sum \frac{(O- E)^2}{E}\\ -->
-<!-- &= \frac{(32 - 48.83)^2}{48.83} +  \frac{(30 - 23.94)^2}{23.94} +  \frac{(28 - 17.23)^2}{17.23} +\\ -->
-<!-- & \qquad \frac{(74 - 97.66)^2}{97.66} + \frac{(64 - 47.87)^2}{47.87} + \frac{(42 - 34.47)^2}{34.47} + \\ -->
-<!-- & \qquad \frac{(110 - 81.38)^2}{81.38} + \frac{(25 - 39.89)^2}{39.89} + \frac{(15 - 28.72)^2}{28.72} + \\ -->
-<!-- & \qquad \frac{(39 - 27.13)^2}{27.13} + \frac{(6 - 13.30)^2}{13.30} + \frac{(5 - 9.57)^2}{9.57} \\ -->
-<!-- &= 5.80 + 1.53 + 6.73 + 5.73 + 5.44 + 1.64 + 10.06 + 5.56 + 6.55 + 5.19 + 4.01 + 2.18\\ -->
-<!-- &= 60.42 -->
-<!-- \end{align*} -->
+```r
+round(test3$expected,2)
+```
 
-<!-- ```{r} -->
-<!-- (32 - 48.83)^2/48.83 + (30 - 23.94)^2/23.94 + (28 - 17.23)^2/17.23 + (74 - 97.66)^2/97.66 + (64 - 47.87)^2/47.87 + (42 - 34.47)^2/34.47 + (110 - 81.38)^2/81.38 + (25 - 39.89)^2/39.89 + (15 - 28.72)^2/28.72 + (39 - 27.13)^2/27.13+(6 - 13.30)^2/13.30+(5 - 9.57)^2/9.57 -->
-<!-- ``` -->
-
-<!-- ```{r} -->
-<!-- 5.80 + 1.53 + 6.73 + 5.73 + 5.44 + 1.64 + 10.06 + 5.56 + 6.55 + 5.19 + 4.01 + 2.18 -->
-<!-- ``` -->
-
-
-<!-- The degree of freedom of $\chi^2$ is $df = (4-1)*(3-1) = 6$.  -->
-
-<!-- ```{r} -->
-<!-- test3 -->
-<!-- ``` -->
-
-
-<!-- ### Step 4: -->
-
-<!-- The p-value can also be calculated as -->
-
-<!-- ```{r} -->
-<!-- 1 - pchisq(60.43, df = 6) -->
-<!-- ``` -->
+```
+                     No regular exercise Sporadic exercise
+Dormitory                          48.83             23.94
+On-Campus Apartment                97.66             47.87
+Off-campus Apartment               81.38             39.89
+At Home                            27.13             13.30
+                     Regular exercise
+Dormitory                       17.23
+On-Campus Apartment             34.47
+Off-campus Apartment            28.72
+At Home                          9.57
+```
 
 
-
-<!-- ### Step 5: -->
-
-<!-- There is significant evidence of an association between the exercise and living arrangements ($\chi^2 = 60.43$, df=6, p-value $\approx$ 0). -->
+All of the expected counts are greater than 5.
 
 
-<!-- </details><br> -->
+### Step 3:
+
+The test statistics is calculated as:
+
+\begin{align*}
+\chi^2 & = \sum \frac{(O- E)^2}{E}\\
+&= \frac{(32 - 48.83)^2}{48.83} +  \frac{(30 - 23.94)^2}{23.94} +  \frac{(28 - 17.23)^2}{17.23} +\\
+& \qquad \frac{(74 - 97.66)^2}{97.66} + \frac{(64 - 47.87)^2}{47.87} + \frac{(42 - 34.47)^2}{34.47} + \\
+& \qquad \frac{(110 - 81.38)^2}{81.38} + \frac{(25 - 39.89)^2}{39.89} + \frac{(15 - 28.72)^2}{28.72} + \\
+& \qquad \frac{(39 - 27.13)^2}{27.13} + \frac{(6 - 13.30)^2}{13.30} + \frac{(5 - 9.57)^2}{9.57} \\
+&= 5.80 + 1.53 + 6.73 + 5.73 + 5.44 + 1.64 + 10.06 + 5.56 + 6.55 + 5.19 + 4.01 + 2.18\\
+&= 60.42
+\end{align*}
+
+
+```r
+(32 - 48.83)^2/48.83 + (30 - 23.94)^2/23.94 + (28 - 17.23)^2/17.23 + (74 - 97.66)^2/97.66 + (64 - 47.87)^2/47.87 + (42 - 34.47)^2/34.47 + (110 - 81.38)^2/81.38 + (25 - 39.89)^2/39.89 + (15 - 28.72)^2/28.72 + (39 - 27.13)^2/27.13+(6 - 13.30)^2/13.30+(5 - 9.57)^2/9.57
+```
+
+```
+[1] 60.43885
+```
+
+
+```r
+5.80 + 1.53 + 6.73 + 5.73 + 5.44 + 1.64 + 10.06 + 5.56 + 6.55 + 5.19 + 4.01 + 2.18
+```
+
+```
+[1] 60.42
+```
+
+
+The degree of freedom of $\chi^2$ is $df = (4-1)*(3-1) = 6$.
+
+
+```r
+test3
+```
+
+```
+
+	Pearson's Chi-squared test
+
+data:  counts3
+X-squared = 60.439, df = 6, p-value = 3.664e-11
+```
+
+
+### Step 4:
+
+The p-value can also be calculated as
+
+
+```r
+1 - pchisq(60.43, df = 6)
+```
+
+```
+[1] 3.680733e-11
+```
+
+
+
+### Step 5:
+
+There is significant evidence of an association between the exercise and living arrangements ($\chi^2 = 60.43$, df=6, p-value $\approx$ 0).
+
+
+</details><br>
 
 
 
@@ -330,7 +405,7 @@ kableExtra::kable(table(survey$religiousness, survey$comfortness),
 ```
 
 <table class="table" style="margin-left: auto; margin-right: auto;">
-<caption>(\#tab:unnamed-chunk-11)A two way table of religious preference and political comfortness</caption>
+<caption>(\#tab:unnamed-chunk-17)A two way table of religious preference and political comfortness</caption>
  <thead>
   <tr>
    <th style="text-align:left;">   </th>
@@ -372,7 +447,7 @@ ggplot(survey, aes(x=religiousness, fill=comfortness)) +
     scale_x_discrete(labels = function(x) stringr::str_wrap(x, width = 16))
 ```
 
-<img src="Practice_Problems_23_files/figure-html/unnamed-chunk-12-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="Practice_Problems_23_files/figure-html/unnamed-chunk-18-1.png" width="100%" style="display: block; margin: auto;" />
 
 
 <details><summary><red>Click for answer</red></summary>

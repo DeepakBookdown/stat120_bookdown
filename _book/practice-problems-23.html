@@ -82,6 +82,7 @@
 <li><a class="" href="practice-problems-21.html"><span class="header-section-number">31</span> Practice Problems 21</a></li>
 <li><a class="" href="practice-problems-22.html"><span class="header-section-number">32</span> Practice Problems 22</a></li>
 <li><a class="active" href="practice-problems-23.html"><span class="header-section-number">33</span> Practice Problems 23</a></li>
+<li><a class="" href="practice-problems-24.html"><span class="header-section-number">34</span> Practice Problems 24</a></li>
 </ul>
 
         <div class="book-extra">
@@ -132,9 +133,8 @@
 <span class="header-section-number">33.1.0.1</span> (a) Test choice<a class="anchor" aria-label="anchor" href="#a-test-choice"><i class="fas fa-link"></i></a>
 </h4>
 <p>There are two categorical variables, each with two levels. We could either use a two sample test to compare proportions (groups: treatment, response: arrest outcome) OR we could use a chi-square test of independence. These tests will give identical results. For this example, we will use the chi-square test. State your hypotheses needed to test the question above.</p>
-<!-- <details><summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* The null hypothesis is that the treatment (preschool/control) is not related to the arrest outcome.  -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> The null hypothesis is that the treatment (preschool/control) is not related to the arrest outcome.
+</details><p><br></p>
 </div>
 <div id="b-chi-square-test-with-summarized-data" class="section level4" number="33.1.0.2">
 <h4>
@@ -162,17 +162,31 @@ X-squared = 4.4963, df = 1, p-value = 0.03397</code></pre>
 <ul>
 <li>Are the expected counts large enough to trust these results?</li>
 </ul>
-<!-- <details><summary><red>Click for answer</red></summary> --><!-- *Answer*: Yes, they are all above 25. --><!-- ```{r} --><!-- 51/123  # overall arrest rate --><!-- 72/123  # overall non arrest rate --><!-- preschool.test$expected --><!-- ``` --><!-- </details><br> --><ul>
+<details><summary><red>Click for answer</red></summary><p><em>Answer</em>: Yes, they are all above 25.</p>
+<div class="sourceCode" id="cb456"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">51</span><span class="op">/</span><span class="fl">123</span>  <span class="co"># overall arrest rate</span></span></code></pre></div>
+<pre><code>[1] 0.4146341</code></pre>
+<div class="sourceCode" id="cb458"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">72</span><span class="op">/</span><span class="fl">123</span>  <span class="co"># overall non arrest rate</span></span></code></pre></div>
+<pre><code>[1] 0.5853659</code></pre>
+<div class="sourceCode" id="cb460"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">preschool.test</span><span class="op">$</span><span class="va">expected</span></span></code></pre></div>
+<pre><code>          arrested not arrested
+preschool 25.29268     35.70732
+control   25.70732     36.29268</code></pre>
+</details><p><br></p>
+<ul>
 <li>What is your conclusion?</li>
 </ul>
-<!-- <details><summary><red>Click for answer</red></summary> --><!-- *Answer:* There is some evidence of an association between the treatment (preschool/control) and the arrest outcome ($\chi^2 = 4.50$, df=1, p-value=0.034). --><!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> There is some evidence of an association between the treatment (preschool/control) and the arrest outcome (<span class="math inline">\(\chi^2 = 4.50\)</span>, df=1, p-value=0.034).
+</details><p><br></p>
 </div>
 <div id="c-how-different" class="section level4" number="33.1.0.3">
 <h4>
 <span class="header-section-number">33.1.0.3</span> (c) How different?<a class="anchor" aria-label="anchor" href="#c-how-different"><i class="fas fa-link"></i></a>
 </h4>
 <p>How do the arrest rates differ for each treatment group? Compute a 95% confidence interval for the difference in arrest rates between those who had the preschool and control treatments.</p>
-<div class="sourceCode" id="cb456"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb462"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/proportions.html">prop.table</a></span><span class="op">(</span><span class="va">counts</span>,<span class="fl">1</span><span class="op">)</span></span></code></pre></div>
 <pre><code>           arrested not arrested
 preschool 0.3114754    0.6885246
@@ -195,7 +209,7 @@ control   0.5161290    0.4838710</code></pre>
 <span class="header-section-number">33.1.0.4</span> Comment<a class="anchor" aria-label="anchor" href="#comment"><i class="fas fa-link"></i></a>
 </h4>
 <p>The <code>chisq.test</code> command uses a test stat “correction” when both of your categorical variables have only 2 levels. With this correction, your chi-square test results won’t exactly match a two-sample test for the difference of two proportions. If you turn off the correct with <code>correct=FALSE</code> you will obtain identical results.</p>
-<div class="sourceCode" id="cb458"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb464"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/chisq.test.html">chisq.test</a></span><span class="op">(</span><span class="va">counts</span>, correct<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span> <span class="co"># exact same as two-sample proportion test</span></span></code></pre></div>
 <pre><code>
     Pearson's Chi-squared test
@@ -211,11 +225,11 @@ X-squared = 5.3059, df = 1, p-value = 0.02125</code></pre>
 <span class="header-section-number">33.2</span> Problem 2: College graduates and exercise<a class="anchor" aria-label="anchor" href="#problem-2-college-graduates-and-exercise"><i class="fas fa-link"></i></a>
 </h2>
 <p>A survey of college graduates was done to study how frequently they exercised. The survey was completed by 470 graduates. They were asked where they lived their senior year. Use the following data to determine whether there is an association between exercise on campus and students’ living arrangements.</p>
-<div class="sourceCode" id="cb460"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb466"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">counts3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">32</span>, <span class="fl">74</span>, <span class="fl">110</span>, <span class="fl">39</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">30</span>,<span class="fl">64</span>,<span class="fl">25</span>,<span class="fl">6</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">28</span>,<span class="fl">42</span>,<span class="fl">15</span>,<span class="fl">5</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">counts3</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"No regular exercise"</span>, <span class="st">"Sporadic exercise"</span>, <span class="st">"Regular exercise"</span><span class="op">)</span> </span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">rownames</a></span><span class="op">(</span><span class="va">counts3</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Dormitory"</span>, <span class="st">"On-Campus Apartment"</span>, <span class="st">"Off-campus Apartment"</span>, <span class="st">"At Home"</span><span class="op">)</span> </span></code></pre></div>
-<div class="sourceCode" id="cb461"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb467"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="va">counts3</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-table"><table class="table table-sm">
 <colgroup>
@@ -257,51 +271,96 @@ X-squared = 5.3059, df = 1, p-value = 0.02125</code></pre>
 </tr>
 </tbody>
 </table></div>
-<div class="sourceCode" id="cb462"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb468"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">test3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/chisq.test.html">chisq.test</a></span><span class="op">(</span><span class="va">counts3</span><span class="op">)</span></span></code></pre></div>
-<!-- <details><summary><red>Click for answer</red></summary> -->
-<!-- *Answer:*  -->
-<!-- ### Step 1: -->
-<!-- \begin{align*} -->
-<!-- H_0 &: \text{exercise and living arrangements independent of each other}\\ -->
-<!-- H_A &: \text{exercise and living arrangements dependent of each other} -->
-<!-- \end{align*} -->
-<!-- ### Step 2: -->
-<!-- The observed and expected values from the chi square test are: -->
-<!-- ```{r} -->
-<!-- test3$observed -->
-<!-- round(test3$expected,2) -->
-<!-- ``` -->
-<!-- All of the expected counts are greater than 5. -->
-<!-- ### Step 3: -->
-<!-- The test statistics is calculated as: -->
-<!-- \begin{align*} -->
-<!-- \chi^2 & = \sum \frac{(O- E)^2}{E}\\ -->
-<!-- &= \frac{(32 - 48.83)^2}{48.83} +  \frac{(30 - 23.94)^2}{23.94} +  \frac{(28 - 17.23)^2}{17.23} +\\ -->
-<!-- & \qquad \frac{(74 - 97.66)^2}{97.66} + \frac{(64 - 47.87)^2}{47.87} + \frac{(42 - 34.47)^2}{34.47} + \\ -->
-<!-- & \qquad \frac{(110 - 81.38)^2}{81.38} + \frac{(25 - 39.89)^2}{39.89} + \frac{(15 - 28.72)^2}{28.72} + \\ -->
-<!-- & \qquad \frac{(39 - 27.13)^2}{27.13} + \frac{(6 - 13.30)^2}{13.30} + \frac{(5 - 9.57)^2}{9.57} \\ -->
-<!-- &= 5.80 + 1.53 + 6.73 + 5.73 + 5.44 + 1.64 + 10.06 + 5.56 + 6.55 + 5.19 + 4.01 + 2.18\\ -->
-<!-- &= 60.42 -->
-<!-- \end{align*} -->
-<!-- ```{r} -->
-<!-- (32 - 48.83)^2/48.83 + (30 - 23.94)^2/23.94 + (28 - 17.23)^2/17.23 + (74 - 97.66)^2/97.66 + (64 - 47.87)^2/47.87 + (42 - 34.47)^2/34.47 + (110 - 81.38)^2/81.38 + (25 - 39.89)^2/39.89 + (15 - 28.72)^2/28.72 + (39 - 27.13)^2/27.13+(6 - 13.30)^2/13.30+(5 - 9.57)^2/9.57 -->
-<!-- ``` -->
-<!-- ```{r} -->
-<!-- 5.80 + 1.53 + 6.73 + 5.73 + 5.44 + 1.64 + 10.06 + 5.56 + 6.55 + 5.19 + 4.01 + 2.18 -->
-<!-- ``` -->
-<!-- The degree of freedom of $\chi^2$ is $df = (4-1)*(3-1) = 6$.  -->
-<!-- ```{r} -->
-<!-- test3 -->
-<!-- ``` -->
-<!-- ### Step 4: -->
-<!-- The p-value can also be calculated as -->
-<!-- ```{r} -->
-<!-- 1 - pchisq(60.43, df = 6) -->
-<!-- ``` -->
-<!-- ### Step 5: -->
-<!-- There is significant evidence of an association between the exercise and living arrangements ($\chi^2 = 60.43$, df=6, p-value $\approx$ 0). -->
-<!-- </details><br> -->
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em></p>
+<div id="step-1" class="section level3" number="33.2.1">
+<h3>
+<span class="header-section-number">33.2.1</span> Step 1:<a class="anchor" aria-label="anchor" href="#step-1"><i class="fas fa-link"></i></a>
+</h3>
+<p><span class="math display">\[\begin{align*}
+H_0 &amp;: \text{exercise and living arrangements independent of each other}\\
+H_A &amp;: \text{exercise and living arrangements dependent of each other}
+\end{align*}\]</span></p>
+</div>
+<div id="step-2" class="section level3" number="33.2.2">
+<h3>
+<span class="header-section-number">33.2.2</span> Step 2:<a class="anchor" aria-label="anchor" href="#step-2"><i class="fas fa-link"></i></a>
+</h3>
+<p>The observed and expected values from the chi square test are:</p>
+<div class="sourceCode" id="cb469"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">test3</span><span class="op">$</span><span class="va">observed</span></span></code></pre></div>
+<pre><code>                     No regular exercise Sporadic exercise
+Dormitory                             32                30
+On-Campus Apartment                   74                64
+Off-campus Apartment                 110                25
+At Home                               39                 6
+                     Regular exercise
+Dormitory                          28
+On-Campus Apartment                42
+Off-campus Apartment               15
+At Home                             5</code></pre>
+<div class="sourceCode" id="cb471"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">test3</span><span class="op">$</span><span class="va">expected</span>,<span class="fl">2</span><span class="op">)</span></span></code></pre></div>
+<pre><code>                     No regular exercise Sporadic exercise
+Dormitory                          48.83             23.94
+On-Campus Apartment                97.66             47.87
+Off-campus Apartment               81.38             39.89
+At Home                            27.13             13.30
+                     Regular exercise
+Dormitory                       17.23
+On-Campus Apartment             34.47
+Off-campus Apartment            28.72
+At Home                          9.57</code></pre>
+<p>All of the expected counts are greater than 5.</p>
+</div>
+<div id="step-3" class="section level3" number="33.2.3">
+<h3>
+<span class="header-section-number">33.2.3</span> Step 3:<a class="anchor" aria-label="anchor" href="#step-3"><i class="fas fa-link"></i></a>
+</h3>
+<p>The test statistics is calculated as:</p>
+<p><span class="math display">\[\begin{align*}
+\chi^2 &amp; = \sum \frac{(O- E)^2}{E}\\
+&amp;= \frac{(32 - 48.83)^2}{48.83} +  \frac{(30 - 23.94)^2}{23.94} +  \frac{(28 - 17.23)^2}{17.23} +\\
+&amp; \qquad \frac{(74 - 97.66)^2}{97.66} + \frac{(64 - 47.87)^2}{47.87} + \frac{(42 - 34.47)^2}{34.47} + \\
+&amp; \qquad \frac{(110 - 81.38)^2}{81.38} + \frac{(25 - 39.89)^2}{39.89} + \frac{(15 - 28.72)^2}{28.72} + \\
+&amp; \qquad \frac{(39 - 27.13)^2}{27.13} + \frac{(6 - 13.30)^2}{13.30} + \frac{(5 - 9.57)^2}{9.57} \\
+&amp;= 5.80 + 1.53 + 6.73 + 5.73 + 5.44 + 1.64 + 10.06 + 5.56 + 6.55 + 5.19 + 4.01 + 2.18\\
+&amp;= 60.42
+\end{align*}\]</span></p>
+<div class="sourceCode" id="cb473"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="op">(</span><span class="fl">32</span> <span class="op">-</span> <span class="fl">48.83</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">/</span><span class="fl">48.83</span> <span class="op">+</span> <span class="op">(</span><span class="fl">30</span> <span class="op">-</span> <span class="fl">23.94</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">/</span><span class="fl">23.94</span> <span class="op">+</span> <span class="op">(</span><span class="fl">28</span> <span class="op">-</span> <span class="fl">17.23</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">/</span><span class="fl">17.23</span> <span class="op">+</span> <span class="op">(</span><span class="fl">74</span> <span class="op">-</span> <span class="fl">97.66</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">/</span><span class="fl">97.66</span> <span class="op">+</span> <span class="op">(</span><span class="fl">64</span> <span class="op">-</span> <span class="fl">47.87</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">/</span><span class="fl">47.87</span> <span class="op">+</span> <span class="op">(</span><span class="fl">42</span> <span class="op">-</span> <span class="fl">34.47</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">/</span><span class="fl">34.47</span> <span class="op">+</span> <span class="op">(</span><span class="fl">110</span> <span class="op">-</span> <span class="fl">81.38</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">/</span><span class="fl">81.38</span> <span class="op">+</span> <span class="op">(</span><span class="fl">25</span> <span class="op">-</span> <span class="fl">39.89</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">/</span><span class="fl">39.89</span> <span class="op">+</span> <span class="op">(</span><span class="fl">15</span> <span class="op">-</span> <span class="fl">28.72</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">/</span><span class="fl">28.72</span> <span class="op">+</span> <span class="op">(</span><span class="fl">39</span> <span class="op">-</span> <span class="fl">27.13</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">/</span><span class="fl">27.13</span><span class="op">+</span><span class="op">(</span><span class="fl">6</span> <span class="op">-</span> <span class="fl">13.30</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">/</span><span class="fl">13.30</span><span class="op">+</span><span class="op">(</span><span class="fl">5</span> <span class="op">-</span> <span class="fl">9.57</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">/</span><span class="fl">9.57</span></span></code></pre></div>
+<pre><code>[1] 60.43885</code></pre>
+<div class="sourceCode" id="cb475"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">5.80</span> <span class="op">+</span> <span class="fl">1.53</span> <span class="op">+</span> <span class="fl">6.73</span> <span class="op">+</span> <span class="fl">5.73</span> <span class="op">+</span> <span class="fl">5.44</span> <span class="op">+</span> <span class="fl">1.64</span> <span class="op">+</span> <span class="fl">10.06</span> <span class="op">+</span> <span class="fl">5.56</span> <span class="op">+</span> <span class="fl">6.55</span> <span class="op">+</span> <span class="fl">5.19</span> <span class="op">+</span> <span class="fl">4.01</span> <span class="op">+</span> <span class="fl">2.18</span></span></code></pre></div>
+<pre><code>[1] 60.42</code></pre>
+<p>The degree of freedom of <span class="math inline">\(\chi^2\)</span> is <span class="math inline">\(df = (4-1)*(3-1) = 6\)</span>.</p>
+<div class="sourceCode" id="cb477"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">test3</span></span></code></pre></div>
+<pre><code>
+    Pearson's Chi-squared test
+
+data:  counts3
+X-squared = 60.439, df = 6, p-value = 3.664e-11</code></pre>
+</div>
+<div id="step-4" class="section level3" number="33.2.4">
+<h3>
+<span class="header-section-number">33.2.4</span> Step 4:<a class="anchor" aria-label="anchor" href="#step-4"><i class="fas fa-link"></i></a>
+</h3>
+<p>The p-value can also be calculated as</p>
+<div class="sourceCode" id="cb479"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">1</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Chisquare.html">pchisq</a></span><span class="op">(</span><span class="fl">60.43</span>, df <span class="op">=</span> <span class="fl">6</span><span class="op">)</span></span></code></pre></div>
+<pre><code>[1] 3.680733e-11</code></pre>
+</div>
+<div id="step-5" class="section level3" number="33.2.5">
+<h3>
+<span class="header-section-number">33.2.5</span> Step 5:<a class="anchor" aria-label="anchor" href="#step-5"><i class="fas fa-link"></i></a>
+</h3>
+<p>There is significant evidence of an association between the exercise and living arrangements (<span class="math inline">\(\chi^2 = 60.43\)</span>, df=6, p-value <span class="math inline">\(\approx\)</span> 0).</p>
+
+<p><br></p>
+</div>
+</details>
 </div>
 <div id="problem-3-does-political-comfort-level-depend-on-religion" class="section level2" number="33.3">
 <h2>
@@ -322,7 +381,7 @@ X-squared = 5.3059, df = 1, p-value = 0.02125</code></pre>
 <span class="header-section-number">33.3.0.2</span> (b) Data<a class="anchor" aria-label="anchor" href="#b-data"><i class="fas fa-link"></i></a>
 </h4>
 <p>Does the data suggest that there is an association between comfort level and religion?</p>
-<div class="sourceCode" id="cb463"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb481"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
 <span></span>
@@ -351,7 +410,7 @@ X-squared = 5.3059, df = 1, p-value = 0.02125</code></pre>
 <span>                                                               <span class="st">"not religious"</span>,</span>
 <span>                                                               <span class="st">"religious not active"</span>,</span>
 <span>                                                               <span class="st">"religious active"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb464"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb482"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Make a two way table</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://haozhu233.github.io/kableExtra/">kableExtra</a></span><span class="op">)</span></span>
 <span><span class="va">counts</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">survey</span><span class="op">$</span><span class="va">religiousness</span>, <span class="va">survey</span><span class="op">$</span><span class="va">comfortness</span><span class="op">)</span></span>
@@ -366,13 +425,13 @@ X-squared = 5.3059, df = 1, p-value = 0.02125</code></pre>
 <h4>
 <span class="header-section-number">33.3.0.3</span> Formatted tables in R<a class="anchor" aria-label="anchor" href="#formatted-tables-in-r"><i class="fas fa-link"></i></a>
 </h4>
-<div class="sourceCode" id="cb466"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb484"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">kableExtra</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">survey</span><span class="op">$</span><span class="va">religiousness</span>, <span class="va">survey</span><span class="op">$</span><span class="va">comfortness</span><span class="op">)</span>, </span>
 <span>                  caption <span class="op">=</span> <span class="st">"A two way table of religious preference and political comfortness"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/kableExtra/man/kable_styling.html">kable_styling</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"center"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:unnamed-chunk-11">Table 33.1: </span>A two way table of religious preference and political comfortness
+<span id="tab:unnamed-chunk-17">Table 33.1: </span>A two way table of religious preference and political comfortness
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -432,13 +491,13 @@ religious active
 </tr>
 </tbody>
 </table></div>
-<div class="sourceCode" id="cb467"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb485"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">survey</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">religiousness</span>, fill<span class="op">=</span><span class="va">comfortness</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>position<span class="op">=</span><span class="st">"fill"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"Comfort level"</span>, x <span class="op">=</span> <span class="st">"Religious level"</span>, y <span class="op">=</span> <span class="st">"proportion"</span>, </span>
 <span>       title<span class="op">=</span><span class="st">"Comfort level by religious level"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_discrete.html">scale_x_discrete</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_wrap.html">str_wrap</a></span><span class="op">(</span><span class="va">x</span>, width <span class="op">=</span> <span class="fl">16</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="Practice_Problems_23_files/figure-html/unnamed-chunk-12-1.png" width="100%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="Practice_Problems_23_files/figure-html/unnamed-chunk-18-1.png" width="100%" style="display: block; margin: auto;"></div>
 <details><summary><red>Click for answer</red></summary><em>Answer:</em> Yes, there is a much higher rate of “almost always” comfortable for the not religious respondents (53.1%) than those that are religious (not active: 39.4%; active: 31.6%).
 </details><p><br></p>
 </div>
@@ -449,14 +508,14 @@ religious active
 <p>Compute the expected number of “not religious” people who are “almost always comfortable”.</p>
 <details><summary><red>Click for answer</red></summary><p><em>Answer:</em> There are 194 “not religious” respondents and the overall rate (ignoring religion) of “almost always” comfortable is about 45.7%. If the null is true (and religion doesn’t relate to comfort level), the expected number is about</p>
 <p><span class="math display">\[194 \times \dfrac{160}{350} = 88.686\]</span></p>
-<div class="sourceCode" id="cb468"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb486"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">survey</span><span class="op">$</span><span class="va">religiousness</span><span class="op">)</span></span></code></pre></div>
 <pre><code>
        not religious religious not active 
                  194                   99 
     religious active 
                   57 </code></pre>
-<div class="sourceCode" id="cb470"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb488"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">survey</span><span class="op">$</span><span class="va">comfortness</span><span class="op">)</span></span></code></pre></div>
 <pre><code>
 almost always     sometimes        rarely 
@@ -479,7 +538,7 @@ almost always     sometimes        rarely
 <span class="header-section-number">33.3.0.6</span> (e) Chi-square test<a class="anchor" aria-label="anchor" href="#e-chi-square-test"><i class="fas fa-link"></i></a>
 </h4>
 <p>The <code>chisq.test(x,y)</code> can be used to give chi-square test results. For this version, <code>x</code> and <code>y</code> are categorical variables from a data set.</p>
-<div class="sourceCode" id="cb472"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb490"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ComfortReligion</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/chisq.test.html">chisq.test</a></span><span class="op">(</span><span class="va">survey</span><span class="op">$</span><span class="va">religiousness</span>, <span class="va">survey</span><span class="op">$</span><span class="va">comfortness</span><span class="op">)</span></span>
 <span><span class="va">ComfortReligion</span></span></code></pre></div>
 <pre><code>
@@ -516,7 +575,7 @@ X-squared = 19.33, df = 4, p-value = 0.0006768</code></pre>
 <span class="header-section-number">33.3.0.8</span> (g) Expected counts<a class="anchor" aria-label="anchor" href="#g-expected-counts"><i class="fas fa-link"></i></a>
 </h4>
 <p>Are the expected counts large enough to use the chi-square distribution to compute the p-value?</p>
-<div class="sourceCode" id="cb474"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb492"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ComfortReligion</span><span class="op">$</span><span class="va">expected</span></span></code></pre></div>
 <pre><code>                      survey$comfortness
 survey$religiousness   almost always sometimes rarely
@@ -531,7 +590,7 @@ survey$religiousness   almost always sometimes rarely
 <span class="header-section-number">33.3.0.9</span> (h) Simulated p-value<a class="anchor" aria-label="anchor" href="#h-simulated-p-value"><i class="fas fa-link"></i></a>
 </h4>
 <p>If you were concerned that the expected counts weren’t large enough to trust using a chi-square distribution to compute a p-value, you can add a <code>simulate.p.value = TRUE</code> argument to use a randomization distribution to compute the p-value:</p>
-<div class="sourceCode" id="cb476"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb494"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/chisq.test.html">chisq.test</a></span><span class="op">(</span><span class="va">survey</span><span class="op">$</span><span class="va">religiousness</span>, <span class="va">survey</span><span class="op">$</span><span class="va">comfortness</span>, simulate.p.value <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>
     Pearson's Chi-squared test with simulated p-value
@@ -555,7 +614,7 @@ X-squared = 19.33, df = NA, p-value = 0.0009995</code></pre>
 CI &amp;= (0.077 - 0.263) \pm 1.96\cdot\sqrt{\frac{0.077(1-0.077)}{194} + \frac{0.263(1-0.263)}{57}}\\
 &amp;= (-0.306, -0.066)
 \end{align*}\]</span></p>
-<div class="sourceCode" id="cb478"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb496"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="op">(</span><span class="fl">0.077</span> <span class="op">-</span> <span class="fl">0.263</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span><span class="op">*</span> <span class="fl">1.96</span><span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fl">0.077</span><span class="op">*</span><span class="op">(</span><span class="fl">1</span><span class="op">-</span><span class="fl">0.077</span><span class="op">)</span><span class="op">/</span><span class="fl">194</span>  <span class="op">+</span> <span class="fl">0.263</span><span class="op">*</span><span class="op">(</span><span class="fl">1</span><span class="op">-</span><span class="fl">0.263</span><span class="op">)</span><span class="op">/</span><span class="fl">57</span><span class="op">)</span>,<span class="fl">3</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] -0.306 -0.066</code></pre>
 <ul>
@@ -567,13 +626,21 @@ CI &amp;= (0.077 - 0.263) \pm 1.96\cdot\sqrt{\frac{0.077(1-0.077)}{194} + \frac{
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="practice-problems-22.html"><span class="header-section-number">32</span> Practice Problems 22</a></div>
-<div class="empty"></div>
+<div class="next"><a href="practice-problems-24.html"><span class="header-section-number">34</span> Practice Problems 24</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#practice-problems-23"><span class="header-section-number">33</span> Practice Problems 23</a></li>
 <li><a class="nav-link" href="#problem-1-perry-preschool-project"><span class="header-section-number">33.1</span> Problem 1: Perry Preschool Project</a></li>
-<li><a class="nav-link" href="#problem-2-college-graduates-and-exercise"><span class="header-section-number">33.2</span> Problem 2: College graduates and exercise</a></li>
+<li>
+<a class="nav-link" href="#problem-2-college-graduates-and-exercise"><span class="header-section-number">33.2</span> Problem 2: College graduates and exercise</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#step-1"><span class="header-section-number">33.2.1</span> Step 1:</a></li>
+<li><a class="nav-link" href="#step-2"><span class="header-section-number">33.2.2</span> Step 2:</a></li>
+<li><a class="nav-link" href="#step-3"><span class="header-section-number">33.2.3</span> Step 3:</a></li>
+<li><a class="nav-link" href="#step-4"><span class="header-section-number">33.2.4</span> Step 4:</a></li>
+<li><a class="nav-link" href="#step-5"><span class="header-section-number">33.2.5</span> Step 5:</a></li>
+</ul>
+</li>
 <li><a class="nav-link" href="#problem-3-does-political-comfort-level-depend-on-religion"><span class="header-section-number">33.3</span> Problem 3 : Does political comfort level depend on religion?</a></li>
 </ul>
 
@@ -592,7 +659,7 @@ CI &amp;= (0.077 - 0.263) \pm 1.96\cdot\sqrt{\frac{0.077(1-0.077)}{194} + \frac{
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-11-02.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-11-05.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
