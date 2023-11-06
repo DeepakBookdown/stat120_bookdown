@@ -31,35 +31,40 @@ ggplot(data = survey, aes(x = religiousness, y = practice_religion)) +
 
 <img src="Practice_Problems_24_files/figure-html/unnamed-chunk-1-1.png" width="100%" />
 
+
+
+
 ```r
-tapply(survey$practice_religion, survey$religiousness, summary)
+library(dplyr)
+library(ggplot2)
+survey %>%
+  group_by(religiousness) %>%
+  summarize(
+    count = n(),
+    mean_practice = mean(practice_religion, na.rm = TRUE),
+    sd_practice = sd(practice_religion, na.rm = TRUE),
+  ) %>% knitr::kable()
 ```
 
-```
-$`not religious`
-   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-   3.00   25.00   35.00   38.05   50.00   80.00 
 
-$`religious not active`
-   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-   0.50   25.00   38.00   40.19   55.00   95.00 
 
-$`religious active`
-   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-   3.00   30.00   40.00   41.32   60.00   80.00 
-```
+|religiousness        | count| mean_practice| sd_practice|
+|:--------------------|-----:|-------------:|-----------:|
+|not religious        |   194|      38.05155|    17.96535|
+|religious not active |    99|      40.18556|    19.22239|
+|religious active     |    57|      41.31579|    18.33143|
 
 #### (a) One-way ANOVA hypotheses
 
 We want to determine if the differences in observed mean guesses are statistically significant. State the hypotheses for this test.
 
-<!-- <details> -->
+<details>
 
-<!-- <summary><red>Click for answer</red></summary> -->
+<summary><red>Click for answer</red></summary>
 
-<!-- *Answer:* Let $\mu$ be the true mean religous % guess in a given religiousness group. Then $H_0: \mu_{notRelig} = \mu_{Relig,Act} = \mu_{Relig,NotAct}$ vs. $H_A:$ at least one mean is different. -->
+*Answer:* Let $\mu$ be the true mean religous % guess in a given religiousness group. Then $H_0: \mu_{notRelig} = \mu_{Relig,Act} = \mu_{Relig,NotAct}$ vs. $H_A:$ at least one mean is different.
 
-<!-- </details> -->
+</details>
 
 <br>
 
@@ -69,43 +74,20 @@ Can use trust the results from a one-way ANOVA test?
 
 
 ```r
-table(survey$religiousness)  
-```
-
-```
-
-       not religious religious not active 
-                 194                   99 
-    religious active 
-                  57 
-```
-
-```r
-tapply(survey$practice_religion, survey$religiousness, sd, na.rm=TRUE)  #need na.rm with a missing value  
-```
-
-```
-       not religious religious not active 
-            17.96535             19.22239 
-    religious active 
-            18.33143 
-```
-
-```r
 ggplot(survey, aes(sample = practice_religion)) + geom_qq() + geom_qq_line() + facet_wrap(~religiousness)
 ```
 
-<img src="Practice_Problems_24_files/figure-html/unnamed-chunk-2-1.png" width="100%" />
+<img src="Practice_Problems_24_files/figure-html/unnamed-chunk-3-1.png" width="100%" />
 
 
 
-<!-- <details> -->
+<details>
 
-<!-- <summary><red>Click for answer</red></summary> -->
+<summary><red>Click for answer</red></summary>
 
-<!-- *Answer:* Yes, the assumptions are met. The distributions within each group are slightly skewed or roughly symmetric, and the sample sizes within each group are all at least 30. In addition, the SD in each group are close to each other (18% to 19.2%). -->
+*Answer:* Yes, the assumptions are met. The distributions within each group are slightly skewed or roughly symmetric, and the sample sizes within each group are all at least 30. In addition, the SD in each group are close to each other (18% to 19.2%).
 
-<!-- </details> -->
+</details>
 
 <br>
 
@@ -127,37 +109,37 @@ Residuals     347 117321   338.1
 
 -   What is the F test stat value?
 
-<!-- <details> -->
+<details>
 
-<!-- <summary><red>Click for answer</red></summary> -->
+<summary><red>Click for answer</red></summary>
 
-<!-- *Answer:* $F = 0.898$ -->
+*Answer:* $F = 0.898$
 
-<!-- </details> -->
+</details>
 
 <br>
 
 -   Interpret the p-value.
 
-<!-- <details> -->
+<details>
 
-<!-- <summary><red>Click for answer</red></summary> -->
+<summary><red>Click for answer</red></summary>
 
-<!-- *Answer:* If there is no difference in true mean guess in all three groups, we would see an F test stat of at least 0.898 about 40.8% of the time. -->
+*Answer:* If there is no difference in true mean guess in all three groups, we would see an F test stat of at least 0.898 about 40.8% of the time.
 
-<!-- </details> -->
+</details>
 
 <br>
 
 -   What is your conclusion?
 
-<!-- <details> -->
+<details>
 
-<!-- <summary><red>Click for answer</red></summary> -->
+<summary><red>Click for answer</red></summary>
 
-<!-- *Answer:* The differences in mean guesses that we've observed in our sample are not statistically significant. We don't have evidence that the true mean guesses for the three religiousness groups are different. -->
+*Answer:* The differences in mean guesses that we've observed in our sample are not statistically significant. We don't have evidence that the true mean guesses for the three religiousness groups are different.
 
-<!-- </details> -->
+</details>
 
 <br>
 
@@ -237,7 +219,7 @@ permTestAnova(practice_religion ~ religiousness, data=survey)
 	*-------------*
 ```
 
-<img src="Practice_Problems_24_files/figure-html/unnamed-chunk-9-1.png" width="100%" />
+<img src="Practice_Problems_24_files/figure-html/unnamed-chunk-10-1.png" width="100%" />
 
 
 <br>
@@ -252,7 +234,7 @@ frisbee <- read.csv("https://raw.githubusercontent.com/deepbas/statdatasets/main
 ggplot(frisbee, aes(x = Grip, y = Distance)) + geom_boxplot()
 ```
 
-<img src="Practice_Problems_24_files/figure-html/unnamed-chunk-10-1.png" width="100%" />
+<img src="Practice_Problems_24_files/figure-html/unnamed-chunk-11-1.png" width="100%" />
 
 ```r
 tapply(frisbee$Distance, frisbee$Grip, summary)
@@ -349,13 +331,13 @@ library(ggplot2)  # shape?
 ggplot(frisbee, aes(x = Grip, y = Distance)) + geom_boxplot()
 ```
 
-<img src="Practice_Problems_24_files/figure-html/unnamed-chunk-12-1.png" width="100%" />
+<img src="Practice_Problems_24_files/figure-html/unnamed-chunk-13-1.png" width="100%" />
 
 ```r
 ggplot(frisbee, aes(sample = Distance)) + geom_qq() + geom_qq_line() + facet_wrap(~Grip)
 ```
 
-<img src="Practice_Problems_24_files/figure-html/unnamed-chunk-12-2.png" width="100%" />
+<img src="Practice_Problems_24_files/figure-html/unnamed-chunk-13-2.png" width="100%" />
 
 <details><summary><red>Click for answer</red></summary>
 

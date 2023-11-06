@@ -26,20 +26,33 @@ survey <- survey %>%mutate(religiousness = forcats::fct_recode(Question.8,
                                                                "religious active"))
 ggplot(data = survey, aes(x = religiousness, y = practice_religion)) +
     geom_boxplot()
-tapply(survey$practice_religion, survey$religiousness, summary)
+```
+
+
+
+```{r}
+library(dplyr)
+library(ggplot2)
+survey %>%
+  group_by(religiousness) %>%
+  summarize(
+    count = n(),
+    mean_practice = mean(practice_religion, na.rm = TRUE),
+    sd_practice = sd(practice_religion, na.rm = TRUE),
+  ) %>% knitr::kable()
 ```
 
 #### (a) One-way ANOVA hypotheses
 
 We want to determine if the differences in observed mean guesses are statistically significant. State the hypotheses for this test.
 
-<!-- <details> -->
+<details>
 
-<!-- <summary><red>Click for answer</red></summary> -->
+<summary><red>Click for answer</red></summary>
 
-<!-- *Answer:* Let $\mu$ be the true mean religous % guess in a given religiousness group. Then $H_0: \mu_{notRelig} = \mu_{Relig,Act} = \mu_{Relig,NotAct}$ vs. $H_A:$ at least one mean is different. -->
+*Answer:* Let $\mu$ be the true mean religous % guess in a given religiousness group. Then $H_0: \mu_{notRelig} = \mu_{Relig,Act} = \mu_{Relig,NotAct}$ vs. $H_A:$ at least one mean is different.
 
-<!-- </details> -->
+</details>
 
 <br>
 
@@ -48,8 +61,6 @@ We want to determine if the differences in observed mean guesses are statistical
 Can use trust the results from a one-way ANOVA test?
 
 ```{r}
-table(survey$religiousness)  
-tapply(survey$practice_religion, survey$religiousness, sd, na.rm=TRUE)  #need na.rm with a missing value  
 ggplot(survey, aes(sample = practice_religion)) + geom_qq() + geom_qq_line() + facet_wrap(~religiousness)
 ```
 
@@ -57,13 +68,13 @@ ggplot(survey, aes(sample = practice_religion)) + geom_qq() + geom_qq_line() + f
 sds <- tapply(survey$practice_religion, survey$religiousness, sd, na.rm=TRUE)  
 ```
 
-<!-- <details> -->
+<details>
 
-<!-- <summary><red>Click for answer</red></summary> -->
+<summary><red>Click for answer</red></summary>
 
-<!-- *Answer:* Yes, the assumptions are met. The distributions within each group are slightly skewed or roughly symmetric, and the sample sizes within each group are all at least 30. In addition, the SD in each group are close to each other (`r round(min(sds),1)`% to `r round(max(sds),1)`%). -->
+*Answer:* Yes, the assumptions are met. The distributions within each group are slightly skewed or roughly symmetric, and the sample sizes within each group are all at least 30. In addition, the SD in each group are close to each other (`r round(min(sds),1)`% to `r round(max(sds),1)`%).
 
-<!-- </details> -->
+</details>
 
 <br>
 
@@ -78,37 +89,37 @@ summary(guess.aov)
 
 -   What is the F test stat value?
 
-<!-- <details> -->
+<details>
 
-<!-- <summary><red>Click for answer</red></summary> -->
+<summary><red>Click for answer</red></summary>
 
-<!-- *Answer:* $F = `r round(summary(guess.aov)[[1]][1,4],3)`$ -->
+*Answer:* $F = `r round(summary(guess.aov)[[1]][1,4],3)`$
 
-<!-- </details> -->
+</details>
 
 <br>
 
 -   Interpret the p-value.
 
-<!-- <details> -->
+<details>
 
-<!-- <summary><red>Click for answer</red></summary> -->
+<summary><red>Click for answer</red></summary>
 
-<!-- *Answer:* If there is no difference in true mean guess in all three groups, we would see an F test stat of at least `r round(summary(guess.aov)[[1]][1,4],3)` about `r round(summary(guess.aov)[[1]][1,5],3)*100`% of the time. -->
+*Answer:* If there is no difference in true mean guess in all three groups, we would see an F test stat of at least `r round(summary(guess.aov)[[1]][1,4],3)` about `r round(summary(guess.aov)[[1]][1,5],3)*100`% of the time.
 
-<!-- </details> -->
+</details>
 
 <br>
 
 -   What is your conclusion?
 
-<!-- <details> -->
+<details>
 
-<!-- <summary><red>Click for answer</red></summary> -->
+<summary><red>Click for answer</red></summary>
 
-<!-- *Answer:* The differences in mean guesses that we've observed in our sample are not statistically significant. We don't have evidence that the true mean guesses for the three religiousness groups are different. -->
+*Answer:* The differences in mean guesses that we've observed in our sample are not statistically significant. We don't have evidence that the true mean guesses for the three religiousness groups are different.
 
-<!-- </details> -->
+</details>
 
 <br>
 

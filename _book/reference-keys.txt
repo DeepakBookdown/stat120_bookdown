@@ -357,3 +357,4 @@ problem-2-frisbee-grip
 a-one-way-anova-hypotheses-1
 b-one-way-anova-test
 c-checking-assumptions
+url-your-book-url-like-httpsbookdown.orgyihuibookdown
