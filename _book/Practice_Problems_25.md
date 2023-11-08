@@ -15,29 +15,13 @@ The cuckoo dataset contains information on 120 Cuckoo eggs, obtained from random
 
 The researchers want to test if the type of foster parent has an effect on the average length of the cuckoo eggs. 
 
-```{r, message=FALSE, echo=FALSE}
-library(tidyverse)
-Cuckoo <- read.csv("https://raw.githubusercontent.com/deepbas/stat120datasets/main/cuckoos.csv")
-```
+
 
 
 ### (1a) The boxplot of the length of the eggs across all the species is shown below. Based on these boxplots, do the assumptions of normality and similar variability appear to be met?
 
 
-```{r, echo = FALSE}
-Cuckoo <- Cuckoo %>%
-  mutate(type = as.factor(species))
-
-Cuckoo %>%
-  ggplot(aes(x=species,y=length,fill=species)) +
-  theme_bw() +
-  scale_fill_brewer(palette="RdGy") +
-  geom_boxplot() +
-  geom_jitter(width = 0.5) +
-  ggtitle("Boxplot of the length of eggs per type") +
-  ylab("length (mm)") + 
-  stat_summary(fun=mean, geom="point", shape=10, size=3, color="red", fill="black")
-```
+<img src="Practice_Problems_25_files/figure-html/unnamed-chunk-2-1.png" width="100%" />
 
 
 ### (1b) Formally verify that the assumptions are valid by using the outputs given.
@@ -47,34 +31,63 @@ Cuckoo %>%
 
 *Answer:* Based on the qqplot, the data points in each group are close to the line and there are no major deviations towards the center. So, the normality assumption seems to be satisfied. 
 
-```{r}
+
+```r
 Cuckoo %>% 
   ggplot(aes(sample=length)) + geom_qq() + geom_qq_line() + facet_grid(~species) +  theme_bw() 
 ```
+
+<img src="Practice_Problems_25_files/figure-html/unnamed-chunk-3-1.png" width="100%" />
 
 Similarly, based on the statistics below, the ratio of the largest $s$ to the smallest $s$ is $1.57$. So, the equal variance assumption is satisfied.
 
 *Caution:* If the equal variance assumption or the normality assumption is not met in ANOVA, then the results of the one-way ANOVA may not be reliable. This is especially true if the sample sizes between the groups are unequal and the variances between the groups are also unequal.
 
-```{r}
+
+```r
 1.0722917/0.6821229
 ```
 
+```
+[1] 1.571992
+```
 
-```{r}
+
+
+```r
 library(dplyr)
 stat <- Cuckoo %>% group_by(species) %>% summarize(mean(length), sd(length), length(length))
 stat <- as.data.frame(stat)
 stat
+```
+
+```
+        species mean(length) sd(length) length(length)
+1 hedge.sparrow     23.11429  1.0494373             14
+2  meadow.pipit     22.29333  0.9195849             45
+3  pied.wagtail     22.88667  1.0722917             15
+4         robin     22.55625  0.6821229             16
+5    tree.pipit     23.08000  0.8800974             15
+6          wren     21.12000  0.7542262             15
 ```
 </details>
 <br>
 
 ### (1c) Fit an ANOVA model to do a formal hypothesis test. Report the test statistics and conclude your hypothesis test.
 
-```{r}
+
+```r
 fit_anova <- aov(length~species, Cuckoo)
 summary(fit_anova)
+```
+
+```
+             Df Sum Sq Mean Sq F value   Pr(>F)    
+species       5  42.81   8.562   10.45 2.85e-08 ***
+Residuals   114  93.41   0.819                     
+---
+Signif. codes:  
+0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
 
 <details>
@@ -97,9 +110,14 @@ Let's assume the conditions for the test are approximately met. To find which of
 
 95 $\%$ confidence interval is:
 
-```{r}
+
+```r
 MSE <- 0.8193847
 stat[4,2] + c(-1,1)*(qt(1-0.05/2, df=113))*sqrt(MSE)/sqrt(stat[4,4])
+```
+
+```
+[1] 22.10791 23.00459
 ```
 
 $$22.556 \pm 1.981*\frac{\sqrt{0.8194}}{\sqrt{16}}$$
@@ -115,8 +133,13 @@ $$= (22.108, 23.005)$$
 
 *Answer:* 
 
-```{r}
+
+```r
 (stat[4,2] - stat[6,2]) + c(-1,1)* (qt(1-0.05/2, df=113))* sqrt(MSE*(1/stat[4,4] + 1/stat[6,4]))
+```
+
+```
+[1] 0.79172 2.08078
 ```
 
 $$(22.556 - 21.120) \pm 1.981 \cdot \sqrt{0.8194\left(\frac{1}{16} + \frac{1}{15} \right)}$$
@@ -132,8 +155,13 @@ $=(0.792, 2.081)$
 
 *Answer:* 
 
-```{r}
+
+```r
 (stat[3,2] - stat[4,2]) + c(-1,1)* (qt(1-0.05/2, df=113))*sqrt(MSE*(1/stat[3,4] + 1/stat[4,4]))
+```
+
+```
+[1] -0.3141134  0.9749467
 ```
 
 $$(22.887 - 22.556) \pm 1.981\cdot \sqrt{0.8194\left(\frac{1}{15} + \frac{1}{16} \right)}$$
@@ -145,8 +173,31 @@ $$ = (-0.314, 0.975)$$
 
 Based on the R output, which of the pairs are different?
 
-```{r}
+
+```r
 pairwise.t.test(Cuckoo$length, Cuckoo$species, p.adjust.method =  "bonferroni")
+```
+
+```
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  Cuckoo$length and Cuckoo$species 
+
+             hedge.sparrow meadow.pipit pied.wagtail
+meadow.pipit 0.05554       -            -           
+pied.wagtail 1.00000       0.44898      -           
+robin        1.00000       1.00000      1.00000     
+tree.pipit   1.00000       0.06426      1.00000     
+wren         5e-07         0.00045      7e-06       
+             robin   tree.pipit
+meadow.pipit -       -         
+pied.wagtail -       -         
+robin        -       -         
+tree.pipit   1.00000 -         
+wren         0.00035 5e-07     
+
+P value adjustment method: bonferroni 
 ```
 
 <details>
