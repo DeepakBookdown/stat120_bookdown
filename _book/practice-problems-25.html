@@ -277,26 +277,20 @@ P value adjustment method: bonferroni </code></pre>
 <span class="header-section-number">35.2.0.1</span> (a) Assumptions<a class="anchor" aria-label="anchor" href="#a-assumptions"><i class="fas fa-link"></i></a>
 </h4>
 <p>What do we need to assumption about copper concentrations to use one-way ANOVA to compare means at the three sites?</p>
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* With such small sample sizes in each group it would be hard to get a good sense of how they are distributed. We will just need to assume that these measurements are approximately normally distributed.  -->
-<!-- </details> -->
-<!-- <br> -->
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> With such small sample sizes in each group it would be hard to get a good sense of how they are distributed. We will just need to assume that these measurements are approximately normally distributed.
+</details><p><br></p>
 </div>
 <div id="b-one-way-anova-hypotheses" class="section level4" number="35.2.0.2">
 <h4>
 <span class="header-section-number">35.2.0.2</span> (b) One-way ANOVA hypotheses<a class="anchor" aria-label="anchor" href="#b-one-way-anova-hypotheses"><i class="fas fa-link"></i></a>
 </h4>
 <p>State the hypotheses for this test.</p>
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* Let $\mu_i$ be the true mean copper concentration at location $i$. Then -->
-<!-- $$ -->
-<!-- H_0: \mu_{1} = \mu_{2} = \mu_{3}  -->
-<!-- $$ -->
-<!-- vs. $H_A:$ at least one mean is different. -->
-<!-- </details> -->
-<!-- <br> -->
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> Let <span class="math inline">\(\mu_i\)</span> be the true mean copper concentration at location <span class="math inline">\(i\)</span>. Then</p>
+<p><span class="math display">\[
+H_0: \mu_{1} = \mu_{2} = \mu_{3}
+\]</span></p>
+vs. <span class="math inline">\(H_A:\)</span> at least one mean is different.
+</details><p><br></p>
 </div>
 <div id="c-anova-table" class="section level4" number="35.2.0.3">
 <h4>
@@ -335,50 +329,61 @@ P value adjustment method: bonferroni </code></pre>
 </tr>
 </tbody>
 </table></div>
-<!-- <details> --><!-- <summary><red>Click for answer</red></summary> --><!-- *Answer:*  --><!-- - A: The group degrees of freedom is always the number of groups minus 1. Here we have 3 groups so $A = 3-1=2$. --><!-- - B: The group and error sum of squares adds up to the total sum of squares. So we have $B = 302.02 - 169.05 = 132.97$. --><!-- - C: Mean square values are always sum of squares divided by degrees of freedom. For groups MS: $C = 169.05/2 = 84.525$ --><!-- - D: Mean square values are always sum of squares divided by degrees of freedom. For error MS: $D = 132.97/11 = 12.088$ --><!-- - The F test stat is the ratio of the group MS and error MS: $F = 84.525/12.088 = 6.992$. --><!-- ```{r} --><!-- 302.02 - 169.05 --><!-- 169.05/2 --><!-- 132.97/11 --><!-- 84.525/12.088 --><!-- ``` --><!-- </details> --><!-- <br> -->
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em></p>
+<ul>
+<li><p>A: The group degrees of freedom is always the number of groups minus 1. Here we have 3 groups so <span class="math inline">\(A = 3-1=2\)</span>.</p></li>
+<li><p>B: The group and error sum of squares adds up to the total sum of squares. So we have <span class="math inline">\(B = 302.02 - 169.05 = 132.97\)</span>.</p></li>
+<li><p>C: Mean square values are always sum of squares divided by degrees of freedom. For groups MS: <span class="math inline">\(C = 169.05/2 = 84.525\)</span></p></li>
+<li><p>D: Mean square values are always sum of squares divided by degrees of freedom. For error MS: <span class="math inline">\(D = 132.97/11 = 12.088\)</span></p></li>
+<li><p>The F test stat is the ratio of the group MS and error MS: <span class="math inline">\(F = 84.525/12.088 = 6.992\)</span>.</p></li>
+</ul>
+<div class="sourceCode" id="cb535"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">302.02</span> <span class="op">-</span> <span class="fl">169.05</span></span></code></pre></div>
+<pre><code>[1] 132.97</code></pre>
+<div class="sourceCode" id="cb537"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">169.05</span><span class="op">/</span><span class="fl">2</span></span></code></pre></div>
+<pre><code>[1] 84.525</code></pre>
+<div class="sourceCode" id="cb539"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">132.97</span><span class="op">/</span><span class="fl">11</span></span></code></pre></div>
+<pre><code>[1] 12.08818</code></pre>
+<div class="sourceCode" id="cb541"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">84.525</span><span class="op">/</span><span class="fl">12.088</span></span></code></pre></div>
+<pre><code>[1] 6.992472</code></pre>
+</details><p><br></p>
 </div>
 <div id="d-p-value" class="section level4" number="35.2.0.4">
 <h4>
 <span class="header-section-number">35.2.0.4</span> (d) p-value<a class="anchor" aria-label="anchor" href="#d-p-value"><i class="fas fa-link"></i></a>
 </h4>
 <p>The command <code>pf(x, df1=, df2=)</code> gives the area under the F-distribution below the value <code>x</code>. Use this command to get the p-value from this one-way ANOVA test. Interpret this value.</p>
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* The p-value is about 1.1%. If the means are the same at the three sites, we would see sample means this different, or even more different, about 1.1% of the time.  -->
-<!-- ```{r} -->
-<!-- 1-pf(6.992, df1=2, df2=11) -->
-<!-- ``` -->
-<!-- </details> -->
-<!-- <br> -->
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The p-value is about 1.1%. If the means are the same at the three sites, we would see sample means this different, or even more different, about 1.1% of the time.</p>
+<div class="sourceCode" id="cb543"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">1</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/stats/Fdist.html">pf</a></span><span class="op">(</span><span class="fl">6.992</span>, df1<span class="op">=</span><span class="fl">2</span>, df2<span class="op">=</span><span class="fl">11</span><span class="op">)</span></span></code></pre></div>
+<pre><code>[1] 0.01097789</code></pre>
+</details><p><br></p>
 </div>
 <div id="e-conclusion" class="section level4" number="35.2.0.5">
 <h4>
 <span class="header-section-number">35.2.0.5</span> (e) Conclusion<a class="anchor" aria-label="anchor" href="#e-conclusion"><i class="fas fa-link"></i></a>
 </h4>
 <p>What is your conclusion for this test?</p>
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* We have some evidence that at least one of the true mean copper concentration at the three sites is differenct from the others.  -->
-<!-- </details> -->
-<!-- <br> -->
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> We have some evidence that at least one of the true mean copper concentration at the three sites is differenct from the others.</p>
+</details><p><br></p>
 </div>
 <div id="f-confidence-interval" class="section level4" number="35.2.0.6">
 <h4>
 <span class="header-section-number">35.2.0.6</span> (f) Confidence interval<a class="anchor" aria-label="anchor" href="#f-confidence-interval"><i class="fas fa-link"></i></a>
 </h4>
 <p>Compute a 95% confidence interval for the difference in means between site 1 and 3. Interpret this interval.</p>
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
-<!-- *Answer:* Since we don't have the data, we will have to compute the CI by hand. The degrees of freedom "best guess" (since we aren't letting R approximate it), is $11$. The 95% CI for the difference in true means in site 1 and 3 is : -->
-<!-- $$ -->
-<!-- (21.34 - 13.16)  \pm (2.201)) \sqrt{12.088\left(\dfrac{1}{5} + \dfrac{1}{5}\right)} = 3.34, 13.02 -->
-<!-- $$ -->
-<!-- ```{r} -->
-<!-- (21.34 - 13.16) + c(-1,1)* qt(1-0.05/2, df = 11)*sqrt(12.088*(1/5+1/5)) -->
-<!-- ``` -->
-<!-- We are 95% confident that the true mean copper concentration at site 1 is 3.34  to 13.02 mcg/g higher than the true mean concentration at site 3.  -->
-<!-- </details> -->
-
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> Since we don’t have the data, we will have to compute the CI by hand. The degrees of freedom “best guess” (since we aren’t letting R approximate it), is <span class="math inline">\(11\)</span>. The 95% CI for the difference in true means in site 1 and 3 is :</p>
+<p><span class="math display">\[
+(21.34 - 13.16)  \pm (2.201)) \sqrt{12.088\left(\dfrac{1}{5} + \dfrac{1}{5}\right)} = 3.34, 13.02
+\]</span></p>
+<div class="sourceCode" id="cb545"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="op">(</span><span class="fl">21.34</span> <span class="op">-</span> <span class="fl">13.16</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span><span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/stats/TDist.html">qt</a></span><span class="op">(</span><span class="fl">1</span><span class="op">-</span><span class="fl">0.05</span><span class="op">/</span><span class="fl">2</span>, df <span class="op">=</span> <span class="fl">11</span><span class="op">)</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fl">12.088</span><span class="op">*</span><span class="op">(</span><span class="fl">1</span><span class="op">/</span><span class="fl">5</span><span class="op">+</span><span class="fl">1</span><span class="op">/</span><span class="fl">5</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<pre><code>[1]  3.340234 13.019766</code></pre>
+<p>We are 95% confident that the true mean copper concentration at site 1 is 3.34 to 13.02 mcg/g higher than the true mean concentration at site 3.</p>
+</details>
 </div>
 </div>
 </div>
@@ -418,7 +423,7 @@ P value adjustment method: bonferroni </code></pre>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-11-07.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-11-08.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

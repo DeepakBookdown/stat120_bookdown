@@ -226,33 +226,32 @@ Site | Mean ($\bar{x}$) | SD ($s$) | $n$
 
 What do we need to assumption about copper concentrations to use one-way ANOVA to compare means at the three sites?
 
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
+<details>
+<summary><red>Click for answer</red></summary>
 
-<!-- *Answer:* With such small sample sizes in each group it would be hard to get a good sense of how they are distributed. We will just need to assume that these measurements are approximately normally distributed.  -->
-<!-- </details> -->
-<!-- <br> -->
+*Answer:* With such small sample sizes in each group it would be hard to get a good sense of how they are distributed. We will just need to assume that these measurements are approximately normally distributed. 
+</details>
+<br>
 
 #### (b) One-way ANOVA hypotheses
 
 State the hypotheses for this test. 
 
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
+<details>
+<summary><red>Click for answer</red></summary>
 
-<!-- *Answer:* Let $\mu_i$ be the true mean copper concentration at location $i$. Then -->
+*Answer:* Let $\mu_i$ be the true mean copper concentration at location $i$. Then
 
-<!-- $$ -->
-<!-- H_0: \mu_{1} = \mu_{2} = \mu_{3}  -->
-<!-- $$ -->
+$$
+H_0: \mu_{1} = \mu_{2} = \mu_{3} 
+$$
 
-<!-- vs. $H_A:$ at least one mean is different. -->
-<!-- </details> -->
-<!-- <br> -->
+vs. $H_A:$ at least one mean is different.
+</details>
+<br>
 
 
 #### (c) ANOVA table
-
 Fill in the missing values `A` - `E` from the ANOVA table:
 
 Source | df | SS | MS | F 
@@ -261,76 +260,110 @@ Groups | `A = 2` | 169.05 | `C = 84.525` | `E = 6.99`
 Error | 11 | `B = 132.97` | `D = 12.088` | 
 Total | 13 | 302.02 | | 
 
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
+<details>
+<summary><red>Click for answer</red></summary>
 
-<!-- *Answer:*  -->
+*Answer:* 
 
-<!-- - A: The group degrees of freedom is always the number of groups minus 1. Here we have 3 groups so $A = 3-1=2$. -->
-<!-- - B: The group and error sum of squares adds up to the total sum of squares. So we have $B = 302.02 - 169.05 = 132.97$. -->
-<!-- - C: Mean square values are always sum of squares divided by degrees of freedom. For groups MS: $C = 169.05/2 = 84.525$ -->
-<!-- - D: Mean square values are always sum of squares divided by degrees of freedom. For error MS: $D = 132.97/11 = 12.088$ -->
+- A: The group degrees of freedom is always the number of groups minus 1. Here we have 3 groups so $A = 3-1=2$.
+- B: The group and error sum of squares adds up to the total sum of squares. So we have $B = 302.02 - 169.05 = 132.97$.
+- C: Mean square values are always sum of squares divided by degrees of freedom. For groups MS: $C = 169.05/2 = 84.525$
+- D: Mean square values are always sum of squares divided by degrees of freedom. For error MS: $D = 132.97/11 = 12.088$
 
-<!-- - The F test stat is the ratio of the group MS and error MS: $F = 84.525/12.088 = 6.992$. -->
+- The F test stat is the ratio of the group MS and error MS: $F = 84.525/12.088 = 6.992$.
 
-<!-- ```{r} -->
-<!-- 302.02 - 169.05 -->
-<!-- 169.05/2 -->
-<!-- 132.97/11 -->
-<!-- 84.525/12.088 -->
-<!-- ``` -->
 
-<!-- </details> -->
-<!-- <br> -->
+```r
+302.02 - 169.05
+```
+
+```
+[1] 132.97
+```
+
+```r
+169.05/2
+```
+
+```
+[1] 84.525
+```
+
+```r
+132.97/11
+```
+
+```
+[1] 12.08818
+```
+
+```r
+84.525/12.088
+```
+
+```
+[1] 6.992472
+```
+
+</details>
+<br>
 
 #### (d) p-value
 
 The command `pf(x, df1=, df2=)` gives the area under the F-distribution below the value `x`. Use this command to get the p-value from this one-way ANOVA test. Interpret this value.
 
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
+<details>
+<summary><red>Click for answer</red></summary>
 
-<!-- *Answer:* The p-value is about 1.1%. If the means are the same at the three sites, we would see sample means this different, or even more different, about 1.1% of the time.  -->
+*Answer:* The p-value is about 1.1%. If the means are the same at the three sites, we would see sample means this different, or even more different, about 1.1% of the time. 
 
-<!-- ```{r} -->
-<!-- 1-pf(6.992, df1=2, df2=11) -->
-<!-- ``` -->
 
-<!-- </details> -->
-<!-- <br> -->
+```r
+1-pf(6.992, df1=2, df2=11)
+```
+
+```
+[1] 0.01097789
+```
+
+</details>
+<br>
 
 #### (e) Conclusion
 
 What is your conclusion for this test?
 
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
+<details>
+<summary><red>Click for answer</red></summary>
 
-<!-- *Answer:* We have some evidence that at least one of the true mean copper concentration at the three sites is differenct from the others.  -->
+*Answer:* We have some evidence that at least one of the true mean copper concentration at the three sites is differenct from the others. 
 
-<!-- </details> -->
-<!-- <br> -->
+</details>
+<br>
 
 #### (f) Confidence interval
-
 Compute a 95% confidence interval for the difference in means between site 1 and 3. Interpret this interval. 
 
-<!-- <details> -->
-<!-- <summary><red>Click for answer</red></summary> -->
+<details>
+<summary><red>Click for answer</red></summary>
 
-<!-- *Answer:* Since we don't have the data, we will have to compute the CI by hand. The degrees of freedom "best guess" (since we aren't letting R approximate it), is $11$. The 95% CI for the difference in true means in site 1 and 3 is : -->
+*Answer:* Since we don't have the data, we will have to compute the CI by hand. The degrees of freedom "best guess" (since we aren't letting R approximate it), is $11$. The 95% CI for the difference in true means in site 1 and 3 is :
 
-<!-- $$ -->
-<!-- (21.34 - 13.16)  \pm (2.201)) \sqrt{12.088\left(\dfrac{1}{5} + \dfrac{1}{5}\right)} = 3.34, 13.02 -->
-<!-- $$ -->
-
-<!-- ```{r} -->
-<!-- (21.34 - 13.16) + c(-1,1)* qt(1-0.05/2, df = 11)*sqrt(12.088*(1/5+1/5)) -->
-
-<!-- ``` -->
-
-<!-- We are 95% confident that the true mean copper concentration at site 1 is 3.34  to 13.02 mcg/g higher than the true mean concentration at site 3.  -->
+$$
+(21.34 - 13.16)  \pm (2.201)) \sqrt{12.088\left(\dfrac{1}{5} + \dfrac{1}{5}\right)} = 3.34, 13.02
+$$
 
 
-<!-- </details> -->
+```r
+(21.34 - 13.16) + c(-1,1)* qt(1-0.05/2, df = 11)*sqrt(12.088*(1/5+1/5))
+```
+
+```
+[1]  3.340234 13.019766
+```
+
+We are 95% confident that the true mean copper concentration at site 1 is 3.34  to 13.02 mcg/g higher than the true mean concentration at site 3. 
+
+
+</details>
 
