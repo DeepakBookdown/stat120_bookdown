@@ -44,3 +44,10 @@ problem-2
 practice-problems-2
 problem-1-1
 gettysburg-random-sample
+practice-problems-3
+case-study-1
+case-study-2
+case-study-3
+observed-data
+case-study-4
+observed-data-1

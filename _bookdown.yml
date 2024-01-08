@@ -21,8 +21,8 @@ rmd_files: [
    # "Short_Report_1.Rmd",
    # "Short_Report_2.Rmd",
    "Practice_Problems_1.Rmd",
-   "Practice_Problems_2.Rmd"
-   # "Practice_Problems_3.Rmd", 
+   "Practice_Problems_2.Rmd",
+    "Practice_Problems_3.Rmd" 
    # "Practice_Problems_4.Rmd", 
    # "Practice_Problems_5.Rmd", 
    # "Practice_Problems_6.Rmd", 

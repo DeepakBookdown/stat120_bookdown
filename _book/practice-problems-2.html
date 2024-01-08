@@ -53,6 +53,7 @@
 <li class="book-part">Practice Problems</li>
 <li><a class="" href="practice-problems-1.html"><span class="header-section-number">5</span> Practice Problems 1</a></li>
 <li><a class="active" href="practice-problems-2.html"><span class="header-section-number">6</span> Practice Problems 2</a></li>
+<li><a class="" href="practice-problems-3.html"><span class="header-section-number">7</span> Practice Problems 3</a></li>
 </ul>
 
         <div class="book-extra">
@@ -90,7 +91,7 @@ spreadsheet <code>GettysburgPopulationCounts.csv</code>. Carefully load this dat
 <div class="sourceCode" id="cb57"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">samp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">268</span>, size<span class="op">=</span><span class="fl">10</span><span class="op">)</span></span>
 <span><span class="va">samp</span></span></code></pre></div>
-<pre><code> [1] 196 162 224  56 106 170 236  18  70 241</code></pre>
+<pre><code> [1] 170 201 264 221 130 241 137 214  93 123</code></pre>
 <p>This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?</p>
 <p><br></p>
 <p>(b). Get words and lengths</p>
@@ -98,16 +99,16 @@ spreadsheet <code>GettysburgPopulationCounts.csv</code>. Carefully load this dat
 <div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">pop</span><span class="op">[</span><span class="va">samp</span>,<span class="op">]</span></span></code></pre></div>
 <pre><code>    position size      word
-196      196    2        to
-162      162    2        is
-224      224    8 devotion,
-56        56    3       are
-106      106    6    larger
 170      170    9 dedicated
-236      236    4      died
-18        18    2        in
-70        70    1         a
-241      241    6   nation,</code></pre>
+201      201    6    before
+264      264    3       not
+221      221    4      full
+130      130    2       it,
+241      241    6   nation,
+137      137    3       add
+214      214    5     cause
+93        93    2        is
+123      123    3       and</code></pre>
 <p><br></p>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>Compute your sample mean</li>
@@ -116,7 +117,7 @@ spreadsheet <code>GettysburgPopulationCounts.csv</code>. Carefully load this dat
 <div class="sourceCode" id="cb61"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">mysize</span> <span class="op">&lt;-</span> <span class="va">pop</span><span class="op">[</span><span class="va">samp</span>, <span class="st">"size"</span><span class="op">]</span></span>
 <span><span class="va">mysize</span></span></code></pre></div>
-<pre><code> [1] 2 2 8 3 6 9 4 2 1 6</code></pre>
+<pre><code> [1] 9 6 3 4 2 6 3 5 2 3</code></pre>
 <p>Then find the mean of these values:</p>
 <div class="sourceCode" id="cb63"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">mysize</span><span class="op">)</span></span></code></pre></div>
@@ -129,7 +130,7 @@ spreadsheet <code>GettysburgPopulationCounts.csv</code>. Carefully load this dat
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="practice-problems-1.html"><span class="header-section-number">5</span> Practice Problems 1</a></div>
-<div class="empty"></div>
+<div class="next"><a href="practice-problems-3.html"><span class="header-section-number">7</span> Practice Problems 3</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
@@ -154,7 +155,7 @@ spreadsheet <code>GettysburgPopulationCounts.csv</code>. Carefully load this dat
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2024-01-04.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2024-01-07.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
