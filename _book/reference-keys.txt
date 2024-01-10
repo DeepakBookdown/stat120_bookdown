@@ -38,6 +38,17 @@ dataframe-indexing
 reading-data-from-a-url
 inspecting-the-data
 conclusion
+tutorial-2-dive-deeper-into-data-visualization-and-statistics-in-r
+introduction-1
+ggplot2-essentials
+introduction-to-ggplot
+simple-bar-graph-using-geom_bar
+adding-aesthetics-with-aes
+facet-plots-using-facet_wrap
+working-with-tables-and-proportions
+using-table-function
+using-prop.table-to-get-proportions
+combining-all-together
 practice-problems-1
 problem-1
 problem-2
@@ -51,3 +62,6 @@ case-study-3
 observed-data
 case-study-4
 observed-data-1
+practice-problems-4
+problem-1-flowers-v.-mississippi
+problem-2-graduate-programs-acceptance-and-sex

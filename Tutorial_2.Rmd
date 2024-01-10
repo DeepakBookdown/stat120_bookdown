@@ -67,7 +67,7 @@ ggplot(data2, aes(x=Category, y=Count, fill=Type)) +
 
 ### Using `table()` Function
 
-The `table()` function in R generates a table of frequencies of different combinations of factor variables.
+The `table()` function in R generates a table of frequencies of different combinations of categorical variables.
 
 ```{r}
 # Frequency table
@@ -77,7 +77,7 @@ rep_choice <- rep(c("No", "No", "Yes", "No", "Yes"), times = 20)
 
 # Generating the enlarged frequency table
 data <- data.frame(gender = rep_gender, choice = rep_choice)
-data
+head(data)
 ```
 
 
@@ -86,7 +86,6 @@ The `rep()` function in R replicates the specified elements in the input vector 
 ```{r}
 table_data <- table(rep_gender, rep_choice)
 table_data
-
 ```
 
 
@@ -101,7 +100,7 @@ prop_table_data
 
 ## Combining All Together
 
-Let's visualize this data using ggplot, geom_bar, and facet_wrap.
+Let's visualize this data using ggplot, geom_bar, facet_wrap and appropriate labels.
 
 
 ```{r}
