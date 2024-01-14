@@ -361,8 +361,7 @@ To color-code points by a categorical variable like `Gender`, you can use the `g
 
 ```r
 ggplot(bac, aes(x = Beers, y = BAC, color = Gender)) + 
-  geom_point() + 
-  geom_smooth(method = "lm", se = FALSE)
+  geom_point() 
 ```
 
 <img src="Practice_Problems_6_files/figure-html/unnamed-chunk-14-1.png" width="100%" />
@@ -377,6 +376,32 @@ ggplot(bac, aes(x = Beers, y = BAC, color = Gender)) +
 ### (n) Regression lines by groups
 
 To investigate the relationship of `Beers` and `BAC` for different genders, we can fit separate linear models.
+
+
+```r
+ggplot(bac, aes(x = Beers, y = BAC, color = Gender)) + geom_point() + geom_smooth(method = "lm", se=FALSE)
+```
+
+<img src="Practice_Problems_6_files/figure-html/unnamed-chunk-15-1.png" width="100%" />
+
+We can also investigate the mean and the standard deviations of the `Blood Alcohol Content (BAC)` for `Males` and `Females` using the following R functions:
+
+
+```r
+# summary statistics of BAC by gender using dplyr group_by and summarize
+bac %>% group_by(Gender) %>% 
+  summarize(mean = mean(BAC),
+            sd = sd(BAC))
+```
+
+```
+# A tibble: 2 × 3
+  Gender   mean     sd
+  <chr>   <dbl>  <dbl>
+1 female 0.0825 0.0521
+2 male   0.065  0.0359
+```
+
 
 #### For Females:
 
@@ -522,7 +547,7 @@ ggplot(data = inkjet, aes(x = Price, y = CostColor)) +
      theme_minimal()
 ```
 
-<img src="Practice_Problems_6_files/figure-html/unnamed-chunk-18-1.png" width="100%" />
+<img src="Practice_Problems_6_files/figure-html/unnamed-chunk-20-1.png" width="100%" />
 
 ### (a) Is there a relationship?
     + direction?

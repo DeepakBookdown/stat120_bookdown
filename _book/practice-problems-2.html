@@ -58,6 +58,7 @@
 <li><a class="" href="practice-problems-3.html"><span class="header-section-number">9</span> Practice Problems 3</a></li>
 <li><a class="" href="practice-problems-4.html"><span class="header-section-number">10</span> Practice Problems 4</a></li>
 <li><a class="" href="practice-problems-5.html"><span class="header-section-number">11</span> Practice Problems 5</a></li>
+<li><a class="" href="practice-problems-6.html"><span class="header-section-number">12</span> Practice Problems 6</a></li>
 </ul>
 
         <div class="book-extra">
@@ -95,7 +96,7 @@ spreadsheet <code>GettysburgPopulationCounts.csv</code>. Carefully load this dat
 <div class="sourceCode" id="cb79"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">samp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">268</span>, size<span class="op">=</span><span class="fl">10</span><span class="op">)</span></span>
 <span><span class="va">samp</span></span></code></pre></div>
-<pre><code> [1] 234   9  58 204  64  63 121  95  37 177</code></pre>
+<pre><code> [1] 268 244   8 101 233 106  63 249  79  97</code></pre>
 <p>This tells you the position (row number) of your sampled words. What are your sampled positions? Why are your sampled positions different from other folks in class?</p>
 <p><br></p>
 <p>(b). Get words and lengths</p>
@@ -103,16 +104,16 @@ spreadsheet <code>GettysburgPopulationCounts.csv</code>. Carefully load this dat
 <div class="sourceCode" id="cb81"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">pop</span><span class="op">[</span><span class="va">samp</span>,<span class="op">]</span></span></code></pre></div>
 <pre><code>    position size    word
-234      234    3     not
-9          9    7 brought
-58        58    2      on
-204      204    4    from
-64        64    3    war.
+268      268    5  earth.
+244      244    5   shall
+8          8    7 fathers
+101      101    2      do
+233      233    5   shall
+106      106    6  larger
 63        63    4    that
-121      121    3    men,
-95        95    7 fitting
-37        37    5   great
-177      177    4    they</code></pre>
+249      249    2      of
+79        79    5   place
+97        97    6  proper</code></pre>
 <p><br></p>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>Compute your sample mean</li>
@@ -121,11 +122,11 @@ spreadsheet <code>GettysburgPopulationCounts.csv</code>. Carefully load this dat
 <div class="sourceCode" id="cb83"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">mysize</span> <span class="op">&lt;-</span> <span class="va">pop</span><span class="op">[</span><span class="va">samp</span>, <span class="st">"size"</span><span class="op">]</span></span>
 <span><span class="va">mysize</span></span></code></pre></div>
-<pre><code> [1] 3 7 2 4 3 4 3 7 5 4</code></pre>
+<pre><code> [1] 5 5 7 2 5 6 4 2 5 6</code></pre>
 <p>Then find the mean of these values:</p>
 <div class="sourceCode" id="cb85"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">mysize</span><span class="op">)</span></span></code></pre></div>
-<pre><code>[1] 4.2</code></pre>
+<pre><code>[1] 4.7</code></pre>
 <p>How does this sample mean (from a truly random sample) compare to your sample mean from the non-random sample?</p>
 <details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The true mean is 4.29. Your two means will likely vary. Since the many non-random samples generally overestimated the population mean length, it is possible (but not guaranteed) that <em>your</em> one non-random sample gave a mean length that is greater than the random sample’s mean length.</p>
 </details>
@@ -159,7 +160,7 @@ spreadsheet <code>GettysburgPopulationCounts.csv</code>. Carefully load this dat
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2024-01-11.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2024-01-14.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
