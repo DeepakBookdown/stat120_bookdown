@@ -43,18 +43,46 @@ Let's visualize the distribution of the sample mean. The following is a vector X
 
 
 ```r
-X <- c(20, 24, 19, 23, 22, 16)
-mean(X)
+X <- c(20, 24, 19, 23, 22, 16)  # our data
 ```
 
+We start by creating 500 bootstrap samples from our data. Bootstrapping is a resampling technique where we sample with replacement from the original data, usually the same number of observations as the original dataset, to create 'new' samples. This process mimics the sampling variability inherent in collecting data. For each bootstrap sample, we calculate the mean.
+
+
+```r
+bootstrapped_means <- sapply(1:500, function(i) mean(sample(X, replace = TRUE)))
+
+# Or using replicate which is more concise for this case:
+bootstrapped_means <- replicate(500, mean(sample(X, replace = TRUE)))
+
+# To get a data frame similar to the tibble you created with purrr:
+bootstrapped_means_df <- data.frame(
+  iteration = 1:500,
+  mean = bootstrapped_means
+)
 ```
-[1] 20.66667
+
+
+After calculating the bootstrap sample means, we visualize their distribution using a dot plot. This plot will give us a sense of the sampling distribution of the mean - showing us where the mean is most likely to fall and how much it can vary.
+
+
+
+```r
+library(ggplot2)
+ggplot(bootstrapped_means_df, aes(x = mean)) +
+  geom_dotplot(dotsize = 0.7, 
+               stackratio = 0.9, 
+               binwidth = .13, 
+               color = "gold", 
+               fill = "blue") +
+  ggtitle("") + xlab("") + ylab("") +
+  scale_x_continuous(limits = c(17, 24), 
+                     expand = c(0, 0), 
+                     breaks = seq(17, 24, 1)) +
+  labs(title = "Bootstrap distribution of sample mean")
 ```
 
-
-The bootstrap distribution from 500 bootstrap means from the above sample is:
-
-<img src="Practice_Problems_7_files/figure-html/unnamed-chunk-3-1.png" width="100%" />
+<img src="Practice_Problems_7_files/figure-html/unnamed-chunk-4-1.png" width="100%" />
 
 
 *Question:* What does each dot represent?
@@ -83,7 +111,7 @@ The bootstrap distribution from 500 bootstrap means from the above sample is:
 <summary><red>Click for answer</red></summary>
 *Answer:* About 1.25, it looks like most of the bootstrapped sample means are between 18 to 23 so 2 standard deviations is about 2.5. This makes the SD about 1.25.
 </details><br>
-*Question:* The standard deviation of sampling distribution has a separate name. It is called the **Standard Error**. The standard deviation of this distribution is 1.087361.
+*Question:* The standard deviation of sampling distribution has a separate name. It is called the **Standard Error**. The standard deviation of this distribution is 1.0617247.
 <details>
 <summary><red>Click for answer</red></summary>
 *Answer:* It's close.
@@ -105,17 +133,17 @@ n.size <- 100  # sample size
 
 Let's plot this sample proportion in R.
 
-<img src="Practice_Problems_7_files/figure-html/unnamed-chunk-5-1.png" width="100%" />
+<img src="Practice_Problems_7_files/figure-html/unnamed-chunk-6-1.png" width="100%" />
 
 Similarly, we can generate 5 random samples of size $n= 100$ and plot the sample proportions.
 
 
-<img src="Practice_Problems_7_files/figure-html/unnamed-chunk-6-1.png" width="100%" />
+<img src="Practice_Problems_7_files/figure-html/unnamed-chunk-7-1.png" width="100%" />
 
 
 Continuing on, we can generate 500 random samples of size $n= 100$ and plot the sample proportions.
 
-<img src="Practice_Problems_7_files/figure-html/unnamed-chunk-7-1.png" width="100%" />
+<img src="Practice_Problems_7_files/figure-html/unnamed-chunk-8-1.png" width="100%" />
 
 *Question:* What does each dot represent?
 <details>
@@ -165,7 +193,7 @@ The standard error is close.
 
 ### (d) Now, let's repeat part(c) with sample size 20 instead of 100 by generating and plotting 500 sample proportions.
 
-<img src="Practice_Problems_7_files/figure-html/unnamed-chunk-9-1.png" width="100%" />
+<img src="Practice_Problems_7_files/figure-html/unnamed-chunk-10-1.png" width="100%" />
 
 
 *Question:*  How has the sampling distribution changed? (Shape? Center? Variability?)
@@ -194,7 +222,7 @@ sd(sample.prop500_size10)
 
 ### (d) Now suppose the population proportion is $p=0.90$ instead of $p=0.66$ in part (e). Keep `n=20`. 
 
-<img src="Practice_Problems_7_files/figure-html/unnamed-chunk-11-1.png" width="100%" />
+<img src="Practice_Problems_7_files/figure-html/unnamed-chunk-12-1.png" width="100%" />
 
 *Question:* How has the sampling distribution changed? (Shape? Center? Variability?)
 <details>
