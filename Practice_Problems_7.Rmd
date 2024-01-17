@@ -37,21 +37,32 @@ p.hat
 Let's visualize the distribution of the sample mean. The following is a vector X containing the $6$ data points:
 
 ```{r}
-X <- c(20, 24, 19, 23, 22, 16)
-mean(X)
+X <- c(20, 24, 19, 23, 22, 16)  # our data
+```
+
+We start by creating 500 bootstrap samples from our data. Bootstrapping is a resampling technique where we sample with replacement from the original data, usually the same number of observations as the original dataset, to create 'new' samples. This process mimics the sampling variability inherent in collecting data. For each bootstrap sample, we calculate the mean.
+
+```{r}
+bootstrapped_means <- sapply(1:500, function(i) mean(sample(X, replace = TRUE)))
+
+# Or using replicate which is more concise for this case:
+bootstrapped_means <- replicate(500, mean(sample(X, replace = TRUE)))
+
+# To get a data frame similar to the tibble you created with purrr:
+bootstrapped_means_df <- data.frame(
+  iteration = 1:500,
+  mean = bootstrapped_means
+)
+
 ```
 
 
-The bootstrap distribution from 500 bootstrap means from the above sample is:
+After calculating the bootstrap sample means, we visualize their distribution using a dot plot. This plot will give us a sense of the sampling distribution of the mean - showing us where the mean is most likely to fall and how much it can vary.
 
-```{r, echo=FALSE}
-bootstrapped_means <- tibble(
-  iteration = 1:500,
-  mean = map_dbl(iteration, 
-                 ~mean(sample(X, replace = TRUE)))
-)
 
-ggplot(bootstrapped_means, aes(x = mean)) +
+```{r}
+library(ggplot2)
+ggplot(bootstrapped_means_df, aes(x = mean)) +
   geom_dotplot(dotsize = 0.7, 
                stackratio = 0.9, 
                binwidth = .13, 
