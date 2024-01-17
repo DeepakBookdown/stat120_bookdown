@@ -4,21 +4,20 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 8 Tutorial 4: LaTeX Equations in RMarkdown | Stat 120</title>
+<title>Chapter 7 Tutorial 4: LaTeX Equations in RMarkdown | Stat 120</title>
 <meta name="author" content="Deepak Bastola">
-<meta name="description" content="8.1 Welcome to LaTeX Mastery! Hey there, aspiring LaTeX pros! Ready to make your equations look as sleek as a Tesla? Let’s get started!  8.2 Inline Equations For quick math snippets, use single $...">
-<meta name="generator" content="bookdown 0.35 with bs4_book()">
-<meta property="og:title" content="Chapter 8 Tutorial 4: LaTeX Equations in RMarkdown | Stat 120">
+<meta name="description" content="7.1 Welcome to LaTeX Mastery! Hey there, aspiring LaTeX pros! Ready to make your equations look as sleek as a Tesla? Let’s get started!  7.2 Inline Equations For quick math snippets, use single $...">
+<meta name="generator" content="bookdown 0.37 with bs4_book()">
+<meta property="og:title" content="Chapter 7 Tutorial 4: LaTeX Equations in RMarkdown | Stat 120">
 <meta property="og:type" content="book">
-<meta property="og:description" content="8.1 Welcome to LaTeX Mastery! Hey there, aspiring LaTeX pros! Ready to make your equations look as sleek as a Tesla? Let’s get started!  8.2 Inline Equations For quick math snippets, use single $...">
+<meta property="og:description" content="7.1 Welcome to LaTeX Mastery! Hey there, aspiring LaTeX pros! Ready to make your equations look as sleek as a Tesla? Let’s get started!  7.2 Inline Equations For quick math snippets, use single $...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 8 Tutorial 4: LaTeX Equations in RMarkdown | Stat 120">
-<meta name="twitter:description" content="8.1 Welcome to LaTeX Mastery! Hey there, aspiring LaTeX pros! Ready to make your equations look as sleek as a Tesla? Let’s get started!  8.2 Inline Equations For quick math snippets, use single $...">
+<meta name="twitter:title" content="Chapter 7 Tutorial 4: LaTeX Equations in RMarkdown | Stat 120">
+<meta name="twitter:description" content="7.1 Welcome to LaTeX Mastery! Hey there, aspiring LaTeX pros! Ready to make your equations look as sleek as a Tesla? Let’s get started!  7.2 Inline Equations For quick math snippets, use single $...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.1/transition.js"></script><script src="libs/bs3compat-0.5.1/tabs.js"></script><script src="libs/bs3compat-0.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.6.1/transition.js"></script><script src="libs/bs3compat-0.6.1/tabs.js"></script><script src="libs/bs3compat-0.6.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   </style>
@@ -49,41 +48,19 @@
 <li><a class="" href="what-is-r.html"><span class="header-section-number">1</span> What is R?</a></li>
 <li><a class="" href="r-markdown-basics.html"><span class="header-section-number">2</span> R Markdown Basics</a></li>
 <li><a class="" href="homework-guidelines.html"><span class="header-section-number">3</span> Homework Guidelines</a></li>
-<li><a class="" href="report-guidelines.html"><span class="header-section-number">4</span> Report Guidelines</a></li>
 <li class="book-part">R Tutorials</li>
-<li><a class="" href="tutorial-1-embark-on-your-data-journey.html"><span class="header-section-number">5</span> Tutorial 1: Embark on Your Data Journey</a></li>
-<li><a class="" href="tutorial-2-dive-deeper-into-data-visualization-and-statistics-in-r.html"><span class="header-section-number">6</span> Tutorial 2: Dive Deeper into Data Visualization and Statistics in R</a></li>
-<li><a class="" href="tutorial-3-dive-deeper-into-data-manipulation-with-dplyr-in-r.html"><span class="header-section-number">7</span> Tutorial 3: Dive Deeper into Data Manipulation with dplyr in R</a></li>
-<li><a class="active" href="tutorial-4-latex-equations-in-rmarkdown.html"><span class="header-section-number">8</span> Tutorial 4: LaTeX Equations in RMarkdown</a></li>
-<li class="book-part">Short Reports</li>
-<li><a class="" href="short-report-1.html"><span class="header-section-number">9</span> Short Report 1</a></li>
-<li><a class="" href="short-report-2.html"><span class="header-section-number">10</span> Short Report 2</a></li>
+<li><a class="" href="tutorial-1-embark-on-your-data-journey.html"><span class="header-section-number">4</span> Tutorial 1: Embark on Your Data Journey</a></li>
+<li><a class="" href="tutorial-2-dive-deeper-into-data-visualization-and-statistics-in-r.html"><span class="header-section-number">5</span> Tutorial 2: Dive Deeper into Data Visualization and Statistics in R</a></li>
+<li><a class="" href="tutorial-3-dive-deeper-into-data-manipulation-with-dplyr-in-r.html"><span class="header-section-number">6</span> Tutorial 3: Dive Deeper into Data Manipulation with dplyr in R</a></li>
+<li><a class="active" href="tutorial-4-latex-equations-in-rmarkdown.html"><span class="header-section-number">7</span> Tutorial 4: LaTeX Equations in RMarkdown</a></li>
 <li class="book-part">Practice Problems</li>
-<li><a class="" href="practice-problems-1.html"><span class="header-section-number">11</span> Practice Problems 1</a></li>
-<li><a class="" href="practice-problems-2.html"><span class="header-section-number">12</span> Practice Problems 2</a></li>
-<li><a class="" href="practice-problems-3.html"><span class="header-section-number">13</span> Practice Problems 3</a></li>
-<li><a class="" href="practice-problems-4.html"><span class="header-section-number">14</span> Practice Problems 4</a></li>
-<li><a class="" href="practice-problems-5.html"><span class="header-section-number">15</span> Practice Problems 5</a></li>
-<li><a class="" href="practice-problems-6.html"><span class="header-section-number">16</span> Practice Problems 6</a></li>
-<li><a class="" href="practice-problems-7.html"><span class="header-section-number">17</span> Practice Problems 7</a></li>
-<li><a class="" href="practice-problems-8.html"><span class="header-section-number">18</span> Practice Problems 8</a></li>
-<li><a class="" href="practice-problems-9.html"><span class="header-section-number">19</span> Practice Problems 9</a></li>
-<li><a class="" href="practice-problems-10.html"><span class="header-section-number">20</span> Practice Problems 10</a></li>
-<li><a class="" href="practice-problems-11.html"><span class="header-section-number">21</span> Practice Problems 11</a></li>
-<li><a class="" href="practice-problems-12.html"><span class="header-section-number">22</span> Practice Problems 12</a></li>
-<li><a class="" href="practice-problems-13.html"><span class="header-section-number">23</span> Practice Problems 13</a></li>
-<li><a class="" href="practice-problems-14.html"><span class="header-section-number">24</span> Practice Problems 14</a></li>
-<li><a class="" href="practice-problems-15.html"><span class="header-section-number">25</span> Practice Problems 15</a></li>
-<li><a class="" href="practice-problems-16.html"><span class="header-section-number">26</span> Practice Problems 16</a></li>
-<li><a class="" href="practice-problems-17.html"><span class="header-section-number">27</span> Practice Problems 17</a></li>
-<li><a class="" href="practice-problems-18.html"><span class="header-section-number">28</span> Practice Problems 18</a></li>
-<li><a class="" href="practice-problems-19.html"><span class="header-section-number">29</span> Practice Problems 19</a></li>
-<li><a class="" href="practice-problems-20.html"><span class="header-section-number">30</span> Practice Problems 20</a></li>
-<li><a class="" href="practice-problems-21.html"><span class="header-section-number">31</span> Practice Problems 21</a></li>
-<li><a class="" href="practice-problems-22.html"><span class="header-section-number">32</span> Practice Problems 22</a></li>
-<li><a class="" href="practice-problems-23.html"><span class="header-section-number">33</span> Practice Problems 23</a></li>
-<li><a class="" href="practice-problems-24.html"><span class="header-section-number">34</span> Practice Problems 24</a></li>
-<li><a class="" href="practice-problems-25.html"><span class="header-section-number">35</span> Practice Problems 25</a></li>
+<li><a class="" href="practice-problems-1.html"><span class="header-section-number">8</span> Practice Problems 1</a></li>
+<li><a class="" href="practice-problems-2.html"><span class="header-section-number">9</span> Practice Problems 2</a></li>
+<li><a class="" href="practice-problems-3.html"><span class="header-section-number">10</span> Practice Problems 3</a></li>
+<li><a class="" href="practice-problems-4.html"><span class="header-section-number">11</span> Practice Problems 4</a></li>
+<li><a class="" href="practice-problems-5.html"><span class="header-section-number">12</span> Practice Problems 5</a></li>
+<li><a class="" href="practice-problems-6.html"><span class="header-section-number">13</span> Practice Problems 6</a></li>
+<li><a class="" href="practice-problems-7.html"><span class="header-section-number">14</span> Practice Problems 7</a></li>
 </ul>
 
         <div class="book-extra">
@@ -91,55 +68,55 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="tutorial-4-latex-equations-in-rmarkdown" class="section level1" number="8">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="tutorial-4-latex-equations-in-rmarkdown" class="section level1" number="7">
 <h1>
-<span class="header-section-number">8</span> Tutorial 4: LaTeX Equations in RMarkdown<a class="anchor" aria-label="anchor" href="#tutorial-4-latex-equations-in-rmarkdown"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7</span> Tutorial 4: LaTeX Equations in RMarkdown<a class="anchor" aria-label="anchor" href="#tutorial-4-latex-equations-in-rmarkdown"><i class="fas fa-link"></i></a>
 </h1>
-<div id="welcome-to-latex-mastery" class="section level2" number="8.1">
+<div id="welcome-to-latex-mastery" class="section level2" number="7.1">
 <h2>
-<span class="header-section-number">8.1</span> Welcome to LaTeX Mastery!<a class="anchor" aria-label="anchor" href="#welcome-to-latex-mastery"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.1</span> Welcome to LaTeX Mastery!<a class="anchor" aria-label="anchor" href="#welcome-to-latex-mastery"><i class="fas fa-link"></i></a>
 </h2>
 <p>Hey there, aspiring LaTeX pros! Ready to make your equations look as sleek as a Tesla? Let’s get started!</p>
 </div>
-<div id="inline-equations" class="section level2" number="8.2">
+<div id="inline-equations" class="section level2" number="7.2">
 <h2>
-<span class="header-section-number">8.2</span> Inline Equations<a class="anchor" aria-label="anchor" href="#inline-equations"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.2</span> Inline Equations<a class="anchor" aria-label="anchor" href="#inline-equations"><i class="fas fa-link"></i></a>
 </h2>
 <p>For quick math snippets, use single <code>$</code> like <code>$y = a + b * x$</code>.</p>
 <p>Example: The equation <span class="math inline">\(y = a + b * x\)</span> represents a linear model.</p>
 </div>
-<div id="display-style-equations" class="section level2" number="8.3">
+<div id="display-style-equations" class="section level2" number="7.3">
 <h2>
-<span class="header-section-number">8.3</span> Display-Style Equations<a class="anchor" aria-label="anchor" href="#display-style-equations"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.3</span> Display-Style Equations<a class="anchor" aria-label="anchor" href="#display-style-equations"><i class="fas fa-link"></i></a>
 </h2>
 <p>To give your equation the spotlight, encase it with double <code>$$</code>:</p>
 <div class="sourceCode" id="cb68"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb68-1"><a href="tutorial-4-latex-equations-in-rmarkdown.html#cb68-1" tabindex="-1"></a><span class="ss">$$</span></span>
 <span id="cb68-2"><a href="tutorial-4-latex-equations-in-rmarkdown.html#cb68-2" tabindex="-1"></a><span class="ss">E = mc^2</span></span>
 <span id="cb68-3"><a href="tutorial-4-latex-equations-in-rmarkdown.html#cb68-3" tabindex="-1"></a><span class="ss">$$</span></span></code></pre></div>
 </div>
-<div id="mathematical-symbols" class="section level2" number="8.4">
+<div id="mathematical-symbols" class="section level2" number="7.4">
 <h2>
-<span class="header-section-number">8.4</span> Mathematical Symbols<a class="anchor" aria-label="anchor" href="#mathematical-symbols"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.4</span> Mathematical Symbols<a class="anchor" aria-label="anchor" href="#mathematical-symbols"><i class="fas fa-link"></i></a>
 </h2>
-<div id="summation-and-indices" class="section level3" number="8.4.1">
+<div id="summation-and-indices" class="section level3" number="7.4.1">
 <h3>
-<span class="header-section-number">8.4.1</span> Summation and Indices<a class="anchor" aria-label="anchor" href="#summation-and-indices"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.4.1</span> Summation and Indices<a class="anchor" aria-label="anchor" href="#summation-and-indices"><i class="fas fa-link"></i></a>
 </h3>
 <p>In stats, you often sum things up:
 - <code>$$ \sum_{i=1}^{n} x_i $$</code></p>
 </div>
-<div id="fractions" class="section level3" number="8.4.2">
+<div id="fractions" class="section level3" number="7.4.2">
 <h3>
-<span class="header-section-number">8.4.2</span> Fractions<a class="anchor" aria-label="anchor" href="#fractions"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.4.2</span> Fractions<a class="anchor" aria-label="anchor" href="#fractions"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>Simple fraction: <code>$$ \frac{a}{b} $$</code>
 </li>
 </ul>
 </div>
-<div id="greek-letters-and-subscripts" class="section level3" number="8.4.3">
+<div id="greek-letters-and-subscripts" class="section level3" number="7.4.3">
 <h3>
-<span class="header-section-number">8.4.3</span> Greek Letters and Subscripts<a class="anchor" aria-label="anchor" href="#greek-letters-and-subscripts"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.4.3</span> Greek Letters and Subscripts<a class="anchor" aria-label="anchor" href="#greek-letters-and-subscripts"><i class="fas fa-link"></i></a>
 </h3>
 <p>Common in hypothesis testing and statistical theory:</p>
 <ul>
@@ -152,9 +129,9 @@
 </ul>
 </div>
 </div>
-<div id="matrices-and-vectors" class="section level2" number="8.5">
+<div id="matrices-and-vectors" class="section level2" number="7.5">
 <h2>
-<span class="header-section-number">8.5</span> Matrices and Vectors<a class="anchor" aria-label="anchor" href="#matrices-and-vectors"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.5</span> Matrices and Vectors<a class="anchor" aria-label="anchor" href="#matrices-and-vectors"><i class="fas fa-link"></i></a>
 </h2>
 <p>Matrices are a breeze in LaTeX:</p>
 <div class="sourceCode" id="cb69"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb69-1"><a href="tutorial-4-latex-equations-in-rmarkdown.html#cb69-1" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">pmatrix</span>}</span>
@@ -162,9 +139,9 @@
 <span id="cb69-3"><a href="tutorial-4-latex-equations-in-rmarkdown.html#cb69-3" tabindex="-1"></a><span class="ss">c &amp; d</span></span>
 <span id="cb69-4"><a href="tutorial-4-latex-equations-in-rmarkdown.html#cb69-4" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">pmatrix</span>}</span></code></pre></div>
 </div>
-<div id="hypothesis-testing" class="section level2" number="8.6">
+<div id="hypothesis-testing" class="section level2" number="7.6">
 <h2>
-<span class="header-section-number">8.6</span> Hypothesis Testing<a class="anchor" aria-label="anchor" href="#hypothesis-testing"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.6</span> Hypothesis Testing<a class="anchor" aria-label="anchor" href="#hypothesis-testing"><i class="fas fa-link"></i></a>
 </h2>
 <p>In hypothesis testing, you might define null and alternative hypotheses:</p>
 <div class="sourceCode" id="cb70"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb70-1"><a href="tutorial-4-latex-equations-in-rmarkdown.html#cb70-1" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">align*</span>}</span>
@@ -174,9 +151,9 @@
 <span id="cb70-5"><a href="tutorial-4-latex-equations-in-rmarkdown.html#cb70-5" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">array</span>}</span>
 <span id="cb70-6"><a href="tutorial-4-latex-equations-in-rmarkdown.html#cb70-6" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">align*</span>}</span></code></pre></div>
 </div>
-<div id="more-on-statistical-symbols" class="section level2" number="8.7">
+<div id="more-on-statistical-symbols" class="section level2" number="7.7">
 <h2>
-<span class="header-section-number">8.7</span> More on Statistical Symbols<a class="anchor" aria-label="anchor" href="#more-on-statistical-symbols"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.7</span> More on Statistical Symbols<a class="anchor" aria-label="anchor" href="#more-on-statistical-symbols"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>Standard error: <code>$$ SE $$</code>
@@ -197,25 +174,25 @@
 
 
   <div class="chapter-nav">
-<div class="prev"><a href="tutorial-3-dive-deeper-into-data-manipulation-with-dplyr-in-r.html"><span class="header-section-number">7</span> Tutorial 3: Dive Deeper into Data Manipulation with dplyr in R</a></div>
-<div class="next"><a href="short-report-1.html"><span class="header-section-number">9</span> Short Report 1</a></div>
+<div class="prev"><a href="tutorial-3-dive-deeper-into-data-manipulation-with-dplyr-in-r.html"><span class="header-section-number">6</span> Tutorial 3: Dive Deeper into Data Manipulation with dplyr in R</a></div>
+<div class="next"><a href="practice-problems-1.html"><span class="header-section-number">8</span> Practice Problems 1</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#tutorial-4-latex-equations-in-rmarkdown"><span class="header-section-number">8</span> Tutorial 4: LaTeX Equations in RMarkdown</a></li>
-<li><a class="nav-link" href="#welcome-to-latex-mastery"><span class="header-section-number">8.1</span> Welcome to LaTeX Mastery!</a></li>
-<li><a class="nav-link" href="#inline-equations"><span class="header-section-number">8.2</span> Inline Equations</a></li>
-<li><a class="nav-link" href="#display-style-equations"><span class="header-section-number">8.3</span> Display-Style Equations</a></li>
+<li><a class="nav-link" href="#tutorial-4-latex-equations-in-rmarkdown"><span class="header-section-number">7</span> Tutorial 4: LaTeX Equations in RMarkdown</a></li>
+<li><a class="nav-link" href="#welcome-to-latex-mastery"><span class="header-section-number">7.1</span> Welcome to LaTeX Mastery!</a></li>
+<li><a class="nav-link" href="#inline-equations"><span class="header-section-number">7.2</span> Inline Equations</a></li>
+<li><a class="nav-link" href="#display-style-equations"><span class="header-section-number">7.3</span> Display-Style Equations</a></li>
 <li>
-<a class="nav-link" href="#mathematical-symbols"><span class="header-section-number">8.4</span> Mathematical Symbols</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#summation-and-indices"><span class="header-section-number">8.4.1</span> Summation and Indices</a></li>
-<li><a class="nav-link" href="#fractions"><span class="header-section-number">8.4.2</span> Fractions</a></li>
-<li><a class="nav-link" href="#greek-letters-and-subscripts"><span class="header-section-number">8.4.3</span> Greek Letters and Subscripts</a></li>
+<a class="nav-link" href="#mathematical-symbols"><span class="header-section-number">7.4</span> Mathematical Symbols</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#summation-and-indices"><span class="header-section-number">7.4.1</span> Summation and Indices</a></li>
+<li><a class="nav-link" href="#fractions"><span class="header-section-number">7.4.2</span> Fractions</a></li>
+<li><a class="nav-link" href="#greek-letters-and-subscripts"><span class="header-section-number">7.4.3</span> Greek Letters and Subscripts</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#matrices-and-vectors"><span class="header-section-number">8.5</span> Matrices and Vectors</a></li>
-<li><a class="nav-link" href="#hypothesis-testing"><span class="header-section-number">8.6</span> Hypothesis Testing</a></li>
-<li><a class="nav-link" href="#more-on-statistical-symbols"><span class="header-section-number">8.7</span> More on Statistical Symbols</a></li>
+<li><a class="nav-link" href="#matrices-and-vectors"><span class="header-section-number">7.5</span> Matrices and Vectors</a></li>
+<li><a class="nav-link" href="#hypothesis-testing"><span class="header-section-number">7.6</span> Hypothesis Testing</a></li>
+<li><a class="nav-link" href="#more-on-statistical-symbols"><span class="header-section-number">7.7</span> More on Statistical Symbols</a></li>
 </ul>
 
       <div class="book-extra">
@@ -233,7 +210,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2023-11-08.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2024-01-17.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -58,6 +58,17 @@ summarization-using-summarise
 data-filtering-using-filter
 identifying-outliers-with-filter
 combining-all-together-1
+tutorial-4-latex-equations-in-rmarkdown
+welcome-to-latex-mastery
+inline-equations
+display-style-equations
+mathematical-symbols
+summation-and-indices
+fractions
+greek-letters-and-subscripts
+matrices-and-vectors
+hypothesis-testing
+more-on-statistical-symbols
 practice-problems-1
 problem-1
 problem-2

@@ -17,7 +17,7 @@ rmd_files: [
    "Tutorial_1.Rmd",
    "Tutorial_2.Rmd",
     "Tutorial_3.Rmd",
-   # "Tutorial_4.Rmd",
+    "Tutorial_4.Rmd",
    # "Short_Report_1.Rmd",
    # "Short_Report_2.Rmd",
    "Practice_Problems_1.Rmd",
