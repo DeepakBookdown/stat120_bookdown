@@ -30,7 +30,9 @@ mean(prices)
 
 <details>
 <summary><red>Click for answer</red></summary>
+
 *Answer:* We use 10 cards and write the 10 sample values on the cards. We then mix them up and draw one and record the value on it and put it back. Mix them up again, draw another, record the value, and put it back. Do this 10 times to get a “with replacement” sample of size 10. Then compute the sample mean of this bootstrap sample.
+
 </details><br>
 
 
@@ -43,7 +45,7 @@ resample
 ```
 
 ```
- [1]  93 147 185 125 132  23  85  23 185 132
+ [1]  93  93 132 185  23 125 132  87  87  52
 ```
 
 
@@ -51,8 +53,11 @@ Will the mean of this resample be same as the original sample? What about the st
 
 <details>
 <summary><red>Click for answer</red></summary>
+
 *Answer:* The mean of the resample, created using bootstrapping, could be the same, more than, or less than the mean of the original sample, depending on which values are randomly chosen during the resampling process. Bootstrapping involves randomly selecting observations from the original sample with replacement, so there's a chance the resample might have more of the higher values, more of the lower values, or a mix similar to the original sample.
+
 As for the standard deviation, it also depends on the composition of the resampled data. If the resample ends up with values that are close to each other (less variability), its standard deviation might be lower than the original sample. Conversely, if the resample has a wider spread of values, the standard deviation could be higher. However, over many bootstrap samples, the average standard deviation will tend to be close to the standard deviation of the original sample.
+
 </details><br>
 
 
@@ -60,7 +65,9 @@ As for the standard deviation, it also depends on the composition of the resampl
 
 <details>
 <summary><red>Click for answer</red></summary>
+
 *Answer:* It will be centered approximately at the sample mean of 100.1 and we expect it to be roughly bellshaped (it may be a bit skewed since the sample size of 10 is smallish).
+
 </details><br>
 
 
@@ -78,12 +85,12 @@ boot(prices)
 	** Bootstrap interval for mean 
 
  Observed  prices : 100.1 
- Mean of bootstrap distribution: 100.1301 
- Standard error of bootstrap distribution: 14.23544 
+ Mean of bootstrap distribution: 99.89321 
+ Standard error of bootstrap distribution: 14.44483 
 
  Bootstrap percentile interval
- 2.5% 97.5% 
- 73.0 128.3 
+    2.5%    97.5% 
+ 71.9975 128.5000 
 
 		*--------------*
 ```
@@ -93,7 +100,9 @@ boot(prices)
 
 <details>
 <summary><red>Click for answer</red></summary>
+
 *Answer:* This standard error will typically be smaller than the standard deviation of the original sample because the standard error is estimating the variability of the sample mean, not individual observations. The sample mean tends to have less variability than individual data points, especially when averaged across multiple samples.
+
 </details><br>
 
 ----------------------------------------------------------------
@@ -106,7 +115,9 @@ Go to the website at [Lock5Statkey](http://www.lock5stat.com/StatKey/).  Under t
 
 <details>
 <summary><red>Click for answer</red></summary>
+
 *Answer:*  The sample mean is $\bar{x} = 18.16$  and the sample standard deviation is $s = 13.798$.
+
 </details><br>
 
 ### (b). Click “Generate 1 Sample” to create one bootstrap sample from this data. Explain how this sample was generated. Use the “Bootstrap Sample” pane to find the bootstrap statistic that was computed from this sample. What value is this bootstrap statistic? Repeat this a couple times.  
@@ -334,12 +345,12 @@ boot(Age.in.years ~ Good.Loan, data=credit)
 	** Bootstrap interval for difference of mean 
 
  Observed difference of mean : BadLoan - GoodLoan = -2.26095 
- Mean of bootstrap distribution: -2.25865 
- Standard error of bootstrap distribution: 0.77279 
+ Mean of bootstrap distribution: -2.25612 
+ Standard error of bootstrap distribution: 0.77472 
 
  Bootstrap percentile interval
-      2.5%      97.5% 
--3.7414405 -0.7280833 
+     2.5%     97.5% 
+-3.748107 -0.717131 
 
 		*--------------*
 ```
@@ -398,7 +409,8 @@ Interpret your percentile interval in context using a directional statement. Doe
 *Answer:* We are 95% confident that the mean age of people who default on a loan for this population is about 0.7 to 3.8 years less than the mean age of people who do not default. This interval does support the notation that there is a difference in mean ages of these two groups in the population. It suggests that the average age of people who default is less than the average age of those who don't.
 </details>
 
-## Example 6 : Credit data continued 
+## Problem 6 : Credit data continued 
+
 The variable `Telephone` tells us if the individual has a phone number on their loan file. Let's look at the proportion of individuals who have a phone number for each type of loan (default or not).
 
 #### (a) Data clean up
@@ -571,11 +583,11 @@ boot(Telephone_binary ~ Good.Loan, data=credit)
 
  Observed difference of mean : BadLoan - GoodLoan = -0.03905 
  Mean of bootstrap distribution: -0.03929 
- Standard error of bootstrap distribution: 0.03399 
+ Standard error of bootstrap distribution: 0.03383 
 
  Bootstrap percentile interval
        2.5%       97.5% 
--0.10619048  0.02571429 
+-0.10525000  0.02714286 
 
 		*--------------*
 ```
