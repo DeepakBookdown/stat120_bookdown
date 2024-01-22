@@ -167,11 +167,14 @@ problem-5-credit-loan-data
 a-visualize-age-vs.-default
 b-bootstrap-ci-for-a-difference-in-means
 c-interpret
-example-6-credit-data-continued
+problem-6-credit-data-continued
 a-data-clean-up
 b-phone-rate-by-default-type
 c-using-the-boot-command-with-a-categorical-response
 d-95-confidence-interval-for-the-difference-in-phone
 e-interpret
-url-your-book-url-like-httpsbookdown.orgyihuibookdown
-problem-6-credit-data-continued
+practice-problems-9
+problem-1-a-muslim-president
+problem-2-biomass-in-tropical-forests
+problem-3-change-in-gun-ownership
+problem-4-interpreting-a-confidence-interval
