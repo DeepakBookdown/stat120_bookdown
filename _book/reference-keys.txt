@@ -195,3 +195,7 @@ problem-2-biomass-in-tropical-forests
 problem-3-change-in-gun-ownership
 problem-4-interpreting-a-confidence-interval
 practice-problems-10
+practice-problems-11
+problem-1-extrasensory-perception-esp
+problem-2-sleep-vs-caffeine
+problem-3-hand-dominance-and-gender

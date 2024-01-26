@@ -3,6 +3,7 @@
 # Short Report 1
 
 **Short Report 1 Deadline**: Before 5 pm on Friday, 02/02/2024.
+
 *Proposal Deadline*: Before 11:59 pm on Sunday, 01/28/2024.
 
 
@@ -12,7 +13,7 @@ This lab report is an individual assignment. While discussions about the data an
 
 ## Data Retrieval
 
-Use the dataset `women_labor.csv` for your analysis. You can load the data into your R session using the following code:
+Use the dataset `women.csv` for your analysis. You can load the data into your R session using the following code:
 
 
 ```r
