@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 5 Tutorial 2: Dive Deeper into Data Visualization and Statistics in R | Stat 120</title>
+<title>Chapter 6 Tutorial 2: Dive Deeper into Data Visualization and Statistics in R | Stat 120</title>
 <meta name="author" content="Deepak Bastola">
-<meta name="description" content="5.1 Introduction This tutorial aims to enhance your data manipulation and visualization skills by introducing you to ggplot2, one of the most widely-used data visualization packages in R.  5.2...">
+<meta name="description" content="6.1 Introduction This tutorial aims to enhance your data manipulation and visualization skills by introducing you to ggplot2, one of the most widely-used data visualization packages in R.  6.2...">
 <meta name="generator" content="bookdown 0.37 with bs4_book()">
-<meta property="og:title" content="Chapter 5 Tutorial 2: Dive Deeper into Data Visualization and Statistics in R | Stat 120">
+<meta property="og:title" content="Chapter 6 Tutorial 2: Dive Deeper into Data Visualization and Statistics in R | Stat 120">
 <meta property="og:type" content="book">
-<meta property="og:description" content="5.1 Introduction This tutorial aims to enhance your data manipulation and visualization skills by introducing you to ggplot2, one of the most widely-used data visualization packages in R.  5.2...">
+<meta property="og:description" content="6.1 Introduction This tutorial aims to enhance your data manipulation and visualization skills by introducing you to ggplot2, one of the most widely-used data visualization packages in R.  6.2...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 5 Tutorial 2: Dive Deeper into Data Visualization and Statistics in R | Stat 120">
-<meta name="twitter:description" content="5.1 Introduction This tutorial aims to enhance your data manipulation and visualization skills by introducing you to ggplot2, one of the most widely-used data visualization packages in R.  5.2...">
+<meta name="twitter:title" content="Chapter 6 Tutorial 2: Dive Deeper into Data Visualization and Statistics in R | Stat 120">
+<meta name="twitter:description" content="6.1 Introduction This tutorial aims to enhance your data manipulation and visualization skills by introducing you to ggplot2, one of the most widely-used data visualization packages in R.  6.2...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.6.1/transition.js"></script><script src="libs/bs3compat-0.6.1/tabs.js"></script><script src="libs/bs3compat-0.6.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -48,25 +48,26 @@
 <li><a class="" href="what-is-r.html"><span class="header-section-number">1</span> What is R?</a></li>
 <li><a class="" href="r-markdown-basics.html"><span class="header-section-number">2</span> R Markdown Basics</a></li>
 <li><a class="" href="homework-guidelines.html"><span class="header-section-number">3</span> Homework Guidelines</a></li>
+<li><a class="" href="report-guidelines.html"><span class="header-section-number">4</span> Report Guidelines</a></li>
 <li class="book-part">R Tutorials</li>
-<li><a class="" href="tutorial-1-embark-on-your-data-journey.html"><span class="header-section-number">4</span> Tutorial 1: Embark on Your Data Journey</a></li>
-<li><a class="active" href="tutorial-2-dive-deeper-into-data-visualization-and-statistics-in-r.html"><span class="header-section-number">5</span> Tutorial 2: Dive Deeper into Data Visualization and Statistics in R</a></li>
-<li><a class="" href="tutorial-3-dive-deeper-into-data-manipulation-with-dplyr-in-r.html"><span class="header-section-number">6</span> Tutorial 3: Dive Deeper into Data Manipulation with dplyr in R</a></li>
-<li><a class="" href="tutorial-4-latex-equations-in-rmarkdown.html"><span class="header-section-number">7</span> Tutorial 4: LaTeX Equations in RMarkdown</a></li>
+<li><a class="" href="tutorial-1-embark-on-your-data-journey.html"><span class="header-section-number">5</span> Tutorial 1: Embark on Your Data Journey</a></li>
+<li><a class="active" href="tutorial-2-dive-deeper-into-data-visualization-and-statistics-in-r.html"><span class="header-section-number">6</span> Tutorial 2: Dive Deeper into Data Visualization and Statistics in R</a></li>
+<li><a class="" href="tutorial-3-dive-deeper-into-data-manipulation-with-dplyr-in-r.html"><span class="header-section-number">7</span> Tutorial 3: Dive Deeper into Data Manipulation with dplyr in R</a></li>
+<li><a class="" href="tutorial-4-latex-equations-in-rmarkdown.html"><span class="header-section-number">8</span> Tutorial 4: LaTeX Equations in RMarkdown</a></li>
 <li class="book-part">Short Reports</li>
-<li><a class="" href="short-report-1.html"><span class="header-section-number">8</span> Short Report 1</a></li>
+<li><a class="" href="short-report-1.html"><span class="header-section-number">9</span> Short Report 1</a></li>
 <li class="book-part">Practice Problems</li>
-<li><a class="" href="practice-problems-1.html"><span class="header-section-number">9</span> Practice Problems 1</a></li>
-<li><a class="" href="practice-problems-2.html"><span class="header-section-number">10</span> Practice Problems 2</a></li>
-<li><a class="" href="practice-problems-3.html"><span class="header-section-number">11</span> Practice Problems 3</a></li>
-<li><a class="" href="practice-problems-4.html"><span class="header-section-number">12</span> Practice Problems 4</a></li>
-<li><a class="" href="practice-problems-5.html"><span class="header-section-number">13</span> Practice Problems 5</a></li>
-<li><a class="" href="practice-problems-6.html"><span class="header-section-number">14</span> Practice Problems 6</a></li>
-<li><a class="" href="practice-problems-7.html"><span class="header-section-number">15</span> Practice Problems 7</a></li>
-<li><a class="" href="practice-problems-8.html"><span class="header-section-number">16</span> Practice Problems 8</a></li>
-<li><a class="" href="practice-problems-9.html"><span class="header-section-number">17</span> Practice Problems 9</a></li>
-<li><a class="" href="practice-problems-10.html"><span class="header-section-number">18</span> Practice Problems 10</a></li>
-<li><a class="" href="practice-problems-11.html"><span class="header-section-number">19</span> Practice Problems 11</a></li>
+<li><a class="" href="practice-problems-1.html"><span class="header-section-number">10</span> Practice Problems 1</a></li>
+<li><a class="" href="practice-problems-2.html"><span class="header-section-number">11</span> Practice Problems 2</a></li>
+<li><a class="" href="practice-problems-3.html"><span class="header-section-number">12</span> Practice Problems 3</a></li>
+<li><a class="" href="practice-problems-4.html"><span class="header-section-number">13</span> Practice Problems 4</a></li>
+<li><a class="" href="practice-problems-5.html"><span class="header-section-number">14</span> Practice Problems 5</a></li>
+<li><a class="" href="practice-problems-6.html"><span class="header-section-number">15</span> Practice Problems 6</a></li>
+<li><a class="" href="practice-problems-7.html"><span class="header-section-number">16</span> Practice Problems 7</a></li>
+<li><a class="" href="practice-problems-8.html"><span class="header-section-number">17</span> Practice Problems 8</a></li>
+<li><a class="" href="practice-problems-9.html"><span class="header-section-number">18</span> Practice Problems 9</a></li>
+<li><a class="" href="practice-problems-10.html"><span class="header-section-number">19</span> Practice Problems 10</a></li>
+<li><a class="" href="practice-problems-11.html"><span class="header-section-number">20</span> Practice Problems 11</a></li>
 </ul>
 
         <div class="book-extra">
@@ -74,33 +75,33 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="tutorial-2-dive-deeper-into-data-visualization-and-statistics-in-r" class="section level1" number="5">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="tutorial-2-dive-deeper-into-data-visualization-and-statistics-in-r" class="section level1" number="6">
 <h1>
-<span class="header-section-number">5</span> Tutorial 2: Dive Deeper into Data Visualization and Statistics in R<a class="anchor" aria-label="anchor" href="#tutorial-2-dive-deeper-into-data-visualization-and-statistics-in-r"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6</span> Tutorial 2: Dive Deeper into Data Visualization and Statistics in R<a class="anchor" aria-label="anchor" href="#tutorial-2-dive-deeper-into-data-visualization-and-statistics-in-r"><i class="fas fa-link"></i></a>
 </h1>
-<div id="introduction-1" class="section level2" number="5.1">
+<div id="introduction-1" class="section level2" number="6.1">
 <h2>
-<span class="header-section-number">5.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction-1"><i class="fas fa-link"></i></a>
 </h2>
 <p>This tutorial aims to enhance your data manipulation and visualization skills by introducing you to ggplot2, one of the most widely-used data visualization packages in R.</p>
 <hr>
 </div>
-<div id="ggplot2-essentials" class="section level2" number="5.2">
+<div id="ggplot2-essentials" class="section level2" number="6.2">
 <h2>
-<span class="header-section-number">5.2</span> ggplot2 Essentials<a class="anchor" aria-label="anchor" href="#ggplot2-essentials"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.2</span> ggplot2 Essentials<a class="anchor" aria-label="anchor" href="#ggplot2-essentials"><i class="fas fa-link"></i></a>
 </h2>
-<div id="introduction-to-ggplot" class="section level3" number="5.2.1">
+<div id="introduction-to-ggplot" class="section level3" number="6.2.1">
 <h3>
-<span class="header-section-number">5.2.1</span> Introduction to ggplot<a class="anchor" aria-label="anchor" href="#introduction-to-ggplot"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.2.1</span> Introduction to ggplot<a class="anchor" aria-label="anchor" href="#introduction-to-ggplot"><i class="fas fa-link"></i></a>
 </h3>
 <p><code>ggplot2</code> is a data visualization package built upon the principles of “The Grammar of Graphics.” To use ggplot, you’ll first need to install and load the package.</p>
 <div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages("ggplot2")   # uncomment to install</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="simple-bar-graph-using-geom_bar" class="section level3" number="5.2.2">
+<div id="simple-bar-graph-using-geom_bar" class="section level3" number="6.2.2">
 <h3>
-<span class="header-section-number">5.2.2</span> Simple Bar Graph Using <code>geom_bar()</code><a class="anchor" aria-label="anchor" href="#simple-bar-graph-using-geom_bar"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.2.2</span> Simple Bar Graph Using <code>geom_bar()</code><a class="anchor" aria-label="anchor" href="#simple-bar-graph-using-geom_bar"><i class="fas fa-link"></i></a>
 </h3>
 <p>The <code><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar()</a></code> function is used to create bar graphs. A simple usage might look like:</p>
 <div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
@@ -112,9 +113,9 @@
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>stat<span class="op">=</span><span class="st">"identity"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="Tutorial_2_files/figure-html/unnamed-chunk-2-1.png" width="100%"></div>
 </div>
-<div id="adding-aesthetics-with-aes" class="section level3" number="5.2.3">
+<div id="adding-aesthetics-with-aes" class="section level3" number="6.2.3">
 <h3>
-<span class="header-section-number">5.2.3</span> Adding Aesthetics with <code>aes()</code><a class="anchor" aria-label="anchor" href="#adding-aesthetics-with-aes"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.2.3</span> Adding Aesthetics with <code>aes()</code><a class="anchor" aria-label="anchor" href="#adding-aesthetics-with-aes"><i class="fas fa-link"></i></a>
 </h3>
 <p>The <code><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes()</a></code> function is used to map variables to visual properties (aesthetics) of the graph.</p>
 <div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
@@ -123,9 +124,9 @@
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>stat<span class="op">=</span><span class="st">"identity"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="Tutorial_2_files/figure-html/unnamed-chunk-3-1.png" width="100%"></div>
 </div>
-<div id="facet-plots-using-facet_wrap" class="section level3" number="5.2.4">
+<div id="facet-plots-using-facet_wrap" class="section level3" number="6.2.4">
 <h3>
-<span class="header-section-number">5.2.4</span> Facet Plots Using <code>facet_wrap()</code><a class="anchor" aria-label="anchor" href="#facet-plots-using-facet_wrap"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.2.4</span> Facet Plots Using <code>facet_wrap()</code><a class="anchor" aria-label="anchor" href="#facet-plots-using-facet_wrap"><i class="fas fa-link"></i></a>
 </h3>
 <p>The <code><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap()</a></code> function splits the data into subplots based on a factor variable.</p>
 <div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
@@ -141,13 +142,13 @@
 <div class="inline-figure"><img src="Tutorial_2_files/figure-html/unnamed-chunk-4-1.png" width="100%"></div>
 </div>
 </div>
-<div id="working-with-tables-and-proportions" class="section level2" number="5.3">
+<div id="working-with-tables-and-proportions" class="section level2" number="6.3">
 <h2>
-<span class="header-section-number">5.3</span> Working with Tables and Proportions<a class="anchor" aria-label="anchor" href="#working-with-tables-and-proportions"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.3</span> Working with Tables and Proportions<a class="anchor" aria-label="anchor" href="#working-with-tables-and-proportions"><i class="fas fa-link"></i></a>
 </h2>
-<div id="using-table-function" class="section level3" number="5.3.1">
+<div id="using-table-function" class="section level3" number="6.3.1">
 <h3>
-<span class="header-section-number">5.3.1</span> Using <code>table()</code> Function<a class="anchor" aria-label="anchor" href="#using-table-function"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.3.1</span> Using <code>table()</code> Function<a class="anchor" aria-label="anchor" href="#using-table-function"><i class="fas fa-link"></i></a>
 </h3>
 <p>The <code><a href="https://rdrr.io/r/base/table.html">table()</a></code> function in R generates a table of frequencies of different combinations of categorical variables.</p>
 <div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
@@ -175,9 +176,9 @@ rep_gender No Yes
     Female 40  20
     Male   20  20</code></pre>
 </div>
-<div id="using-prop.table-to-get-proportions" class="section level3" number="5.3.2">
+<div id="using-prop.table-to-get-proportions" class="section level3" number="6.3.2">
 <h3>
-<span class="header-section-number">5.3.2</span> Using <code>prop.table()</code> to Get Proportions<a class="anchor" aria-label="anchor" href="#using-prop.table-to-get-proportions"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.3.2</span> Using <code>prop.table()</code> to Get Proportions<a class="anchor" aria-label="anchor" href="#using-prop.table-to-get-proportions"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Proportion table</span></span>
@@ -189,9 +190,9 @@ rep_gender  No Yes
     Male   0.2 0.2</code></pre>
 </div>
 </div>
-<div id="combining-all-together" class="section level2" number="5.4">
+<div id="combining-all-together" class="section level2" number="6.4">
 <h2>
-<span class="header-section-number">5.4</span> Combining All Together<a class="anchor" aria-label="anchor" href="#combining-all-together"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.4</span> Combining All Together<a class="anchor" aria-label="anchor" href="#combining-all-together"><i class="fas fa-link"></i></a>
 </h2>
 <p>Let’s visualize this data using ggplot, geom_bar, facet_wrap and appropriate labels.</p>
 <div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
@@ -205,28 +206,28 @@ rep_gender  No Yes
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="tutorial-1-embark-on-your-data-journey.html"><span class="header-section-number">4</span> Tutorial 1: Embark on Your Data Journey</a></div>
-<div class="next"><a href="tutorial-3-dive-deeper-into-data-manipulation-with-dplyr-in-r.html"><span class="header-section-number">6</span> Tutorial 3: Dive Deeper into Data Manipulation with dplyr in R</a></div>
+<div class="prev"><a href="tutorial-1-embark-on-your-data-journey.html"><span class="header-section-number">5</span> Tutorial 1: Embark on Your Data Journey</a></div>
+<div class="next"><a href="tutorial-3-dive-deeper-into-data-manipulation-with-dplyr-in-r.html"><span class="header-section-number">7</span> Tutorial 3: Dive Deeper into Data Manipulation with dplyr in R</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#tutorial-2-dive-deeper-into-data-visualization-and-statistics-in-r"><span class="header-section-number">5</span> Tutorial 2: Dive Deeper into Data Visualization and Statistics in R</a></li>
-<li><a class="nav-link" href="#introduction-1"><span class="header-section-number">5.1</span> Introduction</a></li>
+<li><a class="nav-link" href="#tutorial-2-dive-deeper-into-data-visualization-and-statistics-in-r"><span class="header-section-number">6</span> Tutorial 2: Dive Deeper into Data Visualization and Statistics in R</a></li>
+<li><a class="nav-link" href="#introduction-1"><span class="header-section-number">6.1</span> Introduction</a></li>
 <li>
-<a class="nav-link" href="#ggplot2-essentials"><span class="header-section-number">5.2</span> ggplot2 Essentials</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#introduction-to-ggplot"><span class="header-section-number">5.2.1</span> Introduction to ggplot</a></li>
-<li><a class="nav-link" href="#simple-bar-graph-using-geom_bar"><span class="header-section-number">5.2.2</span> Simple Bar Graph Using geom_bar()</a></li>
-<li><a class="nav-link" href="#adding-aesthetics-with-aes"><span class="header-section-number">5.2.3</span> Adding Aesthetics with aes()</a></li>
-<li><a class="nav-link" href="#facet-plots-using-facet_wrap"><span class="header-section-number">5.2.4</span> Facet Plots Using facet_wrap()</a></li>
+<a class="nav-link" href="#ggplot2-essentials"><span class="header-section-number">6.2</span> ggplot2 Essentials</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#introduction-to-ggplot"><span class="header-section-number">6.2.1</span> Introduction to ggplot</a></li>
+<li><a class="nav-link" href="#simple-bar-graph-using-geom_bar"><span class="header-section-number">6.2.2</span> Simple Bar Graph Using geom_bar()</a></li>
+<li><a class="nav-link" href="#adding-aesthetics-with-aes"><span class="header-section-number">6.2.3</span> Adding Aesthetics with aes()</a></li>
+<li><a class="nav-link" href="#facet-plots-using-facet_wrap"><span class="header-section-number">6.2.4</span> Facet Plots Using facet_wrap()</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#working-with-tables-and-proportions"><span class="header-section-number">5.3</span> Working with Tables and Proportions</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#using-table-function"><span class="header-section-number">5.3.1</span> Using table() Function</a></li>
-<li><a class="nav-link" href="#using-prop.table-to-get-proportions"><span class="header-section-number">5.3.2</span> Using prop.table() to Get Proportions</a></li>
+<a class="nav-link" href="#working-with-tables-and-proportions"><span class="header-section-number">6.3</span> Working with Tables and Proportions</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#using-table-function"><span class="header-section-number">6.3.1</span> Using table() Function</a></li>
+<li><a class="nav-link" href="#using-prop.table-to-get-proportions"><span class="header-section-number">6.3.2</span> Using prop.table() to Get Proportions</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#combining-all-together"><span class="header-section-number">5.4</span> Combining All Together</a></li>
+<li><a class="nav-link" href="#combining-all-together"><span class="header-section-number">6.4</span> Combining All Together</a></li>
 </ul>
 
       <div class="book-extra">
@@ -244,7 +245,7 @@ rep_gender  No Yes
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2024-01-25.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2024-01-27.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

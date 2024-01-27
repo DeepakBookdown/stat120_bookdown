@@ -97,7 +97,7 @@ ggplot(data = diamonds, aes(x = carat, y = price, color = cut)) +
 
 ### Customizing plot elements
 
-You can customize plot elements such as points, lines, and bars using the corresponding geom_*() functions and their arguments.
+You can customize plot elements such as points, lines, and bars using the corresponding `geom_*()` functions and their arguments.
 
 
 ```r
@@ -119,7 +119,7 @@ ggplot(mtcars, aes(x = hp, y = mpg, shape = factor(gear), size = gear)) +
 
 ### Faceting
 
-You can create multiple plots based on a categorical variable using the f`acet_wrap()` and `facet_grid()` functions.
+You can create multiple plots based on a categorical variable using the `facet_wrap()` and `facet_grid()` functions.
 
 
 ```r

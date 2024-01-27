@@ -234,6 +234,30 @@ gapminder %>%
 Another option for table formatting is the flextable package.
 
 
+```r
+#install.packages("flextable")
+library(flextable)
+ft <- flextable(mtcars[1:5, 1:5])
+ft <- set_caption(ft, caption = "A table using flextable")
+ft
+```
+
+```{=html}
+<div class="tabwid"><style>.cl-5e2090f8{}.cl-5e158d52{font-family:'DejaVu Sans';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-5e1a24f2{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-5e1a4356{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e1a4360{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e1a436a{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing='true' class='cl-5e2090f8'>
+
+```
+
+<caption style="display:table-caption;margin:0pt;text-align:center;border-bottom: 0.00pt solid transparent;border-top: 0.00pt solid transparent;border-left: 0.00pt solid transparent;border-right: 0.00pt solid transparent;padding-top:3pt;padding-bottom:3pt;padding-left:3pt;padding-right:3pt;line-height: 1;background-color:transparent;">(\#tab:unnamed-chunk-5)<span>A table using flextable</span></caption>
+
+```{=html}
+
+<thead><tr style="overflow-wrap:break-word;"><th class="cl-5e1a4356"><p class="cl-5e1a24f2"><span class="cl-5e158d52">mpg</span></p></th><th class="cl-5e1a4356"><p class="cl-5e1a24f2"><span class="cl-5e158d52">cyl</span></p></th><th class="cl-5e1a4356"><p class="cl-5e1a24f2"><span class="cl-5e158d52">disp</span></p></th><th class="cl-5e1a4356"><p class="cl-5e1a24f2"><span class="cl-5e158d52">hp</span></p></th><th class="cl-5e1a4356"><p class="cl-5e1a24f2"><span class="cl-5e158d52">drat</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-5e1a4360"><p class="cl-5e1a24f2"><span class="cl-5e158d52">21.0</span></p></td><td class="cl-5e1a4360"><p class="cl-5e1a24f2"><span class="cl-5e158d52">6</span></p></td><td class="cl-5e1a4360"><p class="cl-5e1a24f2"><span class="cl-5e158d52">160</span></p></td><td class="cl-5e1a4360"><p class="cl-5e1a24f2"><span class="cl-5e158d52">110</span></p></td><td class="cl-5e1a4360"><p class="cl-5e1a24f2"><span class="cl-5e158d52">3.90</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5e1a4360"><p class="cl-5e1a24f2"><span class="cl-5e158d52">21.0</span></p></td><td class="cl-5e1a4360"><p class="cl-5e1a24f2"><span class="cl-5e158d52">6</span></p></td><td class="cl-5e1a4360"><p class="cl-5e1a24f2"><span class="cl-5e158d52">160</span></p></td><td class="cl-5e1a4360"><p class="cl-5e1a24f2"><span class="cl-5e158d52">110</span></p></td><td class="cl-5e1a4360"><p class="cl-5e1a24f2"><span class="cl-5e158d52">3.90</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5e1a4360"><p class="cl-5e1a24f2"><span class="cl-5e158d52">22.8</span></p></td><td class="cl-5e1a4360"><p class="cl-5e1a24f2"><span class="cl-5e158d52">4</span></p></td><td class="cl-5e1a4360"><p class="cl-5e1a24f2"><span class="cl-5e158d52">108</span></p></td><td class="cl-5e1a4360"><p class="cl-5e1a24f2"><span class="cl-5e158d52">93</span></p></td><td class="cl-5e1a4360"><p class="cl-5e1a24f2"><span class="cl-5e158d52">3.85</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5e1a4360"><p class="cl-5e1a24f2"><span class="cl-5e158d52">21.4</span></p></td><td class="cl-5e1a4360"><p class="cl-5e1a24f2"><span class="cl-5e158d52">6</span></p></td><td class="cl-5e1a4360"><p class="cl-5e1a24f2"><span class="cl-5e158d52">258</span></p></td><td class="cl-5e1a4360"><p class="cl-5e1a24f2"><span class="cl-5e158d52">110</span></p></td><td class="cl-5e1a4360"><p class="cl-5e1a24f2"><span class="cl-5e158d52">3.08</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5e1a436a"><p class="cl-5e1a24f2"><span class="cl-5e158d52">18.7</span></p></td><td class="cl-5e1a436a"><p class="cl-5e1a24f2"><span class="cl-5e158d52">8</span></p></td><td class="cl-5e1a436a"><p class="cl-5e1a24f2"><span class="cl-5e158d52">360</span></p></td><td class="cl-5e1a436a"><p class="cl-5e1a24f2"><span class="cl-5e158d52">175</span></p></td><td class="cl-5e1a436a"><p class="cl-5e1a24f2"><span class="cl-5e158d52">3.15</span></p></td></tr></tbody></table></div>
+```
+
+
+### Formatting Tables with gt
+
+The gt package provides another way to create formatted tables in R.
 
 
 
