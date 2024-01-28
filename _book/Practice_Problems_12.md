@@ -68,7 +68,8 @@ Interpret the p-value. Does the p-value support the alternative hypothesis (do y
 
 First get the data from the Lock website and check important summary stats:
 
-```{r}
+
+```r
 SleepCaffeine <- read.csv("http://math.carleton.edu/Stats215/Textbook/SleepCaffeine.csv")
 # Create a boxplot using ggplot2
 ggplot(SleepCaffeine, aes(x = Group, y = Words)) +
@@ -76,8 +77,11 @@ ggplot(SleepCaffeine, aes(x = Group, y = Words)) +
   labs(title = "Boxplot of Words by Group")
 ```
 
+<img src="Practice_Problems_12_files/figure-html/unnamed-chunk-1-1.png" width="100%" />
 
-```{r}
+
+
+```r
 # Summary statistics using dplyr for 'Words'
 SleepCaffeine %>%
   group_by(Group) %>%
@@ -90,17 +94,44 @@ SleepCaffeine %>%
     max = max(Words, na.rm = TRUE),
     sd = sd(Words, na.rm = TRUE)
   )  %>% knitr::kable(caption="Summary Statistics of Words Recalled by Treatment Group")
-
 ```
+
+
+
+Table: (\#tab:unnamed-chunk-2)Summary Statistics of Words Recalled by Treatment Group
+
+|Group    | min|    q1| median|  mean|    q3| max|       sd|
+|:--------|---:|-----:|------:|-----:|-----:|---:|--------:|
+|Caffeine |   6| 10.00|   12.5| 12.25| 14.25|  18| 3.545163|
+|Sleep    |   9| 13.75|   15.5| 15.25| 17.25|  21| 3.306330|
 
 
 Then load the `CarletonStats` package and run the `permTest(y ~ x, data=)` command where `y` is your quantitative (or 0/1 coded) response and `x` defines the two groups you are comparing. 
 
-```{r}
+
+```r
 set.seed(123)
 library(CarletonStats)
 permTest(Words ~ Group, data=SleepCaffeine)
 ```
+
+```
+
+	** Permutation test **
+
+ Permutation test with alternative: two.sided 
+ Observed statistic
+  Caffeine :  12.25 	 Sleep :  15.25 
+ Observed difference: -3 
+
+ Mean of permutation distribution: 0.01573 
+ Standard error of permutation distribution: 1.49817 
+ P-value:  0.0492 
+
+	*-------------*
+```
+
+<img src="Practice_Problems_12_files/figure-html/unnamed-chunk-3-1.png" width="100%" />
 
 - Why is the observed difference reported as -3?
 
@@ -128,9 +159,20 @@ $$
 
 Read in the data. Note that each case (school) has a response value for the resident and non-resident tuition variables. This makes this a paired data example. Contrast this with the word recall example in which each case (student) only had one response (word recall) and treatment (caffeine/sleep). 
 
-```{r}
+
+```r
 tuition <- read.csv("http://math.carleton.edu/Stats215/RLabManual/Tuition2006.csv")
 head(tuition)
+```
+
+```
+  X        Institution  Res NonRes  Diff
+1 1 Univ of Akron (OH) 4200   8800 -4600
+2 2  Athens State (AL) 1900   3600 -1700
+3 3    Ball State (IN) 3400   8600 -5200
+4 4  Bloomsburg U (PA) 3200   7000 -3800
+5 5     UC Irvine (CA) 3400  12700 -9300
+6 6 Central State (OH) 2600   5700 -3100
 ```
 
 
@@ -138,7 +180,8 @@ head(tuition)
 
 Let's compute the difference of non-resident and resident tuition (NR minus R):
 
-```{r}
+
+```r
 library(dplyr)
 tuition <- tuition %>%
   mutate(diff = NonRes - Res)
@@ -154,12 +197,24 @@ tuition %>%
     max = max(diff, na.rm = TRUE),
     sd = sd(diff, na.rm = TRUE)
   ) %>% knitr::kable(caption="Summary Statistics of Difference in Residential and Non-residential Tuition")
+```
 
+
+
+Table: (\#tab:unnamed-chunk-5)Summary Statistics of Difference in Residential and Non-residential Tuition
+
+| min|   q1| median|     mean|   q3|  max|       sd|
+|---:|----:|------:|--------:|----:|----:|--------:|
+| 200| 2650|   3100| 3584.211| 4500| 9300| 2073.447|
+
+```r
 # Histogram of 'diff'
 ggplot(tuition, aes(x = diff)) +
   geom_histogram(binwidth = 1300, fill = "turquoise", color = "black") +
   labs(title = "Histogram of Tuition Differences", x = "Difference (NonRes - Res)", y = "Frequency")
 ```
+
+<img src="Practice_Problems_12_files/figure-html/unnamed-chunk-5-1.png" width="100%" />
 
 - What is the average difference in tuition costs?
 
@@ -171,10 +226,29 @@ ggplot(tuition, aes(x = diff)) +
 
 - Is this observed mean difference statistically significant? To test use the command `permTestPaired`:
 
-```{r}
+
+```r
 set.seed(123)
 permTestPaired(NonRes ~ Res,data = tuition, alt = "greater")
 ```
+
+```
+
+	** Permutation test **
+
+ Permutation test with alternative: greater 
+ Observed mean
+  NonRes :  2821.053 	 Res :  6405.263 
+ Observed difference: 3584.211 
+
+ Mean of permutation distribution: 4.69679 
+ Standard error of permutation distribution: 950.3981 
+ P-value:  1e-04 
+
+	*-------------*
+```
+
+<img src="Practice_Problems_12_files/figure-html/unnamed-chunk-6-1.png" width="100%" />
 
 The `alt` of `greater` was used because the function `permTestPaired(A ~ B)` computes paired differences as "A" minus "B". 
 

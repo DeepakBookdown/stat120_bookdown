@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 21 Practice Problems 12 | Stat 120</title>
+<meta name="author" content="Deepak Bastola">
+<meta name="description" content="21.0.1 Problem 1 Revisited: (a). If the results of a test for ESP are statistically discernible, what does that mean in terms of ESP? Click for answerAnswer: It means we can conclude that \(p &gt;...">
+<meta name="generator" content="bookdown 0.37 with bs4_book()">
+<meta property="og:title" content="Chapter 21 Practice Problems 12 | Stat 120">
+<meta property="og:type" content="book">
+<meta property="og:description" content="21.0.1 Problem 1 Revisited: (a). If the results of a test for ESP are statistically discernible, what does that mean in terms of ESP? Click for answerAnswer: It means we can conclude that \(p &gt;...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 21 Practice Problems 12 | Stat 120">
+<meta name="twitter:description" content="21.0.1 Problem 1 Revisited: (a). If the results of a test for ESP are statistically discernible, what does that mean in terms of ESP? Click for answerAnswer: It means we can conclude that \(p &gt;...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.6.1/transition.js"></script><script src="libs/bs3compat-0.6.1/tabs.js"></script><script src="libs/bs3compat-0.6.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Stat 120</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Introduction to Statistics</a></li>
+<li class="book-part">Basics R</li>
+<li><a class="" href="what-is-r.html"><span class="header-section-number">1</span> What is R?</a></li>
+<li><a class="" href="r-markdown-basics.html"><span class="header-section-number">2</span> R Markdown Basics</a></li>
+<li><a class="" href="homework-guidelines.html"><span class="header-section-number">3</span> Homework Guidelines</a></li>
+<li><a class="" href="report-guidelines.html"><span class="header-section-number">4</span> Report Guidelines</a></li>
+<li class="book-part">R Tutorials</li>
+<li><a class="" href="tutorial-1-embark-on-your-data-journey.html"><span class="header-section-number">5</span> Tutorial 1: Embark on Your Data Journey</a></li>
+<li><a class="" href="tutorial-2-dive-deeper-into-data-visualization-and-statistics-in-r.html"><span class="header-section-number">6</span> Tutorial 2: Dive Deeper into Data Visualization and Statistics in R</a></li>
+<li><a class="" href="tutorial-3-dive-deeper-into-data-manipulation-with-dplyr-in-r.html"><span class="header-section-number">7</span> Tutorial 3: Dive Deeper into Data Manipulation with dplyr in R</a></li>
+<li><a class="" href="tutorial-4-latex-equations-in-rmarkdown.html"><span class="header-section-number">8</span> Tutorial 4: LaTeX Equations in RMarkdown</a></li>
+<li class="book-part">Short Reports</li>
+<li><a class="" href="short-report-1.html"><span class="header-section-number">9</span> Short Report 1</a></li>
+<li class="book-part">Practice Problems</li>
+<li><a class="" href="practice-problems-1.html"><span class="header-section-number">10</span> Practice Problems 1</a></li>
+<li><a class="" href="practice-problems-2.html"><span class="header-section-number">11</span> Practice Problems 2</a></li>
+<li><a class="" href="practice-problems-3.html"><span class="header-section-number">12</span> Practice Problems 3</a></li>
+<li><a class="" href="practice-problems-4.html"><span class="header-section-number">13</span> Practice Problems 4</a></li>
+<li><a class="" href="practice-problems-5.html"><span class="header-section-number">14</span> Practice Problems 5</a></li>
+<li><a class="" href="practice-problems-6.html"><span class="header-section-number">15</span> Practice Problems 6</a></li>
+<li><a class="" href="practice-problems-7.html"><span class="header-section-number">16</span> Practice Problems 7</a></li>
+<li><a class="" href="practice-problems-8.html"><span class="header-section-number">17</span> Practice Problems 8</a></li>
+<li><a class="" href="practice-problems-9.html"><span class="header-section-number">18</span> Practice Problems 9</a></li>
+<li><a class="" href="practice-problems-10.html"><span class="header-section-number">19</span> Practice Problems 10</a></li>
+<li><a class="" href="practice-problems-11.html"><span class="header-section-number">20</span> Practice Problems 11</a></li>
+<li><a class="active" href="practice-problems-12.html"><span class="header-section-number">21</span> Practice Problems 12</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="practice-problems-12" class="section level1" number="21">
+<h1>
+<span class="header-section-number">21</span> Practice Problems 12<a class="anchor" aria-label="anchor" href="#practice-problems-12"><i class="fas fa-link"></i></a>
+</h1>
+<div id="problem-1-revisited" class="section level3" number="21.0.1">
+<h3>
+<span class="header-section-number">21.0.1</span> Problem 1 Revisited:<a class="anchor" aria-label="anchor" href="#problem-1-revisited"><i class="fas fa-link"></i></a>
+</h3>
+(a). If the results of a test for ESP are statistically discernible, what does that mean in terms of ESP?
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em></p>
+It means we can conclude that <span class="math inline">\(p &gt; 0.2\)</span> and that the sample results were so strong that we can conclude that ESP does exist and get more right than would be expected by random chance.
+</details><p><br></p>
+(b). If the results are not statistically discernible, what does that mean in terms of ESP?
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em></p>
+The sample results are inconclusive. People may or may not have ESP. Sample results could be just random chance.
+</details><p><br></p>
+</div>
+<div id="problem-2-sleep-or-caffeine-for-memory" class="section level2" number="21.1">
+<h2>
+<span class="header-section-number">21.1</span> Problem 2: Sleep or Caffeine for Memory<a class="anchor" aria-label="anchor" href="#problem-2-sleep-or-caffeine-for-memory"><i class="fas fa-link"></i></a>
+</h2>
+<p>In an experiment, 24 students were given words to memorize, then were randomly assigned to take a 90 minute nap or take a caffeine pill (12 in each group). They were then tested on their recall ability. We test to see if the sample provides evidence that there is a difference in mean number of words people can recall depending on whether they take a nap or have some caffeine. The hypotheses are:</p>
+<p><span class="math display">\[
+H_0: \mu_S - \mu_C = 0 \ \ H_A: \mu_S - \mu_C \neq 0
+\]</span></p>
+<p>The sample mean difference is <span class="math inline">\(\bar{x}_S - \bar{x}_C = 3\)</span>. We want to know if this difference in sample means is statistically discernible.</p>
+<div id="a-explain-how-to-generate-a-randomization-distribution-for-barx_s---barx_c-that-is-consistent-with-h_0-mu_s---mu_c-0." class="section level4" number="21.1.0.1">
+<h4>
+<span class="header-section-number">21.1.0.1</span> (a) Explain how to generate a randomization distribution for <span class="math inline">\(\bar{x}_S - \bar{x}_C\)</span> that is consistent with <span class="math inline">\(H_0: \mu_S - \mu_C = 0\)</span>.<a class="anchor" aria-label="anchor" href="#a-explain-how-to-generate-a-randomization-distribution-for-barx_s---barx_c-that-is-consistent-with-h_0-mu_s---mu_c-0."><i class="fas fa-link"></i></a>
+</h4>
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> We could randomly reassign the treatment to the study participants since, under the null, their recall abilities would be the same under either treatment. For each reassignment, we recomputed the sample mean difference and plot it in the dotplot shown below
+</details><p><br></p>
+</div>
+<div id="b-navigate-to-the-statkey-website." class="section level4" number="21.1.0.2">
+<h4>
+<span class="header-section-number">21.1.0.2</span> (b) Navigate to the Statkey website.<a class="anchor" aria-label="anchor" href="#b-navigate-to-the-statkey-website."><i class="fas fa-link"></i></a>
+</h4>
+<p>Select the <strong>Test for Difference in Means</strong> option under <strong>Randomization Hypothesis Tests</strong>. Change the data set from <strong>Leniency and Smiles</strong> to <strong>Sleep Caffeine Words</strong>. Note that the original sample data has a sample mean difference of 3 words.</p>
+<ul>
+<li>
+<strong>Generate 1 Sample</strong> from this null randomization distribution. What is the difference in the average word recall of the two groups in this sample? Repeat this a couple of times.</li>
+<li>
+<strong>Generate 1000 Samples</strong> a few of times (get at least 3000 resamples). How unusual is getting a difference in means of 3 or more words?</li>
+</ul>
+</div>
+<div id="c-compute-the-randomization-p-value" class="section level4" number="21.1.0.3">
+<h4>
+<span class="header-section-number">21.1.0.3</span> (c) Compute the randomization p-value<a class="anchor" aria-label="anchor" href="#c-compute-the-randomization-p-value"><i class="fas fa-link"></i></a>
+</h4>
+<p>Select the <strong>Two-Tail</strong> button at the top of the plot. Change the positive x-axis value to the observed difference of 3.0. The p-value is 2 times the proportion of resamples that have a difference of 3 or above. What is the p-value?</p>
+<div class="float">
+<img src="data/wordRand.png" alt="Example 2c"><div class="figcaption">Example 2c</div>
+</div>
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> We see in the image that the proportion in the tail beyond the sample statistic of 3.0 is 0.022. Because this is a two-tail test, we have to account for both tails, so the p-value is 2(0.022) = 0.044.
+</details><p><br></p>
+</div>
+<div id="d-interpret-conclusion" class="section level4" number="21.1.0.4">
+<h4>
+<span class="header-section-number">21.1.0.4</span> (d) Interpret + Conclusion<a class="anchor" aria-label="anchor" href="#d-interpret-conclusion"><i class="fas fa-link"></i></a>
+</h4>
+<p>Interpret the p-value. Does the p-value support the alternative hypothesis (do you think difference of means of 3 is statistically discernible) or is it inconclusive? Explain.</p>
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> We would see a difference of at least 3 words recalled, on average, in about 4.4% of all possible samples if the influence of sleep and caffeine on recall was the same The results show some evidence of statistical significance, meaning that the caffeine and sleep may have some difference effects on word recall ability.
+</details><p><br></p>
+</div>
+<div id="e-redo-in-rstudio" class="section level4" number="21.1.0.5">
+<h4>
+<span class="header-section-number">21.1.0.5</span> (e) Redo in Rstudio<a class="anchor" aria-label="anchor" href="#e-redo-in-rstudio"><i class="fas fa-link"></i></a>
+</h4>
+<p>First get the data from the Lock website and check important summary stats:</p>
+<div class="sourceCode" id="cb287"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">SleepCaffeine</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"http://math.carleton.edu/Stats215/Textbook/SleepCaffeine.csv"</span><span class="op">)</span></span>
+<span><span class="co"># Create a boxplot using ggplot2</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">SleepCaffeine</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Group</span>, y <span class="op">=</span> <span class="va">Words</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Boxplot of Words by Group"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Practice_Problems_12_files/figure-html/unnamed-chunk-1-1.png" width="100%"></div>
+<div class="sourceCode" id="cb288"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Summary statistics using dplyr for 'Words'</span></span>
+<span><span class="va">SleepCaffeine</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">Group</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span></span>
+<span>    min <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">Words</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    q1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">Words</span>, <span class="fl">0.25</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    median <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">Words</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Words</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    q3 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">Words</span>, <span class="fl">0.75</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    max <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">Words</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    sd <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">Words</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span>  <span class="op">)</span>  <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span>caption<span class="op">=</span><span class="st">"Summary Statistics of Words Recalled by Treatment Group"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<caption>
+<span id="tab:unnamed-chunk-2">Table 21.1: </span>Summary Statistics of Words Recalled by Treatment Group</caption>
+<thead><tr class="header">
+<th align="left">Group</th>
+<th align="right">min</th>
+<th align="right">q1</th>
+<th align="right">median</th>
+<th align="right">mean</th>
+<th align="right">q3</th>
+<th align="right">max</th>
+<th align="right">sd</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">Caffeine</td>
+<td align="right">6</td>
+<td align="right">10.00</td>
+<td align="right">12.5</td>
+<td align="right">12.25</td>
+<td align="right">14.25</td>
+<td align="right">18</td>
+<td align="right">3.545163</td>
+</tr>
+<tr class="even">
+<td align="left">Sleep</td>
+<td align="right">9</td>
+<td align="right">13.75</td>
+<td align="right">15.5</td>
+<td align="right">15.25</td>
+<td align="right">17.25</td>
+<td align="right">21</td>
+<td align="right">3.306330</td>
+</tr>
+</tbody>
+</table></div>
+<p>Then load the <code>CarletonStats</code> package and run the <code>permTest(y ~ x, data=)</code> command where <code>y</code> is your quantitative (or 0/1 coded) response and <code>x</code> defines the two groups you are comparing.</p>
+<div class="sourceCode" id="cb289"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/aloy/CarletonStats">CarletonStats</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/CarletonStats/man/permTest.html">permTest</a></span><span class="op">(</span><span class="va">Words</span> <span class="op">~</span> <span class="va">Group</span>, data<span class="op">=</span><span class="va">SleepCaffeine</span><span class="op">)</span></span></code></pre></div>
+<pre><code>
+    ** Permutation test **
+
+ Permutation test with alternative: two.sided 
+ Observed statistic
+  Caffeine :  12.25      Sleep :  15.25 
+ Observed difference: -3 
+
+ Mean of permutation distribution: 0.01573 
+ Standard error of permutation distribution: 1.49817 
+ P-value:  0.0492 
+
+    *-------------*</code></pre>
+<div class="inline-figure"><img src="Practice_Problems_12_files/figure-html/unnamed-chunk-3-1.png" width="100%"></div>
+<ul>
+<li>Why is the observed difference reported as -3?</li>
+</ul>
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> The difference is computed alphabetically: Caffeine minus Sleep so the difference in now -3 instead of +3.
+</details><br><p><br></p>
+<ul>
+<li>What is the p-value? Is it the same as the Statkey p-value? The same as your neighbors p-value? Why not?</li>
+</ul>
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> The p-value is around 5%. Any difference between Statkey, neighbors or different runs of the <code>permTest</code> command stem from the fact that different resamples are obtained each time a randomization distribution is generated. There may be some small (inconsequential) difference in p-values due to this.
+</details><p><br></p>
+</div>
+</div>
+<div id="problem-3-resident-vs-non-resident-tuition" class="section level2" number="21.2">
+<h2>
+<span class="header-section-number">21.2</span> Problem 3: Resident vs Non-resident Tuition<a class="anchor" aria-label="anchor" href="#problem-3-resident-vs-non-resident-tuition"><i class="fas fa-link"></i></a>
+</h2>
+<p>The lab manual data set <code>Tuition2006</code> is a random sample of state colleges and universities in the U.S. We want to know if the average tuition charged to non-residents is higher than residents for all state colleges and universities:</p>
+<p><span class="math display">\[
+H_0: \mu_{Non-res} - \mu_{Res} = 0 \ \ H_A: \mu_{Non-res} - \mu_{Res} &gt; 0
+\]</span></p>
+<div id="a-paired-data" class="section level4" number="21.2.0.1">
+<h4>
+<span class="header-section-number">21.2.0.1</span> (a) Paired Data<a class="anchor" aria-label="anchor" href="#a-paired-data"><i class="fas fa-link"></i></a>
+</h4>
+<p>Read in the data. Note that each case (school) has a response value for the resident and non-resident tuition variables. This makes this a paired data example. Contrast this with the word recall example in which each case (student) only had one response (word recall) and treatment (caffeine/sleep).</p>
+<div class="sourceCode" id="cb291"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">tuition</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"http://math.carleton.edu/Stats215/RLabManual/Tuition2006.csv"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">tuition</span><span class="op">)</span></span></code></pre></div>
+<pre><code>  X        Institution  Res NonRes  Diff
+1 1 Univ of Akron (OH) 4200   8800 -4600
+2 2  Athens State (AL) 1900   3600 -1700
+3 3    Ball State (IN) 3400   8600 -5200
+4 4  Bloomsburg U (PA) 3200   7000 -3800
+5 5     UC Irvine (CA) 3400  12700 -9300
+6 6 Central State (OH) 2600   5700 -3100</code></pre>
+</div>
+<div id="b-permutation-test-for-paired-data" class="section level4" number="21.2.0.2">
+<h4>
+<span class="header-section-number">21.2.0.2</span> (b) Permutation test for paired data<a class="anchor" aria-label="anchor" href="#b-permutation-test-for-paired-data"><i class="fas fa-link"></i></a>
+</h4>
+<p>Let’s compute the difference of non-resident and resident tuition (NR minus R):</p>
+<div class="sourceCode" id="cb293"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
+<span><span class="va">tuition</span> <span class="op">&lt;-</span> <span class="va">tuition</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>diff <span class="op">=</span> <span class="va">NonRes</span> <span class="op">-</span> <span class="va">Res</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Summary statistics of 'diff'</span></span>
+<span><span class="va">tuition</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span></span>
+<span>    min <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">diff</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    q1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">diff</span>, <span class="fl">0.25</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    median <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">diff</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">diff</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    q3 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">diff</span>, <span class="fl">0.75</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    max <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">diff</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    sd <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">diff</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span>caption<span class="op">=</span><span class="st">"Summary Statistics of Difference in Residential and Non-residential Tuition"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<caption>
+<span id="tab:unnamed-chunk-5">Table 21.2: </span>Summary Statistics of Difference in Residential and Non-residential Tuition</caption>
+<thead><tr class="header">
+<th align="right">min</th>
+<th align="right">q1</th>
+<th align="right">median</th>
+<th align="right">mean</th>
+<th align="right">q3</th>
+<th align="right">max</th>
+<th align="right">sd</th>
+</tr></thead>
+<tbody><tr class="odd">
+<td align="right">200</td>
+<td align="right">2650</td>
+<td align="right">3100</td>
+<td align="right">3584.211</td>
+<td align="right">4500</td>
+<td align="right">9300</td>
+<td align="right">2073.447</td>
+</tr></tbody>
+</table></div>
+<div class="sourceCode" id="cb294"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Histogram of 'diff'</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">tuition</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">diff</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>binwidth <span class="op">=</span> <span class="fl">1300</span>, fill <span class="op">=</span> <span class="st">"turquoise"</span>, color <span class="op">=</span> <span class="st">"black"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Histogram of Tuition Differences"</span>, x <span class="op">=</span> <span class="st">"Difference (NonRes - Res)"</span>, y <span class="op">=</span> <span class="st">"Frequency"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Practice_Problems_12_files/figure-html/unnamed-chunk-5-1.png" width="100%"></div>
+<ul>
+<li>What is the average difference in tuition costs?</li>
+</ul>
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> The observed mean difference is $3584
+</details><p><br></p>
+<ul>
+<li>Is this observed mean difference statistically significant? To test use the command <code>permTestPaired</code>:</li>
+</ul>
+<div class="sourceCode" id="cb295"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/CarletonStats/man/permTestPaired.html">permTestPaired</a></span><span class="op">(</span><span class="va">NonRes</span> <span class="op">~</span> <span class="va">Res</span>,data <span class="op">=</span> <span class="va">tuition</span>, alt <span class="op">=</span> <span class="st">"greater"</span><span class="op">)</span></span></code></pre></div>
+<pre><code>
+    ** Permutation test **
+
+ Permutation test with alternative: greater 
+ Observed mean
+  NonRes :  2821.053     Res :  6405.263 
+ Observed difference: 3584.211 
+
+ Mean of permutation distribution: 4.69679 
+ Standard error of permutation distribution: 950.3981 
+ P-value:  1e-04 
+
+    *-------------*</code></pre>
+<div class="inline-figure"><img src="Practice_Problems_12_files/figure-html/unnamed-chunk-6-1.png" width="100%"></div>
+<p>The <code>alt</code> of <code>greater</code> was used because the function <code>permTestPaired(A ~ B)</code> computes paired differences as “A” minus “B”.</p>
+<ul>
+<li>What is the p-value for this test?</li>
+</ul>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> Less than 0.0001</p>
+</details><p><br></p>
+<ul>
+<li>Is this observed mean difference statistically significant?</li>
+</ul>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> Yes, an observed mean difference of at least $3584 would rarely occur just by chance which provides us strong evidence that the mean tuition amount of non-residents is higher than residents in the population of state colleges and universities (in 2006).</p>
+</details><p><br></p>
+</div>
+</div>
+<div id="problem-4-evaluating-drugs-to-fight-cocaine-addition" class="section level2" number="21.3">
+<h2>
+<span class="header-section-number">21.3</span> Problem 4: Evaluating Drugs to Fight Cocaine Addition<a class="anchor" aria-label="anchor" href="#problem-4-evaluating-drugs-to-fight-cocaine-addition"><i class="fas fa-link"></i></a>
+</h2>
+<p>In a randomized experiment on treating cocaine addiction, 48 cocaine addicts who were trying to quit were randomly assigned to take either desipramine (a new drug), or Lithium (an existing drug). The response variable is whether or not the person relapsed (which means the person was unable to break out of the cycle of addiction and returned to using cocaine.) <strong>We are testing to see if desipramine is better than lithium at treating cocaine addiction.</strong> The results are shown in the two-way table.</p>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th>\</th>
+<th>Relapse</th>
+<th>No Relapse</th>
+<th>total</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Desipramine</td>
+<td>10</td>
+<td>14</td>
+<td>24</td>
+</tr>
+<tr class="even">
+<td>Lithium</td>
+<td>18</td>
+<td>6</td>
+<td>24</td>
+</tr>
+</tbody>
+</table></div>
+<div id="a-using-p_d-for-the-true-proportion-of-desipramine-users-who-relapse-and-p_l-for-the-true-proportion-of-lithium-users-who-relapse-write-the-null-and-alternative-hypotheses." class="section level4" number="21.3.0.1">
+<h4>
+<span class="header-section-number">21.3.0.1</span> (a) Using <span class="math inline">\(p_D\)</span> for the true proportion of desipramine users who relapse and <span class="math inline">\(p_L\)</span> for the true proportion of lithium users who relapse, write the null and alternative hypotheses.<a class="anchor" aria-label="anchor" href="#a-using-p_d-for-the-true-proportion-of-desipramine-users-who-relapse-and-p_l-for-the-true-proportion-of-lithium-users-who-relapse-write-the-null-and-alternative-hypotheses."><i class="fas fa-link"></i></a>
+</h4>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> <span class="math inline">\(H_0: p_D - p_L =0\)</span> vs. <span class="math inline">\(H_A: p_D - p_L &lt; 0\)</span></p>
+</details><p><br></p>
+</div>
+<div id="b-compute-the-appropriate-sample-statistic-needed-to-assess-the-hypotheses-above." class="section level4" number="21.3.0.2">
+<h4>
+<span class="header-section-number">21.3.0.2</span> (b) Compute the appropriate sample statistic needed to assess the hypotheses above.<a class="anchor" aria-label="anchor" href="#b-compute-the-appropriate-sample-statistic-needed-to-assess-the-hypotheses-above."><i class="fas fa-link"></i></a>
+</h4>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> We see that <span class="math inline">\(\hat{p}_D = \dfrac{10}{24} = 0.417\)</span> and <span class="math inline">\(\hat{p}_L = \dfrac{18}{24} = 0.75\)</span> so we have <span class="math inline">\(\hat{p}_D -\hat{p}_L = 0.417 - 0.75 = -0.333\)</span>. Be sure to compute the <strong>difference</strong> since we need one number (observed difference) to test the hypotheses, not two separate numbers. You could also compute the difference as <span class="math inline">\(L-D\)</span> and get +0.333.</p>
+</details><p><br></p>
+</div>
+<div id="c-how-might-we-compute-a-randomization-sample-for-this-data" class="section level4" number="21.3.0.3">
+<h4>
+<span class="header-section-number">21.3.0.3</span> (c) How might we compute a randomization sample for this data?<a class="anchor" aria-label="anchor" href="#c-how-might-we-compute-a-randomization-sample-for-this-data"><i class="fas fa-link"></i></a>
+</h4>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> Since drug doesn’t matter, we combine all 48 patients together and see that 28 relapsed and 20 didn’t. To see what happens by random chance, we randomly divide them into two groups and compute the difference in proportions of relapses between the two groups. The difference in proportions is the statistic.</p>
+</details><p><br></p>
+</div>
+<div id="d-navigate-to-the-statkey-website." class="section level4" number="21.3.0.4">
+<h4>
+<span class="header-section-number">21.3.0.4</span> (d) Navigate to the Statkey website.<a class="anchor" aria-label="anchor" href="#d-navigate-to-the-statkey-website."><i class="fas fa-link"></i></a>
+</h4>
+<p>Select the <strong>Test for Difference in Proportions</strong> option under <strong>Randomization Hypothesis Tests</strong>. Click <strong>Edit Data</strong> and let Group 1 be “Desipramine” and 2 be “Lithium”, enter relapse <strong>counts</strong> of 10 and 18 and <strong>sample sizes</strong> of 24. Check that the null hypothesis matches yours in (a). Generate a couple thousand samples. Describe the resulting distribution. Where is it centered?</p>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The resulting distribution, shown in Figure 1, will be bell-shaped and centered at the value from the null hypothesis, which is zero.</p>
+<div class="float">
+<img src="data/DLrand.png" alt="Example 4d"><div class="figcaption">Example 4d</div>
+</div>
+</details><p><br></p>
+</div>
+<div id="e-compute-and-interpret-the-p-value-for-this-test." class="section level4" number="21.3.0.5">
+<h4>
+<span class="header-section-number">21.3.0.5</span> (e) Compute and interpret the p-value for this test.<a class="anchor" aria-label="anchor" href="#e-compute-and-interpret-the-p-value-for-this-test."><i class="fas fa-link"></i></a>
+</h4>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> This is a left-tail test when computing the difference as D - L, and we see on StatKey that the p-value (proportion of randomization samples with a difference -.333 or smaller) is about 2 (Figure 1). About 2% of the time we would see at least 33% fewer relapse cases using despramine than lithium just due to chance if there was no difference in the relapse rates of the two treatments.</p>
+</details><p><br></p>
+<p>Note the two key features of this “in context” interpretation of 2%: it assumes that the null is true (no treatment difference) and it uses the observed statistic (data) used to compute the p-value (rate of despramine relapse is .33 below the rate of lithium).</p>
+</div>
+<div id="f-make-a-formal-decision-reject-or-not-using-a-5-significance-level-then-restate-your-conclusion-in-context-for-the-problem-do-not-use-words-like-reject-or-hypothesis." class="section level4" number="21.3.0.6">
+<h4>
+<span class="header-section-number">21.3.0.6</span> (f) Make a formal decision (reject or not) using a 5% significance level, then restate your conclusion in context for the problem (do not use words like “reject” or “hypothesis”).<a class="anchor" aria-label="anchor" href="#f-make-a-formal-decision-reject-or-not-using-a-5-significance-level-then-restate-your-conclusion-in-context-for-the-problem-do-not-use-words-like-reject-or-hypothesis."><i class="fas fa-link"></i></a>
+</h4>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> We reject the null hypothesis since the p-value of 2% is less than 5%. We can conclude that despramine is better at helping people kick the cocaine habit.
+Note the “in context” conclusion: Just state your conclusion in english, no need to talk about the value of the p-value or “just by chance.”</p>
+</details><p><br></p>
+</div>
+<div id="h-use-statkey-to-compute-and-interpret-a-95-bootstrap-confidence-interval-for-the-difference-in-the-relapse-proportion-for-the-two-treatments.-explain-how-this-ci-agrees-with-your-test-conclusion-in-f." class="section level4" number="21.3.0.7">
+<h4>
+<span class="header-section-number">21.3.0.7</span> (h) Use Statkey to compute and interpret a 95% bootstrap confidence interval for the difference in the relapse proportion for the two treatments. Explain how this CI agrees with your test conclusion in (f).<a class="anchor" aria-label="anchor" href="#h-use-statkey-to-compute-and-interpret-a-95-bootstrap-confidence-interval-for-the-difference-in-the-relapse-proportion-for-the-two-treatments.-explain-how-this-ci-agrees-with-your-test-conclusion-in-f."><i class="fas fa-link"></i></a>
+</h4>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> I am 95% confident that the relapse rate for despramine will be between 8.3 to 58.3 percent less than the relapse rate for lithium. This completely agrees with the test conclusion that despramine is a better treatment for cocaine addiction. (Figure 2 shows the bootstrap distribution that is centered at the sample difference of -0.333.)</p>
+<div class="float">
+<img src="data/DLboot.png" alt="Example 4h"><div class="figcaption">Example 4h</div>
+</div>
+</details><p><br></p>
+
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="practice-problems-11.html"><span class="header-section-number">20</span> Practice Problems 11</a></div>
+<div class="empty"></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li>
+<a class="nav-link" href="#practice-problems-12"><span class="header-section-number">21</span> Practice Problems 12</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#problem-1-revisited"><span class="header-section-number">21.0.1</span> Problem 1 Revisited:</a></li></ul>
+</li>
+<li><a class="nav-link" href="#problem-2-sleep-or-caffeine-for-memory"><span class="header-section-number">21.1</span> Problem 2: Sleep or Caffeine for Memory</a></li>
+<li><a class="nav-link" href="#problem-3-resident-vs-non-resident-tuition"><span class="header-section-number">21.2</span> Problem 3: Resident vs Non-resident Tuition</a></li>
+<li><a class="nav-link" href="#problem-4-evaluating-drugs-to-fight-cocaine-addition"><span class="header-section-number">21.3</span> Problem 4: Evaluating Drugs to Fight Cocaine Addition</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/Practice_Problems_12.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/Practice_Problems_12.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2024-01-27.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>
