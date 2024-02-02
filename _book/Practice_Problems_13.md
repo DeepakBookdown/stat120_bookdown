@@ -39,39 +39,8 @@ What is the observed correlation? What conclusion do you draw from the test?
 </details><br>
 
 
-## Problem 2: Paired permutation tests
 
-Tonya Piergies (2019) collected data on a sample of elite beer milers: professional runners who competed in “beer mile” races. These runners drink a can of beer, run a quarter mile, and then repeat three more times.  Let's load the data into the R session.
-
-
-```r
-# Load the data
-beermilers <- read.csv("https://math.carleton.edu/Stats215/RLabManual/BeerMilers.csv")
-```
-
-### (a) Conduct a permutation test to determine whether or not the difference in the (paired!) mean times is statistically discernible. What are your hypotheses?
-
-
-
-```r
-permTestPaired(MileTime~BeerTime, data= beermilers)
-```
-
-
-<details><summary><red>Click for answer</red></summary>
-*Answer:*
-
-Our hypotheses are:
-
-1. Null Hypothesis $H_0$ : The paired mean differences between the two groups are 0 .
-2. Alternative Hypothesis $H_a$ : The paired mean differences between the two groups are not 0 .
-
-Given the very small p-value of 0.0001 (which is well below the common significance level of 0.05), we reject the null hypothesis. This suggests that there is a statistically discernible difference in the paired mean times of 'MileTime' and 'BeerTime'. Thus, the data provides strong evidence to conclude that the difference in the paired mean times for 'MileTime' and 'BeerTime 'is not due to random chance but is statistically discernible.
-
-</details><br>
-
-
-## Problem 3: New Teaching Method Effectiveness
+## Problem 2: New Teaching Method Effectiveness
 
 A school is testing a new teaching method for math. They randomly assign 40 students to either the new method (NM) or the traditional method (TM), 20 in each group. After 3 months, the students take a standardized math test. We want to test if there is a difference in the mean test scores between NM and TM groups. The hypotheses are:
 
@@ -112,14 +81,14 @@ permTest(Math_Test_Score~Group, data= teaching)
   New_Method :  91.05 	 Traditional_Method :  82.15 
  Observed difference: 8.9 
 
- Mean of permutation distribution: -0.00945 
- Standard error of permutation distribution: 1.74688 
+ Mean of permutation distribution: 0.02362 
+ Standard error of permutation distribution: 1.75474 
  P-value:  1e-04 
 
 	*-------------*
 ```
 
-<img src="Practice_Problems_13_files/figure-html/unnamed-chunk-5-1.png" width="100%" />
+<img src="Practice_Problems_13_files/figure-html/unnamed-chunk-3-1.png" width="100%" />
 
 </details><br>
 
@@ -134,7 +103,7 @@ Interpret the p-value and state your conclusion regarding the difference in the 
 </details><br>
 
 
-## Problem 4: Type I and Type II Error Rates
+## Problem 3: Type I and Type II Error Rates
 
 Consider the example of a new teaching method compared to a traditional teaching method. Suppose that the school administration wants to minimize the chances of making Type I and Type II errors when deciding whether to adopt the new teaching method.
 
@@ -174,7 +143,7 @@ Discuss how the school administration could balance the Type I and Type II error
 
 </details><br>
 
-## (Extra) Problem 5: Job Interview Success
+## (Extra) Problem 4: Job Interview Success
 
 A study investigated the success rate of job applicants who used a career coaching service (CCS) compared to those who didn't (NCCS). Out of 120 applicants, 60 used the CCS and 60 did not. We want to test if there is a difference in the proportion of successful applicants between CCS and NCCS groups. out of the 60 applicants who used the career coaching service (CCS), 42 were successful and 18 were unsuccessful. Out of the 60 applicants who did not use the career coaching service (NCCS), 30 were successful and 30 were unsuccessful. The hypotheses are:
 
