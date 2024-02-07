@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 24 Practice Problems 15 | Stat 120</title>
+<meta name="author" content="Deepak Bastola">
+<meta name="description" content="24.1 Problem 1: Student Survey This example explores the survey dataset from the MASS package, with a focus on the Height and Age variables. First, let’s examine the survey dataset, paying special...">
+<meta name="generator" content="bookdown 0.37 with bs4_book()">
+<meta property="og:title" content="Chapter 24 Practice Problems 15 | Stat 120">
+<meta property="og:type" content="book">
+<meta property="og:description" content="24.1 Problem 1: Student Survey This example explores the survey dataset from the MASS package, with a focus on the Height and Age variables. First, let’s examine the survey dataset, paying special...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 24 Practice Problems 15 | Stat 120">
+<meta name="twitter:description" content="24.1 Problem 1: Student Survey This example explores the survey dataset from the MASS package, with a focus on the Height and Age variables. First, let’s examine the survey dataset, paying special...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.6.1/transition.js"></script><script src="libs/bs3compat-0.6.1/tabs.js"></script><script src="libs/bs3compat-0.6.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Stat 120</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Introduction to Statistics</a></li>
+<li class="book-part">Basics R</li>
+<li><a class="" href="what-is-r.html"><span class="header-section-number">1</span> What is R?</a></li>
+<li><a class="" href="r-markdown-basics.html"><span class="header-section-number">2</span> R Markdown Basics</a></li>
+<li><a class="" href="homework-guidelines.html"><span class="header-section-number">3</span> Homework Guidelines</a></li>
+<li><a class="" href="report-guidelines.html"><span class="header-section-number">4</span> Report Guidelines</a></li>
+<li class="book-part">R Tutorials</li>
+<li><a class="" href="tutorial-1-embark-on-your-data-journey.html"><span class="header-section-number">5</span> Tutorial 1: Embark on Your Data Journey</a></li>
+<li><a class="" href="tutorial-2-dive-deeper-into-data-visualization-and-statistics-in-r.html"><span class="header-section-number">6</span> Tutorial 2: Dive Deeper into Data Visualization and Statistics in R</a></li>
+<li><a class="" href="tutorial-3-dive-deeper-into-data-manipulation-with-dplyr-in-r.html"><span class="header-section-number">7</span> Tutorial 3: Dive Deeper into Data Manipulation with dplyr in R</a></li>
+<li><a class="" href="tutorial-4-latex-equations-in-rmarkdown.html"><span class="header-section-number">8</span> Tutorial 4: LaTeX Equations in RMarkdown</a></li>
+<li class="book-part">Short Reports</li>
+<li><a class="" href="short-report-1.html"><span class="header-section-number">9</span> Short Report 1</a></li>
+<li class="book-part">Practice Problems</li>
+<li><a class="" href="practice-problems-1.html"><span class="header-section-number">10</span> Practice Problems 1</a></li>
+<li><a class="" href="practice-problems-2.html"><span class="header-section-number">11</span> Practice Problems 2</a></li>
+<li><a class="" href="practice-problems-3.html"><span class="header-section-number">12</span> Practice Problems 3</a></li>
+<li><a class="" href="practice-problems-4.html"><span class="header-section-number">13</span> Practice Problems 4</a></li>
+<li><a class="" href="practice-problems-5.html"><span class="header-section-number">14</span> Practice Problems 5</a></li>
+<li><a class="" href="practice-problems-6.html"><span class="header-section-number">15</span> Practice Problems 6</a></li>
+<li><a class="" href="practice-problems-7.html"><span class="header-section-number">16</span> Practice Problems 7</a></li>
+<li><a class="" href="practice-problems-8.html"><span class="header-section-number">17</span> Practice Problems 8</a></li>
+<li><a class="" href="practice-problems-9.html"><span class="header-section-number">18</span> Practice Problems 9</a></li>
+<li><a class="" href="practice-problems-10.html"><span class="header-section-number">19</span> Practice Problems 10</a></li>
+<li><a class="" href="practice-problems-11.html"><span class="header-section-number">20</span> Practice Problems 11</a></li>
+<li><a class="" href="practice-problems-12.html"><span class="header-section-number">21</span> Practice Problems 12</a></li>
+<li><a class="" href="practice-problems-13.html"><span class="header-section-number">22</span> Practice Problems 13</a></li>
+<li><a class="" href="practice-problems-14.html"><span class="header-section-number">23</span> Practice Problems 14</a></li>
+<li><a class="active" href="practice-problems-15.html"><span class="header-section-number">24</span> Practice Problems 15</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="practice-problems-15" class="section level1" number="24">
+<h1>
+<span class="header-section-number">24</span> Practice Problems 15<a class="anchor" aria-label="anchor" href="#practice-problems-15"><i class="fas fa-link"></i></a>
+</h1>
+<div id="problem-1-student-survey" class="section level2" number="24.1">
+<h2>
+<span class="header-section-number">24.1</span> Problem 1: Student Survey<a class="anchor" aria-label="anchor" href="#problem-1-student-survey"><i class="fas fa-link"></i></a>
+</h2>
+<p>This example explores the survey dataset from the MASS package, with a focus on the <code>Height</code> and <code>Age</code> variables. First, let’s examine the survey dataset, paying special attention to <code>Height</code> and <code>Age</code>:</p>
+<div class="sourceCode" id="cb328"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">survey</span> <span class="op">&lt;-</span> <span class="fu">MASS</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/MASS/man/survey.html">survey</a></span> <span class="co"># load the data</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">survey</span><span class="op">$</span><span class="va">Age</span><span class="op">)</span></span></code></pre></div>
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  16.75   17.67   18.58   20.37   20.17   73.00 </code></pre>
+<div class="sourceCode" id="cb330"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">survey</span><span class="op">$</span><span class="va">Height</span><span class="op">)</span></span></code></pre></div>
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+  150.0   165.0   171.0   172.4   180.0   200.0      28 </code></pre>
+<div id="a.-proportion-below-a-given-value" class="section level3" number="24.1.1">
+<h3>
+<span class="header-section-number">24.1.1</span> (a). Proportion Below a Given Value<a class="anchor" aria-label="anchor" href="#a.-proportion-below-a-given-value"><i class="fas fa-link"></i></a>
+</h3>
+<p><strong>Q1:</strong> What proportion of individuals have a height below 160 cm, based on our sample?</p>
+<p>Hint: Calculate the mean and standard deviation for the <code>Height</code> variable first.</p>
+<details><summary><red>Click for answer</red></summary><div class="sourceCode" id="cb332"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Mean and standard deviation for Height</span></span>
+<span><span class="va">Height_mean</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">survey</span><span class="op">$</span><span class="va">Height</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="va">Height_sd</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">survey</span><span class="op">$</span><span class="va">Height</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Proportion below 160 cm</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">pnorm</a></span><span class="op">(</span><span class="fl">160</span>, mean <span class="op">=</span> <span class="va">Height_mean</span>, sd <span class="op">=</span><span class="va">Height_sd</span><span class="op">)</span></span></code></pre></div>
+<pre><code>[1] 0.1043305</code></pre>
+</details><p><br></p>
+</div>
+<div id="b.-determining-a-specific-percentile" class="section level3" number="24.1.2">
+<h3>
+<span class="header-section-number">24.1.2</span> (b). Determining a Specific Percentile<a class="anchor" aria-label="anchor" href="#b.-determining-a-specific-percentile"><i class="fas fa-link"></i></a>
+</h3>
+<p><strong>Q2:</strong> What is the age cutoff for the lower 75% of our sample distribution?</p>
+<p>Hint: Determine the mean and standard deviation of the <code>Age</code> variable to find the age at the 75th percentile.</p>
+<details><summary><red>Click for answer</red></summary><div class="sourceCode" id="cb334"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Mean and standard deviation for Age</span></span>
+<span><span class="va">age_mean</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">survey</span><span class="op">$</span><span class="va">Age</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="va">age_sd</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">survey</span><span class="op">$</span><span class="va">Age</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Age at the 75th percentile</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">qnorm</a></span><span class="op">(</span><span class="fl">0.75</span>, mean <span class="op">=</span> <span class="va">age_mean</span>, sd <span class="op">=</span> <span class="va">age_sd</span><span class="op">)</span></span></code></pre></div>
+<pre><code>[1] 24.74139</code></pre>
+</details><p><br></p>
+</div>
+<div id="c.-calculating-the-middle-95-percentile-for-age" class="section level3" number="24.1.3">
+<h3>
+<span class="header-section-number">24.1.3</span> (c). Calculating the Middle 95 Percentile for Age<a class="anchor" aria-label="anchor" href="#c.-calculating-the-middle-95-percentile-for-age"><i class="fas fa-link"></i></a>
+</h3>
+<p><strong>Q3:</strong> What are the age cutoffs that define the middle 95% of our sample distribution?</p>
+<p><em>Hint: Calculate the 5th and 95th percentiles for the <code>Age</code> variable to find the ages that bound the middle 95% of the distribution.</em></p>
+<details><summary><red>Click for answer</red></summary><div class="sourceCode" id="cb336"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Age at the 25th percentile</span></span>
+<span><span class="va">age_25th</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">qnorm</a></span><span class="op">(</span><span class="fl">0.05</span>, mean <span class="op">=</span> <span class="va">age_mean</span>, sd <span class="op">=</span> <span class="va">age_sd</span><span class="op">)</span></span>
+<span><span class="va">age_25th</span></span></code></pre></div>
+<pre><code>[1] 9.725181</code></pre>
+<div class="sourceCode" id="cb338"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Age at the 75th percentile</span></span>
+<span><span class="va">age_75th</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">qnorm</a></span><span class="op">(</span><span class="fl">0.95</span>, mean <span class="op">=</span> <span class="va">age_mean</span>, sd <span class="op">=</span> <span class="va">age_sd</span><span class="op">)</span></span>
+<span><span class="va">age_75th</span></span></code></pre></div>
+<pre><code>[1] 31.02385</code></pre>
+</details><p><br></p>
+</div>
+</div>
+<div id="problem-2-sat-verbal-scores" class="section level2" number="24.2">
+<h2>
+<span class="header-section-number">24.2</span> Problem 2: SAT Verbal scores<a class="anchor" aria-label="anchor" href="#problem-2-sat-verbal-scores"><i class="fas fa-link"></i></a>
+</h2>
+<p>Suppose that the verbal SAT scores in a population are normally distributed with a mean <span class="math inline">\(\mu=580\)</span> and standard deviation <span class="math inline">\(\sigma = 70\)</span>. If <span class="math inline">\(X\)</span> is shorthand for a verbal SAT score, then we can write this as <span class="math inline">\(X \sim N(580,70)\)</span>.</p>
+<div id="a-what-proportion-of-scores-are-above-650" class="section level4" number="24.2.0.1">
+<h4>
+<span class="header-section-number">24.2.0.1</span> (a) What proportion of scores are above 650?<a class="anchor" aria-label="anchor" href="#a-what-proportion-of-scores-are-above-650"><i class="fas fa-link"></i></a>
+</h4>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> About 15.9% of the scores are above 650.</p>
+<div class="sourceCode" id="cb340"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">pnorm</a></span><span class="op">(</span><span class="fl">650</span>,mean<span class="op">=</span><span class="fl">580</span>,sd<span class="op">=</span><span class="fl">70</span><span class="op">)</span> <span class="co"># proportion below</span></span></code></pre></div>
+<pre><code>[1] 0.8413447</code></pre>
+<div class="sourceCode" id="cb342"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">1</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">pnorm</a></span><span class="op">(</span><span class="fl">650</span>,mean<span class="op">=</span><span class="fl">580</span>,sd<span class="op">=</span><span class="fl">70</span><span class="op">)</span> <span class="co"># proportion above</span></span></code></pre></div>
+<pre><code>[1] 0.1586553</code></pre>
+</details><p><br></p>
+</div>
+<div id="b-what-is-the-25th-percentile-q1" class="section level4" number="24.2.0.2">
+<h4>
+<span class="header-section-number">24.2.0.2</span> (b) What is the 25th percentile (Q1)?<a class="anchor" aria-label="anchor" href="#b-what-is-the-25th-percentile-q1"><i class="fas fa-link"></i></a>
+</h4>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The score of about 533 is the 25th percentile, meaning 25% of the scores are below this value.</p>
+<div class="sourceCode" id="cb344"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">qnorm</a></span><span class="op">(</span><span class="fl">.25</span>,mean<span class="op">=</span><span class="fl">580</span>,sd<span class="op">=</span><span class="fl">70</span><span class="op">)</span></span></code></pre></div>
+<pre><code>[1] 532.7857</code></pre>
+</details><p><br></p>
+</div>
+<div id="c-what-is-the-iqr-for-verbal-sat-scores-in-this-population-hint-find-q1-and-q3" class="section level4" number="24.2.0.3">
+<h4>
+<span class="header-section-number">24.2.0.3</span> (c) What is the IQR for verbal SAT scores in this population? (Hint: find Q1 and Q3)<a class="anchor" aria-label="anchor" href="#c-what-is-the-iqr-for-verbal-sat-scores-in-this-population-hint-find-q1-and-q3"><i class="fas fa-link"></i></a>
+</h4>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The 25th percentile (Q1) is 533 and the 75th percentile (Q3) is 627. The IQR for this normally distributed variable is about 94 points.</p>
+<div class="sourceCode" id="cb346"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">q1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">qnorm</a></span><span class="op">(</span><span class="fl">.25</span>,mean<span class="op">=</span><span class="fl">580</span>,sd<span class="op">=</span><span class="fl">70</span><span class="op">)</span>;<span class="va">q1</span></span></code></pre></div>
+<pre><code>[1] 532.7857</code></pre>
+<div class="sourceCode" id="cb348"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">q3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">qnorm</a></span><span class="op">(</span><span class="fl">.75</span>,mean<span class="op">=</span><span class="fl">580</span>,sd<span class="op">=</span><span class="fl">70</span><span class="op">)</span>;<span class="va">q3</span></span></code></pre></div>
+<pre><code>[1] 627.2143</code></pre>
+<div class="sourceCode" id="cb350"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">q3</span><span class="op">-</span><span class="va">q1</span></span></code></pre></div>
+<pre><code>[1] 94.42857</code></pre>
+</details><p><br></p>
+</div>
+<div id="d-what-score-high-or-low-will-be-deemed-an-outlier-according-the-boxplot-rules-for-outliers" class="section level4" number="24.2.0.4">
+<h4>
+<span class="header-section-number">24.2.0.4</span> (d) What score, high or low, will be deemed an outlier according the boxplot rules for outliers?<a class="anchor" aria-label="anchor" href="#d-what-score-high-or-low-will-be-deemed-an-outlier-according-the-boxplot-rules-for-outliers"><i class="fas fa-link"></i></a>
+</h4>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> Using the 1.5IQR’s boxplot rule gives a lower fence of 392 and an upper fence of 768. So any score below 392 and above 768 will be called an outlier according to this rule.</p>
+<div class="sourceCode" id="cb352"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">1.5</span><span class="op">*</span><span class="fl">94</span></span></code></pre></div>
+<pre><code>[1] 141</code></pre>
+<div class="sourceCode" id="cb354"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">q1</span> <span class="op">-</span> <span class="fl">1.5</span><span class="op">*</span><span class="fl">94</span></span></code></pre></div>
+<pre><code>[1] 391.7857</code></pre>
+<div class="sourceCode" id="cb356"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">q3</span> <span class="op">+</span> <span class="fl">1.5</span><span class="op">*</span><span class="fl">94</span></span></code></pre></div>
+<pre><code>[1] 768.2143</code></pre>
+</details><p><br></p>
+</div>
+<div id="e-what-percent-of-the-population-will-be-deemed-an-outlier" class="section level4" number="24.2.0.5">
+<h4>
+<span class="header-section-number">24.2.0.5</span> (e) What percent of the population will be deemed an outlier?<a class="anchor" aria-label="anchor" href="#e-what-percent-of-the-population-will-be-deemed-an-outlier"><i class="fas fa-link"></i></a>
+</h4>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> We need to find the proportion of scores below 392 and above 768. With this symmetric distribution, we find about 0.004 in both tails. About 0.8% of the population will be deemed outliers according to the boxplot rule.</p>
+<div class="sourceCode" id="cb358"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">pnorm</a></span><span class="op">(</span><span class="fl">392</span>,mean<span class="op">=</span><span class="fl">580</span>,sd<span class="op">=</span><span class="fl">70</span><span class="op">)</span></span></code></pre></div>
+<pre><code>[1] 0.003618747</code></pre>
+<div class="sourceCode" id="cb360"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">1</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">pnorm</a></span><span class="op">(</span><span class="fl">768</span>,mean<span class="op">=</span><span class="fl">580</span>,sd<span class="op">=</span><span class="fl">70</span><span class="op">)</span></span></code></pre></div>
+<pre><code>[1] 0.003618747</code></pre>
+</details><p><br></p>
+</div>
+</div>
+<div id="problem-3-standard-normal" class="section level2" number="24.3">
+<h2>
+<span class="header-section-number">24.3</span> Problem 3: Standard Normal<a class="anchor" aria-label="anchor" href="#problem-3-standard-normal"><i class="fas fa-link"></i></a>
+</h2>
+<p>The standard normal distribution has a mean of 0 and standard deviation of 1.</p>
+<div id="a-what-percent-of-sat-scores-are-at-least-1-standard-deviation-above-average" class="section level4" number="24.3.0.1">
+<h4>
+<span class="header-section-number">24.3.0.1</span> (a) What percent of SAT scores are at least 1 standard deviation above average?<a class="anchor" aria-label="anchor" href="#a-what-percent-of-sat-scores-are-at-least-1-standard-deviation-above-average"><i class="fas fa-link"></i></a>
+</h4>
+<details><summary><red>Click for answer</red></summary><div class="sourceCode" id="cb362"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">pnorm</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>  <span class="co"># proportion below</span></span></code></pre></div>
+<pre><code>[1] 0.8413447</code></pre>
+<div class="sourceCode" id="cb364"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">1</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">pnorm</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span> <span class="co"># proportion above</span></span></code></pre></div>
+<pre><code>[1] 0.1586553</code></pre>
+<em>Answer:</em> About 16% of scores will be at least 1 standard deviation above average. (Note that the score of 580+70 = 650 is 1 standard deviation above average.)
+</details><p><br></p>
+</div>
+<div id="b-how-many-standard-deviations-away-from-average-is-the-25th-percentile-of-sat-scores" class="section level4" number="24.3.0.2">
+<h4>
+<span class="header-section-number">24.3.0.2</span> (b) How many standard deviations away from average is the 25th percentile of SAT scores?<a class="anchor" aria-label="anchor" href="#b-how-many-standard-deviations-away-from-average-is-the-25th-percentile-of-sat-scores"><i class="fas fa-link"></i></a>
+</h4>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The 25th percentile of SAT scores (or any normally distributed values) is 0.67 standard deviations below average. We could also find this value using our answer to (1b):</p>
+<div class="sourceCode" id="cb366"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">qnorm</a></span><span class="op">(</span><span class="fl">.25</span><span class="op">)</span></span></code></pre></div>
+<pre><code>[1] -0.6744898</code></pre>
+<p><span class="math display">\[
+z = \dfrac{533 - 580}{70} = -0.67
+\]</span></p>
+<div class="sourceCode" id="cb368"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="op">(</span><span class="fl">533</span> <span class="op">-</span> <span class="fl">580</span><span class="op">)</span><span class="op">/</span><span class="fl">70</span></span></code></pre></div>
+<pre><code>[1] -0.6714286</code></pre>
+</details><p><br></p>
+
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="practice-problems-14.html"><span class="header-section-number">23</span> Practice Problems 14</a></div>
+<div class="empty"></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#practice-problems-15"><span class="header-section-number">24</span> Practice Problems 15</a></li>
+<li>
+<a class="nav-link" href="#problem-1-student-survey"><span class="header-section-number">24.1</span> Problem 1: Student Survey</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#a.-proportion-below-a-given-value"><span class="header-section-number">24.1.1</span> (a). Proportion Below a Given Value</a></li>
+<li><a class="nav-link" href="#b.-determining-a-specific-percentile"><span class="header-section-number">24.1.2</span> (b). Determining a Specific Percentile</a></li>
+<li><a class="nav-link" href="#c.-calculating-the-middle-95-percentile-for-age"><span class="header-section-number">24.1.3</span> (c). Calculating the Middle 95 Percentile for Age</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#problem-2-sat-verbal-scores"><span class="header-section-number">24.2</span> Problem 2: SAT Verbal scores</a></li>
+<li><a class="nav-link" href="#problem-3-standard-normal"><span class="header-section-number">24.3</span> Problem 3: Standard Normal</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/Practice_Problems_15.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/Practice_Problems_15.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2024-02-06.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

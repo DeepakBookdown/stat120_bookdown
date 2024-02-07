@@ -241,3 +241,17 @@ b-interest-in-5-year-olds---ci
 c-interest-in-6-and-7-year-olds---test
 d-interest-in-6-and-7-year-olds---ci
 e-interest-in-5-year-olds
+practice-problems-15
+problem-1-student-survey
+a.-proportion-below-a-given-value
+b.-determining-a-specific-percentile
+c.-calculating-the-middle-95-percentile-for-age
+problem-2-sat-verbal-scores
+a-what-proportion-of-scores-are-above-650
+b-what-is-the-25th-percentile-q1
+c-what-is-the-iqr-for-verbal-sat-scores-in-this-population-hint-find-q1-and-q3
+d-what-score-high-or-low-will-be-deemed-an-outlier-according-the-boxplot-rules-for-outliers
+e-what-percent-of-the-population-will-be-deemed-an-outlier
+problem-3-standard-normal
+a-what-percent-of-sat-scores-are-at-least-1-standard-deviation-above-average
+b-how-many-standard-deviations-away-from-average-is-the-25th-percentile-of-sat-scores

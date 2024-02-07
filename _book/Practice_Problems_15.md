@@ -6,10 +6,24 @@
 This example explores the survey dataset from the MASS package, with a focus on the `Height` and `Age` variables. First, let's examine the survey dataset, paying special attention to `Height` and `Age`:
 
 
-```{r}
+
+```r
 survey <- MASS::survey # load the data
 summary(survey$Age)
+```
+
+```
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  16.75   17.67   18.58   20.37   20.17   73.00 
+```
+
+```r
 summary(survey$Height)
+```
+
+```
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+  150.0   165.0   171.0   172.4   180.0   200.0      28 
 ```
 
 ### (a). Proportion Below a Given Value
@@ -20,13 +34,18 @@ Hint: Calculate the mean and standard deviation for the `Height` variable first.
 
 <details><summary><red>Click for answer</red></summary>
 
-```{r}
+
+```r
 # Mean and standard deviation for Height
 Height_mean <- mean(survey$Height, na.rm = TRUE)
 Height_sd <- sd(survey$Height, na.rm = TRUE)
 
 # Proportion below 160 cm
 pnorm(160, mean = Height_mean, sd =Height_sd)
+```
+
+```
+[1] 0.1043305
 ```
 
 </details><br>
@@ -39,13 +58,18 @@ Hint: Determine the mean and standard deviation of the `Age` variable to find th
 
 <details><summary><red>Click for answer</red></summary>
 
-```{r}
+
+```r
 # Mean and standard deviation for Age
 age_mean <- mean(survey$Age, na.rm = TRUE)
 age_sd <- sd(survey$Age, na.rm = TRUE)
 
 # Age at the 75th percentile
 qnorm(0.75, mean = age_mean, sd = age_sd)
+```
+
+```
+[1] 24.74139
 ```
 
 </details><br>
@@ -58,13 +82,25 @@ qnorm(0.75, mean = age_mean, sd = age_sd)
 
 <details><summary><red>Click for answer</red></summary>
 
-```{r}
+
+```r
 # Age at the 25th percentile
 age_25th <- qnorm(0.05, mean = age_mean, sd = age_sd)
 age_25th
+```
+
+```
+[1] 9.725181
+```
+
+```r
 # Age at the 75th percentile
 age_75th <- qnorm(0.95, mean = age_mean, sd = age_sd)
 age_75th
+```
+
+```
+[1] 31.02385
 ```
 
 
@@ -81,9 +117,21 @@ Suppose that the verbal SAT scores in a population are normally distributed with
 <details><summary><red>Click for answer</red></summary>
 *Answer:* About 15.9% of the scores are above 650.
 
-```{r}
+
+```r
 pnorm(650,mean=580,sd=70) # proportion below
+```
+
+```
+[1] 0.8413447
+```
+
+```r
 1-pnorm(650,mean=580,sd=70) # proportion above
+```
+
+```
+[1] 0.1586553
 ```
 </details><br>
 
@@ -93,8 +141,13 @@ pnorm(650,mean=580,sd=70) # proportion below
 <details><summary><red>Click for answer</red></summary>
 *Answer:* The score of about 533 is the 25th percentile, meaning 25% of the scores are below this value.
 
-```{r}
+
+```r
 qnorm(.25,mean=580,sd=70)
+```
+
+```
+[1] 532.7857
 ```
 </details><br>
 
@@ -103,11 +156,29 @@ qnorm(.25,mean=580,sd=70)
 <details><summary><red>Click for answer</red></summary>
 *Answer:* The 25th percentile (Q1) is 533 and the 75th percentile (Q3) is 627. The IQR for this normally distributed variable is about 94 points.
 
-```{r}
-q1 <- qnorm(.25,mean=580,sd=70);q1
-q3 <- qnorm(.75,mean=580,sd=70);q3
 
+```r
+q1 <- qnorm(.25,mean=580,sd=70);q1
+```
+
+```
+[1] 532.7857
+```
+
+```r
+q3 <- qnorm(.75,mean=580,sd=70);q3
+```
+
+```
+[1] 627.2143
+```
+
+```r
 q3-q1
+```
+
+```
+[1] 94.42857
 ```
 </details><br>
 
@@ -116,10 +187,29 @@ q3-q1
 <details><summary><red>Click for answer</red></summary>
 *Answer:* Using the 1.5IQR's boxplot rule gives a lower fence of 392 and an upper fence of 768. So any score below 392 and above 768 will be called an outlier according to this rule.
 
-```{r}
+
+```r
 1.5*94
+```
+
+```
+[1] 141
+```
+
+```r
 q1 - 1.5*94
+```
+
+```
+[1] 391.7857
+```
+
+```r
 q3 + 1.5*94
+```
+
+```
+[1] 768.2143
 ```
 
 </details><br>
@@ -129,9 +219,21 @@ q3 + 1.5*94
 <details><summary><red>Click for answer</red></summary>
 *Answer:* We need to find the proportion of scores below 392 and above 768. With this symmetric distribution, we find about 0.004 in both tails. About 0.8% of the population will be deemed outliers according to the boxplot rule.
 
-```{r}
+
+```r
 pnorm(392,mean=580,sd=70)
+```
+
+```
+[1] 0.003618747
+```
+
+```r
 1-pnorm(768,mean=580,sd=70)
+```
+
+```
+[1] 0.003618747
 ```
 </details><br>
 
@@ -144,9 +246,21 @@ The standard normal distribution has a mean of 0 and standard deviation of 1.
 
 <details><summary><red>Click for answer</red></summary>
 
-```{r}
+
+```r
 pnorm(1)  # proportion below
+```
+
+```
+[1] 0.8413447
+```
+
+```r
 1-pnorm(1) # proportion above
+```
+
+```
+[1] 0.1586553
 ```
 
 
@@ -158,8 +272,13 @@ pnorm(1)  # proportion below
 <details><summary><red>Click for answer</red></summary>
 *Answer:* The 25th percentile of SAT scores (or any normally distributed values) is 0.67 standard deviations below average. We could also find this value using our answer to (1b):
 
-```{r}
+
+```r
 qnorm(.25)
+```
+
+```
+[1] -0.6744898
 ```
 
 
@@ -167,8 +286,13 @@ $$
 z = \dfrac{533 - 580}{70} = -0.67
 $$
 
-```{r}
+
+```r
 (533 - 580)/70
+```
+
+```
+[1] -0.6714286
 ```
 
 </details><br>
