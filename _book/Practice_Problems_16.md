@@ -24,14 +24,20 @@ z = \dfrac{\textrm{statistic} - \textrm{null parameter}}{SE} = \dfrac{0.67 - 0.5
 $$
 The observed proportion is 8.1 SEs above the hypothesized value of 0.5.
 
-```{r}
+
+```r
 (0.67 - 0.5)/0.021
+```
+
+```
+[1] 8.095238
 ```
 </details><br>
 
 Note that the randomization distribution should look roughly like this (with the observed proportion denoted with a red X):
 
-```{r}
+
+```r
 library(ggplot2)
 
 # Create a data frame with a sequence of x values
@@ -46,6 +52,8 @@ ggplot(x_values, aes(x = x)) +
   theme_minimal()
 ```
 
+<img src="Practice_Problems_16_files/figure-html/unnamed-chunk-2-1.png" width="100%" />
+
 
 
 #### (c)	Use the normal distribution to find the p-value.
@@ -53,8 +61,13 @@ ggplot(x_values, aes(x = x)) +
 <details><summary><red>Click for answer</red></summary>
 *Answer:* As we can see in the normal plot above, the p-value will be very small because the alternative is looking for big sample proportions. The p-value is the proportion of times we get a sample proportion as big, or bigger than, 0.67; or equivantly, the proportion of times we get a sample proportion that is at least 8.1 SEs above the hypothesized proportion. We would report a p-value that is less than 0.0001.
 
-```{r}
+
+```r
 1-pnorm(8.10,0,1)
+```
+
+```
+[1] 2.220446e-16
 ```
 
 </details><br>
@@ -74,10 +87,29 @@ statistic \pm z^*SE = 0.67 \pm z^* (0.021)
 $$
 The $z^*$ for a 99% CI corresponds to the 99.5th percentile (90% in middle + 0.5% in the left tail). With $z^* = 2.576$, we get a 99% confidence interval of 0.616 to 0.724.
 
-```{r}
+
+```r
 qnorm(0.995)
+```
+
+```
+[1] 2.575829
+```
+
+```r
 0.67 - 2.576*0.021
+```
+
+```
+[1] 0.615904
+```
+
+```r
 0.67 + 2.576*0.021
+```
+
+```
+[1] 0.724096
 ```
 
 </details><br>
@@ -104,13 +136,19 @@ $$
 $$
 z = \dfrac{\textrm{statistic} - \textrm{null parameter}}{SE} = \dfrac{(0.71 - 0.67) - 0}{0.029} = 1.379
 $$
-```{r}
+
+```r
 (0.04 - 0)/0.029
+```
+
+```
+[1] 1.37931
 ```
 
 Note that the randomization distribution for the difference in sample proportions should look roughly like this (with the observed proportion difference denoted with a red X):
 
-```{r}
+
+```r
 library(ggplot2)
 
 # Create a data frame with a sequence of x values
@@ -125,6 +163,8 @@ ggplot(x_values, aes(x = x)) +
   theme_minimal()
 ```
 
+<img src="Practice_Problems_16_files/figure-html/unnamed-chunk-6-1.png" width="100%" />
+
 </details><br>
 
 #### (c)	Use the normal distribution to find the p-value.
@@ -132,9 +172,21 @@ ggplot(x_values, aes(x = x)) +
 <details><summary><red>Click for answer</red></summary>
 *Answer:* This is a two-tail test. Since the observed difference is less than 2 SEs away from 0 we know that the (two-tailed) p-value should be bigger than 0.05. We see that the p-value is 2(0.084) = 0.168.
 
-```{r}
+
+```r
 1-pnorm(1.379,0,1) # proportion above z=1.379
+```
+
+```
+[1] 0.08394738
+```
+
+```r
 2*(1-pnorm(1.379,0,1)) # p-value for two-sided
+```
+
+```
+[1] 0.1678948
 ```
 
 </details><br>

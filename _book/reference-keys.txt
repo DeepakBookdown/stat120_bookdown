@@ -255,3 +255,15 @@ e-what-percent-of-the-population-will-be-deemed-an-outlier
 problem-3-standard-normal
 a-what-percent-of-sat-scores-are-at-least-1-standard-deviation-above-average
 b-how-many-standard-deviations-away-from-average-is-the-25th-percentile-of-sat-scores
+practice-problems-16
+problem-1-is-divorce-morally-acceptable
+a-what-are-the-null-and-alternative-hypotheses-for-this-test
+b-what-is-the-standardized-test-statistic
+c-use-the-normal-distribution-to-find-the-p-value.
+d-what-is-the-conclusion-of-the-test
+e-use-the-normal-distribution-to-find-a-99-confidence-interval-for-the-proportion-of-all-women-who-view-divorce-as-morally-acceptable.-interpret-your-answer.
+problem-2-do-men-and-women-differ-in-opinions-about-divorce
+a-what-are-the-null-and-alternative-hypotheses-for-this-test-1
+b-what-is-the-standardized-test-statistic-1
+c-use-the-normal-distribution-to-find-the-p-value.-1
+d-what-is-the-conclusion-of-the-test-1
