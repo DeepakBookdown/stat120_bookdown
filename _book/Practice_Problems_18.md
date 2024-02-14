@@ -57,7 +57,8 @@ $$z = \frac{statistic-null}{SE} = \frac{(\hat{p}_L - \hat{p}_N) - 0}{\sqrt{\frac
 This is a two-tail test, and the area to the right of 0.834 in a normal distribution is 0.202 (1-pnorm(0.834)), so the p-value is  2(0.202) = 0.404. The R command is: 2*(1-pnorm(0.834))
 
 
-```{r}
+
+```r
 pL_hat = 31/48
 pN_hat = 27/48
 pooled_p = 58/96
@@ -67,6 +68,10 @@ SE = sqrt(pooled_p*(1-pooled_p)*(1/nL + 1/nN))
 z = (pL_hat - pN_hat) / SE
 p_value = 2*(1-pnorm(z))
 p_value
+```
+
+```
+[1] 0.4038223
 ```
 
 
@@ -84,7 +89,8 @@ We fail to reject H0 and conclude that there is not enough evidence that a lie d
 <details><summary><red>Click for answer</red></summary>
 
 
-```{r}
+
+```r
 conf_level = 0.95
 z_star = qnorm(1-(1-conf_level)/2)
 margin_of_error = z_star * SE
@@ -92,6 +98,10 @@ CI_lower = (pL_hat - pN_hat) - margin_of_error
 CI_upper = (pL_hat - pN_hat) + margin_of_error
 CI = c(CI_lower, CI_upper)
 CI
+```
+
+```
+[1] -0.1123154  0.2789821
 ```
 
 The 95% confidence interval for the difference in proportions is (-0.299, 0.207). Since, the confidence interval includes the null hypothesized value of 0, we do not reject the null hypothesis, and conclude that there is not enough evidence that a lie detector can tell whether a person is lying or telling the truth.
@@ -133,7 +143,8 @@ We are 90% sure that the proportion of smokers who get pregnant in the first cyc
 
 We are testing $H_0:p_S = p_{NS}$ vs $H_a:p_S \neq p_{NS}$. The test statistic is:
 
-```{r}
+
+```r
 pS_hat = 38/135
 pNS_hat = 206/543
 pooled_p2 = (38+206)/(135+543)
@@ -143,6 +154,10 @@ SE2 = sqrt(pooled_p2*(1-pooled_p2)*(1/nS + 1/nNS))
 z2 = (pS_hat - pNS_hat) / SE2
 p_value2 = 2*(pnorm(z2))
 p_value2
+```
+
+```
+[1] 0.03394234
 ```
 
 Based on the p-value, we reject $H_0$ and conclude that there is a difference in the proportion of women who get pregnant between smokers and non-smokers.

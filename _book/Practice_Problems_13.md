@@ -81,8 +81,8 @@ permTest(Math_Test_Score~Group, data= teaching)
   New_Method :  91.05 	 Traditional_Method :  82.15 
  Observed difference: 8.9 
 
- Mean of permutation distribution: -0.00372 
- Standard error of permutation distribution: 1.75395 
+ Mean of permutation distribution: 0.02281 
+ Standard error of permutation distribution: 1.7353 
  P-value:  1e-04 
 
 	*-------------*

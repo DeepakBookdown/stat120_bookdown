@@ -74,6 +74,7 @@
 <li><a class="" href="practice-problems-15.html"><span class="header-section-number">24</span> Practice Problems 15</a></li>
 <li><a class="" href="practice-problems-16.html"><span class="header-section-number">25</span> Practice Problems 16</a></li>
 <li><a class="active" href="practice-problems-17.html"><span class="header-section-number">26</span> Practice Problems 17</a></li>
+<li><a class="" href="practice-problems-18.html"><span class="header-section-number">27</span> Practice Problems 18</a></li>
 </ul>
 
         <div class="book-extra">
@@ -128,26 +129,17 @@ We need a sample size of at least n = 2,401 to have a margin of error this small
 <span class="header-section-number">26.3</span> Problem 3: Mendel’s green peas?<a class="anchor" aria-label="anchor" href="#problem-3-mendels-green-peas"><i class="fas fa-link"></i></a>
 </h2>
 <p>One of Gregor Mendel’s famous genetic experiments dealt with raising pea plants. According to Mendel’s genetic theory, under a certain set of conditions the proportion of pea plants that produce smooth green peas should be p=3/16 (0.1875). A sample of n=556 plants from the experiment had 108 with smooth green peas. Does this provide evidence of a problem with Mendel’s theory and that the proportion is different from 3/16? Show all details of the test.</p>
-<!--
-
-<details><summary><red>Click for answer</red></summary>
-
-*Answer:* We are testing $H_{0}: p=0.1875$ vs $H_{a}: p \neq 0.1875$ where p represents the proportion of pea plans with smooth green peas. The sample proportion is $\hat{p}=\frac{108}{556}=0.1942$ and the sample size is $n=556$. The test statistic is:
-
-$$z=\frac{\text { Statistic }-\text { Null }}{S E}=\frac{\hat{p}-p_{0}}{\sqrt{\frac{p_{0}\left(1-p_{0}\right)}{n}}}=\frac{0.1942-0.1875}{\sqrt{\frac{0.1875(1-0.1875)}{556}}}=0.405$$
-
-This is a two-tail test, and we see that the area to the right of 0.405 in a normal distribution is 0.343 `(1-pnorm(0.405))`, so the p-value is 2(0.343) = 0.686.The R command is: `2*(1-pnorm(0.405))`
-
-We do not reject H0 and conclude that this sample does not provide evidence that the proportion of smooth green pea plants is different from the 3/16 that Mendel’s theory predicts. (It is worth pointing out that this does not “prove” Mendel’s theory, since we don’t “accept” $H_0$– we just find a lack of sufficient evidence to refute it. )
-</details><br>
-
--->
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> We are testing <span class="math inline">\(H_{0}: p=0.1875\)</span> vs <span class="math inline">\(H_{a}: p \neq 0.1875\)</span> where p represents the proportion of pea plans with smooth green peas. The sample proportion is <span class="math inline">\(\hat{p}=\frac{108}{556}=0.1942\)</span> and the sample size is <span class="math inline">\(n=556\)</span>. The test statistic is:</p>
+<p><span class="math display">\[z=\frac{\text { Statistic }-\text { Null }}{S E}=\frac{\hat{p}-p_{0}}{\sqrt{\frac{p_{0}\left(1-p_{0}\right)}{n}}}=\frac{0.1942-0.1875}{\sqrt{\frac{0.1875(1-0.1875)}{556}}}=0.405\]</span></p>
+<p>This is a two-tail test, and we see that the area to the right of 0.405 in a normal distribution is 0.343 <code>(1-pnorm(0.405))</code>, so the p-value is 2(0.343) = 0.686.The R command is: <code>2*(1-pnorm(0.405))</code></p>
+We do not reject H0 and conclude that this sample does not provide evidence that the proportion of smooth green pea plants is different from the 3/16 that Mendel’s theory predicts. (It is worth pointing out that this does not “prove” Mendel’s theory, since we don’t “accept” <span class="math inline">\(H_0\)</span>– we just find a lack of sufficient evidence to refute it. )
+</details><p><br></p>
 
 </div>
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="practice-problems-16.html"><span class="header-section-number">25</span> Practice Problems 16</a></div>
-<div class="empty"></div>
+<div class="next"><a href="practice-problems-18.html"><span class="header-section-number">27</span> Practice Problems 18</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
@@ -172,7 +164,7 @@ We do not reject H0 and conclude that this sample does not provide evidence that
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2024-02-11.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2024-02-13.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

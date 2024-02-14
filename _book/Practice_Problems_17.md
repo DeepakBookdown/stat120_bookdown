@@ -57,7 +57,7 @@ We need a sample size of at least n = 2,401 to have a margin of error this small
 One of Gregor Mendel’s famous genetic experiments dealt with raising pea plants.  According to Mendel’s genetic theory, under a certain set of conditions the proportion of pea plants that produce smooth green peas should be p=3/16 (0.1875).  A sample of n=556 plants from the experiment had 108 with smooth green peas.  Does this provide evidence of a problem with Mendel’s theory and that the proportion is different from 3/16?  Show all details of the test. 
 
 
-<!--
+
 
 <details><summary><red>Click for answer</red></summary>
 
@@ -70,4 +70,4 @@ This is a two-tail test, and we see that the area to the right of 0.405 in a nor
 We do not reject H0 and conclude that this sample does not provide evidence that the proportion of smooth green pea plants is different from the 3/16 that Mendel’s theory predicts. (It is worth pointing out that this does not “prove” Mendel’s theory, since we don’t “accept” $H_0$– we just find a lack of sufficient evidence to refute it. )
 </details><br>
 
--->
+

@@ -271,3 +271,13 @@ practice-problems-17
 problem-1-movie-goers-are-more-likely-to-watch-at-home
 problem-2-sample-size-and-margin-of-error-for-movie-goers
 problem-3-mendels-green-peas
+practice-problems-18
+problem-1-change-in-gun-ownership
+problem-2-accuracy-of-lie-detectors
+a-are-the-conditions-met-for-using-the-normal-distribution
+b-find-the-three-sample-proportions-for-the-proportion-of-times-the-lie-detector-says-the-person-is-lying-the-proportion-for-the-lying-people-the-proportion-for-the-truthful-people-and-the-pooled-proportion.
+c-test-to-see-if-there-is-a-difference-in-the-proportion-of-times-the-lie-detector-says-the-person-is-lying-depending-on-whether-the-person-is-lying-or-telling-the-truth.-show-all-details-of-the-hypothesis-test.
+d-calculate-a-95-confidence-interval-for-the-difference-in-proportions-of-people-correctly-identified-by-the-lie-detector.
+problem-3-smoking-and-pregnancy-rate
+a.-find-a-90-confidence-interval-for-the-difference-in-proportion-of-women-who-get-pregnant-between-smokers-and-non-smokers.-interpret-the-interval-in-context.
+b.-now-repeat-the-above-analysis-using-the-hypothesis-test-approach.
