@@ -45,7 +45,6 @@ Participants in a study to evaluate the accuracy of lie detectors were divided i
 ### (c) Test to see if there is a difference in the proportion of times the lie detector says the person is lying, depending on whether the person is lying or telling the truth.  Show all details of the hypothesis test.
   
   
-<!--  
 <details><summary><red>Click for answer</red></summary>
 
 *Answer:*
@@ -79,20 +78,21 @@ We fail to reject H0 and conclude that there is not enough evidence that a lie d
 
 </details><br>
 
--->
 
 ### (d) Calculate a 95% confidence interval for the difference in proportions of people correctly identified by the lie detector.
 
 
-<!--
 
 <details><summary><red>Click for answer</red></summary>
 
 
 
 ```r
+pL_hat <- 31/48
+pN_hat <- 21/48
 conf_level = 0.95
 z_star = qnorm(1-(1-conf_level)/2)
+SE <- sqrt(pL_hat*(1-pL_hat)/48 + pN_hat*(1-pN_hat)/48)
 margin_of_error = z_star * SE
 CI_lower = (pL_hat - pN_hat) - margin_of_error
 CI_upper = (pL_hat - pN_hat) + margin_of_error
@@ -101,14 +101,14 @@ CI
 ```
 
 ```
-[1] -0.1123154  0.2789821
+[1] 0.01339606 0.40327061
 ```
 
-The 95% confidence interval for the difference in proportions is (-0.299, 0.207). Since, the confidence interval includes the null hypothesized value of 0, we do not reject the null hypothesis, and conclude that there is not enough evidence that a lie detector can tell whether a person is lying or telling the truth.
+The 95% confidence interval for the difference in proportions is (0.0134, 0.4033). We are 95% confident that the proportion of lying people correctly identified by the lie detector is from 1.3% to 40% larger than the proportion of not lying people correctly identified by the lie detector.
 
 </details><br>
 
--->
+
 
 ## Problem 3:  Smoking and Pregnancy Rate?
 

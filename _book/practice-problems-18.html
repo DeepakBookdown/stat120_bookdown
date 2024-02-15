@@ -153,71 +153,42 @@
 <h3>
 <span class="header-section-number">27.2.3</span> (c) Test to see if there is a difference in the proportion of times the lie detector says the person is lying, depending on whether the person is lying or telling the truth. Show all details of the hypothesis test.<a class="anchor" aria-label="anchor" href="#c-test-to-see-if-there-is-a-difference-in-the-proportion-of-times-the-lie-detector-says-the-person-is-lying-depending-on-whether-the-person-is-lying-or-telling-the-truth.-show-all-details-of-the-hypothesis-test."><i class="fas fa-link"></i></a>
 </h3>
-<!--  
-<details><summary><red>Click for answer</red></summary>
-
-*Answer:*
-
-We are testing $H_0:p_L = p_N$   vs   $H_a:p_L \neq p_N$. The test statistic is
-
-$$z = \frac{statistic-null}{SE} = \frac{(\hat{p}_L - \hat{p}_N) - 0}{\sqrt{\frac{\hat{p}(1-\hat{p})}{n_l} + \frac{\hat{p}(1-\hat{p})}{n_N}}} = \frac{0.6458 - 0.5625}{\sqrt{\frac{0.6042(1-0.6042)}{48}} + \frac{0.6042*(1-0.6042)}{48}} = 0.834 $$
-
-This is a two-tail test, and the area to the right of 0.834 in a normal distribution is 0.202 (1-pnorm(0.834)), so the p-value is  2(0.202) = 0.404. The R command is: 2*(1-pnorm(0.834))
-
-
-
-```r
-pL_hat = 31/48
-pN_hat = 27/48
-pooled_p = 58/96
-nL = 48
-nN = 48
-SE = sqrt(pooled_p*(1-pooled_p)*(1/nL + 1/nN))
-z = (pL_hat - pN_hat) / SE
-p_value = 2*(1-pnorm(z))
-p_value
-```
-
-```
-[1] 0.4038223
-```
-
-
-We fail to reject H0 and conclude that there is not enough evidence that a lie detector can tell whether a person is lying or telling the truth.
-
-</details><br>
-
--->
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em></p>
+<p>We are testing <span class="math inline">\(H_0:p_L = p_N\)</span> vs <span class="math inline">\(H_a:p_L \neq p_N\)</span>. The test statistic is</p>
+<p><span class="math display">\[z = \frac{statistic-null}{SE} = \frac{(\hat{p}_L - \hat{p}_N) - 0}{\sqrt{\frac{\hat{p}(1-\hat{p})}{n_l} + \frac{\hat{p}(1-\hat{p})}{n_N}}} = \frac{0.6458 - 0.5625}{\sqrt{\frac{0.6042(1-0.6042)}{48}} + \frac{0.6042*(1-0.6042)}{48}} = 0.834 \]</span></p>
+<p>This is a two-tail test, and the area to the right of 0.834 in a normal distribution is 0.202 (1-pnorm(0.834)), so the p-value is 2(0.202) = 0.404. The R command is: 2*(1-pnorm(0.834))</p>
+<div class="sourceCode" id="cb388"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">pL_hat</span> <span class="op">=</span> <span class="fl">31</span><span class="op">/</span><span class="fl">48</span></span>
+<span><span class="va">pN_hat</span> <span class="op">=</span> <span class="fl">27</span><span class="op">/</span><span class="fl">48</span></span>
+<span><span class="va">pooled_p</span> <span class="op">=</span> <span class="fl">58</span><span class="op">/</span><span class="fl">96</span></span>
+<span><span class="va">nL</span> <span class="op">=</span> <span class="fl">48</span></span>
+<span><span class="va">nN</span> <span class="op">=</span> <span class="fl">48</span></span>
+<span><span class="va">SE</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="va">pooled_p</span><span class="op">*</span><span class="op">(</span><span class="fl">1</span><span class="op">-</span><span class="va">pooled_p</span><span class="op">)</span><span class="op">*</span><span class="op">(</span><span class="fl">1</span><span class="op">/</span><span class="va">nL</span> <span class="op">+</span> <span class="fl">1</span><span class="op">/</span><span class="va">nN</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">z</span> <span class="op">=</span> <span class="op">(</span><span class="va">pL_hat</span> <span class="op">-</span> <span class="va">pN_hat</span><span class="op">)</span> <span class="op">/</span> <span class="va">SE</span></span>
+<span><span class="va">p_value</span> <span class="op">=</span> <span class="fl">2</span><span class="op">*</span><span class="op">(</span><span class="fl">1</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">pnorm</a></span><span class="op">(</span><span class="va">z</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">p_value</span></span></code></pre></div>
+<pre><code>[1] 0.4038223</code></pre>
+<p>We fail to reject H0 and conclude that there is not enough evidence that a lie detector can tell whether a person is lying or telling the truth.</p>
+</details><p><br></p>
 </div>
 <div id="d-calculate-a-95-confidence-interval-for-the-difference-in-proportions-of-people-correctly-identified-by-the-lie-detector." class="section level3" number="27.2.4">
 <h3>
 <span class="header-section-number">27.2.4</span> (d) Calculate a 95% confidence interval for the difference in proportions of people correctly identified by the lie detector.<a class="anchor" aria-label="anchor" href="#d-calculate-a-95-confidence-interval-for-the-difference-in-proportions-of-people-correctly-identified-by-the-lie-detector."><i class="fas fa-link"></i></a>
 </h3>
-<!--
-
-<details><summary><red>Click for answer</red></summary>
-
-
-
-```r
-conf_level = 0.95
-z_star = qnorm(1-(1-conf_level)/2)
-margin_of_error = z_star * SE
-CI_lower = (pL_hat - pN_hat) - margin_of_error
-CI_upper = (pL_hat - pN_hat) + margin_of_error
-CI = c(CI_lower, CI_upper)
-CI
-```
-
-```
-[1] -0.1123154  0.2789821
-```
-
-The 95% confidence interval for the difference in proportions is (-0.299, 0.207). Since, the confidence interval includes the null hypothesized value of 0, we do not reject the null hypothesis, and conclude that there is not enough evidence that a lie detector can tell whether a person is lying or telling the truth.
-
-</details><br>
-
--->
+<details><summary><red>Click for answer</red></summary><div class="sourceCode" id="cb390"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">pL_hat</span> <span class="op">&lt;-</span> <span class="fl">31</span><span class="op">/</span><span class="fl">48</span></span>
+<span><span class="va">pN_hat</span> <span class="op">&lt;-</span> <span class="fl">21</span><span class="op">/</span><span class="fl">48</span></span>
+<span><span class="va">conf_level</span> <span class="op">=</span> <span class="fl">0.95</span></span>
+<span><span class="va">z_star</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">qnorm</a></span><span class="op">(</span><span class="fl">1</span><span class="op">-</span><span class="op">(</span><span class="fl">1</span><span class="op">-</span><span class="va">conf_level</span><span class="op">)</span><span class="op">/</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="va">SE</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="va">pL_hat</span><span class="op">*</span><span class="op">(</span><span class="fl">1</span><span class="op">-</span><span class="va">pL_hat</span><span class="op">)</span><span class="op">/</span><span class="fl">48</span> <span class="op">+</span> <span class="va">pN_hat</span><span class="op">*</span><span class="op">(</span><span class="fl">1</span><span class="op">-</span><span class="va">pN_hat</span><span class="op">)</span><span class="op">/</span><span class="fl">48</span><span class="op">)</span></span>
+<span><span class="va">margin_of_error</span> <span class="op">=</span> <span class="va">z_star</span> <span class="op">*</span> <span class="va">SE</span></span>
+<span><span class="va">CI_lower</span> <span class="op">=</span> <span class="op">(</span><span class="va">pL_hat</span> <span class="op">-</span> <span class="va">pN_hat</span><span class="op">)</span> <span class="op">-</span> <span class="va">margin_of_error</span></span>
+<span><span class="va">CI_upper</span> <span class="op">=</span> <span class="op">(</span><span class="va">pL_hat</span> <span class="op">-</span> <span class="va">pN_hat</span><span class="op">)</span> <span class="op">+</span> <span class="va">margin_of_error</span></span>
+<span><span class="va">CI</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">CI_lower</span>, <span class="va">CI_upper</span><span class="op">)</span></span>
+<span><span class="va">CI</span></span></code></pre></div>
+<pre><code>[1] 0.01339606 0.40327061</code></pre>
+<p>The 95% confidence interval for the difference in proportions is (0.0134, 0.4033). We are 95% confident that the proportion of lying people correctly identified by the lie detector is from 1.3% to 40% larger than the proportion of not lying people correctly identified by the lie detector.</p>
+</details><p><br></p>
 </div>
 </div>
 <div id="problem-3-smoking-and-pregnancy-rate" class="section level2" number="27.3">
@@ -270,7 +241,7 @@ We are 90% sure that the proportion of smokers who get pregnant in the first cyc
 <span class="header-section-number">27.3.2</span> (b). Now, repeat the above analysis using the hypothesis test approach.<a class="anchor" aria-label="anchor" href="#b.-now-repeat-the-above-analysis-using-the-hypothesis-test-approach."><i class="fas fa-link"></i></a>
 </h3>
 <details><summary><red>Click for answer</red></summary><p>We are testing <span class="math inline">\(H_0:p_S = p_{NS}\)</span> vs <span class="math inline">\(H_a:p_S \neq p_{NS}\)</span>. The test statistic is:</p>
-<div class="sourceCode" id="cb388"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb392"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">pS_hat</span> <span class="op">=</span> <span class="fl">38</span><span class="op">/</span><span class="fl">135</span></span>
 <span><span class="va">pNS_hat</span> <span class="op">=</span> <span class="fl">206</span><span class="op">/</span><span class="fl">543</span></span>
 <span><span class="va">pooled_p2</span> <span class="op">=</span> <span class="op">(</span><span class="fl">38</span><span class="op">+</span><span class="fl">206</span><span class="op">)</span><span class="op">/</span><span class="op">(</span><span class="fl">135</span><span class="op">+</span><span class="fl">543</span><span class="op">)</span></span>
@@ -326,7 +297,7 @@ We are 90% sure that the proportion of smokers who get pregnant in the first cyc
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2024-02-13.</p>
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2024-02-14.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
