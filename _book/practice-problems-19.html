@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 28 Practice Problems 19 | Stat 120</title>
+<meta name="author" content="Deepak Bastola">
+<meta name="description" content="28.1 Problem 1: Florida Lakes pH The textbook dataset FloridaLakes contains data on 53 lakes in Florida. We want to know if the average pH of lakes in Florida is different from a neutral value of...">
+<meta name="generator" content="bookdown 0.37 with bs4_book()">
+<meta property="og:title" content="Chapter 28 Practice Problems 19 | Stat 120">
+<meta property="og:type" content="book">
+<meta property="og:description" content="28.1 Problem 1: Florida Lakes pH The textbook dataset FloridaLakes contains data on 53 lakes in Florida. We want to know if the average pH of lakes in Florida is different from a neutral value of...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 28 Practice Problems 19 | Stat 120">
+<meta name="twitter:description" content="28.1 Problem 1: Florida Lakes pH The textbook dataset FloridaLakes contains data on 53 lakes in Florida. We want to know if the average pH of lakes in Florida is different from a neutral value of...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.6.1/transition.js"></script><script src="libs/bs3compat-0.6.1/tabs.js"></script><script src="libs/bs3compat-0.6.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Stat 120</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Introduction to Statistics</a></li>
+<li class="book-part">Basics R</li>
+<li><a class="" href="what-is-r.html"><span class="header-section-number">1</span> What is R?</a></li>
+<li><a class="" href="r-markdown-basics.html"><span class="header-section-number">2</span> R Markdown Basics</a></li>
+<li><a class="" href="homework-guidelines.html"><span class="header-section-number">3</span> Homework Guidelines</a></li>
+<li><a class="" href="report-guidelines.html"><span class="header-section-number">4</span> Report Guidelines</a></li>
+<li class="book-part">R Tutorials</li>
+<li><a class="" href="tutorial-1-embark-on-your-data-journey.html"><span class="header-section-number">5</span> Tutorial 1: Embark on Your Data Journey</a></li>
+<li><a class="" href="tutorial-2-dive-deeper-into-data-visualization-and-statistics-in-r.html"><span class="header-section-number">6</span> Tutorial 2: Dive Deeper into Data Visualization and Statistics in R</a></li>
+<li><a class="" href="tutorial-3-dive-deeper-into-data-manipulation-with-dplyr-in-r.html"><span class="header-section-number">7</span> Tutorial 3: Dive Deeper into Data Manipulation with dplyr in R</a></li>
+<li><a class="" href="tutorial-4-latex-equations-in-rmarkdown.html"><span class="header-section-number">8</span> Tutorial 4: LaTeX Equations in RMarkdown</a></li>
+<li class="book-part">Short Reports</li>
+<li><a class="" href="short-report-1.html"><span class="header-section-number">9</span> Short Report 1</a></li>
+<li class="book-part">Practice Problems</li>
+<li><a class="" href="practice-problems-1.html"><span class="header-section-number">10</span> Practice Problems 1</a></li>
+<li><a class="" href="practice-problems-2.html"><span class="header-section-number">11</span> Practice Problems 2</a></li>
+<li><a class="" href="practice-problems-3.html"><span class="header-section-number">12</span> Practice Problems 3</a></li>
+<li><a class="" href="practice-problems-4.html"><span class="header-section-number">13</span> Practice Problems 4</a></li>
+<li><a class="" href="practice-problems-5.html"><span class="header-section-number">14</span> Practice Problems 5</a></li>
+<li><a class="" href="practice-problems-6.html"><span class="header-section-number">15</span> Practice Problems 6</a></li>
+<li><a class="" href="practice-problems-7.html"><span class="header-section-number">16</span> Practice Problems 7</a></li>
+<li><a class="" href="practice-problems-8.html"><span class="header-section-number">17</span> Practice Problems 8</a></li>
+<li><a class="" href="practice-problems-9.html"><span class="header-section-number">18</span> Practice Problems 9</a></li>
+<li><a class="" href="practice-problems-10.html"><span class="header-section-number">19</span> Practice Problems 10</a></li>
+<li><a class="" href="practice-problems-11.html"><span class="header-section-number">20</span> Practice Problems 11</a></li>
+<li><a class="" href="practice-problems-12.html"><span class="header-section-number">21</span> Practice Problems 12</a></li>
+<li><a class="" href="practice-problems-13.html"><span class="header-section-number">22</span> Practice Problems 13</a></li>
+<li><a class="" href="practice-problems-14.html"><span class="header-section-number">23</span> Practice Problems 14</a></li>
+<li><a class="" href="practice-problems-15.html"><span class="header-section-number">24</span> Practice Problems 15</a></li>
+<li><a class="" href="practice-problems-16.html"><span class="header-section-number">25</span> Practice Problems 16</a></li>
+<li><a class="" href="practice-problems-17.html"><span class="header-section-number">26</span> Practice Problems 17</a></li>
+<li><a class="" href="practice-problems-18.html"><span class="header-section-number">27</span> Practice Problems 18</a></li>
+<li><a class="active" href="practice-problems-19.html"><span class="header-section-number">28</span> Practice Problems 19</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="practice-problems-19" class="section level1" number="28">
+<h1>
+<span class="header-section-number">28</span> Practice Problems 19<a class="anchor" aria-label="anchor" href="#practice-problems-19"><i class="fas fa-link"></i></a>
+</h1>
+<div id="problem-1-florida-lakes-ph" class="section level2" number="28.1">
+<h2>
+<span class="header-section-number">28.1</span> Problem 1: Florida Lakes pH<a class="anchor" aria-label="anchor" href="#problem-1-florida-lakes-ph"><i class="fas fa-link"></i></a>
+</h2>
+<p>The textbook dataset <code>FloridaLakes</code> contains data on 53 lakes in Florida. We want to know if the average pH of lakes in Florida is different from a neutral value of 7.</p>
+<div class="sourceCode" id="cb394"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">lakes</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"http://www.lock5stat.com/datasets1e/FloridaLakes.csv"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">lakes</span><span class="op">)</span></span></code></pre></div>
+<pre><code>  ID         Lake Alkalinity  pH Calcium Chlorophyll
+1  1    Alligator        5.9 6.1     3.0         0.7
+2  2        Annie        3.5 5.1     1.9         3.2
+3  3       Apopka      116.0 9.1    44.1       128.3
+4  4 Blue Cypress       39.4 6.9    16.4         3.5
+5  5        Brick        2.5 4.6     2.9         1.8
+6  6       Bryant       19.6 7.3     4.5        44.1
+  AvgMercury NumSamples MinMercury MaxMercury
+1       1.23          5       0.85       1.43
+2       1.33          7       0.92       1.90
+3       0.04          6       0.04       0.06
+4       0.44         12       0.13       0.84
+5       1.20         12       0.69       1.50
+6       0.27         14       0.04       0.48
+  ThreeYrStdMercury AgeData
+1              1.53       1
+2              1.33       0
+3              0.04       0
+4              0.44       0
+5              1.33       1
+6              0.25       1</code></pre>
+<div id="a-eda" class="section level4" number="28.1.0.1">
+<h4>
+<span class="header-section-number">28.1.0.1</span> (a) EDA<a class="anchor" aria-label="anchor" href="#a-eda"><i class="fas fa-link"></i></a>
+</h4>
+<p>Always plot your data and get summary stats:</p>
+<div class="sourceCode" id="cb396"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">lakes</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">pH</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>bins<span class="op">=</span><span class="fl">10</span>, fill <span class="op">=</span> <span class="st">"lightblue"</span>, color <span class="op">=</span> <span class="st">"gold"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Practice_Problems_19_files/figure-html/unnamed-chunk-2-1.png" width="100%"></div>
+<div class="sourceCode" id="cb397"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">lakes</span><span class="op">$</span><span class="va">pH</span><span class="op">)</span></span></code></pre></div>
+<pre><code>[1] 6.590566</code></pre>
+<div class="sourceCode" id="cb399"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">lakes</span><span class="op">$</span><span class="va">pH</span><span class="op">)</span></span></code></pre></div>
+<pre><code>[1] 1.288449</code></pre>
+<ul>
+<li>What are the sample mean and standard deviation? Use appropriate notation.</li>
+<li>Can we use t-inference methods with the pH variable?</li>
+</ul>
+<details><summary><red>Click for answer</red></summary><em>Answer:</em> The average pH was <span class="math inline">\(\bar{x} = 6.591\)</span> with a standard deviation of <span class="math inline">\(s=1.288\)</span>. The distribution of pH is symmetric with no outliers, so we can use t-inference methods.
+</details><p><br></p>
+</div>
+<div id="b-se-for-the-sample-mean" class="section level4" number="28.1.0.2">
+<h4>
+<span class="header-section-number">28.1.0.2</span> (b) SE for the sample mean<a class="anchor" aria-label="anchor" href="#b-se-for-the-sample-mean"><i class="fas fa-link"></i></a>
+</h4>
+What is the estimated SE for the sample mean?
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The estimated SE for the sample mean is <span class="math inline">\(SE_{\bar{x}} = 0.1770\)</span>.</p>
+<div class="sourceCode" id="cb401"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">lakes</span><span class="op">$</span><span class="va">pH</span><span class="op">)</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fl">53</span><span class="op">)</span></span></code></pre></div>
+<pre><code>[1] 0.1769821</code></pre>
+</details><p><br></p>
+</div>
+<div id="c-t-test-statistic" class="section level4" number="28.1.0.3">
+<h4>
+<span class="header-section-number">28.1.0.3</span> (c) t-test statistic<a class="anchor" aria-label="anchor" href="#c-t-test-statistic"><i class="fas fa-link"></i></a>
+</h4>
+<p>Using your SE from (b) to compute the t-test statistic for testing if the population mean pH is equal, or not, to 7. Write down your hypotheses then show how the t test statistic is calculated. Interpret this value in context.</p>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The hypotheses are <span class="math inline">\(H_0: \mu = 7\)</span> vs <span class="math inline">\(H_A: \mu \neq 7\)</span>. The test stat is</p>
+<p><span class="math display">\[
+t = \dfrac{6.591 - 7}{1.288/\sqrt{53}} = -2.3134
+\]</span></p>
+<p>The observed mean of 6.591 is 2.3 SEs below the hypothesized mean of 7.</p>
+<div class="sourceCode" id="cb403"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">lakes</span><span class="op">$</span><span class="va">pH</span><span class="op">)</span> <span class="op">-</span> <span class="fl">7</span><span class="op">)</span><span class="op">/</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">lakes</span><span class="op">$</span><span class="va">pH</span><span class="op">)</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fl">53</span><span class="op">)</span><span class="op">)</span> </span></code></pre></div>
+<pre><code>[1] -2.31342</code></pre>
+</details>
+</div>
+<div id="d-one-sample-t-test" class="section level3" number="28.1.1">
+<h3>
+<span class="header-section-number">28.1.1</span> (d) One-sample t-test<a class="anchor" aria-label="anchor" href="#d-one-sample-t-test"><i class="fas fa-link"></i></a>
+</h3>
+<p>The function <code>t.test(x, mu=)</code> can be used for a one sample test comparing the sample mean of <code>x</code> to the hypothesized value given to <code>mu=</code>. Here we are testing whether the population mean is equal to 7 or not:</p>
+<div class="sourceCode" id="cb405"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">lakes</span><span class="op">$</span><span class="va">pH</span>, mu <span class="op">=</span> <span class="fl">7</span><span class="op">)</span></span></code></pre></div>
+<pre><code>
+    One Sample t-test
+
+data:  lakes$pH
+t = -2.3134, df = 52, p-value = 0.02469
+alternative hypothesis: true mean is not equal to 7
+95 percent confidence interval:
+ 6.235425 6.945707
+sample estimates:
+mean of x 
+ 6.590566 </code></pre>
+
+<p><br></p>
+<ul>
+<li>What is the t test stat given in the output? Verify that it matches your answer to (c), within reasonable rounding error.</li>
+</ul>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The test stat is -2.31.</p>
+</details><p><br></p>
+<ul>
+<li>What is the p-value for the test? Interpret this value.</li>
+</ul>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> The p-value is 0.025. If the mean pH of all lakes is 7, then we would see a sample mean that is at least 2.31 SEs away from 7 about 2.5% of the time in samples of 53 lakes.</p>
+</details><p><br></p>
+<ul>
+<li>What is your test conclusion?</li>
+</ul>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> There is a statistically significant difference between the observed mean pH of 6.591 and the hypothesized mean of 7 (t=-2.31, df=52, p=0.025).</p>
+</details><p><br></p>
+<div id="e-one-sample-t-confidence-interval" class="section level4" number="28.1.1.1">
+<h4>
+<span class="header-section-number">28.1.1.1</span> (e) One-sample t confidence interval<a class="anchor" aria-label="anchor" href="#e-one-sample-t-confidence-interval"><i class="fas fa-link"></i></a>
+</h4>
+<p>What is the 95% confidence interval for the population mean pH? Interpret this CI.</p>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> We are 95% confident that the mean pH of all lakes in Florida is between 6.24 and 6.95.</p>
+</details><p><br></p>
+</div>
+<div id="f-qt-and-pt" class="section level4" number="28.1.1.2">
+<h4>
+<span class="header-section-number">28.1.1.2</span> (f) <code>qt</code> and <code>pt</code><a class="anchor" aria-label="anchor" href="#f-qt-and-pt"><i class="fas fa-link"></i></a>
+</h4>
+Show how to compute the p-value for your test in (d) using the <code>pt</code> command. Then show how the confidence interval in (e) is computed with a <code>qt</code> value.
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em> For the two-sided test, the p-value is twice the proportion below the test stat <span class="math inline">\(t=-2.313\)</span> under a t-distribution with <span class="math inline">\(df=53-1=52\)</span></p>
+<div class="sourceCode" id="cb407"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">2</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/stats/TDist.html">pt</a></span><span class="op">(</span><span class="op">-</span><span class="fl">2.313</span>,df<span class="op">=</span><span class="fl">52</span><span class="op">)</span></span></code></pre></div>
+<pre><code>[1] 0.02471195</code></pre>
+<p>For a 95% CI, we get the 97.5th percentile from the same t-distribution</p>
+<div class="sourceCode" id="cb409"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/TDist.html">qt</a></span><span class="op">(</span><span class="fl">.975</span>,<span class="fl">52</span><span class="op">)</span></span></code></pre></div>
+<pre><code>[1] 2.006647</code></pre>
+</details><p><br></p>
+</div>
+</div>
+</div>
+<div id="problem-2-nutrition-study" class="section level2" number="28.2">
+<h2>
+<span class="header-section-number">28.2</span> Problem 2: Nutrition Study<a class="anchor" aria-label="anchor" href="#problem-2-nutrition-study"><i class="fas fa-link"></i></a>
+</h2>
+<p>The dataset <code>NutritionStudy</code> contains data on daily calorie intake and other variables for 315 individuals. We want to know if the average daily calorie intake is different from the recommended 2000 calories.</p>
+<div class="sourceCode" id="cb411"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
+<span><span class="va">NutritionStudy</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"https://www.lock5stat.com/datasets2e/NutritionStudy.csv"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">NutritionStudy</span><span class="op">)</span></span></code></pre></div>
+<pre><code>Rows: 315
+Columns: 17
+$ ID            &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 1…
+$ Age           &lt;int&gt; 64, 76, 38, 40, 72, 40, 65, 58, 35, …
+$ Smoke         &lt;chr&gt; "No", "No", "No", "No", "No", "No", …
+$ Quetelet      &lt;dbl&gt; 21.4838, 23.8763, 20.0108, 25.1406, …
+$ Vitamin       &lt;int&gt; 1, 1, 2, 3, 1, 3, 2, 1, 3, 3, 1, 2, …
+$ Calories      &lt;dbl&gt; 1298.8, 1032.5, 2372.3, 2449.5, 1952…
+$ Fat           &lt;dbl&gt; 57.0, 50.1, 83.6, 97.5, 82.6, 56.0, …
+$ Fiber         &lt;dbl&gt; 6.3, 15.8, 19.1, 26.5, 16.2, 9.6, 28…
+$ Alcohol       &lt;dbl&gt; 0.0, 0.0, 14.1, 0.5, 0.0, 1.3, 0.0, …
+$ Cholesterol   &lt;dbl&gt; 170.3, 75.8, 257.9, 332.6, 170.8, 15…
+$ BetaDiet      &lt;int&gt; 1945, 2653, 6321, 1061, 2863, 1729, …
+$ RetinolDiet   &lt;int&gt; 890, 451, 660, 864, 1209, 1439, 802,…
+$ BetaPlasma    &lt;int&gt; 200, 124, 328, 153, 92, 148, 258, 64…
+$ RetinolPlasma &lt;int&gt; 915, 727, 721, 615, 799, 654, 834, 8…
+$ Gender        &lt;chr&gt; "Female", "Female", "Female", "Femal…
+$ VitaminUse    &lt;chr&gt; "Regular", "Regular", "Occasional", …
+$ PriorSmoke    &lt;int&gt; 2, 1, 2, 2, 1, 2, 1, 1, 1, 2, 2, 1, …</code></pre>
+<div id="a-eda-1" class="section level3" number="28.2.1">
+<h3>
+<span class="header-section-number">28.2.1</span> (a) EDA<a class="anchor" aria-label="anchor" href="#a-eda-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Always plot your data and get summary stats:</p>
+<div class="sourceCode" id="cb413"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">NutritionStudy</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">Calories</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"lightblue"</span>, color <span class="op">=</span> <span class="st">"gold"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Practice_Problems_19_files/figure-html/unnamed-chunk-9-1.png" width="100%"></div>
+<div class="sourceCode" id="cb414"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">NutritionStudy</span><span class="op">$</span><span class="va">Calories</span><span class="op">)</span></span></code></pre></div>
+<pre><code>[1] 1796.655</code></pre>
+<div class="sourceCode" id="cb416"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">NutritionStudy</span><span class="op">$</span><span class="va">Calories</span><span class="op">)</span></span></code></pre></div>
+<pre><code>[1] 680.3474</code></pre>
+</div>
+<div id="b-se-for-the-sample-mean-1" class="section level3" number="28.2.2">
+<h3>
+<span class="header-section-number">28.2.2</span> (b) SE for the sample mean<a class="anchor" aria-label="anchor" href="#b-se-for-the-sample-mean-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>What is the estimated SE for the sample mean?</p>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em></p>
+<div class="sourceCode" id="cb418"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">n</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">NutritionStudy</span><span class="op">$</span><span class="va">Calories</span><span class="op">)</span></span>
+<span><span class="va">SE</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">NutritionStudy</span><span class="op">$</span><span class="va">Calories</span><span class="op">)</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span></span>
+<span><span class="va">SE</span></span></code></pre></div>
+<pre><code>[1] 38.33324</code></pre>
+</details><p><br></p>
+</div>
+<div id="c-t-test-statistic-1" class="section level3" number="28.2.3">
+<h3>
+<span class="header-section-number">28.2.3</span> (c) t-test statistic<a class="anchor" aria-label="anchor" href="#c-t-test-statistic-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Compute the t-test statistic for testing if the population mean calorie intake is equal, or not, to 2000.</p>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em></p>
+<div class="sourceCode" id="cb420"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">t_stat</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">NutritionStudy</span><span class="op">$</span><span class="va">Calories</span><span class="op">)</span> <span class="op">-</span> <span class="fl">2000</span><span class="op">)</span> <span class="op">/</span> <span class="va">SE</span></span>
+<span><span class="va">t_stat</span></span></code></pre></div>
+<pre><code>[1] -5.304676</code></pre>
+</details><p><br></p>
+</div>
+<div id="d-one-sample-t-test-1" class="section level3" number="28.2.4">
+<h3>
+<span class="header-section-number">28.2.4</span> (d) One-sample t-test<a class="anchor" aria-label="anchor" href="#d-one-sample-t-test-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Perform a one-sample t-test to test whether the population mean calorie intake is equal to 2000 or not.</p>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em></p>
+<div class="sourceCode" id="cb422"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">NutritionStudy</span><span class="op">$</span><span class="va">Calories</span>, mu <span class="op">=</span> <span class="fl">2000</span><span class="op">)</span></span></code></pre></div>
+<pre><code>
+    One Sample t-test
+
+data:  NutritionStudy$Calories
+t = -5.3047, df = 314, p-value = 2.135e-07
+alternative hypothesis: true mean is not equal to 2000
+95 percent confidence interval:
+ 1721.232 1872.077
+sample estimates:
+mean of x 
+ 1796.655 </code></pre>
+</details><p><br></p>
+</div>
+<div id="e-one-sample-t-confidence-interval-1" class="section level3" number="28.2.5">
+<h3>
+<span class="header-section-number">28.2.5</span> (e) One-sample t confidence interval<a class="anchor" aria-label="anchor" href="#e-one-sample-t-confidence-interval-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>What is the 95% confidence interval for the population mean calorie intake?</p>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em></p>
+<div class="sourceCode" id="cb424"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ci</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">NutritionStudy</span><span class="op">$</span><span class="va">Calories</span>, mu <span class="op">=</span> <span class="fl">2000</span><span class="op">)</span><span class="op">$</span><span class="va">conf.int</span></span>
+<span><span class="va">ci</span></span></code></pre></div>
+<pre><code>[1] 1721.232 1872.077
+attr(,"conf.level")
+[1] 0.95</code></pre>
+</details><p><br></p>
+</div>
+<div id="f-qt-and-pt-1" class="section level3" number="28.2.6">
+<h3>
+<span class="header-section-number">28.2.6</span> (f) <code>qt</code> and <code>pt</code><a class="anchor" aria-label="anchor" href="#f-qt-and-pt-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Show how to compute the p-value for the test in (d) using the pt command. Then show how the confidence interval in (e) is computed with a qt value.</p>
+<details><summary><red>Click for answer</red></summary><p><em>Answer:</em></p>
+<div class="sourceCode" id="cb426"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">p_value</span> <span class="op">&lt;-</span> <span class="fl">2</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/stats/TDist.html">pt</a></span><span class="op">(</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="va">t_stat</span><span class="op">)</span>, df <span class="op">=</span> <span class="va">n</span> <span class="op">-</span> <span class="fl">1</span><span class="op">)</span></span>
+<span><span class="va">p_value</span></span></code></pre></div>
+<pre><code>[1] 2.135134e-07</code></pre>
+<div class="sourceCode" id="cb428"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">t_star</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/TDist.html">qt</a></span><span class="op">(</span><span class="fl">0.975</span>, df <span class="op">=</span> <span class="va">n</span> <span class="op">-</span> <span class="fl">1</span><span class="op">)</span></span>
+<span><span class="va">t_star</span></span></code></pre></div>
+<pre><code>[1] 1.967548</code></pre>
+</details><p><br></p>
+
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="practice-problems-18.html"><span class="header-section-number">27</span> Practice Problems 18</a></div>
+<div class="empty"></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#practice-problems-19"><span class="header-section-number">28</span> Practice Problems 19</a></li>
+<li>
+<a class="nav-link" href="#problem-1-florida-lakes-ph"><span class="header-section-number">28.1</span> Problem 1: Florida Lakes pH</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#d-one-sample-t-test"><span class="header-section-number">28.1.1</span> (d) One-sample t-test</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#problem-2-nutrition-study"><span class="header-section-number">28.2</span> Problem 2: Nutrition Study</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#a-eda-1"><span class="header-section-number">28.2.1</span> (a) EDA</a></li>
+<li><a class="nav-link" href="#b-se-for-the-sample-mean-1"><span class="header-section-number">28.2.2</span> (b) SE for the sample mean</a></li>
+<li><a class="nav-link" href="#c-t-test-statistic-1"><span class="header-section-number">28.2.3</span> (c) t-test statistic</a></li>
+<li><a class="nav-link" href="#d-one-sample-t-test-1"><span class="header-section-number">28.2.4</span> (d) One-sample t-test</a></li>
+<li><a class="nav-link" href="#e-one-sample-t-confidence-interval-1"><span class="header-section-number">28.2.5</span> (e) One-sample t confidence interval</a></li>
+<li><a class="nav-link" href="#f-qt-and-pt-1"><span class="header-section-number">28.2.6</span> (f) qt and pt</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/Practice_Problems_19.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/Practice_Problems_19.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Stat 120</strong>" was written by Deepak Bastola. It was last built on 2024-02-15.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>
