@@ -19,7 +19,7 @@ rmd_files: [
     "Tutorial_3.Rmd",
     "Tutorial_4.Rmd",
     "Short_Report_1.Rmd",
-   # "Short_Report_2.Rmd",
+    "Short_Report_2.Rmd",
    "Practice_Problems_1.Rmd",
    "Practice_Problems_2.Rmd",
     "Practice_Problems_3.Rmd", 
@@ -38,8 +38,8 @@ rmd_files: [
      "Practice_Problems_16.Rmd", 
      "Practice_Problems_17.Rmd",
      "Practice_Problems_18.Rmd", 
-     "Practice_Problems_19.Rmd" 
-   #  "Practice_Problems_20.Rmd", 
+     "Practice_Problems_19.Rmd", 
+     "Practice_Problems_20.Rmd" 
    #  "Practice_Problems_21.Rmd", 
    #  "Practice_Problems_22.Rmd", 
    #  "Practice_Problems_23.Rmd", 

@@ -7,60 +7,61 @@ output:
 # Short Report 2
 
 
-## Due Date
+**Short Report 1 Deadline**: Before 10 pm on Wednesday, 02/28/2024.
 
-**Proposal Due**: Before 5 pm, Tuesday, 10/31/2023
+*Proposal Deadline*: Before 11:59 pm on Friday, 02/23/2024.
 
-**Final Report Deadline**: Before 5 pm on Wednesday, 11/08/2023.
+#### Here's the link to the proposal google form, [https://forms.gle/HGjMgDmjya6QwZhw9](https://forms.gle/HGjMgDmjya6QwZhw9)
 
 ## Introduction
 
-This lab report is an individual assignment. While discussions about the data and R code with classmates are allowed, forming questions and answering them about the data should be done independently. Please follow the [Report Guidelines](https://stat120-fall23.netlify.app/report-guidelines) available on the course helper webpage before starting the report.
+This lab report is an individual assignment. While discussions about the data and R code with classmates are allowed, forming questions and answering them about the data should be done independently. Please follow the [Report Guidelines](https://stat120-winter24.netlify.app/report-guidelines) available on the course helper webpage before starting the report.
 
 ## Data Retrieval
 
 
 ```r
-cocoa <- read.csv("https://raw.githubusercontent.com/deepbas/stat120datasets/main/cocoa.csv")
-dplyr::glimpse(cocoa)  # glimpse of the data
-```
-
-```
-Rows: 2,443
-Columns: 7
-$ X                      <int> 1, 2, 3, 4, 5, 6, 7, 8, 9, …
-$ company_location       <chr> "U.S.A.", "U.S.A.", "U.S.A.…
-$ review_date            <int> 2019, 2019, 2019, 2021, 202…
-$ country_of_bean_origin <chr> "Tanzania", "Dominican Repu…
-$ cocoa_percent          <dbl> 76, 76, 76, 68, 72, 80, 68,…
-$ no_ingredients         <int> 3, 3, 3, 3, 3, 3, 3, 4, 4, …
-$ rating                 <dbl> 3.25, 3.50, 3.75, 3.00, 3.0…
+library(palmerpenguins)
+library(ggplot2)
+library(dplyr)
+penguins <- penguins %>%  tidyr::drop_na() # drop any missing values
 ```
 
 
-### Description of the data 
+## Data Description
 
-Are you intrigued by the analysis of 2,443 chocolate bars primarily focusing on dark chocolate? Our data set offers insights ranging from the years 2019 to 2021. Each rating in this dataset reflects the experience of tasting a specific batch of a chocolate bar. The original data is from [Kaggle (click here!)](https://www.kaggle.com/datasets/rtatman/chocolate-bar-ratings). Let's delve into the variables and what each represents:
-
-
-| **Column Name**                          | **Description**                                                                                     |
-|----------------------------------------------------------|---------------------------------------------------------------------------|
-| `company_location`                       | Location of the bar manufacturer                                                                     |
-| `review_date`                            | From 2019 to 2021                                                                                    |
-| `country_of_bean_origin`                 | Country where the cacao beans originated                                                             |
-| `cocoa_percent`                          | Percentage of cocoa in the bar                                                                       |
-| `no_ingredients`                         | Number of different ingredients in the bar                                                           |
-| `rating`                                 | 1.0-1.9 Unpleasant, 2.0-2.9 Disappointing, 3.0-3.49 Recommended, 3.5-3.9 Highly Recommended, 4.0-5.0 Outstanding |
+Ready to dive into the fascinating world of Antarctic penguins? Our dataset, drawn from the `palmerpenguins` package, offers a detailed look at 333 penguins across 8 variables, capturing the diversity of these creatures across different islands. The data encompasses various measurements like bill length, flipper length, and body mass, along with categorical data on species, sex, and the year of observation. This rich dataset serves as an excellent foundation for exploratory data analysis and hypothesis testing. Let's embark on this analytical journey and uncover the hidden stories of these penguins.
 
 
+| **Column Name**       | **Description**                                                                 |
+|-----------------------|---------------------------------------------------------------------------------|
+| species               | A categorical variable denoting penguin species (Adélie, Chinstrap, and Gentoo)               |
+| island                | A categorical variable denoting island in Palmer Archipelago, Antarctica (Biscoe, Dream, or Torgersen) |
+| bill_length_mm        | A quantitative variable denoting bill length (millimeters)                                     |
+| bill_depth_mm         | A  quantitative variable denoting bill depth (millimeters)                                      |
+| flipper_length_mm     | A  quantitative variable denoting flipper length (millimeters)                                |
+| body_mass_g           | A  quantitative variable denoting body mass (grams)                                           |
+| sex                   | A categorical variable denoting penguin sex (female, male)                                    |
+| year                  | A  quantitative variable denoting the study year (2007, 2008, or 2009)                        |
 
-### Required Inference
 
-Formulate a single research question and address it by conducting one hypothesis test. Utilize both randomization methods, specifically the `permTest()` function and its variants in `CarletonStats` R package, or `StatKey`, and the theoretical models discussed in class (such as ANOVA, z-tests, t-tests, Chi-square tests, or slope t-tests.) to investigate your question. For each of these two approaches—randomization and theoretical—include at least one corresponding confidence interval. Should the test indicate a statistically significant difference between groups, the confidence interval should quantify the magnitude of this difference within the population. If no significant difference is detected, the confidence interval should provide an estimate for the overall population parameter, without differentiating by group.
 
-### General Expectations
+## Required Analyses:
 
-In your analysis, place equal importance on Exploratory Data Analysis (EDA) and p-values. Begin by incorporating basic descriptive graphs and statistics that underpin the data used in all your tests. These should align with and support your inference outcomes. If your results indicate statistical significance, further illustrate the relationship between the variables using EDA. Use specific summary statistics and/or confidence intervals to quantify any observed associations. Always assess the assumptions underlying your chosen inference methods. Be vigilant for outliers, particularly in quantitative variables. Should you encounter an extreme response or obvious error, remove it from your dataset and re-run your test and confidence interval. If the outlier is genuine, compare the results with and without it to gauge its influence on your conclusions.
+Formulate three research questions that pave the way for hypothesis testing using statistical tests such as ANOVA, z-tests, t-tests, Chi-square tests, and linear regression parameter significance tests. Accompany these tests with a confidence interval to quantify key parameters, providing insights into the population based on your findings. Whether differences are statistically significant or not, your analysis will illuminate various aspects of the penguin population. For example, if you find two groups have a statistically significant difference then your CI should quantify how different they are in the population. If you don’t find a statistically significant difference, then you should get a CI for your overall population parameter (not separated by groups if you didn’t find a difference).
+
+
+### Expectations
+
+- Remember, EDA (Exploratory Data Analysis) is as crucial as finding a p-value. Incorporate basic descriptive statistics and graphs to support all your analyses.
+
+- Highlight any statistically significant findings with detailed EDA, using specific statistics and/or confidence intervals to articulate the relationships between variables.
+
+- Examine the assumptions necessary for your chosen inference methods.
+
+- Be vigilant for outliers in your quantitative data during EDA. Decide whether to include or exclude them based on their influence on your analysis.
+
+- In your introduction, go beyond merely stating the source of your data. Delve into the background information provided with the dataset to enrich your report's context.
 
 
 ## Submission Details
@@ -107,41 +108,26 @@ Start by recapping your main findings and linking them to your initial questions
 
 ## Grading Rubric
 
-**Introduction**
-
-| Topic             | Excellent: 10 | Satisfactory: 7 | Needs work: 5 |
-|-------------------|---------------|-----------------|---------------|
-| Data introduction | Clearly and concisely describes the data set, and why it is of interest. Clearly establishes the story (i.e. set of questions) that will be introduced. | Introduction and story outlined, but could be clearer or more engaging. | Context and motivation is lacking; story unclear. |
-| Background & Relevance | Comprehensive context and background provided with clear relevance to the topic. | Adequate context given, some relevance noted but could be enhanced. | Limited or no context and relevance provided. |
-
-**Methods**
-
-| Topic             | Excellent: 10 | Satisfactory: 7 | Needs work: 5 |
-|-------------------|---------------|-----------------|---------------|
-| Clarity | Methods are detailed, replicable, and transparently described. | Methods are described but may lack some clarity or detail. | Methods are unclear or insufficiently described. |
-| Statistical Approach | Appropriate statistical tests and approaches are clearly outlined and justified. | Mostly appropriate methods used with some justification. | Choice of methods is unclear or inappropriate. |
-
-**Results**
-
-| Topic             | Excellent: 10 | Satisfactory: 7 | Needs work: 5 |
-|-------------------|---------------|-----------------|---------------|
-| Clarity & Depth | Results are clearly explained in an engaging way. The questions posed are clearly answered. Potential limitations are outlined. | Results are explained and the questions posed are answered. | Results are not completely explained and/or questions are left unanswered. |
-| Use of Figures & Tables | Effective and clear use of figures and tables to represent results. | Adequate use of figures and tables but may lack some clarity. | Insufficient or confusing use of figures and tables. |
-
-**Discussion and Conclusion**
-
-| Topic             | Excellent: 10 | Satisfactory: 7 | Needs work: 5 |
-|-------------------|---------------|-----------------|---------------|
-| Logic | Discussion and conclusion are based on sound evidence from statistical analyses and make adequate use of statistical jargon. | There are a few jumps in logic but the conclusion is mostly correct and uses sufficient statistical jargon. | The conclusion deviates from the main discussion, and the problem statements are not addressed with minimal use of statistical jargon. |
-| Broader Implications | Draws insightful implications from the results, considering a wider context. | Draws some implications but lacks depth or breadth. | Limited or no discussion of broader implications. |
-
-
-
-**Organization**
-
-| Topic                             | Excellent: 10 | Satisfactory: 7 | Needs work: 5 |
-|-----------------------------------|---------------|-----------------|---------------|
-| Content Readability               | Good sequence of analyses and transitions consisting of effective organization.  Introduction and conclusion are clear and somewhat related to the whole. | Sequence and transitions are fairly clear but the overall structure could be improved. Introduction and conclusion are fairly clear but lacks some coherence. | unclear or haphazard organization  |
-| R-code Organization (in **Appendix!**) | R-code is properly presented in order of implementation and commented sparsely | R-code is presented to get the job done but could be better formatted or organized| lacks important R-codes or R-code completely missing|
+| Aspect                                        | Excellent: 10                                                                  | Satisfactory: 7                                                                 | Needs work: 5                                                          |
+|:----------------------------------------------|:-------------------------------------------------------------------------------|:--------------------------------------------------------------------------------|:----------------------------------------------------------------------|
+| **Originality & Engagement in Introduction**  | Introduction captivates with original insights and creative angle, setting a compelling stage for the analysis. | Introduction shows some original elements and creativity but lacks a captivating edge. | Introduction is generic, with no original insights or creative elements. |
+| ---                                           | ---                                                                            | ---                                                                              | ---                                                                   |
+| **Depth & Integration**                       | Provides a deeply engaging and seamless narrative, integrating various elements of the analysis without disruption. | Adequate integration with occasional disruptions, narrative flow could be improved. | Poor integration with frequent disruptions, narrative flow is unclear. |
+| ---                                           | ---                                                                            | ---                                                                              | ---                                                                   |
+| **Use of Extra Tools**                        | Demonstrates the adept use of advanced tools not discussed in class, showing a high level of initiative and skill. | Employs additional tools with moderate success; application lacks depth or sophistication. | Utilizes only standard class tools or inadequately applies additional tools. |
+| ---                                           | ---                                                                            | ---                                                                              | ---                                                                   |
+| **Statistical Jargon & Application**          | Employs a rich vocabulary of statistical jargon correctly, enhancing the academic rigor of the analysis. | Adequate use of statistical terms, though sometimes imprecise or sparingly used. | Limited or incorrect use of statistical jargon, detracting from analytical depth. |
+| ---                                           | ---                                                                            | ---                                                                              | ---                                                                   |
+| **Originality in Presentation**               | Results are presented with a high degree of originality, showcasing creativity in data representation. | Results are presented in a standard format with some attempts at originality or creative display. | Presentation of results is conventional, with no creative or original elements. |
+| ---                                           | ---                                                                            | ---                                                                              | ---                                                                   |
+| **Integration of R Summaries**                | Numerical and R summaries are integrated smoothly within the text, supporting the narrative without disrupting it. | Numerical and R summaries are present but occasionally disrupt the essay's flow. | Numerical and R summaries are either disruptive to the narrative or missing. |
+| ---                                           | ---                                                                            | ---                                                                              | ---                                                                   |
+| **Insight & Innovation**                      | Discussion and conclusion draw highly insightful implications, revealing innovation and a thorough understanding of the topic's broader context. | Provides some insights and considers broader implications, but with limited innovation or depth. | Lacks insightful implications or innovative thoughts, with a narrow focus on the topic. |
+| ---                                           | ---                                                                            | ---                                                                              | ---                                                                   |
+| **Length and Verbosity**                      | The introduction and conclusion are concise yet comprehensive, with a verbosity that enriches rather than dilutes. | Introduction and conclusion contain some unnecessary verbosity, detracting from their clarity. | The introduction and conclusion are either too verbose, obscuring the main points, or too brief, lacking substance. |
+| ---                                           | ---                                                                            | ---                                                                              | ---                                                                   |
+| **Submission Promptness**                      | Both the proposal and final report are submitted on time or ahead of schedule, demonstrating good time management and commitment. | The proposal or final report is slightly late, indicating room for improvement in time management, but does not necessitate resubmission. | The proposal or final report is late, suggesting significant issues with time management and may require resubmission. |
+| ---                                           | ---                                                                            | ---                                                                              | ---                                                                   |
+| **R-code Organization (in **Appendix**)**     | R-code is meticulously organized and selectively commented, demonstrating efficiency and clarity. | R-code is organized with functional comments but lacks the precision and clarity of top submissions. | R-code is disorganized or missing critical elements, indicating a need for further refinement. |
 
 

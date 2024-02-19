@@ -88,6 +88,22 @@ methods
 results
 discussion-and-conclusion
 grading-rubric
+short-report-2
+heres-the-link-to-the-proposal-google-form-httpsforms.glehgjmgdmjya6qwzhw9
+introduction-5
+data-retrieval-1
+data-description-1
+required-analyses-1
+expectations
+submission-details-1
+to-hide-the-r-code-in-your-report-1
+report-structure-1
+abstract-1
+introduction-6
+methods-1
+results-1
+discussion-and-conclusion-1
+grading-rubric-1
 practice-problems-1
 problem-1
 problem-2
@@ -296,3 +312,4 @@ c-t-test-statistic-1
 d-one-sample-t-test-1
 e-one-sample-t-confidence-interval-1
 f-qt-and-pt-1
+practice-problems-20
