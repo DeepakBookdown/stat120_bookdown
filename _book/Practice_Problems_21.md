@@ -4,7 +4,8 @@
 
 The Academic Performance Index (API) is computed for all California schools. It is a number, ranging from a low of 200 to a high of 1000, that reflects a school's performance on a statewide standardized test (http://api.cde.ca.gov). We have a SRS of 200 schools and are interested in how a school's performance is related to the wealth of its students. The variable `growth` measures the growth in API from 1999 to 2000 (API 2000 - API 1999). 
 
-```{r}
+
+```r
 api <- read.csv("http://people.carleton.edu/~kstclair/data/api.csv")
 ```
 
@@ -12,13 +13,36 @@ api <- read.csv("http://people.carleton.edu/~kstclair/data/api.csv")
 
 Let's define a school as "low wealth" if over 50% of its students are eligible for subsidized `meals` and "high wealth" otherwise. We can use an `ifelse` command to create a variable `wealth` that measures this:
 
-```{r}
+
+```r
 api$wealth <- ifelse(api$meals > 50, "low","high")
 table(api$wealth)
+```
+
+```
+
+high  low 
+ 102   98 
+```
+
+```r
 library(dplyr)
 api %>% group_by(wealth) %>% summarize(mean(growth), sd(growth))
+```
+
+```
+# A tibble: 2 × 3
+  wealth `mean(growth)` `sd(growth)`
+  <chr>           <dbl>        <dbl>
+1 high             25.2         28.8
+2 low              38.8         30.0
+```
+
+```r
 boxplot(growth ~ wealth, data=api, xlab="API growth (2000 - 1999)" , horizontal=T)
 ```
+
+<img src="Practice_Problems_21_files/figure-html/unnamed-chunk-2-1.png" width="100%" />
 
 - How many schools are "low" and "high" wealth.
 - Are wealth and API growth related?
@@ -39,8 +63,13 @@ What is the estimated SE for the sample mean difference?
 $$
 SD_{\bar{x}_h - \bar{x}_l} = \sqrt{\dfrac{28.75380^2}{102} + \dfrac{29.95048^2}{98}} = 4.1544
 $$
-```{r}
+
+```r
 sqrt(28.75380^2/102 +  29.95048^2/98)
+```
+
+```
+[1] 4.154404
 ```
 </details><br>
 
@@ -56,8 +85,13 @@ $$t = \dfrac{(25.24510 - 38.82653) - 0}{4.154404} = -3.2692$$
 
 The observed mean difference  is 3.3 SEs below the hypothesized mean difference of 0.
 
-```{r}
+
+```r
 ((25.24510 - 38.82653) - 0)/4.154404 
+```
+
+```
+[1] -3.269164
 ```
 </details><br>
 
@@ -66,8 +100,23 @@ The observed mean difference  is 3.3 SEs below the hypothesized mean difference 
 
 Is there evidence that mean API growth differs for low and high wealth schools? Give the hypotheses for this test, then run the `t.test(y ~ x, data=)` command below to conduct a t-test to give a p-value and conclusion. 
 
-```{r}
+
+```r
 t.test(growth ~ wealth, data=api)
+```
+
+```
+
+	Welch Two Sample t-test
+
+data:  growth by wealth
+t = -3.2692, df = 196.71, p-value = 0.001273
+alternative hypothesis: true difference in means between group high and group low is not equal to 0
+95 percent confidence interval:
+ -21.774321  -5.388544
+sample estimates:
+mean in group high  mean in group low 
+          25.24510           38.82653 
 ```
 
 - What is the t test stat given in the output? Verify that it matches your answer to (c), within reasonable rounding error.
@@ -102,10 +151,56 @@ The boxplot in (a) shows a number of outliers for the `high` wealth group, but t
 #### (f) Check outlier influence
 
 To omit these cases we have to find their row numbers, then `subset` them out of the data:
-```{r}
+
+```r
 which(api$growth > 120 )
+```
+
+```
+[1]  74 119
+```
+
+```r
 api %>% slice(74,119)  # another dplyr package command
+```
+
+```
+           cds stype            name                 sname
+1 5.471911e+13     E Lincoln Element    Lincoln Elementary
+2 1.975342e+13     E Washington Elem Washington Elementary
+  snum                   dname dnum       cname cnum flag
+1 5873 Exeter Union Elementary  226      Tulare   53   NA
+2 2543   Redondo Beach Unified  585 Los Angeles   18   NA
+  pcttest api00 api99 target growth sch.wide comp.imp both
+1      98   693   504     15    189      Yes      Yes  Yes
+2     100   745   615      9    130      Yes      Yes  Yes
+  awards meals ell yr.rnd mobility acs.k3 acs.46 acs.core
+1    Yes    50  18   <NA>        9     18     NA       NA
+2    Yes    41  20   <NA>       16     19     30       NA
+  pct.resp not.hsg hsg some.col col.grad grad.sch avg.ed
+1       93      28  23       27       14        8   2.51
+2       81      11  26       32       16       16   2.99
+  full emer enroll api.stu    pw  fpc wealth
+1   91    9    196     177 30.97 6194   high
+2  100    3    391     313 30.97 6194   high
+```
+
+```r
 t.test(growth ~ wealth, data = api, subset = -c(74,119))
+```
+
+```
+
+	Welch Two Sample t-test
+
+data:  growth by wealth
+t = -4.395, df = 174.97, p-value = 1.916e-05
+alternative hypothesis: true difference in means between group high and group low is not equal to 0
+95 percent confidence interval:
+ -23.571116  -8.961945
+sample estimates:
+mean in group high  mean in group low 
+          22.56000           38.82653 
 ```
 
 - How does the t-test stat change when omitting these two changes? Why does it change in this direction?

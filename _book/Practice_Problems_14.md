@@ -61,9 +61,9 @@ permTest(interest ~ gender, data = study4age5)
   boy :  -0.1043526 	 girl :  0.02905667 
  Observed difference: -0.13341 
 
- Mean of permutation distribution: -0.00134 
- Standard error of permutation distribution: 0.25916 
- P-value:  0.611 
+ Mean of permutation distribution: -0.00151 
+ Standard error of permutation distribution: 0.2691 
+ P-value:  0.6196 
 
 	*-------------*
 ```
