@@ -19,7 +19,8 @@ H_a &: \text{At least one proportion is different}
 </details><br>
 
 
-```{r}
+
+```r
 # Observed counts
 observed_counts <- c(300, 400, 300)
 
@@ -29,6 +30,10 @@ expected_counts <- rep(1000 / 3, 3)
 # Chi-square test statistic calculation
 chi_square_stat <- sum((observed_counts - expected_counts)^2 / expected_counts)
 chi_square_stat
+```
+
+```
+[1] 20
 ```
 
 
@@ -51,25 +56,49 @@ chi_square_stat
 
 The degrees of freedom corresponding to this test is 2 (categories - 1). So, the p-value can be calculated as:
 
-```{r}
+
+```r
 p_value <- 1 - pchisq(chi_square_stat, df = 2)
 p_value
+```
+
+```
+[1] 4.539993e-05
 ```
 
 
 We can also do the test in R using the `chisq.test` function.
 
-```{r}
+
+```r
 chisq_test <- chisq.test(x = observed_counts)
 chisq_test
 ```
 
+```
+
+	Chi-squared test for given probabilities
+
+data:  observed_counts
+X-squared = 20, df = 2, p-value = 4.54e-05
+```
+
 The chi-square test can also be performed using a randomization approach. By setting `simulate.p.value = TRUE` in the `chisq.test()` function, R will simulate p-values based on permutations of the data. This can be especially useful when the assumptions of the chi-square test are not met, such as when some expected counts are too small.
 
-```{r}
+
+```r
 set.seed(7)
 chisq_test_simulated <- chisq.test(x = observed_counts, simulate.p.value = TRUE, B = 10000)
 chisq_test_simulated
+```
+
+```
+
+	Chi-squared test for given probabilities with
+	simulated p-value (based on 10000 replicates)
+
+data:  observed_counts
+X-squared = 20, df = NA, p-value = 9.999e-05
 ```
 
 By setting `B = 10000`, the function will use 10,000 permutations to compute the simulated p-value. This method can provide a more accurate p-value in situations where the traditional method might be questionable due to small expected counts. In the output of the above code, R will provide a chi-square statistic and a simulated p-value based on 10,000 permutations. Since this simulated p-value (0.0001) is significantly smaller than 0.05, it suggests that the null hypothesis is rejected in favor of the alternate hypothesis, meaning there is evidence to suggest at least one proportion is different from the others.
@@ -105,7 +134,8 @@ H_a &: \text{At least one proportion is different}
 </details><br>
 
 
-```{r}
+
+```r
 # Observed counts
 observed_counts <- c(200, 400, 200)
 
@@ -115,6 +145,10 @@ expected_counts <- c(800 * 0.2, 800 * 0.6, 800 * 0.2)
 # Chi-square test statistic calculation
 chi_square_stat <- sum((observed_counts - expected_counts)^2 / expected_counts)
 chi_square_stat
+```
+
+```
+[1] 33.33333
 ```
 
 
@@ -139,16 +173,30 @@ chi_square_stat
 
 The degrees of freedom corresponding to this test is 2 (categories - 1). So, the p-value can be calculated as:
 
-```{r}
+
+```r
 p_value <- 1 - pchisq(chi_square_stat, df = 2)
 p_value
 ```
 
+```
+[1] 5.777749e-08
+```
+
 We can also do the test in R using the `chisq.test` function.
 
-```{r}
+
+```r
 chisq_test <- chisq.test(x = observed_counts, p = c(0.2, 0.6, 0.2))
 chisq_test
+```
+
+```
+
+	Chi-squared test for given probabilities
+
+data:  observed_counts
+X-squared = 33.333, df = 2, p-value = 5.778e-08
 ```
 
 ### (c) Write the conclusion of the hypothesis test.
