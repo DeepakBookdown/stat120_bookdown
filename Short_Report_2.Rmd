@@ -7,9 +7,9 @@ output:
 # Short Report 2
 
 
-**Short Report 1 Deadline**: Before 10 pm on Wednesday, 02/28/2024.
+**Short Report 1 Deadline**: Before 10 pm on Friday, 03/01/2024.
 
-*Proposal Deadline*: Before 11:59 pm on Friday, 02/23/2024.
+*Proposal Deadline*: Before 11:59 pm on Sunday, 02/25/2024.
 
 #### Here's the link to the proposal google form, [https://forms.gle/HGjMgDmjya6QwZhw9](https://forms.gle/HGjMgDmjya6QwZhw9)
 

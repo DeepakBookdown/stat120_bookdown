@@ -42,8 +42,8 @@ rmd_files: [
     "Practice_Problems_20.Rmd", 
     "Practice_Problems_21.Rmd", 
     "Practice_Problems_22.Rmd",
-    "Practice_Problems_23.Rmd"
-   #"Practice_Problems_24.Rmd",
+    "Practice_Problems_23.Rmd",
+   "Practice_Problems_24.Rmd"
    #"Practice_Problems_25.Rmd",
    #"Practice_Problems_26.Rmd"
 ]
