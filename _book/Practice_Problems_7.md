@@ -111,7 +111,7 @@ ggplot(bootstrapped_means_df, aes(x = mean)) +
 <summary><red>Click for answer</red></summary>
 *Answer:* About 1.25, it looks like most of the bootstrapped sample means are between 18 to 23 so 2 standard deviations is about 2.5. This makes the SD about 1.25.
 </details><br>
-*Question:* The standard deviation of sampling distribution has a separate name. It is called the **Standard Error**. The standard deviation of this distribution is 1.0939407.
+*Question:* The standard deviation of sampling distribution has a separate name. It is called the **Standard Error**. The standard deviation of this distribution is 1.068222.
 <details>
 <summary><red>Click for answer</red></summary>
 *Answer:* It's close.
