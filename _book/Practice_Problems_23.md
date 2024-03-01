@@ -591,7 +591,7 @@ chisq.test(survey$religiousness, survey$comfortness, simulate.p.value = TRUE)
 	(based on 2000 replicates)
 
 data:  survey$religiousness and survey$comfortness
-X-squared = 19.33, df = NA, p-value = 0.0009995
+X-squared = 19.33, df = NA, p-value = 0.001499
 ```
 
 The p-value is slightly different, but your conclusion should be the same.
