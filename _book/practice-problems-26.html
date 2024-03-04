@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 37 Practice Problems 26 | Stat 120</title>
+<title>Chapter 36 Practice Problems 26 | Stat 120</title>
 <meta name="author" content="Deepak Bastola">
 <meta name="description" content="# load necessary libraries library(readr) # read_csv library(dplyr) # data manipulation library(forcats) # categorical variables library(janitor) # clean_names library(tidyr) # drop_na...">
 <meta name="generator" content="bookdown 0.37 with bs4_book()">
-<meta property="og:title" content="Chapter 37 Practice Problems 26 | Stat 120">
+<meta property="og:title" content="Chapter 36 Practice Problems 26 | Stat 120">
 <meta property="og:type" content="book">
 <meta property="og:description" content="# load necessary libraries library(readr) # read_csv library(dplyr) # data manipulation library(forcats) # categorical variables library(janitor) # clean_names library(tidyr) # drop_na...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 37 Practice Problems 26 | Stat 120">
+<meta name="twitter:title" content="Chapter 36 Practice Problems 26 | Stat 120">
 <meta name="twitter:description" content="# load necessary libraries library(readr) # read_csv library(dplyr) # data manipulation library(forcats) # categorical variables library(janitor) # clean_names library(tidyr) # drop_na...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -43,18 +43,60 @@
 </form>
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
-        <ul class="book-toc list-unstyled"><li><a class="" href="index.html"><span class="header-section-number">Chapter 37</span> Practice Problems 26</a></li></ul>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Introduction to Statistics</a></li>
+<li class="book-part">Basics R</li>
+<li><a class="" href="what-is-r.html"><span class="header-section-number">1</span> What is R?</a></li>
+<li><a class="" href="r-markdown-basics.html"><span class="header-section-number">2</span> R Markdown Basics</a></li>
+<li><a class="" href="homework-guidelines.html"><span class="header-section-number">3</span> Homework Guidelines</a></li>
+<li><a class="" href="report-guidelines.html"><span class="header-section-number">4</span> Report Guidelines</a></li>
+<li class="book-part">R Tutorials</li>
+<li><a class="" href="tutorial-1-embark-on-your-data-journey.html"><span class="header-section-number">5</span> Tutorial 1: Embark on Your Data Journey</a></li>
+<li><a class="" href="tutorial-2-dive-deeper-into-data-visualization-and-statistics-in-r.html"><span class="header-section-number">6</span> Tutorial 2: Dive Deeper into Data Visualization and Statistics in R</a></li>
+<li><a class="" href="tutorial-3-dive-deeper-into-data-manipulation-with-dplyr-in-r.html"><span class="header-section-number">7</span> Tutorial 3: Dive Deeper into Data Manipulation with dplyr in R</a></li>
+<li><a class="" href="tutorial-4-latex-equations-in-rmarkdown.html"><span class="header-section-number">8</span> Tutorial 4: LaTeX Equations in RMarkdown</a></li>
+<li class="book-part">Short Reports</li>
+<li><a class="" href="short-report-1.html"><span class="header-section-number">9</span> Short Report 1</a></li>
+<li><a class="" href="short-report-2.html"><span class="header-section-number">10</span> Short Report 2</a></li>
+<li class="book-part">Practice Problems</li>
+<li><a class="" href="practice-problems-1.html"><span class="header-section-number">11</span> Practice Problems 1</a></li>
+<li><a class="" href="practice-problems-2.html"><span class="header-section-number">12</span> Practice Problems 2</a></li>
+<li><a class="" href="practice-problems-3.html"><span class="header-section-number">13</span> Practice Problems 3</a></li>
+<li><a class="" href="practice-problems-4.html"><span class="header-section-number">14</span> Practice Problems 4</a></li>
+<li><a class="" href="practice-problems-5.html"><span class="header-section-number">15</span> Practice Problems 5</a></li>
+<li><a class="" href="practice-problems-6.html"><span class="header-section-number">16</span> Practice Problems 6</a></li>
+<li><a class="" href="practice-problems-7.html"><span class="header-section-number">17</span> Practice Problems 7</a></li>
+<li><a class="" href="practice-problems-8.html"><span class="header-section-number">18</span> Practice Problems 8</a></li>
+<li><a class="" href="practice-problems-9.html"><span class="header-section-number">19</span> Practice Problems 9</a></li>
+<li><a class="" href="practice-problems-10.html"><span class="header-section-number">20</span> Practice Problems 10</a></li>
+<li><a class="" href="practice-problems-11.html"><span class="header-section-number">21</span> Practice Problems 11</a></li>
+<li><a class="" href="practice-problems-12.html"><span class="header-section-number">22</span> Practice Problems 12</a></li>
+<li><a class="" href="practice-problems-13.html"><span class="header-section-number">23</span> Practice Problems 13</a></li>
+<li><a class="" href="practice-problems-14.html"><span class="header-section-number">24</span> Practice Problems 14</a></li>
+<li><a class="" href="practice-problems-15.html"><span class="header-section-number">25</span> Practice Problems 15</a></li>
+<li><a class="" href="practice-problems-16.html"><span class="header-section-number">26</span> Practice Problems 16</a></li>
+<li><a class="" href="practice-problems-17.html"><span class="header-section-number">27</span> Practice Problems 17</a></li>
+<li><a class="" href="practice-problems-18.html"><span class="header-section-number">28</span> Practice Problems 18</a></li>
+<li><a class="" href="practice-problems-19.html"><span class="header-section-number">29</span> Practice Problems 19</a></li>
+<li><a class="" href="practice-problems-20.html"><span class="header-section-number">30</span> Practice Problems 20</a></li>
+<li><a class="" href="practice-problems-21.html"><span class="header-section-number">31</span> Practice Problems 21</a></li>
+<li><a class="" href="practice-problems-22.html"><span class="header-section-number">32</span> Practice Problems 22</a></li>
+<li><a class="" href="practice-problems-23.html"><span class="header-section-number">33</span> Practice Problems 23</a></li>
+<li><a class="" href="practice-problems-24.html"><span class="header-section-number">34</span> Practice Problems 24</a></li>
+<li><a class="" href="practice-problems-25.html"><span class="header-section-number">35</span> Practice Problems 25</a></li>
+<li><a class="active" href="practice-problems-26.html"><span class="header-section-number">36</span> Practice Problems 26</a></li>
+</ul>
 
         <div class="book-extra">
           <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="practice-problems-26" class="section level1" number="37">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="practice-problems-26" class="section level1" number="36">
 <h1>
-<span class="header-section-number">37</span> Practice Problems 26<a class="anchor" aria-label="anchor" href="#practice-problems-26"><i class="fas fa-link"></i></a>
+<span class="header-section-number">36</span> Practice Problems 26<a class="anchor" aria-label="anchor" href="#practice-problems-26"><i class="fas fa-link"></i></a>
 </h1>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb559"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># load necessary libraries</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readr.tidyverse.org">readr</a></span><span class="op">)</span> <span class="co"># read_csv</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span> <span class="co"># data manipulation</span></span>
@@ -62,38 +104,38 @@
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/sfirke/janitor">janitor</a></span><span class="op">)</span> <span class="co"># clean_names</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span> <span class="co"># drop_na</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span> <span class="co"># for nice looking plots</span></span></code></pre></div>
-<div id="linear-regression-analysis-exploring-the-relationship-between-average-mathematics-gpa-and-length-of-study-in-mathematics" class="section level2" number="37.1">
+<div id="linear-regression-analysis-exploring-the-relationship-between-average-mathematics-gpa-and-length-of-study-in-mathematics" class="section level2" number="36.1">
 <h2>
-<span class="header-section-number">37.1</span> Linear Regression Analysis: Exploring the Relationship between Average Mathematics GPA and Length of Study in Mathematics<a class="anchor" aria-label="anchor" href="#linear-regression-analysis-exploring-the-relationship-between-average-mathematics-gpa-and-length-of-study-in-mathematics"><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.1</span> Linear Regression Analysis: Exploring the Relationship between Average Mathematics GPA and Length of Study in Mathematics<a class="anchor" aria-label="anchor" href="#linear-regression-analysis-exploring-the-relationship-between-average-mathematics-gpa-and-length-of-study-in-mathematics"><i class="fas fa-link"></i></a>
 </h2>
 <p>This class activity aims to guide you through a data analysis project involving a school score dataset. You will learn how to load a dataset, inspect its contents, manipulate and clean the data, perform exploratory analysis, and apply linear regression to identify relationships. Towards the end, you will deal with outliers and visualize data to comprehend the results better.</p>
-<div id="step-1-load-and-inspect-the-data" class="section level3" number="37.1.1">
+<div id="step-1-load-and-inspect-the-data" class="section level3" number="36.1.1">
 <h3>
-<span class="header-section-number">37.1.1</span> Step 1: Load and Inspect the Data<a class="anchor" aria-label="anchor" href="#step-1-load-and-inspect-the-data"><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.1.1</span> Step 1: Load and Inspect the Data<a class="anchor" aria-label="anchor" href="#step-1-load-and-inspect-the-data"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb560"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Task: Load the school_scores.csv data file from your local directory</span></span>
 <span><span class="va">school_scores</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/school_scores.csv"</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb561"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Task: Use the glimpse() function to view the structure of your data.</span></span>
 <span><span class="co"># glimpse(school_scores)</span></span></code></pre></div>
 </div>
-<div id="step-2-data-cleaning" class="section level3" number="37.1.2">
+<div id="step-2-data-cleaning" class="section level3" number="36.1.2">
 <h3>
-<span class="header-section-number">37.1.2</span> Step 2: Data Cleaning<a class="anchor" aria-label="anchor" href="#step-2-data-cleaning"><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.1.2</span> Step 2: Data Cleaning<a class="anchor" aria-label="anchor" href="#step-2-data-cleaning"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb562"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Task: Use janitor's clean_names() function to standardize column names, </span></span>
 <span><span class="co"># and tidyr's drop_na() to remove missing values.</span></span>
 <span><span class="va">school_scores_clean</span> <span class="op">&lt;-</span> <span class="va">school_scores</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">janitor</span><span class="fu">::</span><span class="fu"><a href="https://sfirke.github.io/janitor/reference/clean_names.html">clean_names</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="co"># cleans column names</span></span>
 <span>  <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="op">)</span>  <span class="co"># removes all instances/rows where at least one NA exists</span></span></code></pre></div>
 </div>
-<div id="step-3-data-manipulation" class="section level3" number="37.1.3">
+<div id="step-3-data-manipulation" class="section level3" number="36.1.3">
 <h3>
-<span class="header-section-number">37.1.3</span> Step 3: Data Manipulation<a class="anchor" aria-label="anchor" href="#step-3-data-manipulation"><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.1.3</span> Step 3: Data Manipulation<a class="anchor" aria-label="anchor" href="#step-3-data-manipulation"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb563"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Task: Select relevant variables from the dataset for further analysis.</span></span>
 <span><span class="va">school_new</span> <span class="op">&lt;-</span> <span class="va">school_scores_clean</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">year</span>, </span>
 <span>                                             <span class="va">state_name</span>, </span>
@@ -101,25 +143,25 @@
 <span>                                             <span class="va">total_verbal</span>, </span>
 <span>                                             <span class="va">academic_subjects_mathematics_average_gpa</span>, </span>
 <span>                                             <span class="va">academic_subjects_mathematics_average_years</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb564"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Task: Create a new categorical variable named 'GPA' from </span></span>
 <span><span class="co"># the 'academic_subjects_mathematics_average_gpa' variable.</span></span>
 <span><span class="va">school_final</span> <span class="op">&lt;-</span> <span class="va">school_new</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>GPA_category <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/cut.html">cut</a></span><span class="op">(</span><span class="va">academic_subjects_mathematics_average_gpa</span>,</span>
 <span>                            breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="cn">Inf</span>, <span class="fl">3</span>, <span class="fl">3.25</span>, <span class="fl">3.5</span>, <span class="cn">Inf</span><span class="op">)</span>,</span>
 <span>                            labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Low"</span>, <span class="st">"Satisfactory"</span>, <span class="st">"Good"</span>, <span class="st">"Excellent"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb565"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Task: Collapse the GPA variable levels into two broad categories.</span></span>
 <span><span class="va">school_final</span> <span class="op">&lt;-</span> <span class="va">school_final</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>GPA_two_category <span class="op">=</span> <span class="fu">forcats</span><span class="fu">::</span><span class="fu"><a href="https://forcats.tidyverse.org/reference/fct_collapse.html">fct_collapse</a></span><span class="op">(</span><span class="va">GPA_category</span>,</span>
 <span>                                               Low <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Low"</span>, <span class="st">"Satisfactory"</span><span class="op">)</span>,</span>
 <span>                                               High <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Good"</span>, <span class="st">"Excellent"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="step-4-data-analysis---linear-regression" class="section level3" number="37.1.4">
+<div id="step-4-data-analysis---linear-regression" class="section level3" number="36.1.4">
 <h3>
-<span class="header-section-number">37.1.4</span> Step 4: Data Analysis - Linear Regression<a class="anchor" aria-label="anchor" href="#step-4-data-analysis---linear-regression"><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.1.4</span> Step 4: Data Analysis - Linear Regression<a class="anchor" aria-label="anchor" href="#step-4-data-analysis---linear-regression"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb566"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Fit a linear model</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">school_final</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">academic_subjects_mathematics_average_years</span>, </span>
 <span>                                y <span class="op">=</span> <span class="va">academic_subjects_mathematics_average_gpa</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
@@ -129,7 +171,7 @@
 <span>       title <span class="op">=</span> <span class="st">"Linear Regression of Average Mathematics GPA vs. Length of Study"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="Practice_Problems_26_files/figure-html/unnamed-chunk-8-1.png" width="100%"></div>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb567"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Task: Conduct a linear regression analysis with GPA as the response</span></span>
 <span><span class="co"># variable and average years studying mathematics as the predictor.</span></span>
 <span><span class="va">GPA.lm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">academic_subjects_mathematics_average_gpa</span> <span class="op">~</span> </span>
@@ -165,23 +207,23 @@ Signif. codes:
 Residual standard error: 0.138 on 575 degrees of freedom
 Multiple R-squared:  0.5893,    Adjusted R-squared:  0.5886 
 F-statistic: 825.1 on 1 and 575 DF,  p-value: &lt; 2.2e-16</code></pre>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb569"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Task: Generate a Residual plot to assess the regression model's assumptions.</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">GPA.lm</span>, which <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="Practice_Problems_26_files/figure-html/unnamed-chunk-10-1.png" width="100%"></div>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb570"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Task: Generate a QQ plot to visualize the normality of residuals.</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">GPA.lm</span>, which <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="Practice_Problems_26_files/figure-html/unnamed-chunk-11-1.png" width="100%"></div>
 </div>
-<div id="step-5-exploring-the-relationship-between-average-mathematics-gpa-and-length-of-study" class="section level3" number="37.1.5">
+<div id="step-5-exploring-the-relationship-between-average-mathematics-gpa-and-length-of-study" class="section level3" number="36.1.5">
 <h3>
-<span class="header-section-number">37.1.5</span> Step 5: Exploring the Relationship between Average Mathematics GPA and Length of Study<a class="anchor" aria-label="anchor" href="#step-5-exploring-the-relationship-between-average-mathematics-gpa-and-length-of-study"><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.1.5</span> Step 5: Exploring the Relationship between Average Mathematics GPA and Length of Study<a class="anchor" aria-label="anchor" href="#step-5-exploring-the-relationship-between-average-mathematics-gpa-and-length-of-study"><i class="fas fa-link"></i></a>
 </h3>
 <p>We will learn how to perform a t-test for the regression slope to identify if the average years studying mathematics significantly predict GPA in mathematics.</p>
-<div id="hypothesis-for-slope-t-test" class="section level4" number="37.1.5.1">
+<div id="hypothesis-for-slope-t-test" class="section level4" number="36.1.5.1">
 <h4>
-<span class="header-section-number">37.1.5.1</span> Hypothesis for Slope t-Test<a class="anchor" aria-label="anchor" href="#hypothesis-for-slope-t-test"><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.1.5.1</span> Hypothesis for Slope t-Test<a class="anchor" aria-label="anchor" href="#hypothesis-for-slope-t-test"><i class="fas fa-link"></i></a>
 </h4>
 <p>The hypotheses for testing if the slope (<span class="math inline">\(\beta_1\)</span>) of the regression line is significantly different from zero are:</p>
 <ul>
@@ -191,9 +233,9 @@ F-statistic: 825.1 on 1 and 575 DF,  p-value: &lt; 2.2e-16</code></pre>
 <span class="math inline">\(H_1: \beta_1 \neq 0\)</span> (The slope is not equal to zero - a relationship exists between the average years studying mathematics and GPA in mathematics.)</li>
 </ul>
 </div>
-<div id="conditions-for-running-t-tests" class="section level4" number="37.1.5.2">
+<div id="conditions-for-running-t-tests" class="section level4" number="36.1.5.2">
 <h4>
-<span class="header-section-number">37.1.5.2</span> Conditions for Running t-Tests<a class="anchor" aria-label="anchor" href="#conditions-for-running-t-tests"><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.1.5.2</span> Conditions for Running t-Tests<a class="anchor" aria-label="anchor" href="#conditions-for-running-t-tests"><i class="fas fa-link"></i></a>
 </h4>
 <p>The conditions for running a t-test on the slope of a regression line include:</p>
 <ol style="list-style-type: decimal">
@@ -207,9 +249,9 @@ F-statistic: 825.1 on 1 and 575 DF,  p-value: &lt; 2.2e-16</code></pre>
 <em>Equal Variance</em>: The variance of residuals should be constant across the range of predictor variables.</li>
 </ol>
 </div>
-<div id="test-statistic" class="section level4" number="37.1.5.3">
+<div id="test-statistic" class="section level4" number="36.1.5.3">
 <h4>
-<span class="header-section-number">37.1.5.3</span> Test Statistic<a class="anchor" aria-label="anchor" href="#test-statistic"><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.1.5.3</span> Test Statistic<a class="anchor" aria-label="anchor" href="#test-statistic"><i class="fas fa-link"></i></a>
 </h4>
 <p>The test statistic for a slope t-test is calculated as:</p>
 <p><span class="math display">\[
@@ -217,11 +259,11 @@ t = \frac{\hat{\beta}_1 - 0}{SE(\hat{\beta}_1)}
 \]</span></p>
 <p>where <span class="math inline">\(\hat{\beta}_1\)</span> is the estimated slope of the regression line, and <span class="math inline">\(SE(\hat{\beta}_1)\)</span> is the standard error of the slope estimate.</p>
 </div>
-<div id="conducting-the-slope-t-test" class="section level4" number="37.1.5.4">
+<div id="conducting-the-slope-t-test" class="section level4" number="36.1.5.4">
 <h4>
-<span class="header-section-number">37.1.5.4</span> Conducting the Slope t-Test<a class="anchor" aria-label="anchor" href="#conducting-the-slope-t-test"><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.1.5.4</span> Conducting the Slope t-Test<a class="anchor" aria-label="anchor" href="#conducting-the-slope-t-test"><i class="fas fa-link"></i></a>
 </h4>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb571"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Extracting the slope (Estimate) and its standard error</span></span>
 <span><span class="va">slope_estimate</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/coef.html">coef</a></span><span class="op">(</span><span class="va">GPA.lm</span><span class="op">)</span><span class="op">[</span><span class="st">"academic_subjects_mathematics_average_years"</span><span class="op">]</span></span>
 <span><span class="va">slope_std_error</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">GPA.lm</span><span class="op">)</span><span class="op">$</span><span class="va">coefficients</span><span class="op">[</span><span class="st">"academic_subjects_mathematics_average_years"</span>, </span>
@@ -232,7 +274,7 @@ t = \frac{\hat{\beta}_1 - 0}{SE(\hat{\beta}_1)}
 <span><span class="va">t_value</span></span></code></pre></div>
 <pre><code>academic_subjects_mathematics_average_years 
                                    28.72521 </code></pre>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb573"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Calculating the p-value</span></span>
 <span><span class="va">p_value</span> <span class="op">&lt;-</span> <span class="fl">2</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/stats/TDist.html">pt</a></span><span class="op">(</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="va">t_value</span><span class="op">)</span>, df <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">GPA.lm</span><span class="op">)</span><span class="op">$</span><span class="va">df</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></span>
 <span><span class="va">p_value</span></span></code></pre></div>
@@ -240,15 +282,15 @@ t = \frac{\hat{\beta}_1 - 0}{SE(\hat{\beta}_1)}
                               3.285648e-113 </code></pre>
 </div>
 </div>
-<div id="step-6-handling-outliers" class="section level3" number="37.1.6">
+<div id="step-6-handling-outliers" class="section level3" number="36.1.6">
 <h3>
-<span class="header-section-number">37.1.6</span> Step 6: Handling Outliers<a class="anchor" aria-label="anchor" href="#step-6-handling-outliers"><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.1.6</span> Step 6: Handling Outliers<a class="anchor" aria-label="anchor" href="#step-6-handling-outliers"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb575"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Task: Filter the data to only include certain states.</span></span>
 <span><span class="va">school_selected</span> <span class="op">&lt;-</span> <span class="va">school_final</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">state_name</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Alabama"</span>, <span class="st">"California"</span>, <span class="st">"Montana"</span>, <span class="st">"Minnesota"</span>, <span class="st">"Nevada"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb576"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Task: Visualize math SAT scores across GPA categories for the selected</span></span>
 <span><span class="co"># states using a boxplot, and identify potential outliers.</span></span>
 <span><span class="va">school_selected</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -263,18 +305,18 @@ t = \frac{\hat{\beta}_1 - 0}{SE(\hat{\beta}_1)}
 <span>               size<span class="op">=</span><span class="fl">2</span>, color<span class="op">=</span><span class="st">"red"</span>, fill<span class="op">=</span><span class="st">"black"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggthemes</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/ggthemes/man/theme_tufte.html">theme_tufte</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="Practice_Problems_26_files/figure-html/unnamed-chunk-14-1.png" width="100%"></div>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb577"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Task: Remove outliers based on pre-determined conditions.</span></span>
 <span><span class="va">school_selected_no_outlier</span> <span class="op">&lt;-</span>  <span class="va">school_selected</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">GPA_category</span> <span class="op">==</span> <span class="st">"Excellent"</span> <span class="op">&amp;</span> <span class="va">total_math</span> <span class="op">&gt;=</span> <span class="fl">600</span> <span class="op">&amp;</span>  <span class="va">total_math</span> <span class="op">&lt;=</span> <span class="fl">800</span> <span class="op">|</span></span>
 <span>           <span class="va">GPA_category</span> <span class="op">==</span> <span class="st">"Good"</span> <span class="op">&amp;</span> <span class="va">total_math</span> <span class="op">&gt;=</span> <span class="fl">525</span>  <span class="op">&amp;</span>  <span class="va">total_math</span> <span class="op">&lt;=</span> <span class="fl">600</span> <span class="op">|</span></span>
 <span>           <span class="va">GPA_category</span> <span class="op">==</span> <span class="st">"Satisfactory"</span> <span class="op">&amp;</span> <span class="va">total_math</span> <span class="op">&gt;=</span> <span class="fl">425</span>  <span class="op">&amp;</span>  <span class="va">total_math</span> <span class="op">&lt;=</span> <span class="fl">525</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="step-7-visualizing-cleaned-data" class="section level3" number="37.1.7">
+<div id="step-7-visualizing-cleaned-data" class="section level3" number="36.1.7">
 <h3>
-<span class="header-section-number">37.1.7</span> Step 7: Visualizing Cleaned Data<a class="anchor" aria-label="anchor" href="#step-7-visualizing-cleaned-data"><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.1.7</span> Step 7: Visualizing Cleaned Data<a class="anchor" aria-label="anchor" href="#step-7-visualizing-cleaned-data"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb578"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Task: Re-visualize the boxplot of math SAT scores across</span></span>
 <span><span class="co"># GPA categories after removing the outliers.</span></span>
 <span><span class="va">school_selected_no_outlier</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -295,15 +337,29 @@ t = \frac{\hat{\beta}_1 - 0}{SE(\hat{\beta}_1)}
 </div>
 </div>
   <div class="chapter-nav">
-<div class="empty"></div>
+<div class="prev"><a href="practice-problems-25.html"><span class="header-section-number">35</span> Practice Problems 25</a></div>
 <div class="empty"></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <div id="book-on-this-page"></div>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#practice-problems-26"><span class="header-section-number">36</span> Practice Problems 26</a></li>
+<li>
+<a class="nav-link" href="#linear-regression-analysis-exploring-the-relationship-between-average-mathematics-gpa-and-length-of-study-in-mathematics"><span class="header-section-number">36.1</span> Linear Regression Analysis: Exploring the Relationship between Average Mathematics GPA and Length of Study in Mathematics</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#step-1-load-and-inspect-the-data"><span class="header-section-number">36.1.1</span> Step 1: Load and Inspect the Data</a></li>
+<li><a class="nav-link" href="#step-2-data-cleaning"><span class="header-section-number">36.1.2</span> Step 2: Data Cleaning</a></li>
+<li><a class="nav-link" href="#step-3-data-manipulation"><span class="header-section-number">36.1.3</span> Step 3: Data Manipulation</a></li>
+<li><a class="nav-link" href="#step-4-data-analysis---linear-regression"><span class="header-section-number">36.1.4</span> Step 4: Data Analysis - Linear Regression</a></li>
+<li><a class="nav-link" href="#step-5-exploring-the-relationship-between-average-mathematics-gpa-and-length-of-study"><span class="header-section-number">36.1.5</span> Step 5: Exploring the Relationship between Average Mathematics GPA and Length of Study</a></li>
+<li><a class="nav-link" href="#step-6-handling-outliers"><span class="header-section-number">36.1.6</span> Step 6: Handling Outliers</a></li>
+<li><a class="nav-link" href="#step-7-visualizing-cleaned-data"><span class="header-section-number">36.1.7</span> Step 7: Visualizing Cleaned Data</a></li>
+</ul>
+</li>
+</ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-          
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/Practice_Problems_26.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/Practice_Problems_26.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>

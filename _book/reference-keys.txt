@@ -389,7 +389,7 @@ c-anova-table
 d-p-value
 e-conclusion
 f-confidence-interval
-class-activity-26
+practice-problems-26
 linear-regression-analysis-exploring-the-relationship-between-average-mathematics-gpa-and-length-of-study-in-mathematics
 step-1-load-and-inspect-the-data
 step-2-data-cleaning
@@ -402,5 +402,3 @@ test-statistic
 conducting-the-slope-t-test
 step-6-handling-outliers
 step-7-visualizing-cleaned-data
-url-your-book-url-like-httpsbookdown.orgyihuibookdown
-practice-problems-26

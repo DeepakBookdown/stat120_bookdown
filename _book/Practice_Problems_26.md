@@ -2,8 +2,6 @@
 
 
 
-
-
 ```r
 # load necessary libraries
 library(readr) # read_csv
