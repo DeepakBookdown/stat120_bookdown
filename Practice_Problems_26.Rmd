@@ -1,4 +1,5 @@
-# Class Activity 25
+# Practice Problems 26
+
 
 
 
@@ -9,7 +10,7 @@ library(dplyr) # data manipulation
 library(forcats) # categorical variables
 library(janitor) # clean_names
 library(tidyr) # drop_na
-library(tidyverse) # functions form tidy ecosystem
+library(ggplot2) # for nice looking plots
 ```
 
 
@@ -23,13 +24,15 @@ This class activity aims to guide you through a data analysis project involving 
 
 ```{r}
 # Task: Load the school_scores.csv data file from your local directory
-school_scores <- read_csv("~/Desktop/Insync/STAT120_Spring23/class_activities/data/school_scores.csv") 
+school_scores <- read_csv("data/school_scores.csv")
 ```
 
 
 ```{r}
 # Task: Use the glimpse() function to view the structure of your data.
 # glimpse(school_scores)
+
+
 ```
 
 
@@ -40,8 +43,8 @@ school_scores <- read_csv("~/Desktop/Insync/STAT120_Spring23/class_activities/da
 # Task: Use janitor's clean_names() function to standardize column names, 
 # and tidyr's drop_na() to remove missing values.
 school_scores_clean <- school_scores %>%
-  janitor::clean_names() %>% 
-  tidyr::drop_na()
+  janitor::clean_names() %>% # cleans column names
+  tidyr::drop_na()  # removes all instances/rows where at least one NA exists
 ```
 
 
@@ -62,25 +65,19 @@ school_new <- school_scores_clean %>% select(year,
 # Task: Create a new categorical variable named 'GPA' from 
 # the 'academic_subjects_mathematics_average_gpa' variable.
 school_final <- school_new %>% 
-  mutate(GPA = case_when(academic_subjects_mathematics_average_gpa < 3 ~ "low",
-                         academic_subjects_mathematics_average_gpa >= 3.0 & academic_subjects_mathematics_average_gpa < 3.25 ~ "satisfactory",
-                         academic_subjects_mathematics_average_gpa >= 3.25 & academic_subjects_mathematics_average_gpa < 3.5 ~ "good",
-                         academic_subjects_mathematics_average_gpa >= 3.5 ~ "excellent"))
+mutate(GPA_category = cut(academic_subjects_mathematics_average_gpa,
+                            breaks = c(-Inf, 3, 3.25, 3.5, Inf),
+                            labels = c("Low", "Satisfactory", "Good", "Excellent")))
 ```
 
-
-```{r}
-# Task: Convert the new GPA variable into a factor variable.
-school_final <- school_final %>% mutate(GPA = factor(GPA))
-```
 
 
 ```{r}
 # Task: Collapse the GPA variable levels into two broad categories.
 school_final <- school_final %>% 
-  mutate(collapsed_GPA = forcats::fct_collapse(GPA,
-                                               Low = c("low", "satisfactory"),
-                                               High = c("good", "excellent")))
+  mutate(GPA_two_category = forcats::fct_collapse(GPA_category,
+                                               Low = c("Low", "Satisfactory"),
+                                               High = c("Good", "Excellent")))
 ```
 
 
@@ -102,7 +99,8 @@ ggplot(data = school_final, aes(x = academic_subjects_mathematics_average_years,
 ```{r}
 # Task: Conduct a linear regression analysis with GPA as the response
 # variable and average years studying mathematics as the predictor.
-GPA.lm <- lm(academic_subjects_mathematics_average_gpa ~ academic_subjects_mathematics_average_years, 
+GPA.lm <- lm(academic_subjects_mathematics_average_gpa ~ 
+               academic_subjects_mathematics_average_years, 
              data = school_final)
 summary(GPA.lm)
 ```
@@ -120,7 +118,57 @@ plot(GPA.lm, which = 2)
 ```
 
 
-### Step 5: Handling Outliers
+
+### Step 5: Exploring the Relationship between Average Mathematics GPA and Length of Study
+
+We will learn how to perform a t-test for the regression slope to identify if the average years studying mathematics significantly predict GPA in mathematics.
+
+#### Hypothesis for Slope t-Test
+
+The hypotheses for testing if the slope ($\beta_1$) of the regression line is significantly different from zero are:
+
+- $H_0: \beta_1 = 0$ (The slope is equal to zero - no relationship between the average years studying mathematics and GPA in mathematics.)
+- $H_1: \beta_1 \neq 0$ (The slope is not equal to zero - a relationship exists between the average years studying mathematics and GPA in mathematics.)
+
+#### Conditions for Running t-Tests
+
+The conditions for running a t-test on the slope of a regression line include:
+
+1. *Linearity*: The relationship between the predictor and response variable must be linear.
+2. *Independence*: The observations must be independent of each other.
+3. *Normality*: The residuals of the model should be approximately normally distributed.
+4. *Equal Variance*: The variance of residuals should be constant across the range of predictor variables.
+
+#### Test Statistic
+
+The test statistic for a slope t-test is calculated as:
+
+$$
+t = \frac{\hat{\beta}_1 - 0}{SE(\hat{\beta}_1)}
+$$
+
+where $\hat{\beta}_1$ is the estimated slope of the regression line, and $SE(\hat{\beta}_1)$ is the standard error of the slope estimate.
+
+#### Conducting the Slope t-Test
+
+```{r}
+# Extracting the slope (Estimate) and its standard error
+slope_estimate <- coef(GPA.lm)["academic_subjects_mathematics_average_years"]
+slope_std_error <- summary(GPA.lm)$coefficients["academic_subjects_mathematics_average_years", 
+                                                "Std. Error"]
+
+# Calculating the t-value
+t_value <- slope_estimate / slope_std_error
+t_value
+
+# Calculating the p-value
+p_value <- 2 * pt(-abs(t_value), df = summary(GPA.lm)$df[2])
+p_value
+```
+
+
+
+### Step 6: Handling Outliers
 
 
 ```{r}
@@ -133,7 +181,7 @@ school_selected <- school_final %>%
 # Task: Visualize math SAT scores across GPA categories for the selected
 # states using a boxplot, and identify potential outliers.
 school_selected %>%
-  ggplot(aes(x=GPA,y=total_math,fill=GPA)) +
+  ggplot(aes(x=GPA_category,y=total_math,fill=GPA_category)) +
   theme_bw() +
   geom_boxplot() +
   geom_jitter(width = 0.2) +
@@ -151,14 +199,14 @@ school_selected %>%
 ```{r}
 # Task: Remove outliers based on pre-determined conditions.
 school_selected_no_outlier <-  school_selected %>% 
-  filter(GPA == "excellent" & total_math >= 600 &  total_math <= 800 |
-           GPA == "good" & total_math >= 525  &  total_math <= 575 |
-           GPA == "satisfactory" & total_math >= 425  &  total_math <= 525)
+  filter(GPA_category == "Excellent" & total_math >= 600 &  total_math <= 800 |
+           GPA_category == "Good" & total_math >= 525  &  total_math <= 600 |
+           GPA_category == "Satisfactory" & total_math >= 425  &  total_math <= 525)
 
 ```
 
 
-### Step 6: Visualizing Cleaned Data
+### Step 7: Visualizing Cleaned Data
 
 
 
@@ -166,7 +214,7 @@ school_selected_no_outlier <-  school_selected %>%
 # Task: Re-visualize the boxplot of math SAT scores across
 # GPA categories after removing the outliers.
 school_selected_no_outlier %>%
-  ggplot(aes(x=GPA,y=total_math,fill=GPA)) +
+  ggplot(aes(x=GPA_category,y=total_math,fill=GPA_category)) +
   theme_bw() +
   geom_boxplot() +
   geom_jitter(width = 0.2) +
@@ -179,4 +227,4 @@ school_selected_no_outlier %>%
 ```
 
 
-By the end of this activity, you will have practiced various data analysis techniques, including data manipulation, data cleaning, linear regression, and outlier handling.
+By the end of this activity, you will have practiced various data analysis techniques, including data manipulation, data cleaning, linear regression, slope t-test, and outlier handling, ultimately helping you understand the impact of GPA and length of study on student performance.
